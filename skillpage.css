@@ -1,0 +1,322 @@
+
+/*this css doc can be used for all skill pages, just change the html document*/
+
+body{
+    margin: 0 0;
+    background-color: #1B1B1B; /*page background color */
+    font-family: REM;
+    color: #f3f3f3; /* general text color */
+}
+
+/*html {
+    overflow-y: scroll;
+    scroll-snap-type: y proximity;
+    scroll-padding-top: 82px;
+    scroll-behavior: smooth;
+}
+
+.scroll-container{
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+}*/
+
+
+body::-webkit-scrollbar {
+    width: 10px;
+}
+
+body::-webkit-scrollbar-track-piece {
+    background: #333333;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #6D6D6D;
+    border-radius: 5px;
+}
+
+.link-text { /*general styling for random links*/
+    text-decoration: none;
+    color: #f3f3f3;
+}
+
+.link-text:hover { 
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.skill-hero { /*container for hero stuff*/
+    height: fit-content;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 3rem;
+    font-size: 36px;
+    justify-content: flex-end;
+    
+
+}
+
+.hero-title { /*hero title*/
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    font-size: 48px;
+}
+
+.hero-svg-container { /*container for hero svg*/
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 50vh;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.hero-svg { /*actual svg in hero styling */
+    display: flex;
+    flex-direction: row;
+    width: 40%;
+    align-self: center;
+}
+
+.hero-blurb { /*hero caption*/
+    display: flex;
+    flex-direction: row;
+    width: 75%;
+    font-size: 30px;
+    align-self: center;
+}
+
+.skill-info-container { /*container for skill info*/
+    display: flex;
+    width: auto;
+    height: fit-content;
+    justify-content: center;
+    align-items: center;
+    background-color: #212121;
+
+    padding: 5%;
+}
+
+.skill-info {   /*actual skill info stuff*/
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    padding: 0 50px;
+    font-size: 25px;
+}
+
+.section-title {
+    font-size: 32px;
+    padding: 40px;
+    text-decoration: underline;
+}
+
+.difficulty-muscle { /*container for difficulty and muscles involved section*/
+    display: flex;
+    flex-direction: row;
+    font-size: 25px;
+    margin-bottom: 1.5rem;
+
+}
+
+.skill-difficulty { /*skill difficultuyl*/
+    width: 50%;
+}
+
+
+.muscle-tendons { /*involved muscles and tendons*/
+    width: 50%;
+}
+
+.exercise-instructions-container {
+    display: flex;
+    flex-direction: column;
+    font-size: 25px;
+}
+.exercise-instructions {  /*overall instructions for skill container*/
+    display: flex;
+    flex-direction: row;
+    font-size: 25px;
+}
+
+#skill-read-more { /*checkbox for readmore functionality*/
+    display: none;
+}
+
+#skill-read-more:checked ~ .skill-instructions { 
+    display: block;
+}
+#skill-read-more:checked ~ label {
+    display: none;
+}
+
+.skill-instructions { /*actual text in instructions */
+    display: none;
+}
+
+.read-more-label {  /*button for readmore*/
+    display: inline-block;
+    cursor: pointer;
+    color: #919191;
+    font-size: 18px;
+    margin-top: 5px;
+}
+.read-more-label:hover {  /*button for readmore*/
+    text-decoration: underline;
+}
+
+.progression-info-container { /*container for skill info*/
+    display: flex;
+    width: auto;
+    height: fit-content;
+    justify-content: center;
+    align-items: center;
+    background-color: #252525;
+
+    padding: 5%;
+}
+
+.progression-info {   /*actual skill info stuff*/
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    padding: 0 50px;
+    font-size: 25px;
+}
+
+.label-chart-container { /*container for label chart*/
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    justify-content: space-around;
+    align-self: center;
+    margin-top: 40px;
+
+}
+
+.label-chart-item {  /*label for chart skills) */
+    display: flex;
+    flex-direction: row;
+    width: 16%;
+    justify-content: center;
+    font-size: 20px;
+    color: #919191;
+}
+
+.progression-chart-container { /*container for progression chart*/
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    justify-content: space-around;
+    align-self: center;
+    margin-top: 20px;
+}
+
+.prog-chart-item {  /*actual item in the chart( askill) */
+    display: flex;
+    flex-direction: row;
+    width: 16%;
+    justify-content: center;
+}
+
+.progression-arrow {    /* an arrow in the chart*/
+    display: flex;
+    flex-direction: row;
+    width: 7%;
+}
+
+.progression-dots { /*the dots in the chart*/
+    display: flex;
+    flex-direction: row;
+    width: 3%;
+    align-self: center;
+    padding: 0 2%;
+}
+
+.svg-icon { /*styling for the svg icons ig?*/
+    align-self: center;
+}
+
+
+
+#push-up {
+    width: 7vw;
+    height: 7vw;
+    align-self: center;
+}
+#push-up:hover {
+    cursor: pointer;
+}
+
+#NA {
+    width: 7vw;
+    height: 7vw;
+    align-self: center;
+}
+
+#planche-lean {
+    width: 7vw;
+    height: 7vw;
+    align-self: center;
+}
+#planche-lean:hover {
+    cursor: pointer;
+}
+
+#pl-pushup {
+    width: 7vw;
+    height: 7vw;
+    align-self: center;
+}
+#pl-pushup:hover {
+    cursor: pointer;
+}
+
+#full-pl {
+    width: 7vw;
+    height: 7vw;
+    align-self: center;
+}
+#full-pl:hover {
+    cursor: pointer;
+}
+
+/*styling for the skill icons*/
+/* I guess you can just keep adding more and more skills while keeping same css doc*/
+
+
+
+.divider {
+    width: 100%;
+}
+#primary-color { background-color: #b66da3;} 
+#alt-color { background-color: #9151A6;} /* colors for bottom divider ^^ */
+
+.svg-divider {
+    display: flex;
+    flex-direction: row;
+    width: 100vw-10px;
+}
+
+.technique-form-container { /*container for technique stuff*/
+    display: flex;
+    flex-direction: row;
+    background-color: #282828;
+
+    padding: 5%;
+}
+
+.technique-form {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    padding: 0 50px;
+    font-size: 25px;
+}
+
+.technique-form-content {
+    display: flex;
+    flex-direction: row;
+    width:100%;
+}

@@ -1,0 +1,90 @@
+body{
+    margin: 0 0;
+    background-color: #1B1B1B; /*page background color */
+    font-family: REM;
+    color: #f3f3f3; /* general text color */
+}
+
+body::-webkit-scrollbar {
+    width: 10px;
+}
+
+body::-webkit-scrollbar-track-piece {
+    background: #333333;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #6D6D6D;
+    border-radius: 5px;
+}
+
+.tutorial-header {
+    padding: 50px 25%;
+    font-size: 20px;
+}
+
+.skill-list-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 15px 10%;
+}
+
+.skill-list-item {
+    width: 15%;
+    border: solid;
+    text-align: center;
+    border-color: #565656;
+
+}
+
+.skill-list-header {
+    width: 15%;
+    text-align: center;
+    padding: 0 10px;
+    font-size: 20px;
+
+}
+
+
+#skill-item {
+    text-decoration: none;
+    align-self: center;
+    text-align: center;
+    width: 100%;
+    padding: 8px;
+    border:none;
+    background-color: transparent;
+    color: #f3f3f3; 
+    font-family: REM;
+    font-size: 18px;
+    cursor: pointer;
+
+}
+
+.skill-list-item:hover {
+    background-color: #2E252C;
+    transition-property: all;
+    transition-duration: 500ms;
+    cursor: pointer;
+}
+
+
+.divider {
+    width: 100%;
+    height: 6px;
+    display: flex;
+    flex-direction: column;
+}
+
+.gray-line {
+    background-color: #2C2C2C; /* top divider color */
+    height: 6px;
+}
+
+.color-line {
+    height: 2px; /* bottom divider */
+}
+
+#primary-color { background-color: #b66da3;} 
+#alt-color { background-color: #9151A6;} /* colors for bottom divider ^^ */
