@@ -319,4 +319,9 @@ body::-webkit-scrollbar-track-piece {
     display: flex;
     flex-direction: row;
     width:100%;
+    justify-content: space-evenly;
+}
+
+.technique-form-content > div{
+    width: 45%;
 }
