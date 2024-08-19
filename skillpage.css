@@ -264,12 +264,12 @@ body::-webkit-scrollbar-track-piece {
     cursor: pointer;
 }
 
-#pl-pushup {
+#psuedo-pushup {
     width: 7vw;
     height: 7vw;
     align-self: center;
 }
-#pl-pushup:hover {
+#psuedo-pushup:hover {
     cursor: pointer;
 }
 
