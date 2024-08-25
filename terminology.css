@@ -97,7 +97,7 @@ body::-webkit-scrollbar-track-piece {
     display: flex;
     color: #f3f3f3;
     background-color: #1B1B1B;
-    border: 1px solid #f3f3f3;
+    border: 1px solid #cacaca;
     border-bottom: none;
     border-radius: 5px 5px 0 0;
     padding: 10px 20px;
@@ -189,7 +189,37 @@ body::-webkit-scrollbar-track-piece {
     align-self: center;
 }
 
+#dip {
+    width: 14vw;
+    height: 14vw;
+    align-self: center;
+}
+
+#pike-pushup {
+    width: 14vw;
+    height: 14vw;
+    align-self: center;
+}
+
+#tuck-pl {
+    width: 14vw;
+    height: 14vw;
+    align-self: center;
+}
+
+#str-pl {
+    width: 14vw;
+    height: 14vw;
+    align-self: center;
+}
+
 #full-pl {
+    width: 14vw;
+    height: 14vw;
+    align-self: center;
+}
+
+#maltese {
     width: 14vw;
     height: 14vw;
     align-self: center;
