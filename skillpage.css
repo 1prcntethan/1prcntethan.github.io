@@ -108,7 +108,7 @@ body::-webkit-scrollbar-track-piece {
 
 .section-title {
     font-size: 32px;
-    padding: 40px;
+    padding: 40px 0px;
     text-decoration: underline;
 }
 
@@ -211,6 +211,7 @@ body::-webkit-scrollbar-track-piece {
     justify-content: space-around;
     align-self: center;
     margin-top: 20px;
+    margin-bottom: 15px;
 }
 
 .prog-chart-item {  /*actual item in the chart( askill) */
@@ -319,7 +320,7 @@ body::-webkit-scrollbar-track-piece {
     display: flex;
     flex-direction: row;
     width:100%;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
 
 .technique-form-content > div{
