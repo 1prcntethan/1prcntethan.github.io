@@ -1,0 +1,81 @@
+body{
+    margin: 0 0;
+    background-color: #1B1B1B; /*page background color */
+    font-family: REM;
+    color: #f3f3f3; /* general text color */
+}
+
+body::-webkit-scrollbar {
+    width: 10px;
+}
+
+body::-webkit-scrollbar-track-piece {
+    background: #333333;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #6D6D6D;
+    border-radius: 5px;
+}
+
+.flex-container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.training-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 40%; /* Adjust as needed */
+}
+
+.training-header {
+    font-size: 2rem;
+    padding: 30px;
+}
+
+.training-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 75px;
+    position: relative;
+    width: 100%; /* Takes full width of container */
+}
+
+.item {
+    width: 80%;
+    height: 100px;
+    background-color: #524f52;
+    position: relative;
+}
+
+.training-column::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 4px;
+    background-color: #5e595c;
+    transform: translateX(-50%);
+    z-index: -1; /* Make sure the line is behind the items */
+}
+
+.item::before {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 20px;
+    background-color: #5e595c;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -20px; /* Position above the item */
+}
+
+.item:first-child::before {
+    display: none; /* Remove the top line for the first item */
+}
