@@ -95,7 +95,7 @@ body::-webkit-scrollbar-track-piece {
     align-items: center;
     background-color: #212121;
 
-    padding: 5%;
+    padding: 0 5%;
 }
 
 .skill-info {   /*actual skill info stuff*/
@@ -174,7 +174,7 @@ body::-webkit-scrollbar-track-piece {
     align-items: center;
     background-color: #252525;
 
-    padding: 5%;
+    padding: 0 5%;
 }
 
 .progression-info {   /*actual skill info stuff*/
@@ -305,7 +305,7 @@ body::-webkit-scrollbar-track-piece {
     flex-direction: row;
     background-color: #282828;
 
-    padding: 5%;
+    padding: 0 5%;
 }
 
 .technique-form {
