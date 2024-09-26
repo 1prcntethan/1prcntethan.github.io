@@ -54,30 +54,41 @@ body::-webkit-scrollbar-track-piece {
     width: 50%;
     padding: 20px;
     align-self: center;
-    font-size: 30px;
+    
 }
 
-.divider {
-    width: 100%;
-    height: 6px;
+.hero-title{
+    font-size: 50px;
+}
+
+.hero-caption{
+    font-size: 24px;
+    font-family: Fira Sans;
+    font-weight: 200;
+}
+
+.divider-line {
+    width: 90%;
+    margin-left: 5%;
     display: flex;
-    flex-direction: column;
+    background-color: rgb(128, 128, 128);
+    height: 1px;
 }
 
-.gray-line {
-    background-color: #2C2C2C; /* top divider color */
-    height: 6px;
-}
 
-.color-line {
-    height: 2px; /* bottom divider */
-}
 
 #primary-color { background-color: #b66da3;} 
 #alt-color { background-color: #9151A6;} /* colors for bottom divider ^^ */
 
 .block-1-text {
-    font-size: 20px;
+    font-size: 25px;
+    font-family: Fira Sans;
+    font-weight: 200;
+}
+
+.block-1-text-title {
+    font-size: 30px;
+    font-family: Major Mono Display;
 }
 
 .block-1-left {
@@ -93,6 +104,8 @@ footer {
     background-color: #333333; /* Dark background color */
     color: #f3f3f3; /* Light text color */
     padding: 40px 20px;
+    font-family: Fira Sans;
+    font-weight: 200;
 }
   
 .footer-container {

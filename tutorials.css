@@ -1,7 +1,7 @@
 body{
     margin: 0 0;
     background-color: #1B1B1B; /*page background color */
-    font-family: REM;
+    font-family: Major Mono Display;
     color: #f3f3f3; /* general text color */
 }
 
@@ -19,8 +19,18 @@ body::-webkit-scrollbar-track-piece {
 }
 
 .tutorial-header {
-    padding: 50px 25%;
+    padding: 50px 25% 35px;
     font-size: 20px;
+    font-family: Fira Sans;
+    font-weight: 200;
+}
+
+.divider-line {
+    width: 90%;
+    margin-left: 5%;
+    display: flex;
+    background-color: rgb(128, 128, 128);
+    height: 1px;
 }
 
 .skill-list-container {
@@ -56,7 +66,8 @@ body::-webkit-scrollbar-track-piece {
     border:none;
     background-color: transparent;
     color: #f3f3f3; 
-    font-family: REM;
+    font-family: Fira Sans;
+    font-weight: 200;
     font-size: 18px;
     cursor: pointer;
 

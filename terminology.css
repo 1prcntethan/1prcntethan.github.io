@@ -1,7 +1,7 @@
 body{
     margin: 0 0;
     background-color: #1B1B1B; /*page background color */
-    font-family: REM;
+    font-family: Major Mono Display;
     color: #f3f3f3; /* general text color */
 }
 
@@ -22,6 +22,8 @@ body::-webkit-scrollbar-track-piece {
     display: flex;
     padding: 2rem 3rem;
     justify-content: center;
+    font-family: Fira Sans;
+    font-weight: 200;
 }
 
 .section-title {
@@ -67,6 +69,8 @@ body::-webkit-scrollbar-track-piece {
 .term-text {
     display: flex;
     color: #cacaca;
+    font-family: Fira Sans;
+    font-weight: 200;
 }
 
 .svg-gradient-container {
@@ -101,7 +105,8 @@ body::-webkit-scrollbar-track-piece {
     border-bottom: none;
     border-radius: 5px 5px 0 0;
     padding: 10px 20px;
-    font-family: REM;
+    font-family: Fira Sans;
+    font-weight: 200;
     font-size: 20px;
     cursor: pointer;
 }
@@ -115,6 +120,8 @@ body::-webkit-scrollbar-track-piece {
     width: auto;
     justify-content: center;
     background-color: #232323;
+    font-family: Fira Sans;
+    font-weight: 200;
 }
 
 #difficulty-explanation-F{
@@ -239,6 +246,8 @@ footer {
     background-color: #333333; /* Dark background color */
     color: #f3f3f3; /* Light text color */
     padding: 40px 20px;
+    font-family: Fira Sans;
+    font-weight: 200;
 }
   
 .footer-container {

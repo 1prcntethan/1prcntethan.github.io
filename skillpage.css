@@ -4,7 +4,7 @@
 body{
     margin: 0 0;
     background-color: #1B1B1B; /*page background color */
-    font-family: REM;
+    font-family: Major Mono Display;
     color: #f3f3f3; /* general text color */
 }
 
@@ -85,6 +85,8 @@ body::-webkit-scrollbar-track-piece {
     width: 75%;
     font-size: 30px;
     align-self: center;
+    font-family: Fira Sans;
+    font-weight: 200;
 }
 
 .skill-info-container { /*container for skill info*/
@@ -109,7 +111,6 @@ body::-webkit-scrollbar-track-piece {
 .section-title {
     font-size: 32px;
     padding: 40px 0px;
-    text-decoration: underline;
 }
 
 .difficulty-muscle { /*container for difficulty and muscles involved section*/
@@ -117,7 +118,8 @@ body::-webkit-scrollbar-track-piece {
     flex-direction: row;
     font-size: 25px;
     margin-bottom: 1.5rem;
-
+    font-family: Fira Sans;
+    font-weight: 200;
 }
 
 .skill-difficulty { /*skill difficultuyl*/
@@ -133,6 +135,8 @@ body::-webkit-scrollbar-track-piece {
     display: flex;
     flex-direction: column;
     font-size: 25px;
+    font-family: Fira Sans;
+    font-weight: 200;
 }
 .exercise-instructions {  /*overall instructions for skill container*/
     display: flex;
@@ -164,6 +168,11 @@ body::-webkit-scrollbar-track-piece {
 }
 .read-more-label:hover {  /*button for readmore*/
     text-decoration: underline;
+}
+
+.recommended-info {
+    font-family: Fira Sans;
+    font-weight: 200;
 }
 
 .progression-info-container { /*container for skill info*/
@@ -212,6 +221,8 @@ body::-webkit-scrollbar-track-piece {
     align-self: center;
     margin-top: 20px;
     margin-bottom: 15px;
+    font-family: Fira Sans;
+    font-weight: 200;
 }
 
 .prog-chart-item {  /*actual item in the chart( askill) */
@@ -321,6 +332,8 @@ body::-webkit-scrollbar-track-piece {
     flex-direction: row;
     width:100%;
     justify-content: space-between;
+    font-family: Fira Sans;
+    font-weight: 200;
 }
 
 .technique-form-content > div{
