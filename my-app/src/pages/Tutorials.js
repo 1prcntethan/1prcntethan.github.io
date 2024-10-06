@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Tutotrials = () => {
+const Tutorials = () => {
     return (
         <>
   {/*main css*/}
@@ -213,4 +213,4 @@ const Tutotrials = () => {
     );
 };
 
-export default Home;
+export default Tutorials;
