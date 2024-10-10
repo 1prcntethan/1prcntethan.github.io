@@ -1,0 +1,8 @@
+
+.divider-line {
+    width: 90%;
+    margin-left: 5%;
+    display: flex;
+    background-color: rgb(128, 128, 128);
+    height: 1px;
+}

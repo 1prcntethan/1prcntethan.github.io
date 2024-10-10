@@ -7,16 +7,16 @@
     height: 62px;
 }
 
-.navbar-logo {
+.navbar__logo {
     padding: 7px 0;
 }
 
-.logo {
+.navbar__logo--svg {
     width: 3rem;
     height: 3rem;
 }
 
-.navbar-item-list {
+.navbar__list {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -24,7 +24,7 @@
     align-items: center;
 }
 
-.navbar-items {
+.navbar__list--items  {
     display: flex;
     flex-direction: row;
     justify-self: center;
@@ -35,21 +35,16 @@
     border-radius: 4px;
 }
 
-.navbar-items:hover {
+.navbar__list--items:hover {
     border-radius: 4px;
     transition-property: all;
     transition-duration: 500ms;
 }
-.navbar-items:nth-child(1):hover {
+
+.navbar__list--pink:hover {
     border-bottom-color: #b66da3
 }
-.navbar-items:nth-child(2):hover {
-    border-bottom-color: #bbca88
-}
-.navbar-items:nth-child(3):hover {
-    border-bottom-color: #b66da3
-}
-.navbar-items:nth-child(4):hover {
+.navbar__list--green:hover {
     border-bottom-color: #bbca88
 }
 

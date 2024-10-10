@@ -5,9 +5,9 @@ import "./navbar.css";
 const Navbar = () => {
     return (
         <div className="navbar">
-          <div className="navbar-logo">
+          <div className="navbar__logo">
             <Link to = "/">
-              <svg className="logo" viewBox="0 0 772 747" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg className="navbar__logo--svg" viewBox="0 0 772 747" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M427.099 267.995C434.795 267.915 442.021 271.691 446.351 278.053L463.293 302.947C466.652 307.882 467.96 313.93 466.942 319.812L459.219 364.408C458.401 369.129 456.129 373.476 452.721 376.844L420.526 408.654C416.279 412.85 410.567 415.23 404.598 415.291L374.488 415.602C366.792 415.682 359.566 411.907 355.236 405.544L338.294 380.65C334.935 375.715 333.627 369.667 334.646 363.785L342.369 319.19C343.186 314.469 345.458 310.121 348.866 306.753L381.061 274.943C385.308 270.748 391.02 268.367 396.989 268.306L427.099 267.995Z" fill="#F3F3F3"/>
                 <path d="M531.561 228.914C536.054 238.209 533.803 249.359 526.055 256.183L523.285 258.623C519.222 262.202 514.026 264.232 508.612 264.357L477.984 265.061C474.563 265.14 471.168 264.454 468.046 263.055L440.091 250.522C435.149 248.307 431.148 244.419 428.792 239.544L427.185 236.22C422.693 226.925 424.944 215.775 432.691 208.952L435.461 206.512C439.525 202.933 444.721 200.902 450.135 200.778L480.763 200.073C484.183 199.995 487.578 200.68 490.7 202.08L518.656 214.612C523.597 216.828 527.598 220.715 529.955 225.591L531.561 228.914Z" fill="#F3F3F3"/>
                 <path d="M749.176 117.261C769.59 117.588 779.49 142.37 764.92 156.672L762.32 159.225C760.541 160.971 758.49 162.416 756.247 163.504L635.725 221.972C634.736 222.452 633.715 222.86 632.668 223.193L505.034 263.858C502.659 264.615 500.176 264.98 497.684 264.94L494.041 264.882C473.627 264.556 463.727 239.773 478.297 225.471L480.897 222.919C482.676 221.173 484.727 219.727 486.97 218.639L607.492 160.171C608.481 159.692 609.502 159.284 610.549 158.95L738.183 118.285C740.558 117.529 743.041 117.163 745.533 117.203L749.176 117.261Z" fill="#F3F3F3"/>
@@ -23,17 +23,17 @@ const Navbar = () => {
               </svg>
             </Link>
           </div>
-          <div className="navbar-item-list">
-            <div className="navbar-items">
+          <div className="navbar__list">
+            <div className="navbar__list--items navbar__list--pink">
               <Link to = "/" id="nav-item">tutorials</Link>
             </div>
-            <div className="navbar-items">
+            <div className="navbar__list--items navbar__list--green">
               <Link to = "/" id="nav-item">training</Link>
             </div>
-            <div className="navbar-items">
+            <div className="navbar__list--items navbar__list--pink">
               <Link to = "/" id="nav-item">terminology</Link>
             </div>
-            <div className="navbar-items">
+            <div className="navbar__list--items navbar__list--green">
               <Link to = "/" id="nav-item">skill tree</Link>
             </div>
           </div>
