@@ -1,19 +1,21 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import Navbar from "./components/navbar"
-import HomepageHero from "./components/homepage-hero"
-import LineDivider from "./components/line-divider"
 import "./App.css"
+import { Homepage } from './pages/home';
+import { Training } from './pages/training';
+import { Tutorials } from './pages/tutorials';
 
 
 function App() {
   return (
-    <div className="App">
-      <Navbar />
-      <HomepageHero />
-      <LineDivider />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Homepage/>}/>
+        <Route path="/training" element={<Training/>}/>
+        <Route path="/tutorials" element={<Tutorials/>}/>
+      </Routes>
+    </Router>
   );
 }
 

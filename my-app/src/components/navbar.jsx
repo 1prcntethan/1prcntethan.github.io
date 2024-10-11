@@ -25,10 +25,10 @@ const Navbar = () => {
           </div>
           <div className="navbar__list">
             <div className="navbar__list--items navbar__list--pink">
-              <Link to = "/" id="nav-item">tutorials</Link>
+              <Link to = "/tutorials" id="nav-item">tutorials</Link>
             </div>
             <div className="navbar__list--items navbar__list--green">
-              <Link to = "/" id="nav-item">training</Link>
+              <Link to = "/training" id="nav-item">training</Link>
             </div>
             <div className="navbar__list--items navbar__list--pink">
               <Link to = "/" id="nav-item">terminology</Link>
