@@ -1,6 +1,6 @@
 import Navbar from "../components/navbar";
 
-export function Training() {
+export function Terminology() {
     return (
         <>
             <Navbar />

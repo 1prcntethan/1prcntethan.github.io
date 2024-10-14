@@ -31,7 +31,7 @@ const Navbar = () => {
               <Link to = "/training" id="nav-item">training</Link>
             </div>
             <div className="navbar__list--items navbar__list--pink">
-              <Link to = "/" id="nav-item">terminology</Link>
+              <Link to = "/terminology" id="nav-item">terminology</Link>
             </div>
             <div className="navbar__list--items navbar__list--green">
               <Link to = "/" id="nav-item">skill tree</Link>

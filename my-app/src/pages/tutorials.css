@@ -1,0 +1,20 @@
+.tutorial-header {
+    padding: 50px 25% 35px;
+    font-size: 20px;
+    font-family: Fira Sans;
+    font-weight: 200;
+}
+
+.skill-list-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 15px 10%;
+}
+
+.skill-list-header {
+    width: 15%;
+    text-align: center;
+    padding: 0 10px;
+    font-size: 20px;
+}
