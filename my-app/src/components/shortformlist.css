@@ -1,0 +1,38 @@
+
+.terms-container {
+    display: flex;
+    flex-direction: row;
+    padding: 2rem;
+    align-self: center;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+}
+
+.terms {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    
+}
+
+.single-term {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    width: 25%;
+}
+
+.term-title {
+    display: flex;
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.term-text {
+    display: flex;
+    color: #cacaca;
+    font-family: Fira Sans;
+    font-weight: 200;
+}

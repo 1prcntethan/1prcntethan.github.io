@@ -1,6 +1,8 @@
 import Navbar from "../components/navbar";
 import "./terminology.css"
 import TermSectionTitle from "../components/terminology-section-title";
+import ShortFormList from "../components/shortformlist";
+import TerminologyList from "../components/terminologylist";
 
 export function Terminology() {
     return (
@@ -10,6 +12,10 @@ export function Terminology() {
                 Calisthenics is a relatively niche sport compared to many others, so there may be terms you are not familiar with. To use the site as effectively as possible, skim over the content here, and feel free to come back if necessary!
             </div>
             <TermSectionTitle title="skill shortform" />
+            <ShortFormList />
+            <TermSectionTitle title="terminology" />
+            <TerminologyList />
+            
         </>
     )
 }
