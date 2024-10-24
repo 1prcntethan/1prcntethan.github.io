@@ -1,31 +1,14 @@
-.intro-block {
-    display: flex;
-    padding: 2rem 3rem;
-    justify-content: center;
-    font-family: Fira Sans;
-    font-weight: 200;
-}
-
-.svg-gradient-container {
-    display: flex;
-    width: auto;
-    justify-content: center;
-    padding: 1rem;
-}
-
-.svg-gradient {
-    display: flex;
-    width: 80%;
-}
 
 .difficulty-hovers-container {
     display: flex;
+    flex-direction: column;
     width: auto;
     justify-content: center;
 }
 
 .difficulty-hovers {
     display: flex;
+    align-self: center;
     width: 75%;
     justify-content: space-between;
 }
@@ -51,11 +34,12 @@
 
 .difficulty-explanation-container {
     display: flex;
-    width: auto;
+    width: 100%;
     justify-content: center;
     background-color: #232323;
     font-family: Fira Sans;
     font-weight: 200;
+    align-self: center;
 }
 
 #difficulty-explanation-F{
@@ -66,87 +50,61 @@
 }
 
 #difficulty-explanation-D{
-    display: none;
+    display: flex;
     flex-direction: row;
     width: 75%;
     padding: 2rem;
 }
 
 #difficulty-explanation-C{
-    display: none;
+    display: flex;
     flex-direction: row;
     width: 75%;
     padding: 2rem;
 }
 
 #difficulty-explanation-B{
-    display: none;
+    display: flex;
     flex-direction: row;
     width: 75%;
     padding: 2rem;
 }
 
 #difficulty-explanation-A{
-    display: none;
+    display: flex;
     flex-direction: row;
     width: 75%;
     padding: 2rem;
 }
 
 #difficulty-explanation-S{
-    display: none;
+    display: flex;
     flex-direction: row;
     width: 75%;
     padding: 2rem;
 }
 
 #difficulty-explanation-SS{
-    display: none;
+    display: flex;
     flex-direction: row;
     width: 75%;
     padding: 2rem;
 }
 
 
-
-#push-up {
-    width: 14vw;
-    height: 14vw;
-    align-self: center;
+.content-container {
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+    font-size: 18px;
 }
 
-#dip {
-    width: 14vw;
-    height: 14vw;
-    align-self: center;
+#title-skill {
+    font-size: 28px;
 }
 
-#pike-pushup {
-    width: 14vw;
-    height: 14vw;
-    align-self: center;
-}
-
-#tuck-pl {
-    width: 14vw;
-    height: 14vw;
-    align-self: center;
-}
-
-#str-pl {
-    width: 14vw;
-    height: 14vw;
-    align-self: center;
-}
-
-#full-pl {
-    width: 14vw;
-    height: 14vw;
-    align-self: center;
-}
-
-#maltese {
-    width: 14vw;
-    height: 14vw;
-    align-self: center;
+.content-svg {
+    display: flex;
+    width: 35%;
+    justify-content: center;
 }
