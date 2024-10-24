@@ -6,7 +6,7 @@ import "./skillhero.css";
 export default function SkillHero(skill) {
     return(
         <div className="skill-hero">
-            <div className="hero-title">
+            <div className="skill-hero-title">
                 {skill.title}
             </div>
             <div className="hero-svg-container">

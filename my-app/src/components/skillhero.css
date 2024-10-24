@@ -11,7 +11,7 @@
 
 }
 
-.hero-title { /*hero title*/
+.skill-hero-title { /*hero title*/
     display: flex;
     flex-direction: row;
     align-self: center;
