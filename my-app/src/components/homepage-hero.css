@@ -8,20 +8,18 @@
 }
 
 .hero-image-column-1 {
-    width: 25%;
+    width: 50%;
     display: flex;
     flex-direction: column;
     padding: 20px;
-
+    align-self: center;
 }
 
-.hero-image-column-2 {
-    width: 25%;
+#hero-svg {
     display: flex;
-    flex-direction: column;
-    padding: 20px;
-
+    width: 80%;
 }
+
 
 .hero-text{
     width: 50%;
