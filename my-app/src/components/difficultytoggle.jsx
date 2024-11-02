@@ -299,8 +299,5 @@ function DifficultyToggle() {
     );
   }
 
-  function DifficultlyF() {
-
-  }
   
   export default DifficultyToggle;

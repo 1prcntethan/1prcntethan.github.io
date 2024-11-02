@@ -1,4 +1,5 @@
 import Navbar from "../../components/navbar";
+import ProgressionChart from "../../components/progressionchart";
 import SkillHero from "../../components/skillhero";
 import SvgDivider from "../../components/svg-divider";
 import "./skillpage.css";
@@ -65,7 +66,10 @@ export function PlancheLean() {
                 </div>
             </div>
             <SvgDivider number="1"/>
-            
+            <ProgressionChart name1="N/A" name2="Push-up" name3="Planche Lean" name4="Psuedo Pushup" name5="Full Planche"  
+            link1="#" link2="/tutorials/pushup" link3="/tutorials/planchelean" link4="#" link5="#"
+            svg1="NA" svg2="push-up" svg3="planche-lean" svg4="psuedo-pu" svg5="full-pl"/>
+            <SvgDivider number="2"/>
         </>
     )
 }
