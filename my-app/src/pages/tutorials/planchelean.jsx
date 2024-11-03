@@ -10,7 +10,7 @@ export function PlancheLean() {
     return (
         <>
             <Navbar />
-            <SkillHero title="planche lean (push)" />
+            <SkillHero title="planche lean (push)" identifier="planche-lean"/>
             <SvgDivider number="0"/>
             <div className="skill-info-container"> 
                 <div className="skill-info">

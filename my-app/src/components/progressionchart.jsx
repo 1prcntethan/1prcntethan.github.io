@@ -9,7 +9,7 @@ export default function ProgressionChart(skill) {
         <>
             <div className="progression-info-container"> 
                 <div className="progression-info">
-                    <div className="section-title">
+                    <div className="skill-section-title">
                         progressions
                     </div>
                     

@@ -1,0 +1,10 @@
+
+.hero-blurb { /*hero caption*/
+    display: flex;
+    flex-direction: row;
+    width: 75%;
+    font-size: 30px;
+    align-self: center;
+    font-family: Fira Sans;
+    font-weight: 200;
+}

@@ -10,7 +10,7 @@ export function Pushup() {
     return (
         <>
             <Navbar />
-            <SkillHero title="push-up (push)" />
+            <SkillHero title="push-up (push)" identifier="push-up"/>
             <SvgDivider number="0"/>
             <div className="skill-info-container"> 
                 <div className="skill-info">

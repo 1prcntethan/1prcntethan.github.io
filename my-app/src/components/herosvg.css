@@ -1,0 +1,16 @@
+
+.hero-svg-container { /*container for hero svg*/
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 50vh;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.hero-svg { /*actual svg in hero styling */
+    display: flex;
+    flex-direction: row;
+    width: 40%;
+    align-self: center;
+}

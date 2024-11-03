@@ -17,29 +17,3 @@
     align-self: center;
     font-size: 48px;
 }
-
-.hero-svg-container { /*container for hero svg*/
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    height: 50vh;
-    justify-content: center;
-    margin-top: 40px;
-}
-
-.hero-svg { /*actual svg in hero styling */
-    display: flex;
-    flex-direction: row;
-    width: 40%;
-    align-self: center;
-}
-
-.hero-blurb { /*hero caption*/
-    display: flex;
-    flex-direction: row;
-    width: 75%;
-    font-size: 30px;
-    align-self: center;
-    font-family: Fira Sans;
-    font-weight: 200;
-}
