@@ -70,6 +70,38 @@ export function Pushup() {
             link1="#" link2="#" link3="/tutorials/pushup" link4="/tutorials/planchelean" link5="#"
             svg1="NA" svg2="" svg3="push-up" svg4="planche-lean" svg5="full-pl"/>
             <SvgDivider number="2"/>
+            <div class="technique-form-container">
+                <div class="technique-form">
+                    <div class="skill-section-title">
+                        technique & form
+                    </div>
+                    <div class="technique-form-content">
+                        <div>
+                            Good Form Cues: 
+                            <ul>
+                            <li>Elbows are relatively close to the body</li>
+                            <li>Chest touches the floor</li>
+                            <li>Body aligned through head, shoulders, hips and legs</li>
+                            <li>Elbows make a ~90 degree angle in the bottom position</li>
+                            <li>Hands facing forward or slightly outward</li>
+                            <li>Hands are (usually) placed shoulder-width apart</li>
+                            </ul>
+                        </div>
+                        <div>
+                            Bad Form Cues: 
+                            <ul>
+                            <li>Flared elbows</li>
+                            <li>Sagging hips</li>
+                            <li>Weak/arched core</li>
+                            <li>Arched body</li>
+                            <li>High hips</li>
+                            </ul>
+                    
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <SvgDivider number="3"/>
         </>
     )
 }

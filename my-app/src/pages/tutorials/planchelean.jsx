@@ -70,6 +70,41 @@ export function PlancheLean() {
             link1="#" link2="/tutorials/pushup" link3="/tutorials/planchelean" link4="#" link5="#"
             svg1="NA" svg2="push-up" svg3="planche-lean" svg4="psuedo-pu" svg5="full-pl"/>
             <SvgDivider number="2"/>
+            <div class="technique-form-container">
+                <div class="technique-form">
+                    <div class="skill-section-title">
+                        technique & form
+                    </div>
+                    <div class="technique-form-content">
+                        <div>
+                            Good Form Cues: 
+                            <ul>
+                            <li>Straight arms & locked elbows</li>
+                            <li>Body aligned through head, shoulders, hips and legs</li>
+                            <li>Scapula is protracted and depressed</li>
+                            <li>Hands turned at a 45 degree angle and elbows facing forward</li>
+                            <li>Hands are placed shoulder-width apart</li>
+                            <li>(Ideally) Posterior pelvic tilt</li>
+                            </ul>
+                        </div>
+                        <div>
+                            Bad Form Cues: 
+                            <ul>
+                            <li>Bent arms</li>
+                            <li>Sagging hips</li>
+                            <li>Weak/retracted scapula</li>
+                            <li>Wrists facing forward</li>
+                            <li>Hands are placed too far/close together</li>
+                            <li>Anterior pelvic tilt</li>
+                            </ul>
+                    
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <SvgDivider number="3"/>
+
+
         </>
     )
 }
