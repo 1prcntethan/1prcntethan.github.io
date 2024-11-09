@@ -100,46 +100,18 @@
     text-decoration: underline;
 }
 
-
-#push-up {
-    width: 7vw;
-    height: 7vw;
-    align-self: center;
-}
-#push-up:hover {
-    cursor: pointer;
-}
-
 #NA {
     width: 7vw;
     height: 7vw;
     align-self: center;
 }
 
-#planche-lean {
+#real-skill {
     width: 7vw;
     height: 7vw;
     align-self: center;
 }
-#planche-lean:hover {
-    cursor: pointer;
-}
-
-#psuedo-pushup {
-    width: 7vw;
-    height: 7vw;
-    align-self: center;
-}
-#psuedo-pushup:hover {
-    cursor: pointer;
-}
-
-#full-pl {
-    width: 7vw;
-    height: 7vw;
-    align-self: center;
-}
-#full-pl:hover {
+#real-skill:hover {
     cursor: pointer;
 }
 

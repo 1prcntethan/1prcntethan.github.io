@@ -6,7 +6,7 @@ export default function TutorialList() {
     return (
         <>
             <div className="skill-list-container">
-                <TutorialItem name="Assisted Push-up" link="/"/>
+                <TutorialItem name="Assisted Push-up" link="/tutorials/assistpu"/>
                 <TutorialItem name="Pike Push-up" link="/"/>
                 <TutorialItem name="Assisted Inverted Row" link="/"/>
                 <TutorialItem name="Deadhang" link="/"/>

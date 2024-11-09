@@ -6,11 +6,11 @@ import "./skillpage.css";
 import { Link } from 'react-router-dom';
 
 
-export function Pushup() {
+export function AssistPu() {
     return (
         <>
             <Navbar />
-            <SkillHero title="push-up (push)" identifier="push-up"/>
+            <SkillHero title="assisted push-up (push)" identifier="assisted-pushup"/>
             <SvgDivider number="0"/>
             <div className="skill-info-container"> 
                 <div className="skill-info">
@@ -23,29 +23,29 @@ export function Pushup() {
                             Skill Difficulty: F
                             </Link>
                             <br />
-                            <p>Targeted Muscles: Tricep, Chest, Core</p>
+                            <p>Targeted Muscles: Chest, Triceps, Core</p>
                             <p>High Strain Areas: Wrists</p>
                         </div>
                         <div className="overview-explanation">
-                            The Push-up is the fundamental exercise for pushing movements later on. When performing this exercise on the floor, consider warming up your wrists, especially if you're a complete beginner. If you can complete a push-up, congrats! That's about 70% of your bodyweight!
+                            The Assisted Push-up is a regression exercise of the regular push-up, and can be done in many ways. Any form of assistance, including less bodyweight, bands, or easier angles can be considered an assisted push-up. Some common exercises include knee-pushups and incline pushups.
                         </div>
                     </div>
             
                     <div className="exercise-instructions-container">
-                        Step-by-Step ~ Push-up
+                        Step-by-Step ~ Assisted Push-up
                         <div className="exercise-instructions">
                             <input id="skill-read-more" type="checkbox" />
                     
                             <div className="skill-instructions">
                                 <p>
                                     <ul>
-                                        <li>Start in a plank position with your hands shoulder-width apart, and hands facing forward or alternatively slightly outward.</li> 
-                                        <li>Ensure your elbows are completely straightened and that your body makes a straight line. </li> 
-                                        <li>Gradually lower your body downward by bending your elbows and tightening your core and chest. </li> 
-                                        <li>Once you feel your chest touch the ground, you can either hold or start pressing back up. </li> 
-                                        <li>To press up, simply push your arms out, straightening the elbows and keeping a straight body alignment. </li> 
+                                        <li>Start in a push-up position with your hands shoulder-width apart, facing forwards and slightly outward.</li> 
+                                        <li>Ensure your body is in a stright line, and that your knees are touching the floor supporting some bodyweight.</li> 
+                                        <li>Gradually lower your body downward, bending the elbows while maintaining a straight line in your body. </li> 
+                                        <li>Once your chest touches the ground, you can either hold or start pressing back up. </li> 
+                                        <li>To press up, simply push your arms out and straighten the elbows. </li> 
                                         <li>During the exercise, it is recommended move slowly and controlled coming down, but be explosive and fast when coming up. </li> 
-                                        <li>This exercise has many different variations and difficulties, depending on where the hands are placed.</li> 
+                                        <li>The described exercise is specifically a knee-pushup. To perform incline pushups, perform the push-up routine with your hands on an elevated surface.</li> 
                                     </ul>
                                 </p>
                                 <label className="read-more-label" for="skill-read-more">Show less</label>
@@ -56,19 +56,19 @@ export function Pushup() {
 
                     <div className="recommended-info">
                         <p>
-                            Recommended Main Exercises: Assisted Push-ups
+                            Recommended Main Exercises: Knee Push-ups, Incline Push-ups
 
                         </p>
                         <p>
-                            Recommended Accessory Exercises: Scapular Pushups, Hollow Body Hold
+                            Recommended Accessory Exercises: Hollow Body Hold, Sit-ups, Wall Push-ups
                         </p>
                     </div>
                 </div>
             </div>
             <SvgDivider number="1"/>
-            <ProgressionChart name1="N/A" name2="Assisted Push-up" name3="Push-up" name4="Planche Lean" name5="Full Planche"  
-            link1="#" link2="/tutorials/assistedpu" link3="/tutorials/pushup" link4="/tutorials/planchelean" link5="#"
-            svg1="NA" svg2="assisted-pushup" svg3="push-up" svg4="planche-lean" svg5="full-pl"/>
+            <ProgressionChart name1="N/A" name2="N/A" name3="Assisted Push-up" name4="Push-up" name5="Full Planche"  
+            link1="#" link2="#" link3="#" link4="/tutorials/pushup" link5="#"
+            svg1="NA" svg2="NA" svg3="assisted-pushup" svg4="push-up" svg5="full-pl"/>
             <SvgDivider number="2"/>
             <div class="technique-form-container">
                 <div class="technique-form">
@@ -79,11 +79,11 @@ export function Pushup() {
                         <div>
                             Good Form Cues: 
                             <ul>
-                            <li>Elbows are relatively close to the body</li>
-                            <li>Chest touches the floor</li>
+                            <li>Elbows are relatively close to body</li>
+                            <li>Chest touches floor</li>
                             <li>Body aligned through head, shoulders, hips and legs</li>
                             <li>Elbows make a ~90 degree angle in the bottom position</li>
-                            <li>Hands facing forward or slightly outward</li>
+                            <li>Hands are facing forward or slightly outward</li>
                             <li>Hands are (usually) placed shoulder-width apart</li>
                             </ul>
                         </div>
@@ -102,6 +102,8 @@ export function Pushup() {
                 </div>
             </div>
             <SvgDivider number="3"/>
+
+
         </>
     )
 }

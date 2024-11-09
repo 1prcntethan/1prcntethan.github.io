@@ -8,6 +8,7 @@ import { Tutorials } from './pages/tutorials';
 import { Terminology } from './pages/terminology';
 import { PlancheLean } from './pages/tutorials/planchelean';
 import { Pushup } from './pages/tutorials/pushup';
+import { AssistPu } from './pages/tutorials/assistpu';
 
 
 function App() {
@@ -21,8 +22,8 @@ function App() {
 
 
         <Route path="/tutorials/planchelean" element={<PlancheLean/>}/>
-
         <Route path="/tutorials/pushup" element={<Pushup/>}/>
+        <Route path="/tutorials/assistpu" element={<AssistPu/>}/>
         
       </Routes>
     </Router>
