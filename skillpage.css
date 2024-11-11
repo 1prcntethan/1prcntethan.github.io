@@ -297,13 +297,13 @@ body::-webkit-scrollbar-track-piece {
 /*styling for the skill icons*/
 /* I guess you can just keep adding more and more skills while keeping same css doc*/
 
+#primary-color { background-color: #b66da3;} 
+#alt-color { background-color: #9151A6;} /* colors for bottom divider ^^ */
 
 
 .divider {
     width: 100%;
 }
-#primary-color { background-color: #b66da3;} 
-#alt-color { background-color: #9151A6;} /* colors for bottom divider ^^ */
 
 .svg-divider {
     display: flex;
