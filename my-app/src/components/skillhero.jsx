@@ -1,8 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import "./skillhero.css";
 import HeroSvg from './herosvg';
-import HeroBlurb from './heroblurb';
+import HeroBlurb from './heroblurb.jsx';
+import { heroSvg } from '../utilites/herosvg.js';
 
 
 export default function SkillHero(skill) {
@@ -12,6 +12,7 @@ export default function SkillHero(skill) {
                 {skill.title}
             </div>
             <HeroSvg identifier={skill.identifier}/>
+            {/* {heroSvg.get(skill.identifier)} */}
             
             <HeroBlurb identifier={skill.identifier}/>
             
