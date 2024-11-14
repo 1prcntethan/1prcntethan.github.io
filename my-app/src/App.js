@@ -23,7 +23,7 @@ function App() {
 
         <Route path="/tutorials/planchelean" element={<PlancheLean/>}/>
         <Route path="/tutorials/pushup" element={<Pushup/>}/>
-        <Route path="/tutorials/assistpu" element={<AssistPu/>}/>
+        <Route path="/tutorials/assistedpu" element={<AssistPu/>}/>
         
       </Routes>
     </Router>
