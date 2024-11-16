@@ -1,9 +1,9 @@
 import Navbar from "../../components/navbar";
 import ProgressionChart from "../../components/progressionchart";
 import SkillHero from "../../components/skillhero";
-import SvgDivider from "../../components/svg-divider";
 import "./skillpage.css";
 import { Link } from 'react-router-dom';
+import { svgDivider } from "../../utilites/svg-divider";
 
 
 export function Pushup() {
@@ -11,7 +11,7 @@ export function Pushup() {
         <>
             <Navbar />
             <SkillHero title="push-up (push)" identifier="push-up"/>
-            <SvgDivider number="0"/>
+            {svgDivider.get("0")}
             <div className="skill-info-container"> 
                 <div className="skill-info">
                     <div className="skill-section-title">
@@ -65,11 +65,11 @@ export function Pushup() {
                     </div>
                 </div>
             </div>
-            <SvgDivider number="1"/>
+            {svgDivider.get("1")}
             <ProgressionChart name1="N/A" name2="Assisted Push-up" name3="Push-up" name4="Planche Lean" name5="Full Planche"  
             link1="#" link2="/tutorials/assistedpu" link3="/tutorials/pushup" link4="/tutorials/planchelean" link5="#"
             svg1="NA" svg2="assisted-pushup" svg3="push-up" svg4="planche-lean" svg5="full-pl"/>
-            <SvgDivider number="2"/>
+            {svgDivider.get("2")}
             <div class="technique-form-container">
                 <div class="technique-form">
                     <div class="skill-section-title">
@@ -101,7 +101,7 @@ export function Pushup() {
                     </div>
                 </div>
             </div>
-            <SvgDivider number="3"/>
+            {svgDivider.get("3")}
         </>
     )
 }

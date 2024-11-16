@@ -1,9 +1,9 @@
 import Navbar from "../../components/navbar";
 import ProgressionChart from "../../components/progressionchart";
 import SkillHero from "../../components/skillhero";
-import SvgDivider from "../../components/svg-divider";
 import "./skillpage.css";
 import { Link } from 'react-router-dom';
+import { svgDivider } from "../../utilites/svg-divider";
 
 
 export function PlancheLean() {
@@ -11,7 +11,7 @@ export function PlancheLean() {
         <>
             <Navbar />
             <SkillHero title="planche lean (push)" identifier="planche-lean"/>
-            <SvgDivider number="0"/>
+            {svgDivider.get("0")}
             <div className="skill-info-container"> 
                 <div className="skill-info">
                     <div className="skill-section-title">
@@ -65,11 +65,11 @@ export function PlancheLean() {
                     </div>
                 </div>
             </div>
-            <SvgDivider number="1"/>
+            {svgDivider.get("1")}
             <ProgressionChart name1="N/A" name2="Push-up" name3="Planche Lean" name4="Psuedo Pushup" name5="Full Planche"  
             link1="#" link2="/tutorials/pushup" link3="/tutorials/planchelean" link4="#" link5="#"
             svg1="NA" svg2="push-up" svg3="planche-lean" svg4="psuedo-pu" svg5="full-pl"/>
-            <SvgDivider number="2"/>
+            {svgDivider.get("2")}
             <div class="technique-form-container">
                 <div class="technique-form">
                     <div class="skill-section-title">
@@ -102,7 +102,7 @@ export function PlancheLean() {
                     </div>
                 </div>
             </div>
-            <SvgDivider number="3"/>
+            {svgDivider.get("3")}
 
 
         </>
