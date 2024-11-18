@@ -1,10 +1,43 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import "./tutorial-list.css";
+import { useState } from 'react';
 
 export default function TutorialList() {
+
+    const [title, setTitle] = useState("assisted pushup")
+    // const [img, setImg] = useState(img.get(2))
+
+
     return (
-        <>
+        <> 
+            
+            <div className="catergory-title">horizontal push</div>
+            <div className="catergory-container">
+                <div className="buttons-container">
+                    <button onClick={() => {setTitle("assisted pushup")}}className="skill-button">Assisted Pushup</button>
+                    <button onClick={() => {setTitle("pushup")}} className="skill-button">Pushup</button>
+                    <button onClick={() => {setTitle("psuedo pushup")}} className="skill-button">Psuedo Pushup</button>
+                    
+                </div>
+                <div className="skill-content">
+                    <div className="skill-content--left">
+                        <div className="skill-content--title">{title}</div>
+                        <br/>
+                        <br/>
+                        image
+                    </div>
+                    <div className="skill-content--right">
+                        Skill Difficulty: F 
+                        <br/>
+                        <br/>
+                        Time to learn: 2 weeks
+                    </div>
+
+                </div>
+            </div>
+
+
             <div className="skill-list-container">
                 <TutorialItem name="Assisted Push-up" link="/tutorials/assistedpu"/>
                 <TutorialItem name="Pike Push-up" link="/"/>

@@ -1,3 +1,120 @@
+.catergory-title {
+    display:flex;
+    font-size: 28px;
+    padding: 20px;
+    justify-content: center;
+    align-self: center;
+}
+
+.catergory-container {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 5%;
+    width: 90%
+    
+}
+
+.buttons-container {
+    display: flex;
+    flex-direction: row;
+    font-size: 20px;
+    padding: 20px;
+    justify-content: space-evenly;
+
+}
+
+.skill-button {
+    display: flex;
+    border: solid;
+    text-align: center;
+    border-color: #565656;
+    background-color: #1B1B1B;
+    color: white;
+    font-size: 18px;
+    font-family: Fira Sans;
+    padding: 8px;
+}
+
+.skill-button:hover {
+    background-color: #2E252C;
+    transition-property: all;
+    transition-duration: 500ms;
+    cursor: pointer;
+}
+
+.skill-content {
+    display: none;
+    padding: 25px 5%;
+    flex-direction: row;
+    width: 90%;
+    border: solid 1px rgb(128, 128, 128); 
+    border-left: none;
+    border-right: none;
+}
+
+.skill-content--left {
+    display: flex;
+    width: 40%;
+    padding: 0 5%;
+
+}
+
+.skill-content--right {
+    display: flex;
+    width: 40%;
+    padding: 0 5%;
+    font-family: Fira Sans;
+}
+
+.skill-content--title {
+    font-size: 24px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .skill-list-container {
     display: flex;
