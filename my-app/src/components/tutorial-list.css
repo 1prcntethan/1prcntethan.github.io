@@ -20,19 +20,23 @@
     font-size: 20px;
     padding: 20px;
     justify-content: space-evenly;
+    text-align: center;
 
 }
 
 .skill-button {
-    display: flex;
     border: solid;
-    text-align: center;
     border-color: #565656;
     background-color: #1B1B1B;
     color: white;
     font-size: 18px;
     font-family: Fira Sans;
+    font-weight: 200;
+    width: 14%;
     padding: 8px;
+    cursor: pointer;
+    text-align: center;
+
 }
 
 .skill-button:hover {
@@ -43,7 +47,7 @@
 }
 
 .skill-content {
-    display: none;
+    display: flex;
     padding: 25px 5%;
     flex-direction: row;
     width: 90%;
@@ -54,6 +58,7 @@
 
 .skill-content--left {
     display: flex;
+    flex-direction: column;
     width: 40%;
     padding: 0 5%;
 
@@ -64,6 +69,7 @@
     width: 40%;
     padding: 0 5%;
     font-family: Fira Sans;
+    font-weight: 200;
 }
 
 .skill-content--title {
