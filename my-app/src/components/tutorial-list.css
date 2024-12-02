@@ -1,6 +1,6 @@
 .catergory-title {
     display:flex;
-    font-size: 28px;
+    font-size: 32px;
     padding: 20px;
     justify-content: center;
     align-self: center;
@@ -61,7 +61,6 @@
     flex-direction: column;
     width: 40%;
     padding: 0 5%;
-
 }
 
 .skill-content--right {
@@ -70,10 +69,11 @@
     padding: 0 5%;
     font-family: Fira Sans;
     font-weight: 200;
+    font-size: 20px;
 }
 
 .skill-content--title {
-    font-size: 24px;
+    font-size: 28px;
 }
 
 

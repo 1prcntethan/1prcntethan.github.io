@@ -1,0 +1,86 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import "./tutorial-list.css";
+import { useState } from 'react';
+import { skillTitle } from '../utilites/skilltitles';
+import { skillDiff } from '../utilites/skilldifficulties';
+import { skillTime } from '../utilites/skilltime';
+
+export default function TutorialListL() {
+
+    const [title, setTitle] = useState(null);
+
+    const [activeRow, setActiveRow] = useState("");
+    // const [img, setImg] = useState(img.get(2))
+
+    const rowButtons= [
+        ["Bodyweight Squat", "Split Squat", "Assisted Pistol Squat", "Bulgarian Split Squat", "Assisted Shrimp Squat"],
+        ["Sissy Squat", "Pistol Squat", "Shrimp Squat", "Dragon Squat", "Dragon Pistol Squat"],
+    ];
+
+
+    const handleRowClick = (index, buttonTitle) => {
+        // if (activeRow === index) {
+        //     // Toggle off if the same row is clicked again
+        //     setActiveRow(null);
+        // } else 
+        {
+            // Set the active row and title
+            setActiveRow(index);
+            setTitle(buttonTitle);
+        }
+    };
+
+    const handleOutsideClick = () => {
+        setActiveRow(null); // Close dropdown when clicked outside
+    };
+
+
+
+    return (
+        <> 
+            <div className="catergory-title">legs</div>
+            <div className="catergory-container">
+            {rowButtons.map((row, rowIndex) => (
+                <>
+                <div key={rowIndex} className="buttons-container">
+                    {row.map((buttonTitle, buttonIndex) => (
+                        <button 
+                            key={buttonIndex} 
+                            className="skill-button" 
+                            onClick={(e) => {
+                                e.stopPropagation(); 
+                                handleRowClick(rowIndex, buttonTitle);    
+                            }}
+                        >
+                            {buttonTitle}
+                        </button>
+                    ))}
+                    
+
+                </div>
+                <div>
+                {activeRow === rowIndex && (
+                        <div className="skill-content">
+                            <div className="skill-content--left">
+                                <div className="skill-content--title">{skillTitle.get(title)}</div>
+                                <br />
+                                <br />
+                                image
+                            </div>
+                            <div className="skill-content--right">
+                                Skill Difficulty: {skillDiff.get(title)}
+                                <br />
+                                <br />
+                                Time to learn: {skillTime.get(title)}
+                            </div>
+                        </div>
+                    )}
+
+                </div>
+                </>
+            ))}
+            </div>
+        </>
+    )
+}
