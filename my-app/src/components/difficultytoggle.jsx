@@ -20,7 +20,7 @@ function DifficultyToggle() {
                     </p>
                     Exercises at this level are accessible for almost everyone, and they serve as a starting point for people starting calisthenics from absolute 0. (No previous athletic experience).
                     <p>
-                        Skills in this catergory: Push-ups, Rows
+                        Skills in this catergory: Push-ups, Inverted Rows
                     </p>
                 </div>
                 <div class="content-svg">

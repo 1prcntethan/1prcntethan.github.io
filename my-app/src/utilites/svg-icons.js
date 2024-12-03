@@ -1,4 +1,3 @@
-
 export const svgIcon = new Map([
   [
     "NA",
