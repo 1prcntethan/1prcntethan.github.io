@@ -54,4 +54,18 @@ export const skillTime = new Map([
   ["Front Lever Touch", "1-2 years"],
 
   //HORIZONTAL PULL SKILLS ^^
+
+  ["Deadhang", "1-2 weeks"],
+  ["Active Hang", "2-4 weeks"],
+  ["Assisted Pull-up", "2-4 weeks"],
+  ["Pull-up", "3-5 weeks"],
+  ["Chest Pull-up", "2-6 months"],
+  ["Waist Pull-up", "4-12 months"],
+  ["Muscle-Up", "6-18 months"],
+  ["Archer Pull-up", "12-18 months"],
+  ["Assisted OAC", "1-2 years"],
+  ["Assisted OAP", "1-2 years"],
+  ["OAC/OAP", "1-2 years"],
+
+  //VERTICAL PULL SKILLS ^^
 ]);

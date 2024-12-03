@@ -54,4 +54,18 @@ export const skillDiff = new Map([
   ["Front Lever Touch", "S"],
 
   // HORIZONTAL PULL SKILLS^^^
+
+  ["Deadhang", "F"],
+  ["Active Hang", "F"],
+  ["Assisted Pull-up", "D"],
+  ["Pull-up", "D"],
+  ["Chest Pull-up", "C"],
+  ["Waist Pull-up", "B"],
+  ["Muscle-Up", "B"],
+  ["Archer Pull-up", "B"],
+  ["Assisted OAC", "A"],
+  ["Assisted OAP", "A"],
+  ["OAC/OAP", "A"],
+
+  //VERTICAL PULL SKILLS ^^
 ]);

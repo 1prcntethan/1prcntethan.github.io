@@ -282,7 +282,6 @@ function DifficultyToggle() {
           <button id="D-difficulty" style={{ backgroundColor: activeDifficulty === 'A' ? '#232323' : '#1B1B1B' }} onClick={() => handleDifficultyClick('A')}>A</button>
           <button id="C-difficulty" style={{ backgroundColor: activeDifficulty === 'S' ? '#232323' : '#1B1B1B' }} onClick={() => handleDifficultyClick('S')}>S</button>
           <button id="C-difficulty" style={{ backgroundColor: activeDifficulty === 'SS' ? '#232323' : '#1B1B1B' }} onClick={() => handleDifficultyClick('SS')}>SS</button>
-          {/* Add more buttons for other difficulty levels */}
         </div>
         <div className="difficulty-explanation-container">
           {renderDifficultyContentF()}
@@ -293,7 +292,6 @@ function DifficultyToggle() {
           {renderDifficultyContentS()}
           {renderDifficultyContentSS()}
 
-          {/* Add content for other difficulty levels */}
         </div>
       </div>
     );

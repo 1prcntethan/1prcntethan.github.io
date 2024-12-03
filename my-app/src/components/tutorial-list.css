@@ -2,7 +2,8 @@
     display:flex;
     font-size: 32px;
     padding: 20px;
-    justify-content: center;
+    padding-left: 10%;
+    justify-content: left;
     align-self: center;
 }
 
@@ -48,25 +49,26 @@
 
 .skill-content {
     display: flex;
-    padding: 25px 5%;
+    padding: 25px 0;
     flex-direction: row;
     width: 90%;
     border: solid 1px rgb(128, 128, 128); 
     border-left: none;
     border-right: none;
+    justify-self: center;
 }
 
 .skill-content--left {
     display: flex;
     flex-direction: column;
     width: 40%;
-    padding: 0 5%;
+    padding: 0 2%;
 }
 
 .skill-content--right {
     display: flex;
     width: 40%;
-    padding: 0 5%;
+    padding: 0 2%;
     font-family: Fira Sans;
     font-weight: 200;
     font-size: 20px;
@@ -76,7 +78,32 @@
     font-size: 28px;
 }
 
+.skill-content--close {
+    margin-left: 8%;
+    background-color: #333333;
+    border: none;
+    border-radius: 5px;
+}
+.skill-content--close:hover {
+    margin-left: 8%;
+    background-color: #414141;
+    border: none;
+    transition: all 500ms;
+}
+.skill-content--close__button{
+    align-self: center;
+    margin-bottom: 4px;
+    height: 50px;
+    color: white;
+}
 
+.skill-content--close__button:after {
+    display: block;
+    content: "\00d7";
+    font-size: 50px;
+    font-weight: 1;
+
+}
 
 
 

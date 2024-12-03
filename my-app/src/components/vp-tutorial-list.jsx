@@ -75,6 +75,9 @@ export default function TutorialListVP() {
                                 <br />
                                 Time to learn: {skillTime.get(title)}
                             </div>
+                            <button className="skill-content--close" onClick={handleOutsideClick}>
+                                <div className="skill-content--close__button"></div>
+                            </button>
                         </div>
                     )}
 

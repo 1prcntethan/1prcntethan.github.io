@@ -54,4 +54,17 @@ export const skillTitle = new Map([
   ["Front Lever Touch", "front lever touch"],
 
   // HORIZONTAL PULL SKILLS^^^
+  ["Deadhang", "deadhang"],
+  ["Active Hang", "active hang"],
+  ["Assisted Pull-up", "assisted pull-up"],
+  ["Pull-up", "pull-up"],
+  ["Chest Pull-up", "chest pull-up"],
+  ["Waist Pull-up", "waist pull-up"],
+  ["Muscle-Up", "muscle-up"],
+  ["Archer Pull-up", "archer pull-up"],
+  ["Assisted OAC", "assisted oac"],
+  ["Assisted OAP", "assisted oap"],
+  ["OAC/OAP", "oac/oap"],
+
+  //VERTICAL PULL SKILLS ^^
 ]);
