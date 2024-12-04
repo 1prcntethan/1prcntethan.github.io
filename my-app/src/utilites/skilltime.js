@@ -68,4 +68,17 @@ export const skillTime = new Map([
   ["OAC/OAP", "1-2 years"],
 
   //VERTICAL PULL SKILLS ^^
+
+  ["Bodyweight Squat", "1-2 weeks"],
+  ["Split Squat", "1-2 weeks"],
+  ["Assisted Pistol Squat", "1-4 months"],
+  ["Bulgarian Split Squat", "1-4 months"],
+  ["Assisted Shrimp Squat", "2-6 months"],
+  ["Sissy Squat", "4-8 months"],
+  ["Pistol Squat", "6-12 months"],
+  ["Shrimp Squat", "6-12 months"],
+  ["Dragon Squat", "9-12 months"],
+  ["Dragon Pistol Squat", "9-15 months"],
+
+  //LEG SKILLS ^^^
 ]);

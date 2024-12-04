@@ -54,6 +54,7 @@ export const skillTitle = new Map([
   ["Front Lever Touch", "front lever touch"],
 
   // HORIZONTAL PULL SKILLS^^^
+
   ["Deadhang", "deadhang"],
   ["Active Hang", "active hang"],
   ["Assisted Pull-up", "assisted pull-up"],
@@ -67,4 +68,17 @@ export const skillTitle = new Map([
   ["OAC/OAP", "oac/oap"],
 
   //VERTICAL PULL SKILLS ^^
+
+  ["Bodyweight Squat", "bodyweight squat"],
+  ["Split Squat", "split squat"],
+  ["Assisted Pistol Squat", "assisted pistol squat"],
+  ["Bulgarian Split Squat", "bulgarian split squat"],
+  ["Assisted Shrimp Squat", "assisted shrimp squat"],
+  ["Sissy Squat", "sissy squat"],
+  ["Pistol Squat", "pistol squat"],
+  ["Shrimp Squat", "shrimp squat"],
+  ["Dragon Squat", "dragon squat"],
+  ["Dragon Pistol Squat", "dragon pistol squat"],
+
+  //LEG SKILLS ^^^
 ]);

@@ -68,4 +68,17 @@ export const skillDiff = new Map([
   ["OAC/OAP", "A"],
 
   //VERTICAL PULL SKILLS ^^
+
+  ["Bodyweight Squat", "F"],
+  ["Split Squat", "F"],
+  ["Assisted Pistol Squat", "D"],
+  ["Bulgarian Split Squat", "D"],
+  ["Assisted Shrimp Squat", "C"],
+  ["Sissy Squat", "C"],
+  ["Pistol Squat", "C"],
+  ["Shrimp Squat", "B"],
+  ["Dragon Squat", "B"],
+  ["Dragon Pistol Squat", "B"],
+
+  //LEG SKILLS ^^^
 ]);
