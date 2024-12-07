@@ -31,9 +31,14 @@ export default function TutorialListL() {
         }
     };
 
-    const handleOutsideClick = () => {
-        setActiveRow(null); // Close dropdown when clicked outside
-    };
+    const handleOutsideClick = (dropRef) => {
+        if (dropRef) {
+          dropRef.classList.add("hidden");
+          setTimeout(() => {
+            setActiveRow(null);
+          }, 800);
+        }
+      };
 
 
 
@@ -60,24 +65,45 @@ export default function TutorialListL() {
 
                 </div>
                 <div>
-                {activeRow === rowIndex && (
-                        <div className="skill-content">
-                            <div className="skill-content--left">
-                                <div className="skill-content--title">{skillTitle.get(title)}</div>
-                                <br />
-                                <br />
-                                image
-                            </div>
-                            <div className="skill-content--right">
-                                Skill Difficulty: {skillDiff.get(title)}
-                                <br />
-                                <br />
-                                Time to learn: {skillTime.get(title)}
-                            </div>
-                        </div>
-                    )}
-
+              {activeRow === rowIndex && (
+                <div
+                  id="legs"
+                  className="skill-content hidden"
+                  ref={(drop) => {
+                    if (activeRow === rowIndex && drop) {
+                      setTimeout(() => {
+                        drop.classList.remove("hidden");
+                      }, 10);
+                    }
+                  }}
+                >
+                  <div className="skill-content--left">
+                    <div className="skill-content--title">
+                      {skillTitle.get(title)}
+                    </div>
+                    <br />
+                    <br />
+                    image
+                  </div>
+                  <div className="skill-content--right">
+                    Skill Difficulty: {skillDiff.get(title)}
+                    <br />
+                    <br />
+                    Time to learn: {skillTime.get(title)}
+                  </div>
+                  <button
+                    className="skill-content--close"
+                    onClick={() =>
+                      handleOutsideClick(
+                        document.querySelector("#legs")
+                      )
+                    }
+                  >
+                    <div className="skill-content--close__button"></div>
+                  </button>
                 </div>
+              )}
+            </div>
                 </>
             ))}
             </div>

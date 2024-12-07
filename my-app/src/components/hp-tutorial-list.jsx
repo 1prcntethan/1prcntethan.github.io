@@ -1,94 +1,128 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 import "./tutorial-list.css";
-import { useState } from 'react';
-import { skillTitle } from '../utilites/skilltitles';
-import { skillDiff } from '../utilites/skilldifficulties';
-import { skillTime } from '../utilites/skilltime';
+import { useState } from "react";
+import { skillTitle } from "../utilites/skilltitles";
+import { skillDiff } from "../utilites/skilldifficulties";
+import { skillTime } from "../utilites/skilltime";
 
 export default function TutorialListHP() {
+  const [title, setTitle] = useState(null);
 
-    const [title, setTitle] = useState(null);
+  const [activeRow, setActiveRow] = useState("");
+  // const [img, setImg] = useState(img.get(2))
 
-    const [activeRow, setActiveRow] = useState("");
-    // const [img, setImg] = useState(img.get(2))
+  const rowButtons = [
+    ["Assisted Push-up", "Push-up", "Dip", "Elbow Lever", "Planche Lean"],
+    [
+      "Psuedo Push-up",
+      "Tuck Planche",
+      "Tuck Planche PU",
+      "Adv. Tuck Planche",
+      "Adv. Tuck Planche PU",
+    ],
+    [
+      "90 Degree Hold",
+      "Back Lever",
+      "Super Adv. Tuck Planche",
+      "Straddle Planche",
+      "Straddle Planche PU",
+    ],
+    [
+      "Half Lay Planche",
+      "Full Planche",
+      "Full Planche PU",
+      "One Arm Planche",
+      "??????",
+    ],
+  ];
 
-    const rowButtons= [
-        ["Assisted Push-up", "Push-up", "Dip", "Elbow Lever", "Planche Lean"],
-        ["Psuedo Push-up", "Tuck Planche", "Tuck Planche PU", "Adv. Tuck Planche", "Adv. Tuck Planche PU"],
-        ["90 Degree Hold", "Back Lever", "Super Adv. Tuck Planche", "Straddle Planche", "Straddle Planche PU"],
-        ["Half Lay Planche", "Full Planche", "Full Planche PU", "One Arm Planche", "??????"],
-    ];
+  const handleRowClick = (index, buttonTitle) => {
+    // if (activeRow === index) {
+    //     // Toggle off if the same row is clicked again
+    //     setActiveRow(null);
+    // } else
+    {
+      // Set the active row and title
+      setActiveRow(index);
+      setTitle(buttonTitle);
+    }
+  };
 
+  const handleOutsideClick = (dropRef) => {
+    if (dropRef) {
+      dropRef.classList.add("hidden");
+      setTimeout(() => {
+        setActiveRow(null);
+      }, 800);
+    }
+  };
 
-    const handleRowClick = (index, buttonTitle) => {
-        // if (activeRow === index) {
-        //     // Toggle off if the same row is clicked again
-        //     setActiveRow(null);
-        // } else 
-        {
-            // Set the active row and title
-            setActiveRow(index);
-            setTitle(buttonTitle);
-        }
-    };
-
-    const handleOutsideClick = () => {
-        setActiveRow(null); // Close dropdown when clicked outside
-    };
-
-
-
-    return (
-        <> 
-            <div className="catergory-title">horizontal push</div>
-            <div className="catergory-container">
-            {rowButtons.map((row, rowIndex) => (
-                <>
-                <div key={rowIndex} className="buttons-container">
-                    {row.map((buttonTitle, buttonIndex) => (
-                        <button 
-                            key={buttonIndex} 
-                            className="skill-button" 
-                            onClick={(e) => {
-                                e.stopPropagation(); 
-                                handleRowClick(rowIndex, buttonTitle);    
-                            }}
-                        >
-                            {buttonTitle}
-                        </button>
-                    ))}
-                    
-
-                </div>
-                <div>
-                {activeRow === rowIndex && (
-                        <div className="skill-content">
-                            <div className="skill-content--left">
-                                <div className="skill-content--title">{skillTitle.get(title)}</div>
-                                <br />
-                                <br />
-                                image
-                            </div>
-                            <div className="skill-content--right">
-                                Skill Difficulty: {skillDiff.get(title)}
-                                <br />
-                                <br />
-                                Time to learn: {skillTime.get(title)}
-                            </div>
-                            <button className="skill-content--close" onClick={handleOutsideClick}>
-                                <div className="skill-content--close__button"></div>
-                            </button>
-                            
-                        </div>
-                    )}
-
-                </div>
-                </>
-            ))}
+  return (
+    <>
+      <div className="catergory-title">horizontal push</div>
+      <div className="catergory-container">
+        {rowButtons.map((row, rowIndex) => (
+          <>
+            <div key={rowIndex} className="buttons-container">
+              {row.map((buttonTitle, buttonIndex) => (
+                <button
+                  key={buttonIndex}
+                  className="skill-button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handleRowClick(rowIndex, buttonTitle);
+                  }}
+                >
+                  {buttonTitle}
+                </button>
+              ))}
             </div>
-            
-            {/* <div className="catergory-title">horizontal push</div>
+            <div>
+              {activeRow === rowIndex && (
+                <div
+                  id="hp"
+                  className="skill-content hidden"
+                  ref={(drop) => {
+                    if (activeRow === rowIndex && drop) {
+                      setTimeout(() => {
+                        drop.classList.remove("hidden");
+                      }, 10);
+                    }
+                  }}
+                >
+                  <div className="skill-content--left">
+                    <div className="skill-content--title">
+                      {skillTitle.get(title)}
+                    </div>
+                    <br />
+                    <br />
+                    image
+                  </div>
+                  <div className="skill-content--right">
+                    Skill Difficulty: {skillDiff.get(title)}
+                    <br />
+                    <br />
+                    Time to learn: {skillTime.get(title)}
+                  </div>
+                  <button
+                    className="skill-content--close"
+                    onClick={() =>
+                      handleOutsideClick(
+                        document.querySelector("#hp")
+                      )
+                    }
+                  >
+                    <div className="skill-content--close__button"></div>
+                  </button>
+                </div>
+              )}
+            </div>
+          </>
+        ))}
+      </div>
+
+      {/* <div className="catergory-title">horizontal push</div>
             <div className="catergory-container">
                 <div className="buttons-container">
                     <button onClick={() => {setTitle("assisted pushup")}}className="skill-button">Assisted Pushup</button>
@@ -134,8 +168,6 @@ export default function TutorialListHP() {
 
                 </div>
             </div> */}
-
-            
-       </>
-    )
+    </>
+  );
 }
