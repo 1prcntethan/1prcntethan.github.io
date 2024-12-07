@@ -5,6 +5,7 @@ import "./homepage-hero.css";
 const HomepageHero = () => {
     return(
         <div className="hero">
+          <div className="hero-gradient"></div>
           <div className="hero-image-column-1"> 
             <svg id="hero-svg" viewBox="0 0 1430 1058" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M1139.11 378.595C1128.76 370.953 1134.39 354.528 1147.25 354.838V354.838C1148.3 354.864 1149.35 355.015 1150.37 355.29L1249.94 382.177L1361.57 422.961L1425.31 455.029C1428.86 456.815 1430.54 460.947 1429.25 464.706V464.706C1427.97 468.465 1424.1 470.696 1420.2 469.931L1350.19 456.185L1237 419.958L1141.85 380.148C1140.88 379.742 1139.96 379.22 1139.11 378.595V378.595Z" fill="#838383"/>
@@ -570,12 +571,33 @@ const HomepageHero = () => {
             </svg>
           </div>
           <div className="hero-text">
+            master calisthenics with 
+            
             <div className="hero-title">
-              Welcome to Wings.
+              W i n g s.
             </div> 
-            <p className="hero-caption">Find all the calisthenics information you need in one place! Begin your calisthenics journey and achieve the skill of your dreams!</p>
+
+            <p className="hero-caption">The ultimate guide to building strength, mastering skills, and unlocking your potential.</p>
+
+            <div className="hero-caption">Start your journey today!</div>
+
+            <svg className="cta-svg" width="415" height="142" viewBox="0 0 415 142" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <line x1="208.5" x2="208.5" y2="48" stroke="white"/>
+              <path d="M208.179 47.4541L408.5 93.9617" stroke="white"/>
+              <path d="M6.5 93.3574L209 47.4339" stroke="white"/>
+              <line x1="408.5" y1="94" x2="408.5" y2="142" stroke="white"/>
+              <line x1="6.5" y1="93" x2="6.5" y2="141" stroke="white"/>
+              <path d="M6.5 142L0.00480938 130.75H12.9952L6.5 142Z" fill="white"/>
+              <path d="M408.5 142L402.005 130.75H414.995L408.5 142Z" fill="white"/>
+            </svg>
+
+
+            <div className="hero-cta">
+              <div className="hero-cta-button-1">I'm new!</div>
+              <div className="hero-cta-button-2">I'm experienced!</div>
+            </div>
           </div>
-          
+
         </div>
     )
 }
