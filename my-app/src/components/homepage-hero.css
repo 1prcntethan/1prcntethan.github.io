@@ -9,14 +9,15 @@
 .hero-gradient {
     position: absolute;
     background: radial-gradient(circle at center, white 0%, #87b382 25%, #6d6d6d 35%,  #5f4e5d 45% ,#1b1b1b 70%);
+
     opacity: 0.3;
     width: 40vw;
     height: 80vh;
     top: 12%;
     left: 5%;
-
     z-index: -1;
 }
+
 
 .hero-image-column-1 {
     width: 50%;
@@ -29,6 +30,25 @@
 #hero-svg {
     display: flex;
     width: 90%;
+    transition: all;
+}
+
+#hero-svg {
+    animation: float 4s ease-in-out infinite ;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
 }
 
 
@@ -44,6 +64,25 @@
     margin-top: 40px;
     font-size: 80px;
     font-weight: bold;
+    animation: glow 5s ease-in-out infinite;
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+    25% {
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    }
+    50% {
+        text-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+    }
+    75% {
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    }
+    100% {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    }
 }
 
 

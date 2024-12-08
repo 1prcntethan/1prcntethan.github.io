@@ -5,6 +5,8 @@
     padding: 0.5rem 20px;
     justify-content: space-between;
     height: 62px;
+
+    scroll-snap-align: start;
 }
 
 .navbar__logo {
