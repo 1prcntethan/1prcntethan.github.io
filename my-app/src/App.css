@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
 
 html {
-    scroll-behavior: smooth;
     font-family: Major Mono Display;
     margin: 0 0;
 }

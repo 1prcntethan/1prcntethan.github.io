@@ -5,6 +5,7 @@ import { useState } from "react";
 import { skillTitle } from "../utilites/skilltitles";
 import { skillDiff } from "../utilites/skilldifficulties";
 import { skillTime } from "../utilites/skilltime";
+import { skillLinks } from "../utilites/skillLinks";
 
 export default function TutorialListHP() {
   const [title, setTitle] = useState(null);
@@ -93,7 +94,7 @@ export default function TutorialListHP() {
                 >
                   <div className="skill-content--left">
                     <div className="skill-content--title">
-                      {skillTitle.get(title)}
+                      <Link to = {skillLinks.get(title)} className="skill-content--link"> {skillTitle.get(title)} </Link>
                     </div>
                     <br />
                     <br />
