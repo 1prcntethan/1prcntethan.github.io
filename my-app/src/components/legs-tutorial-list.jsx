@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { skillTitle } from '../utilites/skilltitles';
 import { skillDiff } from '../utilites/skilldifficulties';
 import { skillTime } from '../utilites/skilltime';
+import { skillLinks } from '../utilites/skillLinks';
 
 export default function TutorialListL() {
 
@@ -44,7 +45,12 @@ export default function TutorialListL() {
 
     return (
         <> 
-            <div className="catergory-title">legs</div>
+            <div className="catergory-title">
+              legs
+              <div className="catergory-blurb">
+                Leg skills in calisthenics are mainly squats and their variations. These exercises typically target the quads, hamstrings, glutes, and calves.
+              </div>
+            </div>
             <div className="catergory-container">
             {rowButtons.map((row, rowIndex) => (
                 <>
@@ -79,7 +85,7 @@ export default function TutorialListL() {
                 >
                   <div className="skill-content--left">
                     <div className="skill-content--title">
-                      {skillTitle.get(title)}
+                      <Link to = {skillLinks.get(title)} className="skill-content--link"> {skillTitle.get(title)} </Link>
                     </div>
                     <br />
                     <br />

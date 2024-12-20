@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { skillTitle } from '../utilites/skilltitles';
 import { skillDiff } from '../utilites/skilldifficulties';
 import { skillTime } from '../utilites/skilltime';
+import { skillLinks } from '../utilites/skillLinks';
 
 export default function TutorialListHPL() {
 
@@ -45,7 +46,12 @@ export default function TutorialListHPL() {
 
     return (
         <> 
-            <div className="catergory-title">horizontal pull</div>
+            <div className="catergory-title">
+              horizontal pull
+              <div className="catergory-blurb">
+                Horizontal pull mainly involves pull exercises with your body parallel to the ground. These exercises typically target the lats, triceps, and rear deltoids.
+              </div>
+            </div>
             <div className="catergory-container">
             {rowButtons.map((row, rowIndex) => (
                 <>
@@ -80,7 +86,7 @@ export default function TutorialListHPL() {
                 >
                   <div className="skill-content--left">
                     <div className="skill-content--title">
-                      {skillTitle.get(title)}
+                      <Link to = {skillLinks.get(title)} className="skill-content--link"> {skillTitle.get(title)} </Link>
                     </div>
                     <br />
                     <br />

@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { skillTitle } from '../utilites/skilltitles';
 import { skillDiff } from '../utilites/skilldifficulties';
 import { skillTime } from '../utilites/skilltime';
+import { skillLinks } from '../utilites/skillLinks';
 
 export default function TutorialListVP() {
 
@@ -45,7 +46,12 @@ export default function TutorialListVP() {
 
     return (
         <> 
-            <div className="catergory-title">vertical push</div>
+            <div className="catergory-title">
+              vertical push
+              <div className="catergory-blurb vp">
+                Vertical push mainly involves exercises with your body perpendicular to the ground (in a handstand). These exercises typically target the shoulders, triceps, and upper chest.
+              </div>
+            </div>
             <div className="catergory-container">
             {rowButtons.map((row, rowIndex) => (
                 <>
@@ -80,7 +86,7 @@ export default function TutorialListVP() {
                 >
                   <div className="skill-content--left">
                     <div className="skill-content--title">
-                      {skillTitle.get(title)}
+                      <Link to = {skillLinks.get(title)} className="skill-content--link"> {skillTitle.get(title)} </Link>
                     </div>
                     <br />
                     <br />

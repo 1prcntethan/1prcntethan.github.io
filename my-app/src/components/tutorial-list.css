@@ -1,11 +1,27 @@
 .catergory-title {
-    display:flex;
+    display: flex;
+    flex-direction: row;
     font-size: 32px;
     padding: 20px;
     padding-left: 10%;
-    justify-content: left;
+    padding-right: 10%;
+    justify-content: space-between;
     align-self: center;
 }
+
+.catergory-blurb {
+    display: flex;
+    width: 45%;
+    font-size: 18px;
+    font-family: Fira Sans;
+    font-weight: 200;
+
+}
+.catergory-blurb.vp {
+
+    width: 48%;
+}
+
 
 .catergory-container {
     display: flex;
@@ -41,7 +57,7 @@
 }
 
 .skill-button:hover {
-    background-color: #2E252C;
+    background-color: #641b547a;
     transition-property: all;
     transition-duration: 500ms;
     cursor: pointer;

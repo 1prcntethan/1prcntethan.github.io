@@ -61,7 +61,12 @@ export default function TutorialListHP() {
 
   return (
     <>
-      <div className="catergory-title">horizontal push</div>
+      <div className="catergory-title">
+        horizontal push
+        <div className="catergory-blurb">
+          Horizontal push mainly involves push exercises with your body parallel to the ground. These exercises typically target the shoulders, arms, scapula and chest.
+        </div>
+      </div>
       <div className="catergory-container">
         {rowButtons.map((row, rowIndex) => (
           <>

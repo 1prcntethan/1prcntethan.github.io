@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { skillTitle } from '../utilites/skilltitles';
 import { skillDiff } from '../utilites/skilldifficulties';
 import { skillTime } from '../utilites/skilltime';
+import { skillLinks } from '../utilites/skillLinks';
 
 export default function TutorialListVPL() {
 
@@ -45,7 +46,12 @@ export default function TutorialListVPL() {
 
     return (
         <> 
-            <div className="catergory-title">vertical pull</div>
+            <div className="catergory-title">
+              vertical pull
+              <div className="catergory-blurb">
+                Vertical pull mainly involves exercises with your body perpendicular to the ground. These exercises typically target the (lats), biceps, and rear deltoids.
+              </div>
+            </div>
             <div className="catergory-container">
             {rowButtons.map((row, rowIndex) => (
                 <>
@@ -80,7 +86,7 @@ export default function TutorialListVPL() {
                 >
                   <div className="skill-content--left">
                     <div className="skill-content--title">
-                      {skillTitle.get(title)}
+                      <Link to = {skillLinks.get(title)} className="skill-content--link"> {skillTitle.get(title)} </Link>
                     </div>
                     <br />
                     <br />
