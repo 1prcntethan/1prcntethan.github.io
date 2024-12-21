@@ -1,8 +1,8 @@
 export const skillLinks = new Map([
-    ["Assisted Push-up", "assistedpu"],
+    ["Assisted Push-up", "/tutorials/assistedpu"],
     ["Push-up", "/tutorials/pushup"],
-    ["Dip", "dip"],
-    ["Elbow Lever", "elbow lever"],
+    ["Dip", "/tutorials/dip"],
+    ["Elbow Lever", "/tutorials/elbowlever"],
     ["Planche Lean", "/tutorials/planchelean"],
     ["Psuedo Push-up", "psuedo push-up"],
     ["Tuck Planche", "tuck planche"],

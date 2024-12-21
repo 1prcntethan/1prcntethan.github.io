@@ -6,9 +6,11 @@ import { Homepage } from './pages/home';
 import { Training } from './pages/training';
 import { Tutorials } from './pages/tutorials';
 import { Terminology } from './pages/terminology';
-import { PlancheLean } from './pages/tutorials/planchelean';
-import { Pushup } from './pages/tutorials/pushup';
 import { AssistPu } from './pages/tutorials/assistpu';
+import { Pushup } from './pages/tutorials/pushup';
+import { Dip } from './pages/tutorials/dip';
+import { ElbowLever } from './pages/tutorials/elbowlever';
+import { PlancheLean } from './pages/tutorials/planchelean';
 
 
 function App() {
@@ -21,9 +23,12 @@ function App() {
         <Route path="/terminology" element={<Terminology/>}/>
 
 
-        <Route path="/tutorials/planchelean" element={<PlancheLean/>}/>
         <Route path="/tutorials/pushup" element={<Pushup/>}/>
         <Route path="/tutorials/assistedpu" element={<AssistPu/>}/>
+        <Route path="/tutorials/dip" element={<Dip/>}/>
+        <Route path="/tutorials/elbowlever" element={<ElbowLever/>}/>
+        <Route path="/tutorials/planchelean" element={<PlancheLean/>}/>
+
         
       </Routes>
     </Router>

@@ -6,11 +6,11 @@ import { Link } from 'react-router-dom';
 import { svgDivider } from "../../utilites/svg-divider";
 
 
-export function Pushup() {
+export function ElbowLever() {
     return (
         <>
             <Navbar />
-            <SkillHero title="push-up" identifier="push-up"/>
+            <SkillHero title="elbow lever" identifier="elbow-lever"/>
             {svgDivider.get("0")}
             <div className="skill-info-container"> 
                 <div className="skill-info">
@@ -20,32 +20,33 @@ export function Pushup() {
                     <div className="difficulty-muscle">
                         <div className="skill-difficulty">
                             <Link to = "/Terminology" className="link-text" >
-                            Skill Difficulty: F
+                            Skill Difficulty: D
                             </Link>
                             <br />
-                            <p>Targeted Muscles: Tricep, Chest, Core</p>
+                            <p>Targeted Muscles: Shoulders, Chest, Triceps, Abs</p>
                             <p>High Strain Areas: Wrists</p>
                         </div>
                         <div className="overview-explanation">
-                            The Push-Up is the fundamental exercise for pushing movements later on. When performing this exercise on the floor, consider warming up your wrists, especially if you're a complete beginner. If you can complete a push-up, congrats! That's about 70% of your bodyweight!
+                            The Elbow Lever is a non-essential but stylish exercise. It is usually performed on the floor, and requires balance more than anything else.
                         </div>
                     </div>
             
                     <div className="exercise-instructions-container">
-                        Step-by-Step ~ Push-up
+                        Step-by-Step ~ Elbow Lever
                         <div className="exercise-instructions">
                             <input id="skill-read-more" type="checkbox" />
                     
                             <div className="skill-instructions">
                                 <p>
                                     <ul>
-                                        <li>Start in a plank position with your hands shoulder-width apart, and hands facing forward or alternatively slightly outward.</li> 
-                                        <li>Ensure your elbows are completely straightened and that your body makes a straight line. </li> 
-                                        <li>Gradually lower your body downward by bending your elbows and tightening your core and chest. </li> 
-                                        <li>Once you feel your chest touch the ground, you can either hold or start pressing back up. </li> 
-                                        <li>To press up, simply push your arms out, straightening the elbows and keeping a straight body alignment. </li> 
-                                        <li>During the exercise, it is recommended move slowly and controlled coming down, but be explosive and fast when coming up. </li> 
-                                        <li>This exercise has many different variations and difficulties, depending on where the hands are placed.</li> 
+                                        <li>Start in a push position with your fingers facing opposite from each other, and knees touching the ground for support.</li> 
+                                        <li>Bend your arms and lower your stomach onto your elbows and your body downward, until your elbows are pressing into your abs. </li> 
+                                        <li>Lean forward keeping your balance, using your hands to stablize yourself. </li> 
+                                        <li>As your body leans forward, your feet should start to lift off the ground. </li> 
+                                        <li>Try to straighten your body so you are completly parallel to the ground and supported by only your hands. </li> 
+                                        <li>The key to this exercise is balance, while it may be uncomfortable, this exercise does not require much strength. </li> 
+                                        <li>To use this exercise effectively, practice it minimally because there are other exercises that stimulate the same muscles more effectively.</li> 
+                                        <li>Essentially, this exercise is mainly for fun and show.</li>
                                     </ul>
                                 </p>
                                 <label className="read-more-label" for="skill-read-more">Show less</label>
@@ -56,19 +57,19 @@ export function Pushup() {
 
                     <div className="recommended-info">
                         <p>
-                            Recommended Main Exercises: Assisted Push-ups
+                            Recommended Main Exercises: Push-ups
 
                         </p>
                         <p>
-                            Recommended Accessory Exercises: Scapular Pushups, Hollow Body Hold
+                            Recommended Accessory Exercises: Wrist Exercises
                         </p>
                     </div>
                 </div>
             </div>
             {svgDivider.get("1")}
-            <ProgressionChart name1="N/A" name2="Assisted Push-up" name3="Push-up" name4="Planche Lean" name5="Full Planche"  
-            link1="#" link2="/tutorials/assistedpu" link3="/tutorials/pushup" link4="/tutorials/planchelean" link5="#"
-            svg1="NA" svg2="assisted-pushup" svg3="push-up" svg4="planche-lean" svg5="full-pl"/>
+            <ProgressionChart name1="N/A" name2="Push-up" name3="Elbow Lever" name4="Planche Lean" name5="Full Planche"  
+            link1="#" link2="/tutorials/pushup" link3="/tutorials/elbowlever" link4="/tutorials/planchelean" link5="#"
+            svg1="NA" svg2="push-up" svg3="elbow-lever" svg4="planche-lean" svg5="full-pl"/>
             {svgDivider.get("2")}
             <div class="technique-form-container">
                 <div class="technique-form">
@@ -79,22 +80,18 @@ export function Pushup() {
                         <div>
                             Good Form Cues: 
                             <ul>
-                            <li>Elbows are relatively close to the body</li>
-                            <li>Chest touches the floor</li>
-                            <li>Body aligned through head, shoulders, hips and legs</li>
-                            <li>Elbows make a ~90 degree angle in the bottom position</li>
-                            <li>Hands facing forward or slightly outward</li>
-                            <li>Hands are (usually) placed shoulder-width apart</li>
+                            <li>Straight line body</li>
+                            <li>Elbows are jammed into the abs</li>
+                            <li>Elbows bent to around 90 degrees</li>
+                            <li>Hands facing outward and close together</li>
                             </ul>
                         </div>
                         <div>
                             Bad Form Cues: 
                             <ul>
-                            <li>Flared elbows</li>
-                            <li>Sagging hips</li>
-                            <li>Weak/arched core</li>
-                            <li>Arched body</li>
-                            <li>High hips</li>
+                            <li>Legs hanging low, body not straight</li>
+                            <li>Hands are placed too far apart</li>
+                            <li>Elbows aren't jammed into abs</li>
                             </ul>
                     
                         </div>
@@ -102,6 +99,8 @@ export function Pushup() {
                 </div>
             </div>
             {svgDivider.get("3")}
+
+
         </>
     )
 }

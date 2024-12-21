@@ -51,6 +51,10 @@
     font-size: 25px;
     font-family: Fira Sans;
     font-weight: 200;
+    padding: 20px 0 20px 0;
+    border-top: solid rgb(187, 187, 187) 1px;
+    border-bottom: solid rgb(187, 187, 187) 1px;
+
 }
 .exercise-instructions {  /*overall instructions for skill container*/
     display: flex;
@@ -87,7 +91,7 @@
 .recommended-info {
     font-family: Fira Sans;
     font-weight: 200;
-    width: 40%;
+    width: auto;
 }
 
 .link-text { /*general styling for random links*/

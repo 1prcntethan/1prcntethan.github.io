@@ -10,7 +10,7 @@ export function AssistPu() {
     return (
         <>
             <Navbar />
-            <SkillHero title="assisted push-up (push)" identifier="assisted-pushup"/>
+            <SkillHero title="assisted push-up" identifier="assisted-pushup"/>
             {svgDivider.get("0")}
             <div className="skill-info-container"> 
                 <div className="skill-info">
