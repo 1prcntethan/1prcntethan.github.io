@@ -21,5 +21,9 @@ export const heroBlurb = new Map([
     "planche-lean",
     "The Planche Lean is a fundamental exercise that builds strength and stability in the shoulders, core, and wrists. When done correctly, this exercise activates the same muscles used in a full planche.",
   ],
+  [
+    "psuedo-pu",
+    "The Psuedo Push-up is a bent-arm pushing exercise that strengthens the shoulders for planche as well as the 90 degree hold."
+  ]
   
 ]);

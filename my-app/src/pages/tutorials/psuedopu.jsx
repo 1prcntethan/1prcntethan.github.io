@@ -6,11 +6,11 @@ import { Link } from 'react-router-dom';
 import { svgDivider } from "../../utilites/svg-divider";
 
 
-export function PlancheLean() {
+export function PsuedoPU() {
     return (
         <>
             <Navbar />
-            <SkillHero title="planche lean" identifier="planche-lean"/>
+            <SkillHero title="psuedo push-up" identifier="psuedo-pu"/>
             {svgDivider.get("0")}
             <div className="skill-info-container"> 
                 <div className="skill-info">
@@ -20,32 +20,33 @@ export function PlancheLean() {
                     <div className="difficulty-muscle">
                         <div className="skill-difficulty">
                             <Link to = "/Terminology" className="link-text" >
-                            Skill Difficulty: D
+                            Skill Difficulty: C
                             </Link>
                             <br />
-                            <p>Targeted Muscles: Anterior Deltoids, Upper Chest, Core</p>
-                            <p>High Strain Areas: Wrists, Bicep Tendon</p>
+                            <p>Targeted Muscles: Anterior Deltoids, Upper Chest, Triceps</p>
+                            <p>High Strain Areas: Shoulders</p>
                         </div>
                         <div className="overview-explanation">
-                            The Planche Lean is a progression exercise used to prepare the body for the tuck planche. When performing this exercise on the floor, it's important to warm up your wrists, especially if you're a beginner, since the movement can place unfamiliar strain on them. If you feel extreme pain or discomfort practicing this exercise, you may be leaning too far. For those with wrist pain, consider using low parallettes.
+                            The Psuedo Push-up is a scalable shoulder focused exercise. The difficulty is increased by moving the hands closer to the waist. It is possible to reach the 90 degree hold from solely training this progression. 
                         </div>
                     </div>
             
                     <div className="exercise-instructions-container">
-                        Step-by-Step ~ Planche Lean
+                        Step-by-Step ~ Psuedo Push-up
                         <div className="exercise-instructions">
                             <input id="skill-read-more" type="checkbox" />
                     
                             <div className="skill-instructions">
                                 <p>
                                     <ul>
-                                        <li>Start in a push-up position with your hands shoulder-width apart, and hands turned at a 45 degree angle.</li> 
-                                        <li>Ensure your elbows are completely straightened, and that your scapula is protracted. </li> 
-                                        <li>Gradually lean your body forward by shifting your shoulders ahead of your wrists, and slowly walking your feet forwards. </li> 
-                                        <li>Maintain straight arms and body alignment, as well as strong protraction. </li> 
-                                        <li>The farther you lean, the more load you should feel on your shoulders, specifically the anterior deltoids. </li> 
-                                        <li>Therefore, the difficulty of the exercise is dependent on how far you lean forwards. </li> 
-                                        <li>To use this exercise effectively, perform holds at a difficulty where you can hold them for at least 6-8 seconds, counting each hold as a rep.</li> 
+                                        <li>Start in a planche lean position with your hands shoulder-width apart and facing slightly outward.</li> 
+                                        <li>Ensure your core is engaged, and that your scapula is protracted and depressed. </li> 
+                                        <li>Gradually lean forward and lower your body, bending your elbows and keeping your feet and hands in the same place. </li> 
+                                        <li>As your body lowers, your scapula can retract but should still remain depressed.</li> 
+                                        <li>Straighten your elbows and depressed your scapula until you are holding yourself straight again. </li> 
+                                        <li>The difficulty of this exercise can be modified by changing the hand position: the closer your hands are to your waist, the more difficult it is. </li> 
+                                        <li>The bottom position of this movement is almost identical to the 90 degree hold, and can therefore be used as a progression.</li>
+                                        <li>To use this exercise effectively, perform these at a diffculty where you can do 4-8 reps for strength, or 8-12 for hypertrophy/volume.</li> 
                                     </ul>
                                 </p>
                                 <label className="read-more-label" for="skill-read-more">Show less</label>
@@ -56,19 +57,19 @@ export function PlancheLean() {
 
                     <div className="recommended-info">
                         <p>
-                            Recommended Main Exercises: Push-ups
+                            Recommended Main Exercises: Push-ups, Planche Lean
 
                         </p>
                         <p>
-                            Recommended Accessory Exercises: Scapular Pushups, Hollow Body Hold
+                            Recommended Accessory Exercises: Scapular Pushups, Dips
                         </p>
                     </div>
                 </div>
             </div>
             {svgDivider.get("1")}
-            <ProgressionChart name1="N/A" name2="Push-up" name3="Planche Lean" name4="Psuedo Pushup" name5="Full Planche"  
-            link1="#" link2="/tutorials/pushup" link3="/tutorials/planchelean" link4="/tutorials/psuedopu" link5="#"
-            svg1="NA" svg2="push-up" svg3="planche-lean" svg4="psuedo-pu" svg5="full-pl"/>
+            <ProgressionChart name1="Push-up" name2="Planche Lean" name3="Psuedo Pushup" name4="Tuck Planche" name5="Full Planche"  
+            link1="/tutorials/pushup" link2="/tutorials/planchelean" link3="/tutorials/psuedopu" link4="#" link5="#"
+            svg1="push-up" svg2="planche-lean" svg3="psuedo-pu" svg4="tuck-pl" svg5="full-pl"/>
             {svgDivider.get("2")}
             <div class="technique-form-container">
                 <div class="technique-form">
@@ -79,23 +80,21 @@ export function PlancheLean() {
                         <div>
                             Good Form Cues: 
                             <ul>
-                            <li>Straight arms & locked elbows</li>
+                            <li>At the top, straight arms & protracted + depressed scapula</li>
                             <li>Body aligned through head, shoulders, hips and legs</li>
-                            <li>Scapula is protracted and depressed</li>
-                            <li>Hands turned at a 45 degree angle and elbows facing forward</li>
+                            <li>Hands facing outward</li>
                             <li>Hands are placed shoulder-width apart</li>
-                            <li>(Ideally) Posterior pelvic tilt</li>
+                            <li>Full range of motion from top to bottom</li>
                             </ul>
                         </div>
                         <div>
                             Bad Form Cues: 
                             <ul>
-                            <li>Bent arms</li>
-                            <li>Sagging hips</li>
-                            <li>Weak/retracted scapula</li>
-                            <li>Wrists facing forward</li>
+                            <li>Weak/disengaged scapula</li>
                             <li>Hands are placed too far/close together</li>
-                            <li>Anterior pelvic tilt</li>
+                            <li>High hips</li>
+                            <li>Arched back</li>
+                            <li>Hand or feet position changes</li>
                             </ul>
                     
                         </div>
