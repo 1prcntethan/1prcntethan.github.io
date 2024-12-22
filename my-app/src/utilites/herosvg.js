@@ -328,7 +328,7 @@ export const heroSvg = new Map([
     <div className="hero-svg-container">
       <svg
       className="hero-svg"
-      viewBox="150 0 800 1140"
+      viewBox="150 150 800 800"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
