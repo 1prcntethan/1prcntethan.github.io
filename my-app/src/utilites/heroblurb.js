@@ -24,6 +24,10 @@ export const heroBlurb = new Map([
   [
     "psuedo-pu",
     "The Psuedo Push-up is a bent-arm pushing exercise that strengthens the shoulders for planche as well as the 90 degree hold."
+  ],
+  [
+    "tuck-pl",
+    "The Tuck Planche is a straight arm planche regression that serves as the fundamental for straight arm pushing strength in harder exercises."
   ]
   
 ]);

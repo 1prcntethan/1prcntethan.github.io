@@ -12,6 +12,7 @@ import { Dip } from './pages/tutorials/dip';
 import { ElbowLever } from './pages/tutorials/elbowlever';
 import { PlancheLean } from './pages/tutorials/planchelean';
 import { PsuedoPU } from './pages/tutorials/psuedopu';
+import { TuckPL } from './pages/tutorials/tuckpl';
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
         <Route path="/tutorials/elbowlever" element={<ElbowLever/>}/>
         <Route path="/tutorials/planchelean" element={<PlancheLean/>}/>
         <Route path="/tutorials/psuedopu" element={<PsuedoPU/>}/>
+        <Route path="/tutorials/tuckpl" element={<TuckPL/>}/>
 
         
       </Routes>
