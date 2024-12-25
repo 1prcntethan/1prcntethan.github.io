@@ -13,6 +13,7 @@ import { ElbowLever } from './pages/tutorials/elbowlever';
 import { PlancheLean } from './pages/tutorials/planchelean';
 import { PsuedoPU } from './pages/tutorials/psuedopu';
 import { TuckPL } from './pages/tutorials/tuckpl';
+import { AdvTuckPL } from './pages/tutorials/advtuckpl';
 
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
         <Route path="/tutorials/planchelean" element={<PlancheLean/>}/>
         <Route path="/tutorials/psuedopu" element={<PsuedoPU/>}/>
         <Route path="/tutorials/tuckpl" element={<TuckPL/>}/>
+        <Route path="/tutorials/advtuckpl" element={<AdvTuckPL/>}/>
 
         
       </Routes>

@@ -28,6 +28,10 @@ export const heroBlurb = new Map([
   [
     "tuck-pl",
     "The Tuck Planche is a straight arm planche regression that serves as the fundamental for straight arm pushing strength in harder exercises."
+  ],
+  [
+    "adv-tuck-pl",
+    "The Advanced Tuck Planche is a planche regression and next step towards building straight arm pushing strength in harder progressions."
   ]
   
 ]);
