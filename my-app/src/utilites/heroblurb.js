@@ -30,8 +30,20 @@ export const heroBlurb = new Map([
     "The Tuck Planche is a straight arm planche regression that serves as the fundamental for straight arm pushing strength in harder exercises."
   ],
   [
+    "tuck-pl-pu",
+    "The Tuck Planche Pushup is a bent and straight arm planche exercise that builds shoulder strength for harder planche and planche pushup progressions."
+  ],
+  [
     "adv-tuck-pl",
     "The Advanced Tuck Planche is a planche regression and next step towards building straight arm pushing strength in harder progressions."
-  ]
+  ],
+
+
+
+
+  [
+    "pike-pu",
+    "The Pike Push-up is a bent arm exercise used to build strength towards harder handstand based pushing exercises."
+  ],
   
 ]);

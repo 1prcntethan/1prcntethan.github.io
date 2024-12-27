@@ -14,6 +14,8 @@ import { PlancheLean } from './pages/tutorials/planchelean';
 import { PsuedoPU } from './pages/tutorials/psuedopu';
 import { TuckPL } from './pages/tutorials/tuckpl';
 import { AdvTuckPL } from './pages/tutorials/advtuckpl';
+import { TuckPLPU } from './pages/tutorials/tuckplpu';
+import { PikePU } from './pages/tutorials/pikepu';
 
 
 function App() {
@@ -33,7 +35,11 @@ function App() {
         <Route path="/tutorials/planchelean" element={<PlancheLean/>}/>
         <Route path="/tutorials/psuedopu" element={<PsuedoPU/>}/>
         <Route path="/tutorials/tuckpl" element={<TuckPL/>}/>
+        <Route path="/tutorials/tuckplpu" element={<TuckPLPU/>}/>
         <Route path="/tutorials/advtuckpl" element={<AdvTuckPL/>}/>
+
+
+        <Route path="/tutorials/pikepu" element={<PikePU/>}/>
 
         
       </Routes>

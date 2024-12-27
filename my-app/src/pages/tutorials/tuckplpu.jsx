@@ -6,11 +6,11 @@ import { Link } from 'react-router-dom';
 import { svgDivider } from "../../utilites/svg-divider";
 
 
-export function TuckPL() {
+export function TuckPLPU() {
     return (
         <>
             <Navbar />
-            <SkillHero title="tuck planche" identifier="tuck-pl"/>
+            <SkillHero title="tuck planche pushup" identifier="tuck-pl-pu"/>
             {svgDivider.get("0")}
             <div className="skill-info-container"> 
                 <div className="skill-info">
@@ -27,24 +27,23 @@ export function TuckPL() {
                             <p>High Strain Areas: Wrists, Bicep Tendon, Shoulders</p>
                         </div>
                         <div className="overview-explanation">
-                            The Tuck Planche is a regression exercise used to prepare the body more difficult planche progressions. The anterior deltoid is the main muscle used in this exercise. For beginners, protraction and depression of the scapula should be emphasized.
+                            The Tuck Planche Pushup is a regression exercise used to increase bent arm and straight arm strength. The anterior deltoid is the main muscle used in this exercise. For beginners, protraction and depression of the scapula should be emphasized.
                         </div>
                     </div>
             
                     <div className="exercise-instructions-container">
-                        Step-by-Step ~ Tuck Planche
+                        Step-by-Step ~ Tuck Planche Pushup
                         <div className="exercise-instructions">
                             <input id="skill-read-more" type="checkbox" />
                     
                             <div className="skill-instructions">
                                 <p>
                                     <ul>
-                                        <li>Start in a squat position with your hands on the floor shoulder-width apart, and hands turned at a 45 degree angle.</li> 
+                                        <li>Start in a tuck planche position.</li> 
                                         <li>Ensure your elbows are completely straightened, and that your scapula is protracted and depressed. </li> 
-                                        <li>Gradually lean your body forward by shifting your shoulders ahead of your wrists, and feel the load on your feet becoming lighter. </li> 
-                                        <li>As you lift off, maintain straight arms and protraction/depression, tucking your knees to your chest while leaning forward.</li> 
-                                        <li>Stronger protraction will make the exercise easier.</li>  
-                                        <li>To use this exercise effectively, perform holds at a difficulty where you can hold them for at least 6-8 seconds, counting each hold as a rep.</li> 
+                                        <li>Gradually lower your body by bending your elbows, while keeping the tuck planche body position.</li> 
+                                        <li>Once your elbows are bent around 90 degrees, you can push back up, straightening your arms and protracting your scapula.</li>  
+                                        <li>To use this exercise effectively, perform these at a diffculty where you can do 4-8 reps for strength, or 8-12 for hypertrophy/volume.</li> 
                                     </ul>
                                 </p>
                                 <label className="read-more-label" for="skill-read-more">Show less</label>
@@ -55,7 +54,7 @@ export function TuckPL() {
 
                     <div className="recommended-info">
                         <p>
-                            Recommended Main Exercises: Planche Lean
+                            Recommended Main Exercises: Psuedo Pushup
 
                         </p>
                         <p>
@@ -65,9 +64,9 @@ export function TuckPL() {
                 </div>
             </div>
             {svgDivider.get("1")}
-            <ProgressionChart name1="Push-up" name2="Planche Lean" name3="Tuck Planche" name4="Adv. Tuck Planche" name5="Full Planche"  
-            link1="/tutorials/pushup" link2="/tutorials/planchelean" link3="/tutorials/tuckpl" link4="/tutorials/advtuckpl" link5="#"
-            svg1="push-up" svg2="planche-lean" svg3="tuck-pl" svg4="adv-tuck-pl" svg5="full-pl"/>
+            <ProgressionChart name1="Push-up" name2="Tuck Planche" name3="Tuck Planche PU" name4="Adv. Tuck Planche" name5="Full Planche"  
+            link1="/tutorials/pushup" link2="/tutorials/tuckpl" link3="/tutorials/tuckplpu" link4="/tutorials/advtuckpl" link5="#"
+            svg1="push-up" svg2="tuck-pl" svg3="tuck-pl-pu" svg4="adv-tuck-pl" svg5="full-pl"/>
             {svgDivider.get("2")}
             <div class="technique-form-container">
                 <div class="technique-form">
@@ -78,20 +77,24 @@ export function TuckPL() {
                         <div>
                             Good Form Cues: 
                             <ul>
-                            <li>Straight arms & locked elbows</li>
                             <li>Knees tucked to chest</li>
                             <li>Scapula is protracted and depressed</li>
                             <li>Hands turned at a 45 degree angle and elbows facing forward</li>
                             <li>Hands are placed shoulder-width apart</li>
+                            <li>90 degree elbow bend</li>
+                            <li>Core is compressed</li>
+                            <li>Elbows are close to body</li>
                             </ul>
                         </div>
                         <div>
                             Bad Form Cues: 
                             <ul>
-                            <li>Bent arms</li>
                             <li>Weak/retracted scapula</li>
                             <li>Hands facing forward</li>
                             <li>Hands are placed too far/close together</li>
+                            <li>Incomplete range of motion</li>
+                            <li>Flared elbows</li>
+                            <li>Weak/unengaged core</li>
                             </ul>
                     
                         </div>

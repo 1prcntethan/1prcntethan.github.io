@@ -6,7 +6,7 @@ export const skillLinks = new Map([
     ["Planche Lean", "/tutorials/planchelean"],
     ["Psuedo Push-up", "/tutorials/psuedopu"],
     ["Tuck Planche", "/tutorials/tuckpl"],
-    ["Tuck Planche PU", "tuck planche pu"],
+    ["Tuck Planche PU", "/tutorials/tuckplpu"],
     ["Adv. Tuck Planche", "/tutorials/advtuckpl"],
     ["Adv. Tuck Planche PU", "adv. tuck planche pu"],
     ["90 Degree Hold", "90 degree hold"],
@@ -22,7 +22,7 @@ export const skillLinks = new Map([
   
     //HORIZONTAL PUSH SKILLS ^^^
   
-    ["Pike Push-up", "pike push-up"],
+    ["Pike Push-up", "/tutorials/pikepu"],
     ["Crow Pose", "crow pose"],
     ["Assisted Handstand", "assisted handstand"],
     ["Handstand", "handstand"],
