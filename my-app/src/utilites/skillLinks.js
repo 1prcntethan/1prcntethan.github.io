@@ -23,8 +23,8 @@ export const skillLinks = new Map([
     //HORIZONTAL PUSH SKILLS ^^^
   
     ["Pike Push-up", "/tutorials/pikepu"],
-    ["Crow Pose", "crow pose"],
-    ["Assisted Handstand", "assisted handstand"],
+    ["Crow Pose", "/tutorials/crowpose"],
+    ["Assisted Handstand", "/tutorials/assistedhs"],
     ["Handstand", "handstand"],
     ["Elevated Pike PU", "elevated pike pu"],
     ["Bent Arm Stand", "bent arm stand"],

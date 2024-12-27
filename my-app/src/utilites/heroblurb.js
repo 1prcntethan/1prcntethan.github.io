@@ -45,5 +45,13 @@ export const heroBlurb = new Map([
     "pike-pu",
     "The Pike Push-up is a bent arm exercise used to build strength towards harder handstand based pushing exercises."
   ],
+  [
+    "crow-pose",
+    "The Crow Pose is a handstand regression used to build strength and stamina toward the handstand and the balance required for it."
+  ],
+  [
+    "assisted-hs",
+    "The Assisted Handstand is a handstand exercise to build strength, balance, and form, to work toward the freestanding handstand."
+  ]
   
 ]);
