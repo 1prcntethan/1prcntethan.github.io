@@ -6,11 +6,11 @@ import { Link } from 'react-router-dom';
 import { svgDivider } from "../../utilites/svg-divider";
 
 
-export function AssistedHS() {
+export function Handstand() {
     return (
         <>
             <Navbar />
-            <SkillHero title="assisted handstand" identifier="assisted-hs"/>
+            <SkillHero title="handstand" identifier="handstand"/>
             {svgDivider.get("0")}
             <div className="skill-info-container"> 
                 <div className="skill-info">
@@ -27,23 +27,22 @@ export function AssistedHS() {
                             <p>High Strain Areas: Wrists</p>
                         </div>
                         <div className="overview-explanation">
-                            The Assisted Handstand is the last regression before the freestanding handstand. When performing this exercise on the floor, consider warming up your wrists, especially if you're a complete beginner.
+                            The Handstand is an icon exercise for calisthenics. It requires much more skill and technique than strength. The exercise has many variations, shapes, and can be done very creatively. There are many factors to really mastering this skill, so please check out the handstand guide for more in-depth information.
                         </div>
                     </div>
             
                     <div className="exercise-instructions-container">
-                        Step-by-Step ~ Assisted Handstand
+                        Step-by-Step ~ Handstand
                         <div className="exercise-instructions">
                             <input id="skill-read-more" type="checkbox" />
                     
                             <div className="skill-instructions">
                                 <p>
                                     <ul>
-                                        <li>Find a wall you can handstand next to.</li> 
-                                        <li>Place your hands one foot away from the wall, shoulder width apart. Fingers should be pointing towards the wall.</li>
-                                        <li>Stack your elbows, shoulders, chest, hips, knees and feet, in a straight line against the wall.</li> 
+                                        <li>Place your hands on the ground shoulder width apart.</li> 
+                                        <li>Kick up and stack your elbows, shoulders, chest, hips, knees, and feet, in a straight line.</li>
+                                        <li>When balancing, stay towards leaning towards your fingers, so you actually have control over balancing.</li> 
                                         <li>Push your shoulders and hands into the ground, it should feel like you are reaching as far as your can upward.</li> 
-                                        <li>Using the wall as support, practice using your fingers to push yourself away from the wall and balancing.</li> 
                                         <li>To use this exercise effectively, perform these holds as long as possible to practice balancing using your fingers and hands.</li> 
                                     </ul>
                                 </p>
@@ -55,7 +54,7 @@ export function AssistedHS() {
 
                     <div className="recommended-info">
                         <p>
-                            Recommended Main Exercises: Crow Pose, Crane Pose
+                            Recommended Main Exercises: Assisted Handstand, Crow Pose, Crane Pose
 
                         </p>
                         <p>
@@ -65,9 +64,9 @@ export function AssistedHS() {
                 </div>
             </div>
             {svgDivider.get("1")}
-            <ProgressionChart name1="Pike Push-up" name2="Crow Pose" name3="Assisted HS" name4="Handstand" name5="HSPU"  
-            link1="/tutorials/pikepu" link2="/tutorials/crowpose" link3="/tutorials/assistedhs" link4="/tutorials/handstand" link5="#"
-            svg1="pike-pu" svg2="crow-pose" svg3="assisted-hs" svg4="handstand" svg5=""/>
+            <ProgressionChart name1="Pike Push-up" name2="Assisted HS" name3="Handstand" name4="Bent Arm Stand" name5="HSPU"  
+            link1="/tutorials/pikepu" link2="/tutorials/assistedhs" link3="/tutorials/handstand" link4="#" link5="#"
+            svg1="pike-pu" svg2="assisted-hs" svg3="handstand" svg4="" svg5=""/>
             {svgDivider.get("2")}
             <div class="technique-form-container">
                 <div class="technique-form">
@@ -94,6 +93,7 @@ export function AssistedHS() {
                             <li>Body is not engaged</li>
                             <li>Bent arms</li>
                             <li>Not using fingers and heel of hand to balance</li>
+                            <li>Arched back</li>
                             </ul>
                     
                         </div>

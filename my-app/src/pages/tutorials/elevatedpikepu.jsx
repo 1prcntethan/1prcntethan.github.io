@@ -6,11 +6,11 @@ import { Link } from 'react-router-dom';
 import { svgDivider } from "../../utilites/svg-divider";
 
 
-export function PikePU() {
+export function ElevatedPikePU() {
     return (
         <>
             <Navbar />
-            <SkillHero title="pike push-up" identifier="pike-pu"/>
+            <SkillHero title="elevated pike pu" identifier="elevated-pike-pu"/>
             {svgDivider.get("0")}
             <div className="skill-info-container"> 
                 <div className="skill-info">
@@ -20,33 +20,36 @@ export function PikePU() {
                     <div className="difficulty-muscle">
                         <div className="skill-difficulty">
                             <Link to = "/Terminology" className="link-text" >
-                            Skill Difficulty: C
+                            Skill Difficulty: B
                             </Link>
                             <br />
                             <p>Targeted Muscles: Shoulders, Tricep, Chest, Core</p>
                             <p>High Strain Areas: Wrists</p>
                         </div>
                         <div className="overview-explanation">
-                            The Pike Push-Up is the fundamental exercise for building strength toward vertical pushing movements. When performing this exercise on the floor, consider warming up your wrists, especially if you're a complete beginner.
+                            The Elevated Pike Push-Up is the progression exercise from the regular pike pushup, for building strength toward vertical pushing movements. When performing this exercise on the floor, consider warming up your wrists, or use low paralletes.
                         </div>
                     </div>
             
                     <div className="exercise-instructions-container">
-                        Step-by-Step ~ Pike Push-up
+                        Step-by-Step ~ Elevated Pike Push-up
                         <div className="exercise-instructions">
                             <input id="skill-read-more" type="checkbox" />
                     
                             <div className="skill-instructions">
                                 <p>
                                     <ul>
-                                        <li>Start in a plank position with your hands shoulder-width apart, and hands facing forward or alternatively slightly outward.</li> 
-                                        <li>Walk your feet toward your hands, while bending at your hips, until the angle between your legs and torso is around 90 degrees.</li> 
-                                        <li>It may be uncomfortable, but this is the starting position for the pike pushup.</li> 
+                                        <li>Find an object to elevate your feet with.</li>
+                                        <li>Start in a plank position with your hands shoulder-width apart, and hands facing forward or alternatively slightly outward.</li>
+                                        <li>Put your feet on the elevated object, your feet should be at a higher elevation than your hands</li>
+                                        <li>Walk your hands toward your feet, while bending at your hips, until the angle between your legs and torso is around 90 degrees.</li> 
+                                        <li>It may be uncomfortable, but this is the starting position for the elevated pike pushup.</li> 
                                         <li>Lower your head and body toward the ground, by bending your elbows, and try to keep your legs straight.</li> 
                                         <li>Once your head touches the ground, push back up with your arms, straightening the elbows. </li> 
                                         <li>During the exercise, it is recommended move slowly and controlled coming down, but be explosive and fast when coming up. </li> 
                                         <li>This exercise also requires some hamstring flexibility, but it is okay to have some bend in the knees to make it easier.</li>
                                         <li>The exercise difficulty can change, depending on if your head goes down close to your hands, or far in front of your hands.</li> 
+                                        <li>The exercise becomes more difficult the higher your feet are, since there is more bodyweight on your hands.</li>
                                         <li>To use this exercise effectively, perform these at a diffculty where you can do 4-8 reps for strength, or 8-12 for hypertrophy/volume.</li> 
                                     </ul>
                                 </p>
@@ -58,7 +61,7 @@ export function PikePU() {
 
                     <div className="recommended-info">
                         <p>
-                            Recommended Main Exercises: Push-ups, Dips
+                            Recommended Main Exercises: Pike Push-ups, Dips, Push-ups
 
                         </p>
                         <p>
@@ -68,9 +71,9 @@ export function PikePU() {
                 </div>
             </div>
             {svgDivider.get("1")}
-            <ProgressionChart name1="Push-up" name2="Dip" name3="Pike Push-up" name4="Crow Pose" name5="HSPU"  
-            link1="/tutorials/pushup" link2="/tutorials/dip" link3="/tutorials/pikepu" link4="/tutorials/crowpose" link5="#"
-            svg1="push-up" svg2="dip" svg3="pike-pu" svg4="crow-pose" svg5=""/>
+            <ProgressionChart name1="Push-up" name2="Pike Push-up" name3="Elevated Pike PU" name4="Bent Arm Stand" name5="HSPU"  
+            link1="/tutorials/pushup" link2="/tutorials/pikepu" link3="/tutorials/elevatedpikepu" link4="#" link5="#"
+            svg1="push-up" svg2="pike-pu" svg3="elevated-pike-pu" svg4="" svg5=""/>
             {svgDivider.get("2")}
             <div class="technique-form-container">
                 <div class="technique-form">

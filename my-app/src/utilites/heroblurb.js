@@ -52,6 +52,14 @@ export const heroBlurb = new Map([
   [
     "assisted-hs",
     "The Assisted Handstand is a handstand exercise to build strength, balance, and form, to work toward the freestanding handstand."
+  ],
+  [
+    "handstand",
+    "The Handstand is a skill-focused balancing exercise that is extremely common in calisthenics, requiring focus and engaging the whole body."
+  ],
+  [
+    "elevated-pike-pu",
+    "The Elevated Pike Pushup is a shoulder exercise used to build strength towards skills like the Bent Arm Stand and the HSPU."
   ]
   
 ]);

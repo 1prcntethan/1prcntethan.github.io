@@ -18,6 +18,8 @@ import { TuckPLPU } from './pages/tutorials/tuckplpu';
 import { PikePU } from './pages/tutorials/pikepu';
 import { CrowPose } from './pages/tutorials/crowpose';
 import { AssistedHS } from './pages/tutorials/assistedhs';
+import { Handstand } from './pages/tutorials/handstand';
+import { ElevatedPikePU } from './pages/tutorials/elevatedpikepu';
 
 
 function App() {
@@ -44,6 +46,8 @@ function App() {
         <Route path="/tutorials/pikepu" element={<PikePU/>}/>
         <Route path="/tutorials/crowpose" element={<CrowPose/>}/>
         <Route path="/tutorials/assistedhs" element={<AssistedHS/>}/>
+        <Route path="/tutorials/handstand" element={<Handstand/>}/>
+        <Route path="/tutorials/elevatedpikepu" element={<ElevatedPikePU/>}/>
 
         
       </Routes>
