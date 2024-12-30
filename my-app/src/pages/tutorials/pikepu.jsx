@@ -70,7 +70,7 @@ export function PikePU() {
             {svgDivider.get("1")}
             <ProgressionChart name1="Push-up" name2="Dip" name3="Pike Push-up" name4="Crow Pose" name5="HSPU"  
             link1="/tutorials/pushup" link2="/tutorials/dip" link3="/tutorials/pikepu" link4="/tutorials/crowpose" link5="#"
-            svg1="push-up" svg2="dip" svg3="pike-pu" svg4="crow-pose" svg5=""/>
+            svg1="push-up" svg2="dip" svg3="pike-pu" svg4="crow-pose" svg5="hspu"/>
             {svgDivider.get("2")}
             <div class="technique-form-container">
                 <div class="technique-form">

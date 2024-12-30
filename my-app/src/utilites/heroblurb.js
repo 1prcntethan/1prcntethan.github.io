@@ -60,6 +60,14 @@ export const heroBlurb = new Map([
   [
     "elevated-pike-pu",
     "The Elevated Pike Pushup is a shoulder exercise used to build strength towards skills like the Bent Arm Stand and the HSPU."
+  ],
+  [
+    "bas",
+    "The Bent Arm Stand is a shoulder focused handstand exercise used to strengthen the bottom position of the full HSPU."
+  ],
+  [
+    "assisted-hspu",
+    "The Assisted HSPU is a last step before the full HSPU. It builds essential shoulder strength and muscle coordination and activation for the full HSPU."
   ]
   
 ]);

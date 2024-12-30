@@ -66,7 +66,7 @@ export function Handstand() {
             {svgDivider.get("1")}
             <ProgressionChart name1="Pike Push-up" name2="Assisted HS" name3="Handstand" name4="Bent Arm Stand" name5="HSPU"  
             link1="/tutorials/pikepu" link2="/tutorials/assistedhs" link3="/tutorials/handstand" link4="#" link5="#"
-            svg1="pike-pu" svg2="assisted-hs" svg3="handstand" svg4="" svg5=""/>
+            svg1="pike-pu" svg2="assisted-hs" svg3="handstand" svg4="bas" svg5="hspu"/>
             {svgDivider.get("2")}
             <div class="technique-form-container">
                 <div class="technique-form">

@@ -6,11 +6,11 @@ import { Link } from 'react-router-dom';
 import { svgDivider } from "../../utilites/svg-divider";
 
 
-export function ElevatedPikePU() {
+export function AssistedHSPU() {
     return (
         <>
             <Navbar />
-            <SkillHero title="elevated pike pu" identifier="elevated-pike-pu"/>
+            <SkillHero title="assisted hspu" identifier="assisted-hspu"/>
             {svgDivider.get("0")}
             <div className="skill-info-container"> 
                 <div className="skill-info">
@@ -27,29 +27,23 @@ export function ElevatedPikePU() {
                             <p>High Strain Areas: Wrists</p>
                         </div>
                         <div className="overview-explanation">
-                            The Elevated Pike Push-Up is the progression exercise from the regular pike pushup, for building strength toward vertical pushing movements. When performing this exercise on the floor, consider warming up your wrists, or use low paralletes.
+                            The Assisted Handstand Pushup is the last regression before the HSPU. It involves practicing transitions between the HS(Handstand) and the BAS(Bent Arm Stand), which are the negative and pressing movements. When performing this exercise on the floor, consider warming up your wrists, or use low paralletes.
                         </div>
                     </div>
             
                     <div className="exercise-instructions-container">
-                        Step-by-Step ~ Elevated Pike Push-up
+                        Step-by-Step ~ Assisted Handstand Pushup
                         <div className="exercise-instructions">
                             <input id="skill-read-more" type="checkbox" />
                     
                             <div className="skill-instructions">
                                 <p>
                                     <ul>
-                                        <li>Find an object to elevate your feet with.</li>
-                                        <li>Start in a plank position with your hands shoulder-width apart, and hands facing forward or alternatively slightly outward.</li>
-                                        <li>Put your feet on the elevated object, your feet should be at a higher elevation than your hands</li>
-                                        <li>Walk your hands toward your feet, while bending at your hips, until the angle between your legs and torso is around 90 degrees.</li> 
-                                        <li>It may be uncomfortable, but this is the starting position for the elevated pike pushup.</li> 
-                                        <li>Lower your head and body toward the ground, by bending your elbows, and try to keep your legs straight.</li> 
-                                        <li>Once your head touches the ground, push back up with your arms, straightening the elbows. </li> 
-                                        <li>During the exercise, it is recommended move slowly and controlled coming down, but be explosive and fast when coming up. </li> 
-                                        <li>This exercise also requires some hamstring flexibility, but it is okay to have some bend in the knees to make it easier.</li>
-                                        <li>The exercise difficulty can change, depending on if your head goes down close to your hands, or far in front of your hands.</li> 
-                                        <li>The exercise becomes more difficult the higher your feet are, since there is more bodyweight on your hands.</li>
+                                        <li>For a HSPU negative, start in a handstand, and slowly lower yourself by bending the elbows, and moving your head in front of your hands, until you are in the BAS position.</li>
+                                        <li>For a HSPU pressing movement, start in the BAS and push up and straighten your body into a handstand.</li> 
+                                        <li>Practice alternating and spamming these movements.</li> 
+                                        <li>Once you have the strength, you should be able to chain and combine a negative and a press, or a press and a negative.</li> 
+                                        <li>Eventually, this will result in a HSPU.</li>
                                         <li>To use this exercise effectively, perform these at a diffculty where you can do 4-8 reps for strength, or 8-12 for hypertrophy/volume.</li> 
                                     </ul>
                                 </p>
@@ -61,19 +55,19 @@ export function ElevatedPikePU() {
 
                     <div className="recommended-info">
                         <p>
-                            Recommended Main Exercises: Pike Push-ups, Dips, Push-ups
+                            Recommended Main Exercises: Bent Arm Stand, Elevated Pike Push-ups, Handstand
 
                         </p>
                         <p>
-                            Recommended Accessory Exercises: Hamstring Stretch
+                            Recommended Accessory Exercises: Pike Push-ups, Dips
                         </p>
                     </div>
                 </div>
             </div>
             {svgDivider.get("1")}
-            <ProgressionChart name1="Push-up" name2="Pike Push-up" name3="Elevated Pike PU" name4="Bent Arm Stand" name5="HSPU"  
-            link1="/tutorials/pushup" link2="/tutorials/pikepu" link3="/tutorials/elevatedpikepu" link4="/tutorials/bas" link5="#"
-            svg1="push-up" svg2="pike-pu" svg3="elevated-pike-pu" svg4="bas" svg5="hspu"/>
+            <ProgressionChart name1="Pike Push-up" name2="Bent Arm Stand" name3="Assisted HSPU" name4="HSPU" name5="90 Degree PU"  
+            link1="/tutorials/pikepu" link2="/tutorials/bas" link3="/tutorials/assistedhspu" link4="/tutorials/hspu" link5="#"
+            svg1="pike-pu" svg2="bas" svg3="assisted-hspu" svg4="hspu" svg5=""/>
             {svgDivider.get("2")}
             <div class="technique-form-container">
                 <div class="technique-form">
@@ -85,12 +79,13 @@ export function ElevatedPikePU() {
                             Good Form Cues: 
                             <ul>
                             <li>Elbows are relatively close to the body</li>
-                            <li>Head touches the floor</li>
-                            <li>Body in a pike (90 degree) position</li>
+                            <li>Head is close to or touching the floor</li>
+                            <li>Head is in front of hands</li>
+                            <li>Body is straight and engaged</li>
                             <li>Elbows make a ~90 degree angle in the bottom position</li>
                             <li>Hands facing forward or slightly outward</li>
                             <li>Hands are (usually) placed shoulder-width apart</li>
-                            <li>Legs are mostly straight</li>
+                            <li>Legs are straight</li>
                             </ul>
                         </div>
                         <div>
@@ -99,7 +94,8 @@ export function ElevatedPikePU() {
                             <li>Flared elbows</li>
                             <li>Sagging hips</li>
                             <li>Weak/arched core</li>
-                            <li>Arched body</li>
+                            <li>Arched/bent body</li>
+                            <li>Elbows not fully bent</li>
                             </ul>
                     
                         </div>

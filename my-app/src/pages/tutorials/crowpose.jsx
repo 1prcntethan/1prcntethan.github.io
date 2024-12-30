@@ -66,7 +66,7 @@ export function CrowPose() {
             {svgDivider.get("1")}
             <ProgressionChart name1="Push-up" name2="Pike Push-up" name3="Crow Pose" name4="Assisted HS" name5="HSPU"  
             link1="/tutorials/pushup" link2="/tutorials/pikepu" link3="/tutorials/crowpose" link4="/tutorials/assistedhs" link5="#"
-            svg1="push-up" svg2="pike-pu" svg3="crow-pose" svg4="assisted-hs" svg5=""/>
+            svg1="push-up" svg2="pike-pu" svg3="crow-pose" svg4="assisted-hs" svg5="hspu"/>
             {svgDivider.get("2")}
             <div class="technique-form-container">
                 <div class="technique-form">

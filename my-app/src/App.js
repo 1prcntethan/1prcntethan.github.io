@@ -20,6 +20,8 @@ import { CrowPose } from './pages/tutorials/crowpose';
 import { AssistedHS } from './pages/tutorials/assistedhs';
 import { Handstand } from './pages/tutorials/handstand';
 import { ElevatedPikePU } from './pages/tutorials/elevatedpikepu';
+import { BentArmStand } from './pages/tutorials/bentarmstand';
+import { AssistedHSPU } from './pages/tutorials/assistedhspu';
 
 
 function App() {
@@ -48,7 +50,8 @@ function App() {
         <Route path="/tutorials/assistedhs" element={<AssistedHS/>}/>
         <Route path="/tutorials/handstand" element={<Handstand/>}/>
         <Route path="/tutorials/elevatedpikepu" element={<ElevatedPikePU/>}/>
-
+        <Route path="/tutorials/bas" element={<BentArmStand/>}/>
+        <Route path="/tutorials/assistedhspu" element={<AssistedHSPU/>}/>
         
       </Routes>
     </Router>
