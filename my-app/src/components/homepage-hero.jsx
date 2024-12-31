@@ -593,8 +593,8 @@ const HomepageHero = () => {
 
 
             <div className="hero-cta">
-              <div className="hero-cta-button-1">I'm new!</div>
-              <div className="hero-cta-button-2">I'm experienced!</div>
+              <Link to = "/training" className="hero-cta-button-1">I'm new!</Link>
+              <Link to = "/tutorials" className="hero-cta-button-2">I'm experienced!</Link>
             </div>
           </div>
 

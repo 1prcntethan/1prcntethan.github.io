@@ -114,6 +114,8 @@
     background-color: #242424;
     border: none;
     border-radius: 30px;
+    text-decoration: none;
+    color: white;
 }
 
 .hero-cta-button-1::after {
@@ -147,6 +149,8 @@
     background-color: #242424;
     border: none;
     border-radius: 30px;
+    text-decoration: none;
+    color: white;
 }
 
 .hero-cta-button-2::after {
