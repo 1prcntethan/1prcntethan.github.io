@@ -68,6 +68,17 @@ export const heroBlurb = new Map([
   [
     "assisted-hspu",
     "The Assisted HSPU is a last step before the full HSPU. It builds essential shoulder strength and muscle coordination and activation for the full HSPU."
+  ],
+
+
+
+  [
+    "assisted-inv-row",
+    "The Assisted Inverted Row is a baseline skill to build pulling strength in the back muscles for future horizontal and vertical pulling exercises."
+  ],
+  [
+    "inverted-row",
+    "The Inverted Row is a baseline skill to build basic pulling strength for future horizontal and vertical pulling exercises."
   ]
   
 ]);

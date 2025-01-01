@@ -37,8 +37,8 @@ export const skillLinks = new Map([
   
     // VERTICAL PUSH SKILLS ^^^
   
-    ["Assisted Inverted Row", "assisted inverted row"],
-    ["Inverted Row", "inverted row"],
+    ["Assisted Inverted Row", "/tutorials/assistedinvrow"],
+    ["Inverted Row", "/tutorials/invertedrow"],
     ["Tuck FL", "tuck fl"],
     ["Tuck FL Row", "tuck fl row"],
     ["Pike FL", "pike fl"],

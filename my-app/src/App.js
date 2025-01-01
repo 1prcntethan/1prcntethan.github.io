@@ -22,6 +22,8 @@ import { Handstand } from './pages/tutorials/handstand';
 import { ElevatedPikePU } from './pages/tutorials/elevatedpikepu';
 import { BentArmStand } from './pages/tutorials/bentarmstand';
 import { AssistedHSPU } from './pages/tutorials/assistedhspu';
+import { AssistedInvRow } from './pages/tutorials/assistedinvrow';
+import { InvertedRow } from './pages/tutorials/invertedrow';
 
 
 function App() {
@@ -52,7 +54,10 @@ function App() {
         <Route path="/tutorials/elevatedpikepu" element={<ElevatedPikePU/>}/>
         <Route path="/tutorials/bas" element={<BentArmStand/>}/>
         <Route path="/tutorials/assistedhspu" element={<AssistedHSPU/>}/>
-        
+
+        <Route path="/tutorials/assistedinvrow" element={<AssistedInvRow/>}/>
+        <Route path="/tutorials/invertedrow" element={<InvertedRow/>}/>
+
       </Routes>
     </Router>
   );
