@@ -27,7 +27,7 @@ export function InvertedRow() {
                             <p>High Strain Areas: N/A</p>
                         </div>
                         <div className="overview-explanation">
-                            The Inverted Row is a pulling regression for the pull-up. In the future, this pulling strength will be necessary to start vertical pull movements.
+                            The Inverted Row is a pulling regression for the pull-up. In the future, this pulling strength will be necessary to start vertical pull movements. Grip strength will also be built through this exercise.
                         </div>
                     </div>
             
