@@ -24,6 +24,7 @@ import { BentArmStand } from './pages/tutorials/bentarmstand';
 import { AssistedHSPU } from './pages/tutorials/assistedhspu';
 import { AssistedInvRow } from './pages/tutorials/assistedinvrow';
 import { InvertedRow } from './pages/tutorials/invertedrow';
+import { TuckFL } from './pages/tutorials/tuckfl';
 
 
 function App() {
@@ -57,6 +58,7 @@ function App() {
 
         <Route path="/tutorials/assistedinvrow" element={<AssistedInvRow/>}/>
         <Route path="/tutorials/invertedrow" element={<InvertedRow/>}/>
+        <Route path="/tutorials/tuckfl" element={<TuckFL/>}/>
 
       </Routes>
     </Router>

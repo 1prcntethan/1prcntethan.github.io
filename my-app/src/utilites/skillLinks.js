@@ -39,7 +39,7 @@ export const skillLinks = new Map([
   
     ["Assisted Inverted Row", "/tutorials/assistedinvrow"],
     ["Inverted Row", "/tutorials/invertedrow"],
-    ["Tuck FL", "tuck fl"],
+    ["Tuck FL", "/tutorials/tuckfl"],
     ["Tuck FL Row", "tuck fl row"],
     ["Pike FL", "pike fl"],
     ["Pike FL Row", "pike fl row"],

@@ -79,6 +79,10 @@ export const heroBlurb = new Map([
   [
     "inverted-row",
     "The Inverted Row is a baseline skill to build basic pulling strength for future horizontal and vertical pulling exercises."
+  ],
+  [
+    "tuck-fl",
+    "The Tuck Front Lever is a "
   ]
   
 ]);
