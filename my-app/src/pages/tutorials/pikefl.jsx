@@ -70,7 +70,7 @@ export function PikeFL() {
             {svgDivider.get("1")}
             <ProgressionChart name1="Inverted Row" name2="Tuck Front Lever" name3="Pike Front Lever" name4="Adv. Tuck FL" name5="Full Front Lever"  
             link1="/tutorials/invertedrow" link2="/tutorials/tuckfl" link3="/tutorials/pikefl" link4="/tutorials/advtuckfl" link5="#"
-            svg1="inverted-row" svg2="tuck-fl" svg3="pike-fl" svg4="" svg5=""/>
+            svg1="inverted-row" svg2="tuck-fl" svg3="pike-fl" svg4="adv-tuck-fl" svg5=""/>
             <TutorialReturn />
             {svgDivider.get("2")}
             <div class="technique-form-container">

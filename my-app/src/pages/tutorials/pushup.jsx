@@ -48,6 +48,7 @@ export function Pushup() {
                                         <li>To press up, simply push your arms out, straightening the elbows and keeping a straight body alignment. </li> 
                                         <li>During the exercise, it is recommended move slowly and controlled coming down, but be explosive and fast when coming up. </li> 
                                         <li>This exercise has many different variations and difficulties, depending on where the hands are placed.</li> 
+                                        <li>To use this exercise effectively, perform these at a diffculty where you can do 4-8 reps for strength, or 8-12 for hypertrophy/volume.</li> 
                                     </ul>
                                 </p>
                                 <label className="read-more-label" for="skill-read-more">Show less</label>

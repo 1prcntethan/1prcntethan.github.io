@@ -69,7 +69,7 @@ export function TuckFLRow() {
             </div>
             {svgDivider.get("1")}
             <ProgressionChart name1="Inverted Row" name2="Tuck Front Lever" name3="Tuck FL Row" name4="Pike Front Lever" name5="Full Front Lever"  
-            link1="/tutorials/pushup" link2="/tutorials/tuckfl" link3="/tutorials/tuckflrow" link4="/tutorials/pikefl" link5="#"
+            link1="/tutorials/invertedrow" link2="/tutorials/tuckfl" link3="/tutorials/tuckflrow" link4="/tutorials/pikefl" link5="#"
             svg1="inverted-row" svg2="tuck-fl" svg3="tuck-fl-row" svg4="pike-fl" svg5=""/>
             <TutorialReturn />
             {svgDivider.get("2")}

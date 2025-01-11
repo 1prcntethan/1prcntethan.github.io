@@ -92,5 +92,19 @@ export const heroBlurb = new Map([
     "pike-fl",
     "The Pike Front Lever is a front lever regression used to build strength towards more advanced front lever progressions."
   ],
+  [
+    "pike-fl-row",
+    "The Pike Front Lever Row is a back focused row exercise used to build strength in the mid-back, and is the basis for skills like the front lever touch."
+  ],
+  [
+    "adv-tuck-fl",
+    "The Advanced Tuck Front Lever is a front lever regression used to build strength towards more elite front lever progressions."
+  ],
+
+  [
+    "pull-up",
+    "The Pull-Up is a basic pulling exercise that builds strength in the back, biceps, and core. This exercise represents the foundation for almost all pulling skills.",
+
+  ]
   
 ]);

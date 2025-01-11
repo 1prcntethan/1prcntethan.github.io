@@ -27,6 +27,9 @@ import { InvertedRow } from './pages/tutorials/invertedrow';
 import { TuckFL } from './pages/tutorials/tuckfl';
 import { TuckFLRow } from './pages/tutorials/tuckflrow';
 import { PikeFL } from './pages/tutorials/pikefl';
+import { PikeFLRow } from './pages/tutorials/pikeflrow';
+import { AdvTuckFL } from './pages/tutorials/advtuckfl';
+import { Pullup } from './pages/tutorials/pullup';
 
 
 function App() {
@@ -63,6 +66,10 @@ function App() {
         <Route path="/tutorials/tuckfl" element={<TuckFL/>}/>
         <Route path="/tutorials/tuckflrow" element={<TuckFLRow/>}/>
         <Route path="/tutorials/pikefl" element={<PikeFL/>}/>
+        <Route path="/tutorials/pikeflrow" element={<PikeFLRow/>}/>
+        <Route path="/tutorials/advtuckfl" element={<AdvTuckFL/>}/>
+
+        <Route path="/tutorials/pullup" element={<Pullup/>}/>
 
       </Routes>
     </Router>

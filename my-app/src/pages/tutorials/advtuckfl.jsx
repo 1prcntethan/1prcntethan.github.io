@@ -8,11 +8,11 @@ import TutorialReturn from "../../components/tutorialreturn";
 
 
 
-export function TuckFL() {
+export function AdvTuckFL() {
     return (
         <>
             <Navbar />
-            <SkillHero title="tuck front lever" identifier="tuck-fl"/>
+            <SkillHero title="adv. tuck front lever" identifier="adv-tuck-fl"/>
             {svgDivider.get("0")}
             <div className="skill-info-container"> 
                 <div className="skill-info">
@@ -22,19 +22,19 @@ export function TuckFL() {
                     <div className="difficulty-muscle">
                         <div className="skill-difficulty">
                             <Link to = "/Terminology" className="link-text" >
-                            Skill Difficulty: C
+                            Skill Difficulty: B
                             </Link>
                             <br />
                             <p>Targeted Muscles: Lats, Rear Deltoids, Triceps, Scapula, Core</p>
                             <p>High Strain Areas: N/A </p>
                         </div>
                         <div className="overview-explanation">
-                            The Tuck Front Lever is a regression exercise used to prepare the body more difficult front lever progressions. The lats/back is the main muscle used in this exercise. Scapula retraction should be kept in mind in order to achieve a neutral scapula position.
+                            The Advanced Tuck Front Lever is a regression exercise used to prepare the body more difficult front lever progressions. The lats/back is the main muscle used in this exercise. Scapula retraction should be kept in mind in order to achieve a neutral scapula position.
                         </div>
                     </div>
             
                     <div className="exercise-instructions-container">
-                        Step-by-Step ~ Tuck Front Lever
+                        Step-by-Step ~ Advanced Tuck Front Lever
                         <div className="exercise-instructions">
                             <input id="skill-read-more" type="checkbox" />
                     
@@ -46,6 +46,7 @@ export function TuckFL() {
                                         <li>Gradually pull your body so your back is parallel with the ground. </li> 
                                         <li>Maintain straight arms and a neutral scapula, tucking your knees to your chest.</li> 
                                         <li>Lastly, try to flatten your back.</li>  
+                                        <li>From this Tuck FL position, unfold your hips and point your knees straight up, keeping your legs bent and your feet close to your butt.</li>
                                         <li>To use this exercise effectively, perform holds at a difficulty where you can hold them for at least 6-8 seconds, counting each hold as a rep.</li> 
                                     </ul>
                                 </p>
@@ -57,7 +58,7 @@ export function TuckFL() {
 
                     <div className="recommended-info">
                         <p>
-                            Recommended Main Exercises: Pull-up
+                            Recommended Main Exercises: Pike FL, Tuck FL, Pull-up
 
                         </p>
                         <p>
@@ -67,9 +68,9 @@ export function TuckFL() {
                 </div>
             </div>
             {svgDivider.get("1")}
-            <ProgressionChart name1="Inverted Row" name2="Pull-up" name3="Tuck Front Lever" name4="Pike Front Lever" name5="Full Front Lever"  
-            link1="/tutorials/invertedrow" link2="/tutorials/pullup" link3="/tutorials/tuckfl" link4="/tutorials/pikefl" link5="#"
-            svg1="inverted-row" svg2="pull-up" svg3="tuck-fl" svg4="pike-fl" svg5=""/>
+            <ProgressionChart name1="Inverted Row" name2="Pike Front Lever" name3="Adv. Tuck FL" name4="Super Adv. Tuck FL" name5="Full Front Lever"  
+            link1="/tutorials/invertedrow" link2="/tutorials/pikefl" link3="/tutorials/advtuckfl" link4="#" link5="#"
+            svg1="inverted-row" svg2="pike-fl" svg3="adv-tuck-fl" svg4="" svg5=""/>
             <TutorialReturn />
             {svgDivider.get("2")}
             <div class="technique-form-container">
@@ -81,8 +82,9 @@ export function TuckFL() {
                         <div>
                             Good Form Cues: 
                             <ul>
-                            <li>Straight arms & locked elbows in bottom</li>
-                            <li>Knees tucked to chest</li>
+                            <li>Straight arms & locked elbows</li>
+                            <li>Feet tucked, knees bent</li>
+                            <li>Knees point straight up</li>
                             <li>Neutral scapula</li>
                             <li>Back is flat and parallel to the ground</li>
                             <li>Hands are placed shoulder-width apart</li>

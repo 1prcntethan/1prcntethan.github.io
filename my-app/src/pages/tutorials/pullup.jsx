@@ -8,11 +8,11 @@ import TutorialReturn from "../../components/tutorialreturn";
 
 
 
-export function TuckFL() {
+export function Pullup() {
     return (
         <>
             <Navbar />
-            <SkillHero title="tuck front lever" identifier="tuck-fl"/>
+            <SkillHero title="pull-up" identifier="pull-up"/>
             {svgDivider.get("0")}
             <div className="skill-info-container"> 
                 <div className="skill-info">
@@ -22,19 +22,19 @@ export function TuckFL() {
                     <div className="difficulty-muscle">
                         <div className="skill-difficulty">
                             <Link to = "/Terminology" className="link-text" >
-                            Skill Difficulty: C
+                            Skill Difficulty: D
                             </Link>
                             <br />
-                            <p>Targeted Muscles: Lats, Rear Deltoids, Triceps, Scapula, Core</p>
-                            <p>High Strain Areas: N/A </p>
+                            <p>Targeted Muscles: Back, Bicep, Core</p>
+                            <p>High Strain Areas: N/A</p>
                         </div>
                         <div className="overview-explanation">
-                            The Tuck Front Lever is a regression exercise used to prepare the body more difficult front lever progressions. The lats/back is the main muscle used in this exercise. Scapula retraction should be kept in mind in order to achieve a neutral scapula position.
+                            The Pull-Up is the fundamental exercise for all pulling movements in the future. It mainly targets the lats, but can target different muscles depending on grip width. The hollow-body variation additionally targets the core muscles, while the arched back variation engages more of the upper back muscles.
                         </div>
                     </div>
             
                     <div className="exercise-instructions-container">
-                        Step-by-Step ~ Tuck Front Lever
+                        Step-by-Step ~ Pull-up
                         <div className="exercise-instructions">
                             <input id="skill-read-more" type="checkbox" />
                     
@@ -42,11 +42,14 @@ export function TuckFL() {
                                 <p>
                                     <ul>
                                         <li>Start in a deadhang position with your hands shoulder-width apart.</li> 
-                                        <li>Ensure your elbows are completely straightened, and tuck your knees up to your chest. </li> 
-                                        <li>Gradually pull your body so your back is parallel with the ground. </li> 
-                                        <li>Maintain straight arms and a neutral scapula, tucking your knees to your chest.</li> 
-                                        <li>Lastly, try to flatten your back.</li>  
-                                        <li>To use this exercise effectively, perform holds at a difficulty where you can hold them for at least 6-8 seconds, counting each hold as a rep.</li> 
+                                        <li>Pull yourself up, bringing your torso upward, and get your chin above the bar height. </li> 
+                                        <li>Think about driving your elbows down and pulling the bar downward. </li> 
+                                        <li>The hollow-body pull-up has a tight core and straight body. </li> 
+                                        <li>The arched back pull-up has a more relaxed core and has a more open, upward facing chest position.</li> 
+                                        <li>During the exercise, it is recommended move slowly and controlled coming down, but be explosive and fast when coming up. </li> 
+                                        <li>This exercise has many different variations and difficulties, depending on where the hands are placed.</li> 
+                                        <li>To use this exercise effectively, perform these at a diffculty where you can do 4-8 reps for strength, or 8-12 for hypertrophy/volume.</li> 
+
                                     </ul>
                                 </p>
                                 <label className="read-more-label" for="skill-read-more">Show less</label>
@@ -57,19 +60,19 @@ export function TuckFL() {
 
                     <div className="recommended-info">
                         <p>
-                            Recommended Main Exercises: Pull-up
+                            Recommended Main Exercises: Assisted Pull-up, Inverted Row
 
                         </p>
                         <p>
-                            Recommended Accessory Exercises: Scapular Pullups, Active Hang, Deadhang
+                            Recommended Accessory Exercises: Deadhang, Active Hang, Hollow Body Hold
                         </p>
                     </div>
                 </div>
             </div>
             {svgDivider.get("1")}
-            <ProgressionChart name1="Inverted Row" name2="Pull-up" name3="Tuck Front Lever" name4="Pike Front Lever" name5="Full Front Lever"  
-            link1="/tutorials/invertedrow" link2="/tutorials/pullup" link3="/tutorials/tuckfl" link4="/tutorials/pikefl" link5="#"
-            svg1="inverted-row" svg2="pull-up" svg3="tuck-fl" svg4="pike-fl" svg5=""/>
+            <ProgressionChart name1="Deadhang" name2="Assisted Pull-up" name3="Pull-up" name4="Chest Pull-up" name5="Muscle-Up"  
+            link1="#" link2="#" link3="/tutorials/pullup" link4="" link5="#"
+            svg1="NA" svg2="" svg3="pull-up" svg4="" svg5=""/>
             <TutorialReturn />
             {svgDivider.get("2")}
             <div class="technique-form-container">
@@ -81,21 +84,21 @@ export function TuckFL() {
                         <div>
                             Good Form Cues: 
                             <ul>
-                            <li>Straight arms & locked elbows in bottom</li>
-                            <li>Knees tucked to chest</li>
-                            <li>Neutral scapula</li>
-                            <li>Back is flat and parallel to the ground</li>
-                            <li>Hands are placed shoulder-width apart</li>
-                            <li>Hips are level with shoulders</li>
+                            <li>Elbows drive downward</li>
+                            <li>Chin gets above bar</li>
+                            <li>Hollow-body position for hollow-body variation</li>
+                            <li>Open and upward facing chest for arched back variation</li>
+                            <li>Hands are (usually) placed shoulder-width apart</li>
                             </ul>
                         </div>
                         <div>
                             Bad Form Cues: 
                             <ul>
-                            <li>Bent arms</li>
-                            <li>Weak/protracted scapula</li>
-                            <li>High/low hips</li>
-                            <li>Hands are placed too far/close together</li>
+                            <li>Flared elbows</li>
+                            <li>Sagging hips</li>
+                            <li>Weak/arched core</li>
+                            <li>Arched body</li>
+                            <li>High hips</li>
                             </ul>
                     
                         </div>
@@ -103,8 +106,6 @@ export function TuckFL() {
                 </div>
             </div>
             {svgDivider.get("3")}
-
-
         </>
     )
 }
