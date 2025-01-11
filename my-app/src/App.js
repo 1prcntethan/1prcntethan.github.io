@@ -25,6 +25,8 @@ import { AssistedHSPU } from './pages/tutorials/assistedhspu';
 import { AssistedInvRow } from './pages/tutorials/assistedinvrow';
 import { InvertedRow } from './pages/tutorials/invertedrow';
 import { TuckFL } from './pages/tutorials/tuckfl';
+import { TuckFLRow } from './pages/tutorials/tuckflrow';
+import { PikeFL } from './pages/tutorials/pikefl';
 
 
 function App() {
@@ -59,6 +61,8 @@ function App() {
         <Route path="/tutorials/assistedinvrow" element={<AssistedInvRow/>}/>
         <Route path="/tutorials/invertedrow" element={<InvertedRow/>}/>
         <Route path="/tutorials/tuckfl" element={<TuckFL/>}/>
+        <Route path="/tutorials/tuckflrow" element={<TuckFLRow/>}/>
+        <Route path="/tutorials/pikefl" element={<PikeFL/>}/>
 
       </Routes>
     </Router>

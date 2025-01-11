@@ -1,0 +1,28 @@
+.return-container{
+    display: flex;
+    width: auto;
+    background-color: #252525;
+    padding: 2% 5%;
+    justify-content: center;
+}
+
+.return-button {
+    border: 1px solid #333333;
+    padding: 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    color: white;
+}
+.return-button:hover {
+    background-color: rgb(75, 42, 77);
+    transition: 0.5s all ease-in-out;
+    border: 1px solid #494949;
+
+}
+
+.return-link {
+    text-decoration: none;
+    color: white;
+    font-family: Fira Sans;
+    font-weight: 200;
+}

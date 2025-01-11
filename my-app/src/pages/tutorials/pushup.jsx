@@ -4,6 +4,8 @@ import SkillHero from "../../components/skillhero";
 import "./skillpage.css";
 import { Link } from 'react-router-dom';
 import { svgDivider } from "../../utilites/svg-divider";
+import TutorialReturn from "../../components/tutorialreturn";
+
 
 
 export function Pushup() {
@@ -69,6 +71,7 @@ export function Pushup() {
             <ProgressionChart name1="N/A" name2="Assisted Push-up" name3="Push-up" name4="Planche Lean" name5="Full Planche"  
             link1="#" link2="/tutorials/assistedpu" link3="/tutorials/pushup" link4="/tutorials/planchelean" link5="#"
             svg1="NA" svg2="assisted-pushup" svg3="push-up" svg4="planche-lean" svg5="full-pl"/>
+            <TutorialReturn />
             {svgDivider.get("2")}
             <div class="technique-form-container">
                 <div class="technique-form">

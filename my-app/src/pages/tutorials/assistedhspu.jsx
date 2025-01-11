@@ -4,6 +4,8 @@ import SkillHero from "../../components/skillhero";
 import "./skillpage.css";
 import { Link } from 'react-router-dom';
 import { svgDivider } from "../../utilites/svg-divider";
+import TutorialReturn from "../../components/tutorialreturn";
+
 
 
 export function AssistedHSPU() {
@@ -68,6 +70,7 @@ export function AssistedHSPU() {
             <ProgressionChart name1="Pike Push-up" name2="Bent Arm Stand" name3="Assisted HSPU" name4="HSPU" name5="90 Degree PU"  
             link1="/tutorials/pikepu" link2="/tutorials/bas" link3="/tutorials/assistedhspu" link4="/tutorials/hspu" link5="#"
             svg1="pike-pu" svg2="bas" svg3="assisted-hspu" svg4="hspu" svg5=""/>
+            <TutorialReturn />
             {svgDivider.get("2")}
             <div class="technique-form-container">
                 <div class="technique-form">

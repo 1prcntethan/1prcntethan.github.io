@@ -4,6 +4,8 @@ import SkillHero from "../../components/skillhero";
 import "./skillpage.css";
 import { Link } from 'react-router-dom';
 import { svgDivider } from "../../utilites/svg-divider";
+import TutorialReturn from "../../components/tutorialreturn";
+
 
 
 export function ElbowLever() {
@@ -70,6 +72,7 @@ export function ElbowLever() {
             <ProgressionChart name1="N/A" name2="Push-up" name3="Elbow Lever" name4="Planche Lean" name5="Full Planche"  
             link1="#" link2="/tutorials/pushup" link3="/tutorials/elbowlever" link4="/tutorials/planchelean" link5="#"
             svg1="NA" svg2="push-up" svg3="elbow-lever" svg4="planche-lean" svg5="full-pl"/>
+            <TutorialReturn />
             {svgDivider.get("2")}
             <div class="technique-form-container">
                 <div class="technique-form">

@@ -8,11 +8,11 @@ import TutorialReturn from "../../components/tutorialreturn";
 
 
 
-export function PlancheLean() {
+export function TuckFLRow() {
     return (
         <>
             <Navbar />
-            <SkillHero title="planche lean" identifier="planche-lean"/>
+            <SkillHero title="tuck front lever row" identifier="tuck-fl-row"/>
             {svgDivider.get("0")}
             <div className="skill-info-container"> 
                 <div className="skill-info">
@@ -22,32 +22,32 @@ export function PlancheLean() {
                     <div className="difficulty-muscle">
                         <div className="skill-difficulty">
                             <Link to = "/Terminology" className="link-text" >
-                            Skill Difficulty: D
+                            Skill Difficulty: C
                             </Link>
                             <br />
-                            <p>Targeted Muscles: Anterior Deltoids, Upper Chest, Core</p>
-                            <p>High Strain Areas: Wrists, Bicep Tendon</p>
+                            <p>Targeted Muscles: Lats, Rear Deltoids, Biceps, Triceps, Scapula, Core</p>
+                            <p>High Strain Areas: N/A </p>
                         </div>
                         <div className="overview-explanation">
-                            The Planche Lean is a progression exercise used to prepare the body for the tuck planche. When performing this exercise on the floor, it's important to warm up your wrists, especially if you're a beginner, since the movement can place unfamiliar strain on them. If you feel extreme pain or discomfort practicing this exercise, you may be leaning too far. For those with wrist pain, consider using low parallettes.
+                            The Tuck Front Lever Row is a regression exercise used to prepare the body more difficult front lever row progressions. The lats/back is the main muscle used in this exercise, as well as the mid-back. Scapula retraction should be kept in mind in order to achieve a neutral scapula position.
                         </div>
                     </div>
             
                     <div className="exercise-instructions-container">
-                        Step-by-Step ~ Planche Lean
+                        Step-by-Step ~ Tuck Front Lever Row
                         <div className="exercise-instructions">
                             <input id="skill-read-more" type="checkbox" />
                     
                             <div className="skill-instructions">
                                 <p>
                                     <ul>
-                                        <li>Start in a push-up position with your hands shoulder-width apart, and hands turned at a 45 degree angle.</li> 
-                                        <li>Ensure your elbows are completely straightened, and that your scapula is protracted. </li> 
-                                        <li>Gradually lean your body forward by shifting your shoulders ahead of your wrists, and slowly walking your feet forwards. </li> 
-                                        <li>Maintain straight arms and body alignment, as well as strong protraction. </li> 
-                                        <li>The farther you lean, the more load you should feel on your shoulders, specifically the anterior deltoids. </li> 
-                                        <li>Therefore, the difficulty of the exercise is dependent on how far you lean forwards. </li> 
-                                        <li>To use this exercise effectively, perform holds at a difficulty where you can hold them for at least 6-8 seconds, counting each hold as a rep.</li> 
+                                        <li>Start in a deadhang position with your hands shoulder-width apart.</li> 
+                                        <li>Ensure your elbows are completely straightened, and tuck your knees up to your chest. </li> 
+                                        <li>Gradually pull your body so your back is parallel with the ground. </li> 
+                                        <li>Maintain straight arms and a neutral scapula, tucking your knees to your chest.</li> 
+                                        <li>Lastly, try to flatten your back.</li>  
+                                        <li>From this Tuck FL position, visualize pulling your waist to the bar to get max range of motion (knees/shins touching bar)</li>
+                                        <li>To use this exercise effectively, perform these at a diffculty where you can do 4-8 reps for strength, or 8-12 for hypertrophy/volume.</li> 
                                     </ul>
                                 </p>
                                 <label className="read-more-label" for="skill-read-more">Show less</label>
@@ -58,19 +58,19 @@ export function PlancheLean() {
 
                     <div className="recommended-info">
                         <p>
-                            Recommended Main Exercises: Push-ups
+                            Recommended Main Exercises: Pull-up, Inverted Row, Tuck FL
 
                         </p>
                         <p>
-                            Recommended Accessory Exercises: Scapular Pushups, Hollow Body Hold
+                            Recommended Accessory Exercises: Scapular Pullups, Active Hang, Deadhang
                         </p>
                     </div>
                 </div>
             </div>
             {svgDivider.get("1")}
-            <ProgressionChart name1="N/A" name2="Push-up" name3="Planche Lean" name4="Psuedo Pushup" name5="Full Planche"  
-            link1="#" link2="/tutorials/pushup" link3="/tutorials/planchelean" link4="/tutorials/psuedopu" link5="#"
-            svg1="NA" svg2="push-up" svg3="planche-lean" svg4="psuedo-pu" svg5="full-pl"/>
+            <ProgressionChart name1="Inverted Row" name2="Tuck Front Lever" name3="Tuck FL Row" name4="Pike Front Lever" name5="Full Front Lever"  
+            link1="/tutorials/pushup" link2="/tutorials/tuckfl" link3="/tutorials/tuckflrow" link4="/tutorials/pikefl" link5="#"
+            svg1="inverted-row" svg2="tuck-fl" svg3="tuck-fl-row" svg4="pike-fl" svg5=""/>
             <TutorialReturn />
             {svgDivider.get("2")}
             <div class="technique-form-container">
@@ -82,23 +82,20 @@ export function PlancheLean() {
                         <div>
                             Good Form Cues: 
                             <ul>
-                            <li>Straight arms & locked elbows</li>
-                            <li>Body aligned through head, shoulders, hips and legs</li>
-                            <li>Scapula is protracted and depressed</li>
-                            <li>Hands turned at a 45 degree angle and elbows facing forward</li>
+                            <li>Straight arms & locked elbows in bottom position</li>
+                            <li>Knees tucked to chest</li>
+                            <li>Neutral scapula</li>
+                            <li>Back is flat and parallel to the ground in top and bottom position</li>
                             <li>Hands are placed shoulder-width apart</li>
-                            <li>(Ideally) Posterior pelvic tilt</li>
+                            <li>Hips are level with shoulders</li>
                             </ul>
                         </div>
                         <div>
                             Bad Form Cues: 
                             <ul>
-                            <li>Bent arms</li>
-                            <li>Sagging hips</li>
-                            <li>Weak/retracted scapula</li>
-                            <li>Wrists facing forward</li>
+                            <li>Weak/protracted scapula</li>
+                            <li>High/low hips</li>
                             <li>Hands are placed too far/close together</li>
-                            <li>Anterior pelvic tilt</li>
                             </ul>
                     
                         </div>

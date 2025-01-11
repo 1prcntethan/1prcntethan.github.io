@@ -4,6 +4,8 @@ import SkillHero from "../../components/skillhero";
 import "./skillpage.css";
 import { Link } from 'react-router-dom';
 import { svgDivider } from "../../utilites/svg-divider";
+import TutorialReturn from "../../components/tutorialreturn";
+
 
 
 export function TuckFL() {
@@ -65,9 +67,10 @@ export function TuckFL() {
                 </div>
             </div>
             {svgDivider.get("1")}
-            <ProgressionChart name1="Inverted Row" name2="Pull-up" name3="Tuck Front Lever" name4="Adv. Tuck FL" name5="Full Front Lever"  
-            link1="/tutorials/pushup" link2="/tutorials/planchelean" link3="/tutorials/tuckpl" link4="/tutorials/advtuckfl" link5="#"
-            svg1="inverted-row" svg2="" svg3="tuck-fl" svg4="" svg5=""/>
+            <ProgressionChart name1="Inverted Row" name2="Pull-up" name3="Tuck Front Lever" name4="Pike Front Lever" name5="Full Front Lever"  
+            link1="/tutorials/invertedrow" link2="/tutorials/planchelean" link3="/tutorials/tuckfl" link4="/tutorials/pikefl" link5="#"
+            svg1="inverted-row" svg2="" svg3="tuck-fl" svg4="pike-fl" svg5=""/>
+            <TutorialReturn />
             {svgDivider.get("2")}
             <div class="technique-form-container">
                 <div class="technique-form">

@@ -4,6 +4,8 @@ import SkillHero from "../../components/skillhero";
 import "./skillpage.css";
 import { Link } from 'react-router-dom';
 import { svgDivider } from "../../utilites/svg-divider";
+import TutorialReturn from "../../components/tutorialreturn";
+
 
 
 export function PikePU() {
@@ -71,6 +73,7 @@ export function PikePU() {
             <ProgressionChart name1="Push-up" name2="Dip" name3="Pike Push-up" name4="Crow Pose" name5="HSPU"  
             link1="/tutorials/pushup" link2="/tutorials/dip" link3="/tutorials/pikepu" link4="/tutorials/crowpose" link5="#"
             svg1="push-up" svg2="dip" svg3="pike-pu" svg4="crow-pose" svg5="hspu"/>
+            <TutorialReturn />
             {svgDivider.get("2")}
             <div class="technique-form-container">
                 <div class="technique-form">

@@ -4,6 +4,8 @@ import SkillHero from "../../components/skillhero";
 import "./skillpage.css";
 import { Link } from 'react-router-dom';
 import { svgDivider } from "../../utilites/svg-divider";
+import TutorialReturn from "../../components/tutorialreturn";
+
 
 
 export function Dip() {
@@ -69,6 +71,7 @@ export function Dip() {
             <ProgressionChart name1="N/A" name2="Push-up" name3="Dip" name4="Psuedo Pushup" name5="Full Planche"  
             link1="#" link2="/tutorials/pushup" link3="/tutorials/dip" link4="#" link5="#"
             svg1="NA" svg2="push-up" svg3="dip" svg4="psuedo-pu" svg5="full-pl"/>
+            <TutorialReturn />
             {svgDivider.get("2")}
             <div class="technique-form-container">
                 <div class="technique-form">

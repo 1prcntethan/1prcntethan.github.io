@@ -4,6 +4,8 @@ import SkillHero from "../../components/skillhero";
 import "./skillpage.css";
 import { Link } from 'react-router-dom';
 import { svgDivider } from "../../utilites/svg-divider";
+import TutorialReturn from "../../components/tutorialreturn";
+
 
 
 export function TuckPL() {
@@ -68,6 +70,7 @@ export function TuckPL() {
             <ProgressionChart name1="Push-up" name2="Planche Lean" name3="Tuck Planche" name4="Adv. Tuck Planche" name5="Full Planche"  
             link1="/tutorials/pushup" link2="/tutorials/planchelean" link3="/tutorials/tuckpl" link4="/tutorials/advtuckpl" link5="#"
             svg1="push-up" svg2="planche-lean" svg3="tuck-pl" svg4="adv-tuck-pl" svg5="full-pl"/>
+            <TutorialReturn />
             {svgDivider.get("2")}
             <div class="technique-form-container">
                 <div class="technique-form">

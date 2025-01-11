@@ -83,6 +83,14 @@ export const heroBlurb = new Map([
   [
     "tuck-fl",
     "The Tuck Front Lever is a back focused exercise used to build strength towards advanced pulling exercises, and serves as the basis for front lever skills."
-  ]
+  ],
+  [
+    "tuck-fl-row",
+    "The Tuck Front Lever Row is a back focused row exercise used to build strength in the mid-back, and is the basis for skills like the front lever touch."
+  ],
+  [
+    "pike-fl",
+    "The Pike Front Lever is a front lever regression used to build strength towards more advanced front lever progressions."
+  ],
   
 ]);

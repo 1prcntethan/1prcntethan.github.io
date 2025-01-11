@@ -4,6 +4,8 @@ import SkillHero from "../../components/skillhero";
 import "./skillpage.css";
 import { Link } from 'react-router-dom';
 import { svgDivider } from "../../utilites/svg-divider";
+import TutorialReturn from "../../components/tutorialreturn";
+
 
 
 export function InvertedRow() {
@@ -69,6 +71,7 @@ export function InvertedRow() {
             <ProgressionChart name1="N/A" name2="Assisted Inv. Row" name3="Inverted Row" name4="Assisted Pull-up" name5="Front Lever"  
             link1="#" link2="/tutorials/assistedinvrow" link3="/tutorials/invertedrow" link4="/tutorials/assistedpu" link5="#"
             svg1="NA" svg2="assisted-inv-row" svg3="inverted-row" svg4="" svg5="hspu"/>
+            <TutorialReturn />
             {svgDivider.get("2")}
             <div class="technique-form-container">
                 <div class="technique-form">

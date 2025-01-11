@@ -4,6 +4,7 @@ import SkillHero from "../../components/skillhero";
 import "./skillpage.css";
 import { Link } from 'react-router-dom';
 import { svgDivider } from "../../utilites/svg-divider";
+import TutorialReturn from "../../components/tutorialreturn";
 
 
 export function AssistPu() {
@@ -69,6 +70,7 @@ export function AssistPu() {
             <ProgressionChart name1="N/A" name2="N/A" name3="Assisted Push-up" name4="Push-up" name5="Full Planche"  
             link1="#" link2="#" link3="#" link4="/tutorials/pushup" link5="#"
             svg1="NA" svg2="NA" svg3="assisted-pushup" svg4="push-up" svg5="full-pl"/>
+            <TutorialReturn />
             {svgDivider.get("2")}
             <div class="technique-form-container">
                 <div class="technique-form">
