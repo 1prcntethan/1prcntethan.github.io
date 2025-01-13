@@ -44,7 +44,7 @@ export const skillLinks = new Map([
     ["Pike FL", "/tutorials/pikefl"],
     ["Pike FL Row", "/tutorials/pikeflrow"],
     ["Adv. Tuck FL", "/tutorials/advtuckfl"],
-    ["Super Adv. Tuck FL", "super adv. tuck fl"],
+    ["Super Adv. Tuck FL", "/tutorials/superadvtuckfl"],
     ["Adv. Tuck FL Row", "adv. tuck fl row"],
     ["Straddle FL", "straddle fl"],
     ["Straddle FL Row", "straddle fl row"],

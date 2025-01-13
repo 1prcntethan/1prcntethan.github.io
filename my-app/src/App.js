@@ -30,6 +30,7 @@ import { PikeFL } from './pages/tutorials/pikefl';
 import { PikeFLRow } from './pages/tutorials/pikeflrow';
 import { AdvTuckFL } from './pages/tutorials/advtuckfl';
 import { Pullup } from './pages/tutorials/pullup';
+import { SuperAdvTuckFL } from './pages/tutorials/superadvtuckfl';
 
 
 function App() {
@@ -68,6 +69,7 @@ function App() {
         <Route path="/tutorials/pikefl" element={<PikeFL/>}/>
         <Route path="/tutorials/pikeflrow" element={<PikeFLRow/>}/>
         <Route path="/tutorials/advtuckfl" element={<AdvTuckFL/>}/>
+        <Route path="/tutorials/superadvtuckfl" element={<SuperAdvTuckFL/>}/>
 
         <Route path="/tutorials/pullup" element={<Pullup/>}/>
 
