@@ -115,9 +115,17 @@ export const heroBlurb = new Map([
   ],
 
   [
+    "deadhang",
+    "The Deadhang is a basic hanging exercise used to train grip strength for hanging and pull exercises in the future."
+  ],
+  [
+    "activehang",
+    "The Active Hang is a basic hanging exercised used to train grip strength and prepare the back for vertical pulling exercises in the future."
+  ],
+
+  [
     "pull-up",
     "The Pull-Up is a basic pulling exercise that builds strength in the back, biceps, and core. This exercise represents the foundation for almost all pulling skills.",
-
   ],
   
 ]);

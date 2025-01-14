@@ -33,6 +33,8 @@ import { Pullup } from './pages/tutorials/pullup';
 import { SuperAdvTuckFL } from './pages/tutorials/superadvtuckfl';
 import { AdvTuckFLRow } from './pages/tutorials/advtuckflrow';
 import { StraddleFL } from './pages/tutorials/straddlefl';
+import { Deadhang } from './pages/tutorials/deadhang';
+import { ActiveHang } from './pages/tutorials/activehang';
 
 
 function App() {
@@ -75,6 +77,8 @@ function App() {
         <Route path="/tutorials/advtuckflrow" element={<AdvTuckFLRow/>}/>
         <Route path="/tutorials/straddlefl" element={<StraddleFL/>}/>
 
+        <Route path="/tutorials/deadhang" element={<Deadhang/>}/>
+        <Route path="/tutorials/activehang" element={<ActiveHang/>}/>
         <Route path="/tutorials/pullup" element={<Pullup/>}/>
 
       </Routes>
