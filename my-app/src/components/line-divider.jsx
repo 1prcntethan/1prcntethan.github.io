@@ -4,7 +4,7 @@ import "./line-divider.css";
 
 const LineDivider = () => {
     return(
-        <div class="divider-line"></div>
+        <div className="divider-line"></div>
     )
 }
 
