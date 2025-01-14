@@ -29,7 +29,7 @@ export function PikeFL() {
                             <p>High Strain Areas: N/A </p>
                         </div>
                         <div className="overview-explanation">
-                            The Pike Front Lever is a regression exercise used to prepare the body more difficult front lever progressions. The lats/back is the main muscle used in this exercise. Scapula retraction should be kept in mind in order to achieve a neutral scapula position.
+                            The Pike Front Lever is the next regression exercise after the Tuck FL used to prepare the body more difficult front lever progressions. The lats/back is the main muscle used in this exercise. Scapula retraction should be kept in mind in order to achieve a neutral scapula position.
                         </div>
                     </div>
             

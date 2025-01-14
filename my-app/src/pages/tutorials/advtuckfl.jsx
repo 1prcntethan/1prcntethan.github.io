@@ -29,7 +29,7 @@ export function AdvTuckFL() {
                             <p>High Strain Areas: N/A </p>
                         </div>
                         <div className="overview-explanation">
-                            The Advanced Tuck Front Lever is a regression exercise used to prepare the body more difficult front lever progressions. The lats/back is the main muscle used in this exercise. Scapula retraction should be kept in mind in order to achieve a neutral scapula position.
+                            The Advanced Tuck Front Lever is the next regression exercise after the Pike FL used to prepare the body more difficult front lever progressions. The lats/back is the main muscle used in this exercise. Scapula retraction should be kept in mind in order to achieve a neutral scapula position.
                         </div>
                     </div>
             
@@ -69,8 +69,8 @@ export function AdvTuckFL() {
             </div>
             {svgDivider.get("1")}
             <ProgressionChart name1="Inverted Row" name2="Pike Front Lever" name3="Adv. Tuck FL" name4="Super Adv. Tuck FL" name5="Full Front Lever"  
-            link1="/tutorials/invertedrow" link2="/tutorials/pikefl" link3="/tutorials/advtuckfl" link4="#" link5="#"
-            svg1="inverted-row" svg2="pike-fl" svg3="adv-tuck-fl" svg4="" svg5=""/>
+            link1="/tutorials/invertedrow" link2="/tutorials/pikefl" link3="/tutorials/advtuckfl" link4="/tutorials/superadvtuckfl" link5="#"
+            svg1="inverted-row" svg2="pike-fl" svg3="adv-tuck-fl" svg4="super-adv-tuck-fl" svg5=""/>
             <TutorialReturn />
             {svgDivider.get("2")}
             <div class="technique-form-container">

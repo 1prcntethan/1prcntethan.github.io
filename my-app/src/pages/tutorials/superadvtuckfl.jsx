@@ -29,7 +29,7 @@ export function SuperAdvTuckFL() {
                             <p>High Strain Areas: N/A </p>
                         </div>
                         <div className="overview-explanation">
-                            The Super Advanced Tuck Front Lever is a regression exercise used to prepare the body for the last few front lever progressions. The lats/back is the main muscle used in this exercise. Scapula retraction should be kept in mind in order to achieve a neutral scapula position.
+                            The Super Advanced Tuck Front Lever is the next regression exercise after the Adv. Tuck FL used to prepare the body for the last few front lever progressions. The lats/back is the main muscle used in this exercise. Scapula retraction should be kept in mind in order to achieve a neutral scapula position.
                         </div>
                     </div>
             
@@ -42,7 +42,7 @@ export function SuperAdvTuckFL() {
                                 <p>
                                     <ul>
                                         <li>Start in a Advanced Tuck FL position.</li> 
-                                        <li>Unfold your hips even more, so that your knees are point out at a 45 degree angle. </li> 
+                                        <li>Unfold your hips even more, so that your knees point out at a 45 degree angle. </li> 
                                         <li>Your feet should be pointing downward. </li> 
                                         <li>Maintain straight arms and a neutral scapula.</li> 
                                         <li>Lastly, try to flatten your back.</li>  

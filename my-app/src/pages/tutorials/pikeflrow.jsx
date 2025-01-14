@@ -59,7 +59,7 @@ export function PikeFLRow() {
 
                     <div className="recommended-info">
                         <p>
-                            Recommended Main Exercises: Pike FL, Tuck FL, Pull-up, Inverted Row
+                            Recommended Main Exercises: Tuck FL Row, Pike FL
 
                         </p>
                         <p>
