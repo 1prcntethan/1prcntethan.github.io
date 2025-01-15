@@ -35,6 +35,7 @@ import { AdvTuckFLRow } from './pages/tutorials/advtuckflrow';
 import { StraddleFL } from './pages/tutorials/straddlefl';
 import { Deadhang } from './pages/tutorials/deadhang';
 import { ActiveHang } from './pages/tutorials/activehang';
+import { AssistPullup } from './pages/tutorials/assistedpullup';
 
 
 function App() {
@@ -79,6 +80,7 @@ function App() {
 
         <Route path="/tutorials/deadhang" element={<Deadhang/>}/>
         <Route path="/tutorials/activehang" element={<ActiveHang/>}/>
+        <Route path="/tutorials/assistpullup" element={<AssistPullup/>}/>
         <Route path="/tutorials/pullup" element={<Pullup/>}/>
 
       </Routes>

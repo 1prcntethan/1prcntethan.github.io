@@ -57,7 +57,7 @@ export const skillLinks = new Map([
   
     ["Deadhang", "/tutorials/deadhang"],
     ["Active Hang", "/tutorials/activehang"],
-    ["Assisted Pull-up", "assisted pull-up"],
+    ["Assisted Pull-up", "/tutorials/assistpullup"],
     ["Pull-up", "/tutorials/pullup"],
     ["Chest Pull-up", "chest pull-up"],
     ["Waist Pull-up", "waist pull-up"],

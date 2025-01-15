@@ -67,8 +67,8 @@ export function ActiveHang() {
             </div>
             {svgDivider.get("1")}
             <ProgressionChart name1="N/A" name2="Deadhang" name3="Active Hang" name4="Assisted Pull-up" name5="Pull-up"  
-            link1="#" link2="/tutorials/deadhang" link3="/tutorials/activehang" link4="/tutorials/assistedpullup" link5="/tutorials/pullup"
-            svg1="NA" svg2="deadhang" svg3="activehang" svg4="assisted-pullup" svg5="pullup"/>
+            link1="#" link2="/tutorials/deadhang" link3="/tutorials/activehang" link4="/tutorials/assistpullup" link5="/tutorials/pullup"
+            svg1="NA" svg2="deadhang" svg3="activehang" svg4="assist-pullup" svg5="pullup"/>
             <TutorialReturn />
             {svgDivider.get("2")}
             <div class="technique-form-container">
