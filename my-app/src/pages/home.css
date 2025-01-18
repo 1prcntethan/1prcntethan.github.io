@@ -21,6 +21,7 @@ html {
 .block-1-text-title {
     font-size: 30px;
     font-family: Major Mono Display;
+    font-weight: bold;
 }
 
 .block-1-left {
@@ -95,4 +96,29 @@ html {
 .cta-go-2:hover{
     background-color: rgb(59, 73, 43);
     transition: all 0.3s ease-in-out;
+}
+
+.showcase-block {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    margin: 40px 0;
+}
+
+.showcase-block--image {
+    display: flex;
+    width: 40%;
+}
+
+.showcase-block--text {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+}
+
+.showcase-block--text h3{
+    font-family: Major Mono Display;
+    font-weight: 100;
+    margin: 0 0;
 }
