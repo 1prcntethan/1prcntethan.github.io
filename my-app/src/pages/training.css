@@ -1,0 +1,85 @@
+.flex-container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    font-family: Fira Sans;
+    font-weight: 200;
+
+}
+
+.training-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 40%; /* Adjust as needed */
+}
+
+.training-header {
+    font-size: 2rem;
+    padding: 30px;
+}
+
+.training-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 75px;
+    position: relative;
+    width: 100%; /* Takes full width of container */
+}
+
+.item {
+    width: 80%;
+    height: 100px;
+    background-color: #1B1B1B;
+    position: relative;
+    border-radius: 30px;
+}
+
+.training-column::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    background-color: rgba(255, 255, 255, 0.5);
+    transform: translateX(-50%);
+    z-index: -1; /* Make sure the line is behind the items */
+}
+
+.item::before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 20px;
+    background-color: rgba(255, 255, 255, 0);
+    left: 50%;
+    transform: translateX(-50%);
+    top: -20px; /* Position above the item */
+}
+
+.item:first-child::before {
+    display: none; /* Remove the top line for the first item */
+}
+
+.guide-button {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    background-color: #1B1B1B;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    font-family: Major Mono Display;
+    font-size: 24px;
+    color: white;
+}
+
+.guide-button:hover {
+    background-color: #331c32;
+    transition: all 0.5s;
+    border: 1px solid rgba(255, 255, 255, 0.75);
+}

@@ -36,6 +36,8 @@ import { StraddleFL } from './pages/tutorials/straddlefl';
 import { Deadhang } from './pages/tutorials/deadhang';
 import { ActiveHang } from './pages/tutorials/activehang';
 import { AssistPullup } from './pages/tutorials/assistedpullup';
+import { SkillVis } from './pages/skillvis';
+import { SkillTree } from './pages/skilltree';
 
 
 function App() {
@@ -46,6 +48,8 @@ function App() {
         <Route path="/training" element={<Training/>}/>
         <Route path="/tutorials" element={<Tutorials/>}/>
         <Route path="/terminology" element={<Terminology/>}/>
+        <Route path="/skilltree" element={<SkillTree/>}/>
+        <Route path="/skillvis" element={<SkillVis/>}/>
 
 
         <Route path="/tutorials/pushup" element={<Pushup/>}/>
