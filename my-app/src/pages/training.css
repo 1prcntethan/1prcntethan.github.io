@@ -37,6 +37,11 @@
     border-radius: 30px;
 }
 
+.guide-link{
+    text-decoration: none;
+}
+
+
 .training-column::before {
     content: '';
     position: absolute;

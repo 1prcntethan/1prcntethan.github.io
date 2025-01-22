@@ -38,6 +38,7 @@ import { ActiveHang } from './pages/tutorials/activehang';
 import { AssistPullup } from './pages/tutorials/assistedpullup';
 import { SkillVis } from './pages/skillvis';
 import { SkillTree } from './pages/skilltree';
+import { BeginnerGuide } from './pages/guides/beginnerguide';
 
 
 function App() {
@@ -50,6 +51,8 @@ function App() {
         <Route path="/terminology" element={<Terminology/>}/>
         <Route path="/skilltree" element={<SkillTree/>}/>
         <Route path="/skillvis" element={<SkillVis/>}/>
+
+        <Route path="/training/beginnerguide" element={<BeginnerGuide/>}/>
 
 
         <Route path="/tutorials/pushup" element={<Pushup/>}/>
