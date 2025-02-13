@@ -1,16 +1,17 @@
 .intro-block {
     display: flex;
-    padding: 2rem 3rem;
+    padding: 2rem 15%;
     justify-content: center;
     font-family: Fira Sans;
     font-weight: 200;
+    font-size: 24px;
 }
 
 .svg-gradient-container {
     display: flex;
     width: auto;
     justify-content: center;
-    padding: 1rem;
+    padding: 28px 1rem;
 }
 
 .svg-gradient {

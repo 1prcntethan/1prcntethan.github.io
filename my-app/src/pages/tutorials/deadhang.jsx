@@ -39,14 +39,12 @@ export function Deadhang() {
                             <input id="skill-read-more" type="checkbox" />
                     
                             <div className="skill-instructions">
-                                <p>
-                                    <ul>
-                                        <li>Find a bar or something where there is space to hang under, which is adequate for your height.</li> 
-                                        <li>Place your hands on the bar, shoulder width apart.</li>
-                                        <li>Hang completely from your hands, and let all your body relax and decompress.</li> 
-                                        <li>To use this exercise effectively, perform these until your feel your grip strength/stamina is adequate for harder exercises.</li> 
-                                    </ul>
-                                </p>
+                                <ul>
+                                    <li>Find a bar or something where there is space to hang under, which is adequate for your height.</li> 
+                                    <li>Place your hands on the bar, shoulder width apart.</li>
+                                    <li>Hang completely from your hands, and let all your body relax and decompress.</li> 
+                                    <li>To use this exercise effectively, perform these until your feel your grip strength/stamina is adequate for harder exercises.</li> 
+                                </ul>
                                 <label className="read-more-label" for="skill-read-more">Show less</label>
                             </div>
                             <label className="read-more-label" for="skill-read-more">Read more...</label>

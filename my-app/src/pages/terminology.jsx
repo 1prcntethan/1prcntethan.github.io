@@ -25,13 +25,17 @@ export function Terminology() {
                     <defs>
                     <linearGradient id="paint0_linear_39_2" x1="0" y1="40" x2="2415" y2="40" gradientUnits="userSpaceOnUse">
                     <stop stop-color="#B66DA3"/>
-                    <stop offset="1" stop-color="#BBCA88"/>
+                    <stop offset="1" stopColor="#BBCA88"/>
                     </linearGradient>
                     </defs>
                 </svg>
             </div>
 
             <DifficultyToggle />
+
+            <br />
+            <br />
+            <br />
 
         </>
     )

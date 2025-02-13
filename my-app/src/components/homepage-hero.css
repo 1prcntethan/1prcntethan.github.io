@@ -1,6 +1,6 @@
 .hero {
     width: 90%;
-    height: 87vh;
+    height: calc(100vh - 118px);
     display: flex;
     flex-direction: row;
     padding: 20px 5%;

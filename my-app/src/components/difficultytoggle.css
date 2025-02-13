@@ -17,7 +17,7 @@
     display: flex;
     color: #f3f3f3;
     background-color: #1B1B1B;
-    border: 1px solid #cacaca;
+    border: 1px solid #9b9b9b;
     border-bottom: none;
     border-radius: 5px 5px 0 0;
     padding: 10px 20px;
@@ -39,7 +39,7 @@
     display: flex;
     width: 100%;
     justify-content: center;
-    background-color: #232323;
+    background-color: #1B1B1B;
     font-family: Fira Sans;
     font-weight: 200;
     align-self: center;
@@ -50,6 +50,9 @@
     flex-direction: row;
     width: 75%;
     padding: 2rem;
+    background-color: #232323;
+    border: transparent 1px solid;
+    border-radius: 10px;
 }
 
 #difficulty-explanation-D{
@@ -57,6 +60,9 @@
     flex-direction: row;
     width: 75%;
     padding: 2rem;
+    background-color: #232323;
+    border: transparent 1px solid;
+    border-radius: 10px;
 }
 
 #difficulty-explanation-C{
@@ -64,6 +70,9 @@
     flex-direction: row;
     width: 75%;
     padding: 2rem;
+    background-color: #232323;
+    border: transparent 1px solid;
+    border-radius: 10px;
 }
 
 #difficulty-explanation-B{
@@ -71,6 +80,9 @@
     flex-direction: row;
     width: 75%;
     padding: 2rem;
+    background-color: #232323;
+    border: transparent 1px solid;
+    border-radius: 10px;
 }
 
 #difficulty-explanation-A{
@@ -78,6 +90,9 @@
     flex-direction: row;
     width: 75%;
     padding: 2rem;
+    background-color: #232323;
+    border: transparent 1px solid;
+    border-radius: 10px;
 }
 
 #difficulty-explanation-S{
@@ -85,6 +100,9 @@
     flex-direction: row;
     width: 75%;
     padding: 2rem;
+    background-color: #232323;
+    border: transparent 1px solid;
+    border-radius: 10px;
 }
 
 #difficulty-explanation-SS{
@@ -92,6 +110,9 @@
     flex-direction: row;
     width: 75%;
     padding: 2rem;
+    background-color: #232323;
+    border: transparent 1px solid;
+    border-radius: 10px;
 }
 
 
@@ -100,6 +121,7 @@
     flex-direction: column;
     width: 65%;
     font-size: 18px;
+    padding-left: 60px;
 }
 
 #title-skill {
