@@ -43,6 +43,7 @@ html {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    padding: 0 10px;
 }
 
 .cta-title-1 {
@@ -75,6 +76,7 @@ html {
     border-radius: 20px;
     font-family: Fira Sans;
     font-weight: 200;
+    min-width: 90px;
 }
 
 .cta-go-1:hover{
