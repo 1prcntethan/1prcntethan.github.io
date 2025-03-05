@@ -77,12 +77,11 @@ export function Training() {
 
       <div className="flex-container">
         <div className="training-container">
-          <div className="training-header">Workout Structures</div>
+          <div className="training-header">Training 101
+          </div>
           <div className="training-column">
             <div className="item">
-              <button className="guide-button">
-                structuring a calisthenics workout
-              </button>
+              <button className="guide-button">structuring a calisthenics workout</button>
             </div>
             <div className="item">
               <button className="guide-button">strengthening your core</button>
