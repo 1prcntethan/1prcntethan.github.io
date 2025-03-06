@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import "./shortformlist.css";
 
 export default function TerminologyList() {
@@ -32,7 +31,7 @@ export default function TerminologyList() {
             <div className="terms-container">
                 <div className="terms">
                     <SingleTerm title="range of motion (rom)" text="Refers to the range an exercise goes through, typically for a joint. For example, a full push-up involves a complete range from chest to the floor and back up."/>
-                    <SingleTerm title="time under tension (tut)" text="The time during an exercise where the muscle is under tension. This is necessary to provide enough stimulus for muscle growth."/>
+                    <SingleTerm title="central nervous system (cns)" text="The central nervous system includes your brain and spinal cord, and we utilize it for all movements and exercises."/>
                     <SingleTerm title="negatives" text="Controlled, slow descents during an exercise, focusing on the eccentric phase. For example, slowly lowering yourself during a pull-up."/>
                     <SingleTerm title="posterior pelvic tilt (ppt)" text="Posterior pelvic tilt is a pelvic position where the pelvis is tilted backward, flattening the lower back and tucking in your butt. This pelvic position is optimal and most commonly referenced in planche."/>
                 </div>
