@@ -39,17 +39,17 @@ export function PlancheLean() {
                             <input id="skill-read-more" type="checkbox" />
                     
                             <div className="skill-instructions">
-                                <p>
-                                    <ul>
-                                        <li>Start in a push-up position with your hands shoulder-width apart, and hands turned at a 45 degree angle.</li> 
-                                        <li>Ensure your elbows are completely straightened, and that your scapula is protracted. </li> 
-                                        <li>Gradually lean your body forward by shifting your shoulders ahead of your wrists, and slowly walking your feet forwards. </li> 
-                                        <li>Maintain straight arms and body alignment, as well as strong protraction. </li> 
-                                        <li>The farther you lean, the more load you should feel on your shoulders, specifically the anterior deltoids. </li> 
-                                        <li>Therefore, the difficulty of the exercise is dependent on how far you lean forwards. </li> 
-                                        <li>To use this exercise effectively, perform holds at a difficulty where you can hold them for at least 6-8 seconds, counting each hold as a rep.</li> 
-                                    </ul>
-                                </p>
+                                
+                                <ul>
+                                    <li>Start in a push-up position with your hands shoulder-width apart, and hands turned at a 45 degree angle.</li> 
+                                    <li>Ensure your elbows are completely straightened, and that your scapula is protracted. </li> 
+                                    <li>Gradually lean your body forward by shifting your shoulders ahead of your wrists, and slowly walking your feet forwards. </li> 
+                                    <li>Maintain straight arms and body alignment, as well as strong protraction. </li> 
+                                    <li>The farther you lean, the more load you should feel on your shoulders, specifically the anterior deltoids. </li> 
+                                    <li>Therefore, the difficulty of the exercise is dependent on how far you lean forwards. </li> 
+                                    <li>To use this exercise effectively, perform holds at a difficulty where you can hold them for at least 6-8 seconds, counting each hold as a rep.</li> 
+                                </ul>
+                                
                                 <label className="read-more-label" for="skill-read-more">Show less</label>
                             </div>
                             <label className="read-more-label" for="skill-read-more">Read more...</label>

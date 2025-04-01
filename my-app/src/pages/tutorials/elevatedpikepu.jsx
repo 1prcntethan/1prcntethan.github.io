@@ -39,22 +39,22 @@ export function ElevatedPikePU() {
                             <input id="skill-read-more" type="checkbox" />
                     
                             <div className="skill-instructions">
-                                <p>
-                                    <ul>
-                                        <li>Find an object to elevate your feet with.</li>
-                                        <li>Start in a plank position with your hands shoulder-width apart, and hands facing forward or alternatively slightly outward.</li>
-                                        <li>Put your feet on the elevated object, your feet should be at a higher elevation than your hands</li>
-                                        <li>Walk your hands toward your feet, while bending at your hips, until the angle between your legs and torso is around 90 degrees.</li> 
-                                        <li>It may be uncomfortable, but this is the starting position for the elevated pike pushup.</li> 
-                                        <li>Lower your head and body toward the ground, by bending your elbows, and try to keep your legs straight.</li> 
-                                        <li>Once your head touches the ground, push back up with your arms, straightening the elbows. </li> 
-                                        <li>During the exercise, it is recommended move slowly and controlled coming down, but be explosive and fast when coming up. </li> 
-                                        <li>This exercise also requires some hamstring flexibility, but it is okay to have some bend in the knees to make it easier.</li>
-                                        <li>The exercise difficulty can change, depending on if your head goes down close to your hands, or far in front of your hands.</li> 
-                                        <li>The exercise becomes more difficult the higher your feet are, since there is more bodyweight on your hands.</li>
-                                        <li>To use this exercise effectively, perform these at a diffculty where you can do 4-8 reps for strength, or 8-12 for hypertrophy/volume.</li> 
-                                    </ul>
-                                </p>
+                                
+                                <ul>
+                                    <li>Find an object to elevate your feet with.</li>
+                                    <li>Start in a plank position with your hands shoulder-width apart, and hands facing forward or alternatively slightly outward.</li>
+                                    <li>Put your feet on the elevated object, your feet should be at a higher elevation than your hands</li>
+                                    <li>Walk your hands toward your feet, while bending at your hips, until the angle between your legs and torso is around 90 degrees.</li> 
+                                    <li>It may be uncomfortable, but this is the starting position for the elevated pike pushup.</li> 
+                                    <li>Lower your head and body toward the ground, by bending your elbows, and try to keep your legs straight.</li> 
+                                    <li>Once your head touches the ground, push back up with your arms, straightening the elbows. </li> 
+                                    <li>During the exercise, it is recommended move slowly and controlled coming down, but be explosive and fast when coming up. </li> 
+                                    <li>This exercise also requires some hamstring flexibility, but it is okay to have some bend in the knees to make it easier.</li>
+                                    <li>The exercise difficulty can change, depending on if your head goes down close to your hands, or far in front of your hands.</li> 
+                                    <li>The exercise becomes more difficult the higher your feet are, since there is more bodyweight on your hands.</li>
+                                    <li>To use this exercise effectively, perform these at a diffculty where you can do 4-8 reps for strength, or 8-12 for hypertrophy/volume.</li> 
+                                </ul>
+                                
                                 <label className="read-more-label" for="skill-read-more">Show less</label>
                             </div>
                             <label className="read-more-label" for="skill-read-more">Read more...</label>

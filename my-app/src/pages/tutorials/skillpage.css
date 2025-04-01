@@ -76,6 +76,10 @@
 .skill-instructions { /*actual text in instructions */
     display: none;
 }
+.skill-instructions li { /*list item in instructions */
+    margin-top: 13px;
+    margin-bottom: 13px;
+}
 
 .read-more-label {  /*button for readmore*/
     display: inline-block;

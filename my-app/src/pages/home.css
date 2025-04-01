@@ -77,6 +77,7 @@ html {
     font-family: Fira Sans;
     font-weight: 200;
     min-width: 90px;
+    text-align: center;
 }
 
 .cta-go-1:hover{
@@ -93,6 +94,7 @@ html {
     border-radius: 20px;
     font-family: Fira Sans;
     font-weight: 200;
+    text-align: center;
 }
 
 .cta-go-2:hover{
@@ -111,12 +113,18 @@ html {
 .showcase-block--image {
     display: flex;
     width: 40%;
+    justify-content: center;
+}
+#pillar-image {
+    max-width: 400px;
 }
 
 .showcase-block--text {
     display: flex;
     flex-direction: column;
     width: 40%;
+    justify-self: center;
+    align-self: center;
 }
 
 .showcase-block--text h3{

@@ -39,15 +39,15 @@ export function TuckPLPU() {
                             <input id="skill-read-more" type="checkbox" />
                     
                             <div className="skill-instructions">
-                                <p>
-                                    <ul>
-                                        <li>Start in a tuck planche position.</li> 
-                                        <li>Ensure your elbows are completely straightened, and that your scapula is protracted and depressed. </li> 
-                                        <li>Gradually lower your body by bending your elbows, while keeping the tuck planche body position.</li> 
-                                        <li>Once your elbows are bent around 90 degrees, you can push back up, straightening your arms and protracting your scapula.</li>  
-                                        <li>To use this exercise effectively, perform these at a diffculty where you can do 4-8 reps for strength, or 8-12 for hypertrophy/volume.</li> 
-                                    </ul>
-                                </p>
+                               
+                                <ul>
+                                    <li>Start in a tuck planche position.</li> 
+                                    <li>Ensure your elbows are completely straightened, and that your scapula is protracted and depressed. </li> 
+                                    <li>Gradually lower your body by bending your elbows, while keeping the tuck planche body position.</li> 
+                                    <li>Once your elbows are bent around 90 degrees, you can push back up, straightening your arms and protracting your scapula.</li>  
+                                    <li>To use this exercise effectively, perform these at a diffculty where you can do 4-8 reps for strength, or 8-12 for hypertrophy/volume.</li> 
+                                </ul>
+                                
                                 <label className="read-more-label" for="skill-read-more">Show less</label>
                             </div>
                             <label className="read-more-label" for="skill-read-more">Read more...</label>

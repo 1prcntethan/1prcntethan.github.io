@@ -39,18 +39,18 @@ export function ElbowLever() {
                             <input id="skill-read-more" type="checkbox" />
                     
                             <div className="skill-instructions">
-                                <p>
-                                    <ul>
-                                        <li>Start in a push position with your fingers facing opposite from each other, and knees touching the ground for support.</li> 
-                                        <li>Bend your arms and lower your stomach onto your elbows and your body downward, until your elbows are pressing into your abs. </li> 
-                                        <li>Lean forward keeping your balance, using your hands to stablize yourself. </li> 
-                                        <li>As your body leans forward, your feet should start to lift off the ground. </li> 
-                                        <li>Try to straighten your body so you are completly parallel to the ground and supported by only your hands. </li> 
-                                        <li>The key to this exercise is balance, while it may be uncomfortable, this exercise does not require much strength. </li> 
-                                        <li>To use this exercise effectively, practice it minimally because there are other exercises that stimulate the same muscles more effectively.</li> 
-                                        <li>Essentially, this exercise is mainly for fun and show.</li>
-                                    </ul>
-                                </p>
+                                
+                                <ul>
+                                    <li>Start in a push position with your fingers facing opposite from each other, and knees touching the ground for support.</li> 
+                                    <li>Bend your arms and lower your stomach onto your elbows and your body downward, until your elbows are pressing into your abs. </li> 
+                                    <li>Lean forward keeping your balance, using your hands to stablize yourself. </li> 
+                                    <li>As your body leans forward, your feet should start to lift off the ground. </li> 
+                                    <li>Try to straighten your body so you are completly parallel to the ground and supported by only your hands. </li> 
+                                    <li>The key to this exercise is balance, while it may be uncomfortable, this exercise does not require much strength. </li> 
+                                    <li>To use this exercise effectively, practice it minimally because there are other exercises that stimulate the same muscles more effectively.</li> 
+                                    <li>Essentially, this exercise is mainly for fun and show.</li>
+                                </ul>
+                                
                                 <label className="read-more-label" for="skill-read-more">Show less</label>
                             </div>
                             <label className="read-more-label" for="skill-read-more">Read more...</label>

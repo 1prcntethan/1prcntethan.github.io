@@ -39,16 +39,16 @@ export function SuperAdvTuckFL() {
                             <input id="skill-read-more" type="checkbox" />
                     
                             <div className="skill-instructions">
-                                <p>
-                                    <ul>
-                                        <li>Start in a Advanced Tuck FL position.</li> 
-                                        <li>Unfold your hips even more, so that your knees point out at a 45 degree angle. </li> 
-                                        <li>Your feet should be pointing downward. </li> 
-                                        <li>Maintain straight arms and a neutral scapula.</li> 
-                                        <li>Lastly, try to flatten your back.</li>  
-                                        <li>To use this exercise effectively, perform holds at a difficulty where you can hold them for at least 6-8 seconds, counting each hold as a rep.</li> 
-                                    </ul>
-                                </p>
+                                
+                                <ul>
+                                    <li>Start in a Advanced Tuck FL position.</li> 
+                                    <li>Unfold your hips even more, so that your knees point out at a 45 degree angle. </li> 
+                                    <li>Your feet should be pointing downward. </li> 
+                                    <li>Maintain straight arms and a neutral scapula.</li> 
+                                    <li>Lastly, try to flatten your back.</li>  
+                                    <li>To use this exercise effectively, perform holds at a difficulty where you can hold them for at least 6-8 seconds, counting each hold as a rep.</li> 
+                                </ul>
+                                
                                 <label className="read-more-label" for="skill-read-more">Show less</label>
                             </div>
                             <label className="read-more-label" for="skill-read-more">Read more...</label>

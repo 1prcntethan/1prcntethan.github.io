@@ -39,17 +39,17 @@ export function Dip() {
                             <input id="skill-read-more" type="checkbox" />
                     
                             <div className="skill-instructions">
-                                <p>
-                                    <ul>
-                                        <li>Start in a support position with your hands straight down, and holding your full body weight.</li> 
-                                        <li>Ensure your core is engaged, and that your scapula is mostly depressed. </li> 
-                                        <li>Gradually lower your body down and slightly forward, bending your elbows and keeping your balance. </li> 
-                                        <li>As your body lowers, your elbows should bend to about 90 degrees, at which point you can start pushing yourself back up. </li> 
-                                        <li>Straighten your elbows and depressed your scapula until you are holding yourself straight again. </li> 
-                                        <li>The targeted muscle in this exercise can be changed by changing the lean, the scapula position, and body position. </li> 
-                                        <li>To use this exercise effectively, perform these at a diffculty where you can do 4-8 reps for strength, or 8-12 for hypertrophy/volume.</li> 
-                                    </ul>
-                                </p>
+                                
+                                <ul>
+                                    <li>Start in a support position with your hands straight down, and holding your full body weight.</li> 
+                                    <li>Ensure your core is engaged, and that your scapula is mostly depressed. </li> 
+                                    <li>Gradually lower your body down and slightly forward, bending your elbows and keeping your balance. </li> 
+                                    <li>As your body lowers, your elbows should bend to about 90 degrees, at which point you can start pushing yourself back up. </li> 
+                                    <li>Straighten your elbows and depressed your scapula until you are holding yourself straight again. </li> 
+                                    <li>The targeted muscle in this exercise can be changed by changing the lean, the scapula position, and body position. </li> 
+                                    <li>To use this exercise effectively, perform these at a diffculty where you can do 4-8 reps for strength, or 8-12 for hypertrophy/volume.</li> 
+                                </ul>
+                                
                                 <label className="read-more-label" for="skill-read-more">Show less</label>
                             </div>
                             <label className="read-more-label" for="skill-read-more">Read more...</label>

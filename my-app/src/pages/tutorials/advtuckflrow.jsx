@@ -39,14 +39,14 @@ export function AdvTuckFLRow() {
                             <input id="skill-read-more" type="checkbox" />
                     
                             <div className="skill-instructions">
-                                <p>
-                                    <ul>
-                                        <li>Start in a Adv. Tuck FL position with your hands shoulder-width apart.</li> 
-                                        <li>Ensure your arms are completely straightened. </li> 
-                                        <li>From this Adv. Tuck FL position, pull your waist to the bar, keeping the rest of your body in the same position.</li>
-                                        <li>To use this exercise effectively, perform these at a diffculty where you can do 4-8 reps for strength, or 8-12 for hypertrophy/volume.</li> 
-                                    </ul>
-                                </p>
+                            
+                                <ul>
+                                    <li>Start in a Adv. Tuck FL position with your hands shoulder-width apart.</li> 
+                                    <li>Ensure your arms are completely straightened. </li> 
+                                    <li>From this Adv. Tuck FL position, pull your waist to the bar, keeping the rest of your body in the same position.</li>
+                                    <li>To use this exercise effectively, perform these at a diffculty where you can do 4-8 reps for strength, or 8-12 for hypertrophy/volume.</li> 
+                                </ul>
+                            
                                 <label className="read-more-label" for="skill-read-more">Show less</label>
                             </div>
                             <label className="read-more-label" for="skill-read-more">Read more...</label>

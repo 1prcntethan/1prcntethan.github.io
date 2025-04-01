@@ -39,15 +39,15 @@ export function ActiveHang() {
                             <input id="skill-read-more" type="checkbox" />
                     
                             <div className="skill-instructions">
-                                <p>
-                                    <ul>
-                                        <li>Find a bar or something where there is space to hang under, which is adequate for your height.</li> 
-                                        <li>Place your hands on the bar, shoulder width apart.</li>
-                                        <li>Hang completely from your hands, and engage your back.</li> 
-                                        <li>Attempt retraction and depression of your shoulder blades, and optionally, squeeze your core, glutes and legs.</li>
-                                        <li>To use this exercise effectively, perform these until your feel your grip strength/stamina is adequate for harder exercises.</li> 
-                                    </ul>
-                                </p>
+                            
+                                <ul>
+                                    <li>Find a bar or something where there is space to hang under, which is adequate for your height.</li> 
+                                    <li>Place your hands on the bar, shoulder width apart.</li>
+                                    <li>Hang completely from your hands, and engage your back.</li> 
+                                    <li>Attempt retraction and depression of your shoulder blades, and optionally, squeeze your core, glutes and legs.</li>
+                                    <li>To use this exercise effectively, perform these until your feel your grip strength/stamina is adequate for harder exercises.</li> 
+                                </ul>
+                            
                                 <label className="read-more-label" for="skill-read-more">Show less</label>
                             </div>
                             <label className="read-more-label" for="skill-read-more">Read more...</label>
@@ -68,7 +68,7 @@ export function ActiveHang() {
             {svgDivider.get("1")}
             <ProgressionChart name1="N/A" name2="Deadhang" name3="Active Hang" name4="Assisted Pull-up" name5="Pull-up"  
             link1="#" link2="/tutorials/deadhang" link3="/tutorials/activehang" link4="/tutorials/assistpullup" link5="/tutorials/pullup"
-            svg1="NA" svg2="deadhang" svg3="activehang" svg4="assist-pullup" svg5="pullup"/>
+            svg1="NA" svg2="deadhang" svg3="activehang" svg4="assist-pullup" svg5="pull-up"/>
             <TutorialReturn />
             {svgDivider.get("2")}
             <div class="technique-form-container">

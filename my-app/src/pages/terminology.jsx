@@ -4,6 +4,7 @@ import TermSectionTitle from "../components/terminology-section-title";
 import ShortFormList from "../components/shortformlist";
 import TerminologyList from "../components/terminologylist";
 import DifficultyToggle from "../components/difficultytoggle";
+import Footer from "../components/footer";
 
 
 export function Terminology() {
@@ -36,6 +37,8 @@ export function Terminology() {
             <br />
             <br />
             <br />
+
+            <Footer />
 
         </>
     )

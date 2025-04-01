@@ -39,16 +39,16 @@ export function TuckPL() {
                             <input id="skill-read-more" type="checkbox" />
                     
                             <div className="skill-instructions">
-                                <p>
-                                    <ul>
-                                        <li>Start in a squat position with your hands on the floor shoulder-width apart, and hands turned at a 45 degree angle.</li> 
-                                        <li>Ensure your elbows are completely straightened, and that your scapula is protracted and depressed. </li> 
-                                        <li>Gradually lean your body forward by shifting your shoulders ahead of your wrists, and feel the load on your feet becoming lighter. </li> 
-                                        <li>As you lift off, maintain straight arms and protraction/depression, tucking your knees to your chest while leaning forward.</li> 
-                                        <li>Stronger protraction will make the exercise easier.</li>  
-                                        <li>To use this exercise effectively, perform holds at a difficulty where you can hold them for at least 6-8 seconds, counting each hold as a rep.</li> 
-                                    </ul>
-                                </p>
+                                
+                                <ul>
+                                    <li>Start in a squat position with your hands on the floor shoulder-width apart, and hands turned at a 45 degree angle.</li> 
+                                    <li>Ensure your elbows are completely straightened, and that your scapula is protracted and depressed. </li> 
+                                    <li>Gradually lean your body forward by shifting your shoulders ahead of your wrists, and feel the load on your feet becoming lighter. </li> 
+                                    <li>As you lift off, maintain straight arms and protraction/depression, tucking your knees to your chest while leaning forward.</li> 
+                                    <li>Stronger protraction will make the exercise easier.</li>  
+                                    <li>To use this exercise effectively, perform holds at a difficulty where you can hold them for at least 6-8 seconds, counting each hold as a rep.</li> 
+                                </ul>
+                                
                                 <label className="read-more-label" for="skill-read-more">Show less</label>
                             </div>
                             <label className="read-more-label" for="skill-read-more">Read more...</label>

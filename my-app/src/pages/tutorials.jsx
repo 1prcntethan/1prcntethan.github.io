@@ -6,6 +6,7 @@ import TutorialListVP from "../components/vp-tutorial-list";
 import TutorialListHPL from "../components/hpl-tutorial-list";
 import TutorialListVPL from "../components/vpl-tutorial-list";
 import TutorialListL from "../components/legs-tutorial-list";
+import Footer from "../components/footer";
 
 export function Tutorials() {
     return (
@@ -33,6 +34,10 @@ export function Tutorials() {
           <LineDivider />
           <br />
           <TutorialListL />
+          <br />
+          <br />
+          <br />
+          <Footer/ >
 
 
         </>

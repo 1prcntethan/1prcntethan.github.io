@@ -39,18 +39,18 @@ export function PsuedoPU() {
                             <input id="skill-read-more" type="checkbox" />
                     
                             <div className="skill-instructions">
-                                <p>
-                                    <ul>
-                                        <li>Start in a planche lean position with your hands shoulder-width apart and facing slightly outward.</li> 
-                                        <li>Ensure your core is engaged, and that your scapula is protracted and depressed. </li> 
-                                        <li>Gradually lean forward and lower your body, bending your elbows and keeping your feet and hands in the same place. </li> 
-                                        <li>As your body lowers, your scapula can retract but should still remain depressed.</li> 
-                                        <li>Straighten your elbows and depressed your scapula until you are holding yourself straight again. </li> 
-                                        <li>The difficulty of this exercise can be modified by changing the hand position: the closer your hands are to your waist, the more difficult it is. </li> 
-                                        <li>The bottom position of this movement is almost identical to the 90 degree hold, and can therefore be used as a progression.</li>
-                                        <li>To use this exercise effectively, perform these at a diffculty where you can do 4-8 reps for strength, or 8-12 for hypertrophy/volume.</li> 
-                                    </ul>
-                                </p>
+                                
+                                <ul>
+                                    <li>Start in a planche lean position with your hands shoulder-width apart and facing slightly outward.</li> 
+                                    <li>Ensure your core is engaged, and that your scapula is protracted and depressed. </li> 
+                                    <li>Gradually lean forward and lower your body, bending your elbows and keeping your feet and hands in the same place. </li> 
+                                    <li>As your body lowers, your scapula can retract but should still remain depressed.</li> 
+                                    <li>Straighten your elbows and depressed your scapula until you are holding yourself straight again. </li> 
+                                    <li>The difficulty of this exercise can be modified by changing the hand position: the closer your hands are to your waist, the more difficult it is. </li> 
+                                    <li>The bottom position of this movement is almost identical to the 90 degree hold, and can therefore be used as a progression.</li>
+                                    <li>To use this exercise effectively, perform these at a diffculty where you can do 4-8 reps for strength, or 8-12 for hypertrophy/volume.</li> 
+                                </ul>
+                                
                                 <label className="read-more-label" for="skill-read-more">Show less</label>
                             </div>
                             <label className="read-more-label" for="skill-read-more">Read more...</label>

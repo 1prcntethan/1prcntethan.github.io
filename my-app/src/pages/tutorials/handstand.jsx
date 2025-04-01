@@ -39,15 +39,15 @@ export function Handstand() {
                             <input id="skill-read-more" type="checkbox" />
                     
                             <div className="skill-instructions">
-                                <p>
-                                    <ul>
-                                        <li>Place your hands on the ground shoulder width apart.</li> 
-                                        <li>Kick up and stack your elbows, shoulders, chest, hips, knees, and feet, in a straight line.</li>
-                                        <li>When balancing, stay towards leaning towards your fingers, so you actually have control over balancing.</li> 
-                                        <li>Push your shoulders and hands into the ground, it should feel like you are reaching as far as your can upward.</li> 
-                                        <li>To use this exercise effectively, perform these holds as long as possible to practice balancing using your fingers and hands.</li> 
-                                    </ul>
-                                </p>
+                                
+                                <ul>
+                                    <li>Place your hands on the ground shoulder width apart.</li> 
+                                    <li>Kick up and stack your elbows, shoulders, chest, hips, knees, and feet, in a straight line.</li>
+                                    <li>When balancing, stay towards leaning towards your fingers, so you actually have control over balancing.</li> 
+                                    <li>Push your shoulders and hands into the ground, it should feel like you are reaching as far as your can upward.</li> 
+                                    <li>To use this exercise effectively, perform these holds as long as possible to practice balancing using your fingers and hands.</li> 
+                                </ul>
+                                
                                 <label className="read-more-label" for="skill-read-more">Show less</label>
                             </div>
                             <label className="read-more-label" for="skill-read-more">Read more...</label>

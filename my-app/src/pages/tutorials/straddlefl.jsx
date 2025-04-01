@@ -39,16 +39,16 @@ export function StraddleFL() {
                             <input id="skill-read-more" type="checkbox" />
                     
                             <div className="skill-instructions">
-                                <p>
-                                    <ul>
-                                        <li>Start in a Tuck FL position.</li> 
-                                        <li>Unfold your hips, flatten your back, and straddle your legs outward. </li> 
-                                        <li>Your body should be flat and your legs should be in a split position. </li> 
-                                        <li>Maintain straight arms and a neutral scapula.</li> 
-                                        <li>The wider or more spread out your legs are, the easier the exercise becomes.</li>  
-                                        <li>To use this exercise effectively, perform holds at a difficulty where you can hold them for at least 6-8 seconds, counting each hold as a rep.</li> 
-                                    </ul>
-                                </p>
+                                
+                                <ul>
+                                    <li>Start in a Tuck FL position.</li> 
+                                    <li>Unfold your hips, flatten your back, and straddle your legs outward. </li> 
+                                    <li>Your body should be flat and your legs should be in a split position. </li> 
+                                    <li>Maintain straight arms and a neutral scapula.</li> 
+                                    <li>The wider or more spread out your legs are, the easier the exercise becomes.</li>  
+                                    <li>To use this exercise effectively, perform holds at a difficulty where you can hold them for at least 6-8 seconds, counting each hold as a rep.</li> 
+                                </ul>
+                                
                                 <label className="read-more-label" for="skill-read-more">Show less</label>
                             </div>
                             <label className="read-more-label" for="skill-read-more">Read more...</label>

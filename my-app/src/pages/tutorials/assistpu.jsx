@@ -38,17 +38,17 @@ export function AssistPu() {
                             <input id="skill-read-more" type="checkbox" />
                     
                             <div className="skill-instructions">
-                                <p>
-                                    <ul>
-                                        <li>Start in a push-up position with your hands shoulder-width apart, facing forwards and slightly outward.</li> 
-                                        <li>Ensure your body is in a stright line, and that your knees are touching the floor supporting some bodyweight.</li> 
-                                        <li>Gradually lower your body downward, bending the elbows while maintaining a straight line in your body. </li> 
-                                        <li>Once your chest touches the ground, you can either hold or start pressing back up. </li> 
-                                        <li>To press up, simply push your arms out and straighten the elbows. </li> 
-                                        <li>During the exercise, it is recommended move slowly and controlled coming down, but be explosive and fast when coming up. </li> 
-                                        <li>The described exercise is specifically a knee-pushup. To perform incline pushups, perform the push-up routine with your hands on an elevated surface.</li> 
-                                    </ul>
-                                </p>
+                                
+                                <ul>
+                                    <li>Start in a push-up position with your hands shoulder-width apart, facing forwards and slightly outward.</li> 
+                                    <li>Ensure your body is in a stright line, and that your knees are touching the floor supporting some bodyweight.</li> 
+                                    <li>Gradually lower your body downward, bending the elbows while maintaining a straight line in your body. </li> 
+                                    <li>Once your chest touches the ground, you can either hold or start pressing back up. </li> 
+                                    <li>To press up, simply push your arms out and straighten the elbows. </li> 
+                                    <li>During the exercise, it is recommended move slowly and controlled coming down, but be explosive and fast when coming up. </li> 
+                                    <li>The described exercise is specifically a knee-pushup. To perform incline pushups, perform the push-up routine with your hands on an elevated surface.</li> 
+                                </ul>
+                                
                                 <label className="read-more-label" for="skill-read-more">Show less</label>
                             </div>
                             <label className="read-more-label" for="skill-read-more">Read more...</label>

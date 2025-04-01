@@ -39,17 +39,17 @@ export function TuckFLRow() {
                             <input id="skill-read-more" type="checkbox" />
                     
                             <div className="skill-instructions">
-                                <p>
-                                    <ul>
-                                        <li>Start in a deadhang position with your hands shoulder-width apart.</li> 
-                                        <li>Ensure your elbows are completely straightened, and tuck your knees up to your chest. </li> 
-                                        <li>Gradually pull your body so your back is parallel with the ground. </li> 
-                                        <li>Maintain straight arms and a neutral scapula, tucking your knees to your chest.</li> 
-                                        <li>Lastly, try to flatten your back.</li>  
-                                        <li>From this Tuck FL position, visualize pulling your waist to the bar to get max range of motion (knees/shins touching bar)</li>
-                                        <li>To use this exercise effectively, perform these at a diffculty where you can do 4-8 reps for strength, or 8-12 for hypertrophy/volume.</li> 
-                                    </ul>
-                                </p>
+                                
+                                <ul>
+                                    <li>Start in a deadhang position with your hands shoulder-width apart.</li> 
+                                    <li>Ensure your elbows are completely straightened, and tuck your knees up to your chest. </li> 
+                                    <li>Gradually pull your body so your back is parallel with the ground. </li> 
+                                    <li>Maintain straight arms and a neutral scapula, tucking your knees to your chest.</li> 
+                                    <li>Lastly, try to flatten your back.</li>  
+                                    <li>From this Tuck FL position, visualize pulling your waist to the bar to get max range of motion (knees/shins touching bar)</li>
+                                    <li>To use this exercise effectively, perform these at a diffculty where you can do 4-8 reps for strength, or 8-12 for hypertrophy/volume.</li> 
+                                </ul>
+                                
                                 <label className="read-more-label" for="skill-read-more">Show less</label>
                             </div>
                             <label className="read-more-label" for="skill-read-more">Read more...</label>

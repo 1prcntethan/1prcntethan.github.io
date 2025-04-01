@@ -1,164 +1,598 @@
-import "./home.css"
+import "./home.css";
 import Navbar from "../components/navbar";
 import LineDivider from "../components/line-divider";
 import HomepageHero from "../components/homepage-hero";
 import { Link } from "react-router-dom";
-import { svgIcon } from '../utilites/svg-icons.js';
+import { svgIcon } from "../utilites/svg-icons.js";
+import Footer from "../components/footer.jsx";
 
 export function Homepage() {
-    return (
-        <>
-            <Navbar />
-            <HomepageHero />
-            <LineDivider />
-            <div className="container">
-                <div className="block-1-left">
+  return (
+    <>
+      <Navbar />
+      <HomepageHero />
+      <LineDivider />
+      <div className="container">
+        <div className="block-1-left"></div>
+        <div className="block-1-text">
+          <div className="block-1-text-title">
+            What exactly is calisthenics?
+          </div>
+          <br />
+          Calisthenics is a term used to describe a large variety of exercises,
+          but the one thing they have in common is that all of them involve
+          creating{" "}
+          <strong>
+            <i>resistance through body weight</i>
+          </strong>
+          . Whether you discovered calisthenics through seeing it at your local
+          park, or saw a video on social media, it’s important you don’t rush
+          the process. Despite how easy influencers make skills like the full
+          planche look, in reality, it can take{" "}
+          <strong>
+            <i>a couple years</i>
+          </strong>{" "}
+          to accumulate the strength it takes to achieve that. Additionally,
+          factors like height as weight can provide a significant handicap or
+          advantage to learning certain skills.
+          <br />
+          <br />
+          If you are starting calisthenics from <strong>ZERO</strong>, expect to
+          be doing basic exercises for at least{" "}
+          <strong>
+            <i>6-12 months</i>
+          </strong>
+          . Depending on your starting fitness level, you may be able to move on
+          to skill progressions faster, but basics are the single most important
+          thing to master when you want to achieve high difficulty skills. The
+          journey to your dream skill may last many years, but by following the
+          right path,{" "}
+          <strong>
+            <i>no skill is impossible</i>
+          </strong>
+          .
+        </div>
+        <div className="block-1-right"></div>
+      </div>
 
-                </div>
-                <div className="block-1-text">
-                    <div className="block-1-text-title">What exactly is calisthenics?</div>
-                    <br />
-                    Calisthenics is a term used to describe a large variety of exercises, but the one thing they have in common is that all of them involve creating <strong><i>resistance through body weight</i></strong>. Whether you discovered calisthenics through seeing it at your local park, or saw a video on social media, it’s important you don’t rush the process. Despite how easy influencers make skills like the full planche look, in reality, it can take <strong><i>a couple years</i></strong> to accumulate the strength it takes to achieve that. Additionally, factors like height as weight can provide a significant handicap or advantage to learning certain skills. 
-                    <br />
-                    <br />
-                    If you are starting calisthenics from <strong>ZERO</strong>, expect to be doing basic exercises for at least <strong><i>6-12 months</i></strong>. Depending on your starting fitness level, you may be able to move on to skill progressions faster, but basics are the single most important thing to master when you want to achieve high difficulty skills. The journey to your dream skill may last many years, but by following the right path, <strong><i>no skill is impossible</i></strong>.
-                </div>
-                <div className="block-1-right">
+      <LineDivider />
 
-                </div>
+      <div className="container">
+        <div className="block-1-left"></div>
+        <div className="block-1-text">
+          <div className="block-1-text-title">benefits</div>
+          <ul>
+            <li>
+              A majority of calisthenics doesn't require equipment, meaning you
+              can train anywhere at anytime.
+            </li>
+            <br />
+            <li>
+              Calisthenics equipment, if you choose to get it, is extremely
+              low-cost and will save a lot of money when compared to a gym
+              membership.
+            </li>
+            <br />
+            <li>
+              Skills in calisthenics are extremely impressive and are a tangible
+              representation of the work and progress you make.
+            </li>
+            <br />
+            <li>
+              Calisthenics is an aesthetic sport, and the satisfaction and pride
+              that comes with mastering a new skill is unmatched.
+            </li>
+            <br />
+            <li>
+              Training calisthenics increases muscle awareness, strength, body
+              coordination and muscle mass.
+            </li>
+            <br />
+            <li>
+              Calisthenics, as with any other physical activity, provides
+              various mental benefits, like improved mood, reduced stress, and
+              increased confidence.
+            </li>
+          </ul>
+        </div>
+        <div className="block-1-right"></div>
+      </div>
+
+      <LineDivider />
+
+      <div className="container">
+        <div className="cta-container">
+          <div className="cta-block">
+            <div className="cta-title-1">tutorials</div>
+            <div className="cta-title-2">training</div>
+            <div className="cta-title-1">terminology</div>
+            <div className="cta-title-2">skill tree</div>
+            <div className="cta-title-1">visualization</div>
+          </div>
+          <div className="cta-block">
+            <div className="cta-info">
+              A collection of calisthenics skills and links to their tutorials.
             </div>
-
-            <LineDivider />
-
-            <div className="container">
-                <div className="block-1-left">
-
-                </div>
-                <div className="block-1-text">
-                    <div className="block-1-text-title">benefits</div>
-                    <ul>
-                        <li>A majority of calisthenics doesn't require equipment, meaning you can train anywhere at anytime.</li>
-                        <br />
-                        <li>Calisthenics equipment, if you choose to get it, is extremely low-cost and will save a lot of money when compared to a gym membership.</li>
-                        <br />
-                        <li>Skills in calisthenics are extremely impressive and are a tangible representation of the work and progress you make.</li>
-                        <br />
-                        <li>Calisthenics is an aesthetic sport, and the satisfaction and pride that comes with mastering a new skill is unmatched.</li>
-                        <br />
-                        <li>Training calisthenics increases muscle awareness, strength, body coordination and muscle mass.</li>
-                        <br />
-                        <li>Calisthenics, as with any other physical activity, provides various mental benefits, like improved mood, reduced stress, and increased confidence.</li>
-                    </ul>
-                    
-                </div>
-                <div className="block-1-right">
-
-                </div>
+            <div className="cta-info">
+              Guides for beginners and intermediates about various calisthenics
+              topics.{" "}
             </div>
-
-            <LineDivider />
-            
-            <div className="container">
-                <div className="cta-container">
-                    <div className="cta-block">
-                        <div className="cta-title-1">tutorials</div>
-                        <div className="cta-title-2">training</div>
-                        <div className="cta-title-1">terminology</div>
-                        <div className="cta-title-2">skill tree</div>
-                        <div className="cta-title-1">visualization</div>
-                        
-                    </div>
-                    <div className="cta-block">
-                        <div className="cta-info">A collection of calisthenics skills and links to their tutorials.</div>
-                        <div className="cta-info">Guides for beginners and intermediates about various calisthenics topics. </div>
-                        <div className="cta-info">A short explanation for common terms, as well as showcasing how the progression chart and skill difficulties work.</div>
-                        <div className="cta-info">A visualization of the roadmap for calisthenics skills, as well as the order and difficulty of learning them.</div>
-                        <div className="cta-info">See how advanced skills are built from the ground up.</div>
-
-                    </div>
-                    <div className="cta-block">
-                        <Link to = "/tutorials" className="cta-go-1">View Page</Link>
-                        <Link to = "/training" className="cta-go-2">View Page</Link>
-                        <Link to = "/terminology" className="cta-go-1">View Page</Link>
-                        <Link to = "/" className="cta-go-2">View Page</Link>
-                        <Link to = "/" className="cta-go-1">View Page</Link>
-
-                    </div>
-                </div>
-                
+            <div className="cta-info">
+              A short explanation for common terms, as well as showcasing how
+              the progression chart and skill difficulties work.
             </div>
-
-            <LineDivider />
-
-            <div className="container">
-                <div className="block-1-left">
-
-                </div>
-                <div className="block-1-text">
-                    <div className="block-1-text-title">What exercises will i learn?</div>
-                    <br />
-                    Calisthenics has five main pillars that most skills will fit into. Each pillar has its most difficult exercises, as well as plenty of progressions to work your way up. Since calisthenics has a low barrier to entry, you can start working towards your dream skill anywhere, anytime! Below are some of the most iconic and sought after skills.
-                    <br />
-                    <br />
-                    <div className="showcase-block">
-                        <div className="showcase-block--image">
-                            {svgIcon.get("handstand")}
-                        </div>
-                        <div className="showcase-block--text">
-                            <h3>handstand</h3>
-                            <p>The handstand is a trademark skill of calisthenics. It requires impressive balance, activation, and determination to achieve. Contrary to popular belief, the handstand is one of the easier exercises compared to other skills.</p>
-                        </div>
-                    </div>
-                    <div className="showcase-block">
-                        <div className="showcase-block--text">
-                            <h3>front lever</h3>
-                            <p>One of the four horsemen of calisthenics, the front lever is an extremely spectacular pull skill. The back does the heavy lifting for this exercise, but it also requires core and straight arm strength.</p>
-                        </div>
-                        <div className="showcase-block--image">
-                            {svgIcon.get("straddle-fl")}
-                        </div>
-                    </div>
-                    <div className="showcase-block">
-                        <div className="showcase-block--image">
-                            {svgIcon.get("full-pl")}
-                        </div>
-                        <div className="showcase-block--text">
-                            <h3>planche</h3>
-                            <p>Another horsemen of calisthenics, the planche is generally considered the most difficult of the four, but also the most impressive. It puts heavy load on the shoulders, scapula and biceps.</p>
-                        </div>
-                    </div>
-                    <div className="showcase-block">
-                        <div className="showcase-block--text">
-                            <h3>one arm handstand</h3>
-                            <p>The one arm handstand is as majestic as it sounds, taking the regular handstand to the next level. The weight of your body is balanced on a singular arm, making this exercise extremely prestigous and difficult to obtain.</p>
-                        </div>
-                        <div className="showcase-block--image">
-                            {svgIcon.get("one-arm-hs")}
-                        </div>
-                    </div>
-                    <div className="showcase-block">
-                        <div className="showcase-block--image">
-                            ----------------------------------------------------------------
-                        </div>
-                        <div className="showcase-block--text">
-                            <h3>handstand push-up</h3>
-                            <p>Of the four horsemen, the handstand push-up is easily the most useful and versatile exercises to exist. Combining balance and strength, the HSPU is aesthetically pleasing, and is commonly used to train shoulder strength for planche.</p>
-                        </div>
-                    </div>
-                    <div className="showcase-block">
-                        <div className="showcase-block--text">
-                            <h3>muscle-up</h3>
-                            <p>The muscle-up is the easiest skill to obtain out of the four horsemen. Combining the strength of a pull-up and a dip, this exercise looks and feels as powerful as it sounds.</p>
-                        </div>
-                        <div className="showcase-block--image">
-                            ------------------------------------------------------------------
-                        </div>
-                    </div>
-                </div>
-                <div className="block-1-right">
-
-                </div>
+            <div className="cta-info">
+              A visualization of the roadmap for calisthenics skills, as well as
+              the order and difficulty of learning them.
             </div>
-        </>
-    )
+            <div className="cta-info">
+              See how advanced skills are built from the ground up.
+            </div>
+          </div>
+          <div className="cta-block">
+            <Link to="/tutorials" className="cta-go-1">
+              View Page
+            </Link>
+            <Link to="/training" className="cta-go-2">
+              View Page
+            </Link>
+            <Link to="/terminology" className="cta-go-1">
+              View Page
+            </Link>
+            <Link to="/" className="cta-go-2">
+              Incomplete
+            </Link>
+            <Link to="/" className="cta-go-1">
+              Incomplete
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      <LineDivider />
+
+      <div className="container">
+        <div className="block-1-left"></div>
+        <div className="block-1-text">
+          <div className="block-1-text-title">What exercises will i learn?</div>
+          <br />
+          Calisthenics has five main pillars that most skills will fit into.
+          Each pillar has its most difficult exercises, as well as plenty of
+          progressions to work your way up. Since calisthenics has a low barrier
+          to entry, you can start working towards your dream skill anywhere,
+          anytime! Below are some of the most iconic and sought after skills.
+          <br />
+          <br />
+          <div className="showcase-block">
+            <div className="showcase-block--image">
+              <svg
+                id="pillar-image"
+                viewBox="0 0 1140 1140"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle cx="570" cy="570" r="570" fill="#F3F3F3" />
+                <circle cx="570" cy="570" r="480" fill="#252525" />
+                <circle cx="595" cy="965" r="24" fill="#BBCA88" />
+                <path
+                  d="M605.431 932.884C596.244 947.38 574.99 947.073 566.227 932.316L565.909 931.779C564.158 928.831 563.088 925.528 562.778 922.112L555.376 840.452C555.23 838.849 555.254 837.235 555.445 835.636L565.211 754.225C565.619 750.82 566.784 747.549 568.62 744.652L568.954 744.125C578.141 729.628 599.394 729.936 608.157 744.693L608.476 745.23C610.227 748.178 611.296 751.481 611.606 754.897L619.009 836.557C619.154 838.16 619.131 839.774 618.939 841.373L609.174 922.784C608.765 926.189 607.601 929.46 605.765 932.357L605.431 932.884Z"
+                  fill="#7B7A7A"
+                />
+                <path
+                  d="M569.9 546.049C578.285 541.313 588.733 542.303 596.08 548.53L620.235 569.001C624.498 572.613 627.299 577.653 628.117 583.179L637.749 648.244C638.294 651.924 637.938 655.681 636.712 659.194L615.031 721.291C613.189 726.566 609.491 730.99 604.626 733.737L577.055 749.307C568.67 754.043 558.222 753.053 550.875 746.826L526.72 726.355C522.458 722.743 519.656 717.703 518.838 712.177L509.206 647.112C508.661 643.432 509.017 639.675 510.243 636.163L531.924 574.065C533.766 568.79 537.464 564.366 542.329 561.619L569.9 546.049Z"
+                  fill="#F3F3F3"
+                />
+                <path
+                  d="M584.694 529.094C578.522 533.057 570.83 533.839 563.987 531.199L546.799 524.567C541.184 522.4 536.642 518.119 534.147 512.642L522.392 486.831C520.301 482.24 519.777 477.089 520.902 472.171L527.223 444.523C528.565 438.656 532.152 433.548 537.217 430.296L552.718 420.341C558.89 416.378 566.583 415.596 573.426 418.236L590.613 424.868C596.228 427.035 600.771 431.316 603.265 436.793L615.021 462.604C617.112 467.195 617.635 472.346 616.511 477.264L610.189 504.912C608.848 510.78 605.26 515.887 600.196 519.139L584.694 529.094Z"
+                  fill="#F3F3F3"
+                />
+                <path
+                  d="M562.16 158.732C570.791 142.156 594.54 142.248 603.042 158.891L613.036 178.454C614.393 181.111 615.221 184.007 615.472 186.979L627.823 333.013C627.937 334.362 627.932 335.719 627.807 337.067L614.321 483C614.047 485.971 613.197 488.86 611.819 491.506L601.673 510.991C593.042 527.567 569.293 527.475 560.791 510.832L550.797 491.269C549.44 488.612 548.612 485.716 548.361 482.744L536.01 336.71C535.896 335.361 535.901 334.004 536.026 332.656L549.511 186.723C549.786 183.752 550.636 180.863 552.014 178.217L562.16 158.732Z"
+                  fill="#F3F3F3"
+                />
+                <circle
+                  cx="587.314"
+                  cy="989.307"
+                  r="28.5"
+                  transform="rotate(-7.24832 587.314 989.307)"
+                  fill="#B66DA3"
+                />
+                <path
+                  d="M581.071 781.278C603.528 791.925 610.896 823.414 597.528 851.609C584.16 879.805 555.118 894.031 532.661 883.384C510.205 872.737 502.837 841.248 516.205 813.053C529.573 784.857 558.615 770.631 581.071 781.278Z"
+                  fill="#F3F3F3"
+                />
+                <rect
+                  x="544.085"
+                  y="761.685"
+                  width="131"
+                  height="97"
+                  rx="21"
+                  transform="rotate(-91.5872 544.085 761.685)"
+                  fill="#F3F3F3"
+                />
+                <rect
+                  x="510.098"
+                  y="762.627"
+                  width="131"
+                  height="97"
+                  rx="21"
+                  transform="rotate(-91.5872 510.098 762.627)"
+                  fill="#F3F3F3"
+                />
+                <path
+                  d="M596.979 816.26C588.28 827.022 572.116 827.723 562.52 817.752L561.547 816.742C558.481 813.557 556.398 809.555 555.548 805.216L545.463 753.763C545.019 751.497 544.918 749.178 545.165 746.883L550.763 694.75C551.235 690.354 552.964 686.187 555.743 682.749L556.624 681.658C565.323 670.896 581.487 670.195 591.084 680.166L592.056 681.176C595.122 684.361 597.205 688.363 598.055 692.702L608.14 744.155C608.584 746.421 608.685 748.74 608.438 751.035L602.84 803.168C602.368 807.564 600.639 811.731 597.86 815.169L596.979 816.26Z"
+                  fill="#AAAAAA"
+                />
+                <path
+                  d="M605.416 946.464C596.793 958.972 578.628 959.832 568.862 948.196L568.18 947.383C565.597 944.306 563.866 940.607 563.158 936.653L551.997 874.359C551.645 872.396 551.55 870.394 551.715 868.406L556.936 805.336C557.268 801.333 558.642 797.486 560.921 794.179L561.524 793.306C570.146 780.798 588.311 779.937 598.077 791.574L598.76 792.386C601.342 795.463 603.073 799.163 603.782 803.116L614.942 865.41C615.294 867.374 615.389 869.376 615.224 871.364L610.003 934.434C609.672 938.437 608.298 942.283 606.018 945.591L605.416 946.464Z"
+                  fill="#AAAAAA"
+                />
+              </svg>
+            </div>
+            <div className="showcase-block--text">
+              <h3>handstand</h3>
+              <p>
+                The handstand is a trademark skill of calisthenics. It requires
+                impressive balance, activation, and determination to achieve.
+                Contrary to popular belief, the handstand is one of the easier
+                exercises compared to other skills.
+              </p>
+            </div>
+          </div>
+          <div className="showcase-block">
+            <div className="showcase-block--text">
+              <h3>front lever</h3>
+              <p>
+                One of the four horsemen of calisthenics, the front lever is an
+                extremely spectacular pull skill. The back does the heavy
+                lifting for this exercise, but it also requires core and
+                straight arm strength.
+              </p>
+            </div>
+            <div className="showcase-block--image">
+              <svg
+                id="pillar-image"
+                viewBox="0 0 1140 1140"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle cx="570" cy="570" r="570" fill="#F3F3F3" />
+                <circle cx="570" cy="570" r="480" fill="#252525" />
+                <path
+                  d="M473.238 489.355C476.127 473.549 462.332 459.728 446.521 462.587L445.674 462.74C441.979 463.408 438.504 464.97 435.552 467.291L379.655 511.232C378.229 512.354 376.939 513.64 375.815 515.065L331.768 570.879C329.442 573.826 327.873 577.299 327.198 580.992L327.043 581.839C324.155 597.644 337.95 611.465 353.761 608.607L354.607 608.454C358.302 607.785 361.778 606.223 364.73 603.902L420.626 559.961C422.053 558.839 423.342 557.553 424.467 556.128L468.513 500.315C470.839 497.367 472.409 493.895 473.084 490.201L473.238 489.355Z"
+                  fill="#7B7A7A"
+                />
+                <path
+                  d="M514.197 664.292C519.33 656.144 518.843 645.661 512.976 638.023L493.689 612.912C490.286 608.482 485.386 605.441 479.905 604.359L415.378 591.613C411.728 590.893 407.958 591.068 404.391 592.124L341.324 610.798C335.967 612.384 331.371 615.865 328.393 620.593L311.517 647.384C306.384 655.532 306.871 666.015 312.737 673.653L332.025 698.764C335.428 703.194 340.328 706.235 345.809 707.317L410.336 720.063C413.985 720.784 417.755 720.608 421.322 719.552L484.39 700.879C489.747 699.292 494.343 695.811 497.321 691.084L514.197 664.292Z"
+                  fill="#F3F3F3"
+                />
+                <path
+                  d="M286.032 651.453C292.895 627.567 274.146 601.218 244.155 592.601C214.164 583.985 184.289 596.364 177.426 620.25C170.563 644.137 189.312 670.486 219.303 679.102C249.294 687.719 279.17 675.34 286.032 651.453Z"
+                  fill="#F3F3F3"
+                />
+                <rect
+                  width="131"
+                  height="97"
+                  rx="21"
+                  transform="matrix(0.997133 0.0756709 0.0756709 -0.997133 297.57 679.722)"
+                  fill="#F3F3F3"
+                />
+                <rect
+                  width="131"
+                  height="97"
+                  rx="21"
+                  transform="matrix(0.997133 0.0756709 0.0756709 -0.997133 295 713.624)"
+                  fill="#F3F3F3"
+                />
+                <path
+                  d="M438.606 570.278C439.218 556.453 427.572 545.222 413.779 546.335L412.381 546.447C407.974 546.803 403.763 548.421 400.252 551.108L358.615 582.975C356.781 584.378 355.17 586.049 353.834 587.932L323.496 630.696C320.938 634.302 319.473 638.569 319.278 642.986L319.216 644.387C318.603 658.211 330.249 669.443 344.042 668.33L345.44 668.217C349.847 667.862 354.058 666.244 357.569 663.556L399.207 631.689C401.04 630.287 402.651 628.616 403.987 626.733L434.325 583.969C436.883 580.363 438.348 576.096 438.543 571.679L438.606 570.278Z"
+                  fill="#AAAAAA"
+                />
+                <path
+                  d="M524.307 493.828C527.804 478.146 514.553 463.803 498.643 466.049L497.791 466.169C494.073 466.694 490.54 468.121 487.501 470.326L429.949 512.076C428.48 513.142 427.142 514.378 425.964 515.758L379.795 569.829C377.356 572.685 375.654 576.094 374.837 579.759L374.65 580.598C371.153 596.281 384.404 610.624 400.314 608.378L401.166 608.258C404.884 607.733 408.417 606.306 411.456 604.101L469.008 562.351C470.477 561.285 471.815 560.049 472.993 558.669L519.162 504.598C521.601 501.742 523.303 498.333 524.12 494.668L524.307 493.828Z"
+                  fill="#AAAAAA"
+                />
+                <rect
+                  x="457"
+                  y="424"
+                  width="124"
+                  height="34"
+                  rx="17"
+                  fill="#D9D9D9"
+                />
+                <circle
+                  cx="28.5"
+                  cy="28.5"
+                  r="28.5"
+                  transform="matrix(1 0 0 -1 512 470)"
+                  fill="#B66DA3"
+                />
+                <circle
+                  cx="24"
+                  cy="24"
+                  r="24"
+                  transform="matrix(1 0 0 -1 459 466)"
+                  fill="#BBCA88"
+                />
+                <path
+                  d="M640.623 666.223C644.98 660.322 646.262 652.697 644.073 645.696L638.575 628.113C636.779 622.369 632.803 617.557 627.5 614.711L602.51 601.298C598.065 598.913 592.959 598.055 587.979 598.856L559.977 603.363C554.035 604.319 548.704 607.566 545.129 612.408L534.186 627.228C529.828 633.128 528.547 640.753 530.736 647.754L536.233 665.337C538.029 671.081 542.006 675.893 547.309 678.739L572.299 692.152C576.744 694.537 581.85 695.395 586.83 694.594L614.832 690.088C620.774 689.131 626.104 685.884 629.68 681.042L640.623 666.223Z"
+                  fill="#F3F3F3"
+                />
+                <path
+                  d="M931.367 667.425C948.352 659.629 949.441 635.905 933.243 626.585L914.201 615.63C911.615 614.142 908.764 613.172 905.808 612.772L760.57 593.169C759.228 592.988 757.873 592.926 756.52 592.983L610.097 599.189C607.116 599.316 604.188 600.021 601.477 601.265L581.511 610.429C564.526 618.224 563.436 641.948 579.635 651.268L598.677 662.224C601.263 663.711 604.113 664.682 607.07 665.081L752.307 684.684C753.649 684.865 755.005 684.928 756.358 684.87L902.781 678.664C905.762 678.538 908.689 677.833 911.401 676.588L931.367 667.425Z"
+                  fill="#F3F3F3"
+                />
+              </svg>
+            </div>
+          </div>
+          <div className="showcase-block">
+            <div className="showcase-block--image">
+              <svg
+                id="pillar-image"
+                viewBox="0 0 1140 1140"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle cx="570" cy="570" r="570" fill="#F3F3F3" />
+                <circle cx="570" cy="570" r="480" fill="#252525" />
+                <circle cx="449.793" cy="729" r="24" fill="#BBCA88" />
+                <path
+                  d="M447.725 681.168C447.653 697.235 431.548 708.279 416.534 702.557L415.73 702.251C412.221 700.914 409.093 698.738 406.619 695.913L359.773 642.428C358.577 641.062 357.547 639.56 356.704 637.953L323.692 574.981C321.948 571.656 321.046 567.954 321.062 564.199L321.066 563.338C321.139 547.271 337.243 536.228 352.257 541.95L353.061 542.256C356.57 543.593 359.698 545.769 362.172 548.594L409.018 602.079C410.214 603.444 411.244 604.947 412.087 606.554L445.099 669.526C446.843 672.851 447.746 676.553 447.729 680.308L447.725 681.168Z"
+                  fill="#7B7A7A"
+                />
+                <path
+                  d="M516.309 505.641C521.015 514.043 519.987 524.488 513.734 531.812L493.175 555.893C489.548 560.142 484.498 562.926 478.969 563.724L413.869 573.12C410.187 573.652 406.431 573.282 402.924 572.043L340.905 550.138C335.637 548.277 331.226 544.563 328.497 539.688L313.027 512.061C308.322 503.659 309.349 493.214 315.602 485.89L336.161 461.809C339.788 457.56 344.838 454.776 350.367 453.978L415.467 444.582C419.149 444.05 422.905 444.42 426.412 445.659L488.431 467.564C493.699 469.425 498.11 473.139 500.839 478.014L516.309 505.641Z"
+                  fill="#F3F3F3"
+                />
+                <path
+                  d="M648.326 515.601C651.968 521.968 652.355 529.69 649.368 536.389L641.864 553.214C639.413 558.711 634.904 563.028 629.307 565.239L602.927 575.657C598.235 577.51 593.064 577.769 588.211 576.394L560.922 568.664C555.131 567.024 550.214 563.179 547.226 557.955L538.078 541.964C534.436 535.597 534.05 527.875 537.037 521.176L544.541 504.35C546.992 498.854 551.5 494.537 557.098 492.326L583.478 481.908C588.17 480.055 593.341 479.796 598.194 481.171L625.483 488.901C631.273 490.541 636.191 494.386 639.179 499.61L648.326 515.601Z"
+                  fill="#F3F3F3"
+                />
+                <path
+                  d="M937.243 548.191C953.207 557.908 951.533 581.598 934.361 588.972L914.175 597.641C911.434 598.818 908.489 599.45 905.507 599.503L758.975 602.097C757.621 602.121 756.268 602.026 754.93 601.812L610.22 578.633C607.275 578.161 604.449 577.121 601.9 575.57L583.134 564.148C567.17 554.432 568.845 530.742 586.017 523.367L606.202 514.699C608.944 513.522 611.888 512.889 614.871 512.836L761.402 510.242C762.756 510.218 764.11 510.314 765.447 510.528L910.157 533.706C913.103 534.178 915.929 535.219 918.477 536.77L937.243 548.191Z"
+                  fill="#F3F3F3"
+                />
+                <circle cx="513.293" cy="739.5" r="28.5" fill="#B66DA3" />
+                <path
+                  d="M282.612 509.065C292.204 531.993 276.644 560.342 247.858 572.385C219.072 584.429 187.96 575.605 178.368 552.678C168.776 529.751 184.336 501.402 213.122 489.359C241.909 477.315 273.02 486.138 282.612 509.065Z"
+                  fill="#F3F3F3"
+                />
+                <rect
+                  x="300.768"
+                  y="479.046"
+                  width="131"
+                  height="97"
+                  rx="21"
+                  transform="rotate(-1.37986 300.768 479.046)"
+                  fill="#F3F3F3"
+                />
+                <rect
+                  x="299.949"
+                  y="445.056"
+                  width="131"
+                  height="97"
+                  rx="21"
+                  transform="rotate(-1.37986 299.949 445.056)"
+                  fill="#F3F3F3"
+                />
+                <path
+                  d="M428.59 595.25C426.646 608.951 413.13 617.845 399.778 614.211L398.425 613.843C394.159 612.681 390.318 610.315 387.362 607.027L352.307 568.036C350.763 566.32 349.487 564.381 348.521 562.284L326.579 514.664C324.729 510.648 324.075 506.184 324.697 501.807L324.894 500.419C326.838 486.718 340.353 477.823 353.706 481.458L355.059 481.826C359.325 482.987 363.166 485.353 366.122 488.641L401.177 527.632C402.72 529.349 403.996 531.288 404.962 533.384L426.905 581.005C428.755 585.021 429.409 589.484 428.787 593.862L428.59 595.25Z"
+                  fill="#AAAAAA"
+                />
+                <path
+                  d="M498.744 686.178C499.292 702.235 483.625 713.893 468.402 708.755L467.587 708.48C464.029 707.279 460.819 705.225 458.238 702.498L409.361 650.862C408.114 649.544 407.026 648.082 406.122 646.509L370.703 584.859C368.832 581.603 367.787 577.939 367.659 574.186L367.63 573.326C367.082 557.268 382.748 545.611 397.971 550.749L398.787 551.024C402.344 552.225 405.554 554.278 408.135 557.005L457.012 608.642C458.26 609.96 459.347 611.421 460.251 612.995L495.671 674.645C497.541 677.901 498.586 681.565 498.714 685.318L498.744 686.178Z"
+                  fill="#AAAAAA"
+                />
+              </svg>
+            </div>
+            <div className="showcase-block--text">
+              <h3>planche</h3>
+              <p>
+                Another horsemen of calisthenics, the planche is generally
+                considered the most difficult of the four, but also the most
+                impressive. It puts heavy load on the shoulders, scapula and
+                biceps.
+              </p>
+            </div>
+          </div>
+          <div className="showcase-block">
+            <div className="showcase-block--text">
+              <h3>one arm handstand</h3>
+              <p>
+                The one arm handstand is as majestic as it sounds, taking the
+                regular handstand to the next level. The weight of your body is
+                balanced on a singular arm, making this exercise extremely
+                prestigous and difficult to obtain.
+              </p>
+            </div>
+            <div className="showcase-block--image">
+              <svg
+                id="pillar-image"
+                viewBox="0 0 1140 1140"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle cx="570" cy="570" r="570" fill="#F3F3F3" />
+                <circle cx="570" cy="570" r="480" fill="#252525" />
+                <path
+                  d="M617.531 559.383C619.306 568.829 615.02 578.384 606.784 583.339L599.528 587.704C595.086 590.376 589.872 591.47 584.731 590.807L548.514 586.14C545.573 585.761 542.733 584.816 540.15 583.359L502.153 561.916C499.029 560.153 496.36 557.684 494.361 554.705L481.636 535.751C477.213 529.162 476.499 520.758 479.748 513.517L480.913 510.92C484.161 503.679 490.913 498.625 498.776 497.547L521.394 494.449C524.948 493.962 528.567 494.313 531.961 495.475L573.242 509.598C576.047 510.558 578.641 512.052 580.88 513.997L608.447 537.945C612.36 541.345 615.01 545.966 615.967 551.061L617.531 559.383Z"
+                  fill="#F3F3F3"
+                />
+                <circle
+                  cx="534.868"
+                  cy="1005.3"
+                  r="28.5"
+                  transform="rotate(-7.24832 534.868 1005.3)"
+                  fill="#B66DA3"
+                />
+                <path
+                  d="M452.071 745.71C474.528 756.357 481.896 787.845 468.528 816.041C455.16 844.237 426.118 858.462 403.661 847.815C381.205 837.168 373.837 805.68 387.205 777.484C400.573 749.289 429.615 735.063 452.071 745.71Z"
+                  fill="#F3F3F3"
+                />
+                <path
+                  d="M596.653 465.575C619.11 476.222 628.586 503.263 617.819 525.973C607.051 548.683 580.118 558.462 557.661 547.815C535.205 537.168 525.729 510.127 536.496 487.417C547.263 464.707 574.196 454.928 596.653 465.575Z"
+                  fill="#F3F3F3"
+                />
+                <path
+                  d="M549.23 960.942C541.184 970.79 526.376 971.491 517.435 962.448V962.448C514.508 959.488 512.508 955.739 511.679 951.66L502.741 907.665C502.273 905.361 502.161 902.998 502.41 900.659L507.148 856.017C507.587 851.877 509.224 847.956 511.858 844.732V844.732C519.904 834.884 534.712 834.183 543.654 843.226V843.226C546.58 846.186 548.58 849.935 549.409 854.014L558.347 898.009C558.815 900.314 558.927 902.677 558.679 905.015L553.94 949.658C553.501 953.797 551.864 957.718 549.23 960.942V960.942Z"
+                  fill="#AAAAAA"
+                />
+                <path
+                  d="M520.953 581.758C527.848 582.025 534.26 585.375 538.418 590.883L560.508 620.144C564.162 624.983 565.756 631.07 564.945 637.079L558.933 681.611C558.213 686.941 555.648 691.851 551.684 695.486L518.563 725.855C514.094 729.953 508.187 732.121 502.128 731.886L465.492 730.465C458.596 730.197 452.185 726.848 448.027 721.34L425.937 692.079C422.283 687.239 420.688 681.153 421.5 675.144L427.512 630.612C428.232 625.281 430.797 620.372 434.761 616.737L467.881 586.368C472.351 582.269 478.258 580.102 484.317 580.337L520.953 581.758Z"
+                  fill="#F3F3F3"
+                />
+                <path
+                  d="M428.023 624.862C436.941 613.615 455.014 618.893 456.477 633.173L464.916 715.551C466.073 726.851 455.417 735.725 444.513 732.54L384.623 715.048C373.719 711.863 369.514 698.648 376.572 689.748L428.023 624.862Z"
+                  fill="#F3F3F3"
+                />
+                <path
+                  d="M458.234 587.924C467.164 576.837 485.039 582.058 486.598 596.209L495.443 676.497C496.692 687.839 486.007 696.806 475.053 693.607L415.541 676.225C404.587 673.026 400.408 659.717 407.566 650.83L458.234 587.924Z"
+                  fill="#F3F3F3"
+                />
+                <path
+                  d="M457.878 693.462C445.353 699.841 431.28 688.128 435.278 674.654L459.746 592.191C463.014 581.174 476.487 577.093 485.32 584.444L537.5 627.872C546.333 635.223 544.767 649.212 534.526 654.427L457.878 693.462Z"
+                  fill="#F3F3F3"
+                />
+                <path
+                  d="M534.895 658.304C546.346 650.571 561.555 660.012 559.706 673.706L547.963 760.639C546.41 772.134 533.524 778.209 523.669 772.091L462.714 734.253C452.859 728.136 452.585 713.892 462.198 707.4L534.895 658.304Z"
+                  fill="#F3F3F3"
+                />
+                <path
+                  d="M488.543 644.031C498.471 633.664 515.972 640.603 516.098 654.957L516.825 737.764C516.924 749.122 505.487 756.964 494.928 752.777L436.928 729.78C426.369 725.594 423.413 712.045 431.269 703.841L488.543 644.031Z"
+                  fill="#F3F3F3"
+                />
+                <path
+                  d="M482.404 529.244C484.557 543.588 499.288 552.382 512.936 547.471L528.817 541.757C532.79 540.327 536.293 537.831 538.942 534.543L593.58 466.709C594.928 465.036 596.034 463.182 596.868 461.202L630.651 380.918C632.288 377.026 632.823 372.759 632.196 368.583L629.69 351.892C627.537 337.548 612.806 328.754 599.158 333.665L583.277 339.38C579.303 340.809 575.8 343.305 573.152 346.594L518.514 414.427C517.166 416.1 516.059 417.954 515.226 419.934L481.443 500.218C479.805 504.11 479.271 508.378 479.898 512.553L482.404 529.244Z"
+                  fill="#F3F3F3"
+                />
+                <path
+                  d="M561.585 564.681C563.63 579.215 578.582 588.141 592.346 583.044L608.301 577.137C612.212 575.689 615.656 573.205 618.264 569.95L673.942 500.459C675.261 498.814 676.347 496.994 677.17 495.053L711.917 413.067C713.545 409.227 714.098 405.017 713.516 400.887L711.145 384.04C709.1 369.505 694.148 360.58 680.384 365.676L664.429 371.583C660.518 373.031 657.074 375.516 654.466 378.771L598.787 448.261C597.469 449.907 596.383 451.726 595.56 453.668L560.812 535.653C559.185 539.493 558.632 543.704 559.213 547.834L561.585 564.681Z"
+                  fill="#F3F3F3"
+                />
+                <path
+                  d="M757.75 164.965C759.341 146.693 739.953 134 723.842 142.767L716.932 146.528C714.223 148.002 711.839 150.006 709.92 152.42L640.554 239.704C639.677 240.808 638.903 241.99 638.243 243.235L585.991 341.723C584.545 344.447 583.663 347.434 583.395 350.506L582.713 358.344C581.121 376.617 600.51 389.31 616.62 380.542L623.53 376.781C626.239 375.307 628.624 373.303 630.542 370.889L699.908 283.605C700.785 282.502 701.559 281.32 702.22 280.074L754.472 181.586C755.917 178.862 756.8 175.875 757.067 172.803L757.75 164.965Z"
+                  fill="#F3F3F3"
+                />
+                <path
+                  d="M802.936 179.898C801.256 162.046 780.701 152.896 766.312 163.596L760.144 168.183C757.574 170.094 755.431 172.522 753.853 175.31L701.725 267.407C700.998 268.693 700.396 270.045 699.928 271.446L666.383 371.816C665.368 374.854 664.998 378.071 665.298 381.26L666.018 388.912C667.697 406.765 688.253 415.915 702.642 405.215L708.81 400.628C711.38 398.716 713.523 396.289 715.101 393.501L767.228 301.403C767.956 300.118 768.558 298.766 769.026 297.365L802.571 196.995C803.586 193.957 803.955 190.74 803.656 187.551L802.936 179.898Z"
+                  fill="#F3F3F3"
+                />
+                <path
+                  d="M543.544 859.246C534.931 868.844 520.111 869.486 510.7 860.668L509.481 859.527C506.052 856.313 503.689 852.127 502.711 847.53L493.224 802.942C492.692 800.441 492.58 797.869 492.894 795.331L498.49 750.09C499.067 745.426 501.059 741.05 504.198 737.553L505.313 736.31C513.926 726.711 528.747 726.069 538.158 734.887L539.376 736.029C542.805 739.242 545.168 743.429 546.146 748.026L555.633 792.614C556.165 795.115 556.277 797.687 555.963 800.224L550.367 845.466C549.79 850.13 547.798 854.505 544.659 858.003L543.544 859.246Z"
+                  fill="#AAAAAA"
+                />
+                <path
+                  d="M372.941 571.966C383.1 562.944 398.825 564.648 406.816 575.636L407.681 576.826C410.325 580.462 411.846 584.793 412.055 589.285L414.403 639.787C414.513 642.156 414.256 644.528 413.641 646.819L400.532 695.646C399.366 699.989 396.953 703.894 393.591 706.879L392.492 707.856C382.333 716.879 366.608 715.175 358.617 704.186L357.752 702.997C355.108 699.361 353.587 695.029 353.379 690.538L351.031 640.036C350.92 637.666 351.177 635.294 351.792 633.004L364.902 584.176C366.067 579.834 368.48 575.929 371.842 572.943L372.941 571.966Z"
+                  fill="#7B7A7A"
+                />
+                <path
+                  d="M396.869 595.457C384.527 594.53 375.131 584.002 375.609 571.634L375.679 569.805C375.866 564.958 377.581 560.294 380.578 556.481L406.538 523.448C408.211 521.319 410.246 519.503 412.55 518.082L448.312 496.031C452.44 493.485 457.268 492.31 462.105 492.673L463.931 492.81C476.273 493.737 485.669 504.265 485.191 516.633L485.121 518.462C484.934 523.309 483.219 527.973 480.222 531.787L454.262 564.819C452.589 566.948 450.554 568.764 448.25 570.185L412.488 592.236C408.36 594.782 403.532 595.957 398.695 595.594L396.869 595.457Z"
+                  fill="#7B7A7A"
+                />
+                <circle cx="502" cy="483" r="24" fill="#BBCA88" />
+              </svg>
+            </div>
+          </div>
+          <div className="showcase-block">
+            <div className="showcase-block--image">
+              <svg
+                id="pillar-image"
+                viewBox="0 0 1140 1140"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle cx="570" cy="570" r="570" fill="#F3F3F3" />
+                <circle cx="570" cy="570" r="480" fill="#252525" />
+                <circle
+                  cx="538.963"
+                  cy="883.963"
+                  r="24"
+                  transform="rotate(-10.4747 538.963 883.963)"
+                  fill="#BBCA88"
+                />
+                <path
+                  d="M558.068 845.549C548.718 857.683 530.341 857.457 521.292 845.096L520.683 844.264C518.332 841.054 516.855 837.289 516.395 833.337L508.952 769.392C508.725 767.437 508.749 765.461 509.024 763.512L518.038 699.77C518.595 695.831 520.165 692.103 522.593 688.951L523.223 688.135C532.573 676.001 550.95 676.227 559.999 688.587L560.608 689.419C562.959 692.629 564.436 696.395 564.896 700.347L572.339 764.291C572.566 766.246 572.542 768.222 572.267 770.171L563.253 833.913C562.696 837.853 561.126 841.58 558.698 844.732L558.068 845.549Z"
+                  fill="#7B7A7A"
+                />
+                <path
+                  d="M538.017 577.259C547.644 577.497 556.104 583.708 559.215 592.821L569.444 622.787C571.249 628.074 571.068 633.838 568.935 639.001L543.817 699.79C542.396 703.228 540.163 706.27 537.308 708.656L486.836 750.831C482.549 754.414 477.105 756.313 471.52 756.175L439.866 755.393C430.239 755.155 421.779 748.944 418.668 739.83L408.438 709.865C406.633 704.578 406.815 698.814 408.948 693.651L434.066 632.862C435.486 629.424 437.72 626.382 440.575 623.996L491.046 581.821C495.333 578.238 500.778 576.339 506.363 576.477L538.017 577.259Z"
+                  fill="#F3F3F3"
+                />
+                <path
+                  d="M589.749 467.196C596.818 465.24 604.396 466.773 610.149 471.324L624.599 482.752C629.319 486.485 632.388 491.921 633.147 497.891L636.724 526.027C637.36 531.031 636.333 536.106 633.802 540.469L619.569 565.002C616.549 570.207 611.608 574.022 605.808 575.627L588.052 580.539C580.982 582.495 573.404 580.962 567.651 576.412L553.202 564.983C548.481 561.25 545.412 555.814 544.653 549.844L541.077 521.708C540.441 516.704 541.467 511.629 543.999 507.266L558.232 482.733C561.252 477.528 566.192 473.713 571.993 472.108L589.749 467.196Z"
+                  fill="#F3F3F3"
+                />
+                <path
+                  d="M748.309 217.071C763.788 206.6 784.632 217.982 784.19 236.665L783.671 258.628C783.6 261.61 782.95 264.551 781.757 267.285L723.129 401.601C722.587 402.843 721.936 404.033 721.185 405.16L639.881 527.094C638.226 529.576 636.104 531.712 633.632 533.384L615.437 545.694C599.958 556.165 579.114 544.783 579.556 526.1L580.075 504.138C580.145 501.155 580.796 498.215 581.989 495.48L640.617 361.164C641.159 359.923 641.809 358.732 642.561 357.605L723.865 235.671C725.52 233.189 727.642 231.053 730.113 229.381L748.309 217.071Z"
+                  fill="#F3F3F3"
+                />
+                <circle
+                  cx="571.206"
+                  cy="891.206"
+                  r="28.5"
+                  transform="rotate(-10.4747 571.206 891.206)"
+                  fill="#B66DA3"
+                />
+                <path
+                  d="M416.712 772.831C437.062 787.097 439.039 819.375 421.128 844.926C403.216 870.477 372.199 879.626 351.848 865.36C331.497 851.094 329.52 818.816 347.432 793.265C365.343 767.713 396.361 758.565 416.712 772.831Z"
+                  fill="#F3F3F3"
+                />
+                <rect
+                  x="405.215"
+                  y="749.1"
+                  width="131"
+                  height="97"
+                  rx="21"
+                  transform="rotate(-60.7164 405.215 749.1)"
+                  fill="#F3F3F3"
+                />
+                <rect
+                  x="375.56"
+                  y="732.469"
+                  width="131"
+                  height="97"
+                  rx="21"
+                  transform="rotate(-60.7164 375.56 732.469)"
+                  fill="#F3F3F3"
+                />
+                <path
+                  d="M580.295 674.274C593.057 679.624 598.241 694.95 591.345 706.948L590.646 708.163C588.443 711.997 585.181 715.114 581.252 717.141L534.657 741.184C532.606 742.243 530.407 742.987 528.134 743.39L476.51 752.564C472.157 753.337 467.673 752.839 463.595 751.13L462.302 750.588C449.54 745.239 444.357 729.912 451.253 717.915L451.951 716.699C454.155 712.866 457.416 709.749 461.345 707.721L507.94 683.678C509.991 682.62 512.19 681.876 514.463 681.472L566.087 672.299C570.44 671.526 574.924 672.023 579.002 673.732L580.295 674.274Z"
+                  fill="#AAAAAA"
+                />
+                <path
+                  d="M591.54 844.512C582.232 856.519 564.047 856.363 554.946 844.199L554.311 843.35C551.904 840.133 550.382 836.343 549.896 832.356L542.233 769.536C541.991 767.555 542.008 765.552 542.284 763.576L551.021 700.896C551.575 696.918 553.162 693.154 555.623 689.979L556.273 689.141C565.581 677.134 583.765 677.29 592.866 689.454L593.502 690.303C595.908 693.52 597.431 697.31 597.917 701.297L605.58 764.117C605.821 766.098 605.804 768.101 605.529 770.077L596.792 832.757C596.237 836.735 594.651 840.499 592.19 843.674L591.54 844.512Z"
+                  fill="#AAAAAA"
+                />
+              </svg>
+            </div>
+            <div className="showcase-block--text">
+              <h3>handstand push-up</h3>
+              <p>
+                Of the four horsemen, the handstand push-up is easily the most
+                useful and versatile exercises to exist. Combining balance and
+                strength, the HSPU is aesthetically pleasing, and is commonly
+                used to train shoulder strength for planche.
+              </p>
+            </div>
+          </div>
+          <div className="showcase-block">
+            <div className="showcase-block--text">
+              <h3>muscle-up</h3>
+              <p>
+                The muscle-up is the easiest skill to obtain out of the four
+                horsemen. Combining the strength of a pull-up and a dip, this
+                exercise looks and feels as powerful as it sounds.
+              </p>
+            </div>
+            <div className="showcase-block--image">
+              ------------------------------------------------------------------
+            </div>
+          </div>
+        </div>
+        <div className="block-1-right"></div>
+      </div>
+
+      <Footer />
+    </>
+  );
 }

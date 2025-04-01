@@ -39,16 +39,16 @@ export function BentArmStand() {
                             <input id="skill-read-more" type="checkbox" />
                     
                             <div className="skill-instructions">
-                                <p>
-                                    <ul>
-                                        <li>Start in a pike pushup position with your hands shoulder-width apart, and hands facing forward or alternatively slightly outward.</li>
-                                        <li>Lower your head and body toward the ground, by bending your elbows, and try to keep your legs straight.</li> 
-                                        <li>When you lean forward enough in the down position, with your head far in front of your hands, you will feel your legs getting lighter.</li> 
-                                        <li>Once you have the strength, you should be able to lift your feet off the ground.</li> 
-                                        <li>Simply straighten your back and body into a straight line, and hold the position.</li>
-                                        <li>To use this exercise effectively, perform holds at a difficulty where you can hold them for at least 6-8 seconds, counting each hold as a rep.</li> 
-                                    </ul>
-                                </p>
+                                
+                                <ul>
+                                    <li>Start in a pike pushup position with your hands shoulder-width apart, and hands facing forward or alternatively slightly outward.</li>
+                                    <li>Lower your head and body toward the ground, by bending your elbows, and try to keep your legs straight.</li> 
+                                    <li>When you lean forward enough in the down position, with your head far in front of your hands, you will feel your legs getting lighter.</li> 
+                                    <li>Once you have the strength, you should be able to lift your feet off the ground.</li> 
+                                    <li>Simply straighten your back and body into a straight line, and hold the position.</li>
+                                    <li>To use this exercise effectively, perform holds at a difficulty where you can hold them for at least 6-8 seconds, counting each hold as a rep.</li> 
+                                </ul>
+                                
                                 <label className="read-more-label" for="skill-read-more">Show less</label>
                             </div>
                             <label className="read-more-label" for="skill-read-more">Read more...</label>

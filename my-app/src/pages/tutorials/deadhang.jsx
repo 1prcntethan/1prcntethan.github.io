@@ -65,7 +65,7 @@ export function Deadhang() {
             {svgDivider.get("1")}
             <ProgressionChart name1="N/A" name2="N/A" name3="Deadhang" name4="Active Hang" name5="Pull-up"  
             link1="#" link2="#" link3="/tutorials/deadhang" link4="/tutorials/activehang" link5="/tutorials/pullup"
-            svg1="NA" svg2="NA" svg3="deadhang" svg4="activehang" svg5="pullup"/>
+            svg1="NA" svg2="NA" svg3="deadhang" svg4="activehang" svg5="pull-up"/>
             <TutorialReturn />
             {svgDivider.get("2")}
             <div class="technique-form-container">

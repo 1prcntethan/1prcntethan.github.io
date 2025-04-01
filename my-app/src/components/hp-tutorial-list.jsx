@@ -44,11 +44,11 @@ export default function TutorialListHP() {
     //     // Toggle off if the same row is clicked again
     //     setActiveRow(null);
     // } else
-    {
+    
       // Set the active row and title
       setActiveRow(index);
       setTitle(buttonTitle);
-    }
+    
   };
 
   const handleOutsideClick = (dropRef) => {
@@ -65,7 +65,7 @@ export default function TutorialListHP() {
       <div className="catergory-title">
         horizontal push
         <div className="catergory-blurb">
-          Horizontal push mainly involves push exercises with your body parallel to the ground. These exercises typically target the shoulders, arms, scapula and chest.
+          Horizontal push mainly involves push exercises with your body parallel to the ground. These exercises typically target the shoulders, arms, and chest.
         </div>
       </div>
       <div className="catergory-container">

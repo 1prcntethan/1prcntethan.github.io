@@ -39,16 +39,16 @@ export function AssistedHSPU() {
                             <input id="skill-read-more" type="checkbox" />
                     
                             <div className="skill-instructions">
-                                <p>
-                                    <ul>
-                                        <li>For a HSPU negative, start in a handstand, and slowly lower yourself by bending the elbows, and moving your head in front of your hands, until you are in the BAS position.</li>
-                                        <li>For a HSPU pressing movement, start in the BAS and push up and straighten your body into a handstand.</li> 
-                                        <li>Practice alternating and spamming these movements.</li> 
-                                        <li>Once you have the strength, you should be able to chain and combine a negative and a press, or a press and a negative.</li> 
-                                        <li>Eventually, this will result in a HSPU.</li>
-                                        <li>To use this exercise effectively, perform these at a diffculty where you can do 4-8 reps for strength, or 8-12 for hypertrophy/volume.</li> 
-                                    </ul>
-                                </p>
+                                
+                                <ul>
+                                    <li>For a HSPU negative, start in a handstand, and slowly lower yourself by bending the elbows, and moving your head in front of your hands, until you are in the BAS position.</li>
+                                    <li>For a HSPU pressing movement, start in the BAS and push up and straighten your body into a handstand.</li> 
+                                    <li>Practice alternating and spamming these movements.</li> 
+                                    <li>Once you have the strength, you should be able to chain and combine a negative and a press, or a press and a negative.</li> 
+                                    <li>Eventually, this will result in a HSPU.</li>
+                                    <li>To use this exercise effectively, perform these at a diffculty where you can do 4-8 reps for strength, or 8-12 for hypertrophy/volume.</li> 
+                                </ul>
+                                
                                 <label className="read-more-label" for="skill-read-more">Show less</label>
                             </div>
                             <label className="read-more-label" for="skill-read-more">Read more...</label>

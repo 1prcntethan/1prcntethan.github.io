@@ -1,3 +1,4 @@
+import Footer from "../components/footer";
 import Navbar from "../components/navbar";
 import "./training.css"
 import { Link } from "react-router-dom";
@@ -128,6 +129,17 @@ export function Training() {
           </div>
         </div>
       </div>
+
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+
+      <Footer />
+
+
     </>
   );
 }

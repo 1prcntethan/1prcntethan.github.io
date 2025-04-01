@@ -6,6 +6,8 @@ import { skillTitle } from '../utilites/skilltitles';
 import { skillDiff } from '../utilites/skilldifficulties';
 import { skillTime } from '../utilites/skilltime';
 import { skillLinks } from '../utilites/skillLinks';
+import { skillImage } from "../utilites/skillImage";
+
 
 export default function TutorialListL() {
 
@@ -25,11 +27,11 @@ export default function TutorialListL() {
         //     // Toggle off if the same row is clicked again
         //     setActiveRow(null);
         // } else 
-        {
+        
             // Set the active row and title
             setActiveRow(index);
             setTitle(buttonTitle);
-        }
+        
     };
 
     const handleOutsideClick = (dropRef) => {
@@ -89,7 +91,7 @@ export default function TutorialListL() {
                     </div>
                     <br />
                     <br />
-                    image
+                    {skillImage.get(title)}
                   </div>
                   <div className="skill-content--right">
                     Skill Difficulty: {skillDiff.get(title)}

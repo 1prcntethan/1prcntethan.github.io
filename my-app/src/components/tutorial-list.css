@@ -44,7 +44,7 @@
 .skill-button {
     border: solid;
     border-color: #565656;
-    background-color: #1B1B1B;
+    background-color: #181818;
     color: white;
     font-size: 18px;
     font-family: Fira Sans;
@@ -96,10 +96,13 @@
     text-decoration: none;
     color: white;
     animation: glowSkill 5s ease infinite;
+    padding: 10px;
+    border: 1px #b1afaf solid;
+    border-radius: 0px;
 }
 .skill-content--link:hover {
     
-    border-bottom: solid 1px rgb(189, 189, 189);
+    background-color: rgb(43, 43, 43);
     
 }
 
@@ -165,7 +168,7 @@
     border: none;
     border-radius: 5px;
     justify-self: right;
-    margin-left: 8%;
+    margin-left: 5vw;
     padding: 6px;
 
 }

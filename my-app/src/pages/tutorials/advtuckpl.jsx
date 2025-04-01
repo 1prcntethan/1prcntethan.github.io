@@ -39,20 +39,20 @@ export function AdvTuckPL() {
                             <input id="skill-read-more" type="checkbox" />
                     
                             <div className="skill-instructions">
-                                <p>
-                                    <ul>
-                                        <li>Start in a squat position with your hands on the floor shoulder-width apart, and hands turned at a 45 degree angle.</li> 
-                                        <li>Ensure your elbows are completely straightened, and that your scapula is protracted and depressed. </li> 
-                                        <li>Gradually lean your body forward by shifting your shoulders ahead of your wrists, and feel the load on your feet becoming lighter. </li> 
-                                        <li>As you lift off, maintain straight arms and protraction/depression, tucking your knees to your chest while leaning forward.</li> 
-                                        <li>This is the tuck planche position.</li>
-                                        <li>Slowly lower your knees until your thighs are pointing directly at the floor. The leg position can also be described as perpendicular to the floor.</li>
-                                        <li>You should find yourself having to lean farther forward and using more strength to hold this position compared to the tuck planche.</li>
-                                        <li>As you lower your knees, think about keeping your feet as close to your butt as possible.</li>  
-                                        <li>Keep your scapula protracted and depressed, and your back/spine as neutral and flat as possible.</li>
-                                        <li>To use this exercise effectively, perform holds at a difficulty where you can hold them for at least 6-8 seconds, counting each hold as a rep.</li> 
-                                    </ul>
-                                </p>
+                            
+                                <ul>
+                                    <li>Start in a squat position with your hands on the floor shoulder-width apart, and hands turned at a 45 degree angle.</li> 
+                                    <li>Ensure your elbows are completely straightened, and that your scapula is protracted and depressed. </li> 
+                                    <li>Gradually lean your body forward by shifting your shoulders ahead of your wrists, and feel the load on your feet becoming lighter. </li> 
+                                    <li>As you lift off, maintain straight arms and protraction/depression, tucking your knees to your chest while leaning forward.</li> 
+                                    <li>This is the tuck planche position.</li>
+                                    <li>Slowly lower your knees until your thighs are pointing directly at the floor. The leg position can also be described as perpendicular to the floor.</li>
+                                    <li>You should find yourself having to lean farther forward and using more strength to hold this position compared to the tuck planche.</li>
+                                    <li>As you lower your knees, think about keeping your feet as close to your butt as possible.</li>  
+                                    <li>Keep your scapula protracted and depressed, and your back/spine as neutral and flat as possible.</li>
+                                    <li>To use this exercise effectively, perform holds at a difficulty where you can hold them for at least 6-8 seconds, counting each hold as a rep.</li> 
+                                </ul>
+                            
                                 <label className="read-more-label" for="skill-read-more">Show less</label>
                             </div>
                             <label className="read-more-label" for="skill-read-more">Read more...</label>

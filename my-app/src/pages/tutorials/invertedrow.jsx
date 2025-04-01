@@ -39,17 +39,17 @@ export function InvertedRow() {
                             <input id="skill-read-more" type="checkbox" />
                     
                             <div className="skill-instructions">
-                                <p>
-                                    <ul>
-                                        <li>Find a bar or something where there is space to hang under, which is at waist level.</li> 
-                                        <li>Place your hands on the bar, shoulder width apart.</li>
-                                        <li>Position yourself under the bar facing up while hanging on to it, and plant your legs a comfortable distance in front.</li> 
-                                        <li>Your body should almost be parallel to the ground, and your legs should be straightened.</li> 
-                                        <li>Using your legs as support, pull your chest as far up and as close to the bar as possible and lower back down.</li> 
-                                        <li>The farther out your legs are in front of the bar, the harder the exercise gets.</li>
-                                        <li>To use this exercise effectively, perform these at a diffculty where you can do 4-8 reps for strength, or 8-12 for hypertrophy/volume.</li> 
-                                    </ul>
-                                </p>
+                                
+                                <ul>
+                                    <li>Find a bar or something where there is space to hang under, which is at waist level.</li> 
+                                    <li>Place your hands on the bar, shoulder width apart.</li>
+                                    <li>Position yourself under the bar facing up while hanging on to it, and plant your legs a comfortable distance in front.</li> 
+                                    <li>Your body should almost be parallel to the ground, and your legs should be straightened.</li> 
+                                    <li>Using your legs as support, pull your chest as far up and as close to the bar as possible and lower back down.</li> 
+                                    <li>The farther out your legs are in front of the bar, the harder the exercise gets.</li>
+                                    <li>To use this exercise effectively, perform these at a diffculty where you can do 4-8 reps for strength, or 8-12 for hypertrophy/volume.</li> 
+                                </ul>
+                                
                                 <label className="read-more-label" for="skill-read-more">Show less</label>
                             </div>
                             <label className="read-more-label" for="skill-read-more">Read more...</label>

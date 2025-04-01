@@ -39,19 +39,18 @@ export function Pullup() {
                             <input id="skill-read-more" type="checkbox" />
                     
                             <div className="skill-instructions">
-                                <p>
-                                    <ul>
-                                        <li>Start in a deadhang position with your hands shoulder-width apart.</li> 
-                                        <li>Pull yourself up, bringing your torso upward, and get your chin above the bar height. </li> 
-                                        <li>Think about driving your elbows down and pulling the bar downward. </li> 
-                                        <li>The hollow-body pull-up has a tight core and straight body. </li> 
-                                        <li>The arched back pull-up has a more relaxed core and has a more open, upward facing chest position.</li> 
-                                        <li>During the exercise, it is recommended move slowly and controlled coming down, but be explosive and fast when coming up. </li> 
-                                        <li>This exercise has many different variations and difficulties, depending on where the hands are placed.</li> 
-                                        <li>To use this exercise effectively, perform these at a diffculty where you can do 4-8 reps for strength, or 8-12 for hypertrophy/volume.</li> 
-
-                                    </ul>
-                                </p>
+                                
+                                <ul>
+                                    <li>Start in a deadhang position with your hands shoulder-width apart.</li> 
+                                    <li>Pull yourself up, bringing your torso upward, and get your chin above the bar height. </li> 
+                                    <li>Think about driving your elbows down and pulling the bar downward. </li> 
+                                    <li>The hollow-body pull-up has a tight core and straight body. </li> 
+                                    <li>The arched back pull-up has a more relaxed core and has a more open, upward facing chest position.</li> 
+                                    <li>During the exercise, it is recommended move slowly and controlled coming down, but be explosive and fast when coming up. </li> 
+                                    <li>This exercise has many different variations and difficulties, depending on where the hands are placed.</li> 
+                                    <li>To use this exercise effectively, perform these at a diffculty where you can do 4-8 reps for strength, or 8-12 for hypertrophy/volume.</li> 
+                                </ul>
+                                
                                 <label className="read-more-label" for="skill-read-more">Show less</label>
                             </div>
                             <label className="read-more-label" for="skill-read-more">Read more...</label>

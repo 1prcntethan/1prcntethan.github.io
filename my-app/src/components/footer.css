@@ -1,0 +1,145 @@
+footer {
+    background-color: #333333; /* Dark background color */
+    color: #f3f3f3; /* Light text color */
+    padding: 40px 20px;
+    font-family: Fira Sans;
+    font-weight: 200;
+    padding-top: 4rem;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+  
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+    margin: 10px 20px;
+}
+  
+.footer-section h4 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #f3f3f3; /* Highlight color for headings */
+}
+  
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+  
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+  
+.footer-section ul li a {
+    color: #919191;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+  
+.footer-section ul li a:hover {
+    color: #9151A6; /* Highlight color on hover */
+}
+  
+.footer-section p {
+    margin-bottom: 15px;
+}
+  
+.footer-section .social-media {
+    display: flex;
+    gap: 15px;
+}
+  
+.footer-section .social-media a {
+    color: #919191;
+    font-size: 24px;
+    transition: color 0.3s ease;
+}
+  
+.footer-section .social-media a:hover {
+    color: #9151A6; /* Highlight color on hover */
+}
+  
+.footer-section form {
+    display: flex;
+    flex-direction: column;
+}
+  
+.footer-section form input[type="email"] {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 4px;
+    outline: none;
+}
+  
+.footer-section form button {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #b66da3;
+    color: #333333;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+  
+.footer-section form button:hover {
+    background-color: #9151A6; /* Darker highlight color on hover */
+}
+  
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    border-top: 1px solid #919191;
+    padding-top: 20px;
+}
+  
+.footer-bottom p {
+    margin: 10px 0;
+}
+  
+.footer-bottom a {
+    color: #f3f3f3;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+  
+.footer-bottom a:hover {
+    color: hsl(285, 34%, 48%); /* Highlight color on hover */
+}
+
+.footer-text {
+    color: #919191;
+}
+
+#footer-email {
+    color: #919191;
+}
+
+.center-svg {
+    align-self: center;
+    justify-content: center;
+}
+
+.insta-svg {
+    width: 25px;
+    align-self: center;
+    vertical-align: center;
+    margin-top: 8px;
+}
+
+.link-text { /*general styling for random links*/
+    text-decoration: none;
+    color: #f3f3f3;
+}
+
+.link-text:hover { 
+    cursor: pointer;
+    text-decoration: underline;
+}

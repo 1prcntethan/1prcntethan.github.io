@@ -39,15 +39,15 @@ export function CrowPose() {
                             <input id="skill-read-more" type="checkbox" />
                     
                             <div className="skill-instructions">
-                                <p>
-                                    <ul>
-                                        <li>Start in a squat position with your hands shoulder-width apart, and hands facing forward or alternatively slightly outward.</li> 
-                                        <li>Press your hands into the floor, while lifting your hips and tucked knees up.</li> 
-                                        <li>Keep your elbows bent, and rest your knees on your elbows.</li> 
-                                        <li>This is the Crow Pose. The harder variation, the Crane Pose, is identical but done with straight arms.</li> 
-                                        <li>To use this exercise effectively, perform these holds as long as possible to practice balancing using your fingers and hands.</li> 
-                                    </ul>
-                                </p>
+                                
+                                <ul>
+                                    <li>Start in a squat position with your hands shoulder-width apart, and hands facing forward or alternatively slightly outward.</li> 
+                                    <li>Press your hands into the floor, while lifting your hips and tucked knees up.</li> 
+                                    <li>Keep your elbows bent, and rest your knees on your elbows.</li> 
+                                    <li>This is the Crow Pose. The harder variation, the Crane Pose, is identical but done with straight arms.</li> 
+                                    <li>To use this exercise effectively, perform these holds as long as possible to practice balancing using your fingers and hands.</li> 
+                                </ul>
+                                
                                 <label className="read-more-label" for="skill-read-more">Show less</label>
                             </div>
                             <label className="read-more-label" for="skill-read-more">Read more...</label>

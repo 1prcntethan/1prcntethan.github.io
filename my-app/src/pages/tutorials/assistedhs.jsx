@@ -39,16 +39,16 @@ export function AssistedHS() {
                             <input id="skill-read-more" type="checkbox" />
                     
                             <div className="skill-instructions">
-                                <p>
-                                    <ul>
-                                        <li>Find a wall you can handstand next to.</li> 
-                                        <li>Place your hands one foot away from the wall, shoulder width apart. Fingers should be pointing towards the wall.</li>
-                                        <li>Stack your elbows, shoulders, chest, hips, knees and feet, in a straight line against the wall.</li> 
-                                        <li>Push your shoulders and hands into the ground, it should feel like you are reaching as far as your can upward.</li> 
-                                        <li>Using the wall as support, practice using your fingers to push yourself away from the wall and balancing.</li> 
-                                        <li>To use this exercise effectively, perform these holds as long as possible to practice balancing using your fingers and hands.</li> 
-                                    </ul>
-                                </p>
+                            
+                                <ul>
+                                    <li>Find a wall you can handstand next to.</li> 
+                                    <li>Place your hands one foot away from the wall, shoulder width apart. Fingers should be pointing towards the wall.</li>
+                                    <li>Stack your elbows, shoulders, chest, hips, knees and feet, in a straight line against the wall.</li> 
+                                    <li>Push your shoulders and hands into the ground, it should feel like you are reaching as far as your can upward.</li> 
+                                    <li>Using the wall as support, practice using your fingers to push yourself away from the wall and balancing.</li> 
+                                    <li>To use this exercise effectively, perform these holds as long as possible to practice balancing using your fingers and hands.</li> 
+                                </ul>
+                            
                                 <label className="read-more-label" for="skill-read-more">Show less</label>
                             </div>
                             <label className="read-more-label" for="skill-read-more">Read more...</label>

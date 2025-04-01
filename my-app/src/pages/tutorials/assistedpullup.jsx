@@ -39,18 +39,17 @@ export function AssistPullup() {
                             <input id="skill-read-more" type="checkbox" />
                     
                             <div className="skill-instructions">
-                                <p>
-                                    <ul>
-                                        <li>Start in a deadhang position with your hands shoulder-width apart.</li> 
-                                        <li>Pull yourself up, bringing your torso upward, and get your chin above the bar height. </li> 
-                                        <li>Think about driving your elbows down and pulling the bar downward. </li> 
-                                        <li>To use leg assistance, find a box or something to put under the bar that can support some of your weight, and use your legs to lighten the pull-up.</li> 
-                                        <li>To use resistance band assistance, loop the band around the bar and step on the band as you do the pull-up.</li>
-                                        <li>This exercise has many different variations and difficulties, depending on where the hands are placed.</li> 
-                                        <li>To use this exercise effectively, perform these at a diffculty where you can do 4-8 reps for strength, or 8-12 for hypertrophy/volume.</li> 
-
-                                    </ul>
-                                </p>
+                            
+                                <ul>
+                                    <li>Start in a deadhang position with your hands shoulder-width apart.</li> 
+                                    <li>Pull yourself up, bringing your torso upward, and get your chin above the bar height. </li> 
+                                    <li>Think about driving your elbows down and pulling the bar downward. </li> 
+                                    <li>To use leg assistance, find a box or something to put under the bar that can support some of your weight, and use your legs to lighten the pull-up.</li> 
+                                    <li>To use resistance band assistance, loop the band around the bar and step on the band as you do the pull-up.</li>
+                                    <li>This exercise has many different variations and difficulties, depending on where the hands are placed.</li> 
+                                    <li>To use this exercise effectively, perform these at a diffculty where you can do 4-8 reps for strength, or 8-12 for hypertrophy/volume.</li> 
+                                </ul>
+                            
                                 <label className="read-more-label" for="skill-read-more">Show less</label>
                             </div>
                             <label className="read-more-label" for="skill-read-more">Read more...</label>
