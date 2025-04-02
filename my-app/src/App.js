@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import "./App.css"
 import { Homepage } from './pages/home';
@@ -43,6 +44,7 @@ import { BeginnerGuide } from './pages/guides/beginnerguide';
 function App() {
   return (
     <Router>
+      <ScrollToTop>
       <Routes>
         <Route path="/" element={<Homepage/>}/>
         <Route path="/training" element={<Training/>}/>
@@ -90,8 +92,19 @@ function App() {
         <Route path="/tutorials/pullup" element={<Pullup/>}/>
 
       </Routes>
+      </ScrollToTop>
     </Router>
   );
+}
+
+function ScrollToTop({children}) {
+  const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+
+  return <>{children}</>;
 }
 
 export default App;
