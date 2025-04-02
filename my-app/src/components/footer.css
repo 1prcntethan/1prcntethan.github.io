@@ -4,7 +4,7 @@ footer {
     padding: 40px 20px;
     font-family: Fira Sans;
     font-weight: 200;
-    padding-top: 4rem;
+    padding-top: 3rem;
 }
 
 .footer-container {
@@ -94,9 +94,9 @@ footer {
   
 .footer-bottom {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 3rem;
     border-top: 1px solid #919191;
-    padding-top: 20px;
+    padding-top: 2rem;
 }
   
 .footer-bottom p {

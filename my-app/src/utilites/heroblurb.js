@@ -67,7 +67,7 @@ export const heroBlurb = new Map([
   ],
   [
     "assisted-hspu",
-    "The Assisted HSPU is a last step before the full HSPU. It builds essential shoulder strength and muscle coordination and activation for the full HSPU."
+    "The Assisted HSPU is the last step before the full HSPU. It builds essential shoulder strength, muscle coordination and activation for the full HSPU."
   ],
 
 

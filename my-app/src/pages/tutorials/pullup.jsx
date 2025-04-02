@@ -80,7 +80,7 @@ export function Pullup() {
                         technique & form
                     </div>
                     <div class="technique-form-content">
-                        <div>
+                        <div class="technique-form-text">
                             Good Form Cues: 
                             <ul>
                             <li>Elbows drive downward</li>
@@ -90,10 +90,12 @@ export function Pullup() {
                             <li>Hands are (usually) placed shoulder-width apart</li>
                             </ul>
                         </div>
-                        <div>
+                        <div class="technique-form-text">
                             Bad Form Cues: 
                             <ul>
                             <li>Bent body</li>
+                            <li>Flared elbows</li>
+                            <li>Half reps</li>
                             </ul>
                     
                         </div>

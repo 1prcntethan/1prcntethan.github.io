@@ -141,14 +141,26 @@
 }
 
 .technique-form-content {
+    margin-top: 40px;
     display: flex;
     flex-direction: row;
     width:100%;
-    justify-content: space-between;
+    justify-content: space-around;
+    font-family: Fira Sans;
+    font-weight: 200;
+}
+
+.technique-form-text {
+    display: flex;
+    flex-direction: column;
     font-family: Fira Sans;
     font-weight: 200;
 }
 
 .technique-form-content > div{
-    width: 45%;
+    width: 30%;
+}
+
+.technique-form-content > div > ul > li{
+    margin-top: 10px;
 }
