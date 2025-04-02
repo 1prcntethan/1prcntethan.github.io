@@ -65,7 +65,7 @@
 
 .skill-content {
     display: flex;
-    height: 20vh;
+    height: 30vh;
     padding: 25px 0;
     flex-direction: row;
     width: 90%;
@@ -83,6 +83,13 @@
     height: 0px;
     padding: 0px;
     transition: all 0.8s ease-in-out;      
+}
+
+#skill-image {
+    width: 13vw;
+    height: 13vw;
+    align-self: center;
+    margin-top: 1rem;
 }
 
 .skill-content--left {

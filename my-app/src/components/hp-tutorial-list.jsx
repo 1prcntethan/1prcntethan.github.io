@@ -7,6 +7,7 @@ import { skillDiff } from "../utilites/skilldifficulties";
 import { skillTime } from "../utilites/skilltime";
 import { skillLinks } from "../utilites/skillLinks";
 import { skillImage } from "../utilites/skillImage";
+import { svgIcon } from "../utilites/svg-icons";
 
 export default function TutorialListHP() {
   const [title, setTitle] = useState(null);
