@@ -121,6 +121,10 @@ export const heroBlurb = new Map([
     "half-lay-fl",
     "The Half Lay Front Lever is the last advanced front lever progression before the Full Front Lever. It builds essential strength and activation in the back, arms, and core."
   ],
+  [
+    "full-fl",
+    "The Full Front Lever is the most common target skill for pull in calisthenics, and it's an amazing feat of strength in the back, arms and core."
+  ],
 
   [
     "deadhang",

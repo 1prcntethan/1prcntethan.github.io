@@ -43,6 +43,7 @@ import { ChestPullup } from './pages/tutorials/chestpullup';
 import { WaistPullup } from './pages/tutorials/waistpullup';
 import { StraddleFLRow } from './pages/tutorials/straddleflrow';
 import { HalflayFL } from './pages/tutorials/halflayfl';
+import { FrontLever } from './pages/tutorials/frontlever';
 
 
 function App() {
@@ -91,6 +92,7 @@ function App() {
         <Route path="/tutorials/straddlefl" element={<StraddleFL/>}/>
         <Route path="/tutorials/straddleflrow" element={<StraddleFLRow/>}/>
         <Route path="/tutorials/halflayfl" element={<HalflayFL/>}/>
+        <Route path="/tutorials/fullfl" element={<FrontLever/>}/>
 
         <Route path="/tutorials/deadhang" element={<Deadhang/>}/>
         <Route path="/tutorials/activehang" element={<ActiveHang/>}/>

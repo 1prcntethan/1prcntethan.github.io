@@ -49,7 +49,7 @@ export const skillLinks = new Map([
     ["Straddle FL", "/tutorials/straddlefl"],
     ["Straddle FL Row", "/tutorials/straddleflrow"],
     ["Half Lay FL", "/tutorials/halflayfl"],
-    ["Full Front Lever", "full front lever"],
+    ["Full Front Lever", "/tutorials/fullfl"],
     ["Full FL Row", "full fl row"],
     ["Front Lever Touch", "front lever touch"],
   
