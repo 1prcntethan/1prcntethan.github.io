@@ -68,8 +68,8 @@ export function SuperAdvTuckFL() {
             </div>
             {svgDivider.get("1")}
             <ProgressionChart name1="Inverted Row" name2="Adv. Tuck FL" name3="Super Adv. Tuck FL" name4="Straddle FL" name5="Full Front Lever"  
-            link1="/tutorials/invertedrow" link2="/tutorials/advtuckfl" link3="/tutorials/superadvtuckfl" link4="#" link5="#"
-            svg1="inverted-row" svg2="adv-tuck-fl" svg3="super-adv-tuck-fl" svg4="" svg5=""/>
+            link1="/tutorials/invertedrow" link2="/tutorials/advtuckfl" link3="/tutorials/superadvtuckfl" link4="/tutorials/straddlefl" link5="#"
+            svg1="inverted-row" svg2="adv-tuck-fl" svg3="super-adv-tuck-fl" svg4="straddle-fl" svg5="full-fl"/>
             <TutorialReturn />
             {svgDivider.get("2")}
             <div class="technique-form-container">

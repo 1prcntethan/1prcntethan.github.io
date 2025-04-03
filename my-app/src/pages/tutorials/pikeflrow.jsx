@@ -63,7 +63,7 @@ export function PikeFLRow() {
 
                         </p>
                         <p>
-                            Recommended Accessory Exercises: Scapular Pullups, Active Hang, Deadhang
+                            Recommended Accessory Exercises: Scapular Pullups, Active Hang, Inverted Row
                         </p>
                     </div>
                 </div>

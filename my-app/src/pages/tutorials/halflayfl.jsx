@@ -8,11 +8,11 @@ import TutorialReturn from "../../components/tutorialreturn";
 
 
 
-export function AdvTuckFLRow() {
+export function HalflayFL() {
     return (
         <>
             <Navbar />
-            <SkillHero title="adv. tuck front lever row" identifier="adv-tuck-fl-row"/>
+            <SkillHero title="half lay front lever" identifier="half-lay-fl"/>
             {svgDivider.get("0")}
             <div className="skill-info-container"> 
                 <div className="skill-info">
@@ -25,28 +25,29 @@ export function AdvTuckFLRow() {
                             Skill Difficulty: A
                             </Link>
                             <br />
-                            <p>Targeted Muscles: Lats, Rear Deltoids, Biceps, Triceps, Scapula, Core</p>
+                            <p>Targeted Muscles: Lats, Rear Deltoids, Triceps, Scapula, Core</p>
                             <p>High Strain Areas: N/A </p>
                         </div>
                         <div className="overview-explanation">
-                            The Advanced Tuck Front Lever Row is a regression exercise used to prepare the body more difficult front lever row progressions. The lats/back is the main muscle used in this exercise, as well as the mid-back. Scapula retraction should be kept in mind in order to achieve a neutral scapula position.
+                            The Half Lay Front Lever is the final progression before unlocking the full front lever. The lats/back is the main muscle used in this exercise. Scapula retraction should be kept in mind in order to achieve a neutral scapula position.
                         </div>
                     </div>
             
                     <div className="exercise-instructions-container">
-                        Step-by-Step ~ Advanced Tuck Front Lever Row
+                        Step-by-Step ~ Half Lay Front Lever
                         <div className="exercise-instructions">
                             <input id="skill-read-more" type="checkbox" />
                     
                             <div className="skill-instructions">
-                            
+                                
                                 <ul>
-                                    <li>Start in a Adv. Tuck FL position with your hands shoulder-width apart.</li> 
-                                    <li>Ensure your arms are completely straightened. </li> 
-                                    <li>From this Adv. Tuck FL position, pull your waist to the bar, keeping the rest of your body in the same position.</li>
-                                    <li>To use this exercise effectively, perform these at a diffculty where you can do 4-8 reps for strength, or 8-12 for hypertrophy/volume.</li> 
+                                    <li>Start in a Tuck FL position.</li> 
+                                    <li>Unfold your hips, flatten your back, and point your knees straight outward, with your thighs parallel to the ground, and your feet pointing at the ground. </li> 
+                                    <li>Your body should be flat and your legs should have a 90 degree bend at the knees. </li> 
+                                    <li>Maintain straight arms and a neutral scapula.</li> 
+                                    <li>To use this exercise effectively, perform holds at a difficulty where you can hold them for at least 6-8 seconds, counting each hold as a rep.</li> 
                                 </ul>
-                            
+                                
                                 <label className="read-more-label" for="skill-read-more">Show less</label>
                             </div>
                             <label className="read-more-label" for="skill-read-more">Read more...</label>
@@ -55,19 +56,19 @@ export function AdvTuckFLRow() {
 
                     <div className="recommended-info">
                         <p>
-                            Recommended Main Exercises: Adv. Tuck FL, Pike FL Row
+                            Recommended Main Exercises: Straddle FL, Super Adv. Tuck FL, Pull-up
 
                         </p>
                         <p>
-                            Recommended Accessory Exercises: Scapular Pullups, Inverted Row
+                            Recommended Accessory Exercises: Scapular Pullups, Adv. Tuck FL Rows
                         </p>
                     </div>
                 </div>
             </div>
             {svgDivider.get("1")}
-            <ProgressionChart name1="Inverted Row" name2="Super Adv. Tuck FL" name3="Adv. Tuck FL Row" name4="Straddle FL" name5="Full Front Lever"  
-            link1="/tutorials/invertedrow" link2="/tutorials/superadvtuckfl" link3="/tutorials/advtuckflrow" link4="/tutorials/straddlefl" link5="#"
-            svg1="inverted-row" svg2="super-adv-tuck-fl" svg3="adv-tuck-fl-row" svg4="straddle-fl" svg5=""/>
+            <ProgressionChart name1="Inverted Row" name2="Straddle FL" name3="Half Lay FL" name4="Full Front Lever" name5="Full FL Row"  
+            link1="/tutorials/invertedrow" link2="/tutorials/straddlefl" link3="/tutorials/halflayfl" link4="/tutorials/fullfl" link5="#"
+            svg1="inverted-row" svg2="straddle-fl" svg3="half-lay-fl" svg4="full-fl" svg5=""/>
             <TutorialReturn />
             {svgDivider.get("2")}
             <div class="technique-form-container">
@@ -79,9 +80,11 @@ export function AdvTuckFLRow() {
                         <div>
                             Good Form Cues: 
                             <ul>
-                            <li>Straight arms & locked elbows in bottom position</li>
-                            <li>Neutral scapula</li>
-                            <li>Back is flat and parallel to the ground in top and bottom position</li>
+                            <li>Straight arms & locked elbows</li>
+                            <li>Legs pointing downward</li>
+                            <li>Body is flat and parallel to the ground</li>
+                            <li>Neutral scapula position</li>
+                            <li>Back is flat and parallel to the ground</li>
                             <li>Hands are placed shoulder-width apart</li>
                             <li>Hips are level with shoulders</li>
                             </ul>
@@ -89,6 +92,7 @@ export function AdvTuckFLRow() {
                         <div>
                             Bad Form Cues: 
                             <ul>
+                            <li>Bent arms or legs</li>
                             <li>Weak/protracted scapula</li>
                             <li>High/low hips</li>
                             <li>Hands are placed too far/close together</li>

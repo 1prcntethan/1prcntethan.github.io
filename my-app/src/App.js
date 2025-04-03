@@ -40,6 +40,9 @@ import { SkillVis } from './pages/skillvis';
 import { SkillTree } from './pages/skilltree';
 import { BeginnerGuide } from './pages/guides/beginnerguide';
 import { ChestPullup } from './pages/tutorials/chestpullup';
+import { WaistPullup } from './pages/tutorials/waistpullup';
+import { StraddleFLRow } from './pages/tutorials/straddleflrow';
+import { HalflayFL } from './pages/tutorials/halflayfl';
 
 
 function App() {
@@ -86,12 +89,15 @@ function App() {
         <Route path="/tutorials/superadvtuckfl" element={<SuperAdvTuckFL/>}/>
         <Route path="/tutorials/advtuckflrow" element={<AdvTuckFLRow/>}/>
         <Route path="/tutorials/straddlefl" element={<StraddleFL/>}/>
+        <Route path="/tutorials/straddleflrow" element={<StraddleFLRow/>}/>
+        <Route path="/tutorials/halflayfl" element={<HalflayFL/>}/>
 
         <Route path="/tutorials/deadhang" element={<Deadhang/>}/>
         <Route path="/tutorials/activehang" element={<ActiveHang/>}/>
         <Route path="/tutorials/assistpullup" element={<AssistPullup/>}/>
         <Route path="/tutorials/pullup" element={<Pullup/>}/>
         <Route path="/tutorials/chestpullup" element={<ChestPullup/>}/>
+        <Route path="/tutorials/waistpullup" element={<WaistPullup/>}/>
 
       </Routes>
       </ScrollToTop>

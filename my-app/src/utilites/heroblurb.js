@@ -106,12 +106,20 @@ export const heroBlurb = new Map([
   ],
   [
     "adv-tuck-fl-row",
-    "The Pike Front Lever Row is a back focused row exercise used to build strength in the mid-back, and is the regression for skills like the front lever touch."
+    "The Advanced Tuck Front Lever Row is a back focused row exercise used to build strength in the mid-back, and is the regression for skills like the front lever touch."
 
   ],
   [
     "straddle-fl",
     "The Straddle Front Lever is an advanced front lever progression used to train for the full front lever. It is a realistic and common goal for pull in calisthenics."
+  ],
+  [
+    "straddle-fl-row",
+    "The Straddle Front Lever Row is an advanced front lever row progression used to train for the FL Touch and build strength in the mid-back."
+  ],
+  [
+    "half-lay-fl",
+    "The Half Lay Front Lever is the last advanced front lever progression before the Full Front Lever. It builds essential strength and activation in the back, arms, and core."
   ],
 
   [
@@ -133,6 +141,10 @@ export const heroBlurb = new Map([
   [
     "chest-pull-up",
     "The Chest Pull-up is a more explosive version of the regular pull-up, building more strength towards harder vertical pulling movements in the future."
+  ],
+  [
+    "waist-pull-up",
+    "The Waist Pull-up is the most advanced pull-up variation with two hands, and builds the required strength for the muscle-up, and is foundational for the OAP."
   ]
   
 ]);

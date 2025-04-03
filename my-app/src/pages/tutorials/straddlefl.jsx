@@ -67,9 +67,9 @@ export function StraddleFL() {
                 </div>
             </div>
             {svgDivider.get("1")}
-            <ProgressionChart name1="Inverted Row" name2="Super Adv. Tuck FL" name3="Straddle FL" name4="Halflay FL" name5="Full Front Lever"  
+            <ProgressionChart name1="Inverted Row" name2="Super Adv. Tuck FL" name3="Straddle FL" name4="Half Lay FL" name5="Full Front Lever"  
             link1="/tutorials/invertedrow" link2="/tutorials/superadvtuckfl" link3="/tutorials/straddlefl" link4="/tutorials/halflayfl" link5="#"
-            svg1="inverted-row" svg2="super-adv-tuck-fl" svg3="straddle-fl" svg4="halflay-fl" svg5=""/>
+            svg1="inverted-row" svg2="super-adv-tuck-fl" svg3="straddle-fl" svg4="half-lay-fl" svg5="full-fl"/>
             <TutorialReturn />
             {svgDivider.get("2")}
             <div class="technique-form-container">
