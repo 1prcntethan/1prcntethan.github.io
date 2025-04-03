@@ -130,5 +130,9 @@ export const heroBlurb = new Map([
     "pull-up",
     "The Pull-Up is a basic pulling exercise that builds strength in the back, biceps, and core. This exercise represents the foundation for almost all pulling skills.",
   ],
+  [
+    "chest-pull-up",
+    "The Chest Pull-up is a more explosive version of the regular pull-up, building more strength towards harder vertical pulling movements in the future."
+  ]
   
 ]);

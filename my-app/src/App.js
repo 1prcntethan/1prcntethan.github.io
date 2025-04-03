@@ -39,6 +39,7 @@ import { AssistPullup } from './pages/tutorials/assistedpullup';
 import { SkillVis } from './pages/skillvis';
 import { SkillTree } from './pages/skilltree';
 import { BeginnerGuide } from './pages/guides/beginnerguide';
+import { ChestPullup } from './pages/tutorials/chestpullup';
 
 
 function App() {
@@ -90,6 +91,7 @@ function App() {
         <Route path="/tutorials/activehang" element={<ActiveHang/>}/>
         <Route path="/tutorials/assistpullup" element={<AssistPullup/>}/>
         <Route path="/tutorials/pullup" element={<Pullup/>}/>
+        <Route path="/tutorials/chestpullup" element={<ChestPullup/>}/>
 
       </Routes>
       </ScrollToTop>
