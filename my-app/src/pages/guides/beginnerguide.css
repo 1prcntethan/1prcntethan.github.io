@@ -1,0 +1,45 @@
+.guide-hero{
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    height: 10%;
+    padding: 10%;
+    margin-top: 20px;
+    justify-content: space-around;
+}
+.guide-hero--title{
+    display: flex;
+    font-size: 42px;
+    width: auto;
+    text-align: center;
+}
+.guide-hero--blurb{
+    display: flex;
+    font-size: 24px;
+    font-family: Fira Sans;
+    font-weight: 200;
+    width: 45%;
+    line-height: 140%;
+
+}
+
+.guide-container {
+    display: flex;
+    flex-direction: column;
+    padding: 5% 20%;
+
+}
+
+.guide-heading {
+    display: flex;
+    font-size: 36px;
+}
+
+.guide-text {
+    display: flex;
+    font-family: Fira Sans;
+    font-weight: 200;
+    font-size: 24px;
+    line-height: 175%;
+    padding: 2rem 0;
+}

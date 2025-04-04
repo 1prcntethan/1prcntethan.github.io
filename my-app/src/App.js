@@ -44,6 +44,7 @@ import { WaistPullup } from './pages/tutorials/waistpullup';
 import { StraddleFLRow } from './pages/tutorials/straddleflrow';
 import { HalflayFL } from './pages/tutorials/halflayfl';
 import { FrontLever } from './pages/tutorials/frontlever';
+import { MuscleUp } from './pages/tutorials/muscleup';
 
 
 function App() {
@@ -100,6 +101,7 @@ function App() {
         <Route path="/tutorials/pullup" element={<Pullup/>}/>
         <Route path="/tutorials/chestpullup" element={<ChestPullup/>}/>
         <Route path="/tutorials/waistpullup" element={<WaistPullup/>}/>
+        <Route path="/tutorials/muscleup" element={<MuscleUp/>}/>
 
       </Routes>
       </ScrollToTop>

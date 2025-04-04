@@ -1,6 +1,6 @@
 import Footer from "../components/footer";
 import Navbar from "../components/navbar";
-import "./training.css"
+import "./training.css";
 import { Link } from "react-router-dom";
 
 export function Training() {
@@ -13,7 +13,11 @@ export function Training() {
           <div className="training-header">For Beginners</div>
           <div className="training-column">
             <div className="item">
-              <Link to ="/training/beginnerguide" className="guide-link"><button className="guide-button">~ beginners start here ~</button></Link>
+              <Link to="/training/beginnerguide" className="guide-link">
+                <button className="guide-button">
+                  ~ beginners start here ~
+                </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -39,13 +43,17 @@ export function Training() {
               <button className="guide-button">gym vs calisthenics</button>
             </div>
             <div className="item">
-              <button className="guide-button">full-body vs split training</button>
+              <button className="guide-button">
+                full-body vs split training
+              </button>
             </div>
             <div className="item">
               <button className="guide-button">rest & recovery</button>
             </div>
             <div className="item">
-              <button className="guide-button">conditioning & activation</button>
+              <button className="guide-button">
+                conditioning & activation
+              </button>
             </div>
           </div>
         </div>
@@ -78,11 +86,12 @@ export function Training() {
 
       <div className="flex-container">
         <div className="training-container">
-          <div className="training-header">Training 101
-          </div>
+          <div className="training-header">Training 101</div>
           <div className="training-column">
             <div className="item">
-              <button className="guide-button">structuring a calisthenics workout</button>
+              <button className="guide-button">
+                structuring a calisthenics workout
+              </button>
             </div>
             <div className="item">
               <button className="guide-button">strengthening your core</button>
@@ -121,7 +130,9 @@ export function Training() {
           <div className="training-header">Misc. Guides</div>
           <div className="training-column">
             <div className="item">
-              <button className="guide-button">breaking through a plateau</button>
+              <button className="guide-button">
+                breaking through a plateau
+              </button>
             </div>
             <div className="item">
               <button className="guide-button">setting realistic goals</button>
@@ -138,8 +149,6 @@ export function Training() {
       <br />
 
       <Footer />
-
-
     </>
   );
 }

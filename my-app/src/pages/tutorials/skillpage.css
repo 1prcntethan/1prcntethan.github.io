@@ -36,13 +36,14 @@
     font-weight: 200;
 }
 
-.skill-difficulty { /*skill difficultuyl*/
+.skill-difficulty { /*skill difficultuly. muscles, high strain*/
     width: 50%;
 }
 
 
-.overview-explanation { /*involved muscles and tendons*/
+.overview-explanation { /*overview blurb*/
     width: 50%;
+    line-height: 135%;
 }
 
 .exercise-instructions-container {

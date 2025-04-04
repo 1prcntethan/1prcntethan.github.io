@@ -16,6 +16,7 @@ html {
     font-size: 25px;
     font-family: Fira Sans;
     font-weight: 200;
+    line-height: 125%;
 }
 
 .block-1-text-title {
@@ -125,6 +126,7 @@ html {
     width: 40%;
     justify-self: center;
     align-self: center;
+    line-height: 135%;
 }
 
 .showcase-block--text h3{

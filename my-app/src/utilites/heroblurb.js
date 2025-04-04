@@ -149,6 +149,10 @@ export const heroBlurb = new Map([
   [
     "waist-pull-up",
     "The Waist Pull-up is the most advanced pull-up variation with two hands, and builds the required strength for the muscle-up, and is foundational for the OAP."
+  ],
+  [
+    "muscle-up",
+    "The Muscle-up is an impressive pulling and pushing exercise that combines the pull-up and the dip. It's a realistic calisthenics goal and is one of the easiest but most impressive skills to obtain."
   ]
   
 ]);
