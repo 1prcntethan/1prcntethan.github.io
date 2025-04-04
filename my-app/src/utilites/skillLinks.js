@@ -16,9 +16,9 @@ export const skillLinks = new Map([
     ["Straddle Planche PU", "straddle planche pu"],
     ["Half Lay Planche", "half lay planche"],
     ["Full Planche", "full planche"],
-    ["Full Planche PU", "full planche pu"],
-    ["One Arm Planche", "one arm planche"],
-    ["??????", "??????"],
+    // ["Full Planche PU", "full planche pu"],
+    // ["One Arm Planche", "one arm planche"],
+    // ["??????", "??????"],
   
     //HORIZONTAL PUSH SKILLS ^^^
   
@@ -30,10 +30,10 @@ export const skillLinks = new Map([
     ["Bent Arm Stand", "/tutorials/bas"],
     ["Assisted HSPU", "/tutorials/assistedhspu"],
     ["HSPU", "hspu"],
-    ["Deep HSPU", "deep hspu"],
-    ["90 Degree PU", "90 degree pu"],
-    ["Assisted OAHS", "assisted oahs"],
-    ["OAHS", "oahs"],
+    // ["Deep HSPU", "deep hspu"],
+    // ["90 Degree PU", "90 degree pu"],
+    // ["Assisted OAHS", "assisted oahs"],
+    // ["OAHS", "oahs"],
   
     // VERTICAL PUSH SKILLS ^^^
   
@@ -50,8 +50,8 @@ export const skillLinks = new Map([
     ["Straddle FL Row", "/tutorials/straddleflrow"],
     ["Half Lay FL", "/tutorials/halflayfl"],
     ["Full Front Lever", "/tutorials/fullfl"],
-    ["Full FL Row", "full fl row"],
-    ["Front Lever Touch", "front lever touch"],
+    // ["Full FL Row", "full fl row"],
+    // ["Front Lever Touch", "front lever touch"],
   
     // HORIZONTAL PULL SKILLS^^^
   
@@ -63,22 +63,22 @@ export const skillLinks = new Map([
     ["Waist Pull-up", "/tutorials/waistpullup"],
     ["Muscle-Up", "/tutorials/muscleup"],
     ["Archer Pull-up", "archer pull-up"],
-    ["Assisted OAC", "assisted oac"],
-    ["Assisted OAP", "assisted oap"],
-    ["OAC/OAP", "oac/oap"],
+    // ["Assisted OAC", "assisted oac"],
+    // ["Assisted OAP", "assisted oap"],
+    // ["OAC/OAP", "oac/oap"],
   
     //VERTICAL PULL SKILLS ^^
   
-    ["Bodyweight Squat", "bodyweight squat"],
-    ["Split Squat", "split squat"],
-    ["Assisted Pistol Squat", "assisted pistol squat"],
-    ["Bulgarian Split Squat", "bulgarian split squat"],
-    ["Assisted Shrimp Squat", "assisted shrimp squat"],
-    ["Sissy Squat", "sissy squat"],
-    ["Pistol Squat", "pistol squat"],
-    ["Shrimp Squat", "shrimp squat"],
-    ["Dragon Squat", "dragon squat"],
-    ["Dragon Pistol Squat", "dragon pistol squat"],
+    // ["Bodyweight Squat", "bodyweight squat"],
+    // ["Split Squat", "split squat"],
+    // ["Assisted Pistol Squat", "assisted pistol squat"],
+    // ["Bulgarian Split Squat", "bulgarian split squat"],
+    // ["Assisted Shrimp Squat", "assisted shrimp squat"],
+    // ["Sissy Squat", "sissy squat"],
+    // ["Pistol Squat", "pistol squat"],
+    // ["Shrimp Squat", "shrimp squat"],
+    // ["Dragon Squat", "dragon squat"],
+    // ["Dragon Pistol Squat", "dragon pistol squat"],
   
     //LEG SKILLS ^^^
   ]);

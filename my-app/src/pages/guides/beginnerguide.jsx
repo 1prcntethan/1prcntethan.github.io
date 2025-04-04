@@ -44,7 +44,7 @@ export function BeginnerGuide() {
           Equipment in calisthenics is extremely minimal. Pretty much all push
           skills can be learned on the floor in a cleared area. Pull skills
           require a pull-up bar or dip bar of sorts, but those are usually under
-          $20. If you watch athletes on social media, they commonly use
+          $100. If you watch athletes on social media, they commonly use
           parallettes. These aren’t necessary, but they do help alleviate wrist
           strain and give extra elevation.
         </div>
