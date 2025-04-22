@@ -22,6 +22,8 @@ export default function TutorialListHPL() {
         ["Straddle FL Row", "Half Lay FL", "Full Front Lever", "Full FL Row", "Front Lever Touch"]
     ];
 
+    const incompleteList = ["Full FL Row", "Front Lever Touch"];
+
 
     const handleRowClick = (index, buttonTitle) => {
         // if (activeRow === index) {
@@ -88,7 +90,7 @@ export default function TutorialListHPL() {
                 >
                   <div className="skill-content--left">
                     <div className="skill-content--title">
-                      <Link to = {skillLinks.get(title)} className="skill-content--link"> {skillTitle.get(title)} </Link>
+                      <Link to = {incompleteList.includes(title) ? "incomplete" : skillLinks.get(title)} className="skill-content--link"> {incompleteList.includes(title) ? "in progress" : skillTitle.get(title)} </Link>
                     </div>
                     <br />
                     <br />

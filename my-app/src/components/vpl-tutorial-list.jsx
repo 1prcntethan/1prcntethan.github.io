@@ -22,6 +22,8 @@ export default function TutorialListVPL() {
         ["OAC/OAP", "??????", "??????", "??????", "??????"]
     ];
 
+    const incompleteList = ["Archer Pull-up", "Assisted OAC", "Assisted OAP", "OAC/OAP"];
+
 
     const handleRowClick = (index, buttonTitle) => {
         // if (activeRow === index) {
@@ -88,7 +90,7 @@ export default function TutorialListVPL() {
                 >
                   <div className="skill-content--left">
                     <div className="skill-content--title">
-                      <Link to = {skillLinks.get(title)} className="skill-content--link"> {skillTitle.get(title)} </Link>
+                      <Link to = {incompleteList.includes(title) ? "incomplete" : skillLinks.get(title)} className="skill-content--link"> {incompleteList.includes(title) ? "in progress" : skillTitle.get(title)} </Link>
                     </div>
                     <br />
                     <br />

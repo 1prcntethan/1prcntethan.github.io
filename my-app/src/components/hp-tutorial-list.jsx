@@ -35,9 +35,11 @@ export default function TutorialListHP() {
       "Full Planche",
       "Full Planche PU",
       "One Arm Planche",
-      "??????",
+      "Maltese",
     ],
   ];
+
+  const incompleteList = ["Back Lever", "Straddle Planche PU", "Full Planche PU", "One Arm Planche", "Maltese"];
 
   const handleRowClick = (index, buttonTitle) => {
     // if (activeRow === index) {
@@ -100,7 +102,7 @@ export default function TutorialListHP() {
                 >
                   <div className="skill-content--left">
                     <div className="skill-content--title">
-                      <Link to = {skillLinks.get(title)} className="skill-content--link"> {skillTitle.get(title)} </Link>
+                      <Link to = {incompleteList.includes(title) ? "incomplete" : skillLinks.get(title)} className="skill-content--link"> {incompleteList.includes(title) ? "in progress" : skillTitle.get(title)} </Link>
                     </div>
                     <br />
                     <br />

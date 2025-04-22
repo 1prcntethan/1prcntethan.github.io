@@ -22,6 +22,9 @@ export default function TutorialListVP() {
         ["Assisted OAHS", "OAHS", "??????", "??????", "??????"]
     ];
 
+    const incompleteList = ["Deep HSPU", "90 Degree PU", "Assisted OAHS", "OAHS"];
+
+
 
     const handleRowClick = (index, buttonTitle) => {
         // if (activeRow === index) {
@@ -88,7 +91,7 @@ export default function TutorialListVP() {
                 >
                   <div className="skill-content--left">
                     <div className="skill-content--title">
-                      <Link to = {skillLinks.get(title)} className="skill-content--link"> {skillTitle.get(title)} </Link>
+                      <Link to = {incompleteList.includes(title) ? "incomplete" : skillLinks.get(title)} className="skill-content--link"> {incompleteList.includes(title) ? "in progress" : skillTitle.get(title)} </Link>
                     </div>
                     <br />
                     <br />

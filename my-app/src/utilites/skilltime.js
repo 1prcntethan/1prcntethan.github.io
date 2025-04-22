@@ -18,7 +18,7 @@ export const skillTime = new Map([
   ["Full Planche", "3-5 years"],
   ["Full Planche PU", "3-5 years"],
   ["One Arm Planche", "4-6 years"],
-  ["??????", "??????"],
+  ["Maltese", "4-6 years"],
 
   //HORIZONTAL PUSH SKILLS ^^^
 

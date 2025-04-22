@@ -45,6 +45,7 @@ import { StraddleFLRow } from './pages/tutorials/straddleflrow';
 import { HalflayFL } from './pages/tutorials/halflayfl';
 import { FrontLever } from './pages/tutorials/frontlever';
 import { MuscleUp } from './pages/tutorials/muscleup';
+import { Incomplete } from './pages/incomplete';
 
 
 function App() {
@@ -58,6 +59,7 @@ function App() {
         <Route path="/terminology" element={<Terminology/>}/>
         <Route path="/skilltree" element={<SkillTree/>}/>
         <Route path="/skillvis" element={<SkillVis/>}/>
+        <Route path="/tutorials/incomplete" element={<Incomplete/>}/>
 
         <Route path="/training/beginnerguide" element={<BeginnerGuide/>}/>
 

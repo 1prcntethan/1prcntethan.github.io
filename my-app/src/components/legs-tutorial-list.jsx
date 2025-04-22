@@ -21,6 +21,8 @@ export default function TutorialListL() {
         ["Sissy Squat", "Pistol Squat", "Shrimp Squat", "Dragon Squat", "Dragon Pistol Squat"],
     ];
 
+    const incompleteList = ["Bodyweight Squat", "Split Squat", "Assisted Pistol Squat", "Bulgarian Split Squat", "Assisted Shrimp Squat", "Sissy Squat", "Pistol Squat", "Shrimp Squat", "Dragon Squat", "Dragon Pistol Squat"];
+
 
     const handleRowClick = (index, buttonTitle) => {
         // if (activeRow === index) {
@@ -87,7 +89,7 @@ export default function TutorialListL() {
                 >
                   <div className="skill-content--left">
                     <div className="skill-content--title">
-                      <Link to = {skillLinks.get(title)} className="skill-content--link"> {skillTitle.get(title)} </Link>
+                      <Link to = {incompleteList.includes(title) ? "incomplete" : skillLinks.get(title)} className="skill-content--link"> {incompleteList.includes(title) ? "in progress" : skillTitle.get(title)} </Link>
                     </div>
                     <br />
                     <br />

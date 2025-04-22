@@ -53,11 +53,31 @@
     padding: 8px;
     cursor: pointer;
     text-align: center;
+}
 
+.incomplete-button {
+    border: solid;
+    border-color: #565656;
+    background-color: #181818;
+    color: white;
+    font-size: 18px;
+    font-family: Fira Sans;
+    font-weight: 200;
+    width: 14%;
+    padding: 8px;
+    cursor: pointer;
+    text-align: center;
 }
 
 .skill-button:hover {
     background-color: #641b547a;
+    transition-property: all;
+    transition-duration: 500ms;
+    cursor: pointer;
+}
+
+.incomplete-button:hover {
+    background-color: #00ff557a;
     transition-property: all;
     transition-duration: 500ms;
     cursor: pointer;

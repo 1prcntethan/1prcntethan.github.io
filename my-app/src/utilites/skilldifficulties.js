@@ -18,7 +18,7 @@ export const skillDiff = new Map([
   ["Full Planche", "S"],
   ["Full Planche PU", "SS"],
   ["One Arm Planche", "SS"],
-  ["??????", "SS"],
+  ["Maltese", "SS"],
 
   //HORIZONTAL PUSH SKILLS ^^^
 

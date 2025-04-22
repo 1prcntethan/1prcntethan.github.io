@@ -18,7 +18,7 @@ export const skillTitle = new Map([
   ["Full Planche", "full planche"],
   ["Full Planche PU", "full planche pu"],
   ["One Arm Planche", "one arm planche"],
-  ["??????", "??????"],
+  ["Maltese", "maltese"],
 
   //HORIZONTAL PUSH SKILLS ^^^
 
