@@ -5,11 +5,13 @@ import ShortFormList from "../components/shortformlist";
 import TerminologyList from "../components/terminologylist";
 import DifficultyToggle from "../components/difficultytoggle";
 import Footer from "../components/footer";
+import BetaDisclaimer from "../components/betadisclaimer";
 
 export function Terminology() {
   return (
     <>
       <Navbar />
+      <BetaDisclaimer />
       <div className="intro-block">
         Calisthenics is a relatively niche sport compared to many others, so
         there may be terms you are not familiar with. To use the site as

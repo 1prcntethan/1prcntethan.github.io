@@ -1,0 +1,14 @@
+.incomplete-text {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 20px;
+    margin-top: 40px;
+
+}
+
+.incomplete-link {
+    text-decoration: none;
+    color: rgb(158, 14, 151);
+    font-weight: bold;
+}

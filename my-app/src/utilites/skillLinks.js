@@ -18,7 +18,7 @@ export const skillLinks = new Map([
     ["Full Planche", "full planche"],
     ["Full Planche PU", "full planche pu"],
     ["One Arm Planche", "one arm planche"],
-    ["??????", "??????"],
+    ["Maltese", "maltese"],
   
     //HORIZONTAL PUSH SKILLS ^^^
   
@@ -27,6 +27,8 @@ export const skillLinks = new Map([
     ["Assisted Handstand", "/tutorials/assistedhs"],
     ["Handstand", "/tutorials/handstand"],
     ["Elevated Pike PU", "/tutorials/elevatedpikepu"],
+    ["Bent Arm Press to HS", "bent arm press to hs"],
+    ["Straight Arm Press to HS", "straight arm press to hs"],
     ["Bent Arm Stand", "/tutorials/bas"],
     ["Assisted HSPU", "/tutorials/assistedhspu"],
     ["HSPU", "hspu"],
@@ -34,6 +36,7 @@ export const skillLinks = new Map([
     ["90 Degree PU", "90 degree pu"],
     ["Assisted OAHS", "assisted oahs"],
     ["OAHS", "oahs"],
+    ["OA Flag", "oa flag"],
   
     // VERTICAL PUSH SKILLS ^^^
   
@@ -59,13 +62,17 @@ export const skillLinks = new Map([
     ["Active Hang", "/tutorials/activehang"],
     ["Assisted Pull-up", "/tutorials/assistpullup"],
     ["Pull-up", "/tutorials/pullup"],
+    ["Scapula Pull-up", "scapula pull-up"],
     ["Chest Pull-up", "/tutorials/chestpullup"],
     ["Waist Pull-up", "/tutorials/waistpullup"],
     ["Muscle-Up", "/tutorials/muscleup"],
     ["Archer Pull-up", "archer pull-up"],
+    ["Clean Muscle-Up", "clean muscle-up"],
     ["Assisted OAC", "assisted oac"],
     ["Assisted OAP", "assisted oap"],
     ["OAC/OAP", "oac/oap"],
+    ["Weighted Pull-ups", "weighted pull-ups"],
+    ["Butterfly", "butterfly"],
   
     //VERTICAL PULL SKILLS ^^
   

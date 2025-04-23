@@ -27,6 +27,8 @@ export const skillDiff = new Map([
   ["Assisted Handstand", "C"],
   ["Handstand", "C"],
   ["Elevated Pike PU", "B"],
+  ["Bent Arm Press to HS", "B"],
+  ["Straight Arm Press to HS", "B"],
   ["Bent Arm Stand", "B"],
   ["Assisted HSPU", "B"],
   ["HSPU", "B"],
@@ -34,6 +36,7 @@ export const skillDiff = new Map([
   ["90 Degree PU", "A"],
   ["Assisted OAHS", "A"],
   ["OAHS", "A"],
+  ["OA Flag", "A"],
 
   // VERTICAL PUSH SKILLS ^^^
 
@@ -59,13 +62,18 @@ export const skillDiff = new Map([
   ["Active Hang", "F"],
   ["Assisted Pull-up", "D"],
   ["Pull-up", "D"],
+  ["Scapula Pull-up", "D"],
   ["Chest Pull-up", "C"],
   ["Waist Pull-up", "B"],
   ["Muscle-Up", "B"],
   ["Archer Pull-up", "B"],
+  ["Clean Muscle-Up", "A"],
   ["Assisted OAC", "A"],
   ["Assisted OAP", "A"],
   ["OAC/OAP", "A"],
+  ["Weighted Pull-ups", "Scalable"],
+  ["Butterfly", "SS"],
+
 
   //VERTICAL PULL SKILLS ^^
 

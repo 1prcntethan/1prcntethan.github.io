@@ -17,12 +17,12 @@ export default function TutorialListVPL() {
     // const [img, setImg] = useState(img.get(2))
 
     const rowButtons= [
-        ["Deadhang", "Active Hang", "Assisted Pull-up", "Pull-up", "Chest Pull-up"],
-        ["Waist Pull-up", "Muscle-Up", "Archer Pull-up", "Assisted OAC", "Assisted OAP"],
-        ["OAC/OAP", "??????", "??????", "??????", "??????"]
+        ["Deadhang", "Active Hang", "Assisted Pull-up", "Pull-up", "Scapula Pull-up"],
+        ["Chest Pull-up", "Waist Pull-up", "Muscle-Up", "Archer Pull-up", "Clean Muscle-Up" ],
+        ["Assisted OAC", "Assisted OAP", "OAC/OAP", "Weighted Pull-ups", "Butterfly"]
     ];
 
-    const incompleteList = ["Archer Pull-up", "Assisted OAC", "Assisted OAP", "OAC/OAP"];
+    const incompleteList = ["Scapula Pull-up", "Archer Pull-up", "Clean Muscle-Up", "Assisted OAC", "Assisted OAP", "OAC/OAP", "Weighted Pull-ups", "Butterfly"];
 
 
     const handleRowClick = (index, buttonTitle) => {

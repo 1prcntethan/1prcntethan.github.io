@@ -27,6 +27,8 @@ export const skillTitle = new Map([
   ["Assisted Handstand", "assisted handstand"],
   ["Handstand", "handstand"],
   ["Elevated Pike PU", "elevated pike pu"],
+  ["Bent Arm Press to HS", "bent arm press to hs"],
+  ["Straight Arm Press to HS", "straight arm press to hs"],
   ["Bent Arm Stand", "bent arm stand"],
   ["Assisted HSPU", "assisted hspu"],
   ["HSPU", "hspu"],
@@ -34,6 +36,8 @@ export const skillTitle = new Map([
   ["90 Degree PU", "90 degree pu"],
   ["Assisted OAHS", "assisted oahs"],
   ["OAHS", "oahs"],
+  ["OA Flag", "oa flag"],
+
 
   // VERTICAL PUSH SKILLS ^^^
 
@@ -59,6 +63,7 @@ export const skillTitle = new Map([
   ["Active Hang", "active hang"],
   ["Assisted Pull-up", "assisted pull-up"],
   ["Pull-up", "pull-up"],
+  ["Scapula Pull-up", "scapula pull-up"],
   ["Chest Pull-up", "chest pull-up"],
   ["Waist Pull-up", "waist pull-up"],
   ["Muscle-Up", "muscle-up"],
@@ -66,6 +71,9 @@ export const skillTitle = new Map([
   ["Assisted OAC", "assisted oac"],
   ["Assisted OAP", "assisted oap"],
   ["OAC/OAP", "oac/oap"],
+  ["Weighted Pull-ups", "weighted pull-ups"],
+  ["Butterfly", "butterfly"],
+
 
   //VERTICAL PULL SKILLS ^^
 

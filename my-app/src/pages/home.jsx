@@ -5,11 +5,13 @@ import HomepageHero from "../components/homepage-hero";
 import { Link } from "react-router-dom";
 import { svgIcon } from "../utilites/svg-icons.js";
 import Footer from "../components/footer.jsx";
+import BetaDisclaimer from "../components/betadisclaimer.jsx";
 
 export function Homepage() {
   return (
     <>
       <Navbar />
+      <BetaDisclaimer />
       <HomepageHero />
       <LineDivider />
       <div className="container">

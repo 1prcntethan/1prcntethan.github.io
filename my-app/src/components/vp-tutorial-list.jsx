@@ -18,11 +18,11 @@ export default function TutorialListVP() {
 
     const rowButtons= [
         ["Pike Push-up", "Crow Pose", "Assisted Handstand", "Handstand", "Elevated Pike PU"],
-        ["Bent Arm Stand", "Assisted HSPU", "HSPU", "Deep HSPU", "90 Degree PU"],
-        ["Assisted OAHS", "OAHS", "??????", "??????", "??????"]
+        ["Bent Arm Press to HS", "Straight Arm Press to HS", "Bent Arm Stand", "Assisted HSPU", "HSPU"],
+        ["Deep HSPU", "90 Degree PU", "Assisted OAHS", "OAHS", "OA Flag"]
     ];
 
-    const incompleteList = ["Deep HSPU", "90 Degree PU", "Assisted OAHS", "OAHS"];
+    const incompleteList = ["Bent Arm Press to HS", "Straight Arm Press to HS", "Deep HSPU", "90 Degree PU", "Assisted OAHS", "OAHS", "OA Flag"];
 
 
 

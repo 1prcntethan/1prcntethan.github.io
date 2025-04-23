@@ -27,13 +27,17 @@ export const skillTime = new Map([
   ["Assisted Handstand", "1-2 months"],
   ["Handstand", "2-3 months"],
   ["Elevated Pike PU", "3-9 months"],
-  ["Bent Arm Stand", "6-12 months"],
-  ["Assisted HSPU", "9-12 months"],
+  ["Bent Arm Press to HS", "4-12 months"],
+  ["Straight Arm Press to HS", "6-15 months"],
+  ["Bent Arm Stand", "6-15 months"],
+  ["Assisted HSPU", "9-15 months"],
   ["HSPU", "1-2 years"],
   ["Deep HSPU", "2-3 years"],
   ["90 Degree PU", "2-3 years"],
   ["Assisted OAHS", "1-3 years"],
   ["OAHS", "2-3 years"],
+  ["OA Flag", "2-3 years"],
+
 
   // VERTICAL PUSH SKILLS ^^^
 
@@ -59,13 +63,18 @@ export const skillTime = new Map([
   ["Active Hang", "2-4 weeks"],
   ["Assisted Pull-up", "2-4 weeks"],
   ["Pull-up", "3-5 weeks"],
+  ["Scapula Pull-up", "3-5 weeks"],
   ["Chest Pull-up", "2-6 months"],
   ["Waist Pull-up", "4-12 months"],
   ["Muscle-Up", "6-18 months"],
   ["Archer Pull-up", "12-18 months"],
+  ["Clean Muscle-Up", "1-2 years"],
   ["Assisted OAC", "1-2 years"],
   ["Assisted OAP", "1-2 years"],
   ["OAC/OAP", "1-2 years"],
+  ["Weighted Pull-ups", "1-2 years"],
+  ["Butterfly", "3-5 years"],
+
 
   //VERTICAL PULL SKILLS ^^
 
