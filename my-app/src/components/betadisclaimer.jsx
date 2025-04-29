@@ -6,7 +6,7 @@ export default function BetaDisclaimer() {
     return(
         <div className="beta-disclaimer-container">
             <div className="scroll">
-                <div className="betadisclaimer-text">
+                <div className="beta-disclaimer-text">
                 wings is currently undergoing beta phase. please report any bugs or issues through this <Link to = "https://forms.gle/ChdE8Mq3YNWXCfTa6" className="beta-feedback">link</Link>. 
                 wings is currently undergoing beta phase. please report any bugs or issues through this <Link to = "https://forms.gle/ChdE8Mq3YNWXCfTa6" className="beta-feedback">link</Link>. 
                 wings is currently undergoing beta phase. please report any bugs or issues through this <Link to = "https://forms.gle/ChdE8Mq3YNWXCfTa6" className="beta-feedback">link</Link>. 

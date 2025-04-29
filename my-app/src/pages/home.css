@@ -9,6 +9,13 @@ html {
     flex-direction: row;
     padding: 50px 10%;
     scroll-snap-align: start;
+    
+    @media (max-width: 768px) {
+        flex-direction: column;
+        width: 80%;
+        padding: 50px 10%;
+        
+    }
 
 }
 
@@ -17,12 +24,38 @@ html {
     font-family: Fira Sans;
     font-weight: 200;
     line-height: 125%;
+
+    @media (max-width: 768px) {
+        font-size: 20px;
+        text-align: center;
+        
+    }
+
+    @media (max-width: 576px) {
+        font-size: 16px;
+        text-align: center;
+        line-height: 165%;
+    }
+}
+
+.block-1-text > ul {
+    @media (max-width: 768px) {
+        list-style: none;
+        padding: 10px;
+        margin-top: 20px;
+        
+    }
 }
 
 .block-1-text-title {
     font-size: 30px;
     font-family: Major Mono Display;
     font-weight: 100;
+
+    @media (max-width: 768px) {
+        font-size: 24px;
+        line-height: 150%;
+    }
 }
 
 .block-1-left {
@@ -38,6 +71,12 @@ html {
     flex-direction: row;
     justify-content: space-around;
     width: 100%;
+
+    @media screen and (max-width: 768px) {
+        flex-direction: column;
+        align-items: center;
+        
+    }
 }
 
 .cta-block {
@@ -109,6 +148,28 @@ html {
     justify-content: space-evenly;
     width: 100%;
     margin: 40px 0;
+
+    @media (max-width: 1000px) {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+}
+
+.showcase-block-reverse {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    margin: 40px 0;
+
+    @media (max-width: 1000px) {
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
 }
 
 .showcase-block--image {
@@ -127,6 +188,15 @@ html {
     justify-self: center;
     align-self: center;
     line-height: 135%;
+
+    @media (max-width: 1000px) {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+
+        margin-top: 20px;
+    }
 }
 
 .showcase-block--text h3{
