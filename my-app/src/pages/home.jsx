@@ -106,44 +106,53 @@ export function Homepage() {
         <div className="cta-container">
           <div className="cta-block">
             <div className="cta-title-1">tutorials</div>
-            <div className="cta-title-2">training</div>
-            <div className="cta-title-1">terminology</div>
-            <div className="cta-title-2">skill tree</div>
-            <div className="cta-title-1">visualization</div>
-          </div>
-          <div className="cta-block">
             <div className="cta-info">
               A collection of calisthenics skills and links to their tutorials.
             </div>
+            <Link to="/tutorials" className="cta-go-1">
+              View Page
+            </Link>
+            
+          </div>
+          <div className="cta-block">
+            <div className="cta-title-2">training</div>
             <div className="cta-info">
               Guides for beginners and intermediates about various calisthenics
               topics.{" "}
             </div>
+            <Link to="/training" className="cta-go-2">
+              View Page
+            </Link>
+          </div>
+          <div className="cta-block">
+            <div className="cta-title-1">terminology</div>
+
             <div className="cta-info">
               A short explanation for common terms, as well as showcasing how
               the progression chart and skill difficulties work.
             </div>
+            <Link to="/terminology" className="cta-go-1">
+              View Page
+            </Link>
+            
+          </div>
+          <div className="cta-block">
+          <div className="cta-title-2">skill tree</div>
+
             <div className="cta-info">
               A visualization of the roadmap for calisthenics skills, as well as
               the order and difficulty of learning them.
             </div>
-            <div className="cta-info">
-              See how advanced skills are built from the ground up.
-            </div>
-          </div>
-          <div className="cta-block">
-            <Link to="/tutorials" className="cta-go-1">
-              View Page
-            </Link>
-            <Link to="/training" className="cta-go-2">
-              View Page
-            </Link>
-            <Link to="/terminology" className="cta-go-1">
-              View Page
-            </Link>
             <Link to="/" className="cta-go-2">
               Incomplete
             </Link>
+          </div>
+          <div className="cta-block">
+          <div className="cta-title-1">visualization</div>
+
+            <div className="cta-info">
+              See how advanced skills are built from the ground up.
+            </div>
             <Link to="/" className="cta-go-1">
               Incomplete
             </Link>

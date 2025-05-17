@@ -7,6 +7,12 @@
     padding-right: 10%;
     justify-content: space-between;
     align-self: center;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        text-align: center;
+        font-size: 28px;
+    }
 }
 
 .catergory-blurb {
@@ -16,10 +22,22 @@
     font-family: Fira Sans;
     font-weight: 200;
 
+    @media (max-width: 768px) {
+        align-self: center;
+        width: auto;
+        margin-top: 20px;
+        font-size: 16px;
+
+    }
 }
 .catergory-blurb.vp {
 
     width: 48%;
+    @media (max-width: 768px) {
+        align-self: center;
+        width: auto;
+        margin-top: 20px;
+    }
 }
 
 
@@ -32,7 +50,7 @@
     /* media query for mobile devices */
     @media (max-width: 768px) {
         flex-direction: column;
-        width: 100%;
+        width: 90%;
     }
     
     
@@ -48,7 +66,6 @@
 
     @media (max-width: 768px) {
         flex-direction: column;
-        width: 100%;
     }
 }
 
@@ -66,6 +83,9 @@
     text-align: center;
     @media (max-width: 768px) {
         width: 100%;
+        margin-bottom: 10px;
+        font-size: 16px;
+
     }
 }
 
@@ -111,7 +131,12 @@
     overflow: hidden;
     transition: all 0.7s ease;
     margin-left: 5%;
-    margin-right: 5%;      
+    margin-right: 5%;   
+    
+    @media (max-width: 768px) {
+        display: hidden;
+        
+    }
 
 }
 
