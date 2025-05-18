@@ -18,7 +18,7 @@ export function Training() {
             <div className="item">
               <Link to="/training/beginnerguide" className="guide-link">
                 <button className="guide-button">
-                  ~ beginners start here ~
+                  beginner guide
                 </button>
               </Link>
             </div>

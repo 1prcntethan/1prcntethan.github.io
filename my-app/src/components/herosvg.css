@@ -13,4 +13,11 @@
     flex-direction: row;
     width: 40%;
     align-self: center;
+
+    @media (max-width: 768px) {
+        width: 70%;
+        justify-content: center;
+        align-items: center;
+        
+    }
 }

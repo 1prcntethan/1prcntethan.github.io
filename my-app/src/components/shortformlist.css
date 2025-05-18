@@ -8,6 +8,7 @@
     margin-top: 50px;
     margin-bottom: 50px;
 
+    
 }
 
 .terms {
@@ -15,6 +16,16 @@
     flex-direction: row;
     width: 80%;
     
+    @media (max-width: 1250px) {
+        width: 100%;
+
+    }
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        width: 100%;
+        justify-items: center;
+    }
 }
 
 .single-term {
@@ -22,12 +33,23 @@
     flex-direction: column;
     padding: 1rem;
     width: 25%;
+
+    @media (max-width: 768px) {
+        width: auto;
+        text-align: center;
+        align-items: center;
+        
+    }
 }
 
 .term-title {
     display: flex;
     font-size: 24px;
     margin-bottom: 30px;
+    @media (max-width: 1250px) {
+        font-size: 20px;
+
+    }
 }
 
 .term-text {
@@ -35,4 +57,13 @@
     color: #cacaca;
     font-family: Fira Sans;
     font-weight: 200;
+    font-size: 16px;
+    @media (max-width: 1250px){
+        font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+        font-size: 16px;
+    }
+
 }

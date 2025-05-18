@@ -13,11 +13,26 @@
     align-items: center;
     position: relative;
     width: 40%; /* Adjust as needed */
+    min-width: 600px;
+    
+    @media (max-width: 768px) {
+        width: 100%; /* Adjust for smaller screens */
+        min-width: 0; /* Remove min-width on smaller screens */
+        
+    }
 }
 
 .training-header {
-    font-size: 2rem;
+    font-size: 34px;
     padding: 30px;
+    text-align: center;
+
+
+    @media screen and (max-width: 768px) {
+        font-size: 24px;
+        padding: 20px 10px;
+        
+    }
 }
 
 .training-column {
@@ -81,6 +96,11 @@
     font-family: Major Mono Display;
     font-size: 24px;
     color: white;
+
+    @media screen and (max-width: 768px) {
+        font-size: 18px;
+        
+    }
 }
 
 .guide-button:hover {

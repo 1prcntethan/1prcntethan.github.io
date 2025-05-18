@@ -11,6 +11,10 @@
     align-self: center;
     width: 75%;
     justify-content: space-between;
+    @media (max-width: 768px) {
+        width: 95%;
+        
+    }
 }
 
 .difficulty-hovers button{
@@ -28,6 +32,7 @@
     width: 14%;
     text-align: center;
     justify-content: center;
+    
 }
 
 
@@ -53,6 +58,16 @@
     background-color: #232323;
     border: transparent 1px solid;
     border-radius: 10px;
+
+    @media (max-width: 768px) {
+        width: 100%;
+        padding: 1rem;
+        border: none;
+        border-radius: 0;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
 }
 
 #difficulty-explanation-D{
@@ -63,6 +78,16 @@
     background-color: #232323;
     border: transparent 1px solid;
     border-radius: 10px;
+
+    @media (max-width: 768px) {
+        width: 100%;
+        padding: 1rem;
+        border: none;
+        border-radius: 0;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
 }
 
 #difficulty-explanation-C{
@@ -73,6 +98,16 @@
     background-color: #232323;
     border: transparent 1px solid;
     border-radius: 10px;
+
+    @media (max-width: 768px) {
+        width: 100%;
+        padding: 1rem;
+        border: none;
+        border-radius: 0;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
 }
 
 #difficulty-explanation-B{
@@ -83,6 +118,16 @@
     background-color: #232323;
     border: transparent 1px solid;
     border-radius: 10px;
+
+    @media (max-width: 768px) {
+        width: 100%;
+        padding: 1rem;
+        border: none;
+        border-radius: 0;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
 }
 
 #difficulty-explanation-A{
@@ -93,6 +138,16 @@
     background-color: #232323;
     border: transparent 1px solid;
     border-radius: 10px;
+
+    @media (max-width: 768px) {
+        width: 100%;
+        padding: 1rem;
+        border: none;
+        border-radius: 0;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
 }
 
 #difficulty-explanation-S{
@@ -103,6 +158,16 @@
     background-color: #232323;
     border: transparent 1px solid;
     border-radius: 10px;
+
+    @media (max-width: 768px) {
+        width: 100%;
+        padding: 1rem;
+        border: none;
+        border-radius: 0;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
 }
 
 #difficulty-explanation-SS{
@@ -113,6 +178,16 @@
     background-color: #232323;
     border: transparent 1px solid;
     border-radius: 10px;
+
+    @media (max-width: 768px) {
+        width: 100%;
+        padding: 1rem;
+        border: none;
+        border-radius: 0;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
 }
 
 
@@ -122,14 +197,41 @@
     width: 65%;
     font-size: 18px;
     padding-left: 60px;
+
+    @media (max-width: 1000px) {
+        padding-left: 30px;
+        font-size: 16px;
+        
+    }
+
+    @media (max-width: 768px) {
+        padding-left: 0;
+        font-size: 16px;
+        margin-bottom: 20px;
+        width: 90%;
+    }
 }
 
 #title-skill {
     font-size: 28px;
+
+    @media (max-width: 768px) {
+        padding-left: 0;
+        font-size: 24px;
+        margin-bottom: 20px;
+        
+    }
 }
 
 .content-svg {
     display: flex;
     width: 35%;
     justify-content: center;
+
+    @media (max-width: 768px) {
+        width: 50%;
+        font-size: 24px;
+        margin-bottom: 20px;
+        
+    }
 }

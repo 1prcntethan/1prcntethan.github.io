@@ -4,4 +4,10 @@
     justify-content: center;
     font-size: 32px;
     background-color: #252525;
+
+    @media screen and (max-width: 768px) {
+        font-size: 24px;
+        padding: 1rem 2rem;
+        
+    }
 }

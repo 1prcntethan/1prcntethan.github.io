@@ -5,6 +5,11 @@
     font-family: Fira Sans;
     font-weight: 200;
     font-size: 24px;
+
+    @media (max-width: 768px) {
+        font-size: 18px;
+        text-align: center;
+    }
 }
 
 .svg-gradient-container {
