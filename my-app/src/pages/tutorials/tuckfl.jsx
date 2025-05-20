@@ -62,7 +62,7 @@ export function TuckFL() {
                   <li>
                     To use this exercise effectively, perform holds at a
                     difficulty where you can hold them for at least 6-8 seconds,
-                    counting each hold as a rep.
+                    counting each hold as a set.
                   </li>
                 </ul>
 
@@ -96,12 +96,12 @@ export function TuckFL() {
         link2="/tutorials/pullup"
         link3="/tutorials/tuckfl"
         link4="/tutorials/pikefl"
-        link5="#"
+        link5="/tutorials/fullfl"
         svg1="inverted-row"
         svg2="pull-up"
         svg3="tuck-fl"
         svg4="pike-fl"
-        svg5=""
+        svg5="full-fl"
       />
       <TutorialReturn />
       {svgDivider.get("2")}

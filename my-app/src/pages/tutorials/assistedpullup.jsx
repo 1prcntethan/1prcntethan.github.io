@@ -98,12 +98,12 @@ export function AssistPullup() {
         link2="/tutorials/activehang"
         link3="/tutorials/assistpullup"
         link4="/tutorials/pullup"
-        link5="#"
+        link5="/tutorials/muscleup"
         svg1="deadhang"
         svg2="activehang"
         svg3="assist-pullup"
         svg4="pull-up"
-        svg5=""
+        svg5="muscle-up"
       />
       <TutorialReturn />
       {svgDivider.get("2")}

@@ -107,7 +107,7 @@ export function Pushup() {
         link2="/tutorials/assistedpu"
         link3="/tutorials/pushup"
         link4="/tutorials/planchelean"
-        link5="#"
+        link5="/tutorials/incomplete"
         svg1="NA"
         svg2="assisted-pushup"
         svg3="push-up"

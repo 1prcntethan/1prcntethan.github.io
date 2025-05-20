@@ -101,7 +101,7 @@ export function Dip() {
         link2="/tutorials/pushup"
         link3="/tutorials/dip"
         link4="/tutorials/psuedopu"
-        link5="#"
+        link5="/tutorials/incomplete"
         svg1="NA"
         svg2="push-up"
         svg3="dip"

@@ -106,12 +106,12 @@ export function PikeFLRow() {
         link2="/tutorials/pikefl"
         link3="/tutorials/pikeflrow"
         link4="/tutorials/advtuckfl"
-        link5="#"
+        link5="/tutorials/fullfl"
         svg1="inverted-row"
         svg2="pike-fl"
         svg3="pike-fl-row"
         svg4="adv-tuck-fl"
-        svg5=""
+        svg5="full-fl"
       />
       <TutorialReturn />
       {svgDivider.get("2")}

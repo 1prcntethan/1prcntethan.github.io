@@ -114,7 +114,7 @@ export function AssistedHS() {
                 <li>Using fingers and heel of hand to balance</li>
                 <li>
                   Try gripping the ground with bent fingers, to get better
-                  activation and finger balancing strength.
+                  activation and finger balancing strength
                 </li>
               </ul>
             </div>

@@ -24,6 +24,12 @@ const Footer = () => {
             <li>
             <Link to = "/terminology">Terminology</Link>
             </li>
+            <li>
+            <Link to = "/howtouseguide">WINGS usage guide</Link>
+            </li>
+            <li>
+            <Link to = "/about">About</Link>
+            </li>
           </ul>
         </div>
 
@@ -84,6 +90,7 @@ const Footer = () => {
             </li>
           </ul>
         </div>
+        
       </div>
 
       <div class="footer-bottom">

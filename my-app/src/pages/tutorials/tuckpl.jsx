@@ -94,7 +94,7 @@ export function TuckPL() {
         link2="/tutorials/planchelean"
         link3="/tutorials/tuckpl"
         link4="/tutorials/advtuckpl"
-        link5="#"
+        link5="/tutorials/incomplete"
         svg1="push-up"
         svg2="planche-lean"
         svg3="tuck-pl"

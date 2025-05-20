@@ -91,12 +91,12 @@ export function AdvTuckFLRow() {
         link2="/tutorials/superadvtuckfl"
         link3="/tutorials/advtuckflrow"
         link4="/tutorials/straddlefl"
-        link5="#"
+        link5="/tutorials/fullfl"
         svg1="inverted-row"
         svg2="super-adv-tuck-fl"
         svg3="adv-tuck-fl-row"
         svg4="straddle-fl"
-        svg5=""
+        svg5="full-fl"
       />
       <TutorialReturn />
       {svgDivider.get("2")}

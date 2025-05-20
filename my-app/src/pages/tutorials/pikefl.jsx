@@ -67,7 +67,7 @@ export function PikeFL() {
                   <li>
                     To use this exercise effectively, perform holds at a
                     difficulty where you can hold them for at least 6-8 seconds,
-                    counting each hold as a rep.
+                    counting each hold as a set.
                   </li>
                 </ul>
 
@@ -101,12 +101,12 @@ export function PikeFL() {
         link2="/tutorials/tuckfl"
         link3="/tutorials/pikefl"
         link4="/tutorials/advtuckfl"
-        link5="#"
+        link5="/tutorials/fullfl"
         svg1="inverted-row"
         svg2="tuck-fl"
         svg3="pike-fl"
         svg4="adv-tuck-fl"
-        svg5=""
+        svg5="full-fl"
       />
       <TutorialReturn />
       {svgDivider.get("2")}

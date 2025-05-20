@@ -56,7 +56,7 @@ export function SuperAdvTuckFL() {
                   <li>
                     To use this exercise effectively, perform holds at a
                     difficulty where you can hold them for at least 6-8 seconds,
-                    counting each hold as a rep.
+                    counting each hold as a set.
                   </li>
                 </ul>
 
@@ -92,7 +92,7 @@ export function SuperAdvTuckFL() {
         link2="/tutorials/advtuckfl"
         link3="/tutorials/superadvtuckfl"
         link4="/tutorials/straddlefl"
-        link5="#"
+        link5="/tutorials/fullfl"
         svg1="inverted-row"
         svg2="adv-tuck-fl"
         svg3="super-adv-tuck-fl"

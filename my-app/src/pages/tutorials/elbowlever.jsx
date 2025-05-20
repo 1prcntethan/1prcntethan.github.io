@@ -39,7 +39,7 @@ export function ElbowLever() {
               <div className="skill-instructions">
                 <ul>
                   <li>
-                    Start in a push position with your fingers facing opposite
+                    Start in a push-up position with your fingers facing out in opposite directions
                     from each other, and knees touching the ground for support.
                   </li>
                   <li>
@@ -56,7 +56,7 @@ export function ElbowLever() {
                     off the ground.{" "}
                   </li>
                   <li>
-                    Try to straighten your body so you are completly parallel to
+                    Try to straighten your body so you are completely parallel to
                     the ground and supported by only your hands.{" "}
                   </li>
                   <li>
@@ -100,7 +100,7 @@ export function ElbowLever() {
         link2="/tutorials/pushup"
         link3="/tutorials/elbowlever"
         link4="/tutorials/planchelean"
-        link5="#"
+        link5="/tutorials/incomplete"
         svg1="NA"
         svg2="push-up"
         svg3="elbow-lever"

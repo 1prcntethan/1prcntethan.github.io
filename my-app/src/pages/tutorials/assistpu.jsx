@@ -45,7 +45,7 @@ export function AssistPu() {
                     apart, facing forwards and slightly outward.
                   </li>
                   <li>
-                    Ensure your body is in a stright line, and that your knees
+                    Ensure your body is in a straight line, and that your knees
                     are touching the floor supporting some bodyweight.
                   </li>
                   <li>
@@ -67,7 +67,7 @@ export function AssistPu() {
                   </li>
                   <li>
                     The described exercise is specifically a knee-pushup. To
-                    perform incline pushups, perform the push-up routine with
+                    perform incline pushups, perform the regular Push-up routine with
                     your hands on an elevated surface.
                   </li>
                 </ul>
@@ -102,7 +102,7 @@ export function AssistPu() {
         link2="#"
         link3="#"
         link4="/tutorials/pushup"
-        link5="#"
+        link5="/tutorials/incomplete"
         svg1="NA"
         svg2="NA"
         svg3="assisted-pushup"

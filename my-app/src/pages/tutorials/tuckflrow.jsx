@@ -102,12 +102,12 @@ export function TuckFLRow() {
         link2="/tutorials/tuckfl"
         link3="/tutorials/tuckflrow"
         link4="/tutorials/pikefl"
-        link5="#"
+        link5="/tutorials/fullfl"
         svg1="inverted-row"
         svg2="tuck-fl"
         svg3="tuck-fl-row"
         svg4="pike-fl"
-        svg5=""
+        svg5="full-fl"
       />
       <TutorialReturn />
       {svgDivider.get("2")}

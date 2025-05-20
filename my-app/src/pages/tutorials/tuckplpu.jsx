@@ -89,7 +89,7 @@ export function TuckPLPU() {
         link2="/tutorials/tuckpl"
         link3="/tutorials/tuckplpu"
         link4="/tutorials/advtuckpl"
-        link5="#"
+        link5="/tutorials/incomplete"
         svg1="push-up"
         svg2="tuck-pl"
         svg3="tuck-pl-pu"

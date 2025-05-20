@@ -3,7 +3,7 @@ import "../components/heroblurb.css";
 export const heroBlurb = new Map([
   [
     "assisted-pushup",
-    "The Assisted Push-Up is a regression of the Push-up, building strength in the chest, triceps, and core. It can be done as a knee push-up or an incline push-up"
+    "The Assisted Push-Up is a regression of the Push-up, building strength in the chest, triceps, and core. It can be done as a knee push-up or an incline push-up."
   ],
   [
     "push-up",

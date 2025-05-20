@@ -105,7 +105,7 @@ export function Pullup() {
         link2="/tutorials/assistpullup"
         link3="/tutorials/pullup"
         link4="/tutorials/chestpullup"
-        link5="#"
+        link5="/tutorials/muscleup"
         svg1="deadhang"
         svg2="assist-pullup"
         svg3="pull-up"

@@ -22,7 +22,7 @@ export default function TutorialListVP() {
         ["Deep HSPU", "90 Degree PU", "Assisted OAHS", "OAHS", "OA Flag"]
     ];
 
-    const incompleteList = ["Bent Arm Press to HS", "Straight Arm Press to HS", "Deep HSPU", "90 Degree PU", "Assisted OAHS", "OAHS", "OA Flag"];
+    const incompleteList = ["Bent Arm Press to HS", "Straight Arm Press to HS", "Deep HSPU", "HSPU", "90 Degree PU", "Assisted OAHS", "OAHS", "OA Flag"];
 
 
 

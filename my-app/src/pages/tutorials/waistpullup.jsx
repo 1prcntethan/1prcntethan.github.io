@@ -27,7 +27,7 @@ export function WaistPullup() {
             <div className="overview-explanation">
               The Waist Pull-up or Waist To Bar Pull-up is a progression
               exercise for more explosive pulling movements in the future. It is
-              is the last progression before the Muscle-Up, mainly targeting the
+              the last progression before the Muscle-Up, mainly targeting the
               lats.
             </div>
           </div>
@@ -96,7 +96,7 @@ export function WaistPullup() {
         link1="/tutorials/pullup"
         link2="/tutorials/chestpullup"
         link3="/tutorials/waistpullup"
-        link4=""
+        link4="/tutorials/muscleup"
         link5="#"
         svg1="pull-up"
         svg2="chest-pull-up"

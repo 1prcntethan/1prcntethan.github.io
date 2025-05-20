@@ -67,7 +67,7 @@ export function AdvTuckFL() {
                   <li>
                     To use this exercise effectively, perform holds at a
                     difficulty where you can hold them for at least 6-8 seconds,
-                    counting each hold as a rep.
+                    counting each hold as a set.
                   </li>
                 </ul>
 
@@ -101,12 +101,12 @@ export function AdvTuckFL() {
         link2="/tutorials/pikefl"
         link3="/tutorials/advtuckfl"
         link4="/tutorials/superadvtuckfl"
-        link5="#"
+        link5="/tutorials/fullfl"
         svg1="inverted-row"
         svg2="pike-fl"
         svg3="adv-tuck-fl"
         svg4="super-adv-tuck-fl"
-        svg5=""
+        svg5="full-fl"
       />
       <TutorialReturn />
       {svgDivider.get("2")}

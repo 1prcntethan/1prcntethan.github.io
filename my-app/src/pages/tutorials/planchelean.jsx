@@ -69,7 +69,7 @@ export function PlancheLean() {
                   <li>
                     To use this exercise effectively, perform holds at a
                     difficulty where you can hold them for at least 6-8 seconds,
-                    counting each hold as a rep.
+                    counting each hold as a set.
                   </li>
                 </ul>
 
@@ -103,7 +103,7 @@ export function PlancheLean() {
         link2="/tutorials/pushup"
         link3="/tutorials/planchelean"
         link4="/tutorials/psuedopu"
-        link5="#"
+        link5="/tutorials/incomplete"
         svg1="NA"
         svg2="push-up"
         svg3="planche-lean"

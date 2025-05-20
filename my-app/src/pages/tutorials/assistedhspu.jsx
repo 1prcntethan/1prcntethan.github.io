@@ -49,7 +49,7 @@ export function AssistedHSPU() {
                     For a HSPU pressing movement, start in the BAS and push up
                     and straighten your body into a handstand.
                   </li>
-                  <li>Practice alternating and spamming these movements.</li>
+                  <li>Practice alternating and repeating these movements.</li>
                   <li>
                     Once you have the strength, you should be able to chain and
                     combine a negative and a press, or a press and a negative.

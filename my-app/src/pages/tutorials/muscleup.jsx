@@ -45,7 +45,8 @@ export function MuscleUp() {
                   <li>
                     Time your pull with the swing backward; pull yourself up,
                     bringing your chest up and over the bar, leaning your body
-                    over the bar and piking your hips.{" "}
+                    over the bar and piking your hips. You can also kip your knees
+                    to make it easier. {" "}
                   </li>
                   <li>
                     Think about driving your elbows down and pushing the bar
@@ -66,7 +67,7 @@ export function MuscleUp() {
                   </li>
                   <li>
                     As you become more familiar with the movement, you'll build
-                    the strength to do it cleanly with less and less of a dip
+                    the strength to do it cleanly with less and less of a dip and kip
                     motion.
                   </li>
                   <li>
@@ -129,7 +130,7 @@ export function MuscleUp() {
                 <li>Body gets over bar</li>
                 <li>Hands are (usually) placed shoulder-width apart</li>
                 <li>Pull is timed with the swing backward</li>
-                <li>Pull AROUND the bar, not to the bar. (C-shaped motion) </li>
+                <li>Pull AROUND the bar, not to the bar (C-shaped motion) </li>
               </ul>
             </div>
             <div class="technique-form-text">

@@ -1,0 +1,29 @@
+.about-text {
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  line-height: 2;
+  margin: 20px;
+  padding: 40px;
+}
+
+.about-text > p {
+    font-family: Fira Sans;
+    font-weight: 200;
+
+    @media (max-width: 768px) {
+        font-size: 18px;
+        line-height: 2;
+    }
+}
+
+.about-title {
+  font-size: 36px;
+  margin-bottom: 10px;
+
+  @media (max-width: 768px) {
+    font-size: 28px;
+    margin-bottom: 5px;
+    
+  }
+}

@@ -26,8 +26,7 @@ export function Deadhang() {
             </div>
             <div className="overview-explanation">
               The Deadhang is a base hanging exercise used to build grip
-              strength and condition the body for vertical pulling movements. It
-              doesn't actively grow muscles. However, it only builds endurance
+              strength and condition the body for vertical pulling movements. Mainly, it builds endurance
               and stamina and gives a base level of hanging strength.
             </div>
           </div>

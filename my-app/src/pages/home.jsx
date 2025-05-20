@@ -157,6 +157,16 @@ export function Homepage() {
               Incomplete
             </Link>
           </div>
+          <div className="cta-block">
+          <div className="cta-title-2">how to guide</div>
+
+            <div className="cta-info">
+              Start here! This is a guide on how to use this site effectively.
+            </div>
+            <Link to="/howtouseguide" className="cta-go-2">
+              View Page
+            </Link>
+          </div>
         </div>
       </div>
 
