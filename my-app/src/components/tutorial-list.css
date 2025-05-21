@@ -81,6 +81,7 @@
     padding: 8px;
     cursor: pointer;
     text-align: center;
+
     @media (max-width: 768px) {
         width: 100%;
         margin-bottom: 10px;
@@ -89,7 +90,7 @@
     }
 }
 
-.incomplete-button {
+/* .incomplete-button {
     border: solid;
     border-color: #565656;
     background-color: #181818;
@@ -101,7 +102,7 @@
     padding: 8px;
     cursor: pointer;
     text-align: center;
-}
+} */
 
 .skill-button:hover {
     background-color: #641b547a;
@@ -110,12 +111,12 @@
     cursor: pointer;
 }
 
-.incomplete-button:hover {
+/* .incomplete-button:hover {
     background-color: #00ff557a;
     transition-property: all;
     transition-duration: 500ms;
     cursor: pointer;
-}
+} */
 
 .skill-content {
     display: flex;
