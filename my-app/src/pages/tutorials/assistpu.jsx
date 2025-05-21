@@ -5,6 +5,7 @@ import "./skillpage.css";
 import { Link } from "react-router-dom";
 import { svgDivider } from "../../utilites/svg-divider";
 import TutorialReturn from "../../components/tutorialreturn";
+import YTTutorial from "../../components/yttutorials";
 
 export function AssistPu() {
   return (
@@ -140,6 +141,7 @@ export function AssistPu() {
         </div>
       </div>
       {svgDivider.get("3")}
+      <YTTutorial identifier="assisted-pushup"/>
     </>
   );
 }

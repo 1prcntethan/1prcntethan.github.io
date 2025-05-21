@@ -120,6 +120,12 @@ html {
     font-size: 20px;
     padding: 0 20px;
     text-align: center;
+
+    @media (max-width: 768px) {
+        font-size: 16px;
+        line-height: 150%;
+        
+    }
 }
 
 .cta-go-1{
@@ -133,6 +139,11 @@ html {
     font-weight: 200;
     min-width: 100px;
     text-align: center;
+
+    @media screen and (max-width: 768px) {
+        font-size: 16px;
+        
+    }
 }
 
 .cta-go-1:hover{
@@ -152,6 +163,11 @@ html {
     min-width: 100px;
 
     text-align: center;
+
+    @media screen and (max-width: 768px) {
+        font-size: 16px;
+        
+    }
 }
 
 .cta-go-2:hover{
