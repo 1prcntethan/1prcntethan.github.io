@@ -1,8 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 import "./navbar.css";
 
 const Navbar = () => {
+    const [isOpen, setIsOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setIsOpen((isOpen) => !isOpen);
+        const menu = document.querySelector(".mobile__list");
+        if (isOpen) {
+            menu.classList.add("close");
+        } else {
+            menu.classList.remove("close");
+        }
+    }
+
     return (
         <div className="navbar">
           <div className="navbar__logo">
@@ -30,6 +43,7 @@ const Navbar = () => {
               </svg>
             </Link>
           </div>
+          <div className="mobile-button" onClick={toggleMenu}>menu</div>
           <div className="navbar__list">
             <div className="navbar__list--items navbar__list--pink">
               <Link to = "/tutorials" id="nav-item">tutorials</Link>
@@ -46,6 +60,35 @@ const Navbar = () => {
             {/* <div className="navbar__list--items navbar__list--pink">
               <Link to = "/skillvis" id="nav-item">skillvis</Link>
             </div> */}
+            
+          </div>
+
+          <div className="mobile__list">
+            
+            <Link to = "/tutorials" id="nav-item">
+              <div className="navbar__list--items navbar__list--pink">
+                tutorials
+              </div>
+            </Link>
+            <Link to = "/training" id="nav-item">
+              <div className="navbar__list--items navbar__list--green">
+                training
+              </div>
+            </Link>
+            <Link to = "/terminology" id="nav-item">
+              <div className="navbar__list--items navbar__list--pink">
+                terminology
+              </div>
+            </Link>
+            <Link to = "/incomplete" id="nav-item">
+              <div className="navbar__list--items navbar__list--green">
+                skill tree
+              </div>
+            </Link>
+            {/* <div className="navbar__list--items navbar__list--pink">
+              <Link to = "/skillvis" id="nav-item">skillvis</Link>
+            </div> */}
+            
           </div>
         </div>
     )
