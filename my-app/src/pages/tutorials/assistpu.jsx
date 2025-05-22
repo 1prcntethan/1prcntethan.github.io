@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { svgDivider } from "../../utilites/svg-divider";
 import TutorialReturn from "../../components/tutorialreturn";
 import YTTutorial from "../../components/yttutorials";
+import Footer from "../../components/footer";
 
 export function AssistPu() {
   return (
@@ -142,6 +143,7 @@ export function AssistPu() {
       </div>
       {svgDivider.get("3")}
       <YTTutorial identifier="assisted-pushup"/>
+      <Footer />
     </>
   );
 }

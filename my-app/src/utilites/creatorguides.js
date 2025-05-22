@@ -2,11 +2,11 @@
 export const creatorGuides = new Map([
   [
     "assisted-pushup",
-    ["https://www.youtube.com/embed/1mlN0yuxoLE", "https://youtu.be/1mlN0yuxoLE", "URL"]
+    ["https://www.youtube.com/embed/CCZGD55NxGo", "https://www.youtube.com/embed/IODxDxX7oi4", "https://www.youtube.com/embed/i9sTjhN4Z3M"]
   ],
   [
     "push-up",
-    ["URL", "URL", "URL"]  
+    ["https://www.youtube.com/embed/IODxDxX7oi4", "https://www.youtube.com/embed/i9sTjhN4Z3M", "https://www.youtube.com/embed/rruHM_sB2Hc"]  
   ],
   [
     "dip",
