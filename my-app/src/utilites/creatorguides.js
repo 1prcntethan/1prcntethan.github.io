@@ -2,15 +2,15 @@
 export const creatorGuides = new Map([
   [
     "assisted-pushup",
-    "The Assisted Push-Up is a regression of the Push-up, building strength in the chest, triceps, and core. It can be done as a knee push-up or an incline push-up."
+    ["https://www.youtube.com/embed/1mlN0yuxoLE", "https://youtu.be/1mlN0yuxoLE", "URL"]
   ],
   [
     "push-up",
-    "The Push-Up is a basic pushing exercise that builds strength in the chest, triceps, and core. This exercise represents the foundation for almost all pushing skills.",
+    ["URL", "URL", "URL"]  
   ],
   [
     "dip",
-    "The Dip is a basic pushing exercise that builds strength in the shoulders, chest, and triceps. Its targeted muscle changes depending on how the exercise is done.",
+    ["URL", "URL", "URL"]
   ],
   [
     "elbow-lever",
