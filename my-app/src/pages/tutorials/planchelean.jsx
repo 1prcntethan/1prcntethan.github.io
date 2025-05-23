@@ -5,6 +5,8 @@ import "./skillpage.css";
 import { Link } from "react-router-dom";
 import { svgDivider } from "../../utilites/svg-divider";
 import TutorialReturn from "../../components/tutorialreturn";
+import YTTutorial from "../../components/yttutorials";
+import Footer from "../../components/footer";
 
 export function PlancheLean() {
   return (
@@ -144,6 +146,8 @@ export function PlancheLean() {
         </div>
       </div>
       {svgDivider.get("3")}
+      <YTTutorial identifier="planche-lean" />
+      <Footer />
     </>
   );
 }
