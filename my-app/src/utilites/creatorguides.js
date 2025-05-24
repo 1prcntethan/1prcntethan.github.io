@@ -76,74 +76,110 @@ export const creatorGuides = new Map([
       "https://www.youtube.com/embed/RuGjXUHRYSI",
     ],
   ],
-  ["crow-pose", ["https://www.youtube.com/embed/fXgou2W10ok", "URL", "URL"]],
   [
-    ("assisted-hs",
-    ["https://www.youtube.com/embed/fXgou2W10ok", "URL", "URL"]),
+    "crow-pose",
+    ["https://www.youtube.com/embed/kdB-UJg3s-Q", "https://www.youtube.com/embed/ysTXf7DVOf0"]
   ],
-  [("handstand", ["https://www.youtube.com/embed/fXgou2W10ok", "URL", "URL"])],
   [
-    ("elevated-pike-pu",
-    ["https://www.youtube.com/embed/fXgou2W10ok", "URL", "URL"]),
+    "assisted-hs",
+    ["https://www.youtube.com/embed/xMFRkQpXVoI"]
   ],
-  ["bas", ["https://www.youtube.com/embed/fXgou2W10ok", "URL", "URL"]],
+  [
+    "handstand",
+    ["https://www.youtube.com/embed/_gntsmIZvbI", "https://www.youtube.com/embed/aXDxa79u0xQ", "https://www.youtube.com/embed/2H2yLngOZdg"]
+  ],
+  [
+    "elevated-pike-pu",
+    ["https://www.youtube.com/embed/5IcgscNCId8", "https://www.youtube.com/embed/8URA3YSur2M"]
+  ],
+  [
+    "bas",
+    ["https://www.youtube.com/embed/y67yQ6qa0qQ", "https://www.youtube.com/embed/D3ZWTQww7Yk"]
+  ],
   [
     "assisted-hspu",
-    ["https://www.youtube.com/embed/fXgou2W10ok", "URL", "URL"],
+    ["https://www.youtube.com/embed/6MdyYIRS7FY"],
   ],
 
   [
     "assisted-inv-row",
-    ["https://www.youtube.com/embed/fXgou2W10ok", "URL", "URL"],
+    ["https://www.youtube.com/embed/1F0yf-v_Qng"]
   ],
-  ["inverted-row", ["https://www.youtube.com/embed/fXgou2W10ok", "URL", "URL"]],
-  ["tuck-fl", ["https://www.youtube.com/embed/fXgou2W10ok", "URL", "URL"]],
-  ["tuck-fl-row", ["https://www.youtube.com/embed/fXgou2W10ok", "URL", "URL"]],
-  ["pike-fl", ["https://www.youtube.com/embed/fXgou2W10ok", "URL", "URL"]],
-  ["pike-fl-row", ["https://www.youtube.com/embed/fXgou2W10ok", "URL", "URL"]],
-  ["adv-tuck-fl", ["https://www.youtube.com/embed/fXgou2W10ok", "URL", "URL"]],
+  [
+    "inverted-row",
+    ["https://www.youtube.com/embed/5W8F6MzZ8Rk", "https://www.youtube.com/embed/2Synad5Yo-g"]
+  ],
+  [
+    "tuck-fl",
+    ["https://www.youtube.com/embed/lkGhntOoLNk", "https://www.youtube.com/embed/BwhZYpIdhro"]
+  ],
+  [
+    "tuck-fl-row",
+    ["https://www.youtube.com/embed/o1hChkroodA"]
+  ],
+  [
+    "pike-fl",
+    ["https://www.youtube.com/embed/YVKsrcjyuYY"]
+  ],
+  [
+    "pike-fl-row",
+    ["https://www.youtube.com/embed/5OYql7-JNwk", "https://www.youtube.com/embed/jWm9I0M-3f0"]
+  ],
+  [
+    "adv-tuck-fl", 
+    ["https://www.youtube.com/embed/D-dOt8Ey5Ig"]
+  ],
   [
     "super-adv-tuck-fl",
-    ["https://www.youtube.com/embed/fXgou2W10ok", "URL", "URL"],
+    ["URL", "URL", "URL"],
   ],
   [
     "adv-tuck-fl-row",
-    ["https://www.youtube.com/embed/fXgou2W10ok", "URL", "URL"],
+    ["https://www.youtube.com/embed/4DZPaCOfJOI", "https://www.youtube.com/embed/9wd-EzPkwPY"],
   ],
-  ["straddle-fl", ["https://www.youtube.com/embed/fXgou2W10ok", "URL", "URL"]],
+  [
+    "straddle-fl",
+    ["https://www.youtube.com/embed/yUc5Lxe80c8", "https://www.youtube.com/embed/1I5K5wnuIaM", "https://www.youtube.com/embed/FHdu3mTP0Vs"]
+  ],
   [
     "straddle-fl-row",
-    ["https://www.youtube.com/embed/fXgou2W10ok", "URL", "URL"],
+    ["URL", "URL", "URL"],
   ],
-  ["half-lay-fl", ["https://www.youtube.com/embed/fXgou2W10ok", "URL", "URL"]],
-  ["full-fl", ["https://www.youtube.com/embed/fXgou2W10ok", "URL", "URL"]],
+  [
+    "half-lay-fl",
+    ["https://www.youtube.com/embed/JdWhaZlb2rw"]
+  ],
+  [
+    "full-fl",
+    ["https://www.youtube.com/embed/AGhb8V8M758", "https://www.youtube.com/embed/sDz16P6gdkk", "https://www.youtube.com/embed/HEpf42Z_Dck", "https://www.youtube.com/embed/dsIkuWgzoBs", "https://www.youtube.com/embed/abT3pEtoBh4"]
+  ],
 
   [
     "deadhang",
-    "The Deadhang is a basic hanging exercise used to train grip strength for hanging and pull exercises in the future.",
+    ["https://www.youtube.com/embed/3i2kPN5w3Eg", "https://www.youtube.com/embed/PlAE67ovNEo"]
   ],
   [
     "activehang",
-    "The Active Hang is a basic hanging exercised used to train grip strength and prepare the back for vertical pulling exercises in the future.",
+    ["https://www.youtube.com/embed/rwCW8Q-odQY", "https://www.youtube.com/embed/GwMTIwfOPQE"]
   ],
   [
     "assist-pullup",
-    "The Assisted Pullup is a basic pulling regression for the pull-up, that builds strength in the back biceps and core.",
+    ["https://www.youtube.com/embed/ZHllQTJf7eA", "URL", "URL"]
   ],
   [
     "pull-up",
-    "The Pull-Up is a basic pulling exercise that builds strength in the back, biceps, and core. This exercise represents the foundation for almost all pulling skills.",
+    ["URL", "URL", "URL"]
   ],
   [
     "chest-pull-up",
-    "The Chest Pull-up is a more explosive version of the regular pull-up, building more strength towards harder vertical pulling movements in the future.",
+    ["URL", "URL", "URL"]
   ],
   [
     "waist-pull-up",
-    "The Waist Pull-up is the most advanced pull-up variation with two hands, and builds the required strength for the muscle-up, and is foundational for the OAP.",
+    ["URL", "URL", "URL"]
   ],
   [
     "muscle-up",
-    "The Muscle-up is an impressive pulling and pushing exercise that combines the pull-up and the dip. It's a realistic calisthenics goal and is one of the easiest but most impressive skills to obtain.",
+    ["URL", "URL", "URL"]
   ],
 ]);

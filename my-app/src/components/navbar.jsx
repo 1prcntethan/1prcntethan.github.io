@@ -80,7 +80,7 @@ const Navbar = () => {
                 terminology
               </div>
             </Link>
-            <Link to = "/incomplete" id="nav-item">
+            <Link to = "/tutorials/incomplete" id="nav-item">
               <div className="navbar__list--items navbar__list--green">
                 skill tree
               </div>

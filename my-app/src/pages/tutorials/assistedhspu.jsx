@@ -5,6 +5,8 @@ import "./skillpage.css";
 import { Link } from "react-router-dom";
 import { svgDivider } from "../../utilites/svg-divider";
 import TutorialReturn from "../../components/tutorialreturn";
+import YTTutorial from "../../components/yttutorials";
+import Footer from "../../components/footer";
 
 export function AssistedHSPU() {
   return (
@@ -27,7 +29,7 @@ export function AssistedHSPU() {
             <div className="overview-explanation">
               The Assisted Handstand Pushup is the last regression before the
               HSPU. It involves practicing transitions between the HS(Handstand)
-              and the BAS(Bent Arm Stand), which are the negative and pressing
+              and the BAS(Bent Arm Stand) on and off the wall, which are the negative and pressing
               movements. When performing this exercise on the floor, consider
               warming up your wrists, or use low paralletes.
             </div>
@@ -40,6 +42,10 @@ export function AssistedHSPU() {
 
               <div className="skill-instructions">
                 <ul>
+                  <li>
+                    Find a wall you can handstand next to, and place your hands
+                    one foot away from the wall, shoulder width apart.
+                  </li>
                   <li>
                     For a HSPU negative, start in a handstand, and slowly lower
                     yourself by bending the elbows, and moving your head in
@@ -54,7 +60,7 @@ export function AssistedHSPU() {
                     Once you have the strength, you should be able to chain and
                     combine a negative and a press, or a press and a negative.
                   </li>
-                  <li>Eventually, this will result in a HSPU.</li>
+                  <li>Play around with being on and off the wall. Eventually, this will result in a HSPU.</li>
                   <li>
                     To use this exercise effectively, perform these at a
                     diffculty where you can do 4-8 reps for strength, or 8-12
@@ -132,6 +138,8 @@ export function AssistedHSPU() {
         </div>
       </div>
       {svgDivider.get("3")}
+      <YTTutorial identifier="assisted-hspu" />
+      <Footer />
     </>
   );
 }

@@ -5,6 +5,8 @@ import "./skillpage.css";
 import { Link } from "react-router-dom";
 import { svgDivider } from "../../utilites/svg-divider";
 import TutorialReturn from "../../components/tutorialreturn";
+import YTTutorials from "../../components/yttutorials";
+import Footer from "../../components/footer";
 
 export function CrowPose() {
   return (
@@ -125,6 +127,8 @@ export function CrowPose() {
         </div>
       </div>
       {svgDivider.get("3")}
+      <YTTutorials identifier="crow-pose" />
+      <Footer />
     </>
   );
 }

@@ -5,6 +5,8 @@ import "./skillpage.css";
 import { Link } from "react-router-dom";
 import { svgDivider } from "../../utilites/svg-divider";
 import TutorialReturn from "../../components/tutorialreturn";
+import YTTutorial from "../../components/yttutorials";
+import Footer from "../../components/footer";
 
 export function PikeFL() {
   return (
@@ -139,6 +141,8 @@ export function PikeFL() {
         </div>
       </div>
       {svgDivider.get("3")}
+      <YTTutorial identifier="pike-fl" />
+      <Footer />
     </>
   );
 }

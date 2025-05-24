@@ -5,6 +5,8 @@ import "./skillpage.css";
 import { Link } from "react-router-dom";
 import { svgDivider } from "../../utilites/svg-divider";
 import TutorialReturn from "../../components/tutorialreturn";
+import YTTutorial from "../../components/yttutorials";
+import Footer from "../../components/footer";
 
 export function Deadhang() {
   return (
@@ -110,6 +112,8 @@ export function Deadhang() {
         </div>
       </div>
       {svgDivider.get("3")}
+      <YTTutorial identifier="deadhang" />
+      <Footer />
     </>
   );
 }
