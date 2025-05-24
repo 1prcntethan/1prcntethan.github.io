@@ -14,7 +14,7 @@ export function Tutorials() {
     <>
       <Navbar />
       <BetaDisclaimer />
-      <div class="tutorial-header">
+      <div className="tutorial-header">
         Here is the full list of (almost) all common calisthenics skills. This
         list will split the skills into their respective categories and list
         them in order from easiest to hardest. Progressions and difficulty level

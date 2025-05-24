@@ -93,7 +93,12 @@ export function Training() {
           <div className="training-column">
             <div className="item">
               <button className="guide-button">
-                structuring a calisthenics workout
+                structuring a calisthenics workout (beginner)
+              </button>
+            </div>
+            <div className="item">
+              <button className="guide-button">
+                structuring a calisthenics workout (intermediate)
               </button>
             </div>
             <div className="item">
@@ -101,6 +106,29 @@ export function Training() {
             </div>
             <div className="item">
               <button className="guide-button">training legs</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <br />
+      <br />
+      <br />
+
+      <div className="flex-container">
+        <div className="training-container">
+          <div className="training-header">Skill Guides</div>
+          <div className="training-column">
+            <div className="item">
+              <button className="guide-button">
+                handstand guide
+              </button>
+            </div>
+            <div className="item">
+              <button className="guide-button">planche guide</button>
+            </div>
+            <div className="item">
+              <button className="guide-button">front lever guide</button>
             </div>
           </div>
         </div>

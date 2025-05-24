@@ -43,11 +43,11 @@ export default function TerminologyList() {
 
 function SingleTerm(term) {
     return (
-        <div class="single-term">
-            <div class="term-title">
+        <div className="single-term">
+            <div className="term-title">
                 {term.title}
             </div>
-            <div class="term-text">
+            <div className="term-text">
                 {term.text}
             </div>
         </div>

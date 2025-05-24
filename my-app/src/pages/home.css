@@ -190,12 +190,8 @@ html {
     }
 }
 
-.reverse-block {
+#reverse-format {
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    width: 100%;
-    margin: 40px 0;
 
     @media (max-width: 1000px) {
         flex-direction: column-reverse;

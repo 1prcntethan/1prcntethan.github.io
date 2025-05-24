@@ -47,7 +47,7 @@ export function Terminology() {
               y2="40"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stop-color="#B66DA3" />
+              <stop stopColor="#B66DA3" />
               <stop offset="1" stopColor="#BBCA88" />
             </linearGradient>
           </defs>

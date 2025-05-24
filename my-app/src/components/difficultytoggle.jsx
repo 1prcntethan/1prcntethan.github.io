@@ -14,7 +14,7 @@ function DifficultyToggle() {
         if (activeDifficulty === 'F') {
           return (
             <div id="difficulty-explanation-F">
-                <div class="content-container">
+                <div className="content-container">
                     <p id="title-skill">
                         Baseline
                     </p>
@@ -23,7 +23,7 @@ function DifficultyToggle() {
                         Skills in this catergory: Push-ups, Inverted Rows
                     </p>
                 </div>
-                <div class="content-svg">
+                <div className="content-svg">
                     <svg id="push-up" viewBox="0 0 1140 1140" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="570" cy="570" r="570" fill="#F3F3F3"/>
                         <circle cx="570" cy="570" r="480" fill="#232323"/>
@@ -51,7 +51,7 @@ function DifficultyToggle() {
         if (activeDifficulty === 'D') {
           return (
             <div id="difficulty-explanation-D">
-                <div class="content-container">
+                <div className="content-container">
                     <p id="title-skill">
                         Low Beginner
                     </p>
@@ -60,7 +60,7 @@ function DifficultyToggle() {
                         Skills in this catergory: Pullup, Dip, Elbow Lever, L-sit, Frogstand
                     </p>
                 </div>
-                <div class="content-svg">
+                <div className="content-svg">
                     <svg id="dip" viewBox="0 0 1140 1140" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="570" cy="570" r="570" fill="#F3F3F3"/>
                         <circle cx="570" cy="570" r="480" fill="#232323"/>
@@ -89,7 +89,7 @@ function DifficultyToggle() {
         if (activeDifficulty === 'C') {
             return (
                 <div id="difficulty-explanation-C">
-                    <div class="content-container">
+                    <div className="content-container">
                         <p id="title-skill">
                             High Beginner
                         </p>
@@ -98,7 +98,7 @@ function DifficultyToggle() {
                             Skills in this catergory: Pike PU, Tuck FL, HS
                         </p>
                     </div>
-                    <div class="content-svg">
+                    <div className="content-svg">
                         <svg id="pike-pushup" viewBox="0 0 1140 1140" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="570" cy="570" r="570" fill="#F3F3F3"/>
                             <circle cx="570" cy="570" r="480" fill="#232323"/>
@@ -126,7 +126,7 @@ function DifficultyToggle() {
         if (activeDifficulty === 'B') {
             return (
                 <div id="difficulty-explanation-B">
-                    <div class="content-container">
+                    <div className="content-container">
                         <p id="title-skill">
                             Low Intermediate
                         </p>
@@ -135,7 +135,7 @@ function DifficultyToggle() {
                             Skills in this catergory: Tuck PL, HSPU, Adv. Tuck PL, Adv. Tuck FL, MU, V-sit, OAPU
                         </p>
                     </div>
-                    <div class="content-svg">
+                    <div className="content-svg">
                         <svg id="tuck-pl" viewBox="0 0 1140 1140" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="570" cy="570" r="570" fill="#F3F3F3"/>
                             <circle cx="570" cy="570" r="480" fill="#232323"/>
@@ -164,7 +164,7 @@ function DifficultyToggle() {
         if (activeDifficulty === 'A') {
             return(
                 <div id="difficulty-explanation-A">
-                    <div class="content-container">
+                    <div className="content-container">
                         <p id="title-skill">
                             High Intermediate
                         </p>
@@ -173,7 +173,7 @@ function DifficultyToggle() {
                             Skills in this catergory: Str. PL, Str. FL, Full FL, 90 deg PU, OAP/OAC, Manna
                         </p>
                     </div>
-                    <div class="content-svg">
+                    <div className="content-svg">
                         <svg id="str-pl" viewBox="0 0 1140 1140" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="570" cy="570" r="570" fill="#F3F3F3"/>
                             <circle cx="570" cy="570" r="480" fill="#232323"/>
@@ -202,7 +202,7 @@ function DifficultyToggle() {
         if (activeDifficulty === 'S') {
             return (
                 <div id="difficulty-explanation-S">
-                    <div class="content-container">
+                    <div className="content-container">
                         <p id="title-skill">
                             Advanced
                         </p>
@@ -211,7 +211,7 @@ function DifficultyToggle() {
                             Skills in this catergory: Full PL, Touch FL
                         </p>
                     </div>
-                    <div class="content-svg">
+                    <div className="content-svg">
                         <svg id="full-pl" viewBox="0 0 1140 1140" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="570" cy="570" r="570" fill="#F3F3F3"/>
                             <circle cx="570" cy="570" r="480" fill="#232323"/>
@@ -239,7 +239,7 @@ function DifficultyToggle() {
         if (activeDifficulty === 'SS') {
             return (
                 <div id="difficulty-explanation-SS">
-                    <div class="content-container">
+                    <div className="content-container">
                         <p id="title-skill">
                             Elite
                         </p>
@@ -248,7 +248,7 @@ function DifficultyToggle() {
                             Skills in this catergory: Dragon PL, Maltese, Full PL PUs, Iron Cross, Inverted Cross
                         </p>
                     </div>
-                    <div class="content-svg">
+                    <div className="content-svg">
                         <svg id="maltese" viewBox="0 0 1140 1140" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="570" cy="570" r="570" fill="#F3F3F3"/>
                             <circle cx="570" cy="570" r="480" fill="#232323"/>
