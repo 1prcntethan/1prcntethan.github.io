@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as HashRouter, Routes, Route } from 'react-router-dom';
 import "./App.css"
 import { Homepage } from './pages/home';
 import { Training } from './pages/training';
@@ -52,7 +52,7 @@ import { About } from './pages/about';
 
 function App() {
   return (
-    <Router>
+    <HashRouter>
       <ScrollToTop>
       <Routes>
         <Route path="/" element={<Homepage/>}/>
@@ -111,7 +111,7 @@ function App() {
 
       </Routes>
       </ScrollToTop>
-    </Router>
+    </HashRouter>
   );
 }
 
