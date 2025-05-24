@@ -188,8 +188,8 @@ const HomepageHero = () => {
               <path d="M399.621 384.758C400.505 378.469 406.32 374.087 412.61 374.97C418.899 375.854 423.281 381.67 422.397 387.959L412.377 459.258C411.493 465.548 405.678 469.93 399.388 469.046C393.099 468.162 388.717 462.347 389.601 456.057L399.621 384.758Z" fill="#6B6B6B"/>
               <path d="M460.065 4.97421L468.977 6.22677L403.984 468.682L395.071 467.429L460.065 4.97421Z" fill="#6B6B6B"/>
               <defs>
-              <filter id="filter0_d_0_1" x="1049.45" y="314.235" width="208.917" height="102.996" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-              <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+              <filter id="filter0_d_0_1" x="1049.45" y="314.235" width="208.917" height="102.996" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+              <feFlood floodOpacity="0" result="BackgroundImageFix"/>
               <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
               <feOffset dx="4" dy="4"/>
               <feGaussianBlur stdDeviation="2"/>
@@ -198,8 +198,8 @@ const HomepageHero = () => {
               <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1"/>
               <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape"/>
               </filter>
-              <filter id="filter1_d_0_1" x="1019.97" y="315.395" width="198.812" height="119.877" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-              <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+              <filter id="filter1_d_0_1" x="1019.97" y="315.395" width="198.812" height="119.877" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+              <feFlood floodOpacity="0" result="BackgroundImageFix"/>
               <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
               <feOffset dx="4" dy="4"/>
               <feGaussianBlur stdDeviation="2"/>
@@ -208,8 +208,8 @@ const HomepageHero = () => {
               <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1"/>
               <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape"/>
               </filter>
-              <filter id="filter2_d_0_1" x="1007.31" y="310.991" width="180.909" height="147.484" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-              <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+              <filter id="filter2_d_0_1" x="1007.31" y="310.991" width="180.909" height="147.484" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+              <feFlood floodOpacity="0" result="BackgroundImageFix"/>
               <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
               <feOffset dx="4" dy="4"/>
               <feGaussianBlur stdDeviation="2"/>
@@ -218,8 +218,8 @@ const HomepageHero = () => {
               <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1"/>
               <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape"/>
               </filter>
-              <filter id="filter3_d_0_1" x="986.177" y="302.345" width="163.777" height="166.676" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-              <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+              <filter id="filter3_d_0_1" x="986.177" y="302.345" width="163.777" height="166.676" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+              <feFlood floodOpacity="0" result="BackgroundImageFix"/>
               <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
               <feOffset dx="4" dy="4"/>
               <feGaussianBlur stdDeviation="2"/>
@@ -228,8 +228,8 @@ const HomepageHero = () => {
               <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1"/>
               <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape"/>
               </filter>
-              <filter id="filter4_d_0_1" x="961.59" y="298.385" width="144.8" height="179.517" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-              <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+              <filter id="filter4_d_0_1" x="961.59" y="298.385" width="144.8" height="179.517" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+              <feFlood floodOpacity="0" result="BackgroundImageFix"/>
               <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
               <feOffset dx="4" dy="4"/>
               <feGaussianBlur stdDeviation="2"/>
@@ -238,8 +238,8 @@ const HomepageHero = () => {
               <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1"/>
               <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape"/>
               </filter>
-              <filter id="filter5_d_0_1" x="954.32" y="303.536" width="108.546" height="186.842" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-              <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+              <filter id="filter5_d_0_1" x="954.32" y="303.536" width="108.546" height="186.842" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+              <feFlood floodOpacity="0" result="BackgroundImageFix"/>
               <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
               <feOffset dx="4" dy="4"/>
               <feGaussianBlur stdDeviation="2"/>
@@ -248,8 +248,8 @@ const HomepageHero = () => {
               <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1"/>
               <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape"/>
               </filter>
-              <filter id="filter6_d_0_1" x="926.335" y="302.061" width="105.941" height="202.07" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-              <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+              <filter id="filter6_d_0_1" x="926.335" y="302.061" width="105.941" height="202.07" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+              <feFlood floodOpacity="0" result="BackgroundImageFix"/>
               <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
               <feOffset dx="4" dy="4"/>
               <feGaussianBlur stdDeviation="2"/>
@@ -258,8 +258,8 @@ const HomepageHero = () => {
               <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1"/>
               <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape"/>
               </filter>
-              <filter id="filter7_d_0_1" x="911.243" y="308.092" width="78.0345" height="185.655" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-              <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+              <filter id="filter7_d_0_1" x="911.243" y="308.092" width="78.0345" height="185.655" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+              <feFlood floodOpacity="0" result="BackgroundImageFix"/>
               <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
               <feOffset dx="4" dy="4"/>
               <feGaussianBlur stdDeviation="2"/>
@@ -268,8 +268,8 @@ const HomepageHero = () => {
               <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1"/>
               <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape"/>
               </filter>
-              <filter id="filter8_d_0_1" x="900.961" y="296.889" width="58.1069" height="191.186" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-              <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+              <filter id="filter8_d_0_1" x="900.961" y="296.889" width="58.1069" height="191.186" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+              <feFlood floodOpacity="0" result="BackgroundImageFix"/>
               <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
               <feOffset dx="4" dy="4"/>
               <feGaussianBlur stdDeviation="2"/>
@@ -278,8 +278,8 @@ const HomepageHero = () => {
               <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1"/>
               <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape"/>
               </filter>
-              <filter id="filter9_d_0_1" x="878.541" y="300.984" width="54.9962" height="176.143" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-              <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+              <filter id="filter9_d_0_1" x="878.541" y="300.984" width="54.9962" height="176.143" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+              <feFlood floodOpacity="0" result="BackgroundImageFix"/>
               <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
               <feOffset dx="4" dy="4"/>
               <feGaussianBlur stdDeviation="2"/>
@@ -288,8 +288,8 @@ const HomepageHero = () => {
               <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1"/>
               <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape"/>
               </filter>
-              <filter id="filter10_d_0_1" x="857.27" y="305.771" width="53.0009" height="166.447" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-              <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+              <filter id="filter10_d_0_1" x="857.27" y="305.771" width="53.0009" height="166.447" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+              <feFlood floodOpacity="0" result="BackgroundImageFix"/>
               <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
               <feOffset dx="4" dy="4"/>
               <feGaussianBlur stdDeviation="2"/>
@@ -298,8 +298,8 @@ const HomepageHero = () => {
               <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1"/>
               <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape"/>
               </filter>
-              <filter id="filter11_d_0_1" x="839.523" y="313.329" width="47.8137" height="157.262" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-              <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+              <filter id="filter11_d_0_1" x="839.523" y="313.329" width="47.8137" height="157.262" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+              <feFlood floodOpacity="0" result="BackgroundImageFix"/>
               <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
               <feOffset dx="4" dy="4"/>
               <feGaussianBlur stdDeviation="2"/>
@@ -308,8 +308,8 @@ const HomepageHero = () => {
               <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1"/>
               <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape"/>
               </filter>
-              <filter id="filter12_d_0_1" x="816.173" y="320.204" width="50.4653" height="159.153" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-              <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+              <filter id="filter12_d_0_1" x="816.173" y="320.204" width="50.4653" height="159.153" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+              <feFlood floodOpacity="0" result="BackgroundImageFix"/>
               <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
               <feOffset dx="4" dy="4"/>
               <feGaussianBlur stdDeviation="2"/>
@@ -318,8 +318,8 @@ const HomepageHero = () => {
               <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1"/>
               <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape"/>
               </filter>
-              <filter id="filter13_d_0_1" x="802.295" y="329.118" width="41.9259" height="160.024" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-              <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+              <filter id="filter13_d_0_1" x="802.295" y="329.118" width="41.9259" height="160.024" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+              <feFlood floodOpacity="0" result="BackgroundImageFix"/>
               <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
               <feOffset dx="4" dy="4"/>
               <feGaussianBlur stdDeviation="2"/>
@@ -328,8 +328,8 @@ const HomepageHero = () => {
               <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1"/>
               <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape"/>
               </filter>
-              <filter id="filter14_d_0_1" x="780.281" y="340.083" width="41.9143" height="159.73" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-              <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+              <filter id="filter14_d_0_1" x="780.281" y="340.083" width="41.9143" height="159.73" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+              <feFlood floodOpacity="0" result="BackgroundImageFix"/>
               <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
               <feOffset dx="4" dy="4"/>
               <feGaussianBlur stdDeviation="2"/>
@@ -338,8 +338,8 @@ const HomepageHero = () => {
               <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1"/>
               <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape"/>
               </filter>
-              <filter id="filter15_d_0_1" x="757.325" y="354.193" width="41.9509" height="160.653" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-              <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+              <filter id="filter15_d_0_1" x="757.325" y="354.193" width="41.9509" height="160.653" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+              <feFlood floodOpacity="0" result="BackgroundImageFix"/>
               <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
               <feOffset dx="4" dy="4"/>
               <feGaussianBlur stdDeviation="2"/>
@@ -348,8 +348,8 @@ const HomepageHero = () => {
               <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1"/>
               <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape"/>
               </filter>
-              <filter id="filter16_d_0_1" x="734.034" y="365.562" width="39.4167" height="161.144" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-              <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+              <filter id="filter16_d_0_1" x="734.034" y="365.562" width="39.4167" height="161.144" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+              <feFlood floodOpacity="0" result="BackgroundImageFix"/>
               <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
               <feOffset dx="4" dy="4"/>
               <feGaussianBlur stdDeviation="2"/>
@@ -358,8 +358,8 @@ const HomepageHero = () => {
               <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1"/>
               <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape"/>
               </filter>
-              <filter id="filter17_d_0_1" x="715.034" y="371.562" width="39.4167" height="161.144" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-              <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+              <filter id="filter17_d_0_1" x="715.034" y="371.562" width="39.4167" height="161.144" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+              <feFlood floodOpacity="0" result="BackgroundImageFix"/>
               <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
               <feOffset dx="4" dy="4"/>
               <feGaussianBlur stdDeviation="2"/>
@@ -368,8 +368,8 @@ const HomepageHero = () => {
               <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1"/>
               <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape"/>
               </filter>
-              <filter id="filter18_d_0_1" x="712.168" y="290.675" width="422.263" height="134.451" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-              <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+              <filter id="filter18_d_0_1" x="712.168" y="290.675" width="422.263" height="134.451" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+              <feFlood floodOpacity="0" result="BackgroundImageFix"/>
               <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
               <feOffset dy="4"/>
               <feGaussianBlur stdDeviation="2"/>
@@ -378,8 +378,8 @@ const HomepageHero = () => {
               <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1"/>
               <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape"/>
               </filter>
-              <filter id="filter19_d_0_1" x="171.52" y="314.235" width="208.917" height="102.996" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-              <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+              <filter id="filter19_d_0_1" x="171.52" y="314.235" width="208.917" height="102.996" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+              <feFlood floodOpacity="0" result="BackgroundImageFix"/>
               <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
               <feOffset dx="-4" dy="4"/>
               <feGaussianBlur stdDeviation="2"/>
@@ -388,8 +388,8 @@ const HomepageHero = () => {
               <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1"/>
               <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape"/>
               </filter>
-              <filter id="filter20_d_0_1" x="211.103" y="315.395" width="198.812" height="119.877" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-              <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+              <filter id="filter20_d_0_1" x="211.103" y="315.395" width="198.812" height="119.877" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+              <feFlood floodOpacity="0" result="BackgroundImageFix"/>
               <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
               <feOffset dx="-4" dy="4"/>
               <feGaussianBlur stdDeviation="2"/>
@@ -398,8 +398,8 @@ const HomepageHero = () => {
               <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1"/>
               <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape"/>
               </filter>
-              <filter id="filter21_d_0_1" x="241.673" y="310.991" width="180.908" height="147.484" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-              <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+              <filter id="filter21_d_0_1" x="241.673" y="310.991" width="180.908" height="147.484" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+              <feFlood floodOpacity="0" result="BackgroundImageFix"/>
               <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
               <feOffset dx="-4" dy="4"/>
               <feGaussianBlur stdDeviation="2"/>
@@ -408,8 +408,8 @@ const HomepageHero = () => {
               <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1"/>
               <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape"/>
               </filter>
-              <filter id="filter22_d_0_1" x="279.935" y="302.345" width="163.777" height="166.676" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-              <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+              <filter id="filter22_d_0_1" x="279.935" y="302.345" width="163.777" height="166.676" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+              <feFlood floodOpacity="0" result="BackgroundImageFix"/>
               <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
               <feOffset dx="-4" dy="4"/>
               <feGaussianBlur stdDeviation="2"/>
@@ -418,8 +418,8 @@ const HomepageHero = () => {
               <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1"/>
               <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape"/>
               </filter>
-              <filter id="filter23_d_0_1" x="323.246" y="306.385" width="138.977" height="171.811" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-              <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+              <filter id="filter23_d_0_1" x="323.246" y="306.385" width="138.977" height="171.811" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+              <feFlood floodOpacity="0" result="BackgroundImageFix"/>
               <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
               <feOffset dx="-4" dy="4"/>
               <feGaussianBlur stdDeviation="2"/>
@@ -428,8 +428,8 @@ const HomepageHero = () => {
               <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1"/>
               <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape"/>
               </filter>
-              <filter id="filter24_d_0_1" x="367.023" y="303.536" width="108.546" height="186.842" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-              <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+              <filter id="filter24_d_0_1" x="367.023" y="303.536" width="108.546" height="186.842" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+              <feFlood floodOpacity="0" result="BackgroundImageFix"/>
               <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
               <feOffset dx="-4" dy="4"/>
               <feGaussianBlur stdDeviation="2"/>
@@ -438,8 +438,8 @@ const HomepageHero = () => {
               <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1"/>
               <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape"/>
               </filter>
-              <filter id="filter25_d_0_1" x="397.613" y="302.061" width="105.941" height="202.07" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-              <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+              <filter id="filter25_d_0_1" x="397.613" y="302.061" width="105.941" height="202.07" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+              <feFlood floodOpacity="0" result="BackgroundImageFix"/>
               <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
               <feOffset dx="-4" dy="4"/>
               <feGaussianBlur stdDeviation="2"/>
@@ -448,8 +448,8 @@ const HomepageHero = () => {
               <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1"/>
               <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape"/>
               </filter>
-              <filter id="filter26_d_0_1" x="440.612" y="308.092" width="78.0344" height="185.655" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-              <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+              <filter id="filter26_d_0_1" x="440.612" y="308.092" width="78.0344" height="185.655" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+              <feFlood floodOpacity="0" result="BackgroundImageFix"/>
               <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
               <feOffset dx="-4" dy="4"/>
               <feGaussianBlur stdDeviation="2"/>
@@ -458,8 +458,8 @@ const HomepageHero = () => {
               <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1"/>
               <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape"/>
               </filter>
-              <filter id="filter27_d_0_1" x="470.821" y="296.889" width="58.1072" height="191.186" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-              <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+              <filter id="filter27_d_0_1" x="470.821" y="296.889" width="58.1072" height="191.186" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+              <feFlood floodOpacity="0" result="BackgroundImageFix"/>
               <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
               <feOffset dx="-4" dy="4"/>
               <feGaussianBlur stdDeviation="2"/>
@@ -468,8 +468,8 @@ const HomepageHero = () => {
               <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1"/>
               <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape"/>
               </filter>
-              <filter id="filter28_d_0_1" x="496.352" y="300.984" width="54.9963" height="176.143" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-              <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+              <filter id="filter28_d_0_1" x="496.352" y="300.984" width="54.9963" height="176.143" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+              <feFlood floodOpacity="0" result="BackgroundImageFix"/>
               <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
               <feOffset dx="-4" dy="4"/>
               <feGaussianBlur stdDeviation="2"/>
@@ -478,8 +478,8 @@ const HomepageHero = () => {
               <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1"/>
               <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape"/>
               </filter>
-              <filter id="filter29_d_0_1" x="519.618" y="305.771" width="53.001" height="166.447" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-              <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+              <filter id="filter29_d_0_1" x="519.618" y="305.771" width="53.001" height="166.447" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+              <feFlood floodOpacity="0" result="BackgroundImageFix"/>
               <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
               <feOffset dx="-4" dy="4"/>
               <feGaussianBlur stdDeviation="2"/>
@@ -488,8 +488,8 @@ const HomepageHero = () => {
               <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1"/>
               <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape"/>
               </filter>
-              <filter id="filter30_d_0_1" x="542.552" y="313.329" width="47.8137" height="157.262" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-              <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+              <filter id="filter30_d_0_1" x="542.552" y="313.329" width="47.8137" height="157.262" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+              <feFlood floodOpacity="0" result="BackgroundImageFix"/>
               <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
               <feOffset dx="-4" dy="4"/>
               <feGaussianBlur stdDeviation="2"/>
@@ -498,8 +498,8 @@ const HomepageHero = () => {
               <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1"/>
               <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape"/>
               </filter>
-              <filter id="filter31_d_0_1" x="563.251" y="320.204" width="50.4653" height="159.153" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-              <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+              <filter id="filter31_d_0_1" x="563.251" y="320.204" width="50.4653" height="159.153" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+              <feFlood floodOpacity="0" result="BackgroundImageFix"/>
               <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
               <feOffset dx="-4" dy="4"/>
               <feGaussianBlur stdDeviation="2"/>
@@ -508,8 +508,8 @@ const HomepageHero = () => {
               <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1"/>
               <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape"/>
               </filter>
-              <filter id="filter32_d_0_1" x="585.668" y="329.118" width="41.9258" height="160.024" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-              <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+              <filter id="filter32_d_0_1" x="585.668" y="329.118" width="41.9258" height="160.024" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+              <feFlood floodOpacity="0" result="BackgroundImageFix"/>
               <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
               <feOffset dx="-4" dy="4"/>
               <feGaussianBlur stdDeviation="2"/>
@@ -518,8 +518,8 @@ const HomepageHero = () => {
               <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1"/>
               <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape"/>
               </filter>
-              <filter id="filter33_d_0_1" x="607.694" y="340.083" width="41.9143" height="159.73" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-              <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+              <filter id="filter33_d_0_1" x="607.694" y="340.083" width="41.9143" height="159.73" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+              <feFlood floodOpacity="0" result="BackgroundImageFix"/>
               <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
               <feOffset dx="-4" dy="4"/>
               <feGaussianBlur stdDeviation="2"/>
@@ -528,8 +528,8 @@ const HomepageHero = () => {
               <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1"/>
               <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape"/>
               </filter>
-              <filter id="filter34_d_0_1" x="630.613" y="354.193" width="41.9509" height="160.653" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-              <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+              <filter id="filter34_d_0_1" x="630.613" y="354.193" width="41.9509" height="160.653" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+              <feFlood floodOpacity="0" result="BackgroundImageFix"/>
               <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
               <feOffset dx="-4" dy="4"/>
               <feGaussianBlur stdDeviation="2"/>
@@ -538,8 +538,8 @@ const HomepageHero = () => {
               <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1"/>
               <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape"/>
               </filter>
-              <filter id="filter35_d_0_1" x="656.439" y="357.562" width="39.4167" height="161.144" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-              <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+              <filter id="filter35_d_0_1" x="656.439" y="357.562" width="39.4167" height="161.144" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+              <feFlood floodOpacity="0" result="BackgroundImageFix"/>
               <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
               <feOffset dx="-4" dy="-4"/>
               <feGaussianBlur stdDeviation="2"/>
@@ -548,8 +548,8 @@ const HomepageHero = () => {
               <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1"/>
               <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape"/>
               </filter>
-              <filter id="filter36_d_0_1" x="675.439" y="363.562" width="39.4167" height="161.144" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-              <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+              <filter id="filter36_d_0_1" x="675.439" y="363.562" width="39.4167" height="161.144" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+              <feFlood floodOpacity="0" result="BackgroundImageFix"/>
               <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
               <feOffset dx="-4" dy="-4"/>
               <feGaussianBlur stdDeviation="2"/>
@@ -558,8 +558,8 @@ const HomepageHero = () => {
               <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1"/>
               <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1" result="shape"/>
               </filter>
-              <filter id="filter37_d_0_1" x="295.459" y="290.675" width="422.262" height="134.451" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-              <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+              <filter id="filter37_d_0_1" x="295.459" y="290.675" width="422.262" height="134.451" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
+              <feFlood floodOpacity="0" result="BackgroundImageFix"/>
               <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
               <feOffset dy="4"/>
               <feGaussianBlur stdDeviation="2"/>

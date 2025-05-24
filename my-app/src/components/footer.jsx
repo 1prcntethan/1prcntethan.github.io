@@ -5,8 +5,8 @@ import "./footer.css";
 const Footer = () => {
   return (
     <footer>
-      <div class="footer-container">
-        <div class="footer-section">
+      <div className="footer-container">
+        <div className="footer-section">
           <p>Quick Links</p>
           <ul>
             {/* <li>
@@ -33,19 +33,19 @@ const Footer = () => {
           </ul>
         </div>
 
-        <div class="footer-section">
+        <div className="footer-section">
           <p>Contact Us</p>
-          <p class="footer-text">
+          <div className="footer-text">
             Email:{" "}
-            <div id="footer-email">
+            <p id="footer-email">
               wings.sw.official@gmail.com
-            </div>
-          </p>
-          <div class="social-media">
-            <p class="footer-text">Instagram:</p>
-            <a class="center-svg" href="https://www.instagram.com/wings.sw/">
+            </p>
+          </div>
+          <div className="social-media">
+            <p className="footer-text">Instagram:</p>
+            <a className="center-svg" href="https://www.instagram.com/wings.sw/">
               <svg
-                class="insta-svg"
+                className="insta-svg"
                 viewBox="0 0 2272 2272"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -70,7 +70,7 @@ const Footer = () => {
         </div>
 
 
-        <div class="footer-section">
+        <div className="footer-section">
           <p>Feedback</p>
           <ul>
             <li>
@@ -79,7 +79,7 @@ const Footer = () => {
           </ul>
         </div>
 
-        <div class="footer-section">
+        <div className="footer-section">
           <p>Recommended Equipment</p>
           <ul>
             <li>
@@ -93,7 +93,7 @@ const Footer = () => {
         
       </div>
 
-      <div class="footer-bottom">
+      <div className="footer-bottom">
         <p>&copy; 2025 WINGS. All rights reserved.</p>
         {/* <a href="/privacy-policy">Privacy Policy</a> |{" "}
         <a href="/terms-of-service">Terms of Service</a> */}

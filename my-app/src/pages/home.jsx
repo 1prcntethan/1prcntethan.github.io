@@ -260,7 +260,7 @@ export function Homepage() {
               </p>
             </div>
           </div>
-          <div className="showcase-block-reverse">
+          <div className="reverse-block">
             <div className="showcase-block--text">
               <h3>front lever</h3>
               <p>
@@ -416,7 +416,7 @@ export function Homepage() {
               </p>
             </div>
           </div>
-          <div className="showcase-block-reverse">
+          <div className="reverse-block">
             <div className="showcase-block--text">
               <h3>one arm handstand</h3>
               <p>
@@ -596,7 +596,7 @@ export function Homepage() {
               </p>
             </div>
           </div>
-          <div className="showcase-block-reverse">
+          <div className="reverse-block">
             <div className="showcase-block--text">
               <h3>muscle-up</h3>
               <p>

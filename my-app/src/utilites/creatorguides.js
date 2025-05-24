@@ -164,22 +164,22 @@ export const creatorGuides = new Map([
   ],
   [
     "assist-pullup",
-    ["https://www.youtube.com/embed/ZHllQTJf7eA", "URL", "URL"]
+    ["https://www.youtube.com/embed/ZHllQTJf7eA"]
   ],
   [
     "pull-up",
-    ["URL", "URL", "URL"]
+    ["https://www.youtube.com/embed/aNUSgyWRJYA", "https://www.youtube.com/embed/tB3X4TjTIes", "https://www.youtube.com/embed/MA2yaxzOgyg"]
   ],
   [
     "chest-pull-up",
-    ["URL", "URL", "URL"]
+    ["https://www.youtube.com/embed/SmduaQzt8Jk", "https://www.youtube.com/embed/zLDKemkGuzg"]
   ],
   [
     "waist-pull-up",
-    ["URL", "URL", "URL"]
+    ["https://www.youtube.com/embed/s85LNjqQknM", "https://www.youtube.com/embed/WDs7DUwMk7g"]
   ],
   [
     "muscle-up",
-    ["URL", "URL", "URL"]
+    ["https://www.youtube.com/embed/w016kSjobr8", "https://www.youtube.com/embed/KGGWP695Zx4"]
   ],
 ]);

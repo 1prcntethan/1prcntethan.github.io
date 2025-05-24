@@ -5,6 +5,8 @@ import "./skillpage.css";
 import { Link } from "react-router-dom";
 import { svgDivider } from "../../utilites/svg-divider";
 import TutorialReturn from "../../components/tutorialreturn";
+import YTTutorials from "../../components/yttutorials";
+import Footer from "../../components/footer";
 
 export function AssistPullup() {
   return (
@@ -71,11 +73,11 @@ export function AssistPullup() {
                   </li>
                 </ul>
 
-                <label className="read-more-label" for="skill-read-more">
+                <label className="read-more-label" htmlFor="skill-read-more">
                   Show less
                 </label>
               </div>
-              <label className="read-more-label" for="skill-read-more">
+              <label className="read-more-label" htmlFor="skill-read-more">
                 Read more...
               </label>
             </div>
@@ -129,6 +131,8 @@ export function AssistPullup() {
         </div>
       </div>
       {svgDivider.get("3")}
+      <YTTutorials identifier="assist-pullup" />
+      <Footer />
     </>
   );
 }

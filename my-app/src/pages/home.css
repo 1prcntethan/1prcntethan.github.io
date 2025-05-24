@@ -124,7 +124,7 @@ html {
     @media (max-width: 768px) {
         font-size: 16px;
         line-height: 150%;
-        
+        margin: 15px 0 ;
     }
 }
 
@@ -190,7 +190,7 @@ html {
     }
 }
 
-.showcase-block-reverse {
+.reverse-block {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
