@@ -48,6 +48,7 @@ import { MuscleUp } from './pages/tutorials/muscleup';
 import { Incomplete } from './pages/incomplete';
 import { HowTo } from './pages/howto';
 import { About } from './pages/about';
+import { Disclaimer } from './pages/disclaimer';
 
 
 function App() {
@@ -63,6 +64,7 @@ function App() {
         <Route path="/skillvis" element={<SkillVis/>}/>
         <Route path="/howtouseguide" element={<HowTo/>}/>
         <Route path="/about" element={<About/>}/>
+        <Route path="/disclaimer" element={<Disclaimer/>}/>
         <Route path="/tutorials/incomplete" element={<Incomplete/>}/>
 
         <Route path="/training/beginnerguide" element={<BeginnerGuide/>}/>

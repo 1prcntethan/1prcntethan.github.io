@@ -80,13 +80,22 @@ const Footer = () => {
         </div>
 
         <div className="footer-section">
-          <p>Recommended Equipment</p>
+          <p>Donate</p>
           <ul>
             <li>
-              <a>Resistance Bands</a>
+              <a href="https://ko-fi.com/wingssw">Ko-fi</a>
             </li>
             <li>
-              <a>Parallettes</a>
+              <a href="https://www.paypal.com/donate/?hosted_button_id=RNREJQ826VL46">PayPal</a>
+            </li>
+          </ul>
+        </div>
+
+        <div className="footer-section">
+          <p>Disclaimer</p>
+          <ul>
+            <li>
+              <Link to="/disclaimer">Terms & Conditions</Link>
             </li>
           </ul>
         </div>
