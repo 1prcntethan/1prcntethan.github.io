@@ -240,7 +240,7 @@ export function Training() {
           <div className="training-header">Google Docs version</div>
           <div className="training-column">
             <div className="item">
-              <Link to="/tutorials/incomplete" className="guide-link">
+              <Link to="https://docs.google.com/document/d/1keXgZXvrRFLEFaAw4keN0_vhmzMaIJ27uA-OcP2Q59A/edit?usp=sharing" className="guide-link">
                 <button className="guide-button">
                   access google docs version here
                 </button>

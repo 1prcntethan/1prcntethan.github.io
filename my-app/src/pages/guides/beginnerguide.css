@@ -71,7 +71,7 @@
 }
 
 .guide-text {
-    display: flex;
+    display: block;
     font-family: Fira Sans;
     font-weight: 200;
     font-size: 24px;
@@ -84,4 +84,38 @@
         padding: 1rem 0;
         
     }
+}
+
+.guide-image {
+    display: flex;
+    width: 65%;
+    align-self: center;
+    height: auto;
+    margin: 2rem 0;
+
+    img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+
+    @media (max-width: 768px) {
+
+        width: 90%;
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+}
+
+.guide-external-link {
+    margin: 0 6px;
+    text-decoration: none;
+    color: rgb(196, 33, 218)
+}
+
+.guide-external-link:hover {
+    text-decoration: underline;
 }
