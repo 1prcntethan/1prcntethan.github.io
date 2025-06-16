@@ -49,6 +49,7 @@ import { Incomplete } from './pages/incomplete';
 import { HowTo } from './pages/howto';
 import { About } from './pages/about';
 import { Disclaimer } from './pages/disclaimer';
+import { ProgOverload } from './pages/guides/progoverload';
 
 
 function App() {
@@ -68,7 +69,7 @@ function App() {
         <Route path="/tutorials/incomplete" element={<Incomplete/>}/>
 
         <Route path="/training/beginnerguide" element={<BeginnerGuide/>}/>
-
+        <Route path="/training/progoverload" element={<ProgOverload/>}/>
 
         <Route path="/tutorials/pushup" element={<Pushup/>}/>
         <Route path="/tutorials/assistedpu" element={<AssistPu/>}/>
