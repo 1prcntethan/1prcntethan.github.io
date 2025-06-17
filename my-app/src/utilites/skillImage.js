@@ -167,7 +167,7 @@ export const skillImage = new Map([
     </svg>,
   ],
   [
-    "Psuedo Push-up",
+    "Pseudo Push-up",
     <svg
       id="skill-image"
       viewBox="0 0 1140 1140"

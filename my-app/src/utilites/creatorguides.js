@@ -38,7 +38,7 @@ export const creatorGuides = new Map([
     ],
   ],
   [
-    "psuedo-pu",
+    "pseudo-pu",
     [
       "https://www.youtube.com/embed/C-SML6xnVkI",
       "https://www.youtube.com/embed/odcPqBOlJhI",

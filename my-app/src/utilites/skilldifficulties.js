@@ -4,7 +4,7 @@ export const skillDiff = new Map([
   ["Dip", "D"],
   ["Elbow Lever", "D"],
   ["Planche Lean", "C"],
-  ["Psuedo Push-up", "C"],
+  ["Pseudo Push-up", "C"],
   ["Tuck Planche", "B"],
   ["Tuck Planche PU", "B"],
   ["Adv. Tuck Planche", "B"],

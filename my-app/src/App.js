@@ -11,7 +11,7 @@ import { Pushup } from './pages/tutorials/pushup';
 import { Dip } from './pages/tutorials/dip';
 import { ElbowLever } from './pages/tutorials/elbowlever';
 import { PlancheLean } from './pages/tutorials/planchelean';
-import { PsuedoPU } from './pages/tutorials/psuedopu';
+import { PseudoPU } from './pages/tutorials/pseudopu';
 import { TuckPL } from './pages/tutorials/tuckpl';
 import { AdvTuckPL } from './pages/tutorials/advtuckpl';
 import { TuckPLPU } from './pages/tutorials/tuckplpu';
@@ -50,6 +50,7 @@ import { HowTo } from './pages/howto';
 import { About } from './pages/about';
 import { Disclaimer } from './pages/disclaimer';
 import { ProgOverload } from './pages/guides/progoverload';
+import { PushRmp } from './pages/guides/pushroadmap';
 
 
 function App() {
@@ -70,13 +71,14 @@ function App() {
 
         <Route path="/training/beginnerguide" element={<BeginnerGuide/>}/>
         <Route path="/training/progoverload" element={<ProgOverload/>}/>
+        <Route path="/training/pushrmp" element={<PushRmp/>}/>
 
         <Route path="/tutorials/pushup" element={<Pushup/>}/>
         <Route path="/tutorials/assistedpu" element={<AssistPu/>}/>
         <Route path="/tutorials/dip" element={<Dip/>}/>
         <Route path="/tutorials/elbowlever" element={<ElbowLever/>}/>
         <Route path="/tutorials/planchelean" element={<PlancheLean/>}/>
-        <Route path="/tutorials/psuedopu" element={<PsuedoPU/>}/>
+        <Route path="/tutorials/pseudopu" element={<PseudoPU/>}/>
         <Route path="/tutorials/tuckpl" element={<TuckPL/>}/>
         <Route path="/tutorials/tuckplpu" element={<TuckPLPU/>}/>
         <Route path="/tutorials/advtuckpl" element={<AdvTuckPL/>}/>

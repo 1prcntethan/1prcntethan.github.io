@@ -237,8 +237,8 @@ export function BeginnerGuide() {
             Push-ups
           </Link>
           ,
-          <Link to="/tutorials/psuedopu" className="guide-external-link">
-            Psuedo Push-ups
+          <Link to="/tutorials/pseudopu" className="guide-external-link">
+            Pseudo Push-ups
           </Link>
           , etc.)
         </div>

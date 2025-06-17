@@ -75,7 +75,7 @@ export function TuckPLPU() {
           </div>
 
           <div className="recommended-info">
-            <p>Recommended Main Exercises: Psuedo Pushup</p>
+            <p>Recommended Main Exercises: Pseudo Pushup</p>
             <p>Recommended Accessory Exercises: Scapular Pushups, Dips</p>
           </div>
         </div>

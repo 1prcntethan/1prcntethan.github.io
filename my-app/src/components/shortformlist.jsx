@@ -8,7 +8,7 @@ export default function ShortFormList() {
                 <div className="terms">
                     <SingleTerm title="pu" text="push-up"/>
                     <SingleTerm title="mu" text="muscle-up"/>
-                    <SingleTerm title="pppu" text="psuedo planche push-up"/>
+                    <SingleTerm title="pppu" text="pseudo planche push-up"/>
                     <SingleTerm title="hs" text="handstand"/>
                 </div>
             </div>

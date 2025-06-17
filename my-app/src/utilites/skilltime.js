@@ -4,7 +4,7 @@ export const skillTime = new Map([
   ["Dip", "2-4 weeks"],
   ["Elbow Lever", "2-4 weeks"],
   ["Planche Lean", "3-5 weeks"],
-  ["Psuedo Push-up", "1-2 months"],
+  ["Pseudo Push-up", "1-2 months"],
   ["Tuck Planche", "3-6 months"],
   ["Tuck Planche PU", "4-7 months"],
   ["Adv. Tuck Planche", "6-12 months"],

@@ -324,7 +324,7 @@ export const heroSvg = new Map([
     </div>,
   ],
   [
-    "psuedo-pu",
+    "pseudo-pu",
     <div className="hero-svg-container">
       <svg
         className="hero-svg"

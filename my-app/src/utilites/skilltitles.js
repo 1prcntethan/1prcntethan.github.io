@@ -4,7 +4,7 @@ export const skillTitle = new Map([
   ["Dip", "dip"],
   ["Elbow Lever", "elbow lever"],
   ["Planche Lean", "planche lean"],
-  ["Psuedo Push-up", "psuedo push-up"],
+  ["Pseudo Push-up", "pseudo push-up"],
   ["Tuck Planche", "tuck planche"],
   ["Tuck Planche PU", "tuck planche pu"],
   ["Adv. Tuck Planche", "adv. tuck planche"],

@@ -52,6 +52,7 @@
     border-radius: 30px;
 }
 
+
 .guide-link{
     text-decoration: none;
 }
@@ -106,5 +107,6 @@
 .guide-button:hover {
     background-color: #331c32;
     transition: all 0.5s;
+    cursor: pointer;
     border: 1px solid rgba(255, 255, 255, 0.75);
 }

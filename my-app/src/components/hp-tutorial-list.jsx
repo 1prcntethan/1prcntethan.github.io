@@ -17,7 +17,7 @@ export default function TutorialListHP() {
   const rowButtons = [
     ["Assisted Push-up", "Push-up", "Dip", "Elbow Lever", "Planche Lean"],
     [
-      "Psuedo Push-up",
+      "Pseudo Push-up",
       "Tuck Planche",
       "Tuck Planche PU",
       "Adv. Tuck Planche",
@@ -138,10 +138,10 @@ export default function TutorialListHP() {
                     <button onClick={() => {setTitle("pushup")}} className="skill-button">Pushup</button>
                     <button onClick={() => {setTitle("dip")}} className="skill-button">Dip</button>
                     <button onClick={() => {setTitle("elbow lever")}} className="skill-button">Elbow Lever</button>
-                    <button onClick={() => {setTitle("psuedo pushup")}} className="skill-button">Planche Lean</button>
+                    <button onClick={() => {setTitle("pseudo pushup")}} className="skill-button">Planche Lean</button>
                 </div>
                 <div className="buttons-container">
-                    <button onClick={() => {setTitle("psuedo pushup")}}className="skill-button">Psuedo Pushup</button>
+                    <button onClick={() => {setTitle("pseudo pushup")}}className="skill-button">pseudo Pushup</button>
                     <button onClick={() => {setTitle("tuck planche")}} className="skill-button">Tuck Planche</button>
                     <button onClick={() => {setTitle("tuck planche pu")}} className="skill-button">Tuck Planche PU</button>
                     <button onClick={() => {setTitle("adv. tuck planche")}} className="skill-button">Adv. Tuck Planche</button>

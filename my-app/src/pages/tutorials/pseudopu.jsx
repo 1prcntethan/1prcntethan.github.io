@@ -8,11 +8,11 @@ import TutorialReturn from "../../components/tutorialreturn";
 import YTTutorial from "../../components/yttutorials";
 import Footer from "../../components/footer";
 
-export function PsuedoPU() {
+export function PseudoPU() {
   return (
     <>
       <Navbar />
-      <SkillHero title="psuedo push-up" identifier="psuedo-pu" />
+      <SkillHero title="pseudo push-up" identifier="pseudo-pu" />
       {svgDivider.get("0")}
       <div className="skill-info-container">
         <div className="skill-info">
@@ -27,7 +27,7 @@ export function PsuedoPU() {
               <p>High Strain Areas: Shoulders</p>
             </div>
             <div className="overview-explanation">
-              The Psuedo Push-up is a scalable shoulder focused exercise. The
+              The Pseudo Push-up is a scalable shoulder focused exercise. The
               difficulty is increased by moving the hands closer to the waist.
               It is possible to reach the 90 degree hold from solely training
               this progression.
@@ -35,7 +35,7 @@ export function PsuedoPU() {
           </div>
 
           <div className="exercise-instructions-container">
-            Step-by-Step ~ Psuedo Push-up
+            Step-by-Step ~ Pseudo Push-up
             <div className="exercise-instructions">
               <input id="skill-read-more" type="checkbox" />
 
@@ -98,17 +98,17 @@ export function PsuedoPU() {
       <ProgressionChart
         name1="Push-up"
         name2="Planche Lean"
-        name3="Psuedo Pushup"
+        name3="Pseudo Pushup"
         name4="Tuck Planche"
         name5="Full Planche"
         link1="/tutorials/pushup"
         link2="/tutorials/planchelean"
-        link3="/tutorials/psuedopu"
+        link3="/tutorials/pseudopu"
         link4="/tutorials/tuckpl"
         link5="/tutorials/incomplete"
         svg1="push-up"
         svg2="planche-lean"
-        svg3="psuedo-pu"
+        svg3="pseudo-pu"
         svg4="tuck-pl"
         svg5="full-pl"
       />
@@ -144,7 +144,7 @@ export function PsuedoPU() {
         </div>
       </div>
       {svgDivider.get("3")}
-      <YTTutorial identifier="psuedo-pu" />
+      <YTTutorial identifier="pseudo-pu" />
       <Footer />
     </>
   );

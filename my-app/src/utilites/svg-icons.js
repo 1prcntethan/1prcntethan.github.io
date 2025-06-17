@@ -167,7 +167,7 @@ export const svgIcon = new Map([
     </svg>,
   ],
   [
-    "psuedo-pu",
+    "pseudo-pu",
     <svg
       id="real-skill"
       viewBox="0 0 1140 1140"
