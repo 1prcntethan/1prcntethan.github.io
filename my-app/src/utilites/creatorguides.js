@@ -100,6 +100,10 @@ export const creatorGuides = new Map([
     "assisted-hspu",
     ["https://www.youtube.com/embed/6MdyYIRS7FY"],
   ],
+  [
+    "hspu",
+    ["https://www.youtube.com/embed/RcrIYne-Yrg","https://www.youtube.com/embed/H65sLbCNCTY","https://www.youtube.com/embed/7wSZnHQZChI"]
+  ],
 
   [
     "assisted-inv-row",
@@ -151,7 +155,7 @@ export const creatorGuides = new Map([
   ],
   [
     "full-fl",
-    ["https://www.youtube.com/embed/AGhb8V8M758", "https://www.youtube.com/embed/sDz16P6gdkk", "https://www.youtube.com/embed/HEpf42Z_Dck", "https://www.youtube.com/embed/dsIkuWgzoBs", "https://www.youtube.com/embed/abT3pEtoBh4"]
+    ["https://www.youtube.com/embed/AGhb8V8M758", "https://www.youtube.com/embed/sDz16P6gdkk", "https://www.youtube.com/embed/HEpf42Z_Dck", "https://www.youtube.com/embed/dsIkuWgzoBs", "https://www.youtube.com/embed/abT3pEtoBh4", "https://www.youtube.com/embed/eC5JKwac4jc"]
   ],
 
   [

@@ -92,7 +92,7 @@ export function Handstand() {
         link2="/tutorials/assistedhs"
         link3="/tutorials/handstand"
         link4="/tutorials/bas"
-        link5="#"
+        link5="/tutorials/hspu"
         svg1="pike-pu"
         svg2="assisted-hs"
         svg3="handstand"

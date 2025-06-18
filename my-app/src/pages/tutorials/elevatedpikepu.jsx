@@ -120,7 +120,7 @@ export function ElevatedPikePU() {
         link2="/tutorials/pikepu"
         link3="/tutorials/elevatedpikepu"
         link4="/tutorials/bas"
-        link5="#"
+        link5="/tutorials/hspu"
         svg1="push-up"
         svg2="pike-pu"
         svg3="elevated-pike-pu"

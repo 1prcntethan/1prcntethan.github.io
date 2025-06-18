@@ -31,7 +31,7 @@ export const skillLinks = new Map([
     ["Straight Arm Press to HS", "straight arm press to hs"],
     ["Bent Arm Stand", "/tutorials/bas"],
     ["Assisted HSPU", "/tutorials/assistedhspu"],
-    ["HSPU", "hspu"],
+    ["HSPU", "/tutorials/hspu"],
     ["Deep HSPU", "deep hspu"],
     ["90 Degree PU", "90 degree pu"],
     ["Assisted OAHS", "assisted oahs"],

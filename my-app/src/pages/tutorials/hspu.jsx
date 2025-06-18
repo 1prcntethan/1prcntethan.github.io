@@ -8,11 +8,11 @@ import TutorialReturn from "../../components/tutorialreturn";
 import YTTutorial from "../../components/yttutorials";
 import Footer from "../../components/footer";
 
-export function AssistedHS() {
+export function HSPU() {
   return (
     <>
       <Navbar />
-      <SkillHero title="assisted handstand" identifier="assisted-hs" />
+      <SkillHero title="hspu" identifier="hspu" />
       {svgDivider.get("0")}
       <div className="skill-info-container">
         <div className="skill-info">
@@ -20,48 +20,44 @@ export function AssistedHS() {
           <div className="difficulty-muscle">
             <div className="skill-difficulty">
               <Link to="/Terminology" className="link-text">
-                Skill Difficulty: C
+                Skill Difficulty: B
               </Link>
               <br />
-              <p>Targeted Muscles: Shoulders, Arms, Chest, Core</p>
+              <p>Targeted Muscles: Shoulders, Tricep, Chest, Core</p>
               <p>High Strain Areas: Wrists</p>
             </div>
             <div className="overview-explanation">
-              The Assisted Handstand is the last regression before the
-              freestanding handstand. When performing this exercise on the
-              floor, consider warming up your wrists, especially if you're a
-              complete beginner.
+              The Handstand Pushup is a vertical pressing movement that combines
+              the balance of the handstand and the strength of pike push-ups. When performing this exercise on the
+              floor, consider warming up your wrists, or use low paralletes.
             </div>
           </div>
 
           <div className="exercise-instructions-container">
-            Step-by-Step ~ Assisted Handstand
+            Step-by-Step ~ Handstand Pushup
             <div className="exercise-instructions">
               <input id="skill-read-more" type="checkbox" />
 
               <div className="skill-instructions">
                 <ul>
-                  <li>Find a wall you can handstand next to.</li>
                   <li>
-                    Place your hands one foot away from the wall, shoulder width
-                    apart. Fingers should be pointing towards the wall.
+                    In an open space, kick or press up into a handstand.
                   </li>
                   <li>
-                    Stack your elbows, shoulders, chest, hips, knees and feet,
-                    in a straight line against the wall.
+                    Bring your head and shoulders forward, bending at your shoulders like a planche.
                   </li>
                   <li>
-                    Push your shoulders and hands into the ground, it should
-                    feel like you are reaching as far as your can upward.
+                    Lower yourself by bending your elbows, and moving your
+                    head in front of your hands, until you are in the Bent Arm Stand.
+                  </li>
+                  <li>Keep your body as straight as possible.</li>
+                  <li>
+                    Press back up, straightening your body into a handstand.
                   </li>
                   <li>
-                    Using the wall as support, practice using your fingers to
-                    push yourself away from the wall and balancing.
-                  </li>
-                  <li>
-                    To use this exercise effectively, perform these holds as
-                    long as possible to practice balancing using your fingers
-                    and hands.
+                    To use this exercise effectively, perform these at a
+                    diffculty where you can do 4-8 reps for strength, or 8-12
+                    for hypertrophy/volume.
                   </li>
                 </ul>
 
@@ -76,28 +72,31 @@ export function AssistedHS() {
           </div>
 
           <div className="recommended-info">
-            <p>Recommended Main Exercises: Crow Pose, Crane Pose</p>
-            <p>Recommended Accessory Exercises: Pike Push-up</p>
+            <p>
+              Recommended Main Exercises: Assisted HSPU, Bent Arm Stand, Elevated Pike
+              Push-ups, Handstand
+            </p>
+            <p>Recommended Accessory Exercises: Pike Push-ups, Dips</p>
           </div>
         </div>
       </div>
       {svgDivider.get("1")}
       <ProgressionChart
         name1="Pike Push-up"
-        name2="Crow Pose"
-        name3="Assisted HS"
-        name4="Handstand"
-        name5="HSPU"
+        name2="Assisted HSPU"
+        name3="HSPU"
+        name4="Deep HSPU"
+        name5="90 Degree PU"
         link1="/tutorials/pikepu"
-        link2="/tutorials/crowpose"
-        link3="/tutorials/assistedhs"
-        link4="/tutorials/handstand"
-        link5="/tutorials/hspu"
+        link2="/tutorials/bas"
+        link3="/tutorials/assistedhspu"
+        link4="/tutorials/hspu"
+        link5="#"
         svg1="pike-pu"
-        svg2="crow-pose"
-        svg3="assisted-hs"
-        svg4="handstand"
-        svg5="hspu"
+        svg2="assisted-hspu"
+        svg3="hspu"
+        svg4="deep-hspu"
+        svg5=""
       />
       <TutorialReturn />
       {svgDivider.get("2")}
@@ -108,32 +107,31 @@ export function AssistedHS() {
             <div>
               Good Form Cues:
               <ul>
-                <li>Whole body is engaged</li>
+                <li>Elbows are relatively close to the body</li>
+                <li>Head is close to or touching the floor</li>
+                <li>Head is in front of hands</li>
+                <li>Body is straight and engaged</li>
+                <li>Elbows make a ~90 degree angle in the bottom position</li>
                 <li>Hands facing forward or slightly outward</li>
-                <li>Hands are placed shoulder-width apart</li>
-                <li>Body is stacked in a straight line</li>
-                <li>Pushing upward with shoulders and hands, feeling tall</li>
-                <li>Using fingers and heel of hand to balance</li>
-                <li>
-                  Try gripping the ground with bent fingers, to get better
-                  activation and finger balancing strength
-                </li>
+                <li>Hands are (usually) placed shoulder-width apart</li>
+                <li>Legs are straight</li>
               </ul>
             </div>
             <div>
               Bad Form Cues:
               <ul>
-                <li>Unaligned body</li>
-                <li>Body is not engaged</li>
-                <li>Bent arms</li>
-                <li>Not using fingers and heel of hand to balance</li>
+                <li>Flared elbows</li>
+                <li>Sagging hips</li>
+                <li>Weak/arched core</li>
+                <li>Arched/bent body</li>
+                <li>Elbows not fully bent</li>
               </ul>
             </div>
           </div>
         </div>
       </div>
       {svgDivider.get("3")}
-      <YTTutorial identifier="assisted-hs" />
+      <YTTutorial identifier="hspu" />
       <Footer />
     </>
   );

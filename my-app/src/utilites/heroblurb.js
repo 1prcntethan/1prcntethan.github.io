@@ -69,6 +69,10 @@ export const heroBlurb = new Map([
     "assisted-hspu",
     "The Assisted HSPU is the last step before the full HSPU. It builds essential shoulder strength, muscle coordination and activation for the full HSPU."
   ],
+  [
+    "hspu",
+    "The Handstand Push-up is a shoulder focused pushing exercise that builds strength in the shoulders, triceps, and core. It is a common and attainable goal in calisthenics."
+  ],
 
 
 

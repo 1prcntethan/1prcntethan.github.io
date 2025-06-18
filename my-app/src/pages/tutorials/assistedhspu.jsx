@@ -60,7 +60,7 @@ export function AssistedHSPU() {
                     Once you have the strength, you should be able to chain and
                     combine a negative and a press, or a press and a negative.
                   </li>
-                  <li>Play around with being on and off the wall. Eventually, this will result in a HSPU.</li>
+                  <li>Play around with being on and off the wall, and chest vs back to the wall. Eventually, this will result in a HSPU.</li>
                   <li>
                     To use this exercise effectively, perform these at a
                     diffculty where you can do 4-8 reps for strength, or 8-12

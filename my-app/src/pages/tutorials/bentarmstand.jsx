@@ -100,7 +100,7 @@ export function BentArmStand() {
         link2="/tutorials/elevatedpikepu"
         link3="/tutorials/bas"
         link4="/tutorials/assistedhspu"
-        link5="#"
+        link5="/tutorials/hspu"
         svg1="pike-pu"
         svg2="elevated-pike-pu"
         svg3="bas"

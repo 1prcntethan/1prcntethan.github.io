@@ -111,7 +111,7 @@ export function PikePU() {
         link2="/tutorials/dip"
         link3="/tutorials/pikepu"
         link4="/tutorials/crowpose"
-        link5="#"
+        link5="/tutorials/hspu"
         svg1="push-up"
         svg2="dip"
         svg3="pike-pu"
