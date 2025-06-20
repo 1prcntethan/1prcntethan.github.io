@@ -20,7 +20,7 @@ export function PlancheLean() {
           <div className="difficulty-muscle">
             <div className="skill-difficulty">
               <Link to="/Terminology" className="link-text">
-                Skill Difficulty: D
+                Skill Difficulty: C
               </Link>
               <br />
               <p>Targeted Muscles: Anterior Deltoids, Upper Chest, Core</p>

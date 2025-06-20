@@ -43,7 +43,7 @@ export function ProgOverload() {
           your legs carry less load, and your arms support more of your body
           weight. Doing pushups in this position results in{" "}
           <Link to="/tutorials/pseudopu" className="guide-external-link">
-            pseudo Planche Push-ups
+            Pseudo Planche Push-ups
           </Link>
           .
         </div>

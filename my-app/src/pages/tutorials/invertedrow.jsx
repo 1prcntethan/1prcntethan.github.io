@@ -101,7 +101,7 @@ export function InvertedRow() {
         svg2="assisted-inv-row"
         svg3="inverted-row"
         svg4="assist-pullup"
-        svg5="hspu"
+        svg5="full-fl"
       />
       <TutorialReturn />
       {svgDivider.get("2")}

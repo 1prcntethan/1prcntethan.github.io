@@ -29,7 +29,7 @@ export function PushRmp() {
             push-up
           </Link>, and that’s also where we start your
           calisthenics push journey. When you’re a beginner, you should be
-          building basic push strength, and this can be done by maxing out all
+          building <strong>basic push strength</strong>, and this can be done by maxing out all
           the push-up variations. Incline, Decline, Diamond, Wide, Close, etc.
           Aim to be comfortable to rep out 15 of any of these, and you’ll
           already have a super strong base for push skills. Most of these
@@ -60,7 +60,7 @@ export function PushRmp() {
           planche strength, you’ll also start using both <Link to="/tutorials/planchelean" className="guide-external-link">
             Dynamic/Static Planche
           </Link> Leans. During this time, focus on keeping your elbows locked out for
-          straight arm skills, and keeping scapular protraction and depression
+          straight arm skills, and keeping <strong>scapular protraction and depression </strong>
           when working with planche related skills.
         </div>
       </div>
@@ -75,12 +75,12 @@ export function PushRmp() {
           </Link> and <Link to="/tutorials/pseudopu" className="guide-external-link">
             Pseudo PL Push-ups
           </Link>, you
-          will start developing that solid base of shoulder strength required
+          will start developing that <strong>solid base</strong> of shoulder strength required
           for harder skills. Once you unlock the <Link to="/tutorials/handstand" className="guide-external-link">
             Handstand
           </Link>, you have now passed
           the prerequisite for the HSPU. During the first part of this phase,
-          you should be primarily training for the HSPU. Why? The HSPU builds
+          you should be <strong>primarily training for the HSPU</strong>. Why? The HSPU builds
           essential shoulder strength and coordination, which will allow for
           easier planche training in the future. Plus, the HSPU is such a cool
           skill, there’s no reason to skip it. However, don’t neglect straight
@@ -135,22 +135,22 @@ export function PushRmp() {
         <div className="guide-heading">advanced push</div>
         <div className="guide-text">
           Your planche training should be extremely straightforward. Your
-          primary exercise should be the hardest, most specific planche
-          variation you can hold for meaningful amounts of time. This means <Link to="/tutorials/advtuckpl" className="guide-external-link">
+          primary exercise should be the <strong>hardest</strong>, <strong>most specific</strong> planche
+          variation you can hold for <strong>meaningful</strong> amounts of time. This means <Link to="/tutorials/advtuckpl" className="guide-external-link">
             Adv. Tuck PL
           </Link>, or maybe <Link to="/tutorials/straddlepl" className="guide-external-link">
             Straddle PL
-          </Link>. Next, maintain intensity, and switch to
+          </Link>. Next, <strong>maintain intensity</strong>, and switch to
           banded holds, or dynamic raises. Throw in some volume work like HSPU,
           and accessory work to end sessions, and you’ll have built a solid
           routine for training planche. The gains will slowly but surely come.
         </div>
         <div className="guide-text">
           Planche is an incredibly complex skill, and it’s important to
-          understand the basic activation required for it. This means thinking
+          understand the basic <strong>activations</strong> required for it. This means thinking
           about shoulder protraction/depression, lower back activation, keeping
           tight glutes and PPT. All of these things can be practiced through
-          accessory exercises, like planche leans, back extensions, and hollow
+          <strong> accessory exercises</strong>, like planche leans, back extensions, and hollow
           body holds. Overall, this will contribute to a more aesthetic and
           satisfying planche in the future. As you slowly build planche
           strength, you’ll progress through the Straddle PL, Halflay PL, and

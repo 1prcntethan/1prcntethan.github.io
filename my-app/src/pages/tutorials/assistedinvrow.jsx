@@ -94,7 +94,7 @@ export function AssistedInvRow() {
         svg2="NA"
         svg3="assisted-inv-row"
         svg4="inverted-row"
-        svg5="hspu"
+        svg5="full-fl"
       />
       <TutorialReturn />
       {svgDivider.get("2")}

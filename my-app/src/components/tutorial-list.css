@@ -160,7 +160,7 @@
     flex-direction: column;
     width: 40%;
     padding: 0 2%;
-    @media screen and (max-width: 768px) {
+    @media (max-width: 768px) {
         width: auto;
         padding: 0 5%;
         align-items: center;
@@ -175,6 +175,12 @@
     padding: 10px;
     border: 1px #b1afaf solid;
     border-radius: 0px;
+    @media (max-width: 768px) {
+        width: auto;
+        border: none;
+        line-height: 1.5;
+        
+    }
 }
 .skill-content--link:hover {
     
@@ -222,8 +228,8 @@
     font-size: 28px;
 
     @media (max-width: 768px) {
-        font-size: 22px;
-        
+        font-size: 20px;
+        text-align: center;
     }
 }
 
