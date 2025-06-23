@@ -67,6 +67,7 @@ export const creatorGuides = new Map([
       "https://www.youtube.com/embed/ZayL0dse094",
     ],
   ],
+  ["adv-tuck-pl-pu", ["https://www.youtube.com/embed/6dEBUv-OJIg"]],
 
   [
     "pike-pu",
@@ -78,112 +79,141 @@ export const creatorGuides = new Map([
   ],
   [
     "crow-pose",
-    ["https://www.youtube.com/embed/kdB-UJg3s-Q", "https://www.youtube.com/embed/ysTXf7DVOf0"]
+    [
+      "https://www.youtube.com/embed/kdB-UJg3s-Q",
+      "https://www.youtube.com/embed/ysTXf7DVOf0",
+    ],
   ],
-  [
-    "assisted-hs",
-    ["https://www.youtube.com/embed/xMFRkQpXVoI"]
-  ],
+  ["assisted-hs", ["https://www.youtube.com/embed/xMFRkQpXVoI"]],
   [
     "handstand",
-    ["https://www.youtube.com/embed/_gntsmIZvbI", "https://www.youtube.com/embed/aXDxa79u0xQ", "https://www.youtube.com/embed/2H2yLngOZdg"]
+    [
+      "https://www.youtube.com/embed/_gntsmIZvbI",
+      "https://www.youtube.com/embed/aXDxa79u0xQ",
+      "https://www.youtube.com/embed/2H2yLngOZdg",
+    ],
   ],
   [
     "elevated-pike-pu",
-    ["https://www.youtube.com/embed/5IcgscNCId8", "https://www.youtube.com/embed/8URA3YSur2M"]
+    [
+      "https://www.youtube.com/embed/5IcgscNCId8",
+      "https://www.youtube.com/embed/8URA3YSur2M",
+    ],
   ],
   [
     "bas",
-    ["https://www.youtube.com/embed/y67yQ6qa0qQ", "https://www.youtube.com/embed/D3ZWTQww7Yk"]
+    [
+      "https://www.youtube.com/embed/y67yQ6qa0qQ",
+      "https://www.youtube.com/embed/D3ZWTQww7Yk",
+    ],
   ],
-  [
-    "assisted-hspu",
-    ["https://www.youtube.com/embed/6MdyYIRS7FY"],
-  ],
+  ["assisted-hspu", ["https://www.youtube.com/embed/6MdyYIRS7FY"]],
   [
     "hspu",
-    ["https://www.youtube.com/embed/RcrIYne-Yrg","https://www.youtube.com/embed/H65sLbCNCTY","https://www.youtube.com/embed/7wSZnHQZChI"]
+    [
+      "https://www.youtube.com/embed/RcrIYne-Yrg",
+      "https://www.youtube.com/embed/H65sLbCNCTY",
+      "https://www.youtube.com/embed/7wSZnHQZChI",
+    ],
   ],
 
-  [
-    "assisted-inv-row",
-    ["https://www.youtube.com/embed/1F0yf-v_Qng"]
-  ],
+  ["assisted-inv-row", ["https://www.youtube.com/embed/1F0yf-v_Qng"]],
   [
     "inverted-row",
-    ["https://www.youtube.com/embed/5W8F6MzZ8Rk", "https://www.youtube.com/embed/2Synad5Yo-g"]
+    [
+      "https://www.youtube.com/embed/5W8F6MzZ8Rk",
+      "https://www.youtube.com/embed/2Synad5Yo-g",
+    ],
   ],
   [
     "tuck-fl",
-    ["https://www.youtube.com/embed/lkGhntOoLNk", "https://www.youtube.com/embed/BwhZYpIdhro"]
+    [
+      "https://www.youtube.com/embed/lkGhntOoLNk",
+      "https://www.youtube.com/embed/BwhZYpIdhro",
+    ],
   ],
-  [
-    "tuck-fl-row",
-    ["https://www.youtube.com/embed/o1hChkroodA"]
-  ],
-  [
-    "pike-fl",
-    ["https://www.youtube.com/embed/YVKsrcjyuYY"]
-  ],
+  ["tuck-fl-row", ["https://www.youtube.com/embed/o1hChkroodA"]],
+  ["pike-fl", ["https://www.youtube.com/embed/YVKsrcjyuYY"]],
   [
     "pike-fl-row",
-    ["https://www.youtube.com/embed/5OYql7-JNwk", "https://www.youtube.com/embed/jWm9I0M-3f0"]
+    [
+      "https://www.youtube.com/embed/5OYql7-JNwk",
+      "https://www.youtube.com/embed/jWm9I0M-3f0",
+    ],
   ],
-  [
-    "adv-tuck-fl", 
-    ["https://www.youtube.com/embed/D-dOt8Ey5Ig"]
-  ],
-  [
-    "super-adv-tuck-fl",
-    ["URL", "URL", "URL"],
-  ],
+  ["adv-tuck-fl", ["https://www.youtube.com/embed/D-dOt8Ey5Ig"]],
+  ["super-adv-tuck-fl", ["URL", "URL", "URL"]],
   [
     "adv-tuck-fl-row",
-    ["https://www.youtube.com/embed/4DZPaCOfJOI", "https://www.youtube.com/embed/9wd-EzPkwPY"],
+    [
+      "https://www.youtube.com/embed/4DZPaCOfJOI",
+      "https://www.youtube.com/embed/9wd-EzPkwPY",
+    ],
   ],
   [
     "straddle-fl",
-    ["https://www.youtube.com/embed/yUc5Lxe80c8", "https://www.youtube.com/embed/1I5K5wnuIaM", "https://www.youtube.com/embed/FHdu3mTP0Vs"]
+    [
+      "https://www.youtube.com/embed/yUc5Lxe80c8",
+      "https://www.youtube.com/embed/1I5K5wnuIaM",
+      "https://www.youtube.com/embed/FHdu3mTP0Vs",
+    ],
   ],
-  [
-    "straddle-fl-row",
-    ["URL", "URL", "URL"],
-  ],
-  [
-    "half-lay-fl",
-    ["https://www.youtube.com/embed/JdWhaZlb2rw"]
-  ],
+  ["straddle-fl-row", ["URL", "URL", "URL"]],
+  ["half-lay-fl", ["https://www.youtube.com/embed/JdWhaZlb2rw"]],
   [
     "full-fl",
-    ["https://www.youtube.com/embed/AGhb8V8M758", "https://www.youtube.com/embed/sDz16P6gdkk", "https://www.youtube.com/embed/HEpf42Z_Dck", "https://www.youtube.com/embed/dsIkuWgzoBs", "https://www.youtube.com/embed/abT3pEtoBh4", "https://www.youtube.com/embed/eC5JKwac4jc"]
+    [
+      "https://www.youtube.com/embed/AGhb8V8M758",
+      "https://www.youtube.com/embed/sDz16P6gdkk",
+      "https://www.youtube.com/embed/HEpf42Z_Dck",
+      "https://www.youtube.com/embed/dsIkuWgzoBs",
+      "https://www.youtube.com/embed/abT3pEtoBh4",
+      "https://www.youtube.com/embed/eC5JKwac4jc",
+    ],
   ],
 
   [
     "deadhang",
-    ["https://www.youtube.com/embed/3i2kPN5w3Eg", "https://www.youtube.com/embed/PlAE67ovNEo"]
+    [
+      "https://www.youtube.com/embed/3i2kPN5w3Eg",
+      "https://www.youtube.com/embed/PlAE67ovNEo",
+    ],
   ],
   [
     "activehang",
-    ["https://www.youtube.com/embed/rwCW8Q-odQY", "https://www.youtube.com/embed/GwMTIwfOPQE"]
+    [
+      "https://www.youtube.com/embed/rwCW8Q-odQY",
+      "https://www.youtube.com/embed/GwMTIwfOPQE",
+    ],
   ],
-  [
-    "assist-pullup",
-    ["https://www.youtube.com/embed/ZHllQTJf7eA"]
-  ],
+  ["assist-pullup", ["https://www.youtube.com/embed/ZHllQTJf7eA"]],
   [
     "pull-up",
-    ["https://www.youtube.com/embed/aNUSgyWRJYA", "https://www.youtube.com/embed/tB3X4TjTIes", "https://www.youtube.com/embed/MA2yaxzOgyg"]
+    [
+      "https://www.youtube.com/embed/aNUSgyWRJYA",
+      "https://www.youtube.com/embed/tB3X4TjTIes",
+      "https://www.youtube.com/embed/MA2yaxzOgyg",
+    ],
   ],
   [
     "chest-pull-up",
-    ["https://www.youtube.com/embed/SmduaQzt8Jk", "https://www.youtube.com/embed/zLDKemkGuzg"]
+    [
+      "https://www.youtube.com/embed/SmduaQzt8Jk",
+      "https://www.youtube.com/embed/zLDKemkGuzg",
+    ],
   ],
   [
     "waist-pull-up",
-    ["https://www.youtube.com/embed/s85LNjqQknM", "https://www.youtube.com/embed/WDs7DUwMk7g"]
+    [
+      "https://www.youtube.com/embed/s85LNjqQknM",
+      "https://www.youtube.com/embed/WDs7DUwMk7g",
+    ],
   ],
   [
     "muscle-up",
-    ["https://www.youtube.com/embed/w016kSjobr8", "https://www.youtube.com/embed/KGGWP695Zx4"]
+    [
+      "https://www.youtube.com/embed/w016kSjobr8",
+      "https://www.youtube.com/embed/KGGWP695Zx4",
+    ],
   ],
 ]);

@@ -8,7 +8,7 @@ export const skillLinks = new Map([
     ["Tuck Planche", "/tutorials/tuckpl"],
     ["Tuck Planche PU", "/tutorials/tuckplpu"],
     ["Adv. Tuck Planche", "/tutorials/advtuckpl"],
-    ["Adv. Tuck Planche PU", "adv. tuck planche pu"],
+    ["Adv. Tuck Planche PU", "/tutorials/advtuckplpu"],
     ["90 Degree Hold", "90 degree hold"],
     ["Back Lever", "back lever"],
     ["Super Adv. Tuck Planche", "super adv. tuck planche"],

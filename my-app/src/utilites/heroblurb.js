@@ -37,6 +37,10 @@ export const heroBlurb = new Map([
     "adv-tuck-pl",
     "The Advanced Tuck Planche is a planche regression and next step towards building straight arm pushing strength in harder progressions."
   ],
+  [
+    "adv-tuck-pl-pu",
+    "The Advanced Tuck Planche Pushup is a bent and straight arm planche exercise that builds shoulder strength for harder planche and planche pushup progressions."
+  ],
 
 
 
