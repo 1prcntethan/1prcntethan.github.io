@@ -5,15 +5,16 @@ import "./skillpage.css";
 import { Link } from "react-router-dom";
 import { svgDivider } from "../../utilites/svg-divider";
 import TutorialReturn from "../../components/tutorialreturn";
+import YTTutorial from "../../components/yttutorials";
 import Footer from "../../components/footer";
 
-export function SuperAdvTuckFL() {
+export function SuperAdvTuckPL() {
   return (
     <>
       <Navbar />
       <SkillHero
-        title="super adv. tuck front lever"
-        identifier="super-adv-tuck-fl"
+        title="super adv. tuck planche"
+        identifier="super-adv-tuck-pl"
       />
       {svgDivider.get("0")}
       <div className="skill-info-container">
@@ -26,38 +27,42 @@ export function SuperAdvTuckFL() {
               </Link>
               <br />
               <p>
-                Targeted Muscles: Lats, Rear Deltoids, Triceps, Scapula, Core
+                Targeted Muscles: Anterior Deltoids, Upper Chest, Scapula, Core
               </p>
-              <p>High Strain Areas: N/A </p>
+              <p>High Strain Areas: Wrists, Bicep Tendon, Shoulders</p>
             </div>
             <div className="overview-explanation">
-              The Super Advanced Tuck Front Lever is the next regression
-              exercise after the Adv. Tuck FL used to prepare the body for the
-              last few front lever progressions. The lats/back is the main
-              muscle used in this exercise. Scapula retraction should be kept in
-              mind in order to achieve a neutral scapula position.
+              The Super Advanced Tuck Planche is the next progression after the
+              Adv. Tuck Planche. The anterior deltoid is the main muscle used in
+              this exercise. Protraction and depression should still be
+              emphasized, as well lower back position.
             </div>
           </div>
 
           <div className="exercise-instructions-container">
-            Step-by-Step ~ Super Advanced Tuck Front Lever
+            Step-by-Step ~ Super Advanced Tuck Planche
             <div className="exercise-instructions">
               <input id="skill-read-more" type="checkbox" />
 
               <div className="skill-instructions">
                 <ul>
-                  <li>Start in a Advanced Tuck FL position.</li>
+                  <li>Start by entering an Advanced Tuck Planche position.</li>
                   <li>
-                    Unfold your hips even more, so that your knees point out at
-                    a 45 degree angle.{" "}
+                    As you lift off, maintain straight arms and
+                    protraction/depression while leaning forward.
                   </li>
-                  <li>Your feet should be pointing downward. </li>
-                  <li>Maintain straight arms and a neutral scapula.</li>
-                  <li>Lastly, try to flatten your back.</li>
+                  <li>From this position, imagine pulling your feet to your butt more, moving your legs past the 90 degree angle with your hip.</li>
+                  <li>
+                    Your knees should point toward the ground, with your feet pointing upward or slightly back.
+                  </li>
+                  <li>
+                    Keep your scapula protracted and depressed, and your
+                    back/spine as neutral and flat as possible.
+                  </li>
                   <li>
                     To use this exercise effectively, perform holds at a
                     difficulty where you can hold them for at least 6-8 seconds,
-                    counting each hold as a set.
+                    counting each hold as a rep.
                   </li>
                 </ul>
 
@@ -72,33 +77,28 @@ export function SuperAdvTuckFL() {
           </div>
 
           <div className="recommended-info">
-            <p>
-              Recommended Main Exercises: Advanced Tuck FL, Pike FL, Pull-up
-            </p>
-            <p>
-              Recommended Accessory Exercises: Scapular Pullups, Active Hang,
-              Deadhang
-            </p>
+            <p>Recommended Main Exercises: Adv. Tuck Planche, Tuck Planche, Planche Lean</p>
+            <p>Recommended Accessory Exercises: Scapular Pushups, Dips</p>
           </div>
         </div>
       </div>
       {svgDivider.get("1")}
       <ProgressionChart
-        name1="Inverted Row"
-        name2="Adv. Tuck FL"
-        name3="Super Adv. Tuck FL"
-        name4="Straddle FL"
-        name5="Full Front Lever"
-        link1="/tutorials/invertedrow"
-        link2="/tutorials/advtuckfl"
-        link3="/tutorials/superadvtuckfl"
-        link4="/tutorials/straddlefl"
-        link5="/tutorials/fullfl"
-        svg1="inverted-row"
-        svg2="adv-tuck-fl"
-        svg3="super-adv-tuck-fl"
-        svg4="straddle-fl"
-        svg5="full-fl"
+        name1="Push-up"
+        name2="Adv. Tuck Planche"
+        name3="Super Adv. Tuck PL"
+        name4="Straddle Planche"
+        name5="Full Planche"
+        link1="/tutorials/pushup"
+        link2="/tutorials/advtuckpl"
+        link3="/tutorials/superadvtuckpl"
+        link4="/tutorials/straddlepl"
+        link5="/tutorials/incomplete"
+        svg1="push-up"
+        svg2="adv-tuck-pl"
+        svg3="super-adv-tuck-pl"
+        svg4="straddle-pl"
+        svg5="full-pl"
       />
       <TutorialReturn />
       {svgDivider.get("2")}
@@ -110,21 +110,29 @@ export function SuperAdvTuckFL() {
               Good Form Cues:
               <ul>
                 <li>Straight arms & locked elbows</li>
-                <li>Feet pointing down, knees bent</li>
-                <li>Knees point 45 degress out</li>
-                <li>Neutral scapula</li>
-                <li>Back is flat and parallel to the ground</li>
+                <li>Scapula is protracted and depressed</li>
+                <li>
+                  Hands turned at a 45 degree angle and elbows facing forward
+                </li>
                 <li>Hands are placed shoulder-width apart</li>
-                <li>Hips are level with shoulders</li>
+                <li>Lower back is mostly flat, no excessive arching</li>
+                <li>Hips are at the same height as shoulders</li>
+                <li>
+                  Feet pointing up, knees are pointing directly at
+                  the ground
+                </li>
               </ul>
             </div>
             <div>
               Bad Form Cues:
               <ul>
                 <li>Bent arms</li>
-                <li>Weak/protracted scapula</li>
-                <li>High/low hips</li>
+                <li>Weak/retracted scapula</li>
+                <li>Hands facing forward</li>
                 <li>Hands are placed too far/close together</li>
+                <li>High or low hips</li>
+                <li>Arched back</li>
+                <li>Knees still tucked too close</li>
               </ul>
             </div>
           </div>

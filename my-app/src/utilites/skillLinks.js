@@ -11,7 +11,7 @@ export const skillLinks = new Map([
     ["Adv. Tuck Planche PU", "/tutorials/advtuckplpu"],
     ["90 Degree Hold", "90 degree hold"],
     ["Back Lever", "back lever"],
-    ["Super Adv. Tuck Planche", "super adv. tuck planche"],
+    ["Super Adv. Tuck PL", "/tutorials/superadvtuckpl"],
     ["Straddle Planche", "straddle planche"],
     ["Straddle Planche PU", "straddle planche pu"],
     ["Half Lay Planche", "half lay planche"],
@@ -80,11 +80,11 @@ export const skillLinks = new Map([
     ["Split Squat", "split squat"],
     ["Assisted Pistol Squat", "assisted pistol squat"],
     ["Bulgarian Split Squat", "bulgarian split squat"],
-    ["Assisted Shrimp Squat", "assisted shrimp squat"],
+    ["Reverse Nordic Curl", "reverse nordic curl"],
+    ["Nordic Curl", "nordic curl"],
     ["Sissy Squat", "sissy squat"],
     ["Pistol Squat", "pistol squat"],
     ["Shrimp Squat", "shrimp squat"],
-    ["Dragon Squat", "dragon squat"],
     ["Dragon Pistol Squat", "dragon pistol squat"],
   
     //LEG SKILLS ^^^

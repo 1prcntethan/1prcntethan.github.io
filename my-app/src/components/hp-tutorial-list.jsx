@@ -26,7 +26,7 @@ export default function TutorialListHP() {
     [
       "90 Degree Hold",
       "Back Lever",
-      "Super Adv. Tuck Planche",
+      "Super Adv. Tuck PL",
       "Straddle Planche",
       "Straddle Planche PU",
     ],
@@ -39,7 +39,7 @@ export default function TutorialListHP() {
     ],
   ];
 
-  const incompleteList = ["90 Degree Hold", "Back Lever", "Super Adv. Tuck Planche", "Straddle Planche", "Straddle Planche PU", "Half Lay Planche", "Full Planche", "Full Planche PU", "One Arm Planche", "Maltese"];
+  const incompleteList = ["90 Degree Hold", "Back Lever", "Straddle Planche", "Straddle Planche PU", "Half Lay Planche", "Full Planche", "Full Planche PU", "One Arm Planche", "Maltese"];
 
   const handleRowClick = (index, buttonTitle) => {
     // if (activeRow === index) {

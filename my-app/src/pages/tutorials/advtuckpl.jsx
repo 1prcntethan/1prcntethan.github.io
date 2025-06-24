@@ -113,12 +113,12 @@ export function AdvTuckPL() {
         link1="/tutorials/pushup"
         link2="/tutorials/tuckpl"
         link3="/tutorials/advtuckpl"
-        link4="#"
+        link4="/tutorials/superadvtuckpl"
         link5="/tutorials/incomplete"
         svg1="push-up"
         svg2="tuck-pl"
         svg3="adv-tuck-pl"
-        svg4="#"
+        svg4="super-adv-tuck-pl"
         svg5="full-pl"
       />
       <TutorialReturn />
@@ -138,10 +138,10 @@ export function AdvTuckPL() {
                 </li>
                 <li>Hands are placed shoulder-width apart</li>
                 <li>Lower back is mostly flat, no excessive arching</li>
-                <li>Hips are at the same height as shoulders.</li>
+                <li>Hips are at the same height as shoulders</li>
                 <li>
                   Feet are tucked close to butt, knees are pointing directly at
-                  the ground.
+                  the ground
                 </li>
                 <li>Knees are directly under hips</li>
               </ul>

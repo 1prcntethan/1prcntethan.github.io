@@ -85,7 +85,7 @@ export function AdvTuckPLPU() {
         name1="Push-up"
         name2="Adv. Tuck Planche"
         name3="Adv. Tuck Planche PU"
-        name4="Super Adv. Tuck Planche"
+        name4="Super Adv. Tuck PL"
         name5="Full Planche"
         link1="/tutorials/pushup"
         link2="/tutorials/advtuckpl"

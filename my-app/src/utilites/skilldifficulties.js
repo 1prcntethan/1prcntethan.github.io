@@ -11,7 +11,7 @@ export const skillDiff = new Map([
   ["Adv. Tuck Planche PU", "B"],
   ["90 Degree Hold", "B"],
   ["Back Lever", "A"],
-  ["Super Adv. Tuck Planche", "A"],
+  ["Super Adv. Tuck PL", "A"],
   ["Straddle Planche", "A"],
   ["Straddle Planche PU", "A"],
   ["Half Lay Planche", "A"],
@@ -81,11 +81,11 @@ export const skillDiff = new Map([
   ["Split Squat", "F"],
   ["Assisted Pistol Squat", "D"],
   ["Bulgarian Split Squat", "D"],
-  ["Assisted Shrimp Squat", "C"],
+  ["Reverse Nordic Curl", "C"],
+  ["Nordic Curl", "C"],
   ["Sissy Squat", "C"],
   ["Pistol Squat", "C"],
   ["Shrimp Squat", "B"],
-  ["Dragon Squat", "B"],
   ["Dragon Pistol Squat", "B"],
 
   //LEG SKILLS ^^^

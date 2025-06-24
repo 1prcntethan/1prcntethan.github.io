@@ -17,11 +17,11 @@ export default function TutorialListL() {
     // const [img, setImg] = useState(img.get(2))
 
     const rowButtons= [
-        ["Bodyweight Squat", "Split Squat", "Assisted Pistol Squat", "Bulgarian Split Squat", "Assisted Shrimp Squat"],
-        ["Sissy Squat", "Pistol Squat", "Shrimp Squat", "Dragon Squat", "Dragon Pistol Squat"],
+        ["Bodyweight Squat", "Split Squat", "Assisted Pistol Squat", "Bulgarian Split Squat", "Reverse Nordic Curl"],
+        ["Nordic Curl", "Sissy Squat", "Pistol Squat", "Shrimp Squat", "Dragon Pistol Squat"],
     ];
 
-    const incompleteList = ["Bodyweight Squat", "Split Squat", "Assisted Pistol Squat", "Bulgarian Split Squat", "Assisted Shrimp Squat", "Sissy Squat", "Pistol Squat", "Shrimp Squat", "Dragon Squat", "Dragon Pistol Squat"];
+    const incompleteList = ["Bodyweight Squat", "Split Squat", "Assisted Pistol Squat", "Bulgarian Split Squat", "Reverse Nordic Curl", "Nordic Curl", "Sissy Squat", "Pistol Squat", "Shrimp Squat", "Dragon Pistol Squat"];
 
 
     const handleRowClick = (index, buttonTitle) => {

@@ -53,6 +53,7 @@ import { Disclaimer } from './pages/disclaimer';
 import { ProgOverload } from './pages/guides/progoverload';
 import { PushRmp } from './pages/guides/pushroadmap';
 import { AdvTuckPLPU } from './pages/tutorials/advtuckplpu';
+import { SuperAdvTuckPL } from './pages/tutorials/superadvtuckpl';
 
 
 function App() {
@@ -85,6 +86,7 @@ function App() {
         <Route path="/tutorials/tuckplpu" element={<TuckPLPU/>}/>
         <Route path="/tutorials/advtuckpl" element={<AdvTuckPL/>}/>
         <Route path="/tutorials/advtuckplpu" element={<AdvTuckPLPU/>}/>
+        <Route path="/tutorials/superadvtuckpl" element={<SuperAdvTuckPL/>}/>
 
 
         <Route path="/tutorials/pikepu" element={<PikePU/>}/>

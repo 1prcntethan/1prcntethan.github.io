@@ -11,7 +11,7 @@ export const skillTime = new Map([
   ["Adv. Tuck Planche PU", "9-15 months"],
   ["90 Degree Hold", "12-15 months"],
   ["Back Lever", "15-18 months"],
-  ["Super Adv. Tuck Planche", "1-2 years"],
+  ["Super Adv. Tuck PL", "1-2 years"],
   ["Straddle Planche", "1-3 years"],
   ["Straddle Planche PU", "2-3 years"],
   ["Half Lay Planche", "2-4 years"],
@@ -82,11 +82,11 @@ export const skillTime = new Map([
   ["Split Squat", "1-2 weeks"],
   ["Assisted Pistol Squat", "1-4 months"],
   ["Bulgarian Split Squat", "1-4 months"],
-  ["Assisted Shrimp Squat", "2-6 months"],
+  ["Reverse Nordic Curl", "2-6 months"],
+  ["Nordic Curl", "3-6 months"],
   ["Sissy Squat", "4-8 months"],
   ["Pistol Squat", "6-12 months"],
   ["Shrimp Squat", "6-12 months"],
-  ["Dragon Squat", "9-12 months"],
   ["Dragon Pistol Squat", "9-15 months"],
 
   //LEG SKILLS ^^^
