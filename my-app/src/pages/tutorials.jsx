@@ -8,6 +8,7 @@ import TutorialListVPL from "../components/vpl-tutorial-list";
 import TutorialListL from "../components/legs-tutorial-list";
 import Footer from "../components/footer";
 import BetaDisclaimer from "../components/betadisclaimer";
+import TutorialListCM from "../components/coremisc-tutorial-list";
 
 export function Tutorials() {
   return (
@@ -39,6 +40,10 @@ export function Tutorials() {
       <LineDivider />
       <br />
       <TutorialListL />
+      <br />
+      <LineDivider />
+      <br />
+      <TutorialListCM />
       <br />
       <br />
       <br />
