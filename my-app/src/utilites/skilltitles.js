@@ -89,4 +89,17 @@ export const skillTitle = new Map([
   ["Dragon Pistol Squat", "dragon pistol squat"],
 
   //LEG SKILLS ^^^
+
+  ["Sit-up", "sit-up"],
+  ["Hollow Body Hold", "hollow body hold"], 
+  ["Dragon Flag", "dragon flag"],
+  ["L-sit Compression", "l-sit compression"],
+  ["L-sit", "l-sit"],
+  ["V-sit", "v-sit"],
+  ["I-sit", "i-sit"],
+  ["Manna", "manna"],
+  ["Human Flag", "human flag"],
+  ["Victorian", "victorian"]
+
+  // CORE/MISC SKILLS ^^^
 ]);

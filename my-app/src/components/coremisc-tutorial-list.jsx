@@ -17,11 +17,11 @@ export default function TutorialListCM() {
     // const [img, setImg] = useState(img.get(2))
 
     const rowButtons= [
-        ["Sit-up", "Hollow Body Hold","Dragon Flag", "L-sit Compressions", "L-sit"],
-        ["V-sit", "I-sit", "Manna", "Pistol Squat", "Dragon Pistol Squat"],
+        ["Sit-up", "Hollow Body Hold","Dragon Flag", "L-sit Compression", "L-sit"],
+        ["V-sit", "I-sit", "Manna", "Human Flag", "Victorian"],
     ];
 
-    const incompleteList = ["Sit-up", "Hollow Body Hold", "L-sit Compressions", "L-sit", "V-sit", "I-sit", "Manna", "Pistol Squat", "Shrimp Squat", "Dragon Pistol Squat"];
+    const incompleteList = ["Sit-up", "Hollow Body Hold", "Dragon Flag", "L-sit Compression", "L-sit", "V-sit", "I-sit", "Manna", "Human Flag", "Victorian"];
 
 
     const handleRowClick = (index, buttonTitle) => {

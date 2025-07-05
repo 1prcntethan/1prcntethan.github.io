@@ -89,4 +89,15 @@ export const skillDiff = new Map([
   ["Dragon Pistol Squat", "B"],
 
   //LEG SKILLS ^^^
+
+  ["Sit-up", "F"],
+  ["Hollow Body Hold", "F"],
+  ["Dragon Flag", "D"],
+  ["L-sit Compression", "D"],
+  ["L-sit", "D"],
+  ["V-sit", "B"],
+  ["I-sit", "B"],
+  ["Manna", "A"],
+  ["Human Flag", "B"],
+  ["Victorian", "S"],
 ]);

@@ -90,4 +90,15 @@ export const skillTime = new Map([
   ["Dragon Pistol Squat", "9-15 months"],
 
   //LEG SKILLS ^^^
+
+  ["Sit-up", "1-2 weeks"],
+  ["Hollow Body Hold", "1-2 weeks"],
+  ["Dragon Flag", "1-4 months"],
+  ["L-sit Compression", "2-4 weeks"],
+  ["L-sit", "1-2 months"],
+  ["V-sit", "2-6 months"],
+  ["I-sit", "6-15 months"],
+  ["Manna", "1-2 years"],
+  ["Human Flag", "6-12 months"],
+  ["Victorian", "1-3 years"]
 ]);
