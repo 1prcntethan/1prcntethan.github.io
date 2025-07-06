@@ -52,6 +52,7 @@ import { About } from './pages/about';
 import { Disclaimer } from './pages/disclaimer';
 import { ProgOverload } from './pages/guides/progoverload';
 import { PushRmp } from './pages/guides/pushroadmap';
+import { HandstandGuide } from './pages/guides/handstandguide';
 import { AdvTuckPLPU } from './pages/tutorials/advtuckplpu';
 import { SuperAdvTuckPL } from './pages/tutorials/superadvtuckpl';
 
@@ -75,6 +76,7 @@ function App() {
         <Route path="/training/beginnerguide" element={<BeginnerGuide/>}/>
         <Route path="/training/progoverload" element={<ProgOverload/>}/>
         <Route path="/training/pushrmp" element={<PushRmp/>}/>
+        <Route path="/training/handstandguide" element={<HandstandGuide/>}/>
 
         <Route path="/tutorials/pushup" element={<Pushup/>}/>
         <Route path="/tutorials/assistedpu" element={<AssistPu/>}/>

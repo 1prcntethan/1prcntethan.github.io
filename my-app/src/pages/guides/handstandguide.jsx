@@ -11,152 +11,196 @@ export function HandstandGuide() {
       <div className="guide-hero">
         <div className="guide-hero--title">handstand guide</div>
         <div className="guide-hero--blurb">
-          Welcome to the push roadmap from WINGS. This guide will cover the
-          optimal path for learning push skills, what you’ll train, and how
-          you’ll build all the way up to the full planche.
+          Welcome to the handstand guide from WINGS. This guide will be a
+          comprehensive guide on the path to the freestanding handstand.
         </div>
       </div>
 
       <LineDivider />
 
       <div className="guide-container">
-        <div className="guide-heading">beginner push</div>
+        <div className="guide-heading">introduction</div>
 
         <div className="guide-text">
-          Pushing skills in calisthenics are the most common exercise, and
-          you’ve probably done them ever since you were born. The most basic of
-          these is the standard <Link to="/tutorials/pushup" className="guide-external-link">
-            push-up
-          </Link>, and that’s also where we start your
-          calisthenics push journey. When you’re a beginner, you should be
-          building <strong>basic push strength</strong>, and this can be done by maxing out all
-          the push-up variations. Incline, Decline, Diamond, Wide, Close, etc.
-          Aim to be comfortable to rep out 15 of any of these, and you’ll
-          already have a super strong base for push skills. Most of these
-          push-ups target the chest, triceps, and shoulders. Once you hit a
-          certain level, you’ll also build the strength to start training <Link to="/tutorials/dip" className="guide-external-link">
-            dips
-          </Link>.
+          The handstand is a balance focused skill that involves supporting your
+          entire body weight on your hands. On this site, it’s rated C, for high
+          beginner, and takes around 2-3 months to learn, given daily training.
+          The handstand is a super iconic skill which transfers to many other
+          advanced skills, and most importantly, unlocks a prerequisite for the
+          HSPU, a shoulder building skill. By learning handstand, you learn
+          balance, mobility, and body coordination.
         </div>
-
-        <div className="guide-text">
-          As you become more confident in your push training, you can move on to
-          upper level beginner push skills. This means <Link to="/tutorials/pikepu" className="guide-external-link">
-            Pike Push-ups
-          </Link>, <Link to="/tutorials/planchelean" className="guide-external-link">
-            Planche Leans
-          </Link>, and <Link to="/tutorials/pseudopu" className="guide-external-link">
-            pseudo Planche Push-ups
-          </Link>. For this phase, these three
-          exercises will be your bread and butter. As you begin to experiment with
-          static exercises, you’ll start with the <Link to="/tutorials/crowpose" className="guide-external-link">
-            Crow Pose
-          </Link> and <Link to="/tutorials/assistedhs" className="guide-external-link">
-            Assisted Handstands
-          </Link>,
-          building up the strength and balance to hold a <Link to="/tutorials/handstand" className="guide-external-link">
-            Handstand
-          </Link>. To build
-          planche strength, you’ll also start using both <Link to="/tutorials/planchelean" className="guide-external-link">
-            Dynamic/Static Planche
-          </Link> Leans. During this time, focus on keeping your elbows locked out for
-          straight arm skills, and keeping <strong>scapular protraction and depression </strong>
-          when working with planche related skills.
-        </div>
+        <img
+          src="hsForm.png"
+          alt="handstand form"
+          className="square-guide-image"
+        />
+        <img src="aleyuhsig.jpg" alt="aleyuhsig" className="image-sig" />
       </div>
 
       <LineDivider />
 
       <div className="guide-container">
-        <div className="guide-heading">intermediate push</div>
+        <div className="guide-heading">prerequisites</div>
         <div className="guide-text">
-          By working consistently with <Link to="/tutorials/pikepu" className="guide-external-link">
-            Pike Push-ups
-          </Link> and <Link to="/tutorials/pseudopu" className="guide-external-link">
-            Pseudo PL Push-ups
-          </Link>, you
-          will start developing that <strong>solid base</strong> of shoulder strength required
-          for harder skills. Once you unlock the <Link to="/tutorials/handstand" className="guide-external-link">
-            Handstand
-          </Link>, you have now passed
-          the prerequisite for the HSPU. During the first part of this phase,
-          you should be <strong>primarily training for the HSPU</strong>. Why? The HSPU builds
-          essential shoulder strength and coordination, which will allow for
-          easier planche training in the future. Plus, the HSPU is such a cool
-          skill, there’s no reason to skip it. However, don’t neglect straight
-          arm strength during this time, make sure to throw in <Link to="/tutorials/handstand" className="guide-external-link">
-            Planche Leans
-          </Link> and
-          <Link to="/tutorials/advtuckpl" className="guide-external-link">
-            Adv. Tuck Planche
-          </Link> from time to time, without focusing on it.
+          The handstand is a balanced focused skill, and in reality doesn’t take
+          much strength. However, for beginners, the weight of your body is
+          usually unfamiliar, and you will need a base strength of being upside
+          down without losing stamina or getting sore.
         </div>
         <div className="guide-text">
-          Can you train and go for planche instead? The short answer is yes. You
-          can train planche progressions, leans, holds etc. and you would see
-          progress. However, training planche requires immense shoulder
-          strength, something you don’t really have with just Pike Push-ups and
-          Pseudo PL Push-ups. Arguably, training HSPU allows you to build the
-          shoulder strength that carries over to planche, without dealing with
-          all the other problems that planche brings.
-          <br />
-          (Disclaimer: this pathway will be different for everyone; some people
-          will have much more success training planche than HSPU)
+          The handstand also tests your shoulder mobility. In the handstand, you
+          have to be able to raise your arms straight up, almost touching your
+          bicep/shoulder to your ears. Without this shoulder mobility, you won’t
+          be able to stack your body properly and hold the signature handstand
+          line.
+        </div>
+        <img
+          src="hsShoulderMobility.png"
+          alt="shoulder mobility"
+          className="square-guide-image"
+        />
+        <img src="aleyuhsig.jpg" alt="aleyuhsig" className="image-sig" />
+
+        <div className="guide-text">
+          Wrist extension is extremely important in the handstand as well. You
+          need to be able to pull your wrists back to just around 90 degrees,
+          and a bit more if you want to be able to hold yourself up. If your
+          wrist extension is poor, consider doing wrist stretching exercises to
+          improve the mobility of your wrist.
+        </div>
+        <img
+          src="hsWristExtension.jpg"
+          alt="wrist extension"
+          className="square-guide-image"
+        />
+        <img src="aleyuhsig.jpg" alt="aleyuhsig" className="image-sig" />
+      </div>
+      <LineDivider />
+      <div className="guide-container">
+        <div className="guide-heading">learning to fall</div>
+        <div className="guide-text">
+          One of the biggest limiting factors for people learning the handstand
+          is the fear of falling, which is completely understandable. As a
+          beginner, the idea of being completely upside down relying only on
+          your hands is extremely daunting. But without overcoming this barrier,
+          you will probably never be able to learn the handstand.
         </div>
         <div className="guide-text">
-          Training HSPU will involve lots of <Link to="/tutorials/pikepu" className="guide-external-link">
-            Pike Push-ups
-          </Link>, <Link to="/tutorials/assistedhspu" className="guide-external-link">
-            CTW HSPU
-          </Link>, <Link to="/tutorials/bas" className="guide-external-link">
-            bent arm stand 
-          </Link>
-          , and practicing the transitions between the HS and the bent arm
-          stand. Eventually, the HSPU will feel closer and closer, until you are
-          comfortable repping at least 3-5 HSPUs.
+          Obviously, the fear is not from falling backward where you can catch
+          yourself with your legs; it's from falling forward. The basic step for
+          bailing from a handstand are as follows:
+          <ul>
+            <li>
+              When you feel yourself falling forward, move one hand in front of
+              you by a couple inches.
+            </li>
+            <li>Twist your body in that direction as you fall.</li>
+            <li>And finally, catch yourself, with either one or two legs.</li>
+          </ul>
+          This fall seems almost too simple, and it is; the main challenge here
+          is getting used to the fall. Try to keep one hand on the ground, the
+          one that didn’t move. Also, choose a side to fall on, so you don’t
+          have to pick which direction to twist in everytime you’re mid fall.
+          Another way to think of the fall is like its the end of the cartwheel.
         </div>
         <div className="guide-text">
-          Obviously, you want planche in the end. It’s the most coveted skill in
-          the calisthenics world, and for good reason. After your focus on HSPU
-          training, your shoulders should be pretty solid, and you should have
-          earned almost a free Adv. Tuck PL or maybe even <Link to="/tutorials/straddlepl" className="guide-external-link">
-            Straddle PL
-          </Link>. You may
-          not have fully mastered HSPU, but you don’t need to master it to start
-          planche now. Ideally, you pick to focus efforts on the HSPU or planche
-          training here. If you choose to continue and finish the HSPU, it comes
-          down to shoulder strength, attempts, and finding your HSPU groove.
-          However, it’s at this point where most people choose to focus on
-          planche training.
+          To practice falling, start with using a wall, in a chest-to-wall
+          handstand. It doesn’t have to be a completely straight handstand, you
+          can be at a 60 degree angle if you wanted to. Choose a progression
+          that feels right for you. From this chest-to-wall handstand, simply
+          walk a hand forward, and drop the legs on the side where your hand
+          moved forward. As you get better, you can make your chest-to-wall
+          handstand more and more vertical, and soon, you’ll have the skill to
+          bail out of a real handstand. Finally, test that! Kick up into a
+          freestanding handstand with the intention to fall forward, and try to
+          bail. Only do this when you’re truly ready though; it's easy to injure
+          your wrist or hand, or hit something if you fall wrongly.
         </div>
       </div>
       <LineDivider />
       <div className="guide-container">
-        <div className="guide-heading">advanced push</div>
+        <div className="guide-heading">handstand technique</div>
         <div className="guide-text">
-          Your planche training should be extremely straightforward. Your
-          primary exercise should be the <strong>hardest</strong>, <strong>most specific</strong> planche
-          variation you can hold for <strong>meaningful</strong> amounts of time. This means <Link to="/tutorials/advtuckpl" className="guide-external-link">
-            Adv. Tuck PL
-          </Link>, or maybe <Link to="/tutorials/straddlepl" className="guide-external-link">
-            Straddle PL
-          </Link>. Next, <strong>maintain intensity</strong>, and switch to
-          banded holds, or dynamic raises. Throw in some volume work like HSPU,
-          and accessory work to end sessions, and you’ll have built a solid
-          routine for training planche. The gains will slowly but surely come.
+          When practicing your handstand off and on the wall, aim to include
+          these following form cues.
+          <ul>
+            <li>Straight arms and legs</li>
+            <li>Stacked body (wrists, shoulders, hips, knees, feet)</li>
+            <li>Elevation (push into the floor, feel tall)</li>
+            <li>Look between your hands</li>
+            <li>Keep your whole body engaged (arms, abs, glutes)</li>
+            <li>Pointed toes (for aesthetics)</li>
+          </ul>
+          Record yourself doing handstands to understand what your form
+          currently looks like, and know if you need to fix anything.
+        </div>
+      </div>
+      <LineDivider />
+      <div className="guide-container">
+        <div className="guide-heading">training the handstand</div>
+        <div className="guide-text">
+          The first thing to know about training the handstand is that because
+          it doesn’t require much muscular strength, you can train it pretty
+          frequently, without getting fatigued or having to exert much effort.
+          This is why you can aim to train the handstand everyday, if you want
+          maximum progress.
         </div>
         <div className="guide-text">
-          Planche is an incredibly complex skill, and it’s important to
-          understand the basic <strong>activations</strong> required for it. This means thinking
-          about shoulder protraction/depression, lower back activation, keeping
-          tight glutes and PPT. All of these things can be practiced through
-          <strong> accessory exercises</strong>, like planche leans, back extensions, and hollow
-          body holds. Overall, this will contribute to a more aesthetic and
-          satisfying planche in the future. As you slowly build planche
-          strength, you’ll progress through the Straddle PL, Halflay PL, and
-          finally, Full Planche. From here, you can do anything! Experiment with
-          finger planche, finger HSPU, or try harder skills like Maltese and
-          Dragon Planche. The sky’s the limit.
+          To begin training, find a wall you can kick up to, and do wall
+          handstands with your back to the wall. At first, don’t worry too much
+          about balancing, the most important part at this stage is to get used
+          to the feeling of being upside down, and getting used to your
+          bodyweight and the wrist position of the handstand. Also, focus on
+          keeping your body completely straight and in line, and all the other
+          form cues of the handstand.
+        </div>
+        <div className="guide-text">
+          Once you’re used to the general handstand movement, you can start
+          working on balance. In order to balance, you have to keep your center
+          of mass directly above your hands. To do this, you will be using your
+          fingers and the heel of your hands. Similar to standing on two feet,
+          your fingers should press into the ground when you feel yourself fall
+          forward, and you should feel the heel of your palm press into the
+          ground when you feel yourself falling back. However, if you stack your
+          weight straight onto the heel of your palm, you’d have no control if
+          you fell backward, which is why it's better to be leaning a bit
+          forward and constantly pushing back with your fingers.
+        </div>
+        <div className="guide-text">
+          To practice this, start your normal back to wall handstand, but with
+          your hands just less than a foot away from the wall. Kick up and rest
+          your feet on the wall. Then, try to push into the ground with your
+          fingers, and balance so that your feet come off the wall. You can also
+          practice balancing the opposite way, with your chest to the wall, but
+          you have to know how to bail. Starting in a chest-to-wall handstand,
+          with your fingers less than half a foot away from the wall, press the
+          heel of your palm into the ground and try to find that sweet spot
+          where you’re using your fingers to stop yourself from falling forward.
+        </div>
+        <div className="guide-text">
+          After a while, you will feel more and more accommodated to the
+          handstand movement. It can take a week to multiple months to learn the
+          handstand, depending on training amount, experience, and fitness.
+          However, with enough practice and dedication, the handstand is a
+          realistic and easily achievable skill for anyone.
+        </div>
+      </div>
+      <LineDivider />
+      <div className="guide-container">
+        <div className="guide-heading">handstand wrap-up</div>
+        <div className="guide-text">
+          The handstand is an extremely flexible exercise, and once you learn
+          the balance, feel free to experiment with it. You can make shapes with
+          your legs, arch your back, balance in a pike position, and much more.
+          From here, you can also start learning the handstand push-up, another
+          staple calisthenics skill. If you really want a challenge, you can try
+          learning the one arm handstand. Be warned though, the OAHS truly is a
+          whole different beast.
+        </div>
+        <div className="guide-text">
+          Hopefully this guide was helpful in your handstand journey! Best of
+          luck!
         </div>
       </div>
       <Footer />

@@ -109,6 +109,31 @@
         }
     }
 }
+.square-guide-image {
+    display: flex;
+    width: 35%;
+    align-self: center;
+    height: auto;
+    margin: 1rem 0 10px 0;
+
+
+    @media (max-width: 768px) {
+
+        width: 75%;
+
+    }
+}
+
+.image-sig {
+    display: flex;
+    width: 10%;
+    align-self: center;
+    height: auto;
+
+    @media (max-width: 768px) {
+        width: 50%;
+    }
+}
 
 .guide-external-link {
     margin: 0 6px;

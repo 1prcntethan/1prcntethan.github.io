@@ -155,7 +155,7 @@ export function Training() {
           <div className="training-header">Skill Guides</div>
           <div className="training-column">
             <div className="item">
-              <Link to="/tutorials/incomplete" className="guide-link">
+              <Link to="/training/handstandguide" className="guide-link">
                 <button className="guide-button">
                   handstand guide
                 </button>
