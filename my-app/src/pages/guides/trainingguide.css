@@ -135,6 +135,22 @@
     }
 }
 
+.guide-caption {
+    display: flex;
+    font-family: Fira Sans;
+    font-size: 18px;
+    font-weight: 200;
+    align-self: center;
+    text-align: center;
+    margin-top: 10px;
+    color: rgb(161, 161, 161);
+
+    @media (max-width: 768px) {
+        font-size: 16px;
+        padding: 0 20px;
+    }
+}
+
 .guide-external-link {
     margin: 0 6px;
     text-decoration: none;

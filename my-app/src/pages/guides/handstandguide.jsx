@@ -35,7 +35,6 @@ export function HandstandGuide() {
           alt="handstand form"
           className="square-guide-image"
         />
-        <img src="aleyuhsig.jpg" alt="aleyuhsig" className="image-sig" />
       </div>
 
       <LineDivider />
@@ -60,7 +59,8 @@ export function HandstandGuide() {
           alt="shoulder mobility"
           className="square-guide-image"
         />
-        <img src="aleyuhsig.jpg" alt="aleyuhsig" className="image-sig" />
+        <div className="guide-caption">Try this stretch to practice shoulder mobility!</div>
+
 
         <div className="guide-text">
           Wrist extension is extremely important in the handstand as well. You
@@ -74,7 +74,7 @@ export function HandstandGuide() {
           alt="wrist extension"
           className="square-guide-image"
         />
-        <img src="aleyuhsig.jpg" alt="aleyuhsig" className="image-sig" />
+        <div className="guide-caption">Aim for 90 degrees of wrist extension.</div>
       </div>
       <LineDivider />
       <div className="guide-container">

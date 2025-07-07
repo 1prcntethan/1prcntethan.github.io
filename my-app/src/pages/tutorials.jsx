@@ -10,10 +10,12 @@ import Footer from "../components/footer";
 import BetaDisclaimer from "../components/betadisclaimer";
 import TutorialListCM from "../components/coremisc-tutorial-list";
 import Select from 'react-select';
-import { skillTitle } from "../utilites/skilltitles";
+import { Link } from "react-router-dom";
+
+
 
 const options = [{value: "assisted push-up", label: "assisted push-up"},
-  {value: "dip", label: "dip"},
+  {value: "dip", label: <Link to="/tutorials/dip">dip</Link>},
   {value: "elbow lever", label: "elbow lever"},
   {value: "planche lean", label: "planche lean"},
   {value: "pseudo push-up", label: "pseudo push-up"},
@@ -125,7 +127,6 @@ const selectStyles = {
     borderRadius: '8px',
     boxShadow: 'none',
     color: 'white',
-    baseColor: 'black',
   }),
   option: (provided, state) => ({
     ...provided,
@@ -137,6 +138,12 @@ const selectStyles = {
     fontFamily: 'Fira Sans',
     fontWeight: '200'
 
+  }),
+  singleValue: (provided) => ({
+    ...provided,
+    color: 'white',
+    fontFamily: 'Fira Sans',
+    fontWeight: '200'
   }),
 };
 
