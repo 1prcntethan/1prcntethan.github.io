@@ -234,3 +234,14 @@
 .technique-form-content > div > ul > li{
     margin-top: 10px;
 }
+
+.link-to-guide {
+    text-decoration: none;
+    color: #992c94;
+}
+
+.link-to-guide:hover{
+    text-decoration: none;
+    color: #df15d5;
+    transition: 0.2s ease-in-out;
+}

@@ -5,6 +5,7 @@
     font-family: Fira Sans;
     font-weight: 200;
     font-size: 24px;
+    text-align: center;
 
     @media (max-width: 768px) {
         font-size: 18px;

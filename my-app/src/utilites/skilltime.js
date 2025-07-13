@@ -101,4 +101,6 @@ export const skillTime = new Map([
   ["Manna", "1-2 years"],
   ["Human Flag", "6-12 months"],
   ["Victorian", "1-3 years"]
+
+  //CORE/MISC SKILLS ^^^
 ]);

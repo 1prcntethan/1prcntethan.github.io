@@ -31,7 +31,7 @@ export function Handstand() {
               much more skill and technique than strength. The exercise has many
               variations, shapes, and can be done very creatively. There are
               many factors to really mastering this skill, so please check out
-              the handstand guide for more in-depth information.
+              the <Link to="/training/handstandguide" className="link-to-guide">handstand guide</Link> for more in-depth information.
             </div>
           </div>
 

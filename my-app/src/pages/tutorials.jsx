@@ -9,145 +9,247 @@ import TutorialListL from "../components/legs-tutorial-list";
 import Footer from "../components/footer";
 import BetaDisclaimer from "../components/betadisclaimer";
 import TutorialListCM from "../components/coremisc-tutorial-list";
-import Select from 'react-select';
-import { Link } from "react-router-dom";
+import Select from "react-select";
+import { useNavigate } from "react-router-dom";
+import { skillLinks } from "../utilites/skillLinks";
 
-
-
-const options = [{value: "assisted push-up", label: "assisted push-up"},
-  {value: "dip", label: <Link to="/tutorials/dip">dip</Link>},
-  {value: "elbow lever", label: "elbow lever"},
-  {value: "planche lean", label: "planche lean"},
-  {value: "pseudo push-up", label: "pseudo push-up"},
-  {value: "tuck planche", label: "tuck planche"},
-  {value: "tuck planche pu", label: "tuck planche pu"},
-  {value: "adv. tuck planche", label: "adv. tuck planche"},
-  {value: "adv. tuck planche pu", label: "adv. tuck planche pu"},
-  {value: "90 degree hold", label: "90 degree hold"},
-  {value: "back lever", label: "back lever"},
-  {value: "super adv. tuck pl", label: "super adv. tuck pl"},
-  {value: "straddle planche", label: "straddle planche"},
-  {value: "straddle planche pu", label: "straddle planche pu"},
-  {value: "half lay planche", label: "half lay planche"},
-  {value: "full planche", label: "full planche"},
-  {value: "full planche pu", label: "full planche pu"},
-  {value: "one arm planche", label: "one arm planche"},
-  {value: "maltese", label: "maltese"},
+const options = [
+  { value: "Assisted Push-up", label: "Assisted Push-up" },
+  { value: "Dip", label: "Dip" },
+  { value: "Elbow Lever", label: "Elbow Lever" },
+  { value: "Planche Lean", label: "Planche Lean" },
+  { value: "Pseudo Push-up", label: "Pseudo Push-up" },
+  { value: "Tuck Planche", label: "Tuck Planche" },
+  { value: "Tuck Planche PU", label: "Tuck Planche PU" },
+  { value: "Adv. Tuck Planche", label: "Adv. Tuck Planche" },
+  { value: "Adv. Tuck Planche PU", label: "Adv. Tuck Planche PU" },
+  { value: "90 Degree Hold", label: "90 Degree Hold" },
+  { value: "Back Lever", label: "Back Lever" },
+  { value: "Super Adv. Tuck Planche", label: "Super Adv. Tuck Planche" },
+  { value: "Straddle Planche", label: "Straddle Planche" },
+  { value: "Straddle Planche PU", label: "Straddle Planche PU" },
+  { value: "Half Lay Planche", label: "Half Lay Planche" },
+  { value: "Full Planche", label: "Full Planche" },
+  { value: "Full Planche PU", label: "Full Planche PU" },
+  { value: "One Arm Planche", label: "One Arm Planche" },
+  { value: "Maltese", label: "Maltese" },
 
   //HORIZONTAL PUSH SKILLS ^^^
 
-  {value: "pike push-up", label: "pike push-up"},
-  {value: "crow pose", label: "crow pose"},
-  {value: "assisted handstand", label: "assisted handstand"},
-  {value: "handstand", label: "handstand"},
-  {value: "elevated pike pu", label: "elevated pike pu"},
-  {value: "bent arm press to hs", label: "bent arm press to hs"},
-  {value: "straight arm press to hs", label: "straight arm press to hs"},
-  {value: "bent arm stand", label: "bent arm stand"},
-  {value: "assisted hspu", label: "assisted hspu"},
-  {value: "hspu", label: "hspu"},
-  {value: "deep hspu", label: "deep hspu"},
-  {value: "90 degree pu", label: "90 degree pu"},
-  {value: "assisted oahs", label: "assisted oahs"},
-  {value: "oahs", label: "oahs"},
-  {value: "oa flag", label: "oa flag"},
-
+  { value: "Pike Push-up", label: "Pike Push-up" },
+  { value: "Crow Pose", label: "Crow Pose" },
+  { value: "Assisted Handstand", label: "Assisted Handstand" },
+  { value: "Handstand", label: "Handstand" },
+  { value: "Elevated Pike PU", label: "Elevated Pike PU" },
+  { value: "Bent Arm Press to HS", label: "Bent Arm Press to HS" },
+  { value: "Straight Arm Press to HS", label: "Straight Arm Press to HS" },
+  { value: "Bent Arm Stand", label: "Bent Arm Stand" },
+  { value: "Assisted HSPU", label: "Assisted HSPU" },
+  { value: "HSPU", label: "HSPU" },
+  { value: "Deep HSPU", label: "Deep HSPU" },
+  { value: "90 Degree PU", label: "90 Degree PU" },
+  { value: "Assisted OAHS", label: "Assisted OAHS" },
+  { value: "OAHS", label: "OAHS" },
+  { value: "OA Flag", label: "OA Flag" },
 
   // VERTICAL PUSH SKILLS ^^^
 
-  {value: "assisted inverted row", label: "assisted inverted row"},
-  {value: "inverted row", label: "inverted row"},
-  {value: "tuck fl", label: "tuck fl"},
-  {value: "tuck fl row", label: "tuck fl row"},
-  {value: "pike fl", label: "pike fl"},
-  {value: "pike fl row", label: "pike fl row"},
-  {value: "adv. tuck fl", label: "adv. tuck fl"},
-  {value: "super adv. tuck fl", label: "super adv. tuck fl"},
-  {value: "adv. tuck fl row", label: "adv. tuck fl row"},
-  {value: "straddle fl", label: "straddle fl"},
-  {value: "straddle fl row", label: "straddle fl row"},
-  {value: "half lay fl", label: "half lay fl"},
-  {value: "full front lever", label: "full front lever"},
-  {value: "full fl row", label: "full fl row"},
-  {value: "front lever touch", label: "front lever touch"},
+  { value: "Assisted Inverted Row", label: "Assisted Inverted Row" },
+  { value: "Inverted Row", label: "Inverted Row" },
+  { value: "Tuck Front Lever", label: "Tuck Front Lever" },
+  { value: "Tuck Front Lever Row", label: "Tuck Front Lever Row" },
+  { value: "Pike Front Lever", label: "Pike Front Lever" },
+  { value: "Pike Front Lever Row", label: "Pike Front Lever Row" },
+  { value: "Adv. Tuck Front Lever", label: "Adv. Tuck Front Lever" },
+  {
+    value: "Super Adv. Tuck Front Lever",
+    label: "Super Adv. Tuck Front Lever",
+  },
+  { value: "Adv. Tuck Front Lever Row", label: "Adv. Tuck Front Lever Row" },
+  { value: "Straddle Front Lever", label: "Straddle Front Lever" },
+  { value: "Straddle Front Lever Row", label: "Straddle Front Lever Row" },
+  { value: "Half Lay Front Lever", label: "Half Lay Front Lever" },
+  { value: "Full Front Lever", label: "Full Front Lever" },
+  { value: "Full FL Row", label: "Full FL Row" },
+  { value: "Front Lever Touch", label: "Front Lever Touch" },
 
   // HORIZONTAL PULL SKILLS^^^
 
-  {value: "deadhang", label: "deadhang"},
-  {value: "active hang", label: "active hang"},
-  {value: "assisted pull-up", label: "assisted pull-up"},
-  {value: "pull-up", label: "pull-up"},
-  {value: "scapula pull-up", label: "scapula pull-up"},
-  {value: "chest pull-up", label: "chest pull-up"},
-  {value: "waist pull-up", label: "waist pull-up"},
-  {value: "muscle-up", label: "muscle-up"},
-  {value: "archer pull-up", label: "archer pull-up"},
-  {value: "assisted oac", label: "assisted oac"},
-  {value: "assisted oap", label: "assisted oap"},
-  {value: "oac/oap", label: "oac/oap"},
-  {value: "weighted pull-ups", label: "weighted pull-ups"},
-  {value: "butterfly", label: "butterfly"},
-
+  { value: "Dead Hang", label: "Dead Hang" },
+  { value: "Active Hang", label: "Active Hang" },
+  { value: "Assisted Pull-up", label: "Assisted Pull-up" },
+  { value: "Pull-up", label: "Pull-up" },
+  { value: "Scapula Pull-up", label: "Scapula Pull-up" },
+  { value: "Chest Pull-up", label: "Chest Pull-up" },
+  { value: "Waist Pull-up", label: "Waist Pull-up" },
+  { value: "Muscle-up", label: "Muscle-up" },
+  { value: "Archer Pull-up", label: "Archer Pull-up" },
+  { value: "Assisted OAC", label: "Assisted OAC" },
+  { value: "Assisted OAP", label: "Assisted OAP" },
+  { value: "OAC/OAP", label: "OAC/OAP" },
+  { value: "Weighted Pull-ups", label: "Weighted Pull-ups" },
+  { value: "Butterfly", label: "Butterfly" },
 
   //VERTICAL PULL SKILLS ^^
 
-  {value: "bodyweight squat", label: "bodyweight squat"},
-  {value: "split squat", label: "split squat"},
-  {value: "assisted pistol squat", label: "assisted pistol squat"},
-  {value: "bulgarian split squat", label: "bulgarian split squat"},
-  {value: "reverse nordic curl", label: "reverse nordic curl"},
-  {value: "nordic curl", label: "nordic curl"},
-  {value: "sissy squat", label: "sissy squat"},
-  {value: "pistol squat", label: "pistol squat"},
-  {value: "shrimp squat", label: "shrimp squat"},
-  {value: "dragon pistol squat", label: "dragon pistol squat"},
+  { value: "Bodyweight Squat", label: "Bodyweight Squat" },
+  { value: "Split Squat", label: "Split Squat" },
+  { value: "Assisted Pistol Squat", label: "Assisted Pistol Squat" },
+  { value: "Bulgarian Split Squat", label: "Bulgarian Split Squat" },
+  { value: "Reverse Nordic Curl", label: "Reverse Nordic Curl" },
+  { value: "Nordic Curl", label: "Nordic Curl" },
+  { value: "Sissy Squat", label: "Sissy Squat" },
+  { value: "Pistol Squat", label: "Pistol Squat" },
+  { value: "Shrimp Squat", label: "Shrimp Squat" },
+  { value: "Dragon Pistol Squat", label: "Dragon Pistol Squat" },
 
   //LEG SKILLS ^^^
 
-  {value: "sit-up", label: "sit-up"},
-  {value: "hollow body hold", label: "hollow body hold"},
-  {value: "dragon flag", label: "dragon flag"},
-  {value: "l-sit compression", label: "l-sit compression"},
-  {value: "l-sit", label: "l-sit"},
-  {value: "v-sit", label: "v-sit"},
-  {value: "i-sit", label: "i-sit"},
-  {value: "manna", label: "manna"},
-  {value: "human flag", label: "human flag"},
-  {value: "victorian", label: "victorian"}
+  { value: "Sit-up", label: "Sit-up" },
+  { value: "Hollow Body Hold", label: "Hollow Body Hold" },
+  { value: "Dragon Flag", label: "Dragon Flag" },
+  { value: "L-sit Compression", label: "L-sit Compression" },
+  { value: "L-sit", label: "L-sit" },
+  { value: "V-sit", label: "V-sit" },
+  { value: "I-sit", label: "I-sit" },
+  { value: "Manna", label: "Manna" },
+  { value: "Human Flag", label: "Human Flag" },
+  { value: "Victorian", label: "Victorian" },
 ];
 
 const selectStyles = {
-  control: (provided) => ({
+  control: (provided, state) => ({
     ...provided,
-    width: '100%',
-    fontFamily: 'Fira Sans',
-    margin: '0 auto',
-    backgroundColor: '#333333',
-    border: '1px solid #ccc',
-    borderRadius: '8px',
-    boxShadow: 'none',
-    color: 'white',
+    width: "100%",
+    fontFamily: "Fira Sans",
+    margin: "0 auto",
+    backgroundColor: "#333333",
+    border: "1px solid rgb(128, 128, 128)",
+    borderRadius: "8px",
+    boxShadow: "none",
+    color: "white",
+    "&:hover": {
+      border: "1px solid rgb(128, 128, 128)", // override hover border
+    },
+    ...(state.isFocused && {
+      borderColor: "#333333",
+      boxShadow: "none",
+    }),
   }),
   option: (provided, state) => ({
     ...provided,
-    border: '1px solid #ccc',
-    borderRadius: '8px',
-    boxShadow: 'none',
-    backgroundColor: state.isSelected ? 'rgba(71, 0, 80, 0.699)' : '#333333',
-    color: 'white',
-    fontFamily: 'Fira Sans',
-    fontWeight: '200'
-
+    border: "1px solid rgb(128, 128, 128)",
+    borderRadius: "0px",
+    boxShadow: "none",
+    backgroundColor: state.isFocused ? "#641b547a" : "#333333",
+    color: "white",
+    transition: "background-color 0.2s ease",
+    fontFamily: "Fira Sans",
+    fontWeight: "200",
+    cursor: "pointer",
   }),
   singleValue: (provided) => ({
     ...provided,
-    color: 'white',
-    fontFamily: 'Fira Sans',
-    fontWeight: '200'
+    color: "white",
+    fontFamily: "Fira Sans",
+    fontWeight: "200",
+  }),
+  input: (provided) => ({
+    ...provided,
+    color: "white",
+    fontFamily: "Fira Sans",
+    fontWeight: "200",
+  }),
+  menu: (provided) => ({
+    ...provided,
+    backgroundColor: "#333333",
+    border: "0px solid #ccc",
+    borderRadius: "0px",
+    boxShadow: "none",
+  }),
+  menuList: (provided) => ({
+    ...provided,
+    backgroundColor: "#333333",
+    padding: 0,
+  }),
+  noOptionsMessage: (provided) => ({
+    ...provided,
+    fontFamily: "Fira Sans",
+    fontWeight: "200",
+  }),
+  dropdownIndicator: (provided) => ({
+    ...provided,
+    color: "rgb(128, 128, 128)",
+    "&:hover": {
+      color: "rgb(128, 128, 128)",
+    },
+  }),
+  indicatorSeparator: (provided) => ({
+    ...provided,
+    backgroundColor: "rgb(128, 128, 128)",
   }),
 };
 
 export function Tutorials() {
+  const navigate = useNavigate();
+
+  const incompleteSkills = [
+    "90 Degree Hold",
+    "Back Lever",
+    "Straddle Planche",
+    "Straddle Planche PU",
+    "Half Lay Planche",
+    "Full Planche",
+    "Full Planche PU",
+    "One Arm Planche",
+    "Maltese",
+    "Full FL Row",
+    "Front Lever Touch",
+    "Bent Arm Press to HS",
+    "Straight Arm Press to HS",
+    "Deep HSPU",
+    "90 Degree PU",
+    "Assisted OAHS",
+    "OAHS",
+    "OA Flag",
+    "Scapula Pull-up",
+    "Archer Pull-up",
+    "Clean Muscle-Up",
+    "Assisted OAC",
+    "Assisted OAP",
+    "OAC/OAP",
+    "Weighted Pull-ups",
+    "Butterfly",
+    "Bodyweight Squat",
+    "Split Squat",
+    "Assisted Pistol Squat",
+    "Bulgarian Split Squat",
+    "Reverse Nordic Curl",
+    "Nordic Curl",
+    "Sissy Squat",
+    "Pistol Squat",
+    "Shrimp Squat",
+    "Dragon Pistol Squat",
+    "Sit-up",
+    "Hollow Body Hold",
+    "Dragon Flag",
+    "L-sit Compression",
+    "L-sit",
+    "V-sit",
+    "I-sit",
+    "Manna",
+    "Human Flag",
+    "Victorian",
+  ];
+
+  const handleChange = (selectedOption) => {
+    navigate(
+      incompleteSkills.includes(selectedOption.value)
+        ? "/tutorials/incomplete"
+        : skillLinks.get(selectedOption.value)
+    );
+  };
+
   return (
     <>
       <Navbar />
@@ -159,7 +261,14 @@ export function Tutorials() {
         can be found on the skill’s page or by looking at the skill tree.
       </div>
       <div className="tutorial-selector">
-        <Select options={options} styles={selectStyles} />
+        <Select
+          options={options}
+          styles={selectStyles}
+          onChange={handleChange}
+          placeholder="Search a skill..."
+          noOptionsMessage={() => "No matching skills found!"}
+          classNamePrefix="tutorial-select"
+        />
       </div>
       <LineDivider />
       <br />

@@ -1,10 +1,11 @@
 
 
 .tutorial-header {
-    padding: 35px 20% 35px;
+    padding: 40px 20% 20px;
     font-size: 23px;
     font-family: Fira Sans;
     font-weight: 200;
+    text-align:center;
 
     @media (max-width: 768px) {
         padding: 35px 5%;
@@ -37,4 +38,27 @@
     text-align: center;
     padding: 0 10px;
     font-size: 20px;
+}
+
+/* minimal scrollbar inside the dropdown list */
+.tutorial-select__menu-list {
+  overflow-y: auto;
+}
+
+/* Webkit scrollbar (Chrome, Edge, Safari) */
+.tutorial-select__menu-list::-webkit-scrollbar {
+  width: 9px;
+}
+
+.tutorial-select__menu-list::-webkit-scrollbar-track {
+  background: #333333;
+}
+
+.tutorial-select__menu-list::-webkit-scrollbar-thumb {
+  background-color: #555;
+  border-radius: 5px;
+}
+
+.tutorial-select__menu-list::-webkit-scrollbar-thumb:hover {
+  background-color: #777;
 }
