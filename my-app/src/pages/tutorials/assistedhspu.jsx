@@ -63,7 +63,7 @@ export function AssistedHSPU() {
                   <li>Play around with being on and off the wall, and chest vs back to the wall. Eventually, this will result in a HSPU.</li>
                   <li>
                     To use this exercise effectively, perform these at a
-                    diffculty where you can do 4-8 reps for strength, or 8-12
+                    difficulty where you can do 4-8 reps for strength, or 8-12
                     for hypertrophy/volume.
                   </li>
                 </ul>

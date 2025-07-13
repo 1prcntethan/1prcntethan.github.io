@@ -69,8 +69,13 @@ export function AssistPu() {
                   </li>
                   <li>
                     The described exercise is specifically a knee-pushup. To
-                    perform incline pushups, perform the regular Push-up routine with
-                    your hands on an elevated surface.
+                    perform incline pushups, perform the regular Push-up routine
+                    with your hands on an elevated surface.
+                  </li>
+                  <li>
+                    To use this exercise effectively, perform these at a
+                    difficulty where you can do 4-8 reps for strength, or 8-12
+                    for hypertrophy/volume.
                   </li>
                 </ul>
 
@@ -142,7 +147,7 @@ export function AssistPu() {
         </div>
       </div>
       {svgDivider.get("3")}
-      <YTTutorial identifier="assisted-pushup"/>
+      <YTTutorial identifier="assisted-pushup" />
       <Footer />
     </>
   );

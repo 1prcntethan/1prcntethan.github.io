@@ -8,11 +8,11 @@ import TutorialReturn from "../../components/tutorialreturn";
 import YTTutorial from "../../components/yttutorials";
 import Footer from "../../components/footer";
 
-export function TuckPLPU() {
+export function Situp() {
   return (
     <>
       <Navbar />
-      <SkillHero title="tuck planche pushup" identifier="tuck-pl-pu" />
+      <SkillHero title="Sit Up" identifier="situp" />
       {svgDivider.get("0")}
       <div className="skill-info-container">
         <div className="skill-info">
@@ -20,42 +20,42 @@ export function TuckPLPU() {
           <div className="difficulty-muscle">
             <div className="skill-difficulty">
               <Link to="/Terminology" className="link-text">
-                Skill Difficulty: B
+                Skill Difficulty: F
               </Link>
               <br />
-              <p>
-                Targeted Muscles: Anterior Deltoids, Upper Chest, Scapula, Core
-              </p>
-              <p>High Strain Areas: Wrists, Bicep Tendon, Shoulders</p>
+              <p>Targeted Muscles: Core</p>
+              <p>High Strain Areas: N/A</p>
             </div>
             <div className="overview-explanation">
-              The Tuck Planche Pushup is a regression exercise used to increase
-              bent arm and straight arm strength. The anterior deltoid is the
-              main muscle used in this exercise. For beginners, protraction and
-              depression of the scapula should be emphasized.
+              The Sit-up is a base exercise used to build core strength and
+              stability. It is a necessary foundation for advanced core
+              exercises and other exercises that require core strength.
             </div>
           </div>
 
           <div className="exercise-instructions-container">
-            Step-by-Step ~ Tuck Planche Pushup
+            Step-by-Step ~ Sit-up
             <div className="exercise-instructions">
               <input id="skill-read-more" type="checkbox" />
 
               <div className="skill-instructions">
                 <ul>
-                  <li>Start in a tuck planche position.</li>
                   <li>
-                    Ensure your elbows are completely straightened, and that
-                    your scapula is protracted and depressed.{" "}
+                    Lie down on your back with your knees bent and feet flat on
+                    the ground.
+                  </li>
+                  <li>Place your hands behind your head, elbows wide.</li>
+                  <li>
+                    Engage your core and lift your upper body towards your
+                    knees, keeping your feet and butt on the ground.
                   </li>
                   <li>
-                    Gradually lower your body by bending your elbows, while
-                    keeping the tuck planche body position.
+                    Once your body is upright, lower your upper body back down
+                    to the starting position while maintaining control.
                   </li>
                   <li>
-                    Once your elbows are bent around 90 degrees, you can push
-                    back up, straightening your arms and protracting your
-                    scapula.
+                    The exercise can be made easier by crossing your arms over
+                    your chest.
                   </li>
                   <li>
                     To use this exercise effectively, perform these at a
@@ -75,28 +75,28 @@ export function TuckPLPU() {
           </div>
 
           <div className="recommended-info">
-            <p>Recommended Main Exercises: Pseudo Pushup</p>
-            <p>Recommended Accessory Exercises: Scapular Pushups, Dips</p>
+            <p>Recommended Main Exercises: N/A</p>
+            <p>Recommended Accessory Exercises: N/A</p>
           </div>
         </div>
       </div>
       {svgDivider.get("1")}
       <ProgressionChart
-        name1="Push-up"
-        name2="Tuck Planche"
-        name3="Tuck Planche PU"
-        name4="Adv. Tuck Planche"
-        name5="Full Planche"
-        link1="/tutorials/pushup"
-        link2="/tutorials/tuckpl"
-        link3="/tutorials/tuckplpu"
-        link4="/tutorials/advtuckpl"
-        link5="/tutorials/incomplete"
-        svg1="push-up"
-        svg2="tuck-pl"
-        svg3="tuck-pl-pu"
-        svg4="adv-tuck-pl"
-        svg5="full-pl"
+        name1="N/A"
+        name2="N/A"
+        name3="Sit-up"
+        name4="L-sit Compression"
+        name5="L-sit"
+        link1="#"
+        link2="#"
+        link3="/tutorials/situp"
+        link4="/tutorials/lsitcompression"
+        link5="/tutorials/lsit"
+        svg1="NA"
+        svg2="NA"
+        svg3="situp"
+        svg4="l-sit-compression"
+        svg5="l-sit"
       />
       <TutorialReturn />
       {svgDivider.get("2")}
@@ -107,33 +107,23 @@ export function TuckPLPU() {
             <div>
               Good Form Cues:
               <ul>
-                <li>Knees tucked to chest</li>
-                <li>Scapula is protracted and depressed</li>
-                <li>
-                  Hands turned at a 45 degree angle and elbows facing forward
-                </li>
-                <li>Hands are placed shoulder-width apart</li>
-                <li>90 degree elbow bend</li>
-                <li>Core is compressed</li>
-                <li>Elbows are close to body</li>
+                <li>Chin is neutral</li>
+                <li>Core is engaged</li>
+                <li>Feet and butt are on the ground</li>
               </ul>
             </div>
             <div>
               Bad Form Cues:
               <ul>
-                <li>Weak/retracted scapula</li>
-                <li>Hands facing forward</li>
-                <li>Hands are placed too far/close together</li>
-                <li>Incomplete range of motion</li>
-                <li>Flared elbows</li>
-                <li>Weak/unengaged core</li>
+                <li>Arms are pulling on neck/head</li>
+                <li>Feet lifting off the ground</li>
               </ul>
             </div>
           </div>
         </div>
       </div>
       {svgDivider.get("3")}
-      <YTTutorial identifier="tuck-pl-pu" />
+      <YTTutorial identifier="situp" />
       <Footer />
     </>
   );
