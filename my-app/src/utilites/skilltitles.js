@@ -92,9 +92,9 @@ export const skillTitle = new Map([
 
   ["Sit-up", "sit-up"],
   ["Hollow Body Hold", "hollow body hold"], 
-  ["Dragon Flag", "dragon flag"],
   ["L-sit Compression", "l-sit compression"],
   ["L-sit", "l-sit"],
+  ["Dragon Flag", "dragon flag"],
   ["V-sit", "v-sit"],
   ["I-sit", "i-sit"],
   ["Manna", "manna"],

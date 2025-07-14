@@ -92,9 +92,9 @@ export const skillDiff = new Map([
 
   ["Sit-up", "F"],
   ["Hollow Body Hold", "F"],
-  ["Dragon Flag", "D"],
   ["L-sit Compression", "D"],
   ["L-sit", "D"],
+  ["Dragon Flag", "C"],
   ["V-sit", "B"],
   ["I-sit", "B"],
   ["Manna", "A"],

@@ -55,6 +55,8 @@ import { PushRmp } from './pages/guides/pushroadmap';
 import { HandstandGuide } from './pages/guides/handstandguide';
 import { AdvTuckPLPU } from './pages/tutorials/advtuckplpu';
 import { SuperAdvTuckPL } from './pages/tutorials/superadvtuckpl';
+import { Situp } from './pages/tutorials/situp';
+import { HollowBody } from './pages/tutorials/hollowbody';
 
 
 function App() {
@@ -121,6 +123,9 @@ function App() {
         <Route path="/tutorials/chestpullup" element={<ChestPullup/>}/>
         <Route path="/tutorials/waistpullup" element={<WaistPullup/>}/>
         <Route path="/tutorials/muscleup" element={<MuscleUp/>}/>
+
+        <Route path="/tutorials/situp" element={<Situp/>}/>
+        <Route path="/tutorials/hollowbody" element={<HollowBody/>}/>
 
       </Routes>
       </ScrollToTop>

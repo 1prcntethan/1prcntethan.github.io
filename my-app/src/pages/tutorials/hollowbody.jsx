@@ -8,11 +8,11 @@ import TutorialReturn from "../../components/tutorialreturn";
 import YTTutorial from "../../components/yttutorials";
 import Footer from "../../components/footer";
 
-export function Situp() {
+export function HollowBody() {
   return (
     <>
       <Navbar />
-      <SkillHero title="sit up" identifier="situp" />
+      <SkillHero title="hollow body hold" identifier="hollowbody" />
       {svgDivider.get("0")}
       <div className="skill-info-container">
         <div className="skill-info">
@@ -27,40 +27,35 @@ export function Situp() {
               <p>High Strain Areas: N/A</p>
             </div>
             <div className="overview-explanation">
-              The Sit-up is a base exercise used to build core strength and
+              The Hollow Body Hold is a base exercise used to build core strength and
               stability. It is a necessary foundation for advanced core
               exercises and other exercises that require core strength.
             </div>
           </div>
 
           <div className="exercise-instructions-container">
-            Step-by-Step ~ Sit-up
+            Step-by-Step ~ Hollow Body Hold
             <div className="exercise-instructions">
               <input id="skill-read-more" type="checkbox" />
 
               <div className="skill-instructions">
                 <ul>
                   <li>
-                    Lie down on your back with your knees bent and feet flat on
-                    the ground.
+                    Lie down on your back with your legs together and arms extended overhead.
                   </li>
-                  <li>Place your hands behind your head, elbows wide.</li>
+                  <li>Engage your abs, lifting your legs a couple of inches off the ground.</li>
                   <li>
-                    Engage your core and lift your upper body towards your
-                    knees, keeping your feet and butt on the ground.
+                    Lift your head and arms off the ground by a couple of inches.
                   </li>
                   <li>
-                    Once your body is upright, lower your upper body back down
-                    to the starting position while maintaining control.
+                    During the exercise, your lower back should remain pressed against the ground the entire time.
                   </li>
                   <li>
-                    The exercise can be made easier by crossing your arms over
-                    your chest.
+                    The exercise can be made easier by bringing your arms to your chest, or bending your knees.
                   </li>
                   <li>
-                    To use this exercise effectively, perform these at a
-                    difficulty where you can do 4-8 reps for strength, or 8-12
-                    for hypertrophy/volume.
+                    To use this exercise effectively, perform these holds as
+                    long as possible to practice core engagement and stability.
                   </li>
                 </ul>
 
@@ -75,26 +70,26 @@ export function Situp() {
           </div>
 
           <div className="recommended-info">
-            <p>Recommended Main Exercises: N/A</p>
+            <p>Recommended Main Exercises: Sit-up</p>
             <p>Recommended Accessory Exercises: N/A</p>
           </div>
         </div>
       </div>
       {svgDivider.get("1")}
       <ProgressionChart
-        name1="N/A"
+        name1="Sit-up"
         name2="N/A"
-        name3="Sit-up"
+        name3="Hollow Body Hold"
         name4="L-sit Compression"
         name5="L-sit"
-        link1="#"
+        link1="/tutorials/situp"
         link2="#"
-        link3="/tutorials/situp"
+        link3="/tutorials/hollowbody"
         link4="/tutorials/lsitcompression"
         link5="/tutorials/lsit"
-        svg1="NA"
+        svg1="situp"
         svg2="NA"
-        svg3="situp"
+        svg3="hollowbody"
         svg4="l-sit-compression"
         svg5="l-sit"
       />
@@ -107,23 +102,24 @@ export function Situp() {
             <div>
               Good Form Cues:
               <ul>
-                <li>Chin is neutral</li>
+                <li>Body is mostly flat</li>
                 <li>Core is engaged</li>
-                <li>Feet and butt are on the ground</li>
+                <li>Feet, head and arms are off the ground</li>
+                <li>Lower back is pressed against the ground</li>
               </ul>
             </div>
             <div>
               Bad Form Cues:
               <ul>
-                <li>Arms are pulling on neck/head</li>
-                <li>Feet lifting off the ground</li>
+                <li>Arched lower back, back is off the ground</li>
+                <li>Feet touching the ground</li>
               </ul>
             </div>
           </div>
         </div>
       </div>
       {svgDivider.get("3")}
-      <YTTutorial identifier="situp" />
+      <YTTutorial identifier="hollowbody" />
       <Footer />
     </>
   );

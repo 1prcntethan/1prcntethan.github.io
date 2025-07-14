@@ -89,11 +89,11 @@ export const skillLinks = new Map([
   
     //LEG SKILLS ^^^
 
-    ["Sit-up", "sit-up"],
-    ["Hollow Body Hold", "hollow body hold"],
-    ["Dragon Flag", "dragon flag"],
+    ["Sit-up", "/tutorials/situp"],
+    ["Hollow Body Hold", "/tutorials/hollowbody"],
     ["L-sit Compression", "l-sit compression"],
     ["L-sit", "l-sit"],
+    ["Dragon Flag", "dragon flag"],
     ["V-sit", "v-sit"],
     ["I-sit", "i-sit"],
     ["Manna", "manna"],

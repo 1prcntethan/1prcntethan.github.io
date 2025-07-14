@@ -92,10 +92,10 @@ export const skillTime = new Map([
   //LEG SKILLS ^^^
 
   ["Sit-up", "1-2 weeks"],
-  ["Hollow Body Hold", "1-2 weeks"],
-  ["Dragon Flag", "1-4 months"],
+  ["Hollow Body Hold", "1-4 weeks"],
   ["L-sit Compression", "2-4 weeks"],
   ["L-sit", "1-2 months"],
+  ["Dragon Flag", "1-5 months"],
   ["V-sit", "2-6 months"],
   ["I-sit", "6-15 months"],
   ["Manna", "1-2 years"],

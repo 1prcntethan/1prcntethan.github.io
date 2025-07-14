@@ -165,6 +165,15 @@ export const heroBlurb = new Map([
   [
     "muscle-up",
     "The Muscle-up is an impressive pulling and pushing exercise that combines the pull-up and the dip. It's a realistic calisthenics goal and is one of the easiest but most impressive skills to obtain."
+  ],
+
+  [
+    "situp",
+    "The Sit-up is a basic core exercise that builds strength in the abdominal muscles. It is a common exercise for beginners to build core strength."
+  ],
+  [
+    "hollowbody",
+    "The Hollow Body Hold is a fundamental core exercise that builds strength and stability in the abdominal muscles. It trains the core to resist arching and is a especially useful in front lever."
   ]
   
 ]);

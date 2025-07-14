@@ -216,4 +216,16 @@ export const creatorGuides = new Map([
       "https://www.youtube.com/embed/KGGWP695Zx4",
     ],
   ],
+  [
+    "situp",
+    [
+      "https://www.youtube.com/embed/UMaZGY6CbC4",
+    ],
+  ],
+  [
+    "hollowbody",
+    [
+      "https://www.youtube.com/embed/uZqTUwq96iU",
+    ]
+  ]
 ]);
