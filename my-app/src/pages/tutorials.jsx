@@ -230,7 +230,6 @@ export function Tutorials() {
     "Pistol Squat",
     "Shrimp Squat",
     "Dragon Pistol Squat",
-    "Dragon Flag",
     "V-sit",
     "I-sit",
     "Manna",

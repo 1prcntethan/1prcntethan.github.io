@@ -241,5 +241,13 @@ export const creatorGuides = new Map([
       "https://www.youtube.com/embed/WS4p5SMkpFA",
       "https://www.youtube.com/embed/RkLUSpe1Ilk",
     ]
+  ],
+  [
+    "dragon-flag",
+    [
+      "https://www.youtube.com/embed/pvz7k5gO-DE",
+      "https://www.youtube.com/embed/dSrAKXMmB7Y",
+      "https://www.youtube.com/embed/7fRemwjcXOQ&pp=ygUKI2RyYWdvbmxlZ9IHCQn3AIUdvf8Vzg%3D%3D",
+    ]
   ]
 ]);

@@ -59,6 +59,7 @@ import { Situp } from './pages/tutorials/situp';
 import { HollowBody } from './pages/tutorials/hollowbody';
 import { LsitComp } from './pages/tutorials/lsitcomp';
 import { Lsit } from './pages/tutorials/lsit';
+import { DragonFlag } from './pages/tutorials/dragonflag';
 
 
 function App() {
@@ -130,6 +131,7 @@ function App() {
         <Route path="/tutorials/hollowbody" element={<HollowBody/>}/>
         <Route path="/tutorials/lsitcompression" element={<LsitComp/>}/>
         <Route path="/tutorials/lsit" element={<Lsit/>}/>
+        <Route path="/tutorials/dragonflag" element={<DragonFlag/>}/>
 
       </Routes>
       </ScrollToTop>

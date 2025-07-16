@@ -182,6 +182,10 @@ export const heroBlurb = new Map([
   [
     "l-sit",
     "The L-sit is a basic core exercise that builds strength in the abdominal muscles and hip flexors. It is a common exercise to build core strength and is a foundation for harder core skills."
+  ],
+  [
+    "dragon-flag",
+    "The Dragon Flag is an advanced core exercise that builds impressive strength in the abdominal muscles and hip flexors."
   ]
   
 ]);
