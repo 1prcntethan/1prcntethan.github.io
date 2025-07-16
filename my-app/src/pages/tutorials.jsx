@@ -231,8 +231,6 @@ export function Tutorials() {
     "Shrimp Squat",
     "Dragon Pistol Squat",
     "Dragon Flag",
-    "L-sit Compression",
-    "L-sit",
     "V-sit",
     "I-sit",
     "Manna",

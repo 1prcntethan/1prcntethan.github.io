@@ -90,7 +90,7 @@ export function HollowBody() {
         svg1="situp"
         svg2="NA"
         svg3="hollowbody"
-        svg4="l-sit-compression"
+        svg4="l-sit-comp"
         svg5="l-sit"
       />
       <TutorialReturn />

@@ -57,6 +57,8 @@ import { AdvTuckPLPU } from './pages/tutorials/advtuckplpu';
 import { SuperAdvTuckPL } from './pages/tutorials/superadvtuckpl';
 import { Situp } from './pages/tutorials/situp';
 import { HollowBody } from './pages/tutorials/hollowbody';
+import { LsitComp } from './pages/tutorials/lsitcomp';
+import { Lsit } from './pages/tutorials/lsit';
 
 
 function App() {
@@ -126,6 +128,8 @@ function App() {
 
         <Route path="/tutorials/situp" element={<Situp/>}/>
         <Route path="/tutorials/hollowbody" element={<HollowBody/>}/>
+        <Route path="/tutorials/lsitcompression" element={<LsitComp/>}/>
+        <Route path="/tutorials/lsit" element={<Lsit/>}/>
 
       </Routes>
       </ScrollToTop>

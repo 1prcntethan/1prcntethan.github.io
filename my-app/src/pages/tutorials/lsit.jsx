@@ -8,11 +8,11 @@ import TutorialReturn from "../../components/tutorialreturn";
 import YTTutorial from "../../components/yttutorials";
 import Footer from "../../components/footer";
 
-export function Situp() {
+export function Lsit() {
   return (
     <>
       <Navbar />
-      <SkillHero title="sit up" identifier="situp" />
+      <SkillHero title="l-sit" identifier="l-sit" />
       {svgDivider.get("0")}
       <div className="skill-info-container">
         <div className="skill-info">
@@ -20,47 +20,48 @@ export function Situp() {
           <div className="difficulty-muscle">
             <div className="skill-difficulty">
               <Link to="/Terminology" className="link-text">
-                Skill Difficulty: F
+                Skill Difficulty: D
               </Link>
               <br />
-              <p>Targeted Muscles: Core</p>
+              <p>Targeted Muscles: Core, Hip Flexors, Shoulder Depressors</p>
               <p>High Strain Areas: N/A</p>
             </div>
             <div className="overview-explanation">
-              The Sit-up is a base exercise used to build core strength and
-              stability. It is a necessary foundation for advanced core
-              exercises and other exercises that require core strength.
+              The L-sit is a common core exercise used to build core strength
+              and stability. It is not necessary to keep the legs completely
+              straight, but it is recommended to do so if you have the
+              flexibility.
             </div>
           </div>
 
           <div className="exercise-instructions-container">
-            Step-by-Step ~ Sit-up
+            Step-by-Step ~ L-sit
             <div className="exercise-instructions">
               <input id="skill-read-more" type="checkbox" />
 
               <div className="skill-instructions">
                 <ul>
                   <li>
-                    Lie down on your back with your knees bent and feet flat on
-                    the ground.
-                  </li>
-                  <li>Place your hands behind your head, elbows wide.</li>
-                  <li>
-                    Engage your core and lift your upper body towards your
-                    knees, keeping your feet and butt on the ground.
+                    Sit on the ground with your legs extended in front of you
+                    and your hands on the ground on the outside of your thighs,
+                    but close to your hips.
                   </li>
                   <li>
-                    Once your body is upright, lower your upper body back down
-                    to the starting position while maintaining control.
+                    Depress your shoulders, pushing your arms into the ground
+                    and lifting your torso up.
                   </li>
                   <li>
-                    The exercise can be made easier by crossing your arms over
-                    your chest.
+                    Engage your abs, lifting your legs upward, balancing on your
+                    hands to keep your entire body off the ground. Your body
+                    should make an "L" shape.
                   </li>
                   <li>
-                    To use this exercise effectively, perform these at a
-                    difficulty where you can do 4-8 reps for strength, or 8-12
-                    for hypertrophy/volume.
+                    The exercise can be made easier by bending your legs and
+                    bringing them close to your body.
+                  </li>
+                  <li>
+                    To use this exercise effectively, perform these as max holds
+                    as needed to practice core compression.
                   </li>
                 </ul>
 
@@ -75,28 +76,28 @@ export function Situp() {
           </div>
 
           <div className="recommended-info">
-            <p>Recommended Main Exercises: N/A</p>
-            <p>Recommended Accessory Exercises: N/A</p>
+            <p>Recommended Main Exercises: L-sit Compression, Sit-up</p>
+            <p>Recommended Accessory Exercises: Hamstring Stretch</p>
           </div>
         </div>
       </div>
       {svgDivider.get("1")}
       <ProgressionChart
-        name1="N/A"
-        name2="N/A"
-        name3="Sit-up"
-        name4="L-sit Compression"
-        name5="L-sit"
-        link1="#"
-        link2="#"
-        link3="/tutorials/situp"
-        link4="/tutorials/lsitcompression"
-        link5="/tutorials/lsit"
-        svg1="NA"
-        svg2="NA"
-        svg3="situp"
-        svg4="l-sit-comp"
-        svg5="l-sit"
+        name1="Sit-up"
+        name2="L-sit Compression"
+        name3="L-sit"
+        name4="V-sit"
+        name5="Manna"
+        link1="/tutorials/situp"
+        link2="/tutorials/lsitcompression"
+        link3="/tutorials/lsit"
+        link4="#"
+        link5="#"
+        svg1="situp"
+        svg2="l-sit-comp"
+        svg3="l-sit"
+        svg4=""
+        svg5=""
       />
       <TutorialReturn />
       {svgDivider.get("2")}
@@ -107,23 +108,25 @@ export function Situp() {
             <div>
               Good Form Cues:
               <ul>
-                <li>Chin is neutral</li>
+                <li>Legs are together out in front</li>
                 <li>Core is engaged</li>
-                <li>Feet and butt are on the ground</li>
+                <li>Arms are straight and supporting the body</li>
+                <li>Scapula is depressed</li>
+                <li>Feet come off the ground</li>
               </ul>
             </div>
             <div>
               Bad Form Cues:
               <ul>
-                <li>Arms are pulling on neck/head</li>
-                <li>Feet lifting off the ground</li>
+                <li>Arms bent</li>
+                <li>Feet stay on the ground</li>
               </ul>
             </div>
           </div>
         </div>
       </div>
       {svgDivider.get("3")}
-      <YTTutorial identifier="situp" />
+      <YTTutorial identifier="l-sit" />
       <Footer />
     </>
   );

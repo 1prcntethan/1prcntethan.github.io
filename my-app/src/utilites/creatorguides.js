@@ -227,5 +227,19 @@ export const creatorGuides = new Map([
     [
       "https://www.youtube.com/embed/uZqTUwq96iU",
     ]
+  ],
+  [
+    "l-sit-comp",
+    [
+      "https://www.youtube.com/embed/G1_EoDs-G7E",
+    ]
+  ],
+  [
+    "l-sit",
+    [
+      "https://www.youtube.com/embed/H_iZG5-L_KI",
+      "https://www.youtube.com/embed/WS4p5SMkpFA",
+      "https://www.youtube.com/embed/RkLUSpe1Ilk",
+    ]
   ]
 ]);

@@ -174,6 +174,14 @@ export const heroBlurb = new Map([
   [
     "hollowbody",
     "The Hollow Body Hold is a fundamental core exercise that builds strength and stability in the abdominal muscles. It trains the core to resist arching and is a especially useful in front lever."
+  ],
+  [
+    "l-sit-comp",
+    "The L-sit Compression is a basic core compression exercise used to strengthen the abs and learn the L-sit."
+  ],
+  [
+    "l-sit",
+    "The L-sit is a basic core exercise that builds strength in the abdominal muscles and hip flexors. It is a common exercise to build core strength and is a foundation for harder core skills."
   ]
   
 ]);

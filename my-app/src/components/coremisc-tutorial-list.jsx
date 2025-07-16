@@ -21,7 +21,7 @@ export default function TutorialListCM() {
         ["V-sit", "I-sit", "Manna", "Human Flag", "Victorian"],
     ];
 
-    const incompleteList = [ "Dragon Flag", "L-sit Compression", "L-sit", "V-sit", "I-sit", "Manna", "Human Flag", "Victorian"];
+    const incompleteList = [ "Dragon Flag", "V-sit", "I-sit", "Manna", "Human Flag", "Victorian"];
 
 
     const handleRowClick = (index, buttonTitle) => {

@@ -8,11 +8,11 @@ import TutorialReturn from "../../components/tutorialreturn";
 import YTTutorial from "../../components/yttutorials";
 import Footer from "../../components/footer";
 
-export function Situp() {
+export function LsitComp() {
   return (
     <>
       <Navbar />
-      <SkillHero title="sit up" identifier="situp" />
+      <SkillHero title="l-sit compression" identifier="l-sit-comp" />
       {svgDivider.get("0")}
       <div className="skill-info-container">
         <div className="skill-info">
@@ -20,47 +20,44 @@ export function Situp() {
           <div className="difficulty-muscle">
             <div className="skill-difficulty">
               <Link to="/Terminology" className="link-text">
-                Skill Difficulty: F
+                Skill Difficulty: D
               </Link>
               <br />
-              <p>Targeted Muscles: Core</p>
+              <p>Targeted Muscles: Core, Hip Flexors</p>
               <p>High Strain Areas: N/A</p>
             </div>
             <div className="overview-explanation">
-              The Sit-up is a base exercise used to build core strength and
-              stability. It is a necessary foundation for advanced core
-              exercises and other exercises that require core strength.
+              The L-sit Compression is a base exercise used to build core
+              compressing strength and stability. It is not necessary to keep the legs completely straight, but it is recommended to do so if you have the flexibility.
             </div>
           </div>
 
           <div className="exercise-instructions-container">
-            Step-by-Step ~ Sit-up
+            Step-by-Step ~ L-sit Compression
             <div className="exercise-instructions">
               <input id="skill-read-more" type="checkbox" />
 
               <div className="skill-instructions">
                 <ul>
                   <li>
-                    Lie down on your back with your knees bent and feet flat on
-                    the ground.
-                  </li>
-                  <li>Place your hands behind your head, elbows wide.</li>
-                  <li>
-                    Engage your core and lift your upper body towards your
-                    knees, keeping your feet and butt on the ground.
+                    Sit on the ground with your legs extended in front of you
+                    and your hands on the ground on the outside of your thighs.
                   </li>
                   <li>
-                    Once your body is upright, lower your upper body back down
-                    to the starting position while maintaining control.
+                    Engage your abs, lifting your legs upward, using your hands
+                    to keep your torso in place.
                   </li>
                   <li>
-                    The exercise can be made easier by crossing your arms over
-                    your chest.
+                    Compress and squeeze your core as much as possible, then
+                    release and go back to starting position.
                   </li>
                   <li>
-                    To use this exercise effectively, perform these at a
-                    difficulty where you can do 4-8 reps for strength, or 8-12
-                    for hypertrophy/volume.
+                    The exercise can be made more difficult by moving your hands
+                    closer to your feet, or easier by moving them to your hips.
+                  </li>
+                  <li>
+                    To use this exercise effectively, perform these as max holds
+                    or do 8-12 reps, as needed, to practice core compression.
                   </li>
                 </ul>
 
@@ -75,27 +72,27 @@ export function Situp() {
           </div>
 
           <div className="recommended-info">
-            <p>Recommended Main Exercises: N/A</p>
-            <p>Recommended Accessory Exercises: N/A</p>
+            <p>Recommended Main Exercises: Sit-up, Hollow Body Hold</p>
+            <p>Recommended Accessory Exercises: Hamstring Stretch</p>
           </div>
         </div>
       </div>
       {svgDivider.get("1")}
       <ProgressionChart
-        name1="N/A"
-        name2="N/A"
-        name3="Sit-up"
-        name4="L-sit Compression"
+        name1="Sit-up"
+        name2="Hollow Body Hold"
+        name3="L-sit Compression"
+        name4="N/A"
         name5="L-sit"
-        link1="#"
-        link2="#"
-        link3="/tutorials/situp"
-        link4="/tutorials/lsitcompression"
+        link1="/tutorials/situp"
+        link2="/tutorials/hollowbody"
+        link3="/tutorials/lsitcompression"
+        link4="#"
         link5="/tutorials/lsit"
-        svg1="NA"
-        svg2="NA"
-        svg3="situp"
-        svg4="l-sit-comp"
+        svg1="situp"
+        svg2="hollowbody"
+        svg3="l-sit-comp"
+        svg4="NA"
         svg5="l-sit"
       />
       <TutorialReturn />
@@ -107,23 +104,24 @@ export function Situp() {
             <div>
               Good Form Cues:
               <ul>
-                <li>Chin is neutral</li>
+                <li>Legs are together out in front</li>
                 <li>Core is engaged</li>
-                <li>Feet and butt are on the ground</li>
+                <li>Arms are straight and supporting the body</li>
+                <li>Feet come off the ground</li>
               </ul>
             </div>
             <div>
               Bad Form Cues:
               <ul>
-                <li>Arms are pulling on neck/head</li>
-                <li>Feet lifting off the ground</li>
+                <li>Arms behind the hips</li>
+                <li>Feet stay on the ground</li>
               </ul>
             </div>
           </div>
         </div>
       </div>
       {svgDivider.get("3")}
-      <YTTutorial identifier="situp" />
+      <YTTutorial identifier="l-sit-comp" />
       <Footer />
     </>
   );
