@@ -95,7 +95,7 @@ function DifficultyToggle() {
                         </p>
                         Exercises at this level can be achieved within 2-6 months and serve as the basic skill progressions of the advanced skills.
                         <p>
-                            Skills in this catergory: Pike PU, Tuck FL, HS
+                            Skills in this catergory: Pike PU, Tuck FL, Handstand
                         </p>
                     </div>
                     <div className="content-svg">
