@@ -22,7 +22,7 @@ export default function TutorialListVPL() {
         ["Assisted OAC", "Assisted OAP", "OAC/OAP", "Weighted Pull-ups", "Butterfly"]
     ];
 
-    const incompleteList = ["Scapula Pull-up", "Archer Pull-up", "Clean Muscle-Up", "Assisted OAC", "Assisted OAP", "OAC/OAP", "Weighted Pull-ups", "Butterfly"];
+    const incompleteList = ["Archer Pull-up", "Clean Muscle-Up", "Assisted OAC", "Assisted OAP", "OAC/OAP", "Weighted Pull-ups", "Butterfly"];
 
 
     const handleRowClick = (index, buttonTitle) => {

@@ -249,5 +249,12 @@ export const creatorGuides = new Map([
       "https://www.youtube.com/embed/dSrAKXMmB7Y",
       "https://www.youtube.com/embed/7fRemwjcXOQ&pp=ygUKI2RyYWdvbmxlZ9IHCQn3AIUdvf8Vzg%3D%3D",
     ]
+  ],
+  [
+    "scapula-pull-up",
+    [
+      "https://www.youtube.com/embed/1yxFXaH3rtE",
+      "https://www.youtube.com/embed/-ZIpSoTRsuE",
+    ]
   ]
 ]);

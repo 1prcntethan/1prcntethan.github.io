@@ -212,7 +212,6 @@ export function Tutorials() {
     "Assisted OAHS",
     "OAHS",
     "OA Flag",
-    "Scapula Pull-up",
     "Archer Pull-up",
     "Clean Muscle-Up",
     "Assisted OAC",

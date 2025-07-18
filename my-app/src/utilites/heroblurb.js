@@ -186,6 +186,10 @@ export const heroBlurb = new Map([
   [
     "dragon-flag",
     "The Dragon Flag is an advanced core exercise that builds impressive strength in the abdominal muscles and hip flexors."
+  ],
+  [
+    "scapula-pull-up",
+    "The Scapula Pull-Up is a foundational pulling exercise that emphasizes scapular retraction and depression. It is essential for building the strength and control needed for more advanced pulling movements."
   ]
   
 ]);

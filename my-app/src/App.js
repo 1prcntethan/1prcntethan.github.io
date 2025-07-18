@@ -60,6 +60,7 @@ import { HollowBody } from './pages/tutorials/hollowbody';
 import { LsitComp } from './pages/tutorials/lsitcomp';
 import { Lsit } from './pages/tutorials/lsit';
 import { DragonFlag } from './pages/tutorials/dragonflag';
+import { ScapulaPullup } from './pages/tutorials/scapulapullup';
 
 
 function App() {
@@ -123,6 +124,7 @@ function App() {
         <Route path="/tutorials/activehang" element={<ActiveHang/>}/>
         <Route path="/tutorials/assistpullup" element={<AssistPullup/>}/>
         <Route path="/tutorials/pullup" element={<Pullup/>}/>
+        <Route path="/tutorials/scapulapullup" element={<ScapulaPullup/>}/>
         <Route path="/tutorials/chestpullup" element={<ChestPullup/>}/>
         <Route path="/tutorials/waistpullup" element={<WaistPullup/>}/>
         <Route path="/tutorials/muscleup" element={<MuscleUp/>}/>
