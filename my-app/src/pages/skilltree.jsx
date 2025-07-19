@@ -6,7 +6,11 @@ import {
   applyNodeChanges,
   applyEdgeChanges,
   addEdge,
-   Controls, 
+  Controls,
+  BaseEdge,
+  getStraightPath,
+  Handle,
+  Position,
 } from "@xyflow/react";
 import "@xyflow/react/dist/style.css";
 import { svgIcon } from "../utilites/svg-icons";
@@ -14,25 +18,78 @@ import { skillLinks } from "../utilites/skillLinks";
 import { Link } from "react-router-dom";
 
 const initialNodes = [
-  { id: "1", position: { x: 0, y: 0 }, data: { svg: "push-up", link: "Push-up" }, type: 'skillNode'},
-  { id: "2", position: { x: 0, y: 100 }, data: { svg: "pull-up", link: "Pull-up" }, type: 'skillNode' },
+  {
+    id: "1",
+    position: { x: 0, y: 0 },
+    data: { svg: "assisted-pushup", link: "Assisted Push-up" },
+    type: "skillNode",
+  },
+  {
+    id: "2",
+    position: { x: 0, y: 300 },
+    data: { svg: "push-up", link: "Push-up" },
+    type: "skillNode",
+  },
 ];
 
-
-const initialEdges = [{ id: "1-2", source: "1", target: "2" }];
+const initialEdges = [
+  {
+    id: "1-2",
+    source: "1",
+    target: "2",
+    type: "skillEdge",
+    style: { stroke: "#ffffff", strokeWidth: 2, zIndex: 1 },
+  },
+];
 
 const SkillNode = ({ data }) => {
   return (
     <>
-    <Link to={skillLinks.get(data.link)} className="skill-node">
-      {svgIcon.get(data.svg)}
-    </Link>
+      <Link to={skillLinks.get(data.link)} className="skill-node">
+        <Handle
+          type="target"
+          position={Position.Top}
+          style={{ background: "white", border: "white" }}
+        />
+        <Handle
+          type="source"
+          position={Position.Bottom}
+          style={{ background: "white", border: "white" }}
+        />
+        {svgIcon.get(data.svg)}
+      </Link>
     </>
-  )
-}
+  );
+};
 
-const nodeTypes = { 
+const SkillEdge = ({
+  id,
+  sourceX,
+  sourceY,
+  targetX,
+  targetY,
+  sourcePosition,
+  targetPosition,
+  style = {}, // default in case nothing passed
+  markerEnd,
+}) => {
+  const [path] = getStraightPath({ sourceX, sourceY, targetX, targetY });
+  return (
+    <BaseEdge
+      id={id}
+      path={path}
+      style={{ stroke: "#ffffff", strokeWidth: 100, ...style }}
+      markerEnd={markerEnd}
+    />
+  );
+};
+
+const nodeTypes = {
   skillNode: SkillNode,
+};
+
+const edgeTypes = {
+  skillEdge: SkillEdge,
 };
 
 export function SkillTree() {
@@ -57,18 +114,19 @@ export function SkillTree() {
   return (
     <>
       <div style={{ width: "100vw", height: "100vh" }}>
-        <ReactFlow nodes={nodes}
+        <ReactFlow
+          nodes={nodes}
           edges={edges}
           onNodesChange={onNodesChange}
           onEdgesChange={onEdgesChange}
           onConnect={onConnect}
           nodeTypes={nodeTypes}
-          nodesDraggable={false}
+          // nodesDraggable={false}
+          edgeTypes={edgeTypes}
         >
-         <Controls />
+          <Controls />
         </ReactFlow>
       </div>
     </>
   );
 }
- 
