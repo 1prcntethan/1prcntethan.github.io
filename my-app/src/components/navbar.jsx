@@ -55,7 +55,7 @@ const Navbar = () => {
               <Link to = "/terminology" id="nav-item">terminology</Link>
             </div>
             <div className="navbar__list--items navbar__list--green">
-              <Link to = "/tutorials/incomplete" id="nav-item">skill tree</Link>
+              <Link to = "/skilltree" id="nav-item">skill tree</Link>
             </div>
             {/* <div className="navbar__list--items navbar__list--pink">
               <Link to = "/skillvis" id="nav-item">skillvis</Link>

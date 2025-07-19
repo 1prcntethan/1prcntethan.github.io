@@ -1,0 +1,18 @@
+.skill-node {
+    display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  height: fit-content;
+  border-radius: 9999px;
+  background: transparent; 
+  border: solid transparent 1px;
+  box-shadow: none;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+
+.skill-node:hover {
+  transform: scale(1.1);
+}
