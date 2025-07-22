@@ -49,12 +49,12 @@ const SkillNode = ({ data }) => {
         <Handle
           type="target"
           position={Position.Top}
-          style={{ background: "white", border: "white" }}
+          style={{ background: "white", border: "white", top: "50%", right: "50%"}}
         />
         <Handle
           type="source"
           position={Position.Bottom}
-          style={{ background: "white", border: "white" }}
+          style={{ background: "white", border: "white", bottom: "50%", left: "50%"}}
         />
         {svgIcon.get(data.svg)}
       </Link>
@@ -70,7 +70,7 @@ const SkillEdge = ({
   targetY,
   sourcePosition,
   targetPosition,
-  style = {}, // default in case nothing passed
+  style = {}, 
   markerEnd,
 }) => {
   const [path] = getStraightPath({ sourceX, sourceY, targetX, targetY });
@@ -123,6 +123,9 @@ export function SkillTree() {
           nodeTypes={nodeTypes}
           // nodesDraggable={false}
           edgeTypes={edgeTypes}
+          minZoom={0.2}
+          maxZoom={2}
+          defaultViewport={{ x: 0, y: 0, zoom: 0.5 }}
         >
           <Controls />
         </ReactFlow>
