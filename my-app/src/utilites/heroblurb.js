@@ -190,6 +190,10 @@ export const heroBlurb = new Map([
   [
     "scapula-pull-up",
     "The Scapula Pull-Up is a foundational pulling exercise that emphasizes scapular retraction and depression. It is essential for building the strength and control needed for more advanced pulling movements."
+  ],
+  [
+    "ninety-deg-hold",
+    "The 90 hold is an intermediate push exercise, and is one of the first exercises where beginners activate their lower back."
   ]
   
 ]);

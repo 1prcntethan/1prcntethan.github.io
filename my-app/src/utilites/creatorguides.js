@@ -256,5 +256,13 @@ export const creatorGuides = new Map([
       "https://www.youtube.com/embed/1yxFXaH3rtE",
       "https://www.youtube.com/embed/-ZIpSoTRsuE",
     ]
+  ],
+  [
+    "ninety-deg-hold",
+    [
+      "https://www.youtube.com/embed/RtCGENqaH9U",
+      "https://www.youtube.com/embed/zJdq44mdZrE",
+      "https://www.youtube.com/embed/Jeew_oxr5ZA"
+    ]
   ]
 ]);

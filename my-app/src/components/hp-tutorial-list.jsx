@@ -39,7 +39,7 @@ export default function TutorialListHP() {
     ],
   ];
 
-  const incompleteList = ["90 Degree Hold", "Back Lever", "Straddle Planche", "Straddle Planche PU", "Half Lay Planche", "Full Planche", "Full Planche PU", "One Arm Planche", "Maltese"];
+  const incompleteList = ["Back Lever", "Straddle Planche", "Straddle Planche PU", "Half Lay Planche", "Full Planche", "Full Planche PU", "One Arm Planche", "Maltese"];
 
   const handleRowClick = (index, buttonTitle) => {
     // if (activeRow === index) {

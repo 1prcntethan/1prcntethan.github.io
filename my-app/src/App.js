@@ -61,6 +61,7 @@ import { LsitComp } from './pages/tutorials/lsitcomp';
 import { Lsit } from './pages/tutorials/lsit';
 import { DragonFlag } from './pages/tutorials/dragonflag';
 import { ScapulaPullup } from './pages/tutorials/scapulapullup';
+import { NinetyDegHold } from './pages/tutorials/ninetydeghold';
 
 
 function App() {
@@ -95,6 +96,7 @@ function App() {
         <Route path="/tutorials/advtuckpl" element={<AdvTuckPL/>}/>
         <Route path="/tutorials/advtuckplpu" element={<AdvTuckPLPU/>}/>
         <Route path="/tutorials/superadvtuckpl" element={<SuperAdvTuckPL/>}/>
+        <Route path="/tutorials/ninetydeghold" element={<NinetyDegHold/>}/>
 
 
         <Route path="/tutorials/pikepu" element={<PikePU/>}/>

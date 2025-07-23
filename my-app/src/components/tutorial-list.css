@@ -199,8 +199,9 @@
 .skill-content--link:hover {
     
     background-color: rgb(43, 43, 43);
-    border-radius: 8px;
-    
+    @media (max-width: 768px) {
+        border-radius: 8px;
+    }
 }
 
 @keyframes glowSkill {
