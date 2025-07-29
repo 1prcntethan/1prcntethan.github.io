@@ -39,6 +39,14 @@ export function PushRmp() {
           </Link>.
         </div>
 
+        <img
+          src="pushupL.png"
+          alt="pushup"
+          className="landscape-guide-image"
+        />
+        <div className="guide-caption">The classic push-up.</div>
+
+
         <div className="guide-text">
           As you become more confident in your push training, you can move on to
           upper level beginner push skills. This means <Link to="/tutorials/pikepu" className="guide-external-link">
@@ -46,7 +54,7 @@ export function PushRmp() {
           </Link>, <Link to="/tutorials/planchelean" className="guide-external-link">
             Planche Leans
           </Link>, and <Link to="/tutorials/pseudopu" className="guide-external-link">
-            pseudo Planche Push-ups
+            Pseudo Planche Push-ups
           </Link>. For this phase, these three
           exercises will be your bread and butter. As you begin to experiment with
           static exercises, you’ll start with the <Link to="/tutorials/crowpose" className="guide-external-link">
@@ -63,6 +71,27 @@ export function PushRmp() {
           straight arm skills, and keeping <strong>scapular protraction and depression </strong>
           when working with planche related skills.
         </div>
+
+        <img
+          src="pikePUL.jpeg"
+          alt="pike push-up"
+          className="landscape-guide-image"
+        />
+        <div className="guide-caption">Notice the body position and forearm angle in the Pike Push-up.</div>
+
+        <img
+          src="plancheLeanL.png"
+          alt="planche lean"
+          className="landscape-guide-image"
+        />
+        <div className="guide-caption">Emphasize scapula protraction in the Planche Lean.</div>
+
+        <img
+          src="pseudoPPUL.png"
+          alt="pseudo planche push-up"
+          className="landscape-guide-image"
+        />
+        <div className="guide-caption">Keep PPT in mind during the Pseudo Planche Push-up.</div>
       </div>
 
       <LineDivider />
@@ -145,6 +174,12 @@ export function PushRmp() {
           and accessory work to end sessions, and you’ll have built a solid
           routine for training planche. The gains will slowly but surely come.
         </div>
+        <img
+          src="fullPLL.png"
+          alt="full planche"
+          className="landscape-guide-image"
+        />
+        <div className="guide-caption">The full planche dream.</div>
         <div className="guide-text">
           Planche is an incredibly complex skill, and it’s important to
           understand the basic <strong>activations</strong> required for it. This means thinking

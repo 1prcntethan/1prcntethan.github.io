@@ -124,6 +124,21 @@
     }
 }
 
+.landscape-guide-image {
+    display: flex;
+    width: 45%;
+    align-self: center;
+    height: auto;
+    margin: 1rem 0 10px 0;
+
+
+    @media (max-width: 768px) {
+
+        width: 75%;
+
+    }
+}
+
 .image-sig {
     display: flex;
     width: 10%;
