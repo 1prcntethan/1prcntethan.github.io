@@ -182,6 +182,30 @@ const initialNodes = [
     data: { svg: "bas", link: "Bent Arm Stand" },
     type: "skillNode",
   },
+  {
+    id: "21",
+    position: { x: -433, y: -2750 },
+    data: { svg: "assisted-hspu", link: "Assisted HSPU" },
+    type: "skillNode",
+  },
+  {
+    id: "22",
+    position: { x: -866, y: -2500 },
+    data: { svg: "hspu", link: "HSPU" },
+    type: "skillNode",
+  },
+  {
+    id: "23",
+    position: { x: 433, y: -2250 }, 
+    data: { svg: "bent-arm-press", link: "Bent Arm Press to HS" },
+    type: "skillNode",
+  }, 
+  {
+    id: "24",
+    position: { x: 433, y: -1750 }, 
+    data: { svg: "straight-arm-press", link: "Straight Arm Press to HS" },
+    type: "skillNode", 
+  },
     
 ];
 
@@ -323,6 +347,41 @@ const initialEdges = [
     id: "19-20",
     source: "19",
     target: "20",
+    type: "skillEdge",
+    style: { stroke: "#ffffff", strokeWidth: 2, zIndex: 1 },
+  },
+  {
+    id: "20-21",
+    source: "20",
+    target: "21",
+    type: "skillEdge",
+    style: { stroke: "#ffffff", strokeWidth: 2, zIndex: 1 },
+  },
+  {
+    id: "21-22",
+    source: "21",
+    target: "22",
+    type: "skillEdge",
+    style: { stroke: "#ffffff", strokeWidth: 2, zIndex: 1 },
+  },
+  {
+    id: "20-23",
+    source: "20",
+    target: "23",
+    type: "skillEdge",
+    style: { stroke: "#ffffff", strokeWidth: 2, zIndex: 1 },
+  },
+  {
+    id: "23-24",
+    source: "23",
+    target: "24",
+    type: "skillEdge",
+    style: { stroke: "#ffffff", strokeWidth: 2, zIndex: 1 },
+  },
+  {
+    id: "18-24",
+    source: "18",
+    target: "24",
     type: "skillEdge",
     style: { stroke: "#ffffff", strokeWidth: 2, zIndex: 1 },
   },
