@@ -194,7 +194,6 @@ export function Tutorials() {
   const navigate = useNavigate();
 
   const incompleteSkills = [
-    "90 Degree Hold",
     "Back Lever",
     "Straddle Planche",
     "Straddle Planche PU",

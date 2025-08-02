@@ -19,7 +19,6 @@ import { Link } from "react-router-dom";
 
 
 const incompleteSkills = [
-    "90 Degree Hold",
     "Back Lever",
     "Straddle Planche",
     "Straddle Planche PU",
@@ -206,8 +205,57 @@ const initialNodes = [
     data: { svg: "straight-arm-press", link: "Straight Arm Press to HS" },
     type: "skillNode", 
   },
+  {
+    id: "25",
+    position: { x: -2600, y: -2000 }, 
+    data: { svg: "full-pl", link: "Full Planche" },
+    type: "skillNode", 
+  },
+  {
+    id: "26",
+    position: { x: -3033, y: -1750}, 
+    data: { svg: "oahs", link: "OAHS" },
+    type: "skillNode", 
+  },
+  {
+    id: "27",
+    position: { x: -3033, y: -2250}, 
+    data: { svg: "maltese", link: "Maltese" },
+    type: "skillNode", 
+  },
+  {
+    id: "28",
+    position: { x: -2600, y: -2500}, 
+    data: { svg: "full-pl-pu", link: "Full Planche PU" },
+    type: "skillNode", 
+  },
+  {
+    id: "29", 
+    position: { x: -1733, y: -2000}, 
+    data: { svg: "ninety-deg-hold", link: "90 Degree Hold" },
+    type: "skillNode", 
+  },
+  {
+    id: "30", 
+    position: { x: -2166, y: -1750}, 
+    data: { svg: "back-lever", link: "Back Lever" },
+    type: "skillNode", 
+  },
+  {
+    id: "31", 
+    position: { x: -1300, y: -2250}, 
+    data: { svg: "ninety-deg-pu", link: "90 Degree PU" },
+    type: "skillNode", 
+  },
     
 ];
+
+
+
+
+
+
+
 
 const initialEdges = [
   {
@@ -385,6 +433,63 @@ const initialEdges = [
     type: "skillEdge",
     style: { stroke: "#ffffff", strokeWidth: 2, zIndex: 1 },
   },
+  {
+    id: "17-25",
+    source: "17",
+    target: "25",
+    type: "skillEdge",
+    style: { stroke: "#ffffff", strokeWidth: 2, zIndex: 1 },
+  },
+  {
+    id: "25-26",
+    source: "25",
+    target: "26",
+    type: "skillEdge",
+    style: { stroke: "#ffffff", strokeWidth: 2, zIndex: 1 },
+  },
+  {
+    id: "25-27",
+    source: "25",
+    target: "27",
+    type: "skillEdge",
+    style: { stroke: "#ffffff", strokeWidth: 2, zIndex: 1 },
+  },
+  {
+    id: "25-28",
+    source: "25",
+    target: "28",
+    type: "skillEdge",
+    style: { stroke: "#ffffff", strokeWidth: 2, zIndex: 1 },
+  },
+  {
+    id: "14-29",
+    source: "14",
+    target: "29",
+    type: "skillEdge",
+    style: { stroke: "#ffffff", strokeWidth: 2, zIndex: 1 },
+  },
+  {
+    id: "29-30",
+    source: "29",
+    target: "30",
+    type: "skillEdge",
+    style: { stroke: "#ffffff", strokeWidth: 2, zIndex: 1 },
+  },
+  {
+    id: "29-31",
+    source: "29",
+    target: "31",
+    type: "skillEdge",
+    style: { stroke: "#ffffff", strokeWidth: 2, zIndex: 1 },
+  },
+  {
+    id: "22-31",
+    source: "22",
+    target: "31",
+    type: "skillEdge",
+    style: { stroke: "#ffffff", strokeWidth: 2, zIndex: 1 },
+  },
+
   
 ];
 
@@ -454,10 +559,7 @@ export function SkillTree() {
       setEdges((edgesSnapshot) => applyEdgeChanges(changes, edgesSnapshot)),
     []
   );
-  const onConnect = useCallback(
-    (params) => setEdges((edgesSnapshot) => addEdge(params, edgesSnapshot)),
-    []
-  );
+  
 
   return (
     <>
@@ -465,9 +567,8 @@ export function SkillTree() {
         <ReactFlow
           nodes={nodes}
           edges={edges}
-          onNodesChange={onNodesChange}
-          onEdgesChange={onEdgesChange}
-          onConnect={onConnect}
+          // onNodesChange={onNodesChange}
+          // onEdgesChange={onEdgesChange}
           nodeTypes={nodeTypes}
           nodesDraggable={false}
           edgeTypes={edgeTypes}
