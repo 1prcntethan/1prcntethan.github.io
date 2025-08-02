@@ -11,54 +11,54 @@ import {
   getStraightPath,
   Handle,
   Position,
+  MarkerType,
 } from "@xyflow/react";
 import "@xyflow/react/dist/style.css";
 import { svgIcon } from "../utilites/svg-icons";
 import { skillLinks } from "../utilites/skillLinks";
 import { Link } from "react-router-dom";
 
-
 const incompleteSkills = [
-    "Back Lever",
-    "Straddle Planche",
-    "Straddle Planche PU",
-    "Half Lay Planche",
-    "Full Planche",
-    "Full Planche PU",
-    "One Arm Planche",
-    "Maltese",
-    "Full FL Row",
-    "Front Lever Touch",
-    "Bent Arm Press to HS",
-    "Straight Arm Press to HS",
-    "Deep HSPU",
-    "90 Degree PU",
-    "Assisted OAHS",
-    "OAHS",
-    "OA Flag",
-    "Archer Pull-up",
-    "Clean Muscle-Up",
-    "Assisted OAC",
-    "Assisted OAP",
-    "OAC/OAP",
-    "Weighted Pull-ups",
-    "Butterfly",
-    "Bodyweight Squat",
-    "Split Squat",
-    "Assisted Pistol Squat",
-    "Bulgarian Split Squat",
-    "Reverse Nordic Curl",
-    "Nordic Curl",
-    "Sissy Squat",
-    "Pistol Squat",
-    "Shrimp Squat",
-    "Dragon Pistol Squat",
-    "V-sit",
-    "I-sit",
-    "Manna",
-    "Human Flag",
-    "Victorian",
-  ];
+  "Back Lever",
+  "Straddle Planche",
+  "Straddle Planche PU",
+  "Half Lay Planche",
+  "Full Planche",
+  "Full Planche PU",
+  "One Arm Planche",
+  "Maltese",
+  "Full FL Row",
+  "Front Lever Touch",
+  "Bent Arm Press to HS",
+  "Straight Arm Press to HS",
+  "Deep HSPU",
+  "90 Degree PU",
+  "Assisted OAHS",
+  "OAHS",
+  "OA Flag",
+  "Archer Pull-up",
+  "Clean Muscle-Up",
+  "Assisted OAC",
+  "Assisted OAP",
+  "OAC/OAP",
+  "Weighted Pull-ups",
+  "Butterfly",
+  "Bodyweight Squat",
+  "Split Squat",
+  "Assisted Pistol Squat",
+  "Bulgarian Split Squat",
+  "Reverse Nordic Curl",
+  "Nordic Curl",
+  "Sissy Squat",
+  "Pistol Squat",
+  "Shrimp Squat",
+  "Dragon Pistol Squat",
+  "V-sit",
+  "I-sit",
+  "Manna",
+  "Human Flag",
+  "Victorian",
+];
 
 const initialNodes = [
   {
@@ -75,49 +75,49 @@ const initialNodes = [
   },
   {
     id: "3",
-    position: { x: -433 , y: -750 },
+    position: { x: -433, y: -750 },
     data: { svg: "elbow-lever", link: "Elbow Lever" },
     type: "skillNode",
   },
   {
     id: "4",
-    position: { x: 0 , y: -1000 },
+    position: { x: 0, y: -1000 },
     data: { svg: "dip", link: "Dip" },
     type: "skillNode",
   },
-  { 
+  {
     id: "5",
-    position: { x: 0 , y: -1500 },
+    position: { x: 0, y: -1500 },
     data: { svg: "pike-pu", link: "Pike Push-up" },
     type: "skillNode",
   },
-  { 
+  {
     id: "6",
-    position: { x: -433 , y: -1250 },
+    position: { x: -433, y: -1250 },
     data: { svg: "planche-lean", link: "Planche Lean" },
     type: "skillNode",
   },
-  { 
+  {
     id: "7",
-    position: { x: -866 , y: -1500 },
+    position: { x: -866, y: -1500 },
     data: { svg: "pseudo-pu", link: "Pseudo Push-up" },
     type: "skillNode",
   },
-  { 
+  {
     id: "8",
-    position: { x: -866 , y: -1000 },
+    position: { x: -866, y: -1000 },
     data: { svg: "tuck-pl", link: "Tuck Planche" },
     type: "skillNode",
   },
-  { 
-    id: "9", 
-    position: { x: -433 , y: -1750 },
+  {
+    id: "9",
+    position: { x: -433, y: -1750 },
     data: { svg: "crow-pose", link: "Crow Pose" },
     type: "skillNode",
   },
-  { 
-    id: "10", 
-    position: { x: -866 , y: -2000 },
+  {
+    id: "10",
+    position: { x: -866, y: -2000 },
     data: { svg: "assisted-hs", link: "Assisted Handstand" },
     type: "skillNode",
   },
@@ -195,67 +195,71 @@ const initialNodes = [
   },
   {
     id: "23",
-    position: { x: 433, y: -2250 }, 
+    position: { x: 433, y: -2250 },
     data: { svg: "bent-arm-press", link: "Bent Arm Press to HS" },
     type: "skillNode",
-  }, 
+  },
   {
     id: "24",
-    position: { x: 433, y: -1750 }, 
+    position: { x: 433, y: -1750 },
     data: { svg: "straight-arm-press", link: "Straight Arm Press to HS" },
-    type: "skillNode", 
+    type: "skillNode",
   },
   {
     id: "25",
-    position: { x: -2600, y: -2000 }, 
+    position: { x: -2600, y: -2000 },
     data: { svg: "full-pl", link: "Full Planche" },
-    type: "skillNode", 
+    type: "skillNode",
   },
   {
     id: "26",
-    position: { x: -3033, y: -1750}, 
-    data: { svg: "oahs", link: "OAHS" },
-    type: "skillNode", 
+    position: { x: -3033, y: -1750 },
+    data: { svg: "oapl", link: "One Arm Planche" },
+    type: "skillNode",
   },
   {
     id: "27",
-    position: { x: -3033, y: -2250}, 
+    position: { x: -3033, y: -2250 },
     data: { svg: "maltese", link: "Maltese" },
-    type: "skillNode", 
+    type: "skillNode",
   },
   {
     id: "28",
-    position: { x: -2600, y: -2500}, 
+    position: { x: -2600, y: -2500 },
     data: { svg: "full-pl-pu", link: "Full Planche PU" },
-    type: "skillNode", 
+    type: "skillNode",
   },
   {
-    id: "29", 
-    position: { x: -1733, y: -2000}, 
+    id: "29",
+    position: { x: -1733, y: -2000 },
     data: { svg: "ninety-deg-hold", link: "90 Degree Hold" },
-    type: "skillNode", 
+    type: "skillNode",
   },
   {
-    id: "30", 
-    position: { x: -2166, y: -1750}, 
+    id: "30",
+    position: { x: -2166, y: -1750 },
     data: { svg: "back-lever", link: "Back Lever" },
-    type: "skillNode", 
+    type: "skillNode",
   },
   {
-    id: "31", 
-    position: { x: -1300, y: -2250}, 
+    id: "31",
+    position: { x: -1300, y: -2250 },
     data: { svg: "ninety-deg-pu", link: "90 Degree PU" },
-    type: "skillNode", 
+    type: "skillNode",
   },
-    
+  {
+    id: "32",
+    position: { x: -866, y: -3000 },
+    data: { svg: "deep-hspu", link: "Deep HSPU" },
+    type: "skillNode",
+  },
+  {
+    id: "33",
+    position: { x: -1300, y: -2750 },
+    data: { svg: "oahs", link: "OAHS" },
+    type: "skillNode",
+  },
 ];
-
-
-
-
-
-
-
 
 const initialEdges = [
   {
@@ -267,28 +271,28 @@ const initialEdges = [
   },
   {
     id: "2-3",
-    source: "2", 
+    source: "2",
     target: "3",
     type: "skillEdge",
     style: { stroke: "#ffffff", strokeWidth: 2, zIndex: 1 },
   },
   {
     id: "2-4",
-    source: "2", 
+    source: "2",
     target: "4",
     type: "skillEdge",
     style: { stroke: "#ffffff", strokeWidth: 2, zIndex: 1 },
   },
   {
     id: "4-5",
-    source: "4", 
+    source: "4",
     target: "5",
     type: "skillEdge",
     style: { stroke: "#ffffff", strokeWidth: 2, zIndex: 1 },
   },
   {
     id: "4-6",
-    source: "4", 
+    source: "4",
     target: "6",
     type: "skillEdge",
     style: { stroke: "#ffffff", strokeWidth: 2, zIndex: 1 },
@@ -489,32 +493,61 @@ const initialEdges = [
     type: "skillEdge",
     style: { stroke: "#ffffff", strokeWidth: 2, zIndex: 1 },
   },
-
-  
+  {
+    id: "22-32",
+    source: "22",
+    target: "32",
+    type: "skillEdge",
+    style: { stroke: "#ffffff", strokeWidth: 2, zIndex: 1 },
+  },
+  {
+    id: "22-33",
+    source: "22",
+    target: "33",
+    type: "skillEdge",
+    style: { stroke: "#ffffff", strokeWidth: 2, zIndex: 1 },
+  },
 ];
 
 const SkillNode = ({ data }) => {
   return (
     <>
-      <Link to={incompleteSkills.includes(data.link)
-        ? "/tutorials/incomplete"
-        : skillLinks.get(data.link)} className="skill-node">
+      <Link
+        to={
+          incompleteSkills.includes(data.link)
+            ? "/tutorials/incomplete"
+            : skillLinks.get(data.link)
+        }
+        className="skill-node"
+        minWidth="10vw"
+        minHeight="10vh"
+      >
         <Handle
           type="target"
           position={Position.Top}
-          style={{ background: "transparent", border: "transparent", top: "50%", right: "50%"}}
+          style={{
+            background: "transparent",
+            border: "transparent",
+            top: "50%",
+            right: "50%",
+          }}
         />
         <Handle
           type="source"
           position={Position.Bottom}
-          style={{ background: "transparent", border: "transparent", bottom: "50%", left: "50%"}}
+          style={{
+            background: "transparent",
+            border: "transparent",
+            bottom: "50%",
+            left: "50%",
+          }}
         />
         {svgIcon.get(data.svg)}
       </Link>
     </>
   );
 };
- 
+
 const SkillEdge = ({
   id,
   sourceX,
@@ -523,7 +556,7 @@ const SkillEdge = ({
   targetY,
   sourcePosition,
   targetPosition,
-  style = {}, 
+  style = {},
   markerEnd,
 }) => {
   const [path] = getStraightPath({ sourceX, sourceY, targetX, targetY });
@@ -559,7 +592,6 @@ export function SkillTree() {
       setEdges((edgesSnapshot) => applyEdgeChanges(changes, edgesSnapshot)),
     []
   );
-  
 
   return (
     <>
@@ -576,8 +608,14 @@ export function SkillTree() {
           maxZoom={2}
           defaultViewport={{ x: 1000, y: 1000, zoom: 0.5 }}
         >
-          <Controls />
-        </ReactFlow>
+          <Controls
+            showZoom={true}
+            showFitView={true}
+            showInteractive={false}
+            style={{ boxShadow: "none", color: "#000000", backgroundColor: "#000000" }}
+          >
+          </Controls>
+        </ReactFlow>  
       </div>
     </>
   );
