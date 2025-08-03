@@ -12,7 +12,7 @@ export function Situp() {
   return (
     <>
       <Navbar />
-      <SkillHero title="sit up" identifier="situp" />
+      <SkillHero title="sit-up" identifier="situp" />
       {svgDivider.get("0")}
       <div className="skill-info-container">
         <div className="skill-info">
