@@ -68,6 +68,7 @@ export const skillTitle = new Map([
   ["Waist Pull-up", "waist pull-up"],
   ["Muscle-Up", "muscle-up"],
   ["Archer Pull-up", "archer pull-up"],
+  ["Clean Muscle-Up", "clean muscle-up"],
   ["Assisted OAC", "assisted oac"],
   ["Assisted OAP", "assisted oap"],
   ["OAC/OAP", "oac/oap"],

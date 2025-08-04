@@ -17,6 +17,7 @@ import "@xyflow/react/dist/style.css";
 import { svgIcon } from "../utilites/svg-icons";
 import { skillLinks } from "../utilites/skillLinks";
 import { Link } from "react-router-dom";
+import SkillTreeLinkContainer from "../components/skilltreelinkcontainer";
 
 const incompleteSkills = [
   "Back Lever",
@@ -264,92 +265,217 @@ const initialNodes = [
     position: { x: 433, y: -250 },
     data: { svg: "situp", link: "Sit-up" },
     type: "skillNode",
-  }, 
+  },
   {
     id: "35",
     position: { x: 866, y: -500 },
     data: { svg: "hollowbody", link: "Hollow Body Hold" },
     type: "skillNode",
-  }, 
+  },
   {
     id: "36",
     position: { x: 866, y: -1000 },
     data: { svg: "dragon-flag", link: "Dragon Flag" },
     type: "skillNode",
-  }, 
+  },
   {
     id: "37",
     position: { x: 433, y: 250 },
     data: { svg: "l-sit-comp", link: "L-Sit Compression" },
     type: "skillNode",
-  }, 
+  },
   {
     id: "38",
     position: { x: 433, y: 750 },
     data: { svg: "l-sit", link: "L-Sit" },
     type: "skillNode",
-  }, 
+  },
   {
     id: "39",
     position: { x: 1300, y: 250 },
     data: { svg: "assisted-inv-row", link: "Assisted Inverted Row" },
     type: "skillNode",
-  }, 
+  },
   {
     id: "40",
     position: { x: 1300, y: -250 },
     data: { svg: "inverted-row", link: "Inverted Row" },
     type: "skillNode",
-  }, 
+  },
   {
     id: "41",
     position: { x: 1300, y: -750 },
     data: { svg: "pull-up", link: "Pull-up" },
     type: "skillNode",
-  }, 
+  },
   {
     id: "42",
     position: { x: 1733, y: -500 },
     data: { svg: "assist-pullup", link: "Assisted Pull-up" },
     type: "skillNode",
-  }, 
+  },
   {
     id: "43",
     position: { x: 1733, y: 0 },
     data: { svg: "activehang", link: "Active Hang" },
     type: "skillNode",
-  }, 
+  },
   {
     id: "44",
     position: { x: 1733, y: 500 },
     data: { svg: "deadhang", link: "Dead Hang" },
     type: "skillNode",
-  }, 
+  },
   {
     id: "45",
     position: { x: 1300, y: -1250 },
     data: { svg: "tuck-fl", link: "Tuck FL" },
     type: "skillNode",
-  }, 
+  },
   {
     id: "46",
     position: { x: 1733, y: -1500 },
     data: { svg: "tuck-fl-row", link: "Tuck FL Row" },
     type: "skillNode",
-  }, 
+  },
   {
     id: "47",
     position: { x: 1300, y: -1750 },
     data: { svg: "pike-fl", link: "Pike FL" },
     type: "skillNode",
-  }, 
+  },
   {
     id: "48",
     position: { x: 1733, y: -2000 },
     data: { svg: "pike-fl-row", link: "Pike FL Row" },
     type: "skillNode",
-  }, 
-  
+  },
+  {
+    id: "49",
+    position: { x: 1300, y: -2250 },
+    data: { svg: "adv-tuck-fl", link: "Adv. Tuck FL" },
+    type: "skillNode",
+  },
+  {
+    id: "50",
+    position: { x: 1733, y: -2500 },
+    data: { svg: "adv-tuck-fl-row", link: "Adv. Tuck FL Row" },
+    type: "skillNode",
+  },
+  {
+    id: "51",
+    position: { x: 1300, y: -2750 },
+    data: { svg: "super-adv-tuck-fl", link: "Super Adv. Tuck FL" },
+    type: "skillNode",
+  },
+  {
+    id: "52",
+    position: { x: 1733, y: -3000 },
+    data: { svg: "straddle-fl", link: "Straddle FL" },
+    type: "skillNode",
+  },
+  {
+    id: "53",
+    position: { x: 2166, y: -2750 },
+    data: { svg: "half-lay-fl", link: "Half Lay FL" },
+    type: "skillNode",
+  },
+  {
+    id: "54",
+    position: { x: 1300, y: -3250 },
+    data: { svg: "straddle-fl-row", link: "Straddle FL Row" },
+    type: "skillNode",
+  },
+  {
+    id: "55",
+    position: { x: 2166, y: -3250 },
+    data: { svg: "full-fl", link: "Full Front Lever" },
+    type: "skillNode",
+  },
+  {
+    id: "56",
+    position: { x: 1733, y: -3500 },
+    data: { svg: "full-fl-row", link: "Full FL Row" },
+    type: "skillNode",
+  },
+  {
+    id: "57",
+    position: { x: 2166, y: -3750 },
+    data: { svg: "fl-touch", link: "Front Lever Touch" },
+    type: "skillNode",
+  },
+  {
+    id: "58",
+    position: { x: 1733, y: -1000 },
+    data: { svg: "scapula-pull-up", link: "Scapula Pull-up" },
+    type: "skillNode",
+  },
+  {
+    id: "59",
+    position: { x: 2166, y: -1250 },
+    data: { svg: "chest-pull-up", link: "Chest Pull-up" },
+    type: "skillNode",
+  },
+  {
+    id: "60",
+    position: { x: 2166, y: -750 },
+    data: { svg: "weighted-pull-up", link: "Weighted Pull-ups" },
+    type: "skillNode",
+  },
+  {
+    id: "61",
+    position: { x: 2600, y: -1500 },
+    data: { svg: "waist-pull-up", link: "Waist Pull-up" },
+    type: "skillNode",
+  },
+  {
+    id: "62",
+    position: { x: 2600, y: -2000 },
+    data: { svg: "muscle-up", link: "Muscle-Up" },
+    type: "skillNode",
+  },
+  {
+    id: "63",
+    position: { x: 3033, y: -2250 },
+    data: { svg: "clean-muscle-up", link: "Clean Muscle-Up" },
+    type: "skillNode",
+  },
+  {
+    id: "64",
+    position: { x: 3033, y: -1250 },
+    data: { svg: "archer-pullup", link: "Archer Pull-up" },
+    type: "skillNode",
+  },
+  {
+    id: "65",
+    position: { x: 3033, y: -1750 },
+    data: { svg: "assisted-oap-oac", link: "Assisted OAC" },
+    type: "skillNode",
+  },
+  {
+    id: "66",
+    position: { x: 3466, y: -1500 },
+    data: { svg: "assisted-oap-oac", link: "Assisted OAP" },
+    type: "skillNode",
+  },
+  {
+    id: "67",
+    position: { x: 3466, y: -2000 },
+    data: { svg: "oac-oap", link: "OAC/OAP" },
+    type: "skillNode",
+  },
+  {
+    id: "68",
+    position: { x: 866, y: 0 },
+    data: { svg: "bw-squat", link: "Bodyweight Squat" },
+    type: "skillNode",
+  },
+  {
+    id: "69",
+    position: { x: 866, y: 500 },
+    data: { svg: "split-squat", link: "Split Squat" },
+    type: "skillNode",
+  },
 ];
 
 const initialEdges = [
@@ -689,6 +815,169 @@ const initialEdges = [
     type: "skillEdge",
     style: { stroke: "#ffffff", strokeWidth: 2, zIndex: 1 },
   },
+  {
+    id: "47-49",
+    source: "47",
+    target: "49",
+    type: "skillEdge",
+    style: { stroke: "#ffffff", strokeWidth: 2, zIndex: 1 },
+  },
+  {
+    id: "49-50",
+    source: "49",
+    target: "50",
+    type: "skillEdge",
+    style: { stroke: "#ffffff", strokeWidth: 2, zIndex: 1 },
+  },
+  {
+    id: "49-51",
+    source: "49",
+    target: "51",
+    type: "skillEdge",
+    style: { stroke: "#ffffff", strokeWidth: 2, zIndex: 1 },
+  },
+  {
+    id: "50-51",
+    source: "50",
+    target: "51",
+    type: "skillEdge",
+    style: { stroke: "#ffffff", strokeWidth: 2, zIndex: 1 },
+  },
+  {
+    id: "51-52",
+    source: "51",
+    target: "52",
+    type: "skillEdge",
+    style: { stroke: "#ffffff", strokeWidth: 2, zIndex: 1 },
+  },
+  {
+    id: "52-53",
+    source: "52",
+    target: "53",
+    type: "skillEdge",
+    style: { stroke: "#ffffff", strokeWidth: 2, zIndex: 1 },
+  },
+  {
+    id: "52-54",
+    source: "52",
+    target: "54",
+    type: "skillEdge",
+    style: { stroke: "#ffffff", strokeWidth: 2, zIndex: 1 },
+  },
+  {
+    id: "53-55",
+    source: "53",
+    target: "55",
+    type: "skillEdge",
+    style: { stroke: "#ffffff", strokeWidth: 2, zIndex: 1 },
+  },
+  {
+    id: "54-56",
+    source: "54",
+    target: "56",
+    type: "skillEdge",
+    style: { stroke: "#ffffff", strokeWidth: 2, zIndex: 1 },
+  },
+  {
+    id: "55-56",
+    source: "55",
+    target: "56",
+    type: "skillEdge",
+    style: { stroke: "#ffffff", strokeWidth: 2, zIndex: 1 },
+  },
+  {
+    id: "56-57",
+    source: "56",
+    target: "57",
+    type: "skillEdge",
+    style: { stroke: "#ffffff", strokeWidth: 2, zIndex: 1 },
+  },
+  {
+    id: "41-58",
+    source: "41",
+    target: "58",
+    type: "skillEdge",
+    style: { stroke: "#ffffff", strokeWidth: 2, zIndex: 1 },
+  },
+  {
+    id: "58-59",
+    source: "58",
+    target: "59",
+    type: "skillEdge",
+    style: { stroke: "#ffffff", strokeWidth: 2, zIndex: 1 },
+  },
+  {
+    id: "59-60",
+    source: "59",
+    target: "60",
+    type: "skillEdge",
+    style: { stroke: "#ffffff", strokeWidth: 2, zIndex: 1 },
+  },
+  {
+    id: "59-61",
+    source: "59",
+    target: "61",
+    type: "skillEdge",
+    style: { stroke: "#ffffff", strokeWidth: 2, zIndex: 1 },
+  },
+  {
+    id: "61-62",
+    source: "61",
+    target: "62",
+    type: "skillEdge",
+    style: { stroke: "#ffffff", strokeWidth: 2, zIndex: 1 },
+  },
+  {
+    id: "62-63",
+    source: "62",
+    target: "63",
+    type: "skillEdge",
+    style: { stroke: "#ffffff", strokeWidth: 2, zIndex: 1 },
+  },
+  {
+    id: "61-64",
+    source: "61",
+    target: "64",
+    type: "skillEdge",
+    style: { stroke: "#ffffff", strokeWidth: 2, zIndex: 1 },
+  },
+  {
+    id: "64-65",
+    source: "64",
+    target: "65",
+    type: "skillEdge",
+    style: { stroke: "#ffffff", strokeWidth: 2, zIndex: 1 },
+  },
+  {
+    id: "65-66",
+    source: "65",
+    target: "66",
+    type: "skillEdge",
+    style: { stroke: "#ffffff", strokeWidth: 2, zIndex: 1 },
+  },
+  {
+    id: "65-67",
+    source: "65",
+    target: "67",
+    type: "skillEdge",
+    style: { stroke: "#ffffff", strokeWidth: 2, zIndex: 1 },
+  },
+  {
+    id: "66-67",
+    source: "66",
+    target: "67",
+    type: "skillEdge",
+    style: { stroke: "#ffffff", strokeWidth: 2, zIndex: 1 },
+  },
+  {
+    id: "68-69",
+    source: "68",
+    target: "69",
+    type: "skillEdge",
+    style: { stroke: "#ffffff", strokeWidth: 2, zIndex: 1 },
+  },
+  
+
 ];
 
 const SkillNode = ({ data }) => {
@@ -778,6 +1067,7 @@ export function SkillTree() {
   return (
     <>
       <div style={{ width: "100vw", height: "100vh" }}>
+        <SkillTreeLinkContainer />
         <ReactFlow
           nodes={nodes}
           edges={edges}
@@ -794,10 +1084,13 @@ export function SkillTree() {
             showZoom={true}
             showFitView={true}
             showInteractive={false}
-            style={{ boxShadow: "none", color: "#000000", backgroundColor: "#000000" }}
-          >
-          </Controls>
-        </ReactFlow>  
+            style={{
+              boxShadow: "none",
+              color: "#000000",
+              backgroundColor: "#000000",
+            }}
+          ></Controls>
+        </ReactFlow>
       </div>
     </>
   );

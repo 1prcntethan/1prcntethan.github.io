@@ -1,0 +1,16 @@
+.tree-links {
+  display: absolute;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: fit-content;
+  height: calc(100vh - 107px);
+  background-color: rgb(27, 27, 27);
+  border-right: 1px solid rgb(80, 80, 80);
+  border-bottom: 1px solid rgb(80, 80, 80);
+  opacity: 0.9;
+  z-index: 1;
+  justify-content: space-around;
+  align-items: center;
+}
