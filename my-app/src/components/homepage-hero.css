@@ -1,9 +1,9 @@
 .hero {
     width: 90%;
-    height: calc(100vh - 138px);
+    height: auto;
     display: flex;
     flex-direction: row;
-    justify-self: center;
+    
     padding: 20px 5%;
 
     @media (max-width: 768px) {
@@ -83,7 +83,6 @@
     padding: 40px;
     align-self: center;
     text-align: center;
-    position: relative;
 
     @media (max-width: 768px) {
         padding: 20px;

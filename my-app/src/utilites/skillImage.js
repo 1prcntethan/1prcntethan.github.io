@@ -2,7 +2,7 @@ export const skillImage = new Map([
   [
     "NA",
     <svg
-      id="NA"
+      className="NA"
       viewBox="0 0 1140 1140"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -61,7 +61,8 @@ export const skillImage = new Map([
   [
     "Push-up",
     <svg
-      id="skill-image"
+      className="skill-image"
+      id="tree-size"
       viewBox="0 0 1140 1140"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -109,7 +110,8 @@ export const skillImage = new Map([
   [
     "Planche Lean",
     <svg
-      id="skill-image"
+      className="skill-image"
+      id="tree-size"
       viewBox="0 0 1140 1140"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -169,7 +171,8 @@ export const skillImage = new Map([
   [
     "Pseudo Push-up",
     <svg
-      id="skill-image"
+      className="skill-image"
+      id="tree-size"
       viewBox="0 0 1140 1140"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -231,7 +234,8 @@ export const skillImage = new Map([
   [
     "Full Planche",
     <svg
-      id="skill-image"
+      className="skill-image"
+      id="tree-size"
       viewBox="0 0 1140 1140"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -291,7 +295,8 @@ export const skillImage = new Map([
   [
     "Assisted Push-up",
     <svg
-      id="skill-image"
+      className="skill-image"
+      id="tree-size"
       viewBox="0 0 1140 1140"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -359,7 +364,8 @@ export const skillImage = new Map([
   [
     "Dip",
     <svg
-      id="skill-image"
+      className="skill-image"
+      id="tree-size"
       viewBox="0 0 1140 1140"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -433,7 +439,8 @@ export const skillImage = new Map([
   [
     "Elbow Lever",
     <svg
-      id="skill-image"
+      className="skill-image"
+      id="tree-size"
       viewBox="0 0 1140 1140"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -505,7 +512,8 @@ export const skillImage = new Map([
   [
     "Tuck Planche",
     <svg
-      id="skill-image"
+      className="skill-image"
+      id="tree-size"
       viewBox="0 0 1140 1140"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -569,7 +577,8 @@ export const skillImage = new Map([
   [
     "Tuck Planche PU",
     <svg
-      id="skill-image"
+      className="skill-image"
+      id="tree-size"
       viewBox="0 0 1140 1140"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -633,7 +642,8 @@ export const skillImage = new Map([
   [
     "Adv. Tuck Planche",
     <svg
-      id="skill-image"
+      className="skill-image"
+      id="tree-size"
       viewBox="0 0 1140 1140"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -698,7 +708,8 @@ export const skillImage = new Map([
   [
     "Pike Push-up",
     <svg
-      id="skill-image"
+      className="skill-image"
+      id="tree-size"
       viewBox="0 0 1140 1140"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -758,7 +769,8 @@ export const skillImage = new Map([
   [
     "Crow Pose",
     <svg
-      id="skill-image"
+      className="skill-image"
+      id="tree-size"
       viewBox="0 0 1140 1140"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -822,7 +834,8 @@ export const skillImage = new Map([
   [
     "Assisted Handstand",
     <svg
-      id="skill-image"
+      className="skill-image"
+      id="tree-size"
       viewBox="0 0 1140 1140"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -897,7 +910,8 @@ export const skillImage = new Map([
   [
     "Handstand",
     <svg
-      id="skill-image"
+      className="skill-image"
+      id="tree-size"
       viewBox="0 0 1140 1140"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -963,7 +977,8 @@ export const skillImage = new Map([
   [
     "Elevated Pike PU",
     <svg
-      id="skill-image"
+      className="skill-image"
+      id="tree-size"
       viewBox="0 0 1140 1140"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -1024,7 +1039,8 @@ export const skillImage = new Map([
   [
     "Bent Arm Stand", // also used for HSPU
     <svg
-      id="skill-image"
+      className="skill-image"
+      id="tree-size"
       viewBox="0 0 1140 1140"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -1096,7 +1112,8 @@ export const skillImage = new Map([
   [
     "Assisted HSPU",
     <svg
-      id="skill-image"
+      className="skill-image"
+      id="tree-size"
       viewBox="0 0 1140 1140"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -1168,7 +1185,8 @@ export const skillImage = new Map([
   [
     "HSPU",
     <svg
-      id="skill-image"
+      className="skill-image"
+      id="tree-size"
       viewBox="0 0 1140 1140"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -1240,7 +1258,8 @@ export const skillImage = new Map([
   [
     "Assisted Inverted Row",
     <svg
-      id="skill-image"
+      className="skill-image"
+      id="tree-size"
       viewBox="0 0 1140 1140"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -1308,7 +1327,8 @@ export const skillImage = new Map([
   [
     "Inverted Row",
     <svg
-      id="skill-image"
+      className="skill-image"
+      id="tree-size"
       viewBox="0 0 1140 1140"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -1373,7 +1393,8 @@ export const skillImage = new Map([
   [
     "Tuck FL",
     <svg
-      id="skill-image"
+      className="skill-image"
+      id="tree-size"
       viewBox="0 0 1140 1140"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -1446,7 +1467,8 @@ export const skillImage = new Map([
   [
     "Tuck FL Row",
     <svg
-      id="skill-image"
+      className="skill-image"
+      id="tree-size"
       viewBox="0 0 1140 1140"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -1519,7 +1541,8 @@ export const skillImage = new Map([
   [
     "Pike FL",
     <svg
-      id="skill-image"
+      className="skill-image"
+      id="tree-size"
       viewBox="0 0 1140 1140"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -1592,7 +1615,8 @@ export const skillImage = new Map([
   [
     "Pike FL Row",
     <svg
-      id="skill-image"
+      className="skill-image"
+      id="tree-size"
       viewBox="0 0 1140 1140"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -1665,7 +1689,8 @@ export const skillImage = new Map([
   [
     "Adv. Tuck FL",
     <svg
-      id="skill-image"
+      className="skill-image"
+      id="tree-size"
       viewBox="0 0 1140 1140"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -1738,7 +1763,8 @@ export const skillImage = new Map([
   [
     "Pull-up",
     <svg
-      id="skill-image"
+      className="skill-image"
+      id="tree-size"
       viewBox="0 0 1140 1140"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -1802,7 +1828,8 @@ export const skillImage = new Map([
   [
     "Super Adv. Tuck FL",
     <svg
-      id="skill-image"
+      className="skill-image"
+      id="tree-size"
       viewBox="0 0 1140 1140"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -1875,7 +1902,8 @@ export const skillImage = new Map([
   [
     "Adv. Tuck FL Row",
     <svg
-      id="skill-image"
+      className="skill-image"
+      id="tree-size"
       viewBox="0 0 1140 1140"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -1948,7 +1976,8 @@ export const skillImage = new Map([
   [
     "Straddle FL",
     <svg
-      id="skill-image"
+      className="skill-image"
+      id="tree-size"
       viewBox="0 0 1140 1140"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -2021,7 +2050,8 @@ export const skillImage = new Map([
   [
     "Straddle FL Row",
     <svg
-      id="skill-image"
+      className="skill-image"
+      id="tree-size"
       viewBox="0 0 1140 1140"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -2091,7 +2121,8 @@ export const skillImage = new Map([
   [
     "Half Lay FL",
     <svg
-      id="skill-image"
+      className="skill-image"
+      id="tree-size"
       viewBox="0 0 1140 1140"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -2164,7 +2195,8 @@ export const skillImage = new Map([
   [
     "Full Front Lever",
     <svg
-      id="skill-image"
+      className="skill-image"
+      id="tree-size"
       viewBox="0 0 1140 1140"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -2233,7 +2265,8 @@ export const skillImage = new Map([
   [
     "Deadhang",
     <svg
-      id="skill-image"
+      className="skill-image"
+      id="tree-size"
       viewBox="0 0 1140 1140"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -2294,7 +2327,8 @@ export const skillImage = new Map([
   [
     "Active Hang",
     <svg
-      id="skill-image"
+      className="skill-image"
+      id="tree-size"
       viewBox="0 0 1140 1140"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -2362,7 +2396,8 @@ export const skillImage = new Map([
   [
     "Assisted Pull-up",
     <svg
-      id="skill-image"
+      className="skill-image"
+      id="tree-size"
       viewBox="0 0 1140 1140"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -2435,7 +2470,8 @@ export const skillImage = new Map([
   [
     "Chest Pull-up",
     <svg
-      id="skill-image"
+      className="skill-image"
+      id="tree-size"
       viewBox="0 0 1140 1140"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -2496,7 +2532,8 @@ export const skillImage = new Map([
   [
     "OAHS",
     <svg
-      id="skill-image"
+      className="skill-image"
+      id="tree-size"
       viewBox="0 0 1140 1140"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -2584,7 +2621,8 @@ export const skillImage = new Map([
   [
     "Waist Pull-up",
     <svg
-      id="skill-image"
+      className="skill-image"
+      id="tree-size"
       viewBox="0 0 1140 1140"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -2666,7 +2704,8 @@ export const skillImage = new Map([
   [
     "Muscle-Up",
     <svg
-      id="skill-image"
+      className="skill-image"
+      id="tree-size"
       viewBox="0 0 1140 1140"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -2748,7 +2787,8 @@ export const skillImage = new Map([
   [
     "Adv. Tuck Planche PU",
     <svg
-      id="skill-image"
+      className="skill-image"
+      id="tree-size"
       viewBox="0 0 1140 1140"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -2812,7 +2852,8 @@ export const skillImage = new Map([
   [
     "Super Adv. Tuck PL",
     <svg
-      id="skill-image"
+      className="skill-image"
+      id="tree-size"
       viewBox="0 0 1140 1140"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -2876,7 +2917,8 @@ export const skillImage = new Map([
   [
     "Sit-up",
     <svg
-      id="skill-image"
+      className="skill-image"
+      id="tree-size"
       viewBox="0 0 1140 1140"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -2948,7 +2990,8 @@ export const skillImage = new Map([
   [
     "Hollow Body Hold",
     <svg
-      id="skill-image"
+      className="skill-image"
+      id="tree-size"
       viewBox="0 0 1140 1140"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -3020,7 +3063,8 @@ export const skillImage = new Map([
   [
     "L-sit Compression",
     <svg
-      id="skill-image"
+      className="skill-image"
+      id="tree-size"
       viewBox="0 0 1140 1140"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -3092,7 +3136,8 @@ export const skillImage = new Map([
   [
     "L-sit",
     <svg
-      id="skill-image"
+      className="skill-image"
+      id="tree-size"
       viewBox="0 0 1140 1140"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -3164,7 +3209,8 @@ export const skillImage = new Map([
   [
     "Dragon Flag",
     <svg
-      id="skill-image"
+      className="skill-image"
+      id="tree-size"
       viewBox="0 0 1140 1140"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -3241,7 +3287,8 @@ export const skillImage = new Map([
   [
     "Scapula Pull-up",
     <svg
-      id="skill-image"
+      className="skill-image"
+      id="tree-size"
       viewBox="0 0 1140 1140"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -3309,7 +3356,8 @@ export const skillImage = new Map([
   [
     "90 Degree Hold",
     <svg
-      id="skill-image"
+      className="skill-image"
+      id="tree-size"
       viewBox="0 0 1140 1140"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
@@ -3362,4 +3410,135 @@ export const skillImage = new Map([
       />
     </svg>,
   ],
+  [
+    "Straddle Planche",
+    <svg
+      className="skill-image"
+      id="tree-size"
+      viewBox="0 0 1140 1140"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle cx="570" cy="570" r="570" fill="#F3F3F3" />
+      <circle cx="570" cy="570" r="480" fill="#252525" />
+      <circle cx="472.793" cy="699" r="24" fill="#BBCA88" />
+      <path
+        d="M470.725 651.168C470.653 667.235 454.548 678.279 439.534 672.557L438.73 672.251C435.221 670.914 432.093 668.738 429.619 665.913L382.773 612.428C381.577 611.062 380.547 609.56 379.704 607.953L346.692 544.981C344.948 541.656 344.046 537.954 344.062 534.199L344.066 533.338C344.139 517.271 360.243 506.228 375.257 511.95L376.061 512.256C379.57 513.593 382.698 515.769 385.172 518.594L432.018 572.079C433.214 573.444 434.244 574.947 435.087 576.554L468.099 639.526C469.843 642.851 470.746 646.553 470.729 650.308L470.725 651.168Z"
+        fill="#7B7A7A"
+      />
+      <path
+        d="M539.309 475.641C544.015 484.043 542.987 494.488 536.734 501.812L516.175 525.893C512.548 530.142 507.498 532.926 501.969 533.724L436.869 543.12C433.187 543.652 429.431 543.282 425.924 542.043L363.905 520.138C358.637 518.277 354.226 514.563 351.497 509.688L336.027 482.061C331.321 473.659 332.349 463.214 338.602 455.89L359.161 431.809C362.788 427.56 367.838 424.776 373.367 423.978L438.467 414.582C442.149 414.05 445.905 414.42 449.412 415.659L511.431 437.564C516.699 439.425 521.11 443.139 523.839 448.014L539.309 475.641Z"
+        fill="#F3F3F3"
+      />
+      <path
+        d="M899.073 450.177C916.355 457.263 918.431 480.905 902.648 490.893L890.464 498.604C887.941 500.201 885.13 501.291 882.19 501.814L754.052 524.592C752.717 524.83 751.364 524.948 750.008 524.947L619.861 524.843C616.874 524.84 613.917 524.256 611.154 523.123L597.813 517.654C580.531 510.568 578.456 486.926 594.239 476.938L606.423 469.228C608.946 467.631 611.756 466.54 614.697 466.018L742.835 443.239C744.17 443.002 745.523 442.883 746.879 442.884L877.026 442.988C880.012 442.991 882.97 443.575 885.733 444.708L899.073 450.177Z"
+        fill="#AAAAAA"
+      />
+      <circle cx="536.293" cy="709.5" r="28.5" fill="#B66DA3" />
+      <path
+        d="M305.612 479.065C315.204 501.993 299.644 530.342 270.858 542.385C242.072 554.429 210.96 545.605 201.368 522.678C191.776 499.751 207.336 471.402 236.122 459.359C264.909 447.315 296.02 456.138 305.612 479.065Z"
+        fill="#F3F3F3"
+      />
+      <rect
+        x="323.768"
+        y="449.046"
+        width="131"
+        height="97"
+        rx="21"
+        transform="rotate(-1.37986 323.768 449.046)"
+        fill="#F3F3F3"
+      />
+      <rect
+        x="322.949"
+        y="415.056"
+        width="131"
+        height="97"
+        rx="21"
+        transform="rotate(-1.37986 322.949 415.056)"
+        fill="#F3F3F3"
+      />
+      <path
+        d="M451.59 565.25C449.646 578.951 436.13 587.845 422.778 584.211L421.425 583.843C417.159 582.681 413.318 580.315 410.362 577.027L375.307 538.036C373.763 536.32 372.487 534.381 371.521 532.284L349.579 484.664C347.729 480.648 347.075 476.184 347.697 471.807L347.894 470.419C349.838 456.718 363.353 447.823 376.706 451.458L378.059 451.826C382.325 452.987 386.166 455.353 389.122 458.641L424.177 497.632C425.72 499.349 426.996 501.288 427.962 503.384L449.905 551.005C451.755 555.021 452.409 559.484 451.787 563.862L451.59 565.25Z"
+        fill="#AAAAAA"
+      />
+      <path
+        d="M521.744 656.178C522.292 672.235 506.625 683.893 491.402 678.755L490.587 678.48C487.029 677.279 483.819 675.225 481.238 672.498L432.361 620.862C431.114 619.544 430.026 618.082 429.122 616.509L393.703 554.859C391.832 551.603 390.787 547.939 390.659 544.186L390.63 543.326C390.082 527.268 405.748 515.611 420.971 520.749L421.787 521.024C425.344 522.225 428.554 524.278 431.135 527.005L480.012 578.642C481.26 579.96 482.347 581.421 483.251 582.995L518.671 644.645C520.541 647.901 521.586 651.565 521.714 655.318L521.744 656.178Z"
+        fill="#AAAAAA"
+      />
+      <path
+        d="M918.767 530.402C932.898 541.047 930.22 562.995 913.944 569.931L895.225 577.908C892.214 579.191 888.963 579.817 885.691 579.743L756.26 576.828C754.743 576.794 753.233 576.61 751.753 576.279L625.418 547.991C622.223 547.276 619.218 545.887 616.604 543.917L600.352 531.674C586.221 521.028 588.898 499.081 605.174 492.145L623.893 484.168C626.904 482.884 630.155 482.259 633.428 482.332L762.858 485.247C764.375 485.281 765.885 485.466 767.366 485.797L893.701 514.085C896.895 514.8 899.9 516.189 902.515 518.158L918.767 530.402Z"
+        fill="#F3F3F3"
+      />
+      <path
+        d="M671.326 485.601C674.968 491.968 675.355 499.69 672.368 506.389L664.864 523.214C662.413 528.711 657.904 533.028 652.307 535.239L625.927 545.657C621.235 547.51 616.064 547.769 611.211 546.394L583.922 538.664C578.131 537.024 573.214 533.179 570.226 527.955L561.078 511.964C557.436 505.597 557.05 497.875 560.037 491.176L567.541 474.35C569.992 468.854 574.5 464.537 580.098 462.326L606.478 451.908C611.17 450.055 616.341 449.796 621.194 451.171L648.483 458.901C654.273 460.541 659.191 464.386 662.179 469.61L671.326 485.601Z"
+        fill="#F3F3F3"
+      />
+    </svg>
+  ],
+  [
+    "Straddle Planche PU",
+    <svg
+      id="skill-image"
+      className="tree-skill"
+      viewBox="0 0 1140 1140"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle cx="570" cy="570" r="570" fill="#F3F3F3" />
+      <circle cx="570" cy="570" r="480" fill="#252525" />
+      <circle cx="530" cy="669" r="24" fill="#BBCA88" />
+      <path
+        d="M529.99 621.348C527.949 634.426 515.319 643.086 502.385 640.278L500.851 639.945C496.356 638.969 492.256 636.668 489.082 633.338L455.969 598.599C454.269 596.815 452.867 594.77 451.815 592.542L431.341 549.135C429.379 544.975 428.709 540.321 429.419 535.776L429.661 534.225C431.702 521.148 444.331 512.488 457.265 515.296L458.799 515.629C463.295 516.605 467.394 518.906 470.568 522.236L503.681 556.975C505.381 558.759 506.784 560.804 507.835 563.032L528.309 606.439C530.271 610.599 530.941 615.252 530.232 619.797L529.99 621.348Z"
+        fill="#7B7A7A"
+      />
+      <path
+        d="M539.309 519.641C544.015 528.043 542.987 538.488 536.734 545.812L516.175 569.893C512.548 574.142 507.498 576.926 501.969 577.724L436.869 587.12C433.187 587.652 429.431 587.282 425.924 586.043L363.905 564.138C358.637 562.277 354.226 558.563 351.497 553.688L336.027 526.061C331.321 517.659 332.349 507.214 338.602 499.89L359.161 475.809C362.788 471.56 367.838 468.776 373.367 467.978L438.467 458.582C442.149 458.05 445.905 458.42 449.412 459.659L511.431 481.564C516.699 483.425 521.11 487.139 523.839 492.014L539.309 519.641Z"
+        fill="#F3F3F3"
+      />
+      <path
+        d="M907 511.759C923.809 519.902 924.415 543.627 908.043 552.618L895.405 559.558C892.788 560.996 889.915 561.91 886.948 562.249L757.644 577.042C756.297 577.196 754.939 577.23 753.586 577.145L623.696 568.974C620.715 568.787 617.8 568.02 615.112 566.718L602.137 560.432C585.327 552.289 584.721 528.564 601.093 519.573L613.731 512.633C616.348 511.195 619.221 510.281 622.188 509.942L751.492 495.149C752.839 494.995 754.197 494.961 755.55 495.046L885.44 503.217C888.421 503.405 891.336 504.171 894.024 505.473L907 511.759Z"
+        fill="#AAAAAA"
+      />
+      <circle cx="553.5" cy="664.5" r="28.5" fill="#B66DA3" />
+      <path
+        d="M305.612 523.065C315.204 545.993 299.644 574.342 270.858 586.385C242.072 598.429 210.96 589.605 201.368 566.678C191.776 543.751 207.336 515.402 236.122 503.359C264.909 491.315 296.02 500.138 305.612 523.065Z"
+        fill="#F3F3F3"
+      />
+      <rect
+        x="323.768"
+        y="493.046"
+        width="131"
+        height="97"
+        rx="21"
+        transform="rotate(-1.37986 323.768 493.046)"
+        fill="#F3F3F3"
+      />
+      <rect
+        x="322.949"
+        y="459.056"
+        width="131"
+        height="97"
+        rx="21"
+        transform="rotate(-1.37986 322.949 459.056)"
+        fill="#F3F3F3"
+      />
+      <path
+        d="M484.178 498.346C495.548 506.234 497.429 522.304 488.187 532.604L487.251 533.648C484.298 536.939 480.46 539.309 476.195 540.474L425.617 554.297C423.39 554.905 421.085 555.175 418.778 555.097L366.375 553.328C361.956 553.179 357.674 551.759 354.041 549.239L352.889 548.44C341.519 540.552 339.638 524.483 348.879 514.182L349.816 513.139C352.768 509.848 356.607 507.478 360.872 506.312L411.45 492.49C413.677 491.881 415.982 491.611 418.289 491.689L470.692 493.458C475.111 493.607 479.393 495.027 483.026 497.547L484.178 498.346Z"
+        fill="#AAAAAA"
+      />
+      <path
+        d="M551.642 618.244C548.932 632.008 534.637 640.161 521.41 635.485L520.136 635.035C516.021 633.58 512.405 630.984 509.71 627.551L476.441 585.167C475.044 583.389 473.918 581.414 473.098 579.306L453.56 529.092C451.977 525.024 451.585 520.59 452.428 516.308L452.689 514.982C455.4 501.218 469.695 493.065 482.921 497.741L484.195 498.191C488.311 499.646 491.927 502.242 494.622 505.675L527.891 548.059C529.287 549.837 530.413 551.812 531.233 553.92L550.772 604.134C552.354 608.202 552.747 612.636 551.903 616.918L551.642 618.244Z"
+        fill="#AAAAAA"
+      />
+      <path
+        d="M918.767 576.402C932.898 587.047 930.22 608.995 913.944 615.931L895.225 623.908C892.214 625.191 888.963 625.817 885.691 625.743L756.26 622.828C754.743 622.794 753.233 622.61 751.753 622.279L625.418 593.991C622.223 593.276 619.218 591.887 616.604 589.917L600.352 577.674C586.221 567.028 588.898 545.081 605.174 538.145L623.893 530.168C626.904 528.884 630.155 528.259 633.428 528.332L762.858 531.247C764.375 531.281 765.885 531.466 767.366 531.797L893.701 560.085C896.895 560.8 899.9 562.189 902.515 564.158L918.767 576.402Z"
+        fill="#F3F3F3"
+      />
+      <path
+        d="M671.326 529.601C674.968 535.968 675.355 543.69 672.368 550.389L664.864 567.214C662.413 572.711 657.904 577.028 652.307 579.239L625.927 589.657C621.235 591.51 616.064 591.769 611.211 590.394L583.922 582.664C578.131 581.024 573.214 577.179 570.226 571.955L561.078 555.964C557.436 549.597 557.05 541.875 560.037 535.176L567.541 518.35C569.992 512.854 574.5 508.537 580.098 506.326L606.478 495.908C611.17 494.055 616.341 493.796 621.194 495.171L648.483 502.901C654.273 504.541 659.191 508.386 662.179 513.61L671.326 529.601Z"
+        fill="#F3F3F3"
+      />
+    </svg>
+  ]
 ]);
+ 

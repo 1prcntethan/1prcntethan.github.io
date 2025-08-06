@@ -5,11 +5,13 @@ import { Link } from "react-router-dom";
 export default function SkillTreeLinks(link) {
   return (
     <>
-      <div className="tree-link">
+      
         <Link to= {link.link} id="tree-link-item">
+          <div className="tree-link">
           {link.text}
+          </div>
         </Link>
-      </div>
+      
     </>
   );
 }

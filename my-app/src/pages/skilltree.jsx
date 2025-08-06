@@ -5,6 +5,7 @@ import {
   ReactFlow,
   applyNodeChanges,
   applyEdgeChanges,
+  getEdgeCenter,
   addEdge,
   Controls,
   BaseEdge,
@@ -18,6 +19,7 @@ import { svgIcon } from "../utilites/svg-icons";
 import { skillLinks } from "../utilites/skillLinks";
 import { Link } from "react-router-dom";
 import SkillTreeLinkContainer from "../components/skilltreelinkcontainer";
+import { skillImage } from "../utilites/skillImage";
 
 const incompleteSkills = [
   "Back Lever",
@@ -196,13 +198,13 @@ const initialNodes = [
   },
   {
     id: "23",
-    position: { x: 433, y: -2250 },
+    position: { x: 433, y: -1750 },
     data: { svg: "bent-arm-press", link: "Bent Arm Press to HS" },
     type: "skillNode",
   },
   {
     id: "24",
-    position: { x: 433, y: -1750 },
+    position: { x: 433, y: -2250 },
     data: { svg: "straight-arm-press", link: "Straight Arm Press to HS" },
     type: "skillNode",
   },
@@ -418,7 +420,7 @@ const initialNodes = [
   },
   {
     id: "60",
-    position: { x: 2166, y: -750 },
+    position: { x: 2600, y: -1000 },
     data: { svg: "weighted-pull-up", link: "Weighted Pull-ups" },
     type: "skillNode",
   },
@@ -634,9 +636,9 @@ const initialEdges = [
     style: { stroke: "#ffffff", strokeWidth: 2, zIndex: 1 },
   },
   {
-    id: "20-23",
-    source: "20",
-    target: "23",
+    id: "24-20",
+    source: "24",
+    target: "20",
     type: "skillEdge",
     style: { stroke: "#ffffff", strokeWidth: 2, zIndex: 1 },
   },
@@ -648,9 +650,9 @@ const initialEdges = [
     style: { stroke: "#ffffff", strokeWidth: 2, zIndex: 1 },
   },
   {
-    id: "18-24",
+    id: "18-23",
     source: "18",
-    target: "24",
+    target: "23",
     type: "skillEdge",
     style: { stroke: "#ffffff", strokeWidth: 2, zIndex: 1 },
   },
@@ -1001,6 +1003,7 @@ const SkillNode = ({ data }) => {
             border: "transparent",
             top: "50%",
             right: "50%",
+            zIndex: -1,
           }}
         />
         <Handle
@@ -1011,9 +1014,10 @@ const SkillNode = ({ data }) => {
             border: "transparent",
             bottom: "50%",
             left: "50%",
+            zIndex: -1,
           }}
         />
-        {svgIcon.get(data.svg)}
+        {skillImage.get(data.link)}
       </Link>
     </>
   );
@@ -1031,15 +1035,42 @@ const SkillEdge = ({
   markerEnd,
 }) => {
   const [path] = getStraightPath({ sourceX, sourceY, targetX, targetY });
+  
+  const centerX = (sourceX + targetX) / 2;
+  const centerY = (sourceY + targetY) / 2;
+
+  const dx = targetX - sourceX;
+  const dy = targetY - sourceY;
+  const angle = Math.atan2(dy, dx) * (180 / Math.PI);
+
   return (
-    <BaseEdge
-      id={id}
-      path={path}
-      style={{ stroke: "#ffffff", strokeWidth: 100, ...style }}
-      markerEnd={markerEnd}
-    />
+    <>
+      <BaseEdge
+        id={id}
+        path={path}
+        style={{ stroke: "#ffffff", strokeWidth: 100, ...style }}
+        markerEnd={markerEnd}
+      />
+      <svg
+        style={{
+          position: "absolute",
+          overflow: "visible",
+          left: 0,
+          top: 0,
+          pointerEvents: "none",
+        }}
+      >
+        <g transform={`translate(${centerX}, ${centerY}) rotate(${angle})`}>
+          <polygon
+            points="0,-10 20,0 0,10 "
+            fill="#ffffff"
+          />
+        </g>
+      </svg>
+    </>
   );
 };
+
 
 const nodeTypes = {
   skillNode: SkillNode,
@@ -1076,7 +1107,7 @@ export function SkillTree() {
           nodeTypes={nodeTypes}
           nodesDraggable={false}
           edgeTypes={edgeTypes}
-          minZoom={0.2}
+          minZoom={0.15}
           maxZoom={2}
           defaultViewport={{ x: 1000, y: 1000, zoom: 0.5 }}
         >
@@ -1086,8 +1117,7 @@ export function SkillTree() {
             showInteractive={false}
             style={{
               boxShadow: "none",
-              color: "#000000",
-              backgroundColor: "#000000",
+              color: "#ffffff",
             }}
           ></Controls>
         </ReactFlow>
