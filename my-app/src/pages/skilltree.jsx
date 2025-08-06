@@ -1,25 +1,23 @@
-import Navbar from "../components/navbar";
 import "./skilltree.css";
 import { useState, useCallback } from "react";
 import {
   ReactFlow,
   applyNodeChanges,
   applyEdgeChanges,
-  getEdgeCenter,
-  addEdge,
   Controls,
   BaseEdge,
   getStraightPath,
   Handle,
   Position,
-  MarkerType,
 } from "@xyflow/react";
 import "@xyflow/react/dist/style.css";
 import { svgIcon } from "../utilites/svg-icons";
 import { skillLinks } from "../utilites/skillLinks";
 import { Link } from "react-router-dom";
 import SkillTreeLinkContainer from "../components/skilltreelinkcontainer";
-import { skillImage } from "../utilites/skillImage";
+import { skillTreeIcon } from "../utilites/skilltreeicons";
+
+
 
 const incompleteSkills = [
   "Back Lever",
@@ -1015,9 +1013,9 @@ const SkillNode = ({ data }) => {
             bottom: "50%",
             left: "50%",
             zIndex: -1,
-          }}
+          }} 
         />
-        {skillImage.get(data.link)}
+        {skillTreeIcon.get(data.svg)}
       </Link>
     </>
   );

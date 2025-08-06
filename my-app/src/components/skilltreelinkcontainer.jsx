@@ -12,7 +12,7 @@ export default function SkillTreeLinkContainer() {
       
         <SkillTreeLinks link="/training" text="training" />
       
-        <SkillTreeLinks link="/terminology" text="tutorials" />
+        <SkillTreeLinks link="/terminology" text="terminology" />
       </div>
       
     </>
