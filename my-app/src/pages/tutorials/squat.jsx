@@ -12,7 +12,7 @@ export function Squat() {
   return (
     <>
       <Navbar />
-      <SkillHero title="squat" identifier="squat" />
+      <SkillHero title="bodyweight squat" identifier="bw-squat" />
       {svgDivider.get("0")}
       <div className="skill-info-container">
         <div className="skill-info">
@@ -24,7 +24,7 @@ export function Squat() {
               </Link>
               <br />
               <p>Targeted Muscles: Quads, Glutes, Hamstrings, Lower Back</p>
-              <p>High Strain Areas: N/A</p>
+              <p>High Strain Areas: Knees</p>
             </div>
             <div className="overview-explanation">
               The Squat is a fundamental movement pattern that builds lower body
@@ -41,21 +41,16 @@ export function Squat() {
               <div className="skill-instructions">
                 <ul>
                   <li>
-                    Lie down on your back with your knees bent and feet flat on
-                    the ground.
-                  </li>
-                  <li>Place your hands behind your head, elbows wide.</li>
-                  <li>
-                    Engage your core and lift your upper body towards your
-                    knees, keeping your feet and butt on the ground.
+                    Start in a standing position with your feet slightly wider than shoulder-width apart.
                   </li>
                   <li>
-                    Once your body is upright, lower your upper body back down
-                    to the starting position while maintaining control.
+                    Engage your core and lower your body into a squat, keeping your chest up and knees over your toes.
                   </li>
                   <li>
-                    The exercise can be made easier by crossing your arms over
-                    your chest.
+                    Sink down until your thighs are parallel to the ground or lower, if comfortable.
+                  </li>
+                  <li>
+                    Press back up through your heels to return to the starting position.
                   </li>
                   <li>
                     To use this exercise effectively, perform these at a
@@ -85,18 +80,18 @@ export function Squat() {
         name1="N/A"
         name2="N/A"
         name3="Squat"
-        name4="L-sit Compression"
-        name5="L-sit"
+        name4="Split Squat"
+        name5="Pistol Squat"
         link1="#"
         link2="#"
         link3="/tutorials/squat"
-        link4="/tutorials/lsitcompression"
-        link5="/tutorials/lsit"
+        link4="#"
+        link5="#"
         svg1="NA"
         svg2="NA"
-        svg3="situp"
-        svg4="l-sit-comp"
-        svg5="l-sit"
+        svg3="bw-squat"
+        svg4="split-squat"
+        svg5="pistol-squat"
       />
       <TutorialReturn />
       {svgDivider.get("2")}
@@ -107,16 +102,21 @@ export function Squat() {
             <div>
               Good Form Cues:
               <ul>
-                <li>Chin is neutral</li>
-                <li>Core is engaged</li>
-                <li>Feet and butt are on the ground</li>
+                <li>Feet are slightly wider than shoulder width apart</li>
+                <li>Feet are pointed slightly outward</li>
+                <li>Back is straight, chest is up and open</li>
+                <li>Knees remain over the toes</li>
+                <li>Keep the back straight, and avoid excessive arching or rounding</li>
+                <li>Arms are extended in front of the body, crossed, or at the sides</li>
               </ul>
             </div>
             <div>
               Bad Form Cues:
               <ul>
-                <li>Arms are pulling on neck/head</li>
-                <li>Feet lifting off the ground</li>
+                <li>Feet are too far or close together</li>
+                <li>Toes or heels lifting off the ground</li>
+                <li>Arched or rounded back</li>
+                <li>Excessive forward lean</li>
               </ul>
             </div>
           </div>

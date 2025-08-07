@@ -24,11 +24,15 @@ export function HandstandGuide() {
         <div className="guide-text">
           The handstand is a balance focused skill that involves supporting your
           entire body weight on your hands. On this site, it’s rated C, for high
-          beginner, and takes around 2-3 months to learn, given daily training.
-          The handstand is a super iconic skill which transfers to many other
-          advanced skills, and most importantly, unlocks a prerequisite for the
-          HSPU, a shoulder building skill. By learning handstand, you learn
-          balance, mobility, and body coordination.
+          beginner, and takes around <strong>2-3 months</strong> to learn, given
+          daily training. The handstand is a super iconic skill which transfers
+          to many other advanced skills, and most importantly, unlocks a
+          prerequisite for the
+          <Link to="/tutorials/fullfl" className="guide-external-link">
+            HSPU
+          </Link>
+          , a shoulder building skill. By learning handstand, you learn
+          <strong> balance, mobility, and body coordination.</strong>
         </div>
         <img
           src="hsForm.png"
@@ -48,48 +52,53 @@ export function HandstandGuide() {
           down without losing stamina or getting sore.
         </div>
         <div className="guide-text">
-          The handstand also tests your shoulder mobility. In the handstand, you
-          have to be able to raise your arms straight up, almost touching your
-          bicep/shoulder to your ears. Without this shoulder mobility, you won’t
-          be able to stack your body properly and hold the signature handstand
-          line.
+          The handstand also tests your <strong>shoulder mobility.</strong> In
+          the handstand, you have to be able to raise your arms straight up,
+          almost touching your bicep/shoulder to your ears. Without this
+          shoulder mobility, you won’t be able to stack your body properly and
+          hold the signature handstand line.
         </div>
         <img
           src="hsShoulderMobility.png"
           alt="shoulder mobility"
           className="square-guide-image"
         />
-        <div className="guide-caption">Try this stretch to practice shoulder mobility!</div>
-
+        <div className="guide-caption">
+          Try this stretch to practice shoulder mobility!
+        </div>
 
         <div className="guide-text">
           Wrist extension is extremely important in the handstand as well. You
-          need to be able to pull your wrists back to just around 90 degrees,
-          and a bit more if you want to be able to hold yourself up. If your
-          wrist extension is poor, consider doing wrist stretching exercises to
-          improve the mobility of your wrist.
+          need to be able to pull your wrists back to{" "}
+          <strong>just around 90 degrees</strong>, and a bit more if you want to
+          be able to hold yourself up. If your wrist extension is poor, consider
+          doing wrist stretching exercises to improve the mobility of your
+          wrist.
         </div>
         <img
           src="hsWristExtension.jpg"
           alt="wrist extension"
           className="square-guide-image"
         />
-        <div className="guide-caption">Aim for 90 degrees of wrist extension.</div>
+        <div className="guide-caption">
+          Aim for 90 degrees of wrist extension.
+        </div>
       </div>
       <LineDivider />
       <div className="guide-container">
         <div className="guide-heading">learning to fall</div>
         <div className="guide-text">
           One of the biggest limiting factors for people learning the handstand
-          is the fear of falling, which is completely understandable. As a
-          beginner, the idea of being completely upside down relying only on
-          your hands is extremely daunting. But without overcoming this barrier,
-          you will probably never be able to learn the handstand.
+          is the <strong>fear of falling</strong>, which is completely
+          understandable. As a beginner, the idea of being completely upside
+          down relying only on your hands is extremely daunting. But without
+          overcoming this barrier, you will probably never be able to learn the
+          handstand.
         </div>
         <div className="guide-text">
           Obviously, the fear is not from falling backward where you can catch
-          yourself with your legs; it's from falling forward. The basic step for
-          bailing from a handstand are as follows:
+          yourself with your legs; it's from falling forward. The basic steps
+          for bailing from a handstand are as follows:
           <ul>
             <li>
               When you feel yourself falling forward, move one hand in front of
@@ -101,8 +110,8 @@ export function HandstandGuide() {
           This fall seems almost too simple, and it is; the main challenge here
           is getting used to the fall. Try to keep one hand on the ground, the
           one that didn’t move. Also, choose a side to fall on, so you don’t
-          have to pick which direction to twist in everytime you’re mid fall.
-          Another way to think of the fall is like its the end of the cartwheel.
+          have to pick which direction to twist in every time you’re mid fall.
+          Another way to think of the fall is like the end of the cartwheel.
         </div>
         <div className="guide-text">
           To practice falling, start with using a wall, in a chest-to-wall
@@ -131,9 +140,18 @@ export function HandstandGuide() {
             <li>Look between your hands</li>
             <li>Keep your whole body engaged (arms, abs, glutes)</li>
             <li>Pointed toes (for aesthetics)</li>
+            <li>Grip the floor (works for some people, try it out!)</li>
           </ul>
           Record yourself doing handstands to understand what your form
           currently looks like, and know if you need to fix anything.
+        </div>
+        <img
+          src="hsFormAnn.png"
+          alt="annotated handstand form"
+          className="square-guide-image"
+        />
+        <div className="guide-caption">
+          Good form will allow you to hold the handstand for longer.
         </div>
       </div>
       <LineDivider />
@@ -143,40 +161,65 @@ export function HandstandGuide() {
           The first thing to know about training the handstand is that because
           it doesn’t require much muscular strength, you can train it pretty
           frequently, without getting fatigued or having to exert much effort.
-          This is why you can aim to train the handstand everyday, if you want
-          maximum progress.
+          This is why you can aim to train the handstand{" "}
+          <strong>everyday</strong>, if you want maximum progress.
         </div>
         <div className="guide-text">
           To begin training, find a wall you can kick up to, and do wall
-          handstands with your back to the wall. At first, don’t worry too much
-          about balancing, the most important part at this stage is to get used
-          to the feeling of being upside down, and getting used to your
-          bodyweight and the wrist position of the handstand. Also, focus on
-          keeping your body completely straight and in line, and all the other
-          form cues of the handstand.
+          handstands with your <strong>back</strong> to the wall. At first,
+          don’t worry too much about balancing, the most important part at this
+          stage is to get used to the feeling of being upside down, and getting
+          used to your bodyweight and the wrist position of the handstand. Also,
+          focus on keeping your body completely straight and in line, and all
+          the other form cues of the handstand. You may experience “headaches”
+          during or after handstand training. For the most part, they are
+          normal, and your body will eventually get used to being upside down.
+          However, don’t push through <strong>intense pain</strong>, and stop if
+          the <strong>headaches persist unreasonably</strong>.
         </div>
         <div className="guide-text">
           Once you’re used to the general handstand movement, you can start
           working on balance. In order to balance, you have to keep your center
           of mass directly above your hands. To do this, you will be using your
-          fingers and the heel of your hands. Similar to standing on two feet,
-          your fingers should press into the ground when you feel yourself fall
-          forward, and you should feel the heel of your palm press into the
-          ground when you feel yourself falling back. However, if you stack your
-          weight straight onto the heel of your palm, you’d have no control if
-          you fell backward, which is why it's better to be leaning a bit
-          forward and constantly pushing back with your fingers.
+          <strong> fingers</strong> and the <strong>heel</strong> of your hands.
+          Similar to standing on two feet, your fingers should press into the
+          ground when you feel yourself fall forward, and you should feel the
+          heel of your palm press into the ground when you feel yourself falling
+          back. However, if you stack your weight straight onto the heel of your
+          palm, you’d have no control if you fell backward, which is why it's
+          better to be <strong>leaning a bit forward</strong> and constantly
+          pushing back with your fingers.
+        </div>
+        <img
+          src="wristLeanAnn.png"
+          alt="wrist lean"
+          className="square-guide-image"
+        />
+        <div className="guide-caption">
+          There should be a slight lean forward in the handstand.
         </div>
         <div className="guide-text">
-          To practice this, start your normal back to wall handstand, but with
-          your hands just less than a foot away from the wall. Kick up and rest
-          your feet on the wall. Then, try to push into the ground with your
-          fingers, and balance so that your feet come off the wall. You can also
-          practice balancing the opposite way, with your chest to the wall, but
-          you have to know how to bail. Starting in a chest-to-wall handstand,
-          with your fingers less than half a foot away from the wall, press the
-          heel of your palm into the ground and try to find that sweet spot
-          where you’re using your fingers to stop yourself from falling forward.
+          To practice balancing, start your normal back to wall handstand, but
+          with your hands just less than a foot away from the wall. Kick up and
+          rest your feet on the wall. Then, try to push into the ground with
+          your fingers, and balance so that your feet come off the wall. You can
+          also practice balancing the opposite way, with your chest to the wall,
+          but you have to know how to bail. Starting in a chest-to-wall
+          handstand, with your fingers less than half a foot away from the wall,
+          press the heel of your palm into the ground and try to find that sweet
+          spot where you’re using your fingers to stop yourself from falling
+          forward.
+        </div>
+        <div className="guide-text">
+          Once you’ve learned to balance, you can start attempting freestanding
+          handstands off the wall. Start with your hands on the ground, shoulder
+          width apart, bending down with your feet staggered. Your strong foot
+          will be the <strong>kick off</strong> foot, while your weak foot will
+          be the foot <strong>kicking up</strong>. Push off the ground with your
+          strong foot, while kicking up with your weak, to enter the handstand
+          position. Before you kick off, make sure your{" "}
+          <strong>shoulders are above your wrists</strong>, and imagine trying
+          to stack your hips on your shoulders.
         </div>
         <div className="guide-text">
           After a while, you will feel more and more accommodated to the

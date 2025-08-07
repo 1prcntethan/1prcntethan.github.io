@@ -105,35 +105,37 @@ export function BeginnerGuide() {
           </Link>{" "}
           is listed as 1 - 2 years to learn. This is just a general estimate,
           assuming average training intensity and average genetics. However,
-          <strong> height</strong> and <strong>starting weight</strong> also play a role. Shorter people have an
-          advantage in lever skills like the front lever, while taller people
-          are disadvantaged. Additionally, with skills being based on
-          bodyweight, skills are more challenging for heavier people and easier
-          for lighter people. That being said, almost all skills are completely
-          attainable, it’s a matter of <strong>time and effort</strong>.
+          <strong> height</strong> and <strong>starting weight</strong> also
+          play a role. Shorter people have an advantage in lever skills like the
+          front lever, while taller people are disadvantaged. Additionally, with
+          skills being based on bodyweight, skills are more challenging for
+          heavier people and easier for lighter people. That being said, almost
+          all skills are completely attainable, it’s a matter of{" "}
+          <strong>time and effort</strong>.
         </div>
         <div className="guide-text">
           The most important aspect of calisthenics training, and almost any
-          type of training or sport in general is <strong>consistency</strong>. You could read
-          this entire site. You can watch every YouTube tutorial on the planet.
-          But you won’t get anywhere by skipping every other day, or not eating
-          right. You have to show up. <strong>Consistently</strong>. In fact, you don’t even have to
-          train super seriously or go crazy with the science based training.
-          Simply by showing up and working out everyday, you will make progress.
-          Look at calisthenics as a fun activity, which it is! Set a routine and
-          a block of time dedicated to working out. Remember, there are no
-          shortcuts to success.
+          type of training or sport in general is <strong>consistency</strong>.
+          You could read this entire site. You can watch every YouTube tutorial
+          on the planet. But you won’t get anywhere by skipping every other day,
+          or not eating right. You have to show up.{" "}
+          <strong>Consistently</strong>. In fact, you don’t even have to train
+          super seriously or go crazy with the science based training. Simply by
+          showing up and working out everyday, you will make progress. Look at
+          calisthenics as a fun activity, which it is! Set a routine and a block
+          of time dedicated to working out. Remember, there are no shortcuts to
+          success.
         </div>
         <div className="guide-text">
           Bonus tip: Every seasoned calisthenics creator and athlete will say
-          the same thing. <strong>Film yourself</strong>. Consistently record yourself doing your
-          exercises and skills. It doesn’t matter if you’re a beginner, or if
-          you only have tuck planche. Record it all! Having recordings of
-          yourself to look at will be a huge help when identifying issues with
-          your form, and it’ll help you fix it. Also, having an extensive log of
-          your exercises will allow you to visibly see progress as you get
-          stronger. Trust me, anyone who didn’t record their journey deeply
-          regrets it.
+          the same thing. <strong>Film yourself</strong>. Consistently record
+          yourself doing your exercises and skills. It doesn’t matter if you’re
+          a beginner, or if you only have tuck planche. Record it all! Having
+          recordings of yourself to look at will be a huge help when identifying
+          issues with your form, and it’ll help you fix it. Also, having an
+          extensive log of your exercises will allow you to visibly see progress
+          as you get stronger. Trust me, anyone who didn’t record their journey
+          deeply regrets it.
         </div>
       </div>
       <LineDivider />
@@ -208,9 +210,15 @@ export function BeginnerGuide() {
             inverted rows
           </Link>
           <br />
-          30s hollow body hold
+          30s{" "}
+          <Link to="/tutorials/hollowbody" className="guide-external-link">
+            hollow body hold
+          </Link>
           <br />
-          20s L-sit
+          20s{" "}
+          <Link to="/tutorials/lsit" className="guide-external-link">
+            L-sit
+          </Link>
           <br />
           20 squats
         </div>
@@ -258,8 +266,15 @@ export function BeginnerGuide() {
           )
         </div>
         <div className="guide-text">
-          CORE <br />4 hollow body holds almost to failure. (3 x 12 sit-ups &
-          leg raises are alternative exercises)
+          CORE <br />4{" "}
+          <Link to="/tutorials/hollowbody" className="guide-external-link">
+            hollow body holds
+          </Link>{" "}
+          almost to failure. (3 x 12{" "}
+          <Link to="/tutorials/situp" className="guide-external-link">
+            sit-ups
+          </Link>{" "}
+          & leg raises are alternative exercises)
         </div>
         <div className="guide-text">
           LEGS <br />3 x 12 body weight squats (use a chair/assistance if too
@@ -275,27 +290,28 @@ export function BeginnerGuide() {
           unless you have previous experience working out or lifting.
         </div>
         <div className="guide-text">
-          Overtraining happens when you push yourself <strong>too far</strong>, whether it be too
-          much volume or intensity. For calisthenics, we focus mostly on
-          strength, which is the 4-8 rep range, give or take. This means that
-          doing 20 reps is considered endurance, and won’t contribute much
-          significant progress to building strength. Additionally, overtraining
-          <strong> volume</strong> is extremely likely to make you sore, which can sometimes
-          affect your next session and prevent you from training at 100%.
-          Overtraining <strong>intensity</strong> means you’re doing too many exercises to their
-          max, and overall, you can’t accumulate enough volume. For
-          calisthenics, aim to be doing your workouts at 80-90%, so close to
-          failure but not completely.
+          Overtraining happens when you push yourself <strong>too far</strong>,
+          whether it be too much volume or intensity. For calisthenics, we focus
+          mostly on strength, which is the 4-8 rep range, give or take. This
+          means that doing 20 reps is considered endurance, and won’t contribute
+          much significant progress to building strength. Additionally,
+          overtraining
+          <strong> volume</strong> is extremely likely to make you sore, which
+          can sometimes affect your next session and prevent you from training
+          at 100%. Overtraining <strong>intensity</strong> means you’re doing
+          too many exercises to their max, and overall, you can’t accumulate
+          enough volume. For calisthenics, aim to be doing your workouts at
+          80-90%, so close to failure but not completely.
         </div>
         <div className="guide-text">
           Form is a very important part of calisthenics. Not following form can
-          get you <strong>injured</strong>, or build bad habits that are hard to break. Be
-          patient with progressions and make sure you can hold them with good
-          form before you move on. There are exceptions though. While focusing
-          on form is good, there is a place for bad form, like when you’re first
-          learning a progression or exercise. You can’t focus on form all the
-          time, and sometimes it's okay to trade form for longer hold times or
-          higher intensity.
+          get you <strong>injured</strong>, or build bad habits that are hard to
+          break. Be patient with progressions and make sure you can hold them
+          with good form before you move on. There are exceptions though. While
+          focusing on form is good, there is a place for bad form, like when
+          you’re first learning a progression or exercise. You can’t focus on
+          form all the time, and sometimes it's okay to trade form for longer
+          hold times or higher intensity.
         </div>
       </div>
       <LineDivider />
@@ -308,13 +324,16 @@ export function BeginnerGuide() {
         </div>
         <div className="guide-text">
           Protein is probably the most important factor for building muscle and
-          strength in calisthenics. <strong>1g/lb or 2.2g/kg of bodyweight</strong> is a good benchmark for
-          how much protein you should be eating everyday. There is some wiggle
-          room, and at minimum try to meet the <strong>0.8g/lb or 1.8g/kg</strong> mark. This protein is
-          absolutely necessary for your body to recover and build muscle. There
-          is an upper limit for protein, and it’s pretty high, but if you do
-          cross that threshold frequently, you might experience some serious
-          health issues. That threshold is around <strong>1.2g/lb or 2.65g/kg of bodyweight</strong>.
+          strength in calisthenics.{" "}
+          <strong>1g/lb or 2.2g/kg of bodyweight</strong> is a good benchmark
+          for how much protein you should be eating everyday. There is some
+          wiggle room, and at minimum try to meet the{" "}
+          <strong>0.8g/lb or 1.8g/kg</strong> mark. This protein is absolutely
+          necessary for your body to recover and build muscle. There is an upper
+          limit for protein, and it’s pretty high, but if you do cross that
+          threshold frequently, you might experience some serious health issues.
+          That threshold is around{" "}
+          <strong>1.2g/lb or 2.65g/kg of bodyweight</strong>.
           <br />
           <Link
             to="https://learn.athleanx.com/calculators/protein-calculator"
@@ -324,29 +343,30 @@ export function BeginnerGuide() {
           </Link>
         </div>
         <div className="guide-text">
-          For carbohydrates/fats, aim to eat as <strong>healthy</strong> as possible. This means
-          sticking to complex carbohydrates (brown rice, oats, potatoes), and
-          healthy fats (avocado, olive oil, nuts, fatty fish). Having a healthy
-          body and healthy diet will benefit you in more than your calisthenics
-          training. But when you first start out, don’t do a complete 180 from
-          your original diet. Forcing yourself to eat clean is hard, especially
-          when it’s something new. Start by making slow changes. Switch foods
-          out one by one, and allow yourself to cheat meals from time to time.
-          This will ensure you don’t revert back to a bad diet, or tarnish your
-          relationship with food. And always remember to listen to your body.
+          For carbohydrates/fats, aim to eat as <strong>healthy</strong> as
+          possible. This means sticking to complex carbohydrates (brown rice,
+          oats, potatoes), and healthy fats (avocado, olive oil, nuts, fatty
+          fish). Having a healthy body and healthy diet will benefit you in more
+          than your calisthenics training. But when you first start out, don’t
+          do a complete 180 from your original diet. Forcing yourself to eat
+          clean is hard, especially when it’s something new. Start by making
+          slow changes. Switch foods out one by one, and allow yourself to cheat
+          meals from time to time. This will ensure you don’t revert back to a
+          bad diet, or tarnish your relationship with food. And always remember
+          to listen to your body.
         </div>
         <div className="guide-text">
-          Body composition is a <strong>huge factor</strong> when learning calisthenics skills.
-          Since the difficulty is based on your bodyweight, the lighter you are,
-          the easier skills will be. This is why all the top calisthenics
-          athletes are lean and muscular, since that is the optimal body type
-          for the best performance. This means that if you’re overweight, you
-          should aim to eat in a calorie deficit. If you’re at a normal weight,
-          eat enough to maintain it. And if you’re underweight, you should eat
-          in a slight calorie surplus, until you feel like you’re in a healthy
-          spot. You can figure out where you are on this spectrum using your
-          BMI. It definitely <strong>isn't</strong> accurate, but it gives you a general ballpark
-          of what you should be doing.
+          Body composition is a <strong>huge factor</strong> when learning
+          calisthenics skills. Since the difficulty is based on your bodyweight,
+          the lighter you are, the easier skills will be. This is why all the
+          top calisthenics athletes are lean and muscular, since that is the
+          optimal body type for the best performance. This means that if you’re
+          overweight, you should aim to eat in a calorie deficit. If you’re at a
+          normal weight, eat enough to maintain it. And if you’re underweight,
+          you should eat in a slight calorie surplus, until you feel like you’re
+          in a healthy spot. You can figure out where you are on this spectrum
+          using your BMI. It definitely <strong>isn't</strong> accurate, but it
+          gives you a general ballpark of what you should be doing.
           <br />
           <Link
             to="https://www.calculator.net/bmi-calculator.html"
@@ -362,27 +382,27 @@ export function BeginnerGuide() {
         <div className="guide-text">
           “Calisthenics doesn’t build muscle” <br />
           If you’re trying to build muscle with calisthenics, don’t worry.
-          <strong> Calisthenics does build muscle</strong>. While the main focus of calisthenics
-          isn’t to build muscles, any increase in strength will always come with
-          an increase in muscle; it’s just how the body works. If you really
-          wanted, you could also start weighted calisthenics, which promotes
-          more straightforward muscle growth.
+          <strong> Calisthenics does build muscle</strong>. While the main focus
+          of calisthenics isn’t to build muscles, any increase in strength will
+          always come with an increase in muscle; it’s just how the body works.
+          If you really wanted, you could also start weighted calisthenics,
+          which promotes more straightforward muscle growth.
         </div>
         <div className="guide-text">
           “You need weights for real strength” <br />
           In calisthenics, you will probably only be pushing your body weight.
           While that’s true, that doesn’t mean you won’t build the strength to
-          push more than that. Calisthenics mainly builds <strong>relative strength</strong>,
-          relative to your body weight. However, by using leverages, we can
-          build muscle that pushes an equivalent of much more weight. Also, with
-          weighted calisthenics, we can increase our body weight and make
-          exercises even more challenging.
+          push more than that. Calisthenics mainly builds{" "}
+          <strong>relative strength</strong>, relative to your body weight.
+          However, by using leverages, we can build muscle that pushes an
+          equivalent of much more weight. Also, with weighted calisthenics, we
+          can increase our body weight and make exercises even more challenging.
         </div>
         <div className="guide-text">
           “You must train every day” <br />
           Training everyday may work for some people, but for the majority of
-          people, training everyday can be detrimental for your
-          progress. Your body needs time to <strong>rest and recover</strong>, in order to heal
+          people, training everyday can be detrimental for your progress. Your
+          body needs time to <strong>rest and recover</strong>, in order to heal
           and adapt to the stimulus you provide it. When programming,
           incorporate rest days into your plan to give your body a much needed
           break.
@@ -400,13 +420,14 @@ export function BeginnerGuide() {
             Terminology
           </Link>{" "}
           page to familiarize yourself with calisthenics lingo and determine
-          your skill level. Also, choose your <strong>target skills</strong>, the skills you want
-          to be doing 2 or 3 years down the road. Make sure to choose 1 primary
-          push skill and 1 primary pull skill. Any more might split your focus
-          and training too much to make any meaningful progress. There are also
-          calisthenics communities online you can join and follow, like on
-          Discord or Instagram. Finally, make sure to stay patient, listen to
-          your body, and <strong>enjoy the process</strong> the whole way.
+          your skill level. Also, choose your <strong>target skills</strong>,
+          the skills you want to be doing 2 or 3 years down the road. Make sure
+          to choose 1 primary push skill and 1 primary pull skill. Any more
+          might split your focus and training too much to make any meaningful
+          progress. There are also calisthenics communities online you can join
+          and follow, like on Discord or Instagram. Finally, make sure to stay
+          patient, listen to your body, and <strong>enjoy the process</strong>{" "}
+          the whole way.
         </div>
       </div>
       <Footer />

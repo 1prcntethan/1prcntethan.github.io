@@ -218,7 +218,6 @@ export function Tutorials() {
     "OAC/OAP",
     "Weighted Pull-ups",
     "Butterfly",
-    "Bodyweight Squat",
     "Split Squat",
     "Assisted Pistol Squat",
     "Bulgarian Split Squat",

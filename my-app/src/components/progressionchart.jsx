@@ -71,6 +71,9 @@ export default function ProgressionChart(skill) {
                 
                 </div>
             </div>
+            <div className="progression-chart-footer">
+                Learn to use the progression chart <Link to="/howtouseguide" className="prog-use-link"> here</Link>.    
+            </div>
             
         </>
     )

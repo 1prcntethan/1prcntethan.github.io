@@ -62,6 +62,7 @@ import { Lsit } from './pages/tutorials/lsit';
 import { DragonFlag } from './pages/tutorials/dragonflag';
 import { ScapulaPullup } from './pages/tutorials/scapulapullup';
 import { NinetyDegHold } from './pages/tutorials/ninetydeghold';
+import { Squat } from './pages/tutorials/squat';
 
 
 function App() {
@@ -136,6 +137,8 @@ function App() {
         <Route path="/tutorials/lsitcompression" element={<LsitComp/>}/>
         <Route path="/tutorials/lsit" element={<Lsit/>}/>
         <Route path="/tutorials/dragonflag" element={<DragonFlag/>}/>
+
+        <Route path="/tutorials/squat" element={<Squat/>}/>
 
       </Routes>
       </ScrollToTop>

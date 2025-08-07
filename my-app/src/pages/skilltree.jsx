@@ -44,7 +44,6 @@ const incompleteSkills = [
   "OAC/OAP",
   "Weighted Pull-ups",
   "Butterfly",
-  "Bodyweight Squat",
   "Split Squat",
   "Assisted Pistol Squat",
   "Bulgarian Split Squat",
@@ -1119,6 +1118,11 @@ export function SkillTree() {
             }}
           ></Controls>
         </ReactFlow>
+        <polygon
+          points="0,0 100,0 100,100 0,100"
+          fill="#ffffff"
+          zIndex={10}
+        />
       </div>
     </>
   );

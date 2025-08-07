@@ -117,3 +117,32 @@
     align-self: center;
 }
 
+.progression-chart-footer { /*footer for the progression chart*/
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    color: #919191;
+    background-color: #252525;
+    padding: 20px 0 5px 0;
+    font-family: Fira Sans;
+    font-weight: 200;
+
+    @media (max-width: 768px) {
+        font-size: 12px;
+        padding: 10px 0;        
+    }
+}
+
+.prog-use-link { /*link in the footer*/
+    color: #c730ba8a;
+    text-decoration: none;
+    font-weight: 400;
+    margin-left: 5px;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}

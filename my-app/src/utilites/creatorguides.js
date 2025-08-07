@@ -264,5 +264,12 @@ export const creatorGuides = new Map([
       "https://www.youtube.com/embed/zJdq44mdZrE",
       "https://www.youtube.com/embed/Jeew_oxr5ZA"
     ]
+  ],
+  [
+    "squat",
+    [
+      "https://www.youtube.com/embed/RClKKQqsvXA",
+      "https://www.youtube.com/embed/j9XRuBbO-To"
+    ]
   ]
 ]);

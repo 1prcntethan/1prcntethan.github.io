@@ -193,7 +193,11 @@ export const heroBlurb = new Map([
   ],
   [
     "ninety-deg-hold",
-    "The 90 hold is an intermediate push exercise, and is one of the first exercises where beginners activate their lower back."
+    "The 90 Degree Hold is an intermediate push exercise, and is one of the first exercises where beginners activate their lower back."
+  ],
+  [
+    "bw-squat",
+    "The Bodyweight Squat is a fundamental lower body exercise that builds strength in the quadriceps, hamstrings, and glutes."
   ]
   
 ]);

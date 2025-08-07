@@ -76,7 +76,7 @@ export const skillLinks = new Map([
   
     //VERTICAL PULL SKILLS ^^
   
-    ["Bodyweight Squat", "bodyweight squat"],
+    ["Bodyweight Squat", "/tutorials/squat"],
     ["Split Squat", "split squat"],
     ["Assisted Pistol Squat", "assisted pistol squat"],
     ["Bulgarian Split Squat", "bulgarian split squat"],
