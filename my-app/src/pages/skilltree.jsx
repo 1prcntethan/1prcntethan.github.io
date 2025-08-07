@@ -11,7 +11,6 @@ import {
   Position,
 } from "@xyflow/react";
 import "@xyflow/react/dist/style.css";
-import { svgIcon } from "../utilites/svg-icons";
 import { skillLinks } from "../utilites/skillLinks";
 import { Link } from "react-router-dom";
 import SkillTreeLinkContainer from "../components/skilltreelinkcontainer";
@@ -44,7 +43,6 @@ const incompleteSkills = [
   "OAC/OAP",
   "Weighted Pull-ups",
   "Butterfly",
-  "Split Squat",
   "Assisted Pistol Squat",
   "Bulgarian Split Squat",
   "Reverse Nordic Curl",
@@ -473,6 +471,90 @@ const initialNodes = [
     id: "69",
     position: { x: 866, y: 500 },
     data: { svg: "split-squat", link: "Split Squat" },
+    type: "skillNode",
+  },
+  {
+    id: "70",
+    position: { x: 866, y: 1000 },
+    data: { svg: "bulgarian-split-squat", link: "Bulgarian Split Squat" },
+    type: "skillNode",
+  },
+  {
+    id: "71",
+    position: { x: 866, y: 1500 },
+    data: { svg: "sissy-squat", link: "Sissy Squat" },
+    type: "skillNode",
+  },
+  {
+    id: "72",
+    position: { x: 433, y: 1250 },
+    data: { svg: "reverse-nordic", link: "Reverse Nordic Curl" },
+    type: "skillNode",
+  },
+  {
+    id: "73",
+    position: { x: 0, y: 1500 },
+    data: { svg: "nordic-curl", link: "Nordic Curl" },
+    type: "skillNode",
+  },
+  {
+    id: "text-1",
+    position: { x: -300, y: -2900 },
+    data: { text: "vertical push"},
+    type: "textNode",
+  },
+  {
+    id: "text-2",
+    position: { x: -2800, y: -1000 },
+    data: { text: "horizontal push"},
+    type: "textNode",
+  },
+  {
+    id: "text-3",
+    position: { x: 2900, y: -1000 },
+    data: { text: "vertical pull"},
+    type: "textNode",
+  },
+  {
+    id: "text-4",
+    position: { x: 2400, y: -3100 },
+    data: { text: "horizontal pull"},
+    type: "textNode",
+  },
+  {
+    id: "text-5",
+    position: { x: 600, y: -600 },
+    data: { text: "core"},
+    type: "textNode",
+  },
+  {
+    id: "text-6",
+    position: { x: 1100, y: 1200 },
+    data: { text: "legs"},
+    type: "textNode",
+  }, 
+  {
+    id: "caption-1",
+    position: { x: -800, y: -300  },
+    data: { text: "= fundamental skills"},
+    type: "captionNode",
+  }, 
+  {
+    id: "caption-2",
+    position: { x: -800, y: -200  },
+    data: { text: "= target skills"},
+    type: "captionNode",
+  }, 
+  {
+    id: "color-1",
+    position: { x: -915, y: -312  },
+    data: {svg: "color-pink"}, 
+    type: "skillNode",
+  }, 
+  {
+    id: "color-2",
+    position: { x: -915, y: -212  },
+    data: {svg: "color-green"}, 
     type: "skillNode",
   },
 ];
@@ -975,6 +1057,41 @@ const initialEdges = [
     type: "skillEdge",
     style: { stroke: "#ffffff", strokeWidth: 2, zIndex: 1 },
   },
+  {
+    id: "69-70",
+    source: "69",
+    target: "70",
+    type: "skillEdge",
+    style: { stroke: "#ffffff", strokeWidth: 2, zIndex: 1 },
+  },
+  {
+    id: "70-71",
+    source: "70",
+    target: "71",
+    type: "skillEdge",
+    style: { stroke: "#ffffff", strokeWidth: 2, zIndex: 1 },
+  },
+  {
+    id: "70-72",
+    source: "70",
+    target: "72",
+    type: "skillEdge",
+    style: { stroke: "#ffffff", strokeWidth: 2, zIndex: 1 },
+  },
+  {
+    id: "72-71",
+    source: "72",
+    target: "71",
+    type: "skillEdge",
+    style: { stroke: "#ffffff", strokeWidth: 2, zIndex: 1 },
+  },
+  {
+    id: "72-73",
+    source: "72",
+    target: "73",
+    type: "skillEdge",
+    style: { stroke: "#ffffff", strokeWidth: 2, zIndex: 1 },
+  },
   
 
 ];
@@ -1019,6 +1136,27 @@ const SkillNode = ({ data }) => {
     </>
   );
 };
+
+const TextNode = ({ data }) => {
+  return (
+    <>
+      <div className="text-node">
+      {data.text}
+      </div>
+    </>
+  );
+};
+
+const CaptionNode = ({ data }) => {
+  return (
+    <>
+      <div className="caption-node">
+      {data.text}
+      </div>
+    </>
+  );
+};
+
 
 const SkillEdge = ({
   id,
@@ -1071,6 +1209,8 @@ const SkillEdge = ({
 
 const nodeTypes = {
   skillNode: SkillNode,
+  textNode: TextNode,
+  captionNode: CaptionNode,
 };
 
 const edgeTypes = {
@@ -1118,11 +1258,7 @@ export function SkillTree() {
             }}
           ></Controls>
         </ReactFlow>
-        <polygon
-          points="0,0 100,0 100,100 0,100"
-          fill="#ffffff"
-          zIndex={10}
-        />
+        
       </div>
     </>
   );

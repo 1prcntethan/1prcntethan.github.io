@@ -271,5 +271,12 @@ export const creatorGuides = new Map([
       "https://www.youtube.com/embed/RClKKQqsvXA",
       "https://www.youtube.com/embed/j9XRuBbO-To"
     ]
+  ],
+  [
+    "split-squat",
+    [
+      "https://www.youtube.com/embed/SGHnCftrZkA",
+      "https://www.youtube.com/embed/zCsZwLeXrCg"
+    ]
   ]
 ]);

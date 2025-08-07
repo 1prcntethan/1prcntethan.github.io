@@ -198,6 +198,10 @@ export const heroBlurb = new Map([
   [
     "bw-squat",
     "The Bodyweight Squat is a fundamental lower body exercise that builds strength in the quadriceps, hamstrings, and glutes."
+  ],
+  [
+    "split-squat",
+    "The Split Squat is a unilateral lower body exercise that builds strength in the quadriceps, hamstrings, and glutes. It builds off the requirements of the regular squat, making it a great exercise for improving balance and stability."
   ]
   
 ]);

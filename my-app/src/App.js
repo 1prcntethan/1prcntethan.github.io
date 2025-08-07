@@ -63,6 +63,7 @@ import { DragonFlag } from './pages/tutorials/dragonflag';
 import { ScapulaPullup } from './pages/tutorials/scapulapullup';
 import { NinetyDegHold } from './pages/tutorials/ninetydeghold';
 import { Squat } from './pages/tutorials/squat';
+import { SplitSquat } from './pages/tutorials/splitsquat';
 
 
 function App() {
@@ -139,6 +140,7 @@ function App() {
         <Route path="/tutorials/dragonflag" element={<DragonFlag/>}/>
 
         <Route path="/tutorials/squat" element={<Squat/>}/>
+        <Route path="/tutorials/splitsquat" element={<SplitSquat/>}/>
 
       </Routes>
       </ScrollToTop>

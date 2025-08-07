@@ -21,7 +21,7 @@ export default function TutorialListL() {
         ["Nordic Curl", "Sissy Squat", "Pistol Squat", "Shrimp Squat", "Dragon Pistol Squat"],
     ];
 
-    const incompleteList = ["Split Squat", "Assisted Pistol Squat", "Bulgarian Split Squat", "Reverse Nordic Curl", "Nordic Curl", "Sissy Squat", "Pistol Squat", "Shrimp Squat", "Dragon Pistol Squat"];
+    const incompleteList = ["Assisted Pistol Squat", "Bulgarian Split Squat", "Reverse Nordic Curl", "Nordic Curl", "Sissy Squat", "Pistol Squat", "Shrimp Squat", "Dragon Pistol Squat"];
 
 
     const handleRowClick = (index, buttonTitle) => {
