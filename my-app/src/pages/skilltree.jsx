@@ -499,7 +499,7 @@ const initialNodes = [
   },
   {
     id: "text-1",
-    position: { x: -300, y: -2900 },
+    position: { x: -200, y: -2900 },
     data: { text: "vertical push"},
     type: "textNode",
   },
