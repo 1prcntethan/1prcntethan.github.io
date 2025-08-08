@@ -125,7 +125,7 @@ const selectStyles = {
     margin: "0 auto",
     backgroundColor: "#333333",
     border: "1px solid rgb(128, 128, 128)",
-    borderRadius: "8px",
+    borderRadius: "0px",
     boxShadow: "none",
     color: "white",
     "&:hover": {
