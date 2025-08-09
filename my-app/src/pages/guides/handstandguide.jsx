@@ -129,6 +129,18 @@ export function HandstandGuide() {
           Another way to think of the fall is like the end of the cartwheel.
         </div>
         <div className="guide-text">
+          Check out this video! It's not only a good resource for a visual
+          representation of the fall; it also outlines how to learn the
+          handstand in general.
+          <br />
+          <Link
+            to="https://www.youtube.com/watch?v=2H2yLngOZdg"
+            className="guide-external-link"
+          >
+            Watch here!
+          </Link>
+        </div>
+        <div className="guide-text">
           To practice falling, start with using a wall, in a chest-to-wall
           handstand. It doesn’t have to be a completely straight handstand, you
           can be at a 60 degree angle if you wanted to. Choose a progression
@@ -253,7 +265,11 @@ export function HandstandGuide() {
         <div className="guide-text">
           If you’re training the handstand, follow these progressions:
           <ul>
-            <li>Pike push-ups</li>
+            <li>
+              <Link to="/tutorials/pikepushup" className="guide-external-link">
+                Pike push-ups
+              </Link>
+            </li>
             <li>
               Elevated Pike Hold - stack the hips on the shoulders on the hands
             </li>
@@ -277,10 +293,6 @@ export function HandstandGuide() {
             </li>
           </ul>
         </div>
-        <div className="guide-text">
-          Hopefully this guide was helpful in your handstand journey! Best of
-          luck!
-        </div>
       </div>
 
       <LineDivider />
@@ -297,8 +309,11 @@ export function HandstandGuide() {
           whole different beast.
         </div>
         <div className="guide-text">
-          Hopefully this guide was helpful in your handstand journey! Best of
-          luck!
+          For video tutorials, check out the{" "}
+          <Link to="/tutorials/handstand" className="guide-external-link">
+            handstand tutorial page.
+          </Link>{" "}
+          Hopefully this guide was helpful in your handstand journey! Good luck!
         </div>
       </div>
       <Footer />

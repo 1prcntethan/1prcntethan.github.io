@@ -82,7 +82,7 @@ export function Training() {
           <div className="training-header">Skill Paths</div>
           <div className="training-column">
             <div className="item">
-              <Link to="/training/pushrmp" className="guide-link">
+              <Link to="/tutorials/incomplete" className="guide-link">
                 <button className="guide-button">
                   push roadmap
                 </button>

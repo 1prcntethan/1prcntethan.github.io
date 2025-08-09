@@ -4,7 +4,7 @@ import { useState } from 'react';
 import "./navbar.css";
 
 const Navbar = () => {
-    const [isOpen, setIsOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState(true);
 
     const toggleMenu = () => {
         setIsOpen((isOpen) => !isOpen);
