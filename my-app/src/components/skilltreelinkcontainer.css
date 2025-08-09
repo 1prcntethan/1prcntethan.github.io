@@ -4,7 +4,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: auto;
+  width: auto !important;
   height: 100vh;
   background-color: rgb(27, 27, 27);
   border-right: 1px solid rgb(80, 80, 80);
