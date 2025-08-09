@@ -50,7 +50,7 @@ export function Deadhang() {
                     and decompress.
                   </li>
                   <li>
-                    To use this exercise effectively, perform these until your
+                    To use this exercise effectively, perform these until you
                     feel your grip strength/stamina is adequate for harder
                     exercises.
                   </li>

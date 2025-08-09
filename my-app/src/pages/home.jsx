@@ -35,7 +35,7 @@ export function Homepage() {
             <i>a couple years</i>
           </strong>{" "}
           to accumulate the strength it takes to achieve that. Additionally,
-          factors like height as weight can provide a significant handicap or
+          factors like height and weight can provide a significant handicap or
           advantage to learning certain skills.
           <br />
           <br />
