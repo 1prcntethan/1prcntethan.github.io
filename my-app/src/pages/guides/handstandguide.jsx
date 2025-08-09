@@ -44,6 +44,21 @@ export function HandstandGuide() {
       <LineDivider />
 
       <div className="guide-container">
+        <div className="guide-heading">warm-up</div>
+
+        <div className="guide-text">
+          To warm up for the handstand, and prepare yourself for the upside down
+          position, firstly warm up the wrists. You can use wrist circles, wrist
+          stretches, or wrist push-ups. Then, warm up your shoulder; stretch
+          upward, and think about your shoulders being elevated, with your bicep
+          touching your ear. Finally, practice a hollow body hold and think
+          about engaging the core and glutes.
+        </div>
+      </div>
+
+      <LineDivider />
+
+      <div className="guide-container">
         <div className="guide-heading">prerequisites</div>
         <div className="guide-text">
           The handstand is a balanced focused skill, and in reality doesn’t take
@@ -138,6 +153,7 @@ export function HandstandGuide() {
             <li>Stacked body (wrists, shoulders, hips, knees, feet)</li>
             <li>Elevation (push into the floor, feel tall)</li>
             <li>Look between your hands</li>
+            <li>Remember to breathe even when upside down</li>
             <li>Keep your whole body engaged (arms, abs, glutes)</li>
             <li>Pointed toes (for aesthetics)</li>
             <li>Grip the floor (works for some people, try it out!)</li>
@@ -229,7 +245,46 @@ export function HandstandGuide() {
           realistic and easily achievable skill for anyone.
         </div>
       </div>
+
       <LineDivider />
+
+      <div className="guide-container">
+        <div className="guide-heading">progressions</div>
+        <div className="guide-text">
+          If you’re training the handstand, follow these progressions:
+          <ul>
+            <li>Pike push-ups</li>
+            <li>
+              Elevated Pike Hold - stack the hips on the shoulders on the hands
+            </li>
+            <li>30s assisted back-to-wall handstand - hold your full weight</li>
+            <li>Learn to bail out of the handstand</li>
+            <li>
+              Learn back-to-wall handstand - practice using fingers to get the
+              legs off the wall
+            </li>
+            <li>
+              Learn chest-to-wall handstand - practice using the heel of your
+              hand to get the legs off the wall
+            </li>
+            <li>
+              Practice kicking up into a back-to-wall handstand - emphasize
+              getting into perfect form
+            </li>
+            <li>
+              Try it off the wall - with enough attempts, you will unlock the
+              handstand!
+            </li>
+          </ul>
+        </div>
+        <div className="guide-text">
+          Hopefully this guide was helpful in your handstand journey! Best of
+          luck!
+        </div>
+      </div>
+
+      <LineDivider />
+
       <div className="guide-container">
         <div className="guide-heading">handstand wrap-up</div>
         <div className="guide-text">

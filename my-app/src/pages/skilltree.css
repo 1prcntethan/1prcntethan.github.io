@@ -1,17 +1,16 @@
 .skill-node {
-    display: flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   width: fit-content;
   height: fit-content;
   border-radius: 9999px;
-  background: transparent; 
+  background: transparent;
   border: solid transparent 1px;
   box-shadow: none;
   cursor: pointer;
   transition: transform 0.2s ease;
 }
-
 
 .skill-node:hover {
   transform: scale(1.1);
@@ -55,23 +54,24 @@
   width: fit-content;
   height: fit-content;
   border-radius: 9999px;
-  background: transparent; 
+  background: transparent;
   border: solid transparent 1px;
   box-shadow: none;
   cursor: pointer;
   transition: transform 0.2s ease;
   font-size: 80px;
   color: white;
+  line-height: 1.2;
 }
 
 .caption-node {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  width: fit-content;
+  align-items: left;
+  justify-content: left;
+  width: 800px;
   height: fit-content;
   border-radius: 9999px;
-  background: transparent; 
+  background: transparent;
   border: solid transparent 1px;
   box-shadow: none;
   cursor: pointer;
@@ -91,4 +91,12 @@
   box-shadow: none;
   cursor: pointer;
   background: white;
+}
+
+.react-flow__attribution {
+  font-family: Fira Sans;
+  font-size: 12px;
+  font-weight: 200;
+  color: rgb(192, 192, 192) !important;
+  background-color: transparent !important;
 }

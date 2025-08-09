@@ -9,6 +9,7 @@ import {
   getStraightPath,
   Handle,
   Position,
+  Panel,
 } from "@xyflow/react";
 import "@xyflow/react/dist/style.css";
 import { skillLinks } from "../utilites/skillLinks";
@@ -1247,6 +1248,7 @@ export function SkillTree() {
           minZoom={0.15}
           maxZoom={2}
           defaultViewport={{ x: 1000, y: 1000, zoom: 0.5 }}
+          attributionPosition="bottom-left"
         >
           <Controls
             showZoom={true}
@@ -1256,6 +1258,7 @@ export function SkillTree() {
               boxShadow: "none",
               color: "#ffffff",
             }}
+            position="bottom-right"
           ></Controls>
         </ReactFlow>
         

@@ -35,7 +35,7 @@ export function Training() {
           <div className="training-header">Calisthenics Fundamentals</div>
           <div className="training-column">
             <div className="item">
-              <Link to="/training/progoverload" className="guide-link">
+              <Link to="/tutorials/incomplete" className="guide-link">
                 <button className="guide-button">
                   progressive overload in calisthenics
                 </button>
