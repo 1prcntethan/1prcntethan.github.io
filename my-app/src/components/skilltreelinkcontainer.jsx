@@ -5,7 +5,7 @@ import SkillTreeLinks from "./skilltreelinks.jsx";
 export default function SkillTreeLinkContainer() {
   return (
     <>
-      <div className="tree-links">
+      <div className="tree-links-skill">
         <SkillTreeLinks link="/" text="home" />
       
         <SkillTreeLinks link="/tutorials" text="tutorials" />
