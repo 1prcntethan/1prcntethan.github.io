@@ -143,8 +143,8 @@ export function Homepage() {
               A visualization of the roadmap for calisthenics skills, as well as
               the order and difficulty of learning them.
             </div>
-            <Link to="/" className="cta-go-2">
-              Incomplete
+            <Link to="/skilltree" className="cta-go-2">
+              View Page
             </Link>
           </div>
           <div className="cta-block">

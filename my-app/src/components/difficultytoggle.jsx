@@ -57,7 +57,7 @@ function DifficultyToggle() {
                     </p>
                     Exercises at this level can be achieved within 1-2 months and serve as foundational prerequisites before skill training can begin.     
                     <p>
-                        Skills in this catergory: Pullup, Dip, Elbow Lever, L-sit, Frogstand
+                        Skills in this category: Pullup, Dip, Elbow Lever, L-sit, Frogstand
                     </p>
                 </div>
                 <div className="content-svg">
