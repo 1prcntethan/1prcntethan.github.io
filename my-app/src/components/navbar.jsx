@@ -21,13 +21,17 @@ const Navbar = () => {
 
   const navLinks = document.querySelectorAll("#nav-item");
   navLinks.forEach((link) => {
-    if (link.getAttribute("href") === "#") {
+    link.addEventListener("click", (event) => {
+    const currentPath = window.location.hash;
+    const targetPath = link.getAttribute("href");
+
+    if (targetPath === currentPath) {
       toggleMenu();
-    } else {
-      link.addEventListener("click", (event) => {
-        document.documentElement.classList.remove("disable-scroll");
-      });
+      event.preventDefault();
     }
+
+    document.documentElement.classList.remove("disable-scroll");
+  });
   });
 
   return (

@@ -103,7 +103,7 @@
 }
 
 .spanburger span {
-  background: #b9b9b9;
+  background: rgba(255, 255, 255, 0.76);
   height: 2px;
   width: 100%;
   border-radius: 1px;
@@ -150,7 +150,7 @@
   right: -450px;
   transition: 0.3s ease-in-out;
   z-index: 1;
-  opacity: 0.9;
+  opacity: 0.95;
 
   @media (max-width: 640px) {
     display: flex;

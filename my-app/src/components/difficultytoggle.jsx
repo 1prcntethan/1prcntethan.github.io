@@ -20,7 +20,7 @@ function DifficultyToggle() {
                     </p>
                     Exercises at this level are accessible for almost everyone, and they serve as a starting point for people starting calisthenics from absolute 0. (No previous athletic experience).
                     <p>
-                        Skills in this catergory: Push-ups, Inverted Rows
+                        Skills in this category: Push-ups, Inverted Rows
                     </p>
                 </div>
                 <div className="content-svg">
@@ -95,7 +95,7 @@ function DifficultyToggle() {
                         </p>
                         Exercises at this level can be achieved within 2-6 months and serve as the basic skill progressions of the advanced skills.
                         <p>
-                            Skills in this catergory: Pike PU, Tuck FL, Handstand
+                            Skills in this category: Pike PU, Tuck FL, Handstand
                         </p>
                     </div>
                     <div className="content-svg">
@@ -132,7 +132,7 @@ function DifficultyToggle() {
                         </p>
                         Exercises at this level can be achieved within 6-15 months and serve as intermediate skill progressions of the advanced skills.
                         <p>
-                            Skills in this catergory: Tuck PL, HSPU, Adv. Tuck PL, Adv. Tuck FL, MU, V-sit, OAPU
+                            Skills in this category: Tuck PL, HSPU, Adv. Tuck PL, Adv. Tuck FL, MU, V-sit, OAPU
                         </p>
                     </div>
                     <div className="content-svg">
@@ -170,7 +170,7 @@ function DifficultyToggle() {
                         </p>
                         Exercises at this level can be achieved within 15-36 months and are either the final progressions for the advanced skills, or the final skill itself.
                         <p>
-                            Skills in this catergory: Str. PL, Str. FL, Full FL, 90 deg PU, OAP/OAC, Manna
+                            Skills in this category: Str. PL, Str. FL, Full FL, 90 deg PU, OAP/OAC, Manna
                         </p>
                     </div>
                     <div className="content-svg">
@@ -208,7 +208,7 @@ function DifficultyToggle() {
                         </p>
                         Exercises at this level are usually achieved within 3-5 years and require consistent effort and training to obtain. These are the dream skills of many people.
                         <p>
-                            Skills in this catergory: Full PL, Touch FL
+                            Skills in this category: Full PL, Touch FL
                         </p>
                     </div>
                     <div className="content-svg">
@@ -245,7 +245,7 @@ function DifficultyToggle() {
                         </p>
                         Exercises at this level can take up to 5+ years or less depending on genetics and effort. People who can do these skills have truly gone above and beyond.
                         <p>
-                            Skills in this catergory: Dragon PL, Maltese, Full PL PUs, Iron Cross, Inverted Cross
+                            Skills in this category: Dragon PL, Maltese, Full PL PUs, Iron Cross, Inverted Cross
                         </p>
                     </div>
                     <div className="content-svg">

@@ -15,7 +15,7 @@
 
 .hero-gradient {
 
-    background: radial-gradient(circle at center, white 0%, #87b382 25%, #6d6d6d 35%,  #5f4e5d 45% ,#1b1b1b 70%);
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.514) 0%, #87b382c0 25%, #6d6d6dc9 35%,  #5f4e5d93 45% ,#1b1b1bc2 70%);
 
     opacity: 1;
     width: 40vw;
