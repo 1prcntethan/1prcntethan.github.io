@@ -2,6 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import "./navbar.css";
+import { Navigate } from "react-router-dom";
+import { userLoggedIn, Auth } from "../config/auth.js";
+import { auth } from "../config/firebase";
+import { useAuth, logout } from "../config/auth-context.jsx";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(true);
@@ -22,17 +26,19 @@ const Navbar = () => {
   const navLinks = document.querySelectorAll("#nav-item");
   navLinks.forEach((link) => {
     link.addEventListener("click", (event) => {
-    const currentPath = window.location.hash;
-    const targetPath = link.getAttribute("href");
+      const currentPath = window.location.hash;
+      const targetPath = link.getAttribute("href");
 
-    if (targetPath === currentPath) {
-      toggleMenu();
-      event.preventDefault();
-    }
+      if (targetPath === currentPath) {
+        toggleMenu();
+        event.preventDefault();
+      }
 
-    document.documentElement.classList.remove("disable-scroll");
+      document.documentElement.classList.remove("disable-scroll");
+    });
   });
-  });
+
+  const { currentUser, logout } = useAuth();
 
   return (
     <div className="navbar">
@@ -145,6 +151,23 @@ const Navbar = () => {
             skill tree
           </Link>
         </div>
+        {currentUser ? (
+          <>
+            <button
+              className="navbar__list--items navbar__list--pink"
+              onClick={() => {
+                logout().then(() => { Navigate('/login'); });
+              }}
+            >Logout</button>
+          </>
+        ) : (
+          <div className="navbar__list--items navbar__list--pink">
+            <Link to="/login" id="nav-item">
+              Login
+            </Link>
+          </div>
+        )}
+
         {/* <div className="navbar__list--items navbar__list--pink">
               <Link to = "/skillvis" id="nav-item">skillvis</Link>
             </div> */}
