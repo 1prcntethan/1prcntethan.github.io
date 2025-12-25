@@ -4,6 +4,7 @@ import SkillHero from "../../components/skillhero";
 import "./skillpage.css";
 import { Link } from "react-router-dom";
 import { svgDivider } from "../../utilites/svg-divider";
+import { skillMuscle } from "../../utilites/skillmuscles";
 import TutorialReturn from "../../components/tutorialreturn";
 import YTTutorial from "../../components/yttutorials";
 import Footer from "../../components/footer";
@@ -24,7 +25,7 @@ export function TuckPL() {
               </Link>
               <br />
               <p>
-                Targeted Muscles: Anterior Deltoids, Upper Chest, Scapula, Core
+                Targeted Muscles: {skillMuscle.get("Tuck Planche")}
               </p>
               <p>High Strain Areas: Wrists, Bicep Tendon, Shoulders</p>
             </div>

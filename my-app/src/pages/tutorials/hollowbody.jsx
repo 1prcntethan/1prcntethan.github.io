@@ -4,6 +4,7 @@ import SkillHero from "../../components/skillhero";
 import "./skillpage.css";
 import { Link } from "react-router-dom";
 import { svgDivider } from "../../utilites/svg-divider";
+import { skillMuscle } from "../../utilites/skillmuscles";
 import TutorialReturn from "../../components/tutorialreturn";
 import YTTutorial from "../../components/yttutorials";
 import Footer from "../../components/footer";
@@ -23,7 +24,7 @@ export function HollowBody() {
                 Skill Difficulty: F
               </Link>
               <br />
-              <p>Targeted Muscles: Core</p>
+              <p>Targeted Muscles: {skillMuscle.get("Hollow Body Hold")}</p>
               <p>High Strain Areas: N/A</p>
             </div>
             <div className="overview-explanation">

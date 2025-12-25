@@ -8,6 +8,46 @@ import { skillTime } from "../utilites/skilltime";
 import { skillLinks } from "../utilites/skillLinks";
 import { skillImage } from "../utilites/skillImage";
 
+export const incompleteList = [
+  "Back Lever",
+  "Straddle Planche",
+  "Straddle Planche PU",
+  "Half Lay Planche",
+  "Full Planche",
+  "Full Planche PU",
+  "One Arm Planche",
+  "Maltese",
+  "Full FL Row",
+  "Front Lever Touch",
+  "Assisted Pistol Squat",
+  "Bulgarian Split Squat",
+  "Reverse Nordic Curl",
+  "Nordic Curl",
+  "Sissy Squat",
+  "Pistol Squat",
+  "Shrimp Squat",
+  "Dragon Pistol Squat",
+  "Bent Arm Press to HS",
+  "Straight Arm Press to HS",
+  "Deep HSPU",
+  "90 Degree PU",
+  "Assisted OAHS",
+  "OAHS",
+  "OA Flag",
+  "Archer Pull-up",
+  "Clean Muscle-Up",
+  "Assisted OAC",
+  "Assisted OAP",
+  "OAC/OAP",
+  "Weighted Pull-ups",
+  "Butterfly",
+  "V-sit",
+  "I-sit",
+  "Manna",
+  "Human Flag",
+  "Victorian",
+];
+
 export default function TutorialListHP() {
   const [title, setTitle] = useState(null);
 
@@ -39,18 +79,15 @@ export default function TutorialListHP() {
     ],
   ];
 
-  const incompleteList = ["Back Lever", "Straddle Planche", "Straddle Planche PU", "Half Lay Planche", "Full Planche", "Full Planche PU", "One Arm Planche", "Maltese"];
-
   const handleRowClick = (index, buttonTitle) => {
     // if (activeRow === index) {
     //     // Toggle off if the same row is clicked again
     //     setActiveRow(null);
     // } else
-    
-      // Set the active row and title
-      setActiveRow(index);
-      setTitle(buttonTitle);
-    
+
+    // Set the active row and title
+    setActiveRow(index);
+    setTitle(buttonTitle);
   };
 
   const handleOutsideClick = (dropRef) => {
@@ -67,7 +104,9 @@ export default function TutorialListHP() {
       <div className="catergory-title">
         horizontal push
         <div className="catergory-blurb">
-          Horizontal push mainly involves push exercises with your body parallel to the ground. These exercises typically target the shoulders, arms, and chest.
+          Horizontal push mainly involves push exercises with your body parallel
+          to the ground. These exercises typically target the shoulders, arms,
+          and chest.
         </div>
       </div>
       <div className="catergory-container">
@@ -102,7 +141,19 @@ export default function TutorialListHP() {
                 >
                   <div className="skill-content--left">
                     <div className="skill-content--title">
-                      <Link to = {incompleteList.includes(title) ? "incomplete" : skillLinks.get(title)} className="skill-content--link"> {incompleteList.includes(title) ? "in progress" : skillTitle.get(title)} </Link>
+                      <Link
+                        to={
+                          incompleteList.includes(title)
+                            ? "incomplete"
+                            : skillLinks.get(title)
+                        }
+                        className="skill-content--link"
+                      >
+                        {" "}
+                        {incompleteList.includes(title)
+                          ? "in progress"
+                          : skillTitle.get(title)}{" "}
+                      </Link>
                     </div>
                     <br />
                     <br />
@@ -115,14 +166,12 @@ export default function TutorialListHP() {
                     Time to learn: {skillTime.get(title)}
                   </div>
                   <button
-                    className="skill-content--close"
+                    className="skill-content--close__button"
                     onClick={() =>
-                      handleOutsideClick(
-                        document.querySelector("#hp")
-                      )
+                      handleOutsideClick(document.querySelector("#hp"))
                     }
                   >
-                    <div className="skill-content--close__button"></div>
+                    &#x2715;
                   </button>
                 </div>
               )}
@@ -130,53 +179,6 @@ export default function TutorialListHP() {
           </>
         ))}
       </div>
-
-      {/* <div className="catergory-title">horizontal push</div>
-            <div className="catergory-container">
-                <div className="buttons-container">
-                    <button onClick={() => {setTitle("assisted pushup")}}className="skill-button">Assisted Pushup</button>
-                    <button onClick={() => {setTitle("pushup")}} className="skill-button">Pushup</button>
-                    <button onClick={() => {setTitle("dip")}} className="skill-button">Dip</button>
-                    <button onClick={() => {setTitle("elbow lever")}} className="skill-button">Elbow Lever</button>
-                    <button onClick={() => {setTitle("pseudo pushup")}} className="skill-button">Planche Lean</button>
-                </div>
-                <div className="buttons-container">
-                    <button onClick={() => {setTitle("pseudo pushup")}}className="skill-button">pseudo Pushup</button>
-                    <button onClick={() => {setTitle("tuck planche")}} className="skill-button">Tuck Planche</button>
-                    <button onClick={() => {setTitle("tuck planche pu")}} className="skill-button">Tuck Planche PU</button>
-                    <button onClick={() => {setTitle("adv. tuck planche")}} className="skill-button">Adv. Tuck Planche</button>
-                    <button onClick={() => {setTitle("adv. tuck planche pu")}} className="skill-button">Adv. Tuck Planche PU</button>
-                </div>
-                <div className="buttons-container">
-                    <button onClick={() => {setTitle("90 degree hold")}}className="skill-button">90 Degree Hold</button>
-                    <button onClick={() => {setTitle("back lever")}} className="skill-button">Back Lever</button>
-                    <button onClick={() => {setTitle("super adv. tuck planche")}} className="skill-button">Super Adv. Tuck Planche</button>
-                    <button onClick={() => {setTitle("straddle planche")}} className="skill-button">Straddle Planche</button>
-                    <button onClick={() => {setTitle("straddle planche pu")}} className="skill-button">Straddle Planche PU</button>
-                </div>
-                <div className="buttons-container">
-                    <button onClick={() => {setTitle("halflay planche")}}className="skill-button">Half Lay Planche</button>
-                    <button onClick={() => {setTitle("full planche")}} className="skill-button">Full Planche</button>
-                    <button onClick={() => {setTitle("full planche pu")}} className="skill-button">Full Planche PU</button>
-                    <button onClick={() => {setTitle("one arm planche")}} className="skill-button">One Arm Planche</button>
-                    <button onClick={() => {setTitle("??????")}} className="skill-button">??????</button>
-                </div>
-                <div className="skill-content">
-                    <div className="skill-content--left">
-                        <div className="skill-content--title">{title}</div>
-                        <br/>
-                        <br/>
-                        image
-                    </div>
-                    <div className="skill-content--right">
-                        Skill Difficulty: F 
-                        <br/>
-                        <br/>
-                        Time to learn: 2 weeks
-                    </div>
-
-                </div>
-            </div> */}
     </>
   );
 }

@@ -4,6 +4,7 @@ import SkillHero from "../../components/skillhero";
 import "./skillpage.css";
 import { Link } from "react-router-dom";
 import { svgDivider } from "../../utilites/svg-divider";
+import { skillMuscle } from "../../utilites/skillmuscles";
 import TutorialReturn from "../../components/tutorialreturn";
 import YTTutorial from "../../components/yttutorials";
 import Footer from "../../components/footer";
@@ -23,7 +24,7 @@ export function NinetyDegHold() {
                 Skill Difficulty: B
               </Link>
               <br />
-              <p>Targeted Muscles: Anterior Deltoids, Chest, Triceps, Biceps</p>
+              <p>Targeted Muscles: {skillMuscle.get("90 Degree Hold")}</p>
               <p>High Strain Areas: Shoulders</p>
             </div>
             <div className="overview-explanation">

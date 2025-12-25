@@ -4,6 +4,7 @@ import SkillHero from "../../components/skillhero";
 import "./skillpage.css";
 import { Link } from "react-router-dom";
 import { svgDivider } from "../../utilites/svg-divider";
+import { skillMuscle } from "../../utilites/skillmuscles";
 import TutorialReturn from "../../components/tutorialreturn";
 import YTTutorial from "../../components/yttutorials";
 import Footer from "../../components/footer";
@@ -23,7 +24,7 @@ export function Squat() {
                 Skill Difficulty: F
               </Link>
               <br />
-              <p>Targeted Muscles: Quads, Glutes, Hamstrings, Lower Back</p>
+              <p>Targeted Muscles: {skillMuscle.get("Squat")}</p>
               <p>High Strain Areas: Knees</p>
             </div>
             <div className="overview-explanation">

@@ -57,7 +57,7 @@
 
 .skill-difficulty { /*skill difficultuly. muscles, high strain*/
     width: 50%;
-
+    margin-right: 10px;
     @media (max-width: 768px) {
         width: 100%;
         padding: 0 20px;
@@ -69,6 +69,7 @@
 .overview-explanation { /*overview blurb*/
     width: 50%;
     line-height: 135%;
+    margin-left: 10px;
     @media (max-width: 768px) {
         width: 100%;
         padding: 0 20px;

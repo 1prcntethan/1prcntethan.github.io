@@ -3,6 +3,7 @@
     height: auto;
     display: flex;
     flex-direction: row;
+    cursor: default;
     
     padding: 20px 5%;
 
@@ -136,16 +137,16 @@
     margin-top: 60px;
 
     @media( max-width: 1200px) {
-        font-size: 22px;
+        font-size: 20px;
         
     }
     @media( max-width: 768px) {
-        font-size: 20px;
+        font-size: 18px;
         
     }
     
     @media(max-width: 576px) {
-        font-size: 18px;
+        font-size: 16px;
         text-align: center;
         
     }

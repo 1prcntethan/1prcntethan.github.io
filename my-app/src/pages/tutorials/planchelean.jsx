@@ -4,6 +4,7 @@ import SkillHero from "../../components/skillhero";
 import "./skillpage.css";
 import { Link } from "react-router-dom";
 import { svgDivider } from "../../utilites/svg-divider";
+import { skillMuscle } from "../../utilites/skillmuscles";
 import TutorialReturn from "../../components/tutorialreturn";
 import YTTutorial from "../../components/yttutorials";
 import Footer from "../../components/footer";
@@ -23,7 +24,7 @@ export function PlancheLean() {
                 Skill Difficulty: C
               </Link>
               <br />
-              <p>Targeted Muscles: Anterior Deltoids, Upper Chest, Core</p>
+              <p>Targeted Muscles: {skillMuscle.get("Planche Lean")}</p>
               <p>High Strain Areas: Wrists, Bicep Tendon</p>
             </div>
             <div className="overview-explanation">

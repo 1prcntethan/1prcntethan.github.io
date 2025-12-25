@@ -51,6 +51,8 @@ import { HowTo } from "./pages/howto";
 import { About } from "./pages/about";
 import { Disclaimer } from "./pages/disclaimer";
 import { LoginPage } from "./pages/loginpage";
+import { CreateAccountPage } from "./pages/createaccount";
+import { Dashboard } from "./pages/dashboard";
 import { ProgOverload } from "./pages/guides/progoverload";
 import { PushRmp } from "./pages/guides/pushroadmap";
 import { HandstandGuide } from "./pages/guides/handstandguide";
@@ -65,12 +67,15 @@ import { ScapulaPullup } from "./pages/tutorials/scapulapullup";
 import { NinetyDegHold } from "./pages/tutorials/ninetydeghold";
 import { Squat } from "./pages/tutorials/squat";
 import { SplitSquat } from "./pages/tutorials/splitsquat";
-import { AuthProvider } from "./config/auth-context";
-import { Auth } from "./config/auth";
+import { useAuth } from "./config/auth-context";
+import { Navigate } from "react-router-dom";
+import { ResetPasswordPage } from "./pages/resetpassword";
+import { PullRmp } from "./pages/guides/pullroadmap"
 
 function App() {
+  const { currentUser } = useAuth();
+
   return (
-    <AuthProvider>
       <HashRouter>
         <ScrollToTop>
           <Routes>
@@ -83,8 +88,12 @@ function App() {
             <Route path="/howtouseguide" element={<HowTo />} />
             <Route path="/about" element={<About />} />
             <Route path="/disclaimer" element={<Disclaimer />} />
-            <Route path="/login" element={<LoginPage />} />
             <Route path="/tutorials/incomplete" element={<Incomplete />} />
+
+            <Route path="/login" element={currentUser ? <Navigate to="/" /> : <LoginPage />} />
+            <Route path="/createaccount" element={currentUser ? <Navigate to="/" /> : <CreateAccountPage />} />
+            <Route path="/dashboard" element={currentUser ? <Dashboard /> : <Navigate to ="/login" />} />
+            <Route path="/resetpassword" element={currentUser ? <Navigate to="/" /> : <ResetPasswordPage />} />
 
             <Route path="/training/beginnerguide" element={<BeginnerGuide />} />
             <Route path="/training/progoverload" element={<ProgOverload />} />
@@ -93,6 +102,7 @@ function App() {
               path="/training/handstandguide"
               element={<HandstandGuide />}
             />
+            <Route path="/training/pullrmp" element={<PullRmp />} />
 
             <Route path="/tutorials/pushup" element={<Pushup />} />
             <Route path="/tutorials/assistedpu" element={<AssistPu />} />
@@ -171,7 +181,6 @@ function App() {
           </Routes>
         </ScrollToTop>
       </HashRouter>
-    </AuthProvider>
   );
 }
 

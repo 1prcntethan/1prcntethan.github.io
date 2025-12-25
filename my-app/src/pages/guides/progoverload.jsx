@@ -193,6 +193,9 @@ export function ProgOverload() {
           confusing at times, and hopefully this helps clarify things. Finally,
           as with everything else, <strong> listen to your body </strong>!
         </div>
+        <div className="guide-text">
+          If you'd like to contribute and sketch for this guide, please reach out!
+        </div>
       </div>
       <Footer />
     </>

@@ -429,6 +429,9 @@ export function BeginnerGuide() {
           patient, listen to your body, and <strong>enjoy the process</strong>{" "}
           the whole way.
         </div>
+        <div className="guide-text">
+          If you'd like to contribute and sketch for this guide, please reach out!
+        </div>
       </div>
       <Footer />
     </>

@@ -314,6 +314,8 @@ export function HandstandGuide() {
             handstand tutorial page.
           </Link>{" "}
           Hopefully this guide was helpful in your handstand journey! Good luck!
+          <br />
+          Huge thanks to <i>Lia</i> for the sketches used in this guide!
         </div>
       </div>
       <Footer />

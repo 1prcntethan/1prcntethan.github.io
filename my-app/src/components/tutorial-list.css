@@ -71,8 +71,9 @@
 }
 
 .skill-button {
-    border: solid;
+    border: solid 2px;
     border-color: #565656;
+    border-radius: 4px;
     background-color: #181818;
     color: white;
     font-size: 18px;
@@ -142,6 +143,7 @@
     @media (max-width: 768px) {
         display: hidden;
         flex-direction: column;
+        height: auto;
     }
 
 }
@@ -251,38 +253,33 @@
 }
 
 .skill-content--close__button{
-
-    width: 20px;
-    
-
-    &::before, &::after { 
-        content: '';
-        display: inline-block;
-        height: 22px;
-        width: 1px;
-        background-color: white;
-      }
-    
-      &::before {
-        transform: rotate(-45deg);
-      }
-    
-      &::after {
-        transform: rotate(45deg);
-        
-      }
+    display: flex;
+    width: fit-content;
+    height: 31px;
+    margin-left: 5vw;
+    background: none; /* Remove default button background */
+    border: none; /* Remove default button border */
+    font-size: 1.5em; /* Adjust size of the 'X' */
+    cursor: pointer; /* Indicate it's clickable */
+    color: #dadada; /* Set color of the 'X' */
+    padding: 0; /* Remove default padding */
+    line-height: 1; /* Adjust line height for vertical centering */
+    @media (max-width: 768px) {
+        margin-left: 0;
+        align-self: center;        
+    }
 }
 
 .skill-content--close {
-    display: flex;
-    width: 32px;
-    height: 32px;
+    position: relative;
+    right: 0;
+    top: 0;
+    
     background-color: transparent;
     border: none;
-    border-radius: 5px;
-    justify-self: right;
-    margin-left: 5vw;
-    padding: 6px;
+    justify-self: center;
+    
+
 
     @media (max-width: 768px) {
         margin-left: 0;
@@ -291,8 +288,4 @@
 
 }
 
-.skill-content--close:hover{
-    background-color: #333333;
-    transition: all 0.2s ease-in-out;
-}
 

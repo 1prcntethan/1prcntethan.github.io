@@ -1,21 +1,22 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getAuth, GoogleAuthProvider} from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCIFR5cRHZrjRiv00iAenE6P_FrL2DCBTA",
-  authDomain: "wings-8dae0.firebaseapp.com",
-  projectId: "wings-8dae0",
-  storageBucket: "wings-8dae0.firebasestorage.app",
-  messagingSenderId: "113565914263",
-  appId: "1:113565914263:web:1dc71446189466fb98c5d2",
-  measurementId: "G-QL0QHLJR52"
+  apiKey: import.meta.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: import.meta.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.REACT_APP_FIREBASE_APP_ID,
+  measurementId: import.meta.env.REACT_APP_MEASUREMENT_ID
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
+export const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 export const analytics = getAnalytics(app);
-export const googleProvider = new GoogleAuthProvider();
+export const db = getFirestore(app);

@@ -4,7 +4,9 @@ import SkillHero from "../../components/skillhero";
 import "./skillpage.css";
 import { Link } from "react-router-dom";
 import { svgDivider } from "../../utilites/svg-divider";
+import { skillMuscle } from "../../utilites/skillmuscles";
 import TutorialReturn from "../../components/tutorialreturn";
+import Footer from "../../components/footer";
 
 export function StraddleFLRow() {
   return (
@@ -25,8 +27,7 @@ export function StraddleFLRow() {
               </Link>
               <br />
               <p>
-                Targeted Muscles: Lats, Rear Deltoids, Biceps, Triceps, Scapula,
-                Core
+                Targeted Muscles: {skillMuscle.get("Straddle FL Row")}
               </p>
               <p>High Strain Areas: N/A </p>
             </div>
@@ -132,6 +133,7 @@ export function StraddleFLRow() {
         </div>
       </div>
       {svgDivider.get("3")}
+      <Footer />
     </>
   );
 }

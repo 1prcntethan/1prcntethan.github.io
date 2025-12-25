@@ -52,6 +52,15 @@ export function HowTo() {
             the training section for more detailed information on training
             techniques, nutrition, skill pathways, and other important topics.
           </li>
+          <li>
+            <strong>use the skill tree:</strong> The skill tree provides useful
+            information to help you easily see the path to your desired skill. 
+            Follow the arrows and key to figure out where to start your journey.
+          </li>
+          <li>
+            <strong>track your progress:</strong> Make an account to track your
+            progress and see how far you've come in your journey!
+          </li>
         </ol>
       </div>
       <Footer />

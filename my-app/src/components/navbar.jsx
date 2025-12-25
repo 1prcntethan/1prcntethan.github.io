@@ -3,9 +3,10 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import "./navbar.css";
 import { Navigate } from "react-router-dom";
-import { userLoggedIn, Auth } from "../config/auth.js";
-import { auth } from "../config/firebase";
-import { useAuth, logout } from "../config/auth-context.jsx";
+import { useAuth } from "../config/auth-context.jsx";
+import { doSignOut } from "../config/auth.js";
+import { useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(true);
@@ -38,7 +39,20 @@ const Navbar = () => {
     });
   });
 
-  const { currentUser, logout } = useAuth();
+  const { currentUser } = useAuth();
+
+  const doLogout = async () => {
+    try {
+      await doSignOut();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  console.log(currentUser?.email);
+
+  const location = useLocation();
+  const navigate = useNavigate();
 
   return (
     <div className="navbar">
@@ -152,22 +166,35 @@ const Navbar = () => {
           </Link>
         </div>
         {currentUser ? (
-          <>
+          <div className="navbar__logout--container">
             <button
-              className="navbar__list--items navbar__list--pink"
-              onClick={() => {
-                logout().then(() => { Navigate('/login'); });
+              className="logout-button"
+              onClick={location.pathname === "/dashboard" ? () => {
+                doLogout();
+              } : () => {
+                navigate("/dashboard");
               }}
-            >Logout</button>
-          </>
-        ) : (
-          <div className="navbar__list--items navbar__list--pink">
-            <Link to="/login" id="nav-item">
-              Login
-            </Link>
+            >
+              <img src="account_icon.svg" className="account-icon-nav" />
+              <div>{location.pathname === "/dashboard" ? "log out" : "dashboard"}</div>
+            </button>
           </div>
+        ) : (
+          <>
+            {/* <div className="navbar__list--items navbar__list--pink">
+              <Link to="/login" id="nav-item">
+                login
+              </Link>
+            </div> */}
+            <div className="navbar__logout--container">
+              <Link to="/login" id="nav-item">
+                <button className="logout-button">
+                  <div>login</div>
+                </button>
+              </Link>
+            </div>
+          </>
         )}
-
         {/* <div className="navbar__list--items navbar__list--pink">
               <Link to = "/skillvis" id="nav-item">skillvis</Link>
             </div> */}

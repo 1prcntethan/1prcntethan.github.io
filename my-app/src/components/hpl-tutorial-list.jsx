@@ -7,6 +7,7 @@ import { skillDiff } from '../utilites/skilldifficulties';
 import { skillTime } from '../utilites/skilltime';
 import { skillLinks } from '../utilites/skillLinks';
 import { skillImage } from "../utilites/skillImage";
+import { incompleteList } from './hp-tutorial-list';
 
 
 export default function TutorialListHPL() {
@@ -21,8 +22,6 @@ export default function TutorialListHPL() {
         ["Pike FL Row", "Adv. Tuck FL", "Super Adv. Tuck FL", "Adv. Tuck FL Row", "Straddle FL"],
         ["Straddle FL Row", "Half Lay FL", "Full Front Lever", "Full FL Row", "Front Lever Touch"]
     ];
-
-    const incompleteList = ["Full FL Row", "Front Lever Touch"];
 
 
     const handleRowClick = (index, buttonTitle) => {
@@ -103,14 +102,14 @@ export default function TutorialListHPL() {
                     Time to learn: {skillTime.get(title)}
                   </div>
                   <button
-                    className="skill-content--close"
+                    className="skill-content--close__button"
                     onClick={() =>
                       handleOutsideClick(
                         document.querySelector("#hpl")
                       )
                     }
                   >
-                    <div className="skill-content--close__button"></div>
+                    &#x2715;
                   </button>
                 </div>
               )}

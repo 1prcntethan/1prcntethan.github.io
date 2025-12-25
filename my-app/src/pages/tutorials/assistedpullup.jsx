@@ -4,6 +4,7 @@ import SkillHero from "../../components/skillhero";
 import "./skillpage.css";
 import { Link } from "react-router-dom";
 import { svgDivider } from "../../utilites/svg-divider";
+import { skillMuscle } from "../../utilites/skillmuscles";
 import TutorialReturn from "../../components/tutorialreturn";
 import YTTutorials from "../../components/yttutorials";
 import Footer from "../../components/footer";
@@ -23,7 +24,7 @@ export function AssistPullup() {
                 Skill Difficulty: D
               </Link>
               <br />
-              <p>Targeted Muscles: Back, Bicep, Core</p>
+              <p>Targeted Muscles: {skillMuscle.get("Assisted Pull-up")}</p>
               <p>High Strain Areas: N/A</p>
             </div>
             <div className="overview-explanation">

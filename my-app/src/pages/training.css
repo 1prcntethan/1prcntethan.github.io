@@ -2,8 +2,7 @@
     display: flex;
     width: 100%;
     justify-content: center;
-    font-family: Fira Sans;
-    font-weight: 200;
+    font-family: Major Mono Display;
 
 }
 
@@ -49,7 +48,7 @@
     height: 100px;
     background-color: #1B1B1B;
     position: relative;
-    border-radius: 30px;
+    border-radius: 10px;
 }
 
 
@@ -91,10 +90,11 @@
     height: 100%;
     align-items: center;
     justify-content: center;
-    border-radius: 30px;
+    border-radius: 10px;
     background-color: #1B1B1B;
     border: 1px solid rgba(255, 255, 255, 0.5);
-    font-family: Major Mono Display;
+    font-family: Fira Sans;
+    font-weight: 200;
     font-size: 24px;
     color: white;
 

@@ -193,6 +193,10 @@ export function PushRmp() {
           finger planche, finger HSPU, or try harder skills like Maltese and
           Dragon Planche. The sky’s the limit.
         </div>
+        <div className="guide-text">
+          Huge thanks to <i>Laila</i> for the sketches used in this guide!
+          You can check out more of her work <Link to="https://youtube.com/@l.artista2010?si=D_hAYZa89vOuLULq" className="guide-external-link">here</Link>.
+        </div>
       </div>
       <Footer />
     </>

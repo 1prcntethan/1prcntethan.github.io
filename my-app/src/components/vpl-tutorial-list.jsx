@@ -7,6 +7,7 @@ import { skillDiff } from '../utilites/skilldifficulties';
 import { skillTime } from '../utilites/skilltime';
 import { skillLinks } from '../utilites/skillLinks';
 import { skillImage } from "../utilites/skillImage";
+import { incompleteList } from './hp-tutorial-list';
 
 
 export default function TutorialListVPL() {
@@ -21,8 +22,6 @@ export default function TutorialListVPL() {
         ["Chest Pull-up", "Waist Pull-up", "Muscle-Up", "Archer Pull-up", "Clean Muscle-Up" ],
         ["Assisted OAC", "Assisted OAP", "OAC/OAP", "Weighted Pull-ups", "Butterfly"]
     ];
-
-    const incompleteList = ["Archer Pull-up", "Clean Muscle-Up", "Assisted OAC", "Assisted OAP", "OAC/OAP", "Weighted Pull-ups", "Butterfly"];
 
 
     const handleRowClick = (index, buttonTitle) => {
@@ -103,14 +102,14 @@ export default function TutorialListVPL() {
                     Time to learn: {skillTime.get(title)}
                   </div>
                   <button
-                    className="skill-content--close"
+                    className="skill-content--close__button"
                     onClick={() =>
                       handleOutsideClick(
                         document.querySelector("#vpl")
                       )
                     }
                   >
-                    <div className="skill-content--close__button"></div>
+                    &#x2715;
                   </button>
                 </div>
               )}

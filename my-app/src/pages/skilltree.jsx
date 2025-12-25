@@ -1,5 +1,5 @@
 import "./skilltree.css";
-import { useState, useCallback } from "react";
+import React, { useState, useCallback, useContext } from "react";
 import {
   ReactFlow,
   applyNodeChanges,
@@ -16,8 +16,18 @@ import { skillLinks } from "../utilites/skillLinks";
 import { Link } from "react-router-dom";
 import SkillTreeLinkContainer from "../components/skilltreelinkcontainer";
 import { skillTreeIcon } from "../utilites/skilltreeicons";
+import { skillObjects } from "../utilites/skillobject";
+import { skillImage } from "../utilites/skillImage";
+import { skillDiff } from "../utilites/skilldifficulties.js";
+import { skillTime } from "../utilites/skilltime.js";
+import { skillMuscle } from "../utilites/skillmuscles.js";
+import { createContext } from "react";
+import { skillTitle } from "../utilites/skilltitles.js";
+import { skillMetric } from "../utilites/skillmetric.js";
+import { skillCategory } from "../utilites/skillcategory.js";
+import { incompleteList } from "../components/hp-tutorial-list.jsx";
 
-
+const SkillContext = createContext(null);
 
 const incompleteSkills = [
   "Back Lever",
@@ -279,13 +289,13 @@ const initialNodes = [
   {
     id: "37",
     position: { x: 433, y: 250 },
-    data: { svg: "l-sit-comp", link: "L-Sit Compression" },
+    data: { svg: "l-sit-comp", link: "L-sit Compression" },
     type: "skillNode",
   },
   {
     id: "38",
     position: { x: 433, y: 750 },
-    data: { svg: "l-sit", link: "L-Sit" },
+    data: { svg: "l-sit", link: "L-sit" },
     type: "skillNode",
   },
   {
@@ -321,7 +331,7 @@ const initialNodes = [
   {
     id: "44",
     position: { x: 1733, y: 500 },
-    data: { svg: "deadhang", link: "Dead Hang" },
+    data: { svg: "deadhang", link: "Deadhang" },
     type: "skillNode",
   },
   {
@@ -501,61 +511,61 @@ const initialNodes = [
   {
     id: "text-1",
     position: { x: -200, y: -2900 },
-    data: { text: "vertical push"},
+    data: { text: "vertical push" },
     type: "textNode",
   },
   {
     id: "text-2",
     position: { x: -2800, y: -1000 },
-    data: { text: "horizontal push"},
+    data: { text: "horizontal push" },
     type: "textNode",
   },
   {
     id: "text-3",
     position: { x: 2900, y: -1000 },
-    data: { text: "vertical pull"},
+    data: { text: "vertical pull" },
     type: "textNode",
   },
   {
     id: "text-4",
     position: { x: 2400, y: -3100 },
-    data: { text: "horizontal pull"},
+    data: { text: "horizontal pull" },
     type: "textNode",
   },
   {
     id: "text-5",
     position: { x: 600, y: -600 },
-    data: { text: "core"},
+    data: { text: "core" },
     type: "textNode",
   },
   {
     id: "text-6",
     position: { x: 1100, y: 1200 },
-    data: { text: "legs"},
+    data: { text: "legs" },
     type: "textNode",
-  }, 
+  },
   {
     id: "caption-1",
-    position: { x: -800, y: -300  },
-    data: { text: "= fundamental skills"},
+    position: { x: -800, y: -300 },
+    data: { text: "= fundamental skills" },
     type: "captionNode",
-  }, 
+  },
   {
     id: "caption-2",
-    position: { x: -800, y: -200  },
-    data: { text: "= target skills"},
+    position: { x: -800, y: -200 },
+    data: { text: "= target skills" },
     type: "captionNode",
-  }, 
+  },
   {
     id: "color-1",
-    position: { x: -915, y: -312  },
-    data: {svg: "color-pink"}, 
+    position: { x: -915, y: -312 },
+    data: { svg: "color-pink" },
     type: "skillNode",
-  }, 
+  },
   {
     id: "color-2",
-    position: { x: -915, y: -212  },
-    data: {svg: "color-green"}, 
+    position: { x: -915, y: -212 },
+    data: { svg: "color-green" },
     type: "skillNode",
   },
 ];
@@ -1093,22 +1103,84 @@ const initialEdges = [
     type: "skillEdge",
     style: { stroke: "#ffffff", strokeWidth: 2, zIndex: 1 },
   },
-  
-
 ];
 
-const SkillNode = ({ data }) => {
+function toggleContainer() {
+  const container = document.querySelector(".skill-window");
+  container.classList.toggle("close");
+}
+
+const SkillWindow = () => {
+  const { skill } = useContext(SkillContext);
   return (
     <>
-      <Link
+      <div className="skill-window close">
+        <div className="skill-window-content">
+          <div className="skill-window__svg-container">
+            <svg className="skill-window__svg">{skillImage.get(skill)}</svg>
+          </div>
+          <div className="skill-window__text">
+            
+            <div className="skill-window__title">
+              {skillTitle.get(skill)}
+            </div>
+
+            <div className="skill-window__description">
+              The {skill} is a{" "}
+              {skillDiff.get(skill)} rated skill. Typically, it takes around{" "}
+              {skillTime.get(skill)} to learn.
+            </div>
+
+            <div className="skill-window__targeted-muscles">
+              Targeted Muscles: {skillMuscle.get(skill)}
+            </div>
+
+            <div className="skill-window__category">
+              Category: {skillCategory.get(skill)}
+            </div>
+
+            <div className="skill-window__muscle-use">
+              Muscle Use: {skillMetric.get(skill)}
+            </div>
+
+            
+              <Link to={incompleteList.includes(skill) ? "/tutorials/incomplete" : skillLinks.get(skill)} className="skill-window__link">
+                <div className="skill-window__go">
+                LeArn!
+                </div>
+              </Link>
+            
+
+          </div>
+          
+            <button className="skill-window__close-btn"onClick={() => toggleContainer()}>&#x2715;</button>
+          
+        </div>
+      </div>
+    </>
+  );
+};
+
+const SkillNode = ({ data }) => {
+  const { setSkill } = useContext(SkillContext);
+
+  // const [skillWindowOpen, setSkillWindowOpen] = useState(false);
+
+  return (
+    <>
+      <div
+        onClick={() => {
+          setSkill(data.link);
+          toggleContainer();
+        }}
         to={
           incompleteSkills.includes(data.link)
             ? "/tutorials/incomplete"
             : skillLinks.get(data.link)
         }
         className="skill-node"
-        minWidth="10vw"
-        minHeight="10vh"
+        minwidth="10vw"
+        minheight="10vh"
       >
         <Handle
           type="target"
@@ -1130,10 +1202,10 @@ const SkillNode = ({ data }) => {
             bottom: "50%",
             left: "50%",
             zIndex: -1,
-          }} 
+          }}
         />
         {skillTreeIcon.get(data.svg)}
-      </Link>
+      </div>
     </>
   );
 };
@@ -1141,9 +1213,7 @@ const SkillNode = ({ data }) => {
 const TextNode = ({ data }) => {
   return (
     <>
-      <div className="text-node">
-      {data.text}
-      </div>
+      <div className="text-node">{data.text}</div>
     </>
   );
 };
@@ -1151,13 +1221,10 @@ const TextNode = ({ data }) => {
 const CaptionNode = ({ data }) => {
   return (
     <>
-      <div className="caption-node">
-      {data.text}
-      </div>
+      <div className="caption-node">{data.text}</div>
     </>
   );
 };
-
 
 const SkillEdge = ({
   id,
@@ -1171,7 +1238,7 @@ const SkillEdge = ({
   markerEnd,
 }) => {
   const [path] = getStraightPath({ sourceX, sourceY, targetX, targetY });
-  
+
   const centerX = (sourceX + targetX) / 2;
   const centerY = (sourceY + targetY) / 2;
 
@@ -1197,16 +1264,12 @@ const SkillEdge = ({
         }}
       >
         <g transform={`translate(${centerX}, ${centerY}) rotate(${angle})`}>
-          <polygon
-            points="0,-10 20,0 0,10 "
-            fill="#ffffff"
-          />
+          <polygon points="0,-10 20,0 0,10 " fill="#ffffff" />
         </g>
       </svg>
     </>
   );
 };
-
 
 const nodeTypes = {
   skillNode: SkillNode,
@@ -1233,10 +1296,14 @@ export function SkillTree() {
     []
   );
 
+  const [skill, setSkill] = useState("Assisted Push-up");
+
   return (
-    <>
+    <SkillContext.Provider value={{ skill, setSkill }}>
       <div style={{ width: "100vw", height: "100vh" }}>
         <SkillTreeLinkContainer />
+        <SkillWindow />
+
         <ReactFlow
           nodes={nodes}
           edges={edges}
@@ -1261,8 +1328,7 @@ export function SkillTree() {
             position="bottom-right"
           ></Controls>
         </ReactFlow>
-        
       </div>
-    </>
+    </SkillContext.Provider>
   );
 }

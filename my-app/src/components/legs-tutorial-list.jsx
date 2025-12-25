@@ -7,6 +7,8 @@ import { skillDiff } from '../utilites/skilldifficulties';
 import { skillTime } from '../utilites/skilltime';
 import { skillLinks } from '../utilites/skillLinks';
 import { skillImage } from "../utilites/skillImage";
+import { incompleteList } from './hp-tutorial-list';
+
 
 
 export default function TutorialListL() {
@@ -20,8 +22,6 @@ export default function TutorialListL() {
         ["Bodyweight Squat", "Split Squat", "Assisted Pistol Squat", "Bulgarian Split Squat", "Reverse Nordic Curl"],
         ["Nordic Curl", "Sissy Squat", "Pistol Squat", "Shrimp Squat", "Dragon Pistol Squat"],
     ];
-
-    const incompleteList = ["Assisted Pistol Squat", "Bulgarian Split Squat", "Reverse Nordic Curl", "Nordic Curl", "Sissy Squat", "Pistol Squat", "Shrimp Squat", "Dragon Pistol Squat"];
 
 
     const handleRowClick = (index, buttonTitle) => {
@@ -102,14 +102,14 @@ export default function TutorialListL() {
                     Time to learn: {skillTime.get(title)}
                   </div>
                   <button
-                    className="skill-content--close"
+                    className="skill-content--close__button"
                     onClick={() =>
                       handleOutsideClick(
                         document.querySelector("#legs")
                       )
                     }
                   >
-                    <div className="skill-content--close__button"></div>
+                    &#x2715;
                   </button>
                 </div>
               )}

@@ -7,6 +7,7 @@ import { skillDiff } from '../utilites/skilldifficulties';
 import { skillTime } from '../utilites/skilltime';
 import { skillLinks } from '../utilites/skillLinks';
 import { skillImage } from "../utilites/skillImage";
+import { incompleteList } from './hp-tutorial-list';
 
 
 export default function TutorialListCM() {
@@ -20,8 +21,6 @@ export default function TutorialListCM() {
         ["Sit-up", "Hollow Body Hold", "L-sit Compression", "L-sit", "Dragon Flag"],
         ["V-sit", "I-sit", "Manna", "Human Flag", "Victorian"],
     ];
-
-    const incompleteList = [ "V-sit", "I-sit", "Manna", "Human Flag", "Victorian"];
 
 
     const handleRowClick = (index, buttonTitle) => {
@@ -77,7 +76,7 @@ export default function TutorialListCM() {
                 <div>
               {activeRow === rowIndex && (
                 <div
-                  id="legs"
+                  id="core"
                   className="skill-content hidden"
                   ref={(drop) => {
                     if (activeRow === rowIndex && drop) {
@@ -102,14 +101,14 @@ export default function TutorialListCM() {
                     Time to learn: {skillTime.get(title)}
                   </div>
                   <button
-                    className="skill-content--close"
+                    className="skill-content--close__button"
                     onClick={() =>
                       handleOutsideClick(
-                        document.querySelector("#legs")
+                        document.querySelector("#core")
                       )
                     }
                   >
-                    <div className="skill-content--close__button"></div>
+                    &#x2715;
                   </button>
                 </div>
               )}

@@ -13,12 +13,12 @@ export function Training() {
 
       <div className="flex-container">
         <div className="training-container">
-          <div className="training-header">For Beginners</div>
+          <div className="training-header">for beginners</div>
           <div className="training-column">
             <div className="item">
               <Link to="/training/beginnerguide" className="guide-link">
                 <button className="guide-button">
-                  beginner guide
+                  Beginner Guide
                 </button>
               </Link>
             </div>
@@ -32,40 +32,113 @@ export function Training() {
 
       <div className="flex-container">
         <div className="training-container">
-          <div className="training-header">Calisthenics Fundamentals</div>
+          <div className="training-header">calisthenics fundamentals</div>
+          <div className="training-column">
+            <div className="item">
+              <Link to="/training/progoverload" className="guide-link">
+                <button className="guide-button">
+                  Progressive Overload in Calisthenics
+                </button>
+              </Link>
+            </div>
+            <div className="item">
+              <Link to="/tutorials/incomplete" className="guide-link">
+                <button className="guide-button">
+                  Gym vs Calisthenics
+                </button>
+              </Link>
+            </div>
+            <div className="item">
+              <Link to="/tutorials/incomplete" className="guide-link">
+                <button className="guide-button">
+                  Full Body vs Split Training
+                </button>
+              </Link>
+            </div>
+            <div className="item">
+              <Link to="/tutorials/incomplete" className="guide-link">
+                <button className="guide-button">
+                  Rest & Recovery
+                </button>
+              </Link>
+            </div>
+            <div className="item">
+              <Link to="/tutorials/incomplete" className="guide-link">
+                <button className="guide-button">
+                  Conditioning & Activation
+                </button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <br />
+      <br />
+      <br />
+
+      <div className="flex-container">
+        <div className="training-container">
+          <div className="training-header">skill paths</div>
+          <div className="training-column">
+            <div className="item">
+              <Link to="/training/pushrmp" className="guide-link">
+                <button className="guide-button">
+                  Push Roadmap
+                </button>
+              </Link>
+            </div>
+            <div className="item">
+              <Link to="/training/pullrmp" className="guide-link">
+                <button className="guide-button">
+                  Pull Roadmap
+                </button>
+              </Link>
+            </div>
+            <div className="item">
+              <Link to="/tutorials/incomplete" className="guide-link">
+                <button className="guide-button">
+                  Legs Roadmap
+                </button>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <br />
+      <br />
+      <br />
+
+      <div className="flex-container">
+        <div className="training-container">
+          <div className="training-header">trAining 101</div>
           <div className="training-column">
             <div className="item">
               <Link to="/tutorials/incomplete" className="guide-link">
                 <button className="guide-button">
-                  progressive overload in calisthenics
+                  Structuring a Calisthenics Workout (Beginner)
                 </button>
               </Link>
             </div>
             <div className="item">
               <Link to="/tutorials/incomplete" className="guide-link">
                 <button className="guide-button">
-                  gym vs calisthenics
+                  Structuring a Calisthenics Workout (Intermediate)
                 </button>
               </Link>
             </div>
             <div className="item">
               <Link to="/tutorials/incomplete" className="guide-link">
                 <button className="guide-button">
-                  full body vs split training
+                  Strengthening your Core
                 </button>
               </Link>
             </div>
             <div className="item">
               <Link to="/tutorials/incomplete" className="guide-link">
                 <button className="guide-button">
-                  rest & recovery
-                </button>
-              </Link>
-            </div>
-            <div className="item">
-              <Link to="/tutorials/incomplete" className="guide-link">
-                <button className="guide-button">
-                  conditioning & activation
+                  Training Legs
                 </button>
               </Link>
             </div>
@@ -79,99 +152,26 @@ export function Training() {
 
       <div className="flex-container">
         <div className="training-container">
-          <div className="training-header">Skill Paths</div>
-          <div className="training-column">
-            <div className="item">
-              <Link to="/tutorials/incomplete" className="guide-link">
-                <button className="guide-button">
-                  push roadmap
-                </button>
-              </Link>
-            </div>
-            <div className="item">
-              <Link to="/tutorials/incomplete" className="guide-link">
-                <button className="guide-button">
-                  pull roadmap
-                </button>
-              </Link>
-            </div>
-            <div className="item">
-              <Link to="/tutorials/incomplete" className="guide-link">
-                <button className="guide-button">
-                  legs roadmap
-                </button>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <br />
-      <br />
-      <br />
-
-      <div className="flex-container">
-        <div className="training-container">
-          <div className="training-header">Training 101</div>
-          <div className="training-column">
-            <div className="item">
-              <Link to="/tutorials/incomplete" className="guide-link">
-                <button className="guide-button">
-                  structuring a calisthenics workout (beginner)
-                </button>
-              </Link>
-            </div>
-            <div className="item">
-              <Link to="/tutorials/incomplete" className="guide-link">
-                <button className="guide-button">
-                  structuring a calisthenics workout (intermediate)
-                </button>
-              </Link>
-            </div>
-            <div className="item">
-              <Link to="/tutorials/incomplete" className="guide-link">
-                <button className="guide-button">
-                  strengthening your core
-                </button>
-              </Link>
-            </div>
-            <div className="item">
-              <Link to="/tutorials/incomplete" className="guide-link">
-                <button className="guide-button">
-                  training legs
-                </button>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <br />
-      <br />
-      <br />
-
-      <div className="flex-container">
-        <div className="training-container">
-          <div className="training-header">Skill Guides</div>
+          <div className="training-header">skill guides</div>
           <div className="training-column">
             <div className="item">
               <Link to="/training/handstandguide" className="guide-link">
                 <button className="guide-button">
-                  handstand guide
+                  Handstand Guide
                 </button>
               </Link>
             </div>
             <div className="item">
               <Link to="/tutorials/incomplete" className="guide-link">
                 <button className="guide-button">
-                  planche guide
+                  Planche Guide
                 </button>
               </Link>
             </div>
             <div className="item">
               <Link to="/tutorials/incomplete" className="guide-link">
                 <button className="guide-button">
-                  front lever guide
+                  Front Lever Guide
                 </button>
               </Link>
             </div>
@@ -185,19 +185,19 @@ export function Training() {
 
       <div className="flex-container">
         <div className="training-container">
-          <div className="training-header">Nutrition</div>
+          <div className="training-header">nutrition</div>
           <div className="training-column">
             <div className="item">
               <Link to="/tutorials/incomplete" className="guide-link">
                 <button className="guide-button">
-                  general nutrition guide
+                  General Nutrition Guide
                 </button>
               </Link>
             </div>
             <div className="item">
               <Link to="/tutorials/incomplete" className="guide-link">
                 <button className="guide-button">
-                  bulking vs cutting guide
+                  Bulking vs Cutting guide
                 </button>
               </Link>
             </div>
@@ -216,14 +216,14 @@ export function Training() {
             <div className="item">
               <Link to="/tutorials/incomplete" className="guide-link">
                 <button className="guide-button">
-                  breaking through plateaus
+                  Breaking Through Plateaus
                 </button>
               </Link>
             </div>
             <div className="item">
               <Link to="/tutorials/incomplete" className="guide-link">
                 <button className="guide-button">
-                  setting realistic goals
+                  Setting Realistic Goals
                 </button>
               </Link>
             </div>
@@ -237,12 +237,12 @@ export function Training() {
 
       <div className="flex-container">
         <div className="training-container">
-          <div className="training-header">Google Docs version</div>
+          <div className="training-header">google docs version</div>
           <div className="training-column">
             <div className="item">
               <Link to="https://docs.google.com/document/d/1keXgZXvrRFLEFaAw4keN0_vhmzMaIJ27uA-OcP2Q59A/edit?usp=sharing" className="guide-link">
                 <button className="guide-button">
-                  access google docs version here
+                  Access Google Docs Version
                 </button>
               </Link>
             </div>

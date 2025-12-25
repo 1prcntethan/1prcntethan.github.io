@@ -7,6 +7,8 @@ import { skillDiff } from '../utilites/skilldifficulties';
 import { skillTime } from '../utilites/skilltime';
 import { skillLinks } from '../utilites/skillLinks';
 import { skillImage } from "../utilites/skillImage";
+import { incompleteList } from './hp-tutorial-list';
+
 
 
 export default function TutorialListVP() {
@@ -21,8 +23,6 @@ export default function TutorialListVP() {
         ["Bent Arm Press to HS", "Straight Arm Press to HS", "Bent Arm Stand", "Assisted HSPU", "HSPU"],
         ["Deep HSPU", "90 Degree PU", "Assisted OAHS", "OAHS", "OA Flag"]
     ];
-
-    const incompleteList = ["Bent Arm Press to HS", "Straight Arm Press to HS", "Deep HSPU", "90 Degree PU", "Assisted OAHS", "OAHS", "OA Flag"];
 
 
 
@@ -104,14 +104,14 @@ export default function TutorialListVP() {
                     Time to learn: {skillTime.get(title)}
                   </div>
                   <button
-                    className="skill-content--close"
+                    className="skill-content--close__button"
                     onClick={() =>
                       handleOutsideClick(
                         document.querySelector("#vp")
                       )
                     }
                   >
-                    <div className="skill-content--close__button"></div>
+                    &#x2715;
                   </button>
                 </div>
               )}
