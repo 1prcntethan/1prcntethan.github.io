@@ -1,58 +1,63 @@
-import React, { useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import React, { lazy, Suspense, useEffect } from "react";
+import { useLocation, Navigate } from "react-router-dom";
 import { HashRouter as HashRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
+import { useAuth } from "./config/auth-context";
+import { SkillTree } from "./pages/skilltree"
+import { LoginPage } from "./pages/loginpage";
+import { CreateAccountPage } from "./pages/createaccount";
+import { ResetPasswordPage } from "./pages/resetpassword";
+import { Dashboard } from "./pages/dashboard";
+
 import { Homepage } from "./pages/home";
 import { Training } from "./pages/training";
 import { Tutorials } from "./pages/tutorials";
 import { Terminology } from "./pages/terminology";
+import { SkillVis } from "./pages/skillvis";
+import { Incomplete } from "./pages/incomplete";
+import { HowTo } from "./pages/howto";
+import { About } from "./pages/about";
+import { Disclaimer } from "./pages/disclaimer";
+
+//guide pages
 import { AssistPu } from "./pages/tutorials/assistpu";
 import { Pushup } from "./pages/tutorials/pushup";
 import { Dip } from "./pages/tutorials/dip";
-import { ElbowLever } from "./pages/tutorials/elbowlever";
-import { PlancheLean } from "./pages/tutorials/planchelean";
+import { ElbowLever } from"./pages/tutorials/elbowlever";
+import { PlancheLean } from"./pages/tutorials/planchelean";
 import { PseudoPU } from "./pages/tutorials/pseudopu";
 import { TuckPL } from "./pages/tutorials/tuckpl";
 import { AdvTuckPL } from "./pages/tutorials/advtuckpl";
 import { TuckPLPU } from "./pages/tutorials/tuckplpu";
-import { PikePU } from "./pages/tutorials/pikepu";
-import { CrowPose } from "./pages/tutorials/crowpose";
-import { AssistedHS } from "./pages/tutorials/assistedhs";
-import { Handstand } from "./pages/tutorials/handstand";
+import { PikePU } from"./pages/tutorials/pikepu";
+import { CrowPose } from"./pages/tutorials/crowpose";
+import { AssistedHS } from"./pages/tutorials/assistedhs";
+import { Handstand } from"./pages/tutorials/handstand";
 import { ElevatedPikePU } from "./pages/tutorials/elevatedpikepu";
-import { BentArmStand } from "./pages/tutorials/bentarmstand";
-import { AssistedHSPU } from "./pages/tutorials/assistedhspu";
-import { HSPU } from "./pages/tutorials/hspu";
-import { AssistedInvRow } from "./pages/tutorials/assistedinvrow";
-import { InvertedRow } from "./pages/tutorials/invertedrow";
+import { BentArmStand } from"./pages/tutorials/bentarmstand";
+import { AssistedHSPU } from"./pages/tutorials/assistedhspu";
+import { HSPU } from"./pages/tutorials/hspu";
+import { AssistedInvRow } from"./pages/tutorials/assistedinvrow";
+import { InvertedRow } from"./pages/tutorials/invertedrow";
 import { TuckFL } from "./pages/tutorials/tuckfl";
-import { TuckFLRow } from "./pages/tutorials/tuckflrow";
-import { PikeFL } from "./pages/tutorials/pikefl";
-import { PikeFLRow } from "./pages/tutorials/pikeflrow";
+import { TuckFLRow } from"./pages/tutorials/tuckflrow";
+import { PikeFL } from"./pages/tutorials/pikefl";
+import { PikeFLRow } from"./pages/tutorials/pikeflrow";
 import { AdvTuckFL } from "./pages/tutorials/advtuckfl";
 import { Pullup } from "./pages/tutorials/pullup";
 import { SuperAdvTuckFL } from "./pages/tutorials/superadvtuckfl";
 import { AdvTuckFLRow } from "./pages/tutorials/advtuckflrow";
 import { StraddleFL } from "./pages/tutorials/straddlefl";
 import { Deadhang } from "./pages/tutorials/deadhang";
-import { ActiveHang } from "./pages/tutorials/activehang";
+import { ActiveHang } from "./pages/tutorials/activehang"
 import { AssistPullup } from "./pages/tutorials/assistedpullup";
-import { SkillVis } from "./pages/skillvis";
-import { SkillTree } from "./pages/skilltree";
 import { BeginnerGuide } from "./pages/guides/beginnerguide";
-import { ChestPullup } from "./pages/tutorials/chestpullup";
-import { WaistPullup } from "./pages/tutorials/waistpullup";
+import { ChestPullup } from"./pages/tutorials/chestpullup";
+import { WaistPullup } from"./pages/tutorials/waistpullup";
 import { StraddleFLRow } from "./pages/tutorials/straddleflrow";
 import { HalflayFL } from "./pages/tutorials/halflayfl";
 import { FrontLever } from "./pages/tutorials/frontlever";
-import { MuscleUp } from "./pages/tutorials/muscleup";
-import { Incomplete } from "./pages/incomplete";
-import { HowTo } from "./pages/howto";
-import { About } from "./pages/about";
-import { Disclaimer } from "./pages/disclaimer";
-import { LoginPage } from "./pages/loginpage";
-import { CreateAccountPage } from "./pages/createaccount";
-import { Dashboard } from "./pages/dashboard";
+import { MuscleUp } from"./pages/tutorials/muscleup"
 import { ProgOverload } from "./pages/guides/progoverload";
 import { PushRmp } from "./pages/guides/pushroadmap";
 import { HandstandGuide } from "./pages/guides/handstandguide";
@@ -67,10 +72,19 @@ import { ScapulaPullup } from "./pages/tutorials/scapulapullup";
 import { NinetyDegHold } from "./pages/tutorials/ninetydeghold";
 import { Squat } from "./pages/tutorials/squat";
 import { SplitSquat } from "./pages/tutorials/splitsquat";
-import { useAuth } from "./config/auth-context";
-import { Navigate } from "react-router-dom";
-import { ResetPasswordPage } from "./pages/resetpassword";
-import { PullRmp } from "./pages/guides/pullroadmap"
+import { PullRmp } from "./pages/guides/pullroadmap";
+import { BeginnerWorkout } from "./pages/guides/beginnerworkout";
+
+
+function ScrollToTop({ children }) {
+  const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+
+  return <>{children}</>;
+}
 
 function App() {
   const { currentUser } = useAuth();
@@ -103,6 +117,7 @@ function App() {
               element={<HandstandGuide />}
             />
             <Route path="/training/pullrmp" element={<PullRmp />} />
+            <Route path="/training/beginnerworkout" element={<BeginnerWorkout />} />
 
             <Route path="/tutorials/pushup" element={<Pushup />} />
             <Route path="/tutorials/assistedpu" element={<AssistPu />} />
@@ -184,14 +199,5 @@ function App() {
   );
 }
 
-function ScrollToTop({ children }) {
-  const location = useLocation();
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [location.pathname]);
-
-  return <>{children}</>;
-}
 
 export default App;

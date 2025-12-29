@@ -115,7 +115,7 @@ export function Training() {
           <div className="training-header">trAining 101</div>
           <div className="training-column">
             <div className="item">
-              <Link to="/tutorials/incomplete" className="guide-link">
+              <Link to="/training/beginnerworkout" className="guide-link">
                 <button className="guide-button">
                   Structuring a Calisthenics Workout (Beginner)
                 </button>

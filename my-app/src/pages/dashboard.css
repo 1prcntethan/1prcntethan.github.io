@@ -52,6 +52,15 @@
     align-self: center;
     text-align: center;
 }
+.dashboard-skill__difficulty {
+    display: flex;
+    width: auto;
+    height: auto;
+    padding: 10px 20px;
+    font-size: 20px;
+    justify-content: center;
+    text-align: center;
+}
 
 .skill-selector {
     display: flex;
@@ -65,6 +74,17 @@
     border: 1px solid rgb(255, 255, 255, 0.5);
     justify-self: center;
     align-self: center;
+    margin: 20px;
+}
+
+.skill-selector option{
+    background-color: #111111;
+    color: white;
+    font-weight: 200;
+}
+
+.skill-selector option:hover{
+    background-color: none;
 }
 
 .skill-svg {

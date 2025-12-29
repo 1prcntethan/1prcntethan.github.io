@@ -9,6 +9,7 @@ import { db } from "../config/firebase.js";
 import { doc, getDoc } from "firebase/firestore";
 import { updateSkill } from "../config/firestore.js";
 import { svgIcon } from "../utilites/svg-icons.js";
+import { skillNameMap, skillDiffMap } from "../utilites/targetskills.js";
 
 export function Dashboard() {
   const { currentUser } = useAuth();
@@ -30,15 +31,6 @@ export function Dashboard() {
     });
   }, [currentUser]);
 
-  const skillNameMap = new Map();
-  skillNameMap.set("handstand", "handstand");
-  skillNameMap.set("hspu", "handstand push-up");
-  skillNameMap.set("ninety-deg-hold", "90 degree hold");
-  skillNameMap.set("full-pl", "planche");
-  skillNameMap.set("pull-up", "pull-up");
-  skillNameMap.set("muscle-up", "muscle up");
-  skillNameMap.set("full-fl", "front lever");
-  skillNameMap.set("oac-oap", "one arm pull-up");
 
   return (
     <>
@@ -55,7 +47,10 @@ export function Dashboard() {
           <p>target push</p>
           <svg className="skill-svg">{svgIcon.get(push)}</svg>
           <div className="dashboard-skill__title">
-            {push == null || push == "Change target push skill" ? "select target push skill" : skillNameMap.get(push)}
+            {push === null || push === "Change target push skill" ? "select target push skill" : skillNameMap?.get(push)}
+          </div>
+          <div className="dashboard-skill__difficulty"> 
+            skill difficulty: {skillDiffMap?.get(push)?.toLowerCase()}
           </div>
           <select
             id="push-selector"
@@ -76,7 +71,10 @@ export function Dashboard() {
           <p>target pull</p>
           <svg className="skill-svg">{svgIcon.get(pull)}</svg>
           <div className="dashboard-skill__title">
-            {pull == null || pull == "Change target pull skill" ? "select target pull skill" : skillNameMap.get(pull)}
+            {pull === null || pull === "Change target pull skill" ? "select target pull skill" : skillNameMap?.get(pull)}
+          </div>
+          <div className="dashboard-skill__difficulty"> 
+            skill difficulty: {skillDiffMap?.get(pull)?.toLowerCase()}
           </div>
           <select
             id="pull-selector"
