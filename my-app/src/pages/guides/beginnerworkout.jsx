@@ -117,6 +117,10 @@ export function BeginnerWorkout() {
           to build muscle that can be trained specifically in the future for
           skills, through hypertrophy focused strength training. Happy training!
         </div>
+        <div className="guide-text">
+          If you'd like to contribute and sketch for this guide, please reach
+          out!
+        </div>
       </div>
 
       <Footer />

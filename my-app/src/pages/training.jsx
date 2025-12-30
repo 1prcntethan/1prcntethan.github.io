@@ -169,7 +169,7 @@ export function Training() {
               </Link>
             </div>
             <div className="item">
-              <Link to="/tutorials/incomplete" className="guide-link">
+              <Link to="/training/frontleverguide" className="guide-link">
                 <button className="guide-button">
                   Front Lever Guide
                 </button>
