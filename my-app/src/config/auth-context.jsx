@@ -12,10 +12,13 @@ export function useAuth() {
 export function AuthProvider({ children }) {
   const [currentUser, setCurrentUser] = useState(null);
   const [userLoggedIn, setUserLoggedIn] = useState(false);
+  const [dbReady, setDbReady] = useState(false);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (user) => {
+
+      setDbReady(false);
       if (user) {
         await ensureUserDoc(user);
         setCurrentUser(user);
@@ -26,6 +29,7 @@ export function AuthProvider({ children }) {
         setCurrentUser(null);
         setUserLoggedIn(false);
       }
+      setDbReady(true);
       setLoading(false);
     });
 
@@ -33,7 +37,7 @@ export function AuthProvider({ children }) {
   }, []);
 
   return (
-    <AuthContext.Provider value={{ currentUser, userLoggedIn, loading }}>
+    <AuthContext.Provider value={{ currentUser, userLoggedIn, loading, dbReady }}>
       {!loading && children}
     </AuthContext.Provider>
   );
