@@ -90,9 +90,9 @@ function ScrollToTop({ children }) {
 function App() {
   const { currentUser, loading, dbReady } = useAuth();
 
-  // if(loading || !dbReady) {
-  //   return <div>loading</div>;
-  // }
+  if(loading || !dbReady) {
+    return <div>loading</div>;
+  }
 
   return (
       <HashRouter>
