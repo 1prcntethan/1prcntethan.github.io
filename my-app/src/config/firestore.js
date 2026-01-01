@@ -20,7 +20,18 @@ export async function ensureUserDoc(user) {
 export async function updateSkill(uid, type, skillName) {
   const ref = doc(db, "users", uid);
 
+  const snap = await getDoc(ref);
+  if (!snap.exists()) return;
+
+  const data = snap.data();
+  const oldSkill = data?.skills?.[type];
+
+  if (oldSkill === skillName) {
+    return;
+  }
+
   await updateDoc(ref, {
-    [`skills.${type}`]: skillName
+    [`skills.${type}`]: skillName,
+    updatedAt: serverTimestamp()
   });
 }
