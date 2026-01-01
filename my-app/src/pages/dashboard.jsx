@@ -57,9 +57,20 @@ export function Dashboard() {
           <select
             id="push-selector"
             className="skill-selector"
-            onChange={(e) => {
-              updateSkill(currentUser.uid, "push", e.target.value);
-              setPush(e.target.value);
+            onChange={async (e) => {
+              const newSkill = e.target.value;
+
+              try {
+                await updateSkill(currentUser.uid, "push", newSkill);
+                setPush(newSkill);
+              } catch (error) {
+                if(error.code === "permission-denied") {
+                  alert("Please wait 2 seconds between skill changes.");
+                } else {
+                  console.error(error);
+                  alert("An error occured. Please try again.");
+                }
+              } 
             }}
           >
             <option>Change target push skill</option>
@@ -81,9 +92,20 @@ export function Dashboard() {
           <select
             id="pull-selector"
             className="skill-selector"
-            onChange={(e) => {
-              updateSkill(currentUser.uid, "pull", e.target.value);
-              setPull(e.target.value);
+            onChange={async (e) => {
+              const newSkill = e.target.value;
+
+              try {
+                await updateSkill(currentUser.uid, "pull", newSkill);
+                setPull(newSkill);
+              } catch (error) {
+                if(error.code === "permission-denied") {
+                  alert("Please wait 2 seconds between skill changes.");
+                } else {
+                  console.error(error);
+                  alert("An error occured. Please try again.");
+                }
+              } 
             }}
           >
             <option value={null}>Change target pull skill</option>
@@ -94,7 +116,7 @@ export function Dashboard() {
           </select>
         </div>
       </div>
-
+      <div className="dashboard-welcome">more features coming soon...</div>
       <Footer />
     </>
   );

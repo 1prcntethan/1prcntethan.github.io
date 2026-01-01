@@ -13,22 +13,25 @@ const Footer = () => {
               <a href="#">About Us</a>
             </li> */}
             <li>
-              <Link to = "/">Home</Link>
+              <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to = "/tutorials">Skills/Tutorials</Link>
+              <Link to="/tutorials">Skills/Tutorials</Link>
             </li>
             <li>
-            <Link to = "/training">Training Guides</Link>
+              <Link to="/training">Training Guides</Link>
             </li>
             <li>
-            <Link to = "/terminology">Terminology</Link>
+              <Link to="/terminology">Terminology</Link>
             </li>
             <li>
-            <Link to = "/howtouseguide">WINGS usage guide</Link>
+              <Link to="/howtouseguide">WINGS usage guide</Link>
             </li>
             <li>
-            <Link to = "/about">About</Link>
+              <Link to="/about">About</Link>
+            </li>
+            <li>
+              <Link to="/skilltree">Skill Tree</Link>
             </li>
           </ul>
         </div>
@@ -36,14 +39,14 @@ const Footer = () => {
         <div className="footer-section">
           <p>Contact Us</p>
           <div className="footer-text">
-            Email:{" "}
-            <p id="footer-email">
-              wings.sw.official@gmail.com
-            </p>
+            Email: <p id="footer-email">wings.sw.official@gmail.com</p>
           </div>
           <div className="social-media">
             <p className="footer-text">Instagram:</p>
-            <a className="center-svg" href="https://www.instagram.com/wings.sw/">
+            <a
+              className="center-svg"
+              href="https://www.instagram.com/wings.sw/"
+            >
               <svg
                 className="insta-svg"
                 viewBox="0 0 2272 2272"
@@ -64,17 +67,17 @@ const Footer = () => {
                 <circle cx="1136" cy="1149" r="420" fill="#333333" />
               </svg>
             </a>
-            
           </div>
           @wings.sw
         </div>
-
 
         <div className="footer-section">
           <p>Feedback</p>
           <ul>
             <li>
-              <a href="https://forms.gle/ChdE8Mq3YNWXCfTa6">Report an Issue/Submit Feedback</a>
+              <a href="https://forms.gle/ChdE8Mq3YNWXCfTa6">
+                Report an Issue/Submit Feedback
+              </a>
             </li>
           </ul>
         </div>
@@ -86,7 +89,9 @@ const Footer = () => {
               <a href="https://ko-fi.com/wingssw">Ko-fi</a>
             </li>
             <li>
-              <a href="https://www.paypal.com/donate/?hosted_button_id=RNREJQ826VL46">PayPal</a>
+              <a href="https://www.paypal.com/donate/?hosted_button_id=RNREJQ826VL46">
+                PayPal
+              </a>
             </li>
           </ul>
         </div>
@@ -99,7 +104,18 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-        
+
+        <div className="footer-section">
+          <p>Account</p>
+          <ul>
+            <li>
+              <Link to="/login">Login</Link>
+            </li>
+            <li>
+              <Link to="/createaccount">Create Account</Link>
+            </li>
+          </ul>
+        </div>
       </div>
 
       <div className="footer-bottom">

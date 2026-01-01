@@ -278,7 +278,7 @@ export const LoginPage = () => {
                   <label className="signup-form__label" for="password">
                     Password
                   </label>
-                  <Link to="/resetpassword" className="forgot-password-link">
+                  <Link to="https://forms.gle/RqAMwRLt4kg19ESS7" className="forgot-password-link">
                     Forgot password?
                   </Link>
                 </div>
