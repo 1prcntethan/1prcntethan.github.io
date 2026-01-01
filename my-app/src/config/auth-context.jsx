@@ -17,20 +17,22 @@ export function AuthProvider({ children }) {
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (user) => {
-
+      setLoading(true);
       setDbReady(false);
+
       if (user) {
+        await user.getIdToken(true);
         await ensureUserDoc(user);
         setCurrentUser(user);
         setUserLoggedIn(true);
-
-        ensureUserDoc(user);
       } else {
         setCurrentUser(null);
         setUserLoggedIn(false);
       }
+
       setDbReady(true);
       setLoading(false);
+
     });
 
     return unsubscribe;
