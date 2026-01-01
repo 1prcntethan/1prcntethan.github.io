@@ -195,6 +195,8 @@ function App() {
 
             <Route path="/tutorials/squat" element={<Squat />} />
             <Route path="/tutorials/splitsquat" element={<SplitSquat />} />
+
+            <Route path="*" element={<Navigate to="/tutorials/incomplete" />} />
           </Routes>
         </ScrollToTop>
       </HashRouter>

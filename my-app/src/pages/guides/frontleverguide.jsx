@@ -296,9 +296,8 @@ export function FrontLeverGuide() {
         <div className="guide-text">
           For video tutorials, check out the{" "}
           <Link to="/tutorials/fullfl" className="guide-external-link">
-            front lever tutorial page.
-          </Link>{" "}
-          <br />
+            front lever tutorial page
+          </Link>.
           Hopefully this guide was helpful in your front lever journey! Good luck!
           <br />
           <br />

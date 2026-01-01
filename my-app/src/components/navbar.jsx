@@ -169,23 +169,24 @@ const Navbar = () => {
           <div className="navbar__logout--container">
             <button
               className="logout-button"
-              onClick={location.pathname === "/dashboard" ? () => {
-                doLogout();
-              } : () => {
-                navigate("/dashboard");
-              }}
+              onClick={
+                location.pathname === "/dashboard"
+                  ? () => {
+                      doLogout();
+                    }
+                  : () => {
+                      navigate("/dashboard");
+                    }
+              }
             >
               <img src="account_icon.svg" className="account-icon-nav" />
-              <div>{location.pathname === "/dashboard" ? "log out" : "dashboard"}</div>
+              <div>
+                {location.pathname === "/dashboard" ? "log out" : "dashboard"}
+              </div>
             </button>
           </div>
         ) : (
           <>
-            {/* <div className="navbar__list--items navbar__list--pink">
-              <Link to="/login" id="nav-item">
-                login
-              </Link>
-            </div> */}
             <div className="navbar__logout--container">
               <Link to="/login" id="nav-item">
                 <button className="logout-button">
@@ -229,6 +230,41 @@ const Navbar = () => {
                 skill tree
               </div>
             </Link>
+          </li>
+          <li>
+            {currentUser ? (
+              <div className="navbar__logout--container">
+                <button
+                  className="logout-button"
+                  onClick={
+                    location.pathname === "/dashboard"
+                      ? () => {
+                          doLogout();
+                        }
+                      : () => {
+                          navigate("/dashboard");
+                        }
+                  }
+                >
+                  <img src="account_icon.svg" className="account-icon-nav" />
+                  <div>
+                    {location.pathname === "/dashboard"
+                      ? "log out"
+                      : "dashboard"}
+                  </div>
+                </button>
+              </div>
+            ) : (
+              <>
+                <div className="navbar__logout--container">
+                  <Link to="/login" id="nav-item">
+                    <button className="logout-button">
+                      <div>login</div>
+                    </button>
+                  </Link>
+                </div>
+              </>
+            )}
           </li>
           {/* <div className="navbar__list--items navbar__list--pink">
               <Link to = "/skillvis" id="nav-item">skillvis</Link>

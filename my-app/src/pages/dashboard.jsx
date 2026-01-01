@@ -9,7 +9,9 @@ import { db } from "../config/firebase.js";
 import { doc, getDoc } from "firebase/firestore";
 import { updateSkill } from "../config/firestore.js";
 import { svgIcon } from "../utilites/svg-icons.js";
-import { skillNameMap, skillDiffMap } from "../utilites/targetskills.js";
+import { skillNameMap, skillDiffMap, skillLinkMap} from "../utilites/targetskills.js";
+import { Link } from "react-router-dom";
+import { skillTreeIcon } from "../utilites/skilltreeicons.js";
 
 export function Dashboard() {
   const { currentUser } = useAuth();
@@ -45,7 +47,7 @@ export function Dashboard() {
       <div className="dashboard-skill__container">
         <div className="dashboard-skill__push">
           <p>target push</p>
-          <svg className="skill-svg">{svgIcon.get(push)}</svg>
+          <Link to={skillLinkMap.get(push)} className="skill-svg">{skillTreeIcon.get(push)}</Link>
           <div className="dashboard-skill__title">
             {push === null || push === "Change target push skill" ? "select target push skill" : skillNameMap?.get(push)}
           </div>
@@ -69,7 +71,7 @@ export function Dashboard() {
         </div>
         <div className="dashboard-skill__pull">
           <p>target pull</p>
-          <svg className="skill-svg">{svgIcon.get(pull)}</svg>
+          <Link to={skillLinkMap.get(pull)} className="skill-svg">{skillTreeIcon.get(pull)}</Link>
           <div className="dashboard-skill__title">
             {pull === null || pull === "Change target pull skill" ? "select target pull skill" : skillNameMap?.get(pull)}
           </div>
