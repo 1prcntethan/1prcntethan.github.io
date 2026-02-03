@@ -141,3 +141,30 @@
     transition: transform 0.2s;
     cursor: pointer;
 }
+
+.streak-display {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #252525;
+    border: solid 1px #333333;
+    border-radius: 12px;
+    width: 66%;
+    justify-self: center;
+    padding: 40px;
+}
+
+.streak-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.streak-counter{
+    display: flex;
+    font-size: 24px;
+}
+
+.streak-longest{
+    color: #c9c9c9;
+}

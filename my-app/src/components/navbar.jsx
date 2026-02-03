@@ -258,7 +258,7 @@ const Navbar = () => {
               <>
                 <div className="navbar__logout--container">
                   <Link to="/login" id="nav-item">
-                    <button className="logout-button">
+                    <button className="logout-button__mobile">
                       <div>login</div>
                     </button>
                   </Link>

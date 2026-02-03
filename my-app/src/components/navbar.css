@@ -249,6 +249,18 @@
   transition-duration: 500ms;
 }
 
+.logout-button__mobile {
+  border: none;
+  font-size: 20px;
+  cursor:pointer;
+  color: white;
+  background-color: transparent;
+  font-family: Major Mono Display;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
 .account-icon-nav {
   width: 30px;
   height: 30px;
