@@ -149,9 +149,10 @@
     background-color: #252525;
     border: solid 1px #333333;
     border-radius: 12px;
-    width: 66%;
+    width: 75%;
     justify-self: center;
-    padding: 40px;
+    padding: 30px;
+    margin-top: 30px;
 }
 
 .streak-info {
@@ -163,8 +164,50 @@
 .streak-counter{
     display: flex;
     font-size: 24px;
+    text-shadow: 0 0 20px rgb(187, 161, 104);
 }
 
-.streak-longest{
+.streak-data{
     color: #c9c9c9;
+}
+
+.log-streak {
+    display: flex;
+    background-color: #b66da3;
+    color: white;
+    border: 1px solid #333333;
+    border-radius: 12px;
+    width: 175px;
+    height: 50px;
+    font-size: 20px;
+    font-family: Fira Sans;
+    font-weight: 200;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.log-streak:disabled {
+    background-color: #3d1432;
+}
+
+.log-caption {
+    width: 75%;
+    font-family: Fira Sans;
+    font-size: 14px;
+    align-content: center;
+    justify-self: center;
+}
+
+
+.rank-display {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #252525;
+    border: solid 1px #333333;
+    border-radius: 12px;
+    width: 75%;
+    justify-self: center;
+    padding: 30px;
+    margin-top: 30px;
 }

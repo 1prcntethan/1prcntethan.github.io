@@ -21,6 +21,8 @@ export function Dashboard() {
   const { currentUser } = useAuth();
   const [push, setPush] = useState(null);
   const [pull, setPull] = useState(null);
+  const [workoutCounter, setWorkoutCounter] = useState(0);
+  const [restCounter, setRestCounter] = useState(0);
   const [streak, setStreak] = useState({
     current: 0,
     longest: 0,
@@ -46,11 +48,14 @@ export function Dashboard() {
             lastLog: null,
           },
         );
+
+        setWorkoutCounter(data.workout);
+        setRestCounter(data.rest);
       }
     });
   }, [currentUser]);
 
-  async function logWorkout(uid) {
+  async function logWorkout(uid, workout) {
     const ref = doc(db, "users", uid);
     const snap = await getDoc(ref);
     if (!snap.exists()) return;
@@ -61,6 +66,8 @@ export function Dashboard() {
       longest: 0,
       lastLog: null,
     };
+    const workoutCounter = data.workout || 0;
+    const restCounter = data.rest || 0;
 
     const today = todayString();
     const last = streak.lastLog;
@@ -78,13 +85,23 @@ export function Dashboard() {
 
     let newLongest = Math.max(streak.longest, newCurrent);
 
-    await updateDoc(ref, {
+    const updates = {
       streak: {
         current: newCurrent,
         longest: newLongest,
         lastLog: today,
       },
-    });
+    };
+
+    if (workout === "workout") {
+      updates.workout = workoutCounter + 1;
+      setWorkoutCounter((prev) => prev + 1);
+    } else if (workout === "rest") {
+      updates.rest = restCounter + 1;
+      setRestCounter((prev) => prev + 1);
+    }
+
+    await updateDoc(ref, updates);
 
     setStreak({
       current: newCurrent,
@@ -96,7 +113,11 @@ export function Dashboard() {
   function todayString() {
     return new Date().toISOString().slice(0, 10);
   }
+
   const loggedToday = streak.lastLog === todayString();
+  const totalDays = workoutCounter + restCounter;
+  const workoutPercentage =
+    totalDays > 0 ? Math.round((workoutCounter / totalDays) * 100) : 0;
 
   return (
     <>
@@ -111,19 +132,47 @@ export function Dashboard() {
       <div className="streak-container">
         <div className="streak-display">
           <div className="streak-info">
-            <div className="streak-counter">streak: {streak.current} {streak.current > 0 ? "🔥" : ""}</div>
-            <div className="streak-longest">
-              longest streak: {streak.longest}
+            <div className="streak-counter">
+              streak: {streak.current} {streak.current > 0 ? "🔥" : ""}
+            </div>
+            <div className="streak-data">longest streak: {streak.longest}</div>
+            <div className="streak-data">
+              total workouts logged: {workoutCounter}
+            </div>
+            <div className="streak-data">
+              total rest days logged: {restCounter}
+            </div>
+            <div className="streak-data">
+              workout consistency: {workoutPercentage}%
             </div>
           </div>
+          <div className="streak-info">
+            <button
+              className="log-streak"
+              onClick={() => logWorkout(currentUser.uid, "workout")}
+              disabled={loggedToday}
+            >
+              {loggedToday ? "Logged today" : "Log workout"}
+            </button>
+            <button
+              className="log-streak"
+              onClick={() => logWorkout(currentUser.uid, "rest")}
+              disabled={loggedToday}
+            >
+              {loggedToday ? "Logged today" : "Log rest day"}
+            </button>
+          </div>
+        </div>
+        <p class="log-caption">
+          *Make sure to log your workout or rest day once per day to keep your
+          streak alive! Your last log was on {streak.lastLog}.
+        </p>
+      </div>
 
-          <button
-            className="log-streak"
-            onClick={() => logWorkout(currentUser.uid)}
-            disabled={loggedToday}
-          >
-            {loggedToday ? "Logged today ✔" : "Log workout"}
-          </button>
+      <div className="rank-container">
+        <div className="rank-display">
+          Rank: plAtinuM
+
         </div>
       </div>
 
