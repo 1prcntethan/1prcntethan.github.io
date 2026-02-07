@@ -80,15 +80,23 @@ export function Dashboard() {
             <div className="streak-counter">
               streak: {streak.current} {streak.current > 0 ? "🔥" : ""}
             </div>
-            <div className="streak-data">longest streak: {streak.longest}</div>
             <div className="streak-data">
-              total workouts logged: {workoutCounter}
+              <div className="streak-data__left">Longest streak: </div>
+              <div className="streak-data__right">{streak.longest}</div>
             </div>
             <div className="streak-data">
-              total rest days logged: {restCounter}
+              <div className="streak-data__left">Total workouts logged:</div>
+              <div className="streak-data__right">{workoutCounter}</div>
             </div>
             <div className="streak-data">
-              workout consistency: {workoutPercentage}%
+              <div className="streak-data__left">Total rest days logged: </div>
+              <div className="streak-data__right">{restCounter}</div>
+              
+            </div>
+            <div className="streak-data">
+              <div className="streak-data__left">Workout consistency: </div>
+              <div className="streak-data__right">{workoutPercentage}%</div>
+              
             </div>
           </div>
           <div className="streak-info">
@@ -97,7 +105,7 @@ export function Dashboard() {
               disabled={loggedToday}
               onClick={async () => {
                 const result = await logWorkout(currentUser.uid, "workout");
-                if(!result) return;
+                if (!result) return;
 
                 setStreak(result.streak);
                 setWorkoutCounter(result.workout);
@@ -110,7 +118,7 @@ export function Dashboard() {
               disabled={loggedToday}
               onClick={async () => {
                 const result = await logWorkout(currentUser.uid, "rest");
-                if(!result) return;
+                if (!result) return;
 
                 setStreak(result.streak);
                 setRestCounter(result.rest);
@@ -118,6 +126,9 @@ export function Dashboard() {
             >
               {loggedToday ? "Logged today" : "Log rest day"}
             </button>
+            <div className="streak-rank-points">
+              +{Math.round(Math.sqrt(streak.current/365) * 250)} Rp
+            </div>
           </div>
         </div>
         <p class="log-caption">

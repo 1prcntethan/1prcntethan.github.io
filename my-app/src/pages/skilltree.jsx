@@ -1,5 +1,5 @@
 import "./skilltree.css";
-import React, { useState, useCallback, useContext } from "react";
+import React, { useEffect, useState, useCallback, useContext } from "react";
 import {
   ReactFlow,
   applyNodeChanges,
@@ -26,6 +26,11 @@ import { skillTitle } from "../utilites/skilltitles.js";
 import { skillMetric } from "../utilites/skillmetric.js";
 import { skillCategory } from "../utilites/skillcategory.js";
 import { incompleteList } from "../components/hp-tutorial-list.jsx";
+import { useAuth } from "../config/auth-context.jsx";
+import { db } from "../config/firebase.js";
+import { doc, getDoc, updateDoc } from "firebase/firestore";
+import { updateSkill } from "../config/firestore.js";
+import { skillDB } from "../utilites/skilltodb.js";
 
 const SkillContext = createContext(null);
 
@@ -1112,6 +1117,31 @@ function toggleContainer() {
 
 const SkillWindow = () => {
   const { skill } = useContext(SkillContext);
+  const { currentUser } = useAuth();
+  const [progress, setProgress] = useState(0);
+  const [userSkills, setUserSkills] = useState(null);
+
+  useEffect(() => {
+    if (!currentUser) return;
+
+    const ref = doc(db, "users", currentUser.uid);
+
+    getDoc(ref).then((snap) => {
+      if (snap.exists()) {
+        console.log(snap.data().skills);
+
+        setUserSkills(snap.data().skills ?? {});
+      }
+    });
+  }, [currentUser]);
+
+  useEffect(() => {
+    if (!skill || !userSkills) return;
+
+    const skillEq = skillDB.get(skill);
+    setProgress(userSkills?.[skillEq] ?? 0);
+  }, [skill, userSkills]);
+
   return (
     <>
       <div className="skill-window close">
@@ -1120,15 +1150,11 @@ const SkillWindow = () => {
             <svg className="skill-window__svg">{skillImage.get(skill)}</svg>
           </div>
           <div className="skill-window__text">
-            
-            <div className="skill-window__title">
-              {skillTitle.get(skill)}
-            </div>
+            <div className="skill-window__title">{skillTitle.get(skill)}</div>
 
             <div className="skill-window__description">
-              The {skill} is a{" "}
-              {skillDiff.get(skill)} rated skill. Typically, it takes around{" "}
-              {skillTime.get(skill)} to learn.
+              The {skill} is a {skillDiff.get(skill)} rated skill. Typically, it
+              takes around {skillTime.get(skill)} to learn.
             </div>
 
             <div className="skill-window__targeted-muscles">
@@ -1143,18 +1169,62 @@ const SkillWindow = () => {
               Muscle Use: {skillMetric.get(skill)}
             </div>
 
-            
-              <Link to={incompleteList.includes(skill) ? "/tutorials/incomplete" : skillLinks.get(skill)} className="skill-window__link">
-                <div className="skill-window__go">
-                LeArn!
-                </div>
-              </Link>
-            
+            <div className="skill-update__container">
+              <div className="skill-update__select">
+                <select
+                  value={progress}
+                  onChange={async (e) => {
+                    const newProgress = Number(e.target.value);
+                    setProgress(newProgress);
 
+                    const skillEq = skillDB.get(skill);
+
+                    setUserSkills((prev) => ({
+                      ...prev,
+                      [skillEq]: newProgress,
+                    }));
+
+                    try {
+                      await updateSkill(currentUser.uid, skillEq, newProgress);
+                    } catch (error) {
+                      if (error.code === "permission-denied") {
+                        alert("Please wait 2 seconds between skill changes.");
+                      } else {
+                        console.error(error);
+                        alert("An error occured. Please try again.");
+                      }
+                    }
+                  }}
+                >
+                  <option value={0}>locked</option>
+                  <option value={1}>unlocked</option>
+                  <option value={2}>in progress</option>
+                  <option value={3}>mastered</option>
+                </select>
+              </div>
+              <div className="progress-rp">
+                  + 20 Rp
+              </div>
+            </div>
+
+            <Link
+              to={
+                incompleteList.includes(skill)
+                  ? "/tutorials/incomplete"
+                  : skillLinks.get(skill)
+              }
+              className="skill-window__link"
+            >
+              <div className="skill-window__go">View Page</div>
+            </Link>
           </div>
-          
-            <button className="skill-window__close-btn"onClick={() => toggleContainer()}>&#x2715;</button>
-          
+
+          <button
+            className="skill-window__close-btn"
+            onClick={() => toggleContainer()}
+          >
+            &#x2715;
+          </button>
         </div>
       </div>
     </>
@@ -1288,12 +1358,12 @@ export function SkillTree() {
   const onNodesChange = useCallback(
     (changes) =>
       setNodes((nodesSnapshot) => applyNodeChanges(changes, nodesSnapshot)),
-    []
+    [],
   );
   const onEdgesChange = useCallback(
     (changes) =>
       setEdges((edgesSnapshot) => applyEdgeChanges(changes, edgesSnapshot)),
-    []
+    [],
   );
 
   const [skill, setSkill] = useState("Assisted Push-up");

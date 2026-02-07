@@ -37,28 +37,27 @@ export function updateUserData(user) {
     skills: {
       push: null,
       pull: null,
-      planche: 0, // 0 is locked, 1 is unlocked, 2 is mastered.
-      handstand: 0,
-      front_lever: 0,
+      // 0 is locked, 1 is unlocked, 2 is mastered.
     },
   };
 }
 
-export async function updateSkill(uid, type, skillName) {
+export async function updateSkill(uid, skillName, progress) {
   const ref = doc(db, "users", uid);
 
   const snap = await getDoc(ref);
   if (!snap.exists()) return;
 
   const data = snap.data();
-  const oldSkill = data?.skills?.[type];
+  const oldProgress = data?.skills?.[skillName];
 
-  if (oldSkill === skillName) {
+  if (oldProgress === progress) {
     return;
   }
 
+  console.log(`Updated ${skillName} to ${progress}`);
   await updateDoc(ref, {
-    [`skills.${type}`]: skillName,
+    [`skills.${skillName}`]: progress,
     updatedAt: serverTimestamp(),
   });
 }
@@ -94,6 +93,8 @@ export async function logWorkout(uid, type) {
       longest: newLongest,
       lastLog: today,
     },
+    workout: type === "workout" ? workoutCounter + 1 : workoutCounter,
+    rest: type === "rest" ? restCounter + 1 : restCounter,
   };
 
   await updateDoc(ref, updates);
