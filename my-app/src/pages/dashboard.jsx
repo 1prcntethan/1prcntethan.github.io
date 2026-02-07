@@ -7,7 +7,7 @@ import { useAuth } from "../config/auth-context.jsx";
 import { useEffect, useState } from "react";
 import { db } from "../config/firebase.js";
 import { doc, getDoc, updateDoc } from "firebase/firestore";
-import { updateSkill } from "../config/firestore.js";
+import { updateSkill, logWorkout } from "../config/firestore.js";
 import { svgIcon } from "../utilites/svg-icons.js";
 import {
   skillNameMap,
@@ -55,61 +55,6 @@ export function Dashboard() {
     });
   }, [currentUser]);
 
-  async function logWorkout(uid, workout) {
-    const ref = doc(db, "users", uid);
-    const snap = await getDoc(ref);
-    if (!snap.exists()) return;
-
-    const data = snap.data();
-    const streak = data.streak || {
-      current: 0,
-      longest: 0,
-      lastLog: null,
-    };
-    const workoutCounter = data.workout || 0;
-    const restCounter = data.rest || 0;
-
-    const today = todayString();
-    const last = streak.lastLog;
-
-    if (last === today) {
-      // already logged today → do nothing
-      return;
-    }
-
-    const yesterday = new Date();
-    yesterday.setDate(yesterday.getDate() - 1);
-    const yesterdayStr = yesterday.toISOString().slice(0, 10);
-
-    let newCurrent = last === yesterdayStr ? streak.current + 1 : 1;
-
-    let newLongest = Math.max(streak.longest, newCurrent);
-
-    const updates = {
-      streak: {
-        current: newCurrent,
-        longest: newLongest,
-        lastLog: today,
-      },
-    };
-
-    if (workout === "workout") {
-      updates.workout = workoutCounter + 1;
-      setWorkoutCounter((prev) => prev + 1);
-    } else if (workout === "rest") {
-      updates.rest = restCounter + 1;
-      setRestCounter((prev) => prev + 1);
-    }
-
-    await updateDoc(ref, updates);
-
-    setStreak({
-      current: newCurrent,
-      longest: newLongest,
-      lastLog: today,
-    });
-  }
-
   function todayString() {
     return new Date().toISOString().slice(0, 10);
   }
@@ -149,15 +94,27 @@ export function Dashboard() {
           <div className="streak-info">
             <button
               className="log-streak"
-              onClick={() => logWorkout(currentUser.uid, "workout")}
               disabled={loggedToday}
+              onClick={async () => {
+                const result = await logWorkout(currentUser.uid, "workout");
+                if(!result) return;
+
+                setStreak(result.streak);
+                setWorkoutCounter(result.workout);
+              }}
             >
               {loggedToday ? "Logged today" : "Log workout"}
             </button>
             <button
               className="log-streak"
-              onClick={() => logWorkout(currentUser.uid, "rest")}
               disabled={loggedToday}
+              onClick={async () => {
+                const result = await logWorkout(currentUser.uid, "rest");
+                if(!result) return;
+
+                setStreak(result.streak);
+                setRestCounter(result.rest);
+              }}
             >
               {loggedToday ? "Logged today" : "Log rest day"}
             </button>
@@ -170,10 +127,7 @@ export function Dashboard() {
       </div>
 
       <div className="rank-container">
-        <div className="rank-display">
-          Rank: plAtinuM
-
-        </div>
+        <div className="rank-display">Rank: plAtinuM</div>
       </div>
 
       <div className="dashboard-skill__container">
