@@ -16,9 +16,11 @@ import {
 } from "../utilites/targetskills.js";
 import { Link } from "react-router-dom";
 import { skillTreeIcon } from "../utilites/skilltreeicons.js";
+import { skillRP } from "../utilites/skilltorp.js";
 
 export function Dashboard() {
   const { currentUser } = useAuth();
+  const [userSkills, setUserSkills] = useState(null);
   const [push, setPush] = useState(null);
   const [pull, setPull] = useState(null);
   const [workoutCounter, setWorkoutCounter] = useState(0);
@@ -38,6 +40,8 @@ export function Dashboard() {
         console.log(snap.data());
         const data = snap.data();
 
+        setUserSkills(snap.data().skills ?? {});
+      
         setPush(data.skills?.push || null);
         setPull(data.skills?.pull || null);
 
@@ -55,6 +59,25 @@ export function Dashboard() {
     });
   }, [currentUser]);
 
+  function calculateRank() {
+    if(!userSkills) return 0;
+
+    let rankSum = 0;
+
+    for(const [skillName, progress] of Object.entries(userSkills)) {
+      if(typeof progress !== "number") continue;
+
+      const basePoints = skillRP.get(skillName) ?? 0;
+
+      if(!basePoints) continue;
+
+      const weight = progress/3
+      rankSum += basePoints * weight;
+    }
+
+    return rankSum;
+  }
+
   function todayString() {
     return new Date().toISOString().slice(0, 10);
   }
@@ -63,7 +86,10 @@ export function Dashboard() {
   const totalDays = workoutCounter + restCounter;
   const workoutPercentage =
     totalDays > 0 ? Math.round((workoutCounter / totalDays) * 100) : 0;
-
+  const skillPoints = calculateRank();
+  const totalSkillRP = Math.round((skillPoints / 1229) * 750);
+  const totalStreakRP = Math.round(Math.sqrt(streak.current/365) * 250);
+  const totalRP = totalSkillRP + totalStreakRP;
   return (
     <>
       <Navbar />
@@ -127,7 +153,7 @@ export function Dashboard() {
               {loggedToday ? "Logged today" : "Log rest day"}
             </button>
             <div className="streak-rank-points">
-              +{Math.round(Math.sqrt(streak.current/365) * 250)} Rp
+              +{totalStreakRP} Rp
             </div>
           </div>
         </div>
@@ -138,7 +164,13 @@ export function Dashboard() {
       </div>
 
       <div className="rank-container">
-        <div className="rank-display">Rank: plAtinuM</div>
+        <div className="rank-display">
+          Rank: plAtinuM
+          <div className="rank-points">streak Rp contribution: {totalStreakRP} Rp</div>
+          <div className="rank-points">skill Rp contribution: {totalSkillRP} Rp</div>
+          <div className="rank-points">Total Rp: {totalRP} Rp</div>
+        </div>
+        
       </div>
 
       <div className="dashboard-skill__container">

@@ -31,6 +31,7 @@ import { db } from "../config/firebase.js";
 import { doc, getDoc, updateDoc } from "firebase/firestore";
 import { updateSkill } from "../config/firestore.js";
 import { skillDB } from "../utilites/skilltodb.js";
+import { skillRP } from "../utilites/skilltorp.js";
 
 const SkillContext = createContext(null);
 
@@ -1203,7 +1204,7 @@ const SkillWindow = () => {
                 </select>
               </div>
               <div className="progress-rp">
-                  + 20 Rp
+                  +{Math.round(skillRP?.get(skillDB?.get(skill)) * (progress/3) * (750/1229))} Rp
               </div>
             </div>
 

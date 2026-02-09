@@ -210,7 +210,8 @@
 
 .rank-display {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  gap: 10px;
   justify-content: space-between;
   background-color: #252525;
   border: solid 1px #333333;
