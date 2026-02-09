@@ -285,7 +285,6 @@
     align-self: center;
     text-align: center;
     width: 95%;
-    margin-top: 20px;
   }
 }
 .skill-window__link:hover {
@@ -334,6 +333,7 @@
   flex-direction: row;
   width: auto;
   border: 1px solid white;
+  margin-top: 20px;
   border-radius: 4px;
   background-color: #1f1f1f;
 }

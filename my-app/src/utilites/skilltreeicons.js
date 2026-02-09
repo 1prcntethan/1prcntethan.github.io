@@ -66,7 +66,7 @@ export const skillTreeIcon = new Map([
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <circle cx="570" cy="570" r="570" fill="#B66DA3" />
+      <circle cx="570" cy="570" r="570" fill="#b66da3" />
       <circle cx="570" cy="570" r="480" fill="#252525" />
       <circle cx="368" cy="721" r="24" fill="#BBCA88" />
       <path

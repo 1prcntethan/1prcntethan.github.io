@@ -241,6 +241,11 @@
   align-items: center;
   display: flex;
   flex-direction: row;
+
+  @media (max-width: 640px) {
+    display: flex;
+    font-size: 20px;
+  }
 }
 
 .logout-button:hover {

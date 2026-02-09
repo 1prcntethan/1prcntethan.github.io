@@ -59,7 +59,7 @@ export function Dashboard() {
     });
   }, [currentUser]);
 
-  function calculateRank() {
+  function calculateSkillRP() {
     if(!userSkills) return 0;
 
     let rankSum = 0;
@@ -86,10 +86,31 @@ export function Dashboard() {
   const totalDays = workoutCounter + restCounter;
   const workoutPercentage =
     totalDays > 0 ? Math.round((workoutCounter / totalDays) * 100) : 0;
-  const skillPoints = calculateRank();
+  const skillPoints = calculateSkillRP();
   const totalSkillRP = Math.round((skillPoints / 1229) * 750);
   const totalStreakRP = Math.round(Math.sqrt(streak.current/365) * 250);
   const totalRP = totalSkillRP + totalStreakRP;
+
+  function calculateRank(totalRP) {
+    if(totalRP >= 920){
+      return "ethereal";
+    } else if (totalRP >= 800) {
+      return "ascendant";
+    } else if (totalRP >= 630) {
+      return "diamond";
+    } else if (totalRP >= 430) {
+      return "platinum";
+    } else if (totalRP >= 260) {
+      return "gold";
+    } else if (totalRP >= 120) {
+      return "silver";
+    } else if (totalRP > 0) {
+      return "bronze";
+    } else {
+      return "unranked";
+    }
+  }
+
   return (
     <>
       <Navbar />
@@ -165,7 +186,7 @@ export function Dashboard() {
 
       <div className="rank-container">
         <div className="rank-display">
-          Rank: plAtinuM
+          Rank: {calculateRank(totalRP)}
           <div className="rank-points">streak Rp contribution: {totalStreakRP} Rp</div>
           <div className="rank-points">skill Rp contribution: {totalSkillRP} Rp</div>
           <div className="rank-points">Total Rp: {totalRP} Rp</div>
@@ -173,7 +194,7 @@ export function Dashboard() {
         
       </div>
 
-      <div className="dashboard-skill__container">
+      {/* <div className="dashboard-skill__container">
         <div className="dashboard-skill__push">
           <p>target push</p>
           <Link to={skillLinkMap.get(push)} className="skill-svg">
@@ -252,7 +273,7 @@ export function Dashboard() {
             <option value="oac-oap">One Arm Pull-up</option>
           </select>
         </div>
-      </div>
+      </div> */}
       <div className="dashboard-welcome">more features coming soon...</div>
       <Footer />
     </>

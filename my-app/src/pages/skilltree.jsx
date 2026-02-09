@@ -1386,7 +1386,7 @@ export function SkillTree() {
           minZoom={0.15}
           maxZoom={2}
           defaultViewport={{ x: 1000, y: 1000, zoom: 0.5 }}
-          attributionPosition="bottom-left"
+          attributionPosition="top-left"
         >
           <Controls
             showZoom={true}
@@ -1396,7 +1396,7 @@ export function SkillTree() {
               boxShadow: "none",
               color: "#ffffff",
             }}
-            position="bottom-right"
+            position="top-right"
           ></Controls>
         </ReactFlow>
       </div>

@@ -19,6 +19,8 @@ import { HowTo } from "./pages/howto";
 import { About } from "./pages/about";
 import { Disclaimer } from "./pages/disclaimer";
 
+import { Loading } from "./components/loading"
+
 //guide pages
 import { AssistPu } from "./pages/tutorials/assistpu";
 import { Pushup } from "./pages/tutorials/pushup";
@@ -91,7 +93,7 @@ function App() {
   const { currentUser, loading, dbReady } = useAuth();
 
   if(loading || !dbReady) {
-    return <div>loading</div>;
+    return <Loading />;
   }
 
   return (
