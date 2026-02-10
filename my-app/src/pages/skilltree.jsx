@@ -1116,25 +1116,30 @@ function toggleContainer() {
   container.classList.toggle("close");
 }
 
+function getColor(type) {
+  if(type === 0) {
+    return (
+      <div>fornite type 0</div>
+    )
+  } else if (type === 1) {
+    return ( 
+      <div>val type 1</div>
+    )
+  } else if (type === 2) {
+    return (
+      <div>OW type 2</div>
+    )
+  } else if (type === 3) {
+    return (
+      <div>MC type 3</div>
+    )
+  }
+} 
+
 const SkillWindow = () => {
-  const { skill } = useContext(SkillContext);
   const { currentUser } = useAuth();
+  const { skill, userSkills, setUserSkills } = useContext(SkillContext);
   const [progress, setProgress] = useState(0);
-  const [userSkills, setUserSkills] = useState(null);
-
-  useEffect(() => {
-    if (!currentUser) return;
-
-    const ref = doc(db, "users", currentUser.uid);
-
-    getDoc(ref).then((snap) => {
-      if (snap.exists()) {
-        console.log(snap.data().skills);
-
-        setUserSkills(snap.data().skills ?? {});
-      }
-    });
-  }, [currentUser]);
 
   useEffect(() => {
     if (!skill || !userSkills) return;
@@ -1204,7 +1209,7 @@ const SkillWindow = () => {
                 </select>
               </div>
               <div className="progress-rp">
-                  +{Math.round(skillRP?.get(skillDB?.get(skill)) * (progress/3) * (750/1229))} Rp
+                  +{Math.round(skillRP?.get(skillDB.get(skill) ? skillDB?.get(skill) ?? 0 : 0) * (progress/3) * (750/1229))} Rp
               </div>
             </div>
 
@@ -1233,9 +1238,7 @@ const SkillWindow = () => {
 };
 
 const SkillNode = ({ data }) => {
-  const { setSkill } = useContext(SkillContext);
-
-  // const [skillWindowOpen, setSkillWindowOpen] = useState(false);
+  const { setSkill, userSkills } = useContext(SkillContext);
 
   return (
     <>
@@ -1276,6 +1279,9 @@ const SkillNode = ({ data }) => {
           }}
         />
         {skillTreeIcon.get(data.svg)}
+        {
+          getColor(userSkills?.[skillDB.get(data.link)] ?? 0)
+        }
       </div>
     </>
   );
@@ -1368,9 +1374,26 @@ export function SkillTree() {
   );
 
   const [skill, setSkill] = useState("Assisted Push-up");
+  const { currentUser } = useAuth();
+  const [userSkills, setUserSkills] = useState({});
+  
+
+  useEffect(() => {
+    if (!currentUser) return;
+
+    const ref = doc(db, "users", currentUser.uid);
+
+    getDoc(ref).then((snap) => {
+      if (snap.exists()) {
+        console.log(snap.data().skills);
+
+        setUserSkills(snap.data().skills ?? {});
+      }
+    });
+  }, [currentUser]);
 
   return (
-    <SkillContext.Provider value={{ skill, setSkill }}>
+    <SkillContext.Provider value={{ skill, setSkill, userSkills, setUserSkills }}>
       <div style={{ width: "100vw", height: "100vh" }}>
         <SkillTreeLinkContainer />
         <SkillWindow />
