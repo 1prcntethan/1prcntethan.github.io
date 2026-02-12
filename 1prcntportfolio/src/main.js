@@ -12,25 +12,23 @@ const cubeMesh = new THREE.Mesh(
 );
 
 scene.add(cubeMesh);
-console.log(scene);
 
-console.log(window);
 
-// const camera = new THREE.PerspectiveCamera(
-//   50,
-//   window.innerWidth / window.innerHeight,
-//   0.1,
-//   30
-// )
-
-const camera = new THREE.OrthographicCamera(
-  -1,
-  1,
-  1,
-  -1,
+const camera = new THREE.PerspectiveCamera(
+  50,
+  window.innerWidth / window.innerHeight,
   0.1,
   30
 )
+
+// const camera = new THREE.OrthographicCamera(
+//   -1,
+//   1,
+//   1,
+//   -1,
+//   0.1,
+//   30
+// )
 
 camera.position.z = 5;
 scene.add(camera);
