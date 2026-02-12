@@ -1119,19 +1119,19 @@ function toggleContainer() {
 function getColor(type) {
   if(type === 0) {
     return (
-      <div>fornite type 0</div>
+      <div className="skill-locked"></div>
     )
   } else if (type === 1) {
     return ( 
-      <div>val type 1</div>
+      <div className="skill-unlocked"></div>
     )
   } else if (type === 2) {
     return (
-      <div>OW type 2</div>
+      <div className="skill-progress"></div>
     )
   } else if (type === 3) {
     return (
-      <div>MC type 3</div>
+      <div className="skill-mastered"></div>
     )
   }
 } 
