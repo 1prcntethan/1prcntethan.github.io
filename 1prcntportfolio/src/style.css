@@ -8,4 +8,22 @@ body {
   display: flex;
   place-items: center;
   overflow: hidden;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.hero-title {
+  display: flex;
+  position: absolute;
+  background-color: transparent;
+  font-family: Josefin Sans;
+  font-weight: 100;
+  font-size: 42px;
+  color: white;
+  width: 400px;
+  top: 20%;
+  left: 10%;
+
+  .hidden {
+    display: none;
+  }
 }

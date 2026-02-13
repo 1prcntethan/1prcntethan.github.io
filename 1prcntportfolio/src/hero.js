@@ -10,7 +10,7 @@ import { FXAAShader } from 'three/examples/jsm/shaders/FXAAShader.js';
 const scene = new THREE.Scene();
 scene.background = new THREE.Color(0x0b0b0b);
 
-// add cube to scene
+// add sphere to scene
 const sphereGeometry = new THREE.CapsuleGeometry(1, 0, 67, 67);
 const sphereMaterial = new THREE.MeshBasicMaterial({color: "black"});
 const sphereMesh = new THREE.Mesh(
@@ -22,52 +22,52 @@ scene.add(sphereMesh);
 // outline mesh for sphere copies sphere and scales it very slightly
 const outlineM = new THREE.MeshBasicMaterial({ color: "white", side: THREE.BackSide });
 const outline = new THREE.Mesh(sphereGeometry.clone(), outlineM);
-outline.scale.set(1.01, 1.01, 1.01);
+outline.scale.set(1.02, 1.02, 1.02);
 sphereMesh.add(outline);
 
-function endpointForIndex(i, count, maxRadius = 15) {
-  const angle = (i / count) * Math.PI * 2;
+// function endpointForIndex(i, count, maxRadius = 15) {
+//   const angle = (i / count) * Math.PI * 2;
 
-  // base circle
-  const baseRadius = maxRadius * (0.66 + Math.random() * 0.33);
-  // keeps lengths between 75–100% of max
+//   // base circle
+//   const baseRadius = maxRadius * (0.66 + Math.random() * 0.33);
+//   // keeps lengths between 75–100% of max
 
-  const x = Math.cos(angle) * baseRadius;
-  const z = Math.sin(angle) * baseRadius;
+//   const x = Math.cos(angle) * baseRadius;
+//   const z = Math.sin(angle) * baseRadius;
 
-  // controlled height variation
-  const y = (Math.random() - 0.5) * 12; // adjust spread here
+//   // controlled height variation
+//   const y = (Math.random() - 0.5) * 12; // adjust spread here
 
-  return new THREE.Vector3(x, y, z);
-}
+//   return new THREE.Vector3(x, y, z);
+// }
 
 
-const cylMaterial = new THREE.MeshBasicMaterial({ color: "white" });
+// const cylMaterial = new THREE.MeshBasicMaterial({ color: "white" });
 
-const COUNT = 6;
+// const COUNT = 6;
 
-for (let i = 0; i < COUNT; i++) {
-  const end = endpointForIndex(i, COUNT, 15);
-  const length = end.length();
+// for (let i = 0; i < COUNT; i++) {
+//   const end = endpointForIndex(i, COUNT, 15);
+//   const length = end.length();
 
-  const cylGeo = new THREE.CylinderGeometry(0.01, 0.01, length, 8);
-  const cyl = new THREE.Mesh(cylGeo, cylMaterial);
+//   const cylGeo = new THREE.CylinderGeometry(0.01, 0.01, length, 8);
+//   const cyl = new THREE.Mesh(cylGeo, cylMaterial);
 
-  cyl.position.copy(end.clone().multiplyScalar(0.5));
+//   cyl.position.copy(end.clone().multiplyScalar(0.5));
 
-  cyl.quaternion.setFromUnitVectors(
-    new THREE.Vector3(0, 1, 0),
-    end.clone().normalize()
-  );
+//   cyl.quaternion.setFromUnitVectors(
+//     new THREE.Vector3(0, 1, 0),
+//     end.clone().normalize()
+//   );
 
-  scene.add(cyl);
-}
+//   scene.add(cyl);
+// }
 
 
 
 // axes helper is on scene
-// const axesHelper = new THREE.AxesHelper(10);
-// scene.add(axesHelper);
+const axesHelper = new THREE.AxesHelper(10);
+scene.add(axesHelper);
 
 //initialize camera
 const camera = new THREE.PerspectiveCamera(
@@ -91,6 +91,9 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 const controls = new OrbitControls(camera, canvas);
 controls.enableDamping = true;
 controls.autoRotate = true;
+controls.enablePan = false;
+controls.minPolarAngle = Math.PI / 4;
+controls.maxPolarAngle = Math.PI * 3 / 4;
 
 // const composer = new EffectComposer(renderer);
 // const renderPass = new RenderPass(scene, camera);
