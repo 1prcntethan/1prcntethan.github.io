@@ -68,7 +68,7 @@
   display: flex;
   align-items: left;
   justify-content: left;
-  width: 800px;
+  width: 1200px;
   height: fit-content;
   border-radius: 9999px;
   background: transparent;
@@ -377,15 +377,45 @@ select {
 
 
 .skill-mastered {
-  background-color: rgb(22, 122, 38);
+  background-color: transparent;
   position: absolute;
-  left: 150px;
-  width: 35px;
-  height: 35px; 
+  width: 116px;
+  height: 116px;  
   border-radius: 9999px;
-  border: solid transparent 1px;
+  border: solid #BBCA88 13px;
+  filter: drop-shadow(0 0 12px rgb(113, 184, 31));
 }
 
+.skill-progress {
+  background-color: transparent;
+  position: absolute;
+  width: 116px;
+  height: 116px;  
+  border-radius: 9999px; 
+  border: solid  #B66DA3 13px;
+  filter: drop-shadow(0 0 10px rgb(182, 109, 163));
+}
+
+.skill-unlocked {
+  background-color: transparent;
+  position: absolute;
+  width: 116px;
+  height: 116px;  
+  border-radius: 9999px;
+  border: solid #f3f3f3 13px;
+  filter: drop-shadow(0 0 8px rgb(255, 255, 255));
+}
+
+.skill-locked {
+  background-color: transparent;
+  position: absolute;
+  width: 116px;
+  height: 116px;  
+  border-radius: 9999px;
+  border: solid  rgb(73, 73, 73) 13px;
+  filter: drop-shadow(0 0 8px rgb(10, 10, 10));
+}
+/* 
 .skill-progress {
   background-color: rgb(173, 159, 30);
   position: absolute;
@@ -394,24 +424,4 @@ select {
   height: 35px; 
   border-radius: 9999px;
   border: solid transparent 1px;
-}
-
-.skill-unlocked {
-  background-color: rgb(165, 81, 13);
-  position: absolute; 
-  left: 150px;
-  width: 35px;
-  height: 35px; 
-  border-radius: 9999px;
-  border: solid transparent 1px;
-}
-
-.skill-locked {
-  background-color: rgb(73, 14, 14);
-  position: absolute;
-  left: 150px;
-  width: 35px; 
-  height: 35px; 
-  border-radius: 9999px;
-  border: solid transparent 1px;
-}
+} */

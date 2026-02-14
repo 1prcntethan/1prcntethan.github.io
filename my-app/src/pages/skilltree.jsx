@@ -552,25 +552,49 @@ const initialNodes = [
   },
   {
     id: "caption-1",
-    position: { x: -800, y: -300 },
-    data: { text: "= fundamental skills" },
+    position: { x: -1200, y: -300 },
+    data: { text: "= locked" },
     type: "captionNode",
   },
   {
     id: "caption-2",
-    position: { x: -800, y: -200 },
-    data: { text: "= target skills" },
+    position: { x: -1200, y: -200 },
+    data: { text: "= unlocked (2s hold/1 rep)" },
+    type: "captionNode",
+  },
+  {
+    id: "caption-3",
+    position: { x: -1200, y: -100 },
+    data: { text: "= in progress (6s hold/3 reps)" },
+    type: "captionNode",
+  },
+  {
+    id: "caption-4",
+    position: { x: -1200, y: 0 },
+    data: { text: "= mastered (12s+ hold/6+ reps)" },
     type: "captionNode",
   },
   {
     id: "color-1",
-    position: { x: -915, y: -312 },
-    data: { svg: "color-pink" },
+    position: { x: -1315, y: -312 },
+    data: { svg: "color-gray" },
     type: "skillNode",
   },
   {
     id: "color-2",
-    position: { x: -915, y: -212 },
+    position: { x: -1315, y: -212 },
+    data: { svg: "color-white" },
+    type: "skillNode",
+  },
+  {
+    id: "color-3",
+    position: { x: -1315, y: -112 },
+    data: { svg: "color-pink" },
+    type: "skillNode",
+  },
+  {
+    id: "color-4",
+    position: { x: -1315, y: -12 },
     data: { svg: "color-green" },
     type: "skillNode",
   },
@@ -1111,30 +1135,30 @@ const initialEdges = [
   },
 ];
 
-function toggleContainer() {
+function toggleContainer(skill) {
+  if(skill === undefined) {
+    return;
+  }
   const container = document.querySelector(".skill-window");
   container.classList.toggle("close");
+  
 }
 
 function getColor(type) {
-  if(type === 0) {
-    return (
-      <div className="skill-locked"></div>
-    )
+  if(type === undefined) {
+    return "skill-locked";
+  } else if (type === 0) {
+    return "skill-locked";
   } else if (type === 1) {
-    return ( 
-      <div className="skill-unlocked"></div>
-    )
-  } else if (type === 2) {
-    return (
-      <div className="skill-progress"></div>
-    )
+    return "skill-unlocked";
+  } else if (type === 2) { 
+    return "skill-progress";
   } else if (type === 3) {
-    return (
-      <div className="skill-mastered"></div>
-    )
+    return "skill-mastered";
+  } else {
+    return "";
   }
-} 
+}
 
 const SkillWindow = () => {
   const { currentUser } = useAuth();
@@ -1209,7 +1233,15 @@ const SkillWindow = () => {
                 </select>
               </div>
               <div className="progress-rp">
-                  +{Math.round(skillRP?.get(skillDB.get(skill) ? skillDB?.get(skill) ?? 0 : 0) * (progress/3) * (750/1229))} Rp
+                +
+                {Math.round(
+                  skillRP?.get(
+                    skillDB.get(skill) ? (skillDB?.get(skill) ?? 0) : 0,
+                  ) *
+                    (progress / 3) *
+                    (750 / 1229),
+                )}{" "}
+                Rp
               </div>
             </div>
 
@@ -1227,7 +1259,7 @@ const SkillWindow = () => {
 
           <button
             className="skill-window__close-btn"
-            onClick={() => toggleContainer()}
+            onClick={() => toggleContainer(skill)}
           >
             &#x2715;
           </button>
@@ -1245,7 +1277,7 @@ const SkillNode = ({ data }) => {
       <div
         onClick={() => {
           setSkill(data.link);
-          toggleContainer();
+          toggleContainer(data.link);
         }}
         to={
           incompleteSkills.includes(data.link)
@@ -1279,9 +1311,7 @@ const SkillNode = ({ data }) => {
           }}
         />
         {skillTreeIcon.get(data.svg)}
-        {
-          getColor(userSkills?.[skillDB.get(data.link)] ?? 0)
-        }
+        <div className={skillDB.get(data.link) ? getColor(userSkills?.[skillDB.get(data.link)]) : ""}></div>
       </div>
     </>
   );
@@ -1376,7 +1406,6 @@ export function SkillTree() {
   const [skill, setSkill] = useState("Assisted Push-up");
   const { currentUser } = useAuth();
   const [userSkills, setUserSkills] = useState({});
-  
 
   useEffect(() => {
     if (!currentUser) return;
@@ -1393,7 +1422,9 @@ export function SkillTree() {
   }, [currentUser]);
 
   return (
-    <SkillContext.Provider value={{ skill, setSkill, userSkills, setUserSkills }}>
+    <SkillContext.Provider
+      value={{ skill, setSkill, userSkills, setUserSkills }}
+    >
       <div style={{ width: "100vw", height: "100vh" }}>
         <SkillTreeLinkContainer />
         <SkillWindow />

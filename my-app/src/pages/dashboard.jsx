@@ -189,7 +189,7 @@ export function Dashboard() {
           Rank: {calculateRank(totalRP)}
           <div className="rank-points">streak Rp contribution: {totalStreakRP} Rp</div>
           <div className="rank-points">skill Rp contribution: {totalSkillRP} Rp</div>
-          <div className="rank-points">Total Rp: {totalRP} Rp</div>
+          <div className="rank-points">total Rp: {totalRP} Rp</div>
         </div>
         
       </div>
