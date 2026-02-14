@@ -25,49 +25,49 @@ const outline = new THREE.Mesh(sphereGeometry.clone(), outlineM);
 outline.scale.set(1.02, 1.02, 1.02);
 sphereMesh.add(outline);
 
-// function endpointForIndex(i, count, maxRadius = 15) {
-//   const angle = (i / count) * Math.PI * 2;
+function endpointForIndex(i, count, maxRadius = 15) {
+  const angle = (i / count) * Math.PI * 2;
 
-//   // base circle
-//   const baseRadius = maxRadius * (0.66 + Math.random() * 0.33);
-//   // keeps lengths between 75–100% of max
+  // base circle
+  const baseRadius = maxRadius * (0.66 + Math.random() * 0.33);
+  // keeps lengths between 75–100% of max
 
-//   const x = Math.cos(angle) * baseRadius;
-//   const z = Math.sin(angle) * baseRadius;
+  const x = Math.cos(angle) * baseRadius;
+  const z = Math.sin(angle) * baseRadius;
 
-//   // controlled height variation
-//   const y = (Math.random() - 0.5) * 12; // adjust spread here
+  // controlled height variation
+  const y = (Math.random() - 0.5) * 12; // adjust spread here
 
-//   return new THREE.Vector3(x, y, z);
-// }
+  return new THREE.Vector3(x, y, z);
+}
 
 
-// const cylMaterial = new THREE.MeshBasicMaterial({ color: "white" });
+const cylMaterial = new THREE.MeshBasicMaterial({ color: "white" });
 
-// const COUNT = 6;
+const COUNT = 6;
 
-// for (let i = 0; i < COUNT; i++) {
-//   const end = endpointForIndex(i, COUNT, 15);
-//   const length = end.length();
+for (let i = 0; i < COUNT; i++) {
+  const end = endpointForIndex(i, COUNT, 15);
+  const length = end.length();
 
-//   const cylGeo = new THREE.CylinderGeometry(0.01, 0.01, length, 8);
-//   const cyl = new THREE.Mesh(cylGeo, cylMaterial);
+  const cylGeo = new THREE.CylinderGeometry(0.01, 0.01, length, 8);
+  const cyl = new THREE.Mesh(cylGeo, cylMaterial);
 
-//   cyl.position.copy(end.clone().multiplyScalar(0.5));
+  cyl.position.copy(end.clone().multiplyScalar(0.5));
 
-//   cyl.quaternion.setFromUnitVectors(
-//     new THREE.Vector3(0, 1, 0),
-//     end.clone().normalize()
-//   );
+  cyl.quaternion.setFromUnitVectors(
+    new THREE.Vector3(0, 1, 0),
+    end.clone().normalize()
+  );
 
-//   scene.add(cyl);
-// }
+  scene.add(cyl);
+}
 
 
 
 // axes helper is on scene
-const axesHelper = new THREE.AxesHelper(10);
-scene.add(axesHelper);
+// const axesHelper = new THREE.AxesHelper(10);
+// scene.add(axesHelper);
 
 //initialize camera
 const camera = new THREE.PerspectiveCamera(

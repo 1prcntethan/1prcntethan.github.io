@@ -1,0 +1,38 @@
+.one {
+    position: absolute;
+    top: 22%;
+    left: 10%;
+}
+
+.circle-percent-1 {
+    position: absolute;
+    top: calc(22% - 70px);
+    left: calc(10% + 150px);
+}
+
+.rect-percent {
+    position: absolute;
+    top: calc(22% - 53px);
+    left: calc(10% + 185px);
+}
+
+.circle-percent-2 {
+    position: absolute;
+    top: calc(22% + 90px);
+    left: calc(10% + 267px);
+}
+
+.name {
+    font-size: 42px;
+    font-weight: 100;
+    position: absolute;
+    top: 20%;
+    right: 13%;
+}
+
+.go {
+    position: absolute;
+    top: 60%;
+    left: 57%;
+    border-radius: 9999px;
+}
