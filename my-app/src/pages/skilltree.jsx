@@ -600,10 +600,34 @@ const initialNodes = [
   },
   {  
     id: "start-1",
-    position: { x: -1315, y: -12 },
+    position: { x: 150, y: -50  },
     data: { svg: "start" },
     type: "skillNode",
-  },
+  }, 
+  {  
+    id: "start-2",
+    position: { x: 525, y: -400  },
+    data: { svg: "start" },
+    type: "skillNode",
+  }, 
+  {  
+    id: "start-3",
+    position: { x: 1025 , y: -50  },
+    data: { svg: "start" },
+    type: "skillNode",
+  }, 
+  {  
+    id: "start-4",
+    position: { x: 1457 , y: 200  },
+    data: { svg: "start" },
+    type: "skillNode",
+  }, 
+  {  
+    id: "start-5", 
+    position: { x: 1900 , y: 450  },
+    data: { svg: "start" },
+    type: "skillNode",
+  }, 
 ];
 
 const initialEdges = [
