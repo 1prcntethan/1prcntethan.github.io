@@ -13,6 +13,7 @@ body {
 }
 
 .hero-title {
+  visibility: none;
   display: flex;
   position: absolute;
   background-color: transparent;
@@ -24,8 +25,4 @@ body {
   top: 20%;
   left: 10%;
   text-shadow: 0px 0px 16px rgb(255,255,255), 0px 0px 32px rgb(255,255,255);
-
-  .hidden {
-    display: none;
-  }
 }

@@ -79,6 +79,16 @@ const camera = new THREE.PerspectiveCamera(
 camera.position.z = 35;
 scene.add(camera);
 
+const cubeGeometry = new THREE.BoxGeometry(1, 1, 1);
+const cubeMaterial = new THREE.MeshBasicMaterial({color: "green"});
+const cubeMesh = new THREE.Mesh(
+  cubeGeometry,
+  cubeMaterial,
+);
+cubeMesh.position.z = -10;
+cubeMesh.position.y = 3;
+camera.add(cubeMesh);
+
 // relating canvas to 3js, initializing renderer
 const canvas = document.querySelector('canvas.threejs');
 const renderer = new THREE.WebGLRenderer({
