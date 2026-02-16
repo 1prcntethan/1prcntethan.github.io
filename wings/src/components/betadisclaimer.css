@@ -1,0 +1,46 @@
+.beta-disclaimer-container {
+    display: flex;
+    background-color: rgba(71, 0, 80, 0.699);
+    padding: 4px 6px;
+    overflow: hidden;
+    height: 16px;
+
+    @media (max-width: 768px) {
+        height: 12px;
+        
+    }
+
+}
+
+.scroll {
+    display: flex;
+    flex-direction: row;
+    white-space: nowrap;
+    align-items: center;
+    animation: scroller 15s infinite linear;
+}
+
+
+.beta-disclaimer-text {
+    white-space: nowrap;
+
+    @media (max-width: 768px) {
+        font-size: 12px;
+        
+    }
+}
+
+.beta-feedback {
+    text-decoration: none;
+    color: rgb(201, 22, 236);
+    font-weight: bold;
+}
+
+@keyframes scroller {
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(-33.5%);
+    }
+}

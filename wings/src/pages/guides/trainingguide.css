@@ -1,0 +1,177 @@
+.guide-hero{
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    height: 10%;
+    padding: 10%;
+    margin-top: 20px;
+    justify-content: space-evenly;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+        height: auto;
+        padding: 5%;
+        
+    }
+}
+.guide-hero--title{
+    display: flex;
+    font-size: 42px;
+    width: auto;
+    text-align: center;
+
+    padding: 20px;
+
+    @media (max-width: 768px) {
+        font-size: 32px;
+        
+    }
+}
+.guide-hero--blurb{
+    display: flex;
+    font-size: 24px;
+    font-family: Fira Sans;
+    font-weight: 200;
+    width: 45%;
+    line-height: 140%;
+    padding: 20px;
+    @media screen and (max-width: 768px) {
+        width: 80%;
+        text-align: center;
+        padding: 40px;
+        font-size: 18px;
+    }
+
+}
+
+.guide-container {
+    display: flex;
+    flex-direction: column;
+    padding: 5% 10%;
+
+    @media (max-width: 768px) {
+        padding: 5% 10%;
+        
+    }
+
+}
+
+.guide-heading {
+    display: flex;
+    font-size: 36px;
+
+    @media (max-width: 768px) {
+        font-size: 28px;
+        align-self: center;
+        text-align: center;
+        padding: 20px
+    }
+}
+
+.guide-text {
+    display: block;
+    font-family: Fira Sans;
+    font-weight: 200;
+    font-size: 24px;
+    line-height: 175%;
+    padding: 2rem 0;
+
+    @media screen and (max-width: 768px) {
+        font-size: 18px;
+        text-align: center;
+        padding: 1rem 0;
+        
+    }
+}
+
+.guide-image {
+    display: flex;
+    width: 65%;
+    align-self: center;
+    height: auto;
+    margin: 2rem 0;
+
+    img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+
+    @media (max-width: 768px) {
+
+        width: 90%;
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+}
+.square-guide-image {
+    display: flex;
+    width: 35%;
+    align-self: center;
+    height: auto;
+    margin: 1rem 0 10px 0;
+
+
+    @media (max-width: 768px) {
+
+        width: 75%;
+
+    }
+}
+
+.landscape-guide-image {
+    display: flex;
+    width: 45%;
+    align-self: center;
+    height: auto;
+    margin: 1rem 0 10px 0;
+
+
+    @media (max-width: 768px) {
+
+        width: 75%;
+
+    }
+}
+
+.image-sig {
+    display: flex;
+    width: 10%;
+    align-self: center;
+    height: auto;
+
+    @media (max-width: 768px) {
+        width: 50%;
+    }
+}
+
+.guide-caption {
+    display: flex;
+    font-family: Fira Sans;
+    font-size: 18px;
+    font-weight: 200;
+    align-self: center;
+    text-align: center;
+    margin-top: 10px;
+    color: rgb(161, 161, 161);
+
+    @media (max-width: 768px) {
+        font-size: 16px;
+        padding: 0 20px;
+    }
+}
+
+.guide-external-link {
+    margin: 0 6px;
+    text-decoration: none;
+    color: rgb(196, 33, 218)
+}
+
+.guide-external-link:hover {
+    text-decoration: underline;
+}

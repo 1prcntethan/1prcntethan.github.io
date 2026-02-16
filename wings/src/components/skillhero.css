@@ -1,0 +1,36 @@
+
+.skill-hero { /*container for hero stuff*/
+    height: fit-content;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 45px;
+    font-size: 36px;
+    justify-content: flex-end;
+    
+    @media (max-width: 768px) {
+        padding: 45px 20px;
+        font-size: 24px;
+        
+    }
+        
+}
+
+.skill-hero-title { /*hero title*/
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    font-size: 42px;
+
+    @media (max-width: 1000px) {
+        font-size: 36px;
+        text-align: center;
+    }
+
+    @media (max-width: 768px) {
+        font-size: 28px;
+        text-align: center;
+
+        
+    }
+}

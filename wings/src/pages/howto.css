@@ -1,0 +1,62 @@
+.howto-text {
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  line-height: 2;
+  margin: 20px;
+  padding: 40px;
+}
+
+.howto-text > p {
+  font-family: Fira Sans;
+  font-weight: 200;
+
+  @media (max-width: 768px) {
+    font-size: 18px;
+    line-height: 2;
+  }
+}
+
+.howto-text > ol > li > strong {
+  font-family: Major Mono Display;
+  font-weight: bold;
+
+  @media (max-width: 768px) {
+    font-size: 18px;
+    line-height: 2;
+  }
+}
+
+.howto-text > ol > li {
+  font-family: Fira Sans;
+  font-weight: 200;
+
+  @media (max-width: 768px) {
+    font-size: 18px;
+    line-height: 2;
+  }
+}
+
+.howto-title {
+  font-size: 36px;
+  margin-bottom: 10px;
+  @media (max-width: 768px) {
+    font-size: 28px;
+    margin-bottom: 5px;
+    
+  }
+}
+
+.howto-img{
+    display: flex;
+    margin-right: 40px;
+    width: 90%;
+    justify-self: center;
+
+    @media (max-width: 768px) {
+        width: 100vw;
+        margin-right: 40px;
+        padding: 0;
+    }
+    
+}

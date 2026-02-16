@@ -1,0 +1,112 @@
+.flex-container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    font-family: Major Mono Display;
+
+}
+
+.training-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 40%; /* Adjust as needed */
+    min-width: 600px;
+    
+    @media (max-width: 768px) {
+        width: 100%; /* Adjust for smaller screens */
+        min-width: 0; /* Remove min-width on smaller screens */
+        
+    }
+}
+
+.training-header {
+    font-size: 34px;
+    padding: 30px;
+    text-align: center;
+
+
+    @media screen and (max-width: 768px) {
+        font-size: 24px;
+        padding: 20px 10px;
+        
+    }
+}
+
+.training-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 75px;
+    position: relative;
+    width: 100%; /* Takes full width of container */
+}
+
+.item {
+    width: 80%;
+    height: 100px;
+    background-color: #1B1B1B;
+    position: relative;
+    border-radius: 10px;
+}
+
+
+.guide-link{
+    text-decoration: none;
+}
+
+
+.training-column::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    background-color: rgba(255, 255, 255, 0.5);
+    transform: translateX(-50%);
+    z-index: -1; /* Make sure the line is behind the items */
+}
+
+.item::before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 20px;
+    background-color: rgba(255, 255, 255, 0);
+    left: 50%;
+    transform: translateX(-50%);
+    top: -20px; /* Position above the item */
+}
+
+.item:first-child::before {
+    display: none; /* Remove the top line for the first item */
+}
+
+.guide-button {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background-color: #1B1B1B;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    font-family: Fira Sans;
+    font-weight: 200;
+    font-size: 24px;
+    color: white;
+
+    @media screen and (max-width: 768px) {
+        font-size: 18px;
+        
+    }
+}
+
+.guide-button:hover {
+    background-color: #331c32;
+    transition: all 0.5s;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.75);
+}

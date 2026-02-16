@@ -1,0 +1,20 @@
+{
+  "short_name": "WINGS",
+  "name": "WINGS calisthenics app",
+  "icons": [
+    {
+      "src": "wingslogo192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "wingslogo512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#1b1b1b"
+}

@@ -1,0 +1,9 @@
+.divider {
+    width: 100%;
+}
+
+.svg-divider {
+    display: flex;
+    flex-direction: row;
+    width: 100vw-10px;
+}

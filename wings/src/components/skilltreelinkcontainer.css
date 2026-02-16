@@ -1,0 +1,27 @@
+.skilltree-links {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: fit-content;
+  height: 100vh;
+  background-color: rgb(27, 27, 27);
+  border-right: 1px solid rgb(80, 80, 80);
+  border-top: 1px solid rgb(80, 80, 80);
+  opacity: 0.9;
+  z-index: 1;
+  justify-content: space-evenly;
+  padding: 10px;
+
+  @media (max-width: 768px) {
+    flex-direction: row !important;
+    height: 5vh;
+    width: 100% !important;
+    border-right: none;
+    border-bottom: 1px solid rgb(80, 80, 80);
+    padding: 5px 0px;
+    align-items: center;
+    
+  }
+}
