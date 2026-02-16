@@ -598,6 +598,12 @@ const initialNodes = [
     data: { svg: "color-green" },
     type: "skillNode",
   },
+  {  
+    id: "start-1",
+    position: { x: -1315, y: -12 },
+    data: { svg: "start" },
+    type: "skillNode",
+  },
 ];
 
 const initialEdges = [
@@ -1312,6 +1318,7 @@ const SkillNode = ({ data }) => {
         />
         {skillTreeIcon.get(data.svg)}
         <div className={skillDB.get(data.link) ? getColor(userSkills?.[skillDB.get(data.link)]) : ""}></div>
+        
       </div>
     </>
   );

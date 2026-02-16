@@ -5316,4 +5316,8 @@ export const skillTreeIcon = new Map([
       <circle cx="570" cy="570" r="570" fill="rgb(73, 73, 73)" />
     </svg>,
   ],
+  [
+    "start",
+    <img src="./startingflag.svg"></img>,
+  ],
 ]);
