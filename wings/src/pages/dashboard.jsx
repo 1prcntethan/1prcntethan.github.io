@@ -41,7 +41,7 @@ export function Dashboard() {
         const data = snap.data();
 
         setUserSkills(snap.data().skills ?? {});
-      
+
         setPush(data.skills?.push || null);
         setPull(data.skills?.pull || null);
 
@@ -60,18 +60,18 @@ export function Dashboard() {
   }, [currentUser]);
 
   function calculateSkillRP() {
-    if(!userSkills) return 0;
+    if (!userSkills) return 0;
 
     let rankSum = 0;
 
-    for(const [skillName, progress] of Object.entries(userSkills)) {
-      if(typeof progress !== "number") continue;
+    for (const [skillName, progress] of Object.entries(userSkills)) {
+      if (typeof progress !== "number") continue;
 
       const basePoints = skillRP.get(skillName) ?? 0;
 
-      if(!basePoints) continue;
+      if (!basePoints) continue;
 
-      const weight = progress/3
+      const weight = progress / 3;
       rankSum += basePoints * weight;
     }
 
@@ -88,24 +88,53 @@ export function Dashboard() {
     totalDays > 0 ? Math.round((workoutCounter / totalDays) * 100) : 0;
   const skillPoints = calculateSkillRP();
   const totalSkillRP = Math.round((skillPoints / 1229) * 750);
-  const totalStreakRP = Math.round(Math.sqrt(streak.current/365) * 250);
+  const totalStreakRP = Math.round(Math.sqrt(streak.current / 365) * 250);
   const totalRP = totalSkillRP + totalStreakRP;
+  let rankUpRp = 0;
 
   function calculateRank(totalRP) {
-    if(totalRP >= 920){
+    if (totalRP >= 920) {
+      rankUpRp = "max rank reached";
       return "ethereal";
     } else if (totalRP >= 800) {
+      rankUpRp = 920 - totalRP;
       return "ascendant";
     } else if (totalRP >= 630) {
+      rankUpRp = 800 - totalRP;
       return "diamond";
     } else if (totalRP >= 430) {
+      rankUpRp = 630 - totalRP;
       return "platinum";
     } else if (totalRP >= 260) {
+      rankUpRp = 430 - totalRP;
       return "gold";
     } else if (totalRP >= 120) {
+      rankUpRp = 260 - totalRP;
       return "silver";
     } else if (totalRP > 0) {
+      rankUpRp = 120 - totalRP;
       return "bronze";
+    } else {
+      rankUpRp = 1;
+      return "unranked";
+    }
+  }
+
+  function rankSVG(totalRP) {
+    if (totalRP >= 920) {
+      return <img src="ethereal.svg" className="rank-svg"></img>;
+    } else if (totalRP >= 800) {
+      return <img src="ascended.svg" className="rank-svg"></img>;
+    } else if (totalRP >= 630) {
+      return <img src="diamond.svg" className="rank-svg"></img>;
+    } else if (totalRP >= 430) {
+      return <img src="platinum.svg" className="rank-svg"></img>;
+    } else if (totalRP >= 260) {
+      return <img src="gold.svg" className="rank-svg"></img>;
+    } else if (totalRP >= 120) {
+      return <img src="silver.svg" className="rank-svg"></img>;
+    } else if (totalRP > 0) {
+      return <img src="bronze.svg" className="rank-svg"></img>;
     } else {
       return "unranked";
     }
@@ -138,12 +167,10 @@ export function Dashboard() {
             <div className="streak-data">
               <div className="streak-data__left">Total rest days logged: </div>
               <div className="streak-data__right">{restCounter}</div>
-              
             </div>
             <div className="streak-data">
               <div className="streak-data__left">Workout consistency: </div>
               <div className="streak-data__right">{workoutPercentage}%</div>
-              
             </div>
           </div>
           <div className="streak-info">
@@ -173,9 +200,7 @@ export function Dashboard() {
             >
               {loggedToday ? "Logged today" : "Log rest day"}
             </button>
-            <div className="streak-rank-points">
-              +{totalStreakRP} Rp
-            </div>
+            <div className="streak-rank-points">+{totalStreakRP} Rp</div>
           </div>
         </div>
         <p class="log-caption">
@@ -186,12 +211,26 @@ export function Dashboard() {
 
       <div className="rank-container">
         <div className="rank-display">
-          Rank: {calculateRank(totalRP)}
-          <div className="rank-points">streak Rp contribution: {totalStreakRP} Rp</div>
-          <div className="rank-points">skill Rp contribution: {totalSkillRP} Rp</div>
-          <div className="rank-points">total Rp: {totalRP} Rp</div>
+          <div className="rank-top">
+            {rankSVG(totalRP)}
+            <div className="rank-rank">{calculateRank(totalRP)}</div>
+            {totalRP} Rp
+          </div>
+          <div className="rank-divider"></div>
+          <div className="rank-bottom">
+            <div className="rank-contributions">
+              <div className="rank-points">
+                <div className="rank-points__left">streak Rp contribution:</div>
+                <div className="rank-points__right">+{totalStreakRP} Rp</div>
+              </div>
+              <div className="rank-points">
+                <div className="rank-points__left">skill Rp contribution:</div>
+                <div className="rank-points__right">+{totalSkillRP} Rp</div>
+              </div>
+            </div>
+            <div className="rank-up">+{rankUpRp} Rp until next rank</div>
+          </div>
         </div>
-        
       </div>
 
       {/* <div className="dashboard-skill__container">

@@ -221,3 +221,69 @@
   padding: 30px;
   margin-top: 30px;
 }
+
+.rank-top {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.rank-rank {
+  font-size: 24px;
+}
+
+.rank-svg {
+  display: flex;
+  width: 400px;
+}
+
+.rank-divider {
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 95%;
+  height: 1px;
+  align-self: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 9999px;
+}
+
+.rank-bottom {
+  display: flex;
+  width: 95%;
+  padding: 20px;
+  padding-bottom: 8px;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.rank-contributions {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.rank-points {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.rank-points__left {
+  width: fill;
+}
+
+.rank-points__right {
+  width: 100px;
+  text-align: right;
+}
+
+.rank-up {
+  align-self: flex-end;
+  font-size: 14px;
+}
