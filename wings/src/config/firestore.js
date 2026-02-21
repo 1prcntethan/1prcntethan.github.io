@@ -62,7 +62,7 @@ export async function updateSkill(uid, skillName, progress) {
   });
 }
 
-function getFitnessDateObject() {
+export function getFitnessDateObject() {
   const now = new Date();
   const fitnessDate = new Date(now);
 
@@ -73,7 +73,7 @@ function getFitnessDateObject() {
   return fitnessDate;
 }
 
-function formatDate(date) {
+export function formatDate(date) {
   const year = date.getFullYear();
   const month = String(date.getMonth() + 1).padStart(2, "0");
   const day = String(date.getDate()).padStart(2, "0");

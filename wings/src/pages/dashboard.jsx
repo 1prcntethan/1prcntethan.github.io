@@ -17,6 +17,7 @@ import {
 import { Link } from "react-router-dom";
 import { skillTreeIcon } from "../utilites/skilltreeicons.jsx";
 import { skillRP } from "../utilites/skilltorp.js";
+import { formatDate, getFitnessDateObject } from "../config/firestore.js"
 
 export function Dashboard() {
   const { currentUser } = useAuth();
@@ -37,7 +38,6 @@ export function Dashboard() {
     const ref = doc(db, "users", currentUser.uid);
     getDoc(ref).then((snap) => {
       if (snap.exists()) {
-        console.log(snap.data());
         const data = snap.data();
 
         setUserSkills(snap.data().skills ?? {});
@@ -78,11 +78,9 @@ export function Dashboard() {
     return rankSum;
   }
 
-  function todayString() {
-    return new Date().toISOString().slice(0, 10);
-  }
+  const today = formatDate(getFitnessDateObject());
 
-  const loggedToday = streak.lastLog === todayString();
+  const loggedToday = streak.lastLog === today;
   const totalDays = workoutCounter + restCounter;
   const workoutPercentage =
     totalDays > 0 ? Math.round((workoutCounter / totalDays) * 100) : 0;
@@ -94,7 +92,7 @@ export function Dashboard() {
 
   function calculateRank(totalRP) {
     if (totalRP >= 920) {
-      rankUpRp = "max rank reached";
+      rankUpRp = "max rank reached.";
       return "ethereal";
     } else if (totalRP >= 800) {
       rankUpRp = 920 - totalRP;
@@ -120,21 +118,29 @@ export function Dashboard() {
     }
   }
 
+  function showNextRankRP(totalRP) {
+    if (totalRP >= 920) {
+      return "";
+    } else {
+      return "Rp until next rank";
+    }
+  }
+
   function rankSVG(totalRP) {
     if (totalRP >= 920) {
-      return <img src="ethereal.svg" className="rank-svg"></img>;
+      return <img src="ethereal.svg" className="rank-svg ethereal"></img>;
     } else if (totalRP >= 800) {
-      return <img src="ascended.svg" className="rank-svg"></img>;
+      return <img src="ascended.svg" className="rank-svg asc"></img>;
     } else if (totalRP >= 630) {
-      return <img src="diamond.svg" className="rank-svg"></img>;
+      return <img src="diamond.svg" className="rank-svg diamond"></img>;
     } else if (totalRP >= 430) {
-      return <img src="platinum.svg" className="rank-svg"></img>;
+      return <img src="platinum.svg" className="rank-svg plat"></img>;
     } else if (totalRP >= 260) {
-      return <img src="gold.svg" className="rank-svg"></img>;
+      return <img src="gold.svg" className="rank-svg gold"></img>;
     } else if (totalRP >= 120) {
-      return <img src="silver.svg" className="rank-svg"></img>;
+      return <img src="silver.svg" className="rank-svg silver"></img>;
     } else if (totalRP > 0) {
-      return <img src="bronze.svg" className="rank-svg"></img>;
+      return <img src="bronze.svg" className="rank-svg bronze"></img>;
     } else {
       return "unranked";
     }
@@ -203,13 +209,14 @@ export function Dashboard() {
             <div className="streak-rank-points">+{totalStreakRP} Rp</div>
           </div>
         </div>
-        <p class="log-caption">
+        <p className="log-caption">
           *Make sure to log your workout or rest day once per day to keep your
-          streak alive! Your last log was on {streak.lastLog}.
+          streak alive! Your last log was on {streak.lastLog}. Resets at 4:00am daily.
         </p>
       </div>
 
       <div className="rank-container">
+          <img src="info.svg" className="rank-info"></img>
         <div className="rank-display">
           <div className="rank-top">
             {rankSVG(totalRP)}
@@ -228,7 +235,7 @@ export function Dashboard() {
                 <div className="rank-points__right">+{totalSkillRP} Rp</div>
               </div>
             </div>
-            <div className="rank-up">+{rankUpRp} Rp until next rank</div>
+            <div className="rank-up">+{rankUpRp} {showNextRankRP(totalRP)}</div>
           </div>
         </div>
       </div>

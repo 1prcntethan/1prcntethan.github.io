@@ -208,6 +208,14 @@
   justify-self: center;
 }
 
+.rank-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
 .rank-display {
   display: flex;
   flex-direction: column;
@@ -219,7 +227,6 @@
   width: 75%;
   justify-self: center;
   padding: 30px;
-  margin-top: 30px;
 }
 
 .rank-top {
@@ -239,6 +246,28 @@
 .rank-svg {
   display: flex;
   width: 400px;
+}
+
+.ethereal {
+  filter: drop-shadow(0 0 8px #772c81);
+}
+.asc {
+  filter: drop-shadow(0 0 8px #4a692d);
+}
+.diamond {
+  filter: drop-shadow(0 0 8px #815a81);
+}
+.plat {
+  filter: drop-shadow(0 0 8px #2d4e58);
+}
+.gold {
+  filter: drop-shadow(0 0 8px #725311);
+}
+.silver {
+  filter: drop-shadow(0 0 8px #6b6b6b);
+}
+.bronze {
+  filter: drop-shadow(0 0 8px #57290e);
 }
 
 .rank-divider {
@@ -286,4 +315,13 @@
 .rank-up {
   align-self: flex-end;
   font-size: 14px;
+}
+
+.rank-info {
+  display: flex;
+  left: 38.5%;
+  top: 30px;
+  position: relative;
+  width: 20px;
+  height: 20px;
 }
