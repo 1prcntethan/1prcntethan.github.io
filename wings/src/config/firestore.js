@@ -62,6 +62,24 @@ export async function updateSkill(uid, skillName, progress) {
   });
 }
 
+function getFitnessDateObject() {
+  const now = new Date();
+  const fitnessDate = new Date(now);
+
+  if (now.getHours() < 4) {
+    fitnessDate.setDate(fitnessDate.getDate() - 1);
+  }
+
+  return fitnessDate;
+}
+
+function formatDate(date) {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  const day = String(date.getDate()).padStart(2, "0");
+  return `${year}-${month}-${day}`;
+}
+
 export async function logWorkout(uid, type) {
   const ref = doc(db, "users", uid);
   const snap = await getDoc(ref);
@@ -73,17 +91,21 @@ export async function logWorkout(uid, type) {
     longest: 0,
     lastLog: null,
   };
+
   const workoutCounter = Number(data.workout) || 0;
   const restCounter = Number(data.rest) || 0;
 
-  const today = new Date().toISOString().slice(0, 10);
+  const todayDate = getFitnessDateObject();
+  const today = formatDate(todayDate);
+
   if (streak.lastLog === today) return null;
 
-  const yesterday = new Date();
-  yesterday.setDate(yesterday.getDate() - 1);
-  const yesterdayStr = yesterday.toISOString().slice(0, 10);
+  const yesterdayDate = new Date(todayDate);
+  yesterdayDate.setDate(yesterdayDate.getDate() - 1);
+  const yesterdayStr = formatDate(yesterdayDate);
 
-  const newCurrent = streak.lastLog === yesterdayStr ? streak.current + 1 : 1;
+  const newCurrent =
+    streak.lastLog === yesterdayStr ? streak.current + 1 : 1;
 
   const newLongest = Math.max(streak.longest, newCurrent);
 
@@ -98,6 +120,7 @@ export async function logWorkout(uid, type) {
   };
 
   await updateDoc(ref, updates);
+  
   return {
     streak: updates.streak,
     workout: type === "workout" ? workoutCounter + 1 : workoutCounter,
