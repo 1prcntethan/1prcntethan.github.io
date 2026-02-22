@@ -2,10 +2,14 @@ import { createRoot } from "react-dom/client";
 import React from "react";
 import { motion } from "framer-motion";
 
+hero.style.display = "none";
+
 function getElements() {
   const hero = document.getElementById("hero");
   const landing = document.getElementById("landing");
   const loading = document.getElementById("loading");
+  hero.style.visibility = "hidden";
+  hero.style.display = "block";
 }
 
 getElements();

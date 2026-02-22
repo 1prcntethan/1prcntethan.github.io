@@ -34,7 +34,7 @@ function Landing() {
               filter: "drop-shadow(0px 0px 8px rgba(255, 255, 255, 0.8))",
             }}
           >
-            <img src="/public/one.svg"></img>
+            <img src="/one.svg"></img>
           </motion.div>
           <motion.div
             className="circle-percent-1"
@@ -50,7 +50,7 @@ function Landing() {
               filter: "drop-shadow(0px 0px 8px rgba(255, 255, 255, 0.8))",
             }}
           >
-            <img src="/public/circlepercent.svg"></img>
+            <img src="/circlepercent.svg"></img>
           </motion.div>
           <motion.div
             className="rect-percent"
@@ -66,7 +66,7 @@ function Landing() {
               filter: "drop-shadow(0px 0px 8px rgba(255, 255, 255, 0.8))",
             }}
           >
-            <img src="/public/rectpercent.svg"></img>
+            <img src="/rectpercent.svg"></img>
           </motion.div>
           <motion.div
             className="circle-percent-2"
@@ -82,7 +82,7 @@ function Landing() {
               filter: "drop-shadow(0px 0px 8px rgba(255, 255, 255, 0.8))",
             }}
           >
-            <img src="/public/circlepercent.svg"></img>
+            <img src="/circlepercent.svg"></img>
           </motion.div>
           <motion.div
             className="name"
