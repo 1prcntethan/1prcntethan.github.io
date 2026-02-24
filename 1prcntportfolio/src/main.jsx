@@ -5,6 +5,7 @@ import Landing from "./landing.jsx";
 import Loading from "./loading.jsx";
 import Hero from "./hero.jsx";
 import Developer from "./developer.jsx";
+import Portfolio from "./portfolio.jsx";
 
 function App() {
   const [page, setPage] = useState("landing");
@@ -23,6 +24,10 @@ function App() {
     }, 1000);
   }
 
+  function showPortfolio() {
+    setPage("portfolio");
+  }
+
   function renderPage() {
     switch (page) {
       case "landing":
@@ -30,9 +35,11 @@ function App() {
       case "loading":
         return <Loading />;
       case "hero":
-        return <Hero onDeveloper={showDeveloper} />;
+        return <Hero onDeveloper={showDeveloper} onPortfolio={showPortfolio} />;
       case "developer":
         return <Developer />;
+      case "portfolio": 
+        return <Portfolio />;
       default:
         return null;
     }

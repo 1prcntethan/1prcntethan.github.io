@@ -3,7 +3,7 @@ import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 import { useEffect, useRef } from "react";
 import React from "react";
 
-export default function Hero({ onDeveloper }) {
+export default function Hero({ onDeveloper, onPortfolio }) {
   const canvasRef = useRef(null);
 
   useEffect(() => {
@@ -28,19 +28,20 @@ export default function Hero({ onDeveloper }) {
       canvas: canvas,
       antialias: true,
     });
-    renderer.setSize(canvas.clientWidth, canvas.clientHeight);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    handleResize();
 
     // using orbit controls
     const controls = new OrbitControls(camera, canvas);
     controls.enableDamping = true;
     controls.autoRotate = true;
     controls.enablePan = false;
+    controls.enableZoom = false;
     controls.minPolarAngle = Math.PI / 4;
     controls.maxPolarAngle = (Math.PI * 3) / 4;
 
     // add sphere to scene
-    const sphereGeometry = new THREE.CapsuleGeometry(1, 0, 67, 67);
+    const sphereGeometry = new THREE.SphereGeometry(1, 67, 67);
     const sphereMaterial = new THREE.MeshBasicMaterial({ color: "black" });
     const sphereMesh = new THREE.Mesh(sphereGeometry, sphereMaterial);
     scene.add(sphereMesh);
@@ -143,12 +144,13 @@ export default function Hero({ onDeveloper }) {
 
     // logic to resize camera view on window resize
     function handleResize() {
-      const width = canvas.clientWidth;
-      const height = canvas.clientHeight;
+      const { width, height}  = canvas.getBoundingClientRect();
 
       camera.aspect = width / height;
       camera.updateProjectionMatrix();
-      renderer.setSize(width, height);
+      renderer.setSize(width, height, false);
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      console.log("resized");
     }
     window.addEventListener("resize", handleResize);
 
@@ -164,7 +166,7 @@ export default function Hero({ onDeveloper }) {
 
     function nodeZoomIn(duration) {
       const startPos = camera.position.clone();
-      const targetPos = new THREE.Vector3(0, 0, 0);
+      const targetPos = new THREE.Vector3(0, 0, 0.5);
 
       const startTime = performance.now();
 
@@ -200,8 +202,14 @@ export default function Hero({ onDeveloper }) {
   }, []);
 
   return (
-    <div style={{ width: "100vw", height: "100vh" }}>
-      <canvas ref={canvasRef} className="threejs" style={{ width: "100%", height: "100%" }}></canvas>
+    <div style={{ width: "100%", height: "100%", position: "relative" }}>
+      <div className="hero-title">hi, i'm ethan.</div>
+      <canvas ref={canvasRef} className="threejs" style={{ width: "100%", height: "100%" , display: "block", touchAction: "none"}}></canvas>
+      <button className="portfolio-go" onClick={onPortfolio}>
+        view portfolio
+        <img src="/scrolldown.svg" className="hero-scroll-down-indicator">
+        </img>
+        </button>
     </div>
   );
 }
