@@ -1,6 +1,11 @@
 import * as THREE from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 import { useEffect, useRef } from "react";
+import { EffectComposer } from "three/addons/postprocessing/EffectComposer.js";
+import { RenderPass } from "three/addons/postprocessing/RenderPass.js";
+import { ShaderPass } from "three/addons/postprocessing/ShaderPass.js";
+import { UnrealBloomPass } from "three/addons/postprocessing/UnrealBloomPass.js";
+import { FXAAShader } from "three/addons/shaders/FXAAShader.js";
 import React from "react";
 
 export default function Hero({ onDeveloper, onPortfolio }) {
@@ -29,7 +34,31 @@ export default function Hero({ onDeveloper, onPortfolio }) {
       antialias: true,
     });
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+    // initializing composer and bloom pass
+    const composer = new EffectComposer(renderer);
+
+    const renderPass = new RenderPass(scene, camera);
+    composer.addPass(renderPass);
+
+    const bloomPass = new UnrealBloomPass(
+      new THREE.Vector2(window.innerWidth, window.innerHeight),
+      0.4, // strength
+      0.4, // radius
+      0.8, // threshold
+    );
+    composer.addPass(bloomPass);
+
     handleResize();
+
+    const fxaaPass = new ShaderPass(FXAAShader);
+    fxaaPass.material.uniforms["resolution"].value.x =
+      1 / (window.innerWidth * renderer.getPixelRatio());
+    fxaaPass.material.uniforms["resolution"].value.y =
+      1 / (window.innerHeight * renderer.getPixelRatio());
+    composer.addPass(fxaaPass);
+
+    fxaaPass.renderToScreen = true;
 
     // using orbit controls
     const controls = new OrbitControls(camera, canvas);
@@ -42,7 +71,11 @@ export default function Hero({ onDeveloper, onPortfolio }) {
 
     // add sphere to scene
     const sphereGeometry = new THREE.SphereGeometry(1, 67, 67);
-    const sphereMaterial = new THREE.MeshBasicMaterial({ color: "black" });
+    const sphereMaterial = new THREE.MeshStandardMaterial({
+      color: "#b399b1",
+      emissive: 0xb399b1,
+      emissiveIntensity: 2.3,
+    });
     const sphereMesh = new THREE.Mesh(sphereGeometry, sphereMaterial);
     scene.add(sphereMesh);
 
@@ -55,6 +88,7 @@ export default function Hero({ onDeveloper, onPortfolio }) {
     outline.scale.set(1.02, 1.02, 1.02);
     sphereMesh.add(outline);
 
+    // adding the lines (made of thin cylinders) and the invisible clickable nodes
     function endpointForIndex(i, count, maxRadius = 15) {
       const angle = (i / count) * Math.PI * 2;
 
@@ -133,6 +167,7 @@ export default function Hero({ onDeveloper, onPortfolio }) {
       if (hits.length > 0) {
         nodeZoomIn(1500);
         onDeveloper();
+        console.log("clicked node:", hits[0].object.userData.index);
       }
     }
 
@@ -144,11 +179,14 @@ export default function Hero({ onDeveloper, onPortfolio }) {
 
     // logic to resize camera view on window resize
     function handleResize() {
-      const { width, height}  = canvas.getBoundingClientRect();
+      const { width, height } = canvas.parentElement.getBoundingClientRect();
 
       camera.aspect = width / height;
       camera.updateProjectionMatrix();
+
       renderer.setSize(width, height, false);
+      composer.setSize(width, height);
+
       renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
       console.log("resized");
     }
@@ -158,8 +196,8 @@ export default function Hero({ onDeveloper, onPortfolio }) {
     let animationId;
     const renderloop = () => {
       controls.update();
-      // composer.render();
-      renderer.render(scene, camera);
+      composer.render();
+      // renderer.render(scene, camera);
       animationId = requestAnimationFrame(renderloop);
     };
     renderloop();
@@ -204,12 +242,20 @@ export default function Hero({ onDeveloper, onPortfolio }) {
   return (
     <div style={{ width: "100%", height: "100%", position: "relative" }}>
       <div className="hero-title">hi, i'm ethan.</div>
-      <canvas ref={canvasRef} className="threejs" style={{ width: "100%", height: "100%" , display: "block", touchAction: "none"}}></canvas>
+      <canvas
+        ref={canvasRef}
+        className="threejs"
+        style={{
+          width: "100%",
+          height: "100%",
+          display: "block",
+          touchAction: "none",
+        }}
+      ></canvas>
       <button className="portfolio-go" onClick={onPortfolio}>
         view portfolio
-        <img src="/scrolldown.svg" className="hero-scroll-down-indicator">
-        </img>
-        </button>
+        <img src="/scrolldown.svg" className="hero-scroll-down-indicator"></img>
+      </button>
     </div>
   );
 }
