@@ -1,19 +1,16 @@
 import { createRoot } from "react-dom/client";
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import "./loading.css";
-import { useEffect } from "react";
+import "./developer.css";
 
+export default function Developer() {
 
-export default function Loading() {
-  const [loadingVisible, setLoadingVisible] = useState(true);
-
+  const [developerVisible, setDeveloperVisible] = useState(true);
 
   return (
     <AnimatePresence>
-      {loadingVisible && (
+      {developerVisible && (
         <motion.div
-          className="loading-title"
           initial={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 1 }}
           transition={{ duration: 1.5, ease: "easeInOut", stiffness: 100 }}
@@ -27,7 +24,7 @@ export default function Loading() {
             color: "white",
           }}
         >
-          <div className="loading-title">loading...</div>
+          hello world
         </motion.div>
       )}
     </AnimatePresence>

@@ -2,10 +2,7 @@ import { createRoot } from "react-dom/client";
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import "./landing.css";
-import { loadHero } from "./main.jsx";
-
-function Landing() {
-
+export default function Landing({ onStart }) {
   const [landingVisible, setLandingVisible] = useState(true);
 
   return (
@@ -115,8 +112,8 @@ function Landing() {
               cursor: "pointer",
             }}
             onClick={() => {
-                loadHero();
-                setLandingVisible(false)
+              onStart();
+              setLandingVisible(false);
             }}
           >
             <img src="/go.svg"></img>
@@ -126,7 +123,3 @@ function Landing() {
     </AnimatePresence>
   );
 }
-
-const domNode = document.getElementById("landing");
-const root = createRoot(domNode);
-root.render(<Landing />);
