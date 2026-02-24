@@ -65,8 +65,8 @@ for (let i = 0; i < COUNT; i++) {
   scene.add(cyl);
 
   // 🔵 clickable node sphere
-  const nodeGeo = new THREE.SphereGeometry(0.35, 16, 16);
-  const nodeMat = new THREE.MeshBasicMaterial({ color: "white" });
+  const nodeGeo = new THREE.SphereGeometry(0.8, 16, 16);
+  const nodeMat = new THREE.MeshBasicMaterial({ color: "white", transparent: true, opacity: 0.0 });
   const node = new THREE.Mesh(nodeGeo, nodeMat);
   node.position.copy(end);
 
@@ -147,26 +147,32 @@ const renderloop = () => {
 };
 renderloop();
 
-export function nodeZoomIn(targetZ, duration) {
+export function nodeZoomIn(duration = 1200) {
   controls.autoRotate = false;
+  controls.enabled = false;
 
-  const startZ = camera.position.z;
-  const delta = targetZ - startZ;
+  const startPos = camera.position.clone();
+  const targetPos = new THREE.Vector3(0, 0, 0);
+
   const startTime = performance.now();
 
-  function easeOutCubic(t) {
-    return 1 - Math.pow(1 - t, 3);
+  function easeInOutCubic(t) {
+    return t < 0.5
+      ? 4 * t * t * t
+      : 1 - Math.pow(-2 * t + 2, 3) / 2;
   }
 
   function animate(now) {
     const elapsed = now - startTime;
-    const t = Math.min(elapsed / duration, 1); // 0 → 1
-    const eased = easeOutCubic(t);
+    const progress = Math.min(elapsed / duration, 1);
+    const eased = easeInOutCubic(progress);
 
-    camera.position.z = startZ + delta * eased;
+    camera.position.lerpVectors(startPos, targetPos, eased);
 
-    if (t < 1) {
+    if (progress < 1) {
       requestAnimationFrame(animate);
+    } else {
+      controls.enabled = true;
     }
   }
 
