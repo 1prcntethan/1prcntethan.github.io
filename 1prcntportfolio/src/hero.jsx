@@ -28,12 +28,22 @@ export default function Hero({ onDeveloper, onPortfolio }) {
     camera.position.z = 35;
     scene.add(camera);
 
+    const ambient = new THREE.AmbientLight(0xffffff, 0.4);
+    scene.add(ambient);
+
+    const pointLight = new THREE.PointLight(0xfff4e6, 1.5, 100);
+    pointLight.position.set(5, 5, 5);
+    scene.add(pointLight);
+
     // initializing renderer
     const renderer = new THREE.WebGLRenderer({
       canvas: canvas,
       antialias: true,
     });
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    renderer.toneMappingExposure = 1.0;
+    renderer.toneMappingExposure = 0.9;
 
     // initializing composer and bloom pass
     const composer = new EffectComposer(renderer);
@@ -43,9 +53,9 @@ export default function Hero({ onDeveloper, onPortfolio }) {
 
     const bloomPass = new UnrealBloomPass(
       new THREE.Vector2(window.innerWidth, window.innerHeight),
-      0.4, // strength
-      0.4, // radius
-      0.8, // threshold
+      0.6, // strength
+      0.7, // radius
+      0.1, // threshold
     );
     composer.addPass(bloomPass);
 
@@ -72,21 +82,15 @@ export default function Hero({ onDeveloper, onPortfolio }) {
     // add sphere to scene
     const sphereGeometry = new THREE.SphereGeometry(1, 67, 67);
     const sphereMaterial = new THREE.MeshStandardMaterial({
-      color: "#b399b1",
-      emissive: 0xb399b1,
-      emissiveIntensity: 2.3,
+      color: "#d3b2c9",
+      emissive: "#d3b2c9",
+      emissiveIntensity: 0.6,
+      roughness: 0.4,
+      metalness: 0.0,
     });
     const sphereMesh = new THREE.Mesh(sphereGeometry, sphereMaterial);
     scene.add(sphereMesh);
 
-    // outline mesh for sphere copies sphere and scales it very slightly
-    const outlineM = new THREE.MeshBasicMaterial({
-      color: "white",
-      side: THREE.BackSide,
-    });
-    const outline = new THREE.Mesh(sphereGeometry.clone(), outlineM);
-    outline.scale.set(1.02, 1.02, 1.02);
-    sphereMesh.add(outline);
 
     // adding the lines (made of thin cylinders) and the invisible clickable nodes
     function endpointForIndex(i, count, maxRadius = 15) {
@@ -123,7 +127,7 @@ export default function Hero({ onDeveloper, onPortfolio }) {
       const end = endpointForIndex(i, COUNT, 15);
       const length = end.length();
 
-      const cylGeo = new THREE.CylinderGeometry(0.01, 0.01, length, 8);
+      const cylGeo = new THREE.CylinderGeometry(0.02, 0.02, length, 8);
       const cyl = new THREE.Mesh(cylGeo, cylMaterial);
 
       cyl.position.copy(end.clone().multiplyScalar(0.5));
