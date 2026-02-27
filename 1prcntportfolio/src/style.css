@@ -29,7 +29,7 @@ body {
   font-family: Josefin Sans;
   font-weight: 100;
   font-size: 42px;
-  color: white;
+  color: #d2e2dc;
   width: 400px;
   top: 20%;
   left: 10%;
@@ -45,7 +45,7 @@ body {
   font-family: Josefin Sans;
   font-weight: 100;
   font-size: 24px;
-  color: white;
+  color: #d2e2dc;
   width: 200px;
   bottom: 40px;
   left: calc(50% - 100px);

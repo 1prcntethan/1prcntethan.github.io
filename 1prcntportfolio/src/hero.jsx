@@ -82,8 +82,8 @@ export default function Hero({ onDeveloper, onPortfolio }) {
     // add sphere to scene
     const sphereGeometry = new THREE.SphereGeometry(1, 67, 67);
     const sphereMaterial = new THREE.MeshStandardMaterial({
-      color: "#d3b2c9",
-      emissive: "#d3b2c9",
+      color: "#a2d3bf",
+      emissive: "#a2d3bf",
       emissiveIntensity: 0.6,
       roughness: 0.4,
       metalness: 0.0,
@@ -109,7 +109,7 @@ export default function Hero({ onDeveloper, onPortfolio }) {
       return new THREE.Vector3(x, y, z);
     }
 
-    const cylMaterial = new THREE.MeshBasicMaterial({ color: "white" });
+    const cylMaterial = new THREE.MeshBasicMaterial({ color: "#edfaf5" });
 
     const COUNT = 6;
 

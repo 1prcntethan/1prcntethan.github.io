@@ -19,7 +19,7 @@ export default function Landing({ onStart }) {
             width: "100%",
             height: "100%",
             backgroundColor: "#0b0b0b",
-            color: "white",
+            color: "#d2e2dc",
           }}
         >
           <motion.div
