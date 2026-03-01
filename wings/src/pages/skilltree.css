@@ -340,8 +340,9 @@
 
 .skill-update__select {
   display: flex;
-  width: fill;
+  width: max-content;
   color: white;
+  width: 70%;
 }
 
 .skill-update__select > select {
@@ -358,7 +359,8 @@
 }
 
 .progress-rp {
-  width: 160px;
+  min-width: 100px;
+  width: 30%;
   text-align: center;
   justify-content: center;
   align-content: center;

@@ -317,11 +317,12 @@
   font-size: 14px;
 }
 
-.rank-info {
+#rank-info {
   display: flex;
-  left: 38.5%;
-  top: 30px;
   position: relative;
+  left: 100%;
+  top: -20px;
   width: 20px;
   height: 20px;
+  cursor: pointer;
 }

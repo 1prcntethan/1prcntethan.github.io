@@ -598,36 +598,36 @@ const initialNodes = [
     data: { svg: "color-green" },
     type: "skillNode",
   },
-  {  
+  {
     id: "start-1",
-    position: { x: 150, y: -50  },
+    position: { x: 150, y: -50 },
     data: { svg: "start" },
     type: "skillNode",
-  }, 
-  {  
+  },
+  {
     id: "start-2",
-    position: { x: 525, y: -400  },
+    position: { x: 525, y: -400 },
     data: { svg: "start" },
     type: "skillNode",
-  }, 
-  {  
+  },
+  {
     id: "start-3",
-    position: { x: 1025 , y: -50  },
+    position: { x: 1025, y: -50 },
     data: { svg: "start" },
     type: "skillNode",
-  }, 
-  {  
+  },
+  {
     id: "start-4",
-    position: { x: 1457 , y: 200  },
+    position: { x: 1457, y: 200 },
     data: { svg: "start" },
     type: "skillNode",
-  }, 
-  {  
-    id: "start-5", 
-    position: { x: 1900 , y: 450  },
+  },
+  {
+    id: "start-5",
+    position: { x: 1900, y: 450 },
     data: { svg: "start" },
     type: "skillNode",
-  }, 
+  },
 ];
 
 const initialEdges = [
@@ -1166,22 +1166,21 @@ const initialEdges = [
 ];
 
 function toggleContainer(skill) {
-  if(skill === undefined) {
+  if (skill === undefined) {
     return;
   }
   const container = document.querySelector(".skill-window");
   container.classList.toggle("close");
-  
 }
 
 function getColor(type) {
-  if(type === undefined) {
+  if (type === undefined) {
     return "skill-locked";
   } else if (type === 0) {
     return "skill-locked";
   } else if (type === 1) {
     return "skill-unlocked";
-  } else if (type === 2) { 
+  } else if (type === 2) {
     return "skill-progress";
   } else if (type === 3) {
     return "skill-mastered";
@@ -1196,6 +1195,7 @@ const SkillWindow = () => {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
+
     if (!skill || !userSkills) return;
 
     const skillEq = skillDB.get(skill);
@@ -1228,52 +1228,60 @@ const SkillWindow = () => {
             <div className="skill-window__muscle-use">
               Muscle Use: {skillMetric.get(skill)}
             </div>
+            {currentUser && (
+              <div className="skill-update__container">
+                <div className="skill-update__select">
+                  <select
+                    value={progress}
+                    onChange={async (e) => {
+                      const newProgress = Number(e.target.value);
+                      setProgress(newProgress);
 
-            <div className="skill-update__container">
-              <div className="skill-update__select">
-                <select
-                  value={progress}
-                  onChange={async (e) => {
-                    const newProgress = Number(e.target.value);
-                    setProgress(newProgress);
+                      const skillEq = skillDB.get(skill);
 
-                    const skillEq = skillDB.get(skill);
-
-                    setUserSkills((prev) => ({
-                      ...prev,
-                      [skillEq]: newProgress,
-                    }));
-
-                    try {
-                      await updateSkill(currentUser.uid, skillEq, newProgress);
-                    } catch (error) {
-                      if (error.code === "permission-denied") {
-                        alert("Please wait 2 seconds between skill changes.");
-                      } else {
-                        console.error(error);
-                        alert("An error occured. Please try again.");
+                      setUserSkills((prev) => ({
+                        ...prev,
+                        [skillEq]: newProgress,
+                      }));
+                      if (!currentUser) {
+                        try {
+                          await updateSkill(
+                            currentUser.uid,
+                            skillEq,
+                            newProgress,
+                          );
+                        } catch (error) {
+                          if (error.code === "permission-denied") {
+                            alert(
+                              "Please wait 2 seconds between skill changes.",
+                            );
+                          } else {
+                            console.error(error);
+                            alert("An error occured. Please try again.");
+                          }
+                        }
                       }
-                    }
-                  }}
-                >
-                  <option value={0}>locked</option>
-                  <option value={1}>unlocked</option>
-                  <option value={2}>in progress</option>
-                  <option value={3}>mastered</option>
-                </select>
+                    }}
+                  >
+                    <option value={0}>locked</option>
+                    <option value={1}>unlocked</option>
+                    <option value={2}>in progress</option>
+                    <option value={3}>mastered</option>
+                  </select>
+                </div>
+                <div className="progress-rp">
+                  +
+                  {Math.round(
+                    skillRP?.get(
+                      skillDB.get(skill) ? (skillDB?.get(skill) ?? 0) : 0,
+                    ) *
+                      (progress / 3) *
+                      (750 / 1229),
+                  )}{" "}
+                  Rp
+                </div>
               </div>
-              <div className="progress-rp">
-                +
-                {Math.round(
-                  skillRP?.get(
-                    skillDB.get(skill) ? (skillDB?.get(skill) ?? 0) : 0,
-                  ) *
-                    (progress / 3) *
-                    (750 / 1229),
-                )}{" "}
-                Rp
-              </div>
-            </div>
+            )}
 
             <Link
               to={
@@ -1341,8 +1349,13 @@ const SkillNode = ({ data }) => {
           }}
         />
         {skillTreeIcon.get(data.svg)}
-        <div className={skillDB.get(data.link) ? getColor(userSkills?.[skillDB.get(data.link)]) : ""}></div>
-        
+        <div
+          className={
+            skillDB.get(data.link)
+              ? getColor(userSkills?.[skillDB.get(data.link)])
+              : ""
+          }
+        ></div>
       </div>
     </>
   );

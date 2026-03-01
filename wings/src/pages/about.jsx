@@ -33,8 +33,7 @@ export function About() {
           Yes — this site was built by one person. I’m not a professional web
           developer or a competitive calisthenics athlete. But I’ve been
           training for over two years and have spent that time learning from
-          both my own experience and from creators in the space. and
-          calisthenics creators. While I can’t guarantee every piece of
+          both my own experience and from creators in the space. While I can’t guarantee every piece of
           information is perfect, I’ve applied the same knowledge in my own
           training with meaningful results — and I think it can help others too,
           especially beginners.
@@ -51,8 +50,8 @@ export function About() {
           If you’re an experienced athlete, I’d love help creating tutorials for
           more advanced skills or building out detailed training guides. I'm
           also looking for digital artists who can help illustrate anatomy and
-          training concepts — extremely simple, clear sketches. Ideally, a
-          student who is interested/experienced in calisthenics. As an artist
+          training concepts — extremely simple, clear sketches. Ideally,
+          someone who is interested/experienced in calisthenics. As an artist
           myself, I know the value of your work and am happy to discuss
           commission or credit (depending on how the site grows). EMAIL me and
           link your Instagram!

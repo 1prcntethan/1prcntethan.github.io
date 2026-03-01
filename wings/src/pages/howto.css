@@ -5,6 +5,14 @@
   line-height: 2;
   margin: 20px;
   padding: 40px;
+
+  @media (max-width: 768px) {
+    margin: 0px;
+  }
+   @media (max-width: 500px) {
+    margin: 0px;
+    padding: 10px;
+  }
 }
 
 .howto-text > p {
@@ -15,6 +23,7 @@
     font-size: 18px;
     line-height: 2;
   }
+
 }
 
 .howto-text > ol > li > strong {
@@ -35,6 +44,9 @@
     font-size: 18px;
     line-height: 2;
   }
+  @media (max-width: 500px) {
+    font-size: 16px;
+  }
 }
 
 .howto-title {
@@ -44,6 +56,9 @@
     font-size: 28px;
     margin-bottom: 5px;
     
+  }
+  @media (max-width: 500px) {
+    font-size: 24px;
   }
 }
 

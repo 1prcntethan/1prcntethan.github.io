@@ -17,7 +17,7 @@ import {
 import { Link } from "react-router-dom";
 import { skillTreeIcon } from "../utilites/skilltreeicons.jsx";
 import { skillRP } from "../utilites/skilltorp.js";
-import { formatDate, getFitnessDateObject } from "../config/firestore.js"
+import { formatDate, getFitnessDateObject } from "../config/firestore.js";
 
 export function Dashboard() {
   const { currentUser } = useAuth();
@@ -211,13 +211,20 @@ export function Dashboard() {
         </div>
         <p className="log-caption">
           *Make sure to log your workout or rest day once per day to keep your
-          streak alive! Your last log was on {streak.lastLog}. Resets at 4:00am daily.
+          streak alive! Your last log was on {streak.lastLog}. Resets at 4:00am
+          daily.
         </p>
       </div>
 
       <div className="rank-container">
-          <img src="info.svg" className="rank-info"></img>
         <div className="rank-display">
+          <Link to="/howtouseguide">
+            <img
+              src="info.svg"
+              id="rank-info"
+            ></img>
+          </Link>
+
           <div className="rank-top">
             {rankSVG(totalRP)}
             <div className="rank-rank">{calculateRank(totalRP)}</div>
@@ -235,7 +242,9 @@ export function Dashboard() {
                 <div className="rank-points__right">+{totalSkillRP} Rp</div>
               </div>
             </div>
-            <div className="rank-up">+{rankUpRp} {showNextRankRP(totalRP)}</div>
+            <div className="rank-up">
+              +{rankUpRp} {showNextRankRP(totalRP)}
+            </div>
           </div>
         </div>
       </div>

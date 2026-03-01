@@ -52,14 +52,44 @@ export function HowTo() {
             the training section for more detailed information on training
             techniques, nutrition, skill pathways, and other important topics.
           </li>
+          <br />
           <li>
             <strong>use the skill tree:</strong> The skill tree provides useful
-            information to help you easily see the path to your desired skill. 
+            information to help you easily see the path to your desired skill.
             Follow the arrows and key to figure out where to start your journey.
           </li>
+          <br />
           <li>
             <strong>track your progress:</strong> Make an account to track your
-            progress and see how far you've come in your journey!
+            progress and see how far you've come in your journey! The skill tree
+            will allow you to mark skills as <i>locked</i>, <i>unlocked</i>,{" "}
+            <i>in progress</i>, or <i>mastered</i>, which earns RP (rank
+            points). Log your streak daily to gain RP and level up your rank!
+          </li>
+          <br />
+
+          <li>
+            <strong>rank calculations:</strong> 1000 points total. Skills make
+            up a max of 750 points, with streaks/logging making up a max of 250
+            points.
+            <br />
+            <br />
+            Point contribution from skills is determined by difficulty: F = 2, D
+            = 4, C = 7, B = 12, A = 20, S = 35, and SS = 66.
+            <br />
+            Multipliers are applied to skill points based on their status:
+            Locked = 0, Unlocked = 0.33, In Progress = 0.66, and Mastered = 1.
+            <br />
+            <br />
+            Streak/log points are calculated by the formula: sqrt(streak length
+            / 365) * 250.
+            <br />
+            <br />
+            Skill & Streak point contributions are added together to determine
+            your rank.
+            <br />
+            Bronze = 0-120, Silver = 120-260, Gold = 260-450, Platinum =
+            450-630, Diamond = 630-800 Ascendant = 800-920, Ethereal = 920-1000.
           </li>
         </ol>
       </div>
