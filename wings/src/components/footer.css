@@ -5,6 +5,10 @@ footer {
     font-family: Fira Sans;
     font-weight: 200;
     padding-top: 3rem;
+    
+    @media (max-width: 768px) {
+        padding: 20px 10px;
+    }
 }
 
 .footer-container {

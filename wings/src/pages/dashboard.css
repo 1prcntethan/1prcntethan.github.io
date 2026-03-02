@@ -16,6 +16,10 @@
 .dashboard-welcome__email {
   font-family: Fira Sans;
   font-weight: 200;
+
+  @media (max-width: 768px) {
+    margin-top: 10px;
+  }
 }
 
 .dashboard-skill__container {
@@ -146,16 +150,31 @@
   background-color: #252525;
   border: solid 1px #333333;
   border-radius: 12px;
+  gap: 20px;
   width: 75%;
   justify-self: center;
   padding: 30px;
   margin-top: 30px;
+
+  @media (max-width: 550px) {
+    flex-direction: column;
+    width: calc(100% - 90px);
+  }
 }
 
 .streak-info {
   display: flex;
   flex-direction: column;
   gap: 20px;
+
+  @media (max-width: 550px) {
+    width: 100%;
+  }
+}
+
+.streak-info > button {
+  margin-top: 10px;
+  align-self: center;
 }
 
 .streak-counter {
@@ -191,6 +210,12 @@
   justify-content: center;
   align-self: flex-end;
   cursor: pointer;
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+    width: 150px;
+    height: 40px;
+  }
 }
 .log-streak:disabled {
   background-color: #3d1432;
@@ -206,6 +231,9 @@
   font-size: 14px;
   align-content: center;
   justify-self: center;
+  @media (max-width: 768px) {
+    font-size: 12px;
+  }
 }
 
 .rank-container {
@@ -214,6 +242,8 @@
   width: 100%;
   justify-content: center;
   align-items: center;
+
+  
 }
 
 .rank-display {
@@ -227,7 +257,15 @@
   width: 75%;
   justify-self: center;
   padding: 30px;
+
+  @media (max-width: 550px) {
+    width: calc(100% - 90px);
+  }
 }
+
+.rank-display > a {
+  height: 0;
+} 
 
 .rank-top {
   display: flex;
@@ -237,6 +275,18 @@
   align-items: center;
   padding-top: 10px;
   padding-bottom: 10px;
+
+  @media (max-width: 768px) {
+
+  }
+}
+
+.rank-top > img {
+  max-width: 500px;
+  width: 75%;
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 }
 
 .rank-rank {
@@ -282,18 +332,26 @@
 
 .rank-bottom {
   display: flex;
-  width: 95%;
   padding: 20px;
   padding-bottom: 8px;
   flex-direction: row;
   justify-content: space-between;
   gap: 25px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    padding: 0;
+  }
 }
 
 .rank-contributions {
   display: flex;
   flex-direction: column;
   gap: 25px;
+
+  @media (max-width: 768px) {
+    font-size: 14px;
+  }
 }
 
 .rank-points {
@@ -315,6 +373,9 @@
 .rank-up {
   align-self: flex-end;
   font-size: 14px;
+  @media (max-width: 768px) {
+    font-size: 12px;
+  }
 }
 
 #rank-info {
