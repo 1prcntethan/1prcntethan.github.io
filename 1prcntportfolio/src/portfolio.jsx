@@ -1,11 +1,45 @@
 import { createRoot } from "react-dom/client";
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import {
+  motion,
+  useScroll,
+  useSpring,
+  useTransform,
+  AnimatePresence,
+} from "framer-motion";
+import { useRef, useEffect } from "react";
 import "./portfolio.css";
 
 export default function Portfolio() {
   const [portfolioVisible, setPortfolioVisible] = useState(true);
 
+  const sectionRef = useRef(null);
+  const containerRef = useRef(null);
+
+  const { scrollYProgress } = useScroll({
+    container: containerRef,
+    target: sectionRef,
+    offset: ["start start", "end start"],
+  });
+
+  const smoothProgress = useSpring(scrollYProgress, {
+    stiffness: 70,
+    damping: 25,
+    mass: 0.4,
+  });
+
+  const y = useTransform(smoothProgress, [0, 1], ["10%", "-10%"]);
+  const scale = useTransform(smoothProgress, [0, 1], [0.96, 1]);
+  const opacity = useTransform(smoothProgress, [0, 1], [0.4, 1]);
+
+  const y1 = useTransform(smoothProgress, [0, 0.2], ["0%", "-50%"]);
+  const scale1 = useTransform(smoothProgress, [0, 0.2], [0.96, 1]);
+  const opacity1 = useTransform(smoothProgress, [0, 0.2], [1, 0.4]);
+
+  const y2 = useTransform(smoothProgress, [0.2, 0.4], ["50%", "-50%"]);
+  const scale2 = useTransform(smoothProgress, [0.2, 0.4], [0.96, 1]);
+  const opacity2 = useTransform(smoothProgress, [0.2, 0.4], [1, 0.4]);
+  
   return (
     <AnimatePresence>
       {portfolioVisible && (
@@ -14,17 +48,20 @@ export default function Portfolio() {
           initial={{ y: "100%" }}
           animate={{ y: "0%" }}
           exit={{ y: "100%" }}
+          ref={containerRef}
           transition={{ duration: 1.5, ease: "easeInOut" }}
           style={{
-            position: "absolute",
-            width: "100%",
-            height: "100vh",
-            background: "#0b0b0b",
             zIndex: 10,
-            display: "flex",
           }}
         >
-          <motion.div className="portfolio-section">
+          <motion.div
+            className="portfolio-section"
+            style={{
+              y: y1,
+              scale: scale1,
+              opacity: opacity1,
+            }}
+          >
             <motion.div className="section-title">
               a designing, developing chameleon.
             </motion.div>
@@ -35,7 +72,14 @@ export default function Portfolio() {
               environment, blending intuitive design and technical expertise.
             </motion.div>
           </motion.div>
-          <motion.div className="portfolio-section">
+          <motion.div
+            className="portfolio-section"
+            style={{
+              y: y2,
+              scale: scale2,
+              opacity: opacity2,
+            }}
+          >
             <motion.div className="section-title">
               skills & expertise
             </motion.div>
@@ -55,7 +99,7 @@ export default function Portfolio() {
                 <ul className="skill-list">
                   <li>Tailwind</li>
                   <li>Firebase</li>
-                  <li>Three.js</li> 
+                  <li>Three.js</li>
                   <li>Vite</li>
                   <li>Git/Github</li>
                 </ul>
@@ -71,6 +115,12 @@ export default function Portfolio() {
               </motion.div>
             </motion.div>
           </motion.div>
+          <motion.div className="portfolio-section">projects</motion.div>
+          <motion.div className="portfolio-section">
+            experience education
+          </motion.div>
+          <motion.div className="portfolio-section">contact</motion.div>
+
         </motion.div>
       )}
     </AnimatePresence>
