@@ -32,14 +32,23 @@ export default function Portfolio() {
   const scale = useTransform(smoothProgress, [0, 1], [0.96, 1]);
   const opacity = useTransform(smoothProgress, [0, 1], [0.4, 1]);
 
-  const y1 = useTransform(smoothProgress, [0, 0.2], ["0%", "-50%"]);
-  const scale1 = useTransform(smoothProgress, [0, 0.2], [0.96, 1]);
+  const y1 = useTransform(smoothProgress, [0, 0.2], ["0%", "-2%"]);
   const opacity1 = useTransform(smoothProgress, [0, 0.2], [1, 0.4]);
 
-  const y2 = useTransform(smoothProgress, [0.2, 0.4], ["50%", "-50%"]);
-  const scale2 = useTransform(smoothProgress, [0.2, 0.4], [0.96, 1]);
+  const y2 = useTransform(smoothProgress, [0.2, 0.4], ["0%", "-2%"]);
   const opacity2 = useTransform(smoothProgress, [0.2, 0.4], [1, 0.4]);
-  
+
+  const y3 = useTransform(smoothProgress, [0.4, 0.6], ["0%", "-2%"]);
+  const opacity3 = useTransform(smoothProgress, [0.4, 0.6], [1, 0.4]);
+
+  const y4 = useTransform(smoothProgress, [0.6, 0.8], ["0%", "-2%"]);
+  const scale4 = useTransform(smoothProgress, [0.6, 0.8], [0.96, 1]);
+  const opacity4 = useTransform(smoothProgress, [0.6, 0.8], [1, 0.4]);
+
+  const y5 = useTransform(smoothProgress, [0.8, 1.0], ["0%", "-2%"]);
+  const scale5 = useTransform(smoothProgress, [0.8, 1.0], [0.96, 1]);
+  const opacity5 = useTransform(smoothProgress, [0.8, 1.0], [1, 0.4]);
+
   return (
     <AnimatePresence>
       {portfolioVisible && (
@@ -58,7 +67,6 @@ export default function Portfolio() {
             className="portfolio-section"
             style={{
               y: y1,
-              scale: scale1,
               opacity: opacity1,
             }}
           >
@@ -66,17 +74,21 @@ export default function Portfolio() {
               a designing, developing chameleon.
             </motion.div>
             <motion.div className="section-content">
-              I build functional, efficient systems that adapt to users and
-              streamline their digital experience. My work mirrors my skill,
-              changing styles, functionality, and aesthetic to fit the
-              environment, blending intuitive design and technical expertise.
+              In the constantly evolving world of tech, I believe adaptability is key.
+              <br />
+              <br />
+              Thus, I strive for the ability to meld styles, functionality,
+              and aesthetic to the environment, blending intuitive design
+              and technical expertise.
+              <br />
+              <br />
+              idk
             </motion.div>
           </motion.div>
           <motion.div
             className="portfolio-section"
             style={{
               y: y2,
-              scale: scale2,
               opacity: opacity2,
             }}
           >
@@ -115,12 +127,33 @@ export default function Portfolio() {
               </motion.div>
             </motion.div>
           </motion.div>
-          <motion.div className="portfolio-section">projects</motion.div>
-          <motion.div className="portfolio-section">
-            experience education
+          <motion.div
+            className="portfolio-section"
+            style={{
+              y: y3,
+              opacity: opacity3,
+            }}
+          >
+            <div className="section-title">projects</div>
           </motion.div>
-          <motion.div className="portfolio-section">contact</motion.div>
-
+          <motion.div
+            className="portfolio-section"
+            style={{
+              y: y4,
+              opacity: opacity4,
+            }}
+          >
+            <div className="section-title">experience & education</div>
+          </motion.div>
+          <motion.div
+            className="portfolio-section"
+            style={{
+              y: y5,
+              opacity: opacity5,
+            }}
+          >
+            <div className="section-title">contact</div>
+          </motion.div>
         </motion.div>
       )}
     </AnimatePresence>

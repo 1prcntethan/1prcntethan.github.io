@@ -8,8 +8,22 @@
   overflow-y: auto;
   height: 100vh;
 
-  scroll-snap-type: y mandatory; 
+  scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
+}
+
+.portfolio-container::-webkit-scrollbar {
+  width: 8px;
+  background-color: transparent;
+}
+
+.portfolio-container::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.portfolio-container::-webkit-scrollbar-thumb {
+  background: #646968;
+  border-radius: 4px;
 }
 
 .portfolio-section {
@@ -64,4 +78,5 @@
   border-radius: 20px;
   padding: 20px;
   height: 100%;
+  filter: drop-shadow(0px 0px 10px #222c29);
 }
