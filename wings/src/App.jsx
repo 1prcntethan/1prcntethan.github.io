@@ -77,6 +77,7 @@ import { SplitSquat } from "./pages/tutorials/splitsquat";
 import { PullRmp } from "./pages/guides/pullroadmap";
 import { BeginnerWorkout } from "./pages/guides/beginnerworkout";
 import { FrontLeverGuide } from "./pages/guides/frontleverguide";
+import { IntermediateWorkout } from "./pages/guides/intermediateworkout";
 
 
 function ScrollToTop({ children }) {
@@ -125,6 +126,7 @@ function App() {
             />
             <Route path="/training/pullrmp" element={<PullRmp />} />
             <Route path="/training/beginnerworkout" element={<BeginnerWorkout />} />
+            <Route path="/training/intermediateworkout" element={<IntermediateWorkout />} />
             <Route path="/training/frontleverguide" element={<FrontLeverGuide />} />
 
             <Route path="/tutorials/pushup" element={<Pushup />} />
