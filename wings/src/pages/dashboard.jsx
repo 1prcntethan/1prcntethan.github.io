@@ -219,10 +219,7 @@ export function Dashboard() {
       <div className="rank-container">
         <div className="rank-display">
           <Link to="/howtouseguide">
-            <img
-              src="info.svg"
-              id="rank-info"
-            ></img>
+            <img src="info.svg" id="rank-info"></img>
           </Link>
 
           <div className="rank-top">
@@ -329,7 +326,22 @@ export function Dashboard() {
           </select>
         </div>
       </div> */}
-      <div className="dashboard-welcome">more features coming soon...</div>
+      <div className="dashboard-donate">
+        <div>
+          Enjoying this platform? Support its development. Donate through
+          <Link to="https://ko-fi.com/wingssw" className="donate-link">
+            Ko-fi
+          </Link>
+          or
+          <Link
+            to="https://www.paypal.com/donate/?hosted_button_id=RNREJQ826VL46"
+            className="donate-link"
+          >
+            Paypal
+          </Link>
+          !!
+        </div>
+      </div>
       <Footer />
     </>
   );

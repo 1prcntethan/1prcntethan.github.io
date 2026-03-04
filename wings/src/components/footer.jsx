@@ -75,7 +75,7 @@ const Footer = () => {
           <p>Feedback</p>
           <ul>
             <li>
-              <a href="https://forms.gle/ChdE8Mq3YNWXCfTa6">
+              <a href="https://forms.gle/VBbjb58sM7Nd2Z6f9">
                 Report an Issue/Submit Feedback
               </a>
             </li>

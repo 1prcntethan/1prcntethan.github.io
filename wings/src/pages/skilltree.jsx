@@ -1195,7 +1195,6 @@ const SkillWindow = () => {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-
     if (!skill || !userSkills) return;
 
     const skillEq = skillDB.get(skill);
@@ -1243,7 +1242,7 @@ const SkillWindow = () => {
                         ...prev,
                         [skillEq]: newProgress,
                       }));
-                      if (!currentUser) {
+                      if (currentUser) {
                         try {
                           await updateSkill(
                             currentUser.uid,

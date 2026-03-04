@@ -387,3 +387,27 @@
   height: 20px;
   cursor: pointer;
 }
+
+.dashboard-donate {
+  display: flex;
+  font-size: 18px;
+  font-family: Fira Sans;
+  font-weight: 200;
+  width: auto;
+  line-height: 140%;
+  padding: 40px;
+
+  @media (max-width: 1100px) {
+    width: 80%;
+    text-align: center;
+    padding: 30px;
+    font-size: 16px;
+  }
+}
+
+.donate-link {
+  color:rgb(196, 33, 218);
+  text-decoration: none;
+  margin-left: 3px;
+  margin-right: 3px;
+}
