@@ -41,6 +41,7 @@ export default function Portfolio() {
           <section class="portfolio-section">Intro</section>
           <section class="portfolio-section">Skills</section>
           <section class="portfolio-section">Projects</section>
+          <section class="portfolio-section">Education</section>
           <section class="portfolio-section">Contact</section>
         </div>
       )}
