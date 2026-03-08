@@ -5,6 +5,7 @@
   bottom: 0;
   left: 0;
   width: fit-content;
+  gap: 10px;
   height: 100vh;
   background-color: rgb(27, 27, 27);
   border-right: 1px solid rgb(80, 80, 80);
@@ -17,10 +18,10 @@
   @media (max-width: 768px) {
     flex-direction: row !important;
     height: 5vh;
-    width: 100% !important;
+    width: calc(100% - 10px) !important;
     border-right: none;
     border-bottom: 1px solid rgb(80, 80, 80);
-    padding: 5px 0px;
+    padding: 5px 5px;
     align-items: center;
     
   }

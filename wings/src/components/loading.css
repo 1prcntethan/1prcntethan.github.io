@@ -2,7 +2,7 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: (50%, 50%);
+  transform: translate(-50%, -50%);
   border: 8px solid #c2c2c2; /* Light grey base */
   border-top: 8px solid #b66da3; /* Blue spinner color */
   border-radius: 50%;

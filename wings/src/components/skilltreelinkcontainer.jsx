@@ -6,14 +6,11 @@ export default function SkillTreeLinkContainer() {
   return (
     <>
       <div className="skilltree-links">
-        <SkillTreeLinks link="/" text="home" />
       
         <SkillTreeLinks link="/tutorials" text="tutorials" />
-      
-        <SkillTreeLinks link="/training" text="training" />
-      
-        <SkillTreeLinks link="/terminology" text="terminology" />
 
+        <SkillTreeLinks link="/" text="home" />
+      
         <SkillTreeLinks link="/dashboard" text="dashboard" />
       </div>
       

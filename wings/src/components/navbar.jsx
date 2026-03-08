@@ -235,6 +235,7 @@ const Navbar = () => {
             {currentUser ? (
               <div className="navbar__logout--container">
                 <button
+                  id="nav-item"
                   className="logout-button"
                   onClick={
                     location.pathname === "/dashboard"
