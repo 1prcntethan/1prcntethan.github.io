@@ -7,7 +7,7 @@
   width: 100%;
   overflow-y: scroll;
   height: 100vh;
-  color: white;
+  color: #d2e2dc;
 
   scroll-timeline: --portfolio-scroll y;
   scroll-timeline: --portfolio-scroll vertical;
@@ -49,116 +49,92 @@
   justify-items: center;
 }
 
-.draw-circle {
-  position: relative;
-
-  fill: none;
-  stroke: cyan;
-  stroke-width: 3;
-
-  stroke-dasharray: 1000;
-  stroke-dashoffset: 1000;
-
-  animation: draw 2.2s ease forwards;
-  animation-delay: 0.7s;
-}
-
-.draw-circle:nth-child(2) {
-  animation-delay: 1s;
-}
-.draw-circle:nth-child(3) {
-  animation-delay: 1.3s;
-}
-.draw-circle:nth-child(4) {
-  animation-delay: 12s;
-}
-.draw-circle:nth-child(5) {
-  animation-delay: 12s;
-}
-.draw-circle:nth-child(6) {
-  animation-delay: 12s;
-}
-.draw-circle:nth-child(7) {
-  animation-delay: 12s;
-}
-.draw-circle:nth-child(8) {
-  animation-delay: 12s;
-}
-.draw-circle:nth-child(9) {
-  animation-delay: 12s;
-}
-.draw-circle:nth-child(10) {
-  animation-delay: 12s;
-}
-.draw-circle:nth-child(11) {
-  animation-delay: 12s;
-}
-.draw-circle:nth-child(12) {
-  animation-delay: 12s;
-}
-.draw-circle:nth-child(13) {
-  animation-delay: 12s;
-}
-.draw-circle:nth-child(14) {
-  animation-delay: 12s;
-}
-.draw-circle:nth-child(15) {
-  animation-delay: 12s;
-}
-.draw-circle:nth-child(16) {
-  animation-delay: 12s;
-}
-.draw-circle:nth-child(17) {
-  animation-delay: 12s;
-}
-.draw-circle:nth-child(18) {
-  animation-delay: 12s;
-}
-.draw-circle:nth-child(19) {
-  animation-delay: 12s;
-}
-.draw-circle:nth-child(12) {
-  animation-delay: 12s;
-}
-
-
-.draw-line {
-  stroke: cyan;
-  stroke-width: 3;
-
-  stroke-dasharray: 1000;
-  stroke-dashoffset: 1000;
-
-  animation: draw 5s ease forwards;
-  animation-delay: 0.7s;
-}
-
-.draw-line:nth-child(1) {
-  animation-delay: 1.5s;
-}
-.draw-line:nth-child(2) {
+.rotate-svg {
+  animation: rotate 28s linear infinite;
   animation-delay: 2s;
 }
-.draw-line:nth-child(3) {
-  animation-delay: 12s;
-}
-.draw-line:nth-child(4) {
-  animation-delay: 12s;
-}
-.draw-line:nth-child(5) {
-  animation-delay: 12s;
-}
-.draw-line:nth-child(6) {
-  animation-delay: 12s;
-}
-.draw-line:nth-child(7) {
-  animation-delay: 12s;
-}
-.draw-line:nth-child(8) {
-  animation-delay: 12s;
+@keyframes rotate {
+  0%, 10% {
+    transform: rotate(0deg);
+  }
+  12.5%, 22.5% {
+    transform: rotate(45deg);
+  }
+  25%, 35% {
+    transform: rotate(90deg);
+  }
+  37.5%, 47.5% {
+    transform: rotate(135deg);
+  }
+  50%, 60% {
+    transform: rotate(180deg);
+  }
+  62.5%, 72.5% {
+    transform: rotate(225deg);
+  }
+  75%, 85% {
+    transform: rotate(270deg);
+  }
+  87.5%, 97.5% {
+    transform: rotate(315deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
+.draw-circle {
+  fill: none;
+  stroke: #d2e2dc;
+  stroke-width: 3;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  will-change: stroke-dashoffset;
+  filter: drop-shadow(0 0 8px #d2e2dca1);
 
+  animation: draw 3.5s ease-in-out forwards;
+}
+
+.draw-line {
+  stroke: #d2e2dc;
+  stroke-width: 3;
+
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  will-change: stroke-dashoffset;
+  animation: draw 2s ease-in-out forwards;
+
+  filter: drop-shadow(0 0 8px #d2e2dca1);
+}
+
+.center1 {
+  animation-delay: 1s;
+}
+
+.group1 {
+  animation-delay: 1.3s;
+}
+.group2 {
+  animation-delay: 1.6s;
+}
+.group3 {
+  animation-delay: 1.9s;
+}
+.group4 {
+  animation-delay: 2.2s;
+}
+.group5 {
+  animation-delay: 2.5s;
+}
+.group6 {
+  animation-delay: 2.8s;
+}
+.group7 {
+  animation-delay: 3.1s;
+}
+.group8 {
+  animation-delay: 3.4s;
+}
 
 @keyframes draw {
   to {
