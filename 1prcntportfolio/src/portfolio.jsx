@@ -16,89 +16,128 @@ export default function Portfolio() {
   return (
     <AnimatePresence>
       {portfolioVisible && (
-        // <motion.div
-        //   className="portfolio-container"
-        //   initial={{ y: "100%" }}
-        //   animate={{ y: "0%" }}
-        //   exit={{ y: "100%" }}
-        //   transition={{ duration: 1.5, ease: "easeInOut" }}
-        //   style={{
-        //     zIndex: 10,
-        //     color: "white",
-        //   }}
-        // >
-        //   <motion.section className="portfolio-section">hero</motion.section>
-        //   <motion.section className="portfolio-section">skills</motion.section>
-        //   <motion.section className="portfolio-section">
-        //     projects
-        //   </motion.section>
-        //   <motion.section className="portfolio-section">
-        //     expereince
-        //   </motion.section>
-        //   {/* <motion.section className="portfolio-section">contact</motion.section> */}
-        // </motion.div>
-        <div class="portfolio-container">
-          <section class="portfolio-section">Intro</section>
-          <section class="portfolio-section">Skills</section>
-          <section class="portfolio-section">Projects</section>
-          <section class="portfolio-section">Education</section>
-          <section class="portfolio-section">Contact</section>
-        </div>
+        <motion.div
+          className="portfolio-container"
+          initial={{ y: "100%" }}
+          animate={{ y: "0%" }}
+          exit={{ y: "100%" }}
+          transition={{ duration: 1.5, ease: "easeInOut" }}
+          style={{
+            zIndex: 10,
+            color: "white",
+          }}
+        >
+          <motion.div className="fixed-visual">
+            <div class="visual-container">
+              <svg width="479" height="479" viewBox="0 0 479 479" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="239.5" cy="239.5" r="20" className="draw-circle"/>
+<circle cx="240" cy="239" r="82.5" className="draw-circle"/>
+<circle cx="240" cy="239" r="91.5" className="draw-circle"/>
+
+<circle cx="239.5" cy="91.5" r="27" className="draw-circle"/>
+<circle cx="21.5" cy="21.5" r="20" transform="matrix(0 -1 -1 0 261 113)"   className="draw-circle"/>
+<line y1="-1.5" x2="149" y2="-1.5" transform="matrix(0 -1 -1 0 238 240)"   className="draw-line"/>
+<line y1="-1.5" x2="149" y2="-1.5" transform="matrix(0.707107 -0.707107 -0.707107 -0.707107 238.295 239.002)"   className="draw-line"/>
+<line y1="-1.5" x2="149" y2="-1.5" transform="matrix(1 0 0 -1 238 238)"   className="draw-line"/>
+<line y1="-1.5" x2="149" y2="-1.5" transform="matrix(0.707107 0.707107 0.707107 -0.707107 239.709 237.588)"   className="draw-line"/>
+<line x1="239.5" y1="239" x2="239.5" y2="388" className="draw-line"/>
+<line x1="240.063" y1="239.356" x2="134.704" y2="344.714"   className="draw-line"/>
+<line x1="240" y1="239.5" x2="91" y2="239.5"   className="draw-line"/>
+<line x1="240.063" y1="240.063" x2="134.704" y2="134.704"   className="draw-line"/>
+<circle cx="344" cy="135" r="26.5" transform="rotate(90 344 135)"   className="draw-circle"/>
+<circle cx="21.5" cy="21.5" r="20" transform="matrix(0.707107 -0.707107 -0.707107 -0.707107 344.361 165.463)"   className="draw-circle"/>
+<circle cx="386.5" cy="239.5" r="27" className="draw-circle"/>
+<circle cx="21.5" cy="21.5" r="20" transform="matrix(1 0 0 -1 365 261)"   className="draw-circle"/>
+<circle cx="344" cy="344" r="26.5"   className="draw-circle"/>
+<circle cx="21.5" cy="21.5" r="20" transform="matrix(0.707107 0.707107 0.707107 -0.707107 313.248 343.654)"   className="draw-circle"/>
+<circle cx="239.5" cy="387.5" r="27" className="draw-circle"/>
+<circle cx="239.5" cy="387.5" r="20" transform="rotate(90 239.5 387.5)"   className="draw-circle"/>
+<circle cx="135" cy="344" r="26.5"   className="draw-circle"/>
+<circle cx="135.057" cy="344.361" r="20" transform="rotate(135 135.057 344.361)"   className="draw-circle"/>
+
+<circle cx="91.5" cy="239.5" r="27" className="draw-circle"/>
+<circle cx="91.5" cy="239.5" r="20" transform="rotate(180 91.5 239.5)"   className="draw-circle"/>
+<circle cx="135" cy="135" r="26.5"   className="draw-circle"/>
+<circle cx="135.057" cy="135.057" r="20" transform="rotate(-135 135.057 135.057)"   className="draw-circle"/>
+</svg>
+            </div>
+          </motion.div>
+          <motion.section className="intro-section">
+            <div className="sixty-div">
+              <motion.div
+                className="section-title"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 2.5, ease: "easeInOut" }}
+              >
+                a designing, developing chameleon.
+              </motion.div>
+              <motion.div className="section-content">
+                In the constantly evolving world of tech, adaptability is key.
+                <br />
+                <br />
+                Thus, I strive for the ability to meld styles, functionality,
+                and aesthetic to the environment, blending intuitive design and
+                technical expertise. <br />
+                <br />
+                Reach for more.
+              </motion.div>
+            </div>
+          </motion.section>
+          <motion.section className="portfolio-section">
+            <motion.div className="sixty-div">
+              <motion.div
+                className="section-title"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 2.5, ease: "easeInOut" }}
+              >
+                skills & expertise
+              </motion.div>
+              <motion.div className="section-content">
+                <motion.div className="skills-column">
+                  <div className="skill-title">core technologies</div>
+                  <ul className="skill-list">
+                    <li>React</li>
+                    <li>JavaScript</li> <li>HTML/CSS</li>
+                    <li>Java</li>
+                    <li>Python</li>
+                  </ul>
+                </motion.div>
+                <motion.div className="skills-column">
+                  <div className="skill-title">tools</div>
+                  <ul className="skill-list">
+                    <li>Tailwind</li>
+                    <li>Firebase</li>
+                    <li>Three.js</li>
+                    <li>Vite</li>
+                    <li>Git/Github</li>
+                  </ul>
+                </motion.div>
+              </motion.div>
+            </motion.div>
+          </motion.section>
+          <motion.section className="portfolio-section">
+            projects
+          </motion.section>
+          <motion.section className="portfolio-section">
+            experience
+          </motion.section>
+          <motion.section className="portfolio-section">contact</motion.section>
+        </motion.div>
+        // <div class="portfolio-container">
+        //   <section class="portfolio-section">Intro</section>
+        //   <section class="portfolio-section">Skills</section>
+        //   <section class="portfolio-section">Projects</section>
+        //   <section class="portfolio-section">Education</section>
+        //   <section class="portfolio-section">Contact</section>
+        // </div>
       )}
     </AnimatePresence>
   );
 }
 
-// <motion.div className="section-title">
-//               a designing, developing chameleon.
-//             </motion.div>
-//             <motion.div className="section-content">
-//               In the constantly evolving world of tech, I believe adaptability is key.
-//               <br />
-//               <br />
-//               Thus, I strive for the ability to meld styles, functionality,
-//               and aesthetic to the environment, blending intuitive design
-//               and technical expertise.
-//               <br />
-//               <br />
-//               idk
-//             </motion.div>
-
-// <motion.div className="section-title">
-//               skills & expertise
-//             </motion.div>
-//             <motion.div className="section-content">
-//               <motion.div className="skills-column">
-//                 <div className="skill-title">core technologies</div>
-//                 <ul className="skill-list">
-//                   <li>React</li>
-//                   <li>JavaScript</li>
-//                   <li>HTML/CSS</li>
-//                   <li>Java</li>
-//                   <li>Python</li>
-//                 </ul>
-//               </motion.div>
-//               <motion.div className="skills-column">
-//                 <div className="skill-title">tools</div>
-//                 <ul className="skill-list">
-//                   <li>Tailwind</li>
-//                   <li>Firebase</li>
-//                   <li>Three.js</li>
-//                   <li>Vite</li>
-//                   <li>Git/Github</li>
-//                 </ul>
-//               </motion.div>
-//               <motion.div className="skills-column">
-//                 <div className="skill-title">concepts & strengths</div>
-//                 <ul className="skill-list">
-//                   <li>design-first development</li>
-//                   <li>systems thinking</li>
-//                   <li>clean, scale-able code</li>
-//                   <li>problem solving through iterative experimentaion</li>
-//                 </ul>
-//               </motion.div>
-//             </motion.div>
-
+//
 // <div className="section-title">projects</div>
 // <div className="section-title">experience & education</div>
 // <div className="section-title">contact</div>
