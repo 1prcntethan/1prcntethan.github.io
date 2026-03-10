@@ -266,12 +266,7 @@ export default function Portfolio() {
           </motion.section>
           <motion.section className="portfolio-section">
             <motion.div className="sixty-div">
-              <motion.div
-                className="section-title"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 2.5, ease: "easeInOut" }}
-              >
+              <motion.div className="section-title">
                 skills & expertise (more witty)
               </motion.div>
               <motion.div className="section-content">
@@ -299,18 +294,16 @@ export default function Portfolio() {
             </motion.div>
           </motion.section>
           <motion.section className="portfolio-section">
-            <motion.div
-              className="section-title"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 2.5, ease: "easeInOut" }}
-            >
-              projects
+            <motion.div className="section-title">projects</motion.div>
+            <motion.div className="section-content">
+              WINGS, adaptstudy, school lost & found?
             </motion.div>
-            <motion.div className="section-content">WINGS</motion.div>
           </motion.section>
           <motion.section className="portfolio-section">
-            experience
+            <motion.div className="section-title">experience</motion.div>
+            <motion.div className="section-content">
+              mtv, clark, bellevue
+            </motion.div>
           </motion.section>
           <motion.section className="portfolio-section">contact</motion.section>
         </motion.div>

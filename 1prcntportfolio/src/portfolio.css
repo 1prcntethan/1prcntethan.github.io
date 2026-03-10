@@ -43,13 +43,20 @@
 
   animation: slide-out linear both;
   animation-timeline: --portfolio-scroll;
-  animation-range: 33% 45%;
+  animation-range: 0% 100%;
 }
 @keyframes slide-out {
-  0% {
+  33% {
     transform: translateX(0);
-  } 100% {
+  }
+  45% {
     transform: translateX(100%);
+  }
+  55% {
+    transform: translateX(100%);
+  }
+  75% {
+    transform: translateX(0);
   }
 }
 
@@ -279,7 +286,7 @@
   margin-top: 20px;
   line-height: 1.5;
   flex-direction: column;
-  width: 92%;
+  width: 100%;
   gap: 25px;
 }
 .fade-right {
@@ -331,7 +338,7 @@
   flex-direction: column;
   gap: 20px;
   color: #e0f1eb;
-  width: 90%;
+  width: calc(100% - 40px);
   background-color: #060606;
   border: 1px solid transparent;
   border-radius: 20px;
@@ -348,10 +355,29 @@
 
 .sixty-div {
   display: flex;
-  width: 61.8%;
+  width: 56.8%;
   flex-direction: column;
   gap: 40px;
   color: #e0f1eb;
+
+  animation: fill-out linear both;
+  animation-timeline: --portfolio-scroll;
+  animation-range: 0% 100%;
+}
+
+@keyframes fill-out {
+  33% {
+    width: 56.8%;
+  }
+  45% {
+    width: 100%;
+  }
+  55% {
+    width: 100%;
+  }
+  75% {
+    width: 56.8%;
+  }
 }
 
 @keyframes fade-out {
