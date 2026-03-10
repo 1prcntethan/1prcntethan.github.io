@@ -28,6 +28,7 @@ export default function Portfolio() {
           }}
         >
           <motion.div className="fixed-visual">
+            <div class="scroll-progress"></div>
             <div class="visual-container">
               <svg
                 width="479"
@@ -44,15 +45,21 @@ export default function Portfolio() {
                   className="draw-circle center1"
                 />
                 <circle
-                  cx="240"
-                  cy="239"
-                  r="82.5"
+                  cx="239.5"
+                  cy="239.5"
+                  r="28"
                   className="draw-circle center1"
                 />
                 <circle
                   cx="240"
                   cy="239"
-                  r="91.5"
+                  r="76.5"
+                  className="draw-circle center1"
+                />
+                <circle
+                  cx="240"
+                  cy="239"
+                  r="85.5"
                   className="draw-circle center1"
                 />
 
@@ -235,7 +242,8 @@ export default function Portfolio() {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 2.5, ease: "easeInOut" }}
               >
-                a designing, developing chameleon.
+                a designing, developing{" "}
+                <text className="rainbow-text">chameleon</text>.
               </motion.div>
               <motion.div className="section-content">
                 In the constantly evolving world of tech, adaptability is key.
@@ -255,14 +263,15 @@ export default function Portfolio() {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 2.5, ease: "easeInOut" }}
               >
-                skills & expertise
+                skills & expertise (more witty)
               </motion.div>
               <motion.div className="section-content">
                 <motion.div className="skills-column">
                   <div className="skill-title">core technologies</div>
                   <ul className="skill-list">
                     <li>React</li>
-                    <li>JavaScript</li> <li>HTML/CSS</li>
+                    <li>JavaScript</li> 
+                    <li>HTML/CSS</li>
                     <li>Java</li>
                     <li>Python</li>
                   </ul>

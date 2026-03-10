@@ -35,11 +35,33 @@
   width: 38.2%;
   height: 100vh;
   background-color: #060606;
+  border-left: 1px rgb(85, 85, 85) solid;
   z-index: 10;
-  border-left: 1px solid rgb(92, 92, 92);
   pointer-events: none;
   place-items: center;
   align-content: center;
+}
+
+.scroll-progress {
+  position: fixed;
+  top: -100%;
+  left: calc(61.8%);
+  height: 100vh;
+  width: 3px;
+  z-index: 10;
+  background-color: rgb(146, 196, 183);
+  animation: progress-track linear;
+  animation-timeline: --portfolio-scroll;
+  animation-range: 0% 100%;
+}
+
+@keyframes progress-track {
+  0% {
+    transform: translate(0, 0vh);
+  }
+  100% {
+    transform: translate(0, 100vh);
+  }
 }
 
 .visual-container {
@@ -50,32 +72,64 @@
 }
 
 .rotate-svg {
-  animation: rotate 28s linear infinite;
-  animation-delay: 2s;
+  opacity: 1;
+  animation-duration: 28s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-name: rotate;
+  animation-delay: 1s;
+}
+.rotate-svg {
+  animation-name: rotate, wheel-fade;
+  animation-duration: 28s, auto; 
+  animation-iteration-count: infinite, 1; 
+  animation-timeline: auto, --portfolio-scroll;
+  animation-range: auto, 0% 100%;
+}
+
+@keyframes wheel-fade {
+  0% {
+    opacity: 1;
+  }
+  10% {
+    opacity: 0;
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 0;
+  }
 }
 @keyframes rotate {
-  0%, 10% {
+  0%,
+  10% {
     transform: rotate(0deg);
   }
-  12.5%, 22.5% {
+  12.5%,
+  22.5% {
     transform: rotate(45deg);
   }
-  25%, 35% {
+  25%,
+  35% {
     transform: rotate(90deg);
   }
-  37.5%, 47.5% {
+  37.5%,
+  47.5% {
     transform: rotate(135deg);
   }
-  50%, 60% {
+  50%,
+  60% {
     transform: rotate(180deg);
   }
-  62.5%, 72.5% {
+  62.5%,
+  72.5% {
     transform: rotate(225deg);
   }
-  75%, 85% {
+  75%,
+  85% {
     transform: rotate(270deg);
   }
-  87.5%, 97.5% {
+  87.5%,
+  97.5% {
     transform: rotate(315deg);
   }
   100% {
@@ -112,28 +166,28 @@
 }
 
 .group1 {
-  animation-delay: 1.3s;
+  animation-delay: 1.2s;
 }
 .group2 {
-  animation-delay: 1.6s;
+  animation-delay: 1.4s;
 }
 .group3 {
-  animation-delay: 1.9s;
+  animation-delay: 1.6s;
 }
 .group4 {
-  animation-delay: 2.2s;
+  animation-delay: 1.8s;
 }
 .group5 {
-  animation-delay: 2.5s;
+  animation-delay: 2s;
 }
 .group6 {
-  animation-delay: 2.8s;
+  animation-delay: 2.2s;
 }
 .group7 {
-  animation-delay: 3.1s;
+  animation-delay: 2.4s;
 }
 .group8 {
-  animation-delay: 3.4s;
+  animation-delay: 2.6s;
 }
 
 @keyframes draw {
@@ -201,6 +255,20 @@
   width: 92%;
 }
 
+.rainbow-text {
+  margin-left: 12px;
+  margin-right: 2px;
+  animation: 6s infinite rainbow;
+}
+@keyframes rainbow {
+  0% { color: #dc34eb }
+  20% { color: #e64937 }
+  40% { color: #eba234 }
+  60% { color: #9ceb34 }
+  80% { color: #34ebbd }
+  100% { color: #dc34eb }
+}
+
 .skills-column {
   display: flex;
   flex-direction: column;
@@ -212,7 +280,7 @@
   border-radius: 20px;
   padding: 20px;
   height: 100%;
-  filter: drop-shadow(0px 0px 10px #222c29);
+  filter: drop-shadow(0px 0px 12px #1c2b27);
 }
 
 .skill-list {
@@ -233,7 +301,7 @@
   50% {
     opacity: 1;
   }
-  80% {
+  70% {
     filter: blur(0px);
   }
   100% {
