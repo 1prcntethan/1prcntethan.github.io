@@ -237,21 +237,30 @@ export default function Portfolio() {
           <motion.section className="intro-section">
             <div className="sixty-div">
               <motion.div
-                className="section-title"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
+                className="section-title fade-left"
+                initial={{ opacity: 0, x: -40 }}
+                animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 2.5, ease: "easeInOut" }}
               >
                 a designing, developing{" "}
-                <text className="rainbow-text">chameleon</text>.
+                <span className="rainbow-text">chameleon</span>.
               </motion.div>
-              <motion.div className="section-content">
-                In the constantly evolving world of tech, adaptability is key.
-                <br />
-                <br />
-                Thus, I strive for the ability to meld styles, functionality,
-                and aesthetic to the environment, blending intuitive design and
-                technical expertise. <br />
+              <motion.div
+                className="section-content fade-right"
+                initial={{ opacity: 0, x: 40 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 2.5, ease: "easeInOut" }}
+              >
+                <div>
+                  In the constantly evolving world of tech,{" "}
+                  <span className="accent-text">adaptability</span> is key.
+                </div>
+                <div>
+                  Thus, I strive for the ability to meld styles, functionality,
+                  and aesthetic to the environment, blending{" "}
+                  <span className="accent-text">intuitive design</span> and{" "}
+                  <span className="accent-text">technical expertise</span>.
+                </div>
               </motion.div>
             </div>
           </motion.section>
@@ -270,7 +279,7 @@ export default function Portfolio() {
                   <div className="skill-title">core technologies</div>
                   <ul className="skill-list">
                     <li>React</li>
-                    <li>JavaScript</li> 
+                    <li>JavaScript</li>
                     <li>HTML/CSS</li>
                     <li>Java</li>
                     <li>Python</li>
@@ -290,7 +299,15 @@ export default function Portfolio() {
             </motion.div>
           </motion.section>
           <motion.section className="portfolio-section">
-            projects
+            <motion.div
+              className="section-title"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 2.5, ease: "easeInOut" }}
+            >
+              projects
+            </motion.div>
+            <motion.div className="section-content">WINGS</motion.div>
           </motion.section>
           <motion.section className="portfolio-section">
             experience
@@ -308,8 +325,3 @@ export default function Portfolio() {
     </AnimatePresence>
   );
 }
-
-//
-// <div className="section-title">projects</div>
-// <div className="section-title">experience & education</div>
-// <div className="section-title">contact</div>

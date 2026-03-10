@@ -40,16 +40,27 @@
   pointer-events: none;
   place-items: center;
   align-content: center;
+
+  animation: slide-out linear both;
+  animation-timeline: --portfolio-scroll;
+  animation-range: 33% 45%;
+}
+@keyframes slide-out {
+  0% {
+    transform: translateX(0);
+  } 100% {
+    transform: translateX(100%);
+  }
 }
 
 .scroll-progress {
   position: fixed;
   top: -100%;
-  left: calc(61.8%);
+  left: 0;
   height: 100vh;
   width: 3px;
   z-index: 10;
-  background-color: rgb(146, 196, 183);
+  background-color: #a2d3bf;
   animation: progress-track linear;
   animation-timeline: --portfolio-scroll;
   animation-range: 0% 100%;
@@ -81,10 +92,12 @@
 }
 .rotate-svg {
   animation-name: rotate, wheel-fade;
-  animation-duration: 28s, auto; 
-  animation-iteration-count: infinite, 1; 
+  animation-duration: 28s, auto;
+  animation-iteration-count: infinite, 1;
   animation-timeline: auto, --portfolio-scroll;
-  animation-range: auto, 0% 100%;
+  animation-range:
+    auto,
+    0% 100%;
 }
 
 @keyframes wheel-fade {
@@ -230,6 +243,7 @@
 
 .section-title {
   display: flex;
+  flex-direction: row;
   background-color: transparent;
   font-family: Josefin Sans;
   font-weight: 100;
@@ -239,6 +253,20 @@
   text-shadow:
     0px 0px 16px rgb(255, 255, 255),
     0px 0px 32px rgb(255, 255, 255);
+}
+
+.fade-left {
+  animation: fade-left linear;
+  animation-timeline: --portfolio-scroll;
+  animation-range: cover 3% cover 10%;
+}
+@keyframes fade-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-40px);
+  }
 }
 
 .section-content {
@@ -251,8 +279,21 @@
   margin-top: 20px;
   line-height: 1.5;
   flex-direction: column;
-  gap: 40px;
   width: 92%;
+  gap: 25px;
+}
+.fade-right {
+  animation: fade-right linear;
+  animation-timeline: --portfolio-scroll;
+  animation-range: cover 3% cover 10%;
+}
+@keyframes fade-right {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(40px);
+  }
 }
 
 .rainbow-text {
@@ -261,12 +302,28 @@
   animation: 6s infinite rainbow;
 }
 @keyframes rainbow {
-  0% { color: #dc34eb }
-  20% { color: #e64937 }
-  40% { color: #eba234 }
-  60% { color: #9ceb34 }
-  80% { color: #34ebbd }
-  100% { color: #dc34eb }
+  0% {
+    color: #dc34eb;
+  }
+  20% {
+    color: #e64937;
+  }
+  40% {
+    color: #eba234;
+  }
+  60% {
+    color: #9ceb34;
+  }
+  80% {
+    color: #34ebbd;
+  }
+  100% {
+    color: #dc34eb;
+  }
+}
+
+.accent-text {
+  color: #78ffd2;
 }
 
 .skills-column {
@@ -293,7 +350,7 @@
   display: flex;
   width: 61.8%;
   flex-direction: column;
-  gap: 20px;
+  gap: 40px;
   color: #e0f1eb;
 }
 
