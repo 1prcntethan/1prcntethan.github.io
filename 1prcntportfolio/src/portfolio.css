@@ -123,6 +123,9 @@
   0% {
     opacity: 1;
   }
+  3% {
+    opacity: 1;
+  }
   8% {
     opacity: 0;
     transform: scale(1.05);
@@ -481,26 +484,37 @@
 }
 
 .project-card {
-  width: 100%;
+  width: calc(100% - 60px);
   height: 75vh;
-  background-color: black;
-  border: 1px solid white;
+  background-color: #060606;
+  border: 1px solid #4b4b4b;
+  border-radius: 25px;
   animation: stick-top linear both;
   animation-timeline: --portfolio-scroll;
+
+  padding-left: 30px;
+  padding-right: 30px;
+  transform-origin: center top;
+
+  position: relative;
+  overflow: hidden;
 }
 
 @keyframes stick-top {
   from {
-    transform: translateY(var(--start));
+    transform: translateY(var(--start)) scale(var(--scale-start, 1));
   }
   to {
-    transform: translateY(var(--end));
+    transform: translateY(var(--end)) scale(var(--scale-end, 1));
   }
 }
 
 .project-card:nth-child(1) {
   --start: 0vh;
   --end: 297.5vh;
+
+  --scale-start: 1;
+  --scale-end: 0.9;
 
   animation-range: 28% 70%;
   z-index: 1;
@@ -509,6 +523,9 @@
   --start: 30vh;
   --end: 224vh;
 
+  --scale-start: 1;
+  --scale-end: 0.94;
+
   animation-range: 42.5% 70%;
   z-index: 2;
 }
@@ -516,6 +533,71 @@
   --start: 60vh;
   --end: 150.5vh;
 
+  --scale-start: 1;
+  --scale-end: 0.97;
+
   animation-range: 57% 70%;
   z-index: 3;
+}
+
+.project-card:hover .card-bg {
+  transform: scale(1.08);
+}
+
+.project-card:hover .card-title {
+  top: calc(100% - 53px);
+  left: 30px;
+  bottom: 30px;
+  transform: translate(0, 0);
+  font-size: 24px;
+}
+.project-card:hover .card-info {
+  opacity: 1;
+  filter: blur(0px);
+  transform: translateX(0);
+}
+
+.card-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.7s ease;
+}
+
+.card-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, -50%);
+  font-size: 32px;
+  width: fit-content;
+  height: fit-content;
+
+  transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.card-info {
+  width: fit-content;
+  position: absolute;
+  right: 30px;
+  transform: translateX(40px);
+  bottom: 30px;
+  opacity: 0;
+  filter: blur(12px);
+  transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.card-tags {
+  position: absolute;
+  background-color: #262626;
+  padding: 12px 30px;
+  align-items: center;
+  justify-items: center;
+  text-align: center;
+  left: 0;
+  top: 0;
+  display: flex;
+  gap: 10px;
 }

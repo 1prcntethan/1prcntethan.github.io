@@ -310,7 +310,13 @@ export default function Portfolio() {
                 <motion.div className="project-title">projects</motion.div>
                 <div className="project-wrapper">
                   <div className="project-card">
-                    Project 1
+                    <div className="card-bg"></div>
+                    <div className="card-title">wings</div>
+                    <div className="card-info">description goes here</div>
+                    <div className="card-tags">
+                      <span>React</span>
+                      <span>Firebase</span>
+                    </div>
                   </div>
                   <div className="project-card">
                     Project 2
