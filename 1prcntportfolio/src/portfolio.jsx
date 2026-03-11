@@ -13,6 +13,18 @@ import "./portfolio.css";
 export default function Portfolio() {
   const [portfolioVisible, setPortfolioVisible] = useState(true);
 
+  const projectRef = useRef(null);
+
+  const { scrollYProgress } = useScroll({
+    target: projectRef,
+    offset: ["start start", "end end"],
+  });
+
+  const card1 = useTransform(scrollYProgress, [0, 1], [0, -300]);
+  const card2 = useTransform(scrollYProgress, [0.2, 1], [300, -200]);
+  const card3 = useTransform(scrollYProgress, [0.4, 1], [600, -100]);
+  const card4 = useTransform(scrollYProgress, [0.6, 1], [900, 0]);
+
   return (
     <AnimatePresence>
       {portfolioVisible && (
@@ -293,11 +305,21 @@ export default function Portfolio() {
               </motion.div>
             </motion.div>
           </motion.section>
-          <motion.section className="portfolio-section">
-            <motion.div className="section-title">projects</motion.div>
-            <motion.div className="section-content">
-              WINGS, adaptstudy, school lost & found?
-            </motion.div>
+          <motion.section className="project-section">
+              <motion.div className="sixty-div">
+                <motion.div className="project-title">projects</motion.div>
+                <div className="project-wrapper">
+                  <div className="project-card">
+                    Project 1
+                  </div>
+                  <div className="project-card">
+                    Project 2
+                  </div>
+                  <div className="project-card">
+                    Project 3
+                  </div>
+                </div>
+              </motion.div>
           </motion.section>
           <motion.section className="portfolio-section">
             <motion.div className="section-title">experience</motion.div>
