@@ -312,8 +312,10 @@ export default function Portfolio() {
                   <div className="project-card">
                     <div className="card-bg"></div>
                     <div className="card-title">wings</div>
-                    <div className="card-info">description goes here</div>
+                    <div className="card-info">all-in-one calisthenics guide with skill tracker and rank system.</div>
                     <div className="card-tags">
+                      <span>HTML/CSS</span>
+                      <span>JavaScript</span>
                       <span>React</span>
                       <span>Firebase</span>
                     </div>
