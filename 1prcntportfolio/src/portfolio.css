@@ -483,6 +483,10 @@
   animation-range: 28% 70%;
 }
 
+#wings-font {
+  font-family: Major Mono Display;
+}
+
 .project-card {
   width: calc(100% - 60px);
   height: 75vh;
@@ -556,13 +560,18 @@
 .project-card:hover .card-info {
   opacity: 1;
   filter: blur(0px);
-  filter: drop-shadow(0px 0px 12px #000000) drop-shadow(0px 0px 8px #000000) drop-shadow(0px 0px 12px #000000) drop-shadow(0px 0px 16px #000000);
   transform: translateX(0);
 }
 .project-card:hover .card-tags {
   opacity: 1;
   filter: blur(0px);
   transform: translateY(-1px);
+}
+
+.project-card:hover .card-links {
+  opacity: 1;
+  filter: blur(0px);
+  transform: translateY(0px);
 }
 
 .card-bg {
@@ -573,7 +582,7 @@
   transition: all 0.7s ease;
   opacity: 0.5;
   background-repeat: no-repeat;
-  background-image: url("wingsbg.png");
+  background-image: url("wingsbg2.png");
   filter: blur(8px);
 }
 
@@ -595,10 +604,16 @@
   position: absolute;
   right: 30px;
   transform: translateX(40px);
-  bottom: 30px;
+  bottom: 20px;
   opacity: 0;
   filter: blur(10px);
   transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  background-color: #060606;
+  padding: 10px;
+  border: 1px #777777 solid;
+  border-radius: 9999px;
+  font-weight: 100;
+  font-size: 18px;
 }
 
 .card-tags {
@@ -613,9 +628,29 @@
   display: flex;
   width: 100%;
   gap: 20px;
+  font-weight: 100;
+  font-size: 18px;
   border-bottom: 1px #777777 solid;
   transform: translateY(-40px);
   opacity: 0;
   filter: blur(12px);
   transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.card-links {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  right: 30px;
+  top: 10px;
+  align-items: center;
+  transform: translateY(-40px);
+  opacity: 0;
+  filter: blur(10px);
+  transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.project-link:hover {
+  transform: scale(1.15);
 }

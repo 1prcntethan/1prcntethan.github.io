@@ -306,28 +306,35 @@ export default function Portfolio() {
             </motion.div>
           </motion.section>
           <motion.section className="project-section">
-              <motion.div className="sixty-div">
-                <motion.div className="project-title">projects</motion.div>
-                <div className="project-wrapper">
-                  <div className="project-card">
-                    <div className="card-bg"></div>
-                    <div className="card-title">wings</div>
-                    <div className="card-info">all-in-one calisthenics guide with skill tracker and rank system.</div>
-                    <div className="card-tags">
-                      <span>HTML/CSS</span>
-                      <span>JavaScript</span>
-                      <span>React</span>
-                      <span>Firebase</span>
-                    </div>
+            <motion.div className="sixty-div">
+              <motion.div className="project-title">projects</motion.div>
+              <div className="project-wrapper">
+                <div className="project-card">
+                  <div className="card-bg"></div>
+                  <div className="card-title" id="wings-font">Wings.</div>
+                  <div className="card-info">
+                    all-in-one calisthenics guide with personalized skill tracker and rank
+                    system.
                   </div>
-                  <div className="project-card">
-                    Project 2
+                  <div className="card-tags">
+                    <span>HTML/CSS</span>
+                    <span>JavaScript</span>
+                    <span>React</span>
+                    <span>Firebase</span>
                   </div>
-                  <div className="project-card">
-                    Project 3
+                  <div className="card-links">
+                    <a href="https://github.com/1prcntethan/wings">
+                      <img src="github.svg" className="project-link"></img>
+                    </a>
+                    <a href="https://wingssw.com/">
+                      <img src="linkdemo.svg" className="project-link"></img>
+                    </a>
                   </div>
                 </div>
-              </motion.div>
+                <div className="project-card">Project 2</div>
+                <div className="project-card">Project 3</div>
+              </div>
+            </motion.div>
           </motion.section>
           <motion.section className="portfolio-section">
             <motion.div className="section-title">experience</motion.div>
