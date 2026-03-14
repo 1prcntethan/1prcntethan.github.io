@@ -13,18 +13,6 @@ import "./portfolio.css";
 export default function Portfolio() {
   const [portfolioVisible, setPortfolioVisible] = useState(true);
 
-  const projectRef = useRef(null);
-
-  const { scrollYProgress } = useScroll({
-    target: projectRef,
-    offset: ["start start", "end end"],
-  });
-
-  const card1 = useTransform(scrollYProgress, [0, 1], [0, -300]);
-  const card2 = useTransform(scrollYProgress, [0.2, 1], [300, -200]);
-  const card3 = useTransform(scrollYProgress, [0.4, 1], [600, -100]);
-  const card4 = useTransform(scrollYProgress, [0.6, 1], [900, 0]);
-
   return (
     <AnimatePresence>
       {portfolioVisible && (
@@ -59,7 +47,7 @@ export default function Portfolio() {
                 <circle
                   cx="239.5"
                   cy="239.5"
-                  r="28"
+                  r="28.5"
                   className="draw-circle center1"
                 />
                 <circle
@@ -85,7 +73,7 @@ export default function Portfolio() {
                 <circle
                   cx="386.5"
                   cy="239.5"
-                  r="27"
+                  r="29"
                   className="draw-circle group1"
                 />
                 <circle
@@ -106,7 +94,7 @@ export default function Portfolio() {
                 <circle
                   cx="344"
                   cy="344"
-                  r="26.5"
+                  r="28.5"
                   className="draw-circle group2"
                 />
                 <circle
@@ -127,7 +115,7 @@ export default function Portfolio() {
                 <circle
                   cx="239.5"
                   cy="387.5"
-                  r="27"
+                  r="29"
                   className="draw-circle group3"
                 />
                 <circle
@@ -148,7 +136,7 @@ export default function Portfolio() {
                 <circle
                   cx="135"
                   cy="344"
-                  r="26.5"
+                  r="28.5"
                   className="draw-circle group4"
                 />
                 <circle
@@ -169,7 +157,7 @@ export default function Portfolio() {
                 <circle
                   cx="91.5"
                   cy="239.5"
-                  r="27"
+                  r="29"
                   className="draw-circle group5"
                 />
                 <circle
@@ -190,7 +178,7 @@ export default function Portfolio() {
                 <circle
                   cx="135"
                   cy="135"
-                  r="26.5"
+                  r="28.5"
                   className="draw-circle group6"
                 />
                 <circle
@@ -211,7 +199,7 @@ export default function Portfolio() {
                 <circle
                   cx="239.5"
                   cy="91.5"
-                  r="27"
+                  r="29"
                   className="draw-circle group7"
                 />
                 <circle
@@ -232,7 +220,7 @@ export default function Portfolio() {
                 <circle
                   cx="344"
                   cy="135"
-                  r="26.5"
+                  r="28.5"
                   transform="rotate(90 344 135)"
                   className="draw-circle group8"
                 />

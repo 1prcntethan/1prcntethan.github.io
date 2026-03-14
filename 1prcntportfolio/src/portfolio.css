@@ -489,6 +489,8 @@
 
 .project-card {
   width: calc(100% - 60px);
+  max-width: 1400px;
+  justify-self: center;
   height: 75vh;
   background-color: #060606;
   border: 1px solid #777777;
