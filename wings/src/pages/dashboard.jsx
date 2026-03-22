@@ -216,6 +216,12 @@ export function Dashboard() {
         </p>
       </div>
 
+      <div className="streak-container">
+        <div className="streak-display">
+          <button className="workout-link-btn">view workout log</button>
+        </div>
+      </div>
+
       <div className="rank-container">
         <div className="rank-display">
           <Link to="/howtouseguide">
