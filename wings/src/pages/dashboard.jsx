@@ -217,11 +217,13 @@ export function Dashboard() {
       </div>
 
       <div className="streak-container">
-        <div className="streak-display">
-          <button className="workout-link-btn">view workout log</button>
+        <div className="workout-link-display">
+          <Link to="/workoutlog" className="workout-link">
+            <div className="workout-link-btn">View workout log</div>
+          </Link>
         </div>
       </div>
-
+      <br />
       <div className="rank-container">
         <div className="rank-display">
           <Link to="/howtouseguide">

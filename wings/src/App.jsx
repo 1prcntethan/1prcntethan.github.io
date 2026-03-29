@@ -78,6 +78,7 @@ import { PullRmp } from "./pages/guides/pullroadmap";
 import { BeginnerWorkout } from "./pages/guides/beginnerworkout";
 import { FrontLeverGuide } from "./pages/guides/frontleverguide";
 import { IntermediateWorkout } from "./pages/guides/intermediateworkout";
+import { WorkoutLog } from "./pages/workoutlog";
 
 
 function ScrollToTop({ children }) {
@@ -110,6 +111,7 @@ function App() {
             <Route path="/howtouseguide" element={<HowTo />} />
             <Route path="/about" element={<About />} />
             <Route path="/disclaimer" element={<Disclaimer />} />
+            <Route path="/workoutlog" element={<WorkoutLog />} />
             <Route path="/tutorials/incomplete" element={<Incomplete />} />
 
             <Route path="/login" element={currentUser ? <Navigate to="/" /> : <LoginPage />} />

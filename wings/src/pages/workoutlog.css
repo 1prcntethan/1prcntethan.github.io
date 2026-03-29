@@ -1,0 +1,379 @@
+/* ═══════════════════════════════════════════════════════
+   WORKOUT LOG  — append to dashboard.css
+═══════════════════════════════════════════════════════ */
+
+/* ── form layout ─────────────────────────────────────── */
+.wl-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 40px;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.wl-form-top {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.5rem;
+}
+
+.wl-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.wl-label {
+  font-size: 0.75rem;
+  opacity: 0.6;
+  text-transform: lowercase;
+  letter-spacing: 0.05em;
+}
+
+/* ── inputs ──────────────────────────────────────────── */
+.wl-input {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+  padding: 0.4rem 0.6rem;
+  color: inherit;
+  font-family: inherit;
+  font-size: 0.85rem;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.wl-input:focus {
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.wl-input--name {
+  flex: 1 140px;
+  min-width: 0;
+}
+
+.wl-input--small {
+  width: 100px;
+  flex-shrink: 0;
+  text-align: center;
+}
+
+.wl-input--notes {
+  flex: 1 1 100px;
+  min-width: 0;
+}
+
+/* ── exercise rows ───────────────────────────────────── */
+.wl-exercise-row {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.wl-exercise-row--header {
+  font-size: 0.72rem;
+  text-transform: lowercase;
+  letter-spacing: 0.08em;
+  pointer-events: none;
+  margin-bottom: -0.25rem;
+  font-family: Major Mono Display;
+}
+
+.wl-exercise-row--header .wl-input {
+  border: none;
+  background: transparent;
+  padding-left: 0;
+  
+}
+
+/* ── sections ────────────────────────────────────────── */
+.wl-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 0.75rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.wl-section-header {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  margin-bottom: 0.25rem;
+}
+
+.wl-section-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: lowercase;
+  letter-spacing: 0.1em;
+}
+
+.wl-section-hint {
+  font-size: 0.72rem;
+  opacity: 0.45;
+  font-style: italic;
+  flex: 1;
+}
+
+.wl-section-limit {
+  font-size: 0.68rem;
+  opacity: 0.4;
+  text-transform: lowercase;
+  letter-spacing: 0.06em;
+}
+
+/* ── error ───────────────────────────────────────────── */
+.wl-error {
+  color: #ff6b6b;
+  font-size: 0.8rem;
+  margin: 0.25rem 0;
+}
+
+/* ── logs list ───────────────────────────────────────── */
+.wl-logs-header {
+  font-size: 0.75rem;
+  text-transform: lowercase;
+  opacity: 1;
+  margin-top: 30px;
+  margin-bottom: 0.75rem;
+}
+
+.wl-log-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+/* ── log card ────────────────────────────────────────── */
+.wl-card {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.wl-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.65rem 0.9rem;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.wl-card-header:hover {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.wl-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.wl-card-date {
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.wl-card-category {
+  font-size: 0.7rem;
+  text-transform: lowercase;
+  letter-spacing: 0.1em;
+  padding: 0.15rem 0.5rem;
+  border-radius: 3px;
+  font-weight: 600;
+}
+
+/* category colors — tweak to match your palette */
+.wl-cat--push {
+  background: rgba(255, 120, 80, 0.2);
+  color: #ff7850;
+}
+.wl-cat--pull {
+  background: rgba(80, 180, 255, 0.2);
+  color: #50b4ff;
+}
+.wl-cat--legs {
+  background: rgba(120, 255, 130, 0.2);
+  color: #78ff82;
+}
+.wl-cat--full-body {
+  background: rgba(200, 150, 255, 0.2);
+  color: #c896ff;
+}
+.wl-cat--conditioning {
+  background: rgba(255, 210, 80, 0.2);
+  color: #ffd250;
+}
+
+.wl-card-toggle {
+  font-size: 0.65rem;
+  opacity: 0.5;
+}
+
+.wl-card-body {
+  padding: 0 0.9rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.wl-card-section-title {
+  font-size: 0.68rem;
+  text-transform: lowercase;
+  letter-spacing: 0.1em;
+  opacity: 0.75;
+  margin-top: 0.5rem;
+  margin-bottom: 0.2rem;
+}
+
+.wl-card-exercise {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.wl-card-ex-name {
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.wl-card-ex-detail {
+  font-size: 0.75rem;
+  opacity: 0.55;
+}
+
+/* ── responsive ──────────────────────────────────────── */
+@media (max-width: 540px) {
+  .wl-exercise-row {
+    flex-wrap: wrap;
+  }
+
+  .wl-input--notes {
+    flex-basis: 100%;
+  }
+
+  .wl-form-top {
+    flex-direction: column;
+  }
+}
+
+.workout-welcome {
+  display: flex;
+  flex-direction: row;
+  font-size: 24px;
+  padding: 20px;
+
+  @media (max-width: 1000px) {
+    font-size: 20px;
+  }
+  @media (max-width: 768px) {
+    font-size: 16px;
+    flex-direction: column;
+  }
+}
+
+.workout-welcome__email {
+  font-family: Fira Sans;
+  font-weight: 200;
+
+  @media (max-width: 768px) {
+    margin-top: 10px;
+  }
+}
+
+.workout-display {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #252525;
+  border: solid 1px #333333;
+  border-radius: 12px;
+  gap: 20px;
+  width: 75%;
+  justify-self: center;
+  padding: 30px;
+  margin-top: 30px;
+
+  @media (max-width: 550px) {
+    flex-direction: column;
+    width: calc(100% - 90px);
+  }
+}
+
+.workout-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: calc(100% - 60px);
+  padding: 30px;
+}
+
+.log-workout {
+  display: flex;
+  background-color: #b66da3;
+  color: white;
+  border: 1px solid #333333;
+  border-radius: 12px;
+  margin: 0;
+  padding: 0;
+  width: 175px;
+  height: 50px;
+  font-size: 16px;
+  font-family: Major Mono Display;
+  font-weight: 200;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-end;
+  cursor: pointer;
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+    width: 150px;
+    height: 40px;
+    justify-self: center;
+    align-self: center;
+  }
+}
+
+.category-selector {
+  display: flex;
+  width: 275px;
+  height: 33px;
+  background-color: #111111;
+  color: white;
+  font-family: Major Mono Display;
+  font-size: 14px;
+  font-weight: 200;
+  border: 1px solid rgb(255, 255, 255, 0.5);
+  border-radius: 4px;
+  justify-self: center;
+  align-self: center;
+  padding-left: 10px;
+  @media (max-width: 1000px) {
+    font-size: 14px;
+    width: 235px;
+    height: 40px;
+  }
+  @media (max-width: 768px) {
+    font-size: 12px;
+    width: 200px;
+    height: 35px;
+  }
+}
+
+.category-selector option {
+  background-color: #111111;
+  color: white;
+  font-weight: 200;
+}
+
+.category-selector option:hover {
+  background-color: none;
+}

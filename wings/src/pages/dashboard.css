@@ -249,8 +249,6 @@
   width: 100%;
   justify-content: center;
   align-items: center;
-
-  
 }
 
 .rank-display {
@@ -272,7 +270,7 @@
 
 .rank-display > a {
   height: 0;
-} 
+}
 
 .rank-top {
   display: flex;
@@ -284,7 +282,6 @@
   padding-bottom: 10px;
 
   @media (max-width: 768px) {
-
   }
 }
 
@@ -413,8 +410,62 @@
 }
 
 .donate-link {
-  color:rgb(196, 33, 218);
+  color: rgb(196, 33, 218);
   text-decoration: none;
   margin-left: 3px;
   margin-right: 3px;
+}
+
+.workout-link-btn {
+  align-self: center;
+  display: flex;
+  background-color: #b66da3;
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-size: 18px;
+  font-family: Fira Sans;
+  font-weight: 200;
+  padding: 10px 20px;
+  cursor: pointer;
+  align-self: center;
+
+  @media (max-width: 550px) {
+    font-size: 14px;
+  }
+}
+
+.workout-link {
+  color: white;
+  text-decoration: none;
+  width: 50%;
+  justify-items: center;
+  align-self: center;
+  align-items: center;
+
+  @media (max-width: 550px) {
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+  }
+}
+
+.workout-link-display {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  background-color: #252525;
+  border: solid 1px #333333;
+  border-radius: 12px;
+  gap: 20px;
+  width: 75%;
+  justify-self: center;
+  padding: 30px;
+  margin-top: 30px;
+
+  @media (max-width: 550px) {
+    flex-direction: column;
+    width: calc(100% - 90px);
+    font-size: 12px;
+  }
 }

@@ -4,8 +4,30 @@ import {
   updateDoc,
   setDoc,
   serverTimestamp,
+  collection,
+  addDoc,
+  query,
+  orderBy,
+  limit,
+  getDocs,
 } from "firebase/firestore";
 import { db } from "./firebase";
+
+export async function saveWorkoutLog(uid, workoutData) {
+  const logsRef = collection(db, "users", uid, "workoutLogs");
+  const docRef = await addDoc(logsRef, {
+    ...workoutData,
+    loggedAt: serverTimestamp(),
+  });
+  return docRef.id;
+}
+
+export async function getWorkoutLogs(uid, limitCount = 20) {
+  const logsRef = collection(db, "users", uid, "workoutLogs");
+  const q = query(logsRef, orderBy("loggedAt", "desc"), limit(limitCount));
+  const snap = await getDocs(q);
+  return snap.docs.map((d) => ({ id: d.id, ...d.data() }));
+}
 
 export async function ensureUserDoc(user) {
   const userRef = doc(db, "users", user.uid);
@@ -104,8 +126,7 @@ export async function logWorkout(uid, type) {
   yesterdayDate.setDate(yesterdayDate.getDate() - 1);
   const yesterdayStr = formatDate(yesterdayDate);
 
-  const newCurrent =
-    streak.lastLog === yesterdayStr ? streak.current + 1 : 1;
+  const newCurrent = streak.lastLog === yesterdayStr ? streak.current + 1 : 1;
 
   const newLongest = Math.max(streak.longest, newCurrent);
 
@@ -120,7 +141,7 @@ export async function logWorkout(uid, type) {
   };
 
   await updateDoc(ref, updates);
-  
+
   return {
     streak: updates.streak,
     workout: type === "workout" ? workoutCounter + 1 : workoutCounter,
