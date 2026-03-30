@@ -29,13 +29,13 @@ const SECTIONS = [
   {
     key: "primary",
     label: "Primary Skill",
-    max: 1,
+    max: 2,
     hint: "e.g. planche attempts, handstand practice",
   },
   {
     key: "secondary",
     label: "Secondary",
-    max: 2,
+    max: 3,
     hint: "e.g. planche leans, tuck planche holds",
   },
   {
@@ -83,7 +83,10 @@ async function getWorkoutLogs(uid, limitCount = 20) {
 
 // ─── sub-components ────────────────────────────────────────────────────────────
 
-function ExerciseRow({ exercise, onChange, isHold }) {
+// ── ExerciseRow: both inputs show combined placeholder ──────────────────────
+// Replace your existing ExerciseRow with this
+
+function ExerciseRow({ exercise, onChange }) {
   return (
     <div className="wl-exercise-row">
       <input
@@ -100,25 +103,12 @@ function ExerciseRow({ exercise, onChange, isHold }) {
         value={exercise.sets}
         onChange={(e) => onChange("sets", e.target.value)}
       />
-      {isHold ? (
-        <input
-          className="wl-input wl-input--small"
-          placeholder="hold (s)"
-          type="number"
-          min="1"
-          value={exercise.holdTime}
-          onChange={(e) => onChange("holdTime", e.target.value)}
-        />
-      ) : (
-        <input
-          className="wl-input wl-input--small"
-          placeholder="reps"
-          type="number"
-          min="1"
-          value={exercise.reps}
-          onChange={(e) => onChange("reps", e.target.value)}
-        />
-      )}
+      <input
+        className="wl-input wl-input--hold"
+        placeholder="reps / hold (s)"
+        value={exercise.reps}
+        onChange={(e) => onChange("reps", e.target.value)}
+      />
       <input
         className="wl-input wl-input--notes"
         placeholder="notes (optional)"
@@ -180,14 +170,13 @@ function LogCard({ log }) {
                       <span className="wl-card-ex-name">{e.name}</span>
                       <span className="wl-card-ex-detail">
                         {e.sets && `${e.sets} sets`}
-                        {e.reps && ` × ${e.reps} reps`}
-                        {e.holdTime && ` × ${e.holdTime}s hold`}
+                        {e.reps && ` × ${e.reps}`}
                         {e.notes && ` — ${e.notes}`}
                       </span>
                     </div>
                   ))}
               </div>
-            ) : null
+            ) : null,
           )}
         </div>
       )}
@@ -225,7 +214,7 @@ export function WorkoutLog() {
   function updateExercise(sectionKey, index, field, value) {
     setFormData((prev) => {
       const updatedSection = prev.sections[sectionKey].map((ex, i) =>
-        i === index ? { ...ex, [field]: value } : ex
+        i === index ? { ...ex, [field]: value } : ex,
       );
       return {
         ...prev,
@@ -240,7 +229,7 @@ export function WorkoutLog() {
 
     // require at least one exercise name filled in
     const hasAny = SECTIONS.some((s) =>
-      formData.sections[s.key].some((e) => e.name.trim() !== "")
+      formData.sections[s.key].some((e) => e.name.trim() !== ""),
     );
     if (!hasAny) {
       setSaveError("Add at least one exercise before saving.");
@@ -277,7 +266,10 @@ export function WorkoutLog() {
 
       {/* ── new log button ── */}
       <div className="workout-container">
-        <div className="workout-display" style={{ justifyContent: "space-between", alignItems: "center" }}>
+        <div
+          className="workout-display"
+          style={{ justifyContent: "space-between", alignItems: "center" }}
+        >
           <p style={{ margin: 0, fontFamily: "Fira Sans", fontWeight: "200" }}>
             Log a new workout session with structured exercise tracking.
           </p>
@@ -289,12 +281,23 @@ export function WorkoutLog() {
           </button>
         </div>
       </div>
+      <p className="workout-caption" style={{ fontWeight: "200" }}>
+        Don't know how to structure your workout? Check out the {" "}
+        <Link to="/training/beginnerworkout" className="log-caption-link">
+          beginner workout guide
+        </Link>{" "}
+        or the{" "}
+        <Link to="/training/beginnerworkout" className="log-caption-link">
+
+          intermediate workout guide
+        </Link>{" "}
+        to learn how to craft a successful workout.
+      </p>
 
       {/* ── log form ── */}
       {showForm && (
         <div className="workout-container">
           <div className="wl-form">
-
             {/* date + category row */}
             <div className="wl-form-top">
               <div className="wl-field">
@@ -328,10 +331,10 @@ export function WorkoutLog() {
 
             {/* column headers */}
             <div className="wl-exercise-row wl-exercise-row--header">
-              <span className="wl-input wl-input--name">Exercise</span>
-              <span className="wl-input wl-input--small">Sets</span>
-              <span className="wl-input wl-input--small">Reps / Hold</span>
-              <span className="wl-input wl-input--notes">Notes</span>
+              <span className="wl-col--name">exercise</span>
+              <span className="wl-col--small">sets</span>
+              <span className="wl-col--hold">reps / hold (s)</span>
+              <span className="wl-col--notes">notes</span>
             </div>
 
             {/* sections */}
@@ -366,7 +369,14 @@ export function WorkoutLog() {
         {logsLoading ? (
           <p style={{ padding: "1rem" }}>loading...</p>
         ) : logs.length === 0 ? (
-          <p style={{ padding: "1rem", opacity: 0.8, fontFamily: "Fira Sans", fontWeight: "200"}}>
+          <p
+            style={{
+              padding: "1rem",
+              opacity: 0.8,
+              fontFamily: "Fira Sans",
+              fontWeight: "200",
+            }}
+          >
             No workouts logged yet. Hit <i> + new workout </i> to get started.
           </p>
         ) : (
