@@ -191,7 +191,7 @@ export function Dashboard() {
                 setWorkoutCounter(result.workout);
               }}
             >
-              {loggedToday ? "Logged today" : "Log workout"}
+              {loggedToday ? "logged today" : "log workout"}
             </button>
             <button
               className="log-streak"
@@ -204,7 +204,7 @@ export function Dashboard() {
                 setRestCounter(result.rest);
               }}
             >
-              {loggedToday ? "Logged today" : "Log rest day"}
+              {loggedToday ? "logged today" : "log rest day"}
             </button>
             <div className="streak-rank-points">+{totalStreakRP} Rp</div>
           </div>
@@ -219,7 +219,7 @@ export function Dashboard() {
       <div className="streak-container">
         <div className="workout-link-display">
           <Link to="/workoutlog" className="workout-link">
-            <div className="workout-link-btn">View workout log</div>
+            <div className="workout-link-btn">view workout log</div>
           </Link>
         </div>
       </div>
