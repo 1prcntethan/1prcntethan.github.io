@@ -254,20 +254,20 @@
 
 /* category colors — tweak to match your palette */
 .wl-cat--push {
-  background: rgba(255, 120, 80, 0.2);
-  color: #ff7850;
+  background: rgba(226, 80, 255, 0.2);
+  color: #dc50ff;
 }
 .wl-cat--pull {
-  background: rgba(80, 180, 255, 0.2);
-  color: #50b4ff;
+  background: rgba(144, 255, 80, 0.2);
+  color: #82ff50bb;
 }
 .wl-cat--legs {
-  background: rgba(120, 255, 130, 0.2);
-  color: #78ff82;
+  background: rgba(120, 174, 255, 0.2);
+  color: #78a7ff;
 }
 .wl-cat--full-body {
-  background: rgba(200, 150, 255, 0.2);
-  color: #c896ff;
+  background: rgba(255, 180, 150, 0.2);
+  color: #df6546;
 }
 .wl-cat--conditioning {
   background: rgba(255, 210, 80, 0.2);

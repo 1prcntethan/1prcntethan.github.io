@@ -226,6 +226,11 @@
 .log-streak:disabled {
   background-color: #3d1432;
 }
+.log-streak:hover {
+  transition: all 0.2s ease-in-out;
+  transform: scale(1.05);
+}
+
 
 .streak-rank-points {
   align-self: flex-end;
@@ -436,6 +441,10 @@
   @media (max-width: 550px) {
     font-size: 14px;
   }
+}
+.workout-link-btn:hover {
+  transition: all 0.2s ease-in-out;
+  transform: scale(1.05);
 }
 
 .workout-link {
