@@ -452,8 +452,10 @@
   font-size: 14px;
   align-content: center;
   justify-self: center;
+  text-align: center;
   @media (max-width: 768px) {
     font-size: 12px;
+    margin-top: 20px;
   }
 }
 
