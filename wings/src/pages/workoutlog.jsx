@@ -280,8 +280,7 @@ export function WorkoutLog() {
             {showForm ? "cancel" : "+ new workout"}
           </button>
         </div>
-      </div>
-      <p className="workout-caption" style={{ fontWeight: "200" }}>
+        <p className="workout-caption" style={{ fontWeight: "200" }}>
         Don't know how to structure your workout? Check out the {" "}
         <Link to="/training/beginnerworkout" className="log-caption-link">
           beginner workout guide
@@ -293,6 +292,8 @@ export function WorkoutLog() {
         </Link>{" "}
         to learn how to craft a successful workout.
       </p>
+      </div>
+      
 
       {/* ── log form ── */}
       {showForm && (

@@ -441,6 +441,8 @@
 
   @media (max-width: 550px) {
     font-size: 14px;
+    width: auto;
+    text-align: center;
   }
 }
 .workout-link-btn:hover {
@@ -461,7 +463,7 @@
   }
 
   @media (max-width: 550px) {
-    width: 100%;
+    width: auto;
     text-align: center;
     font-size: 12px;
   }
