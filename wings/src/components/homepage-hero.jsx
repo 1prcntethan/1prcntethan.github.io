@@ -1840,7 +1840,7 @@ const HomepageHero = () => {
           {!isInStandaloneMode &&
             (isIOS ? (
               <>
-                tap <strong>share →</strong> "add to home screen" to install.
+                tap <strong style={{ color: "rgb(196, 33, 218)" }}>share (3 dots) → "add to home screen" </strong> to install.
               </>
             ) : (
               <button
