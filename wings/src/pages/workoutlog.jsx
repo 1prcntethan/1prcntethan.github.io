@@ -139,7 +139,7 @@ function SectionBlock({ section, exercises, onChange, isHold }) {
   );
 }
 
-function LogCard({ log }) {
+function LogCard({ log, onCopy }) {
   const [open, setOpen] = useState(false);
 
   const hasExercises = (sectionKey) =>
@@ -154,7 +154,18 @@ function LogCard({ log }) {
             {log.category}
           </span>
         </div>
-        <span className="wl-card-toggle">{open ? "▲" : "▼"}</span>
+        <div className="wl-card-actions">
+          <button
+            className="wl-copy-btn"
+            onClick={(e) => {
+              e.stopPropagation();
+              onCopy(log);
+            }}
+          >
+            copy
+          </button>
+          <span className="wl-card-toggle">{open ? "▲" : "▼"}</span>
+        </div>
       </div>
 
       {open && (
@@ -251,6 +262,29 @@ export function WorkoutLog() {
     }
   }
 
+  function handleCopy(log) {
+    // rebuild sections to match current SECTIONS config
+    // in case section slots have changed since the log was saved
+    const sections = {};
+    SECTIONS.forEach((s) => {
+      const saved = log.sections?.[s.key] ?? [];
+      // pad or trim to current max
+      const padded = Array.from(
+        { length: s.max },
+        (_, i) => saved[i] ?? blankExercise(),
+      );
+      sections[s.key] = padded;
+    });
+
+    setFormData({
+      date: formatDate(getFitnessDateObject()), // today's date, not the old one
+      category: log.category,
+      sections,
+    });
+    setShowForm(true);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
   // ─────────────────────────────────────────────────────────────────────────────
 
   return (
@@ -281,19 +315,17 @@ export function WorkoutLog() {
           </button>
         </div>
         <p className="workout-caption" style={{ fontWeight: "200" }}>
-        Don't know how to structure your workout? Check out the {" "}
-        <Link to="/training/beginnerworkout" className="log-caption-link">
-          beginner workout guide
-        </Link>{" "}
-        or the{" "}
-        <Link to="/training/beginnerworkout" className="log-caption-link">
-
-          intermediate workout guide
-        </Link>{" "}
-        to learn how to craft a successful workout.
-      </p>
+          Don't know how to structure your workout? Check out the{" "}
+          <Link to="/training/beginnerworkout" className="log-caption-link">
+            beginner workout guide
+          </Link>{" "}
+          or the{" "}
+          <Link to="/training/intermediateworkout" className="log-caption-link">
+            intermediate workout guide
+          </Link>{" "}
+          to learn how to craft a successful workout.
+        </p>
       </div>
-      
 
       {/* ── log form ── */}
       {showForm && (
@@ -383,7 +415,7 @@ export function WorkoutLog() {
         ) : (
           <div className="wl-log-list">
             {logs.map((log) => (
-              <LogCard key={log.id} log={log} />
+              <LogCard key={log.id} log={log} onCopy={handleCopy} />
             ))}
           </div>
         )}
