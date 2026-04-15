@@ -7,6 +7,7 @@ import Loading from "./loading.jsx";
 import Hero from "./hero.jsx";
 import Developer from "./developer.jsx";
 import Portfolio from "./portfolio.jsx";
+import Swype from "./swype.jsx";
 
 function App() {
   const [page, setPage] = useState("landing");
@@ -72,22 +73,25 @@ function App() {
   }
 
   return (
-    <AnimatePresence>
-      <motion.div
-        key={page}
-        initial={animation.initial}
-        animate={animation.animate}
-        exit={animation.exit}
-        transition={animation.transition}
-        style={{
-          position: "absolute",
-          width: "100%",
-          height: "100%",
-        }}
-      >
-        {renderPage()}
-      </motion.div>
-    </AnimatePresence>
+    <>
+      <Swype />
+      <AnimatePresence>
+        <motion.div
+          key={page}
+          initial={animation.initial}
+          animate={animation.animate}
+          exit={animation.exit}
+          transition={animation.transition}
+          style={{
+            position: "absolute",
+            width: "100%",
+            height: "100%",
+          }}
+        >
+          {renderPage()}
+        </motion.div>
+      </AnimatePresence>
+    </>
   );
 }
 
