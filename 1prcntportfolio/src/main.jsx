@@ -25,6 +25,13 @@ function App() {
     }, 2000);
   }
 
+  function showHero() {
+    setTimeout(() => {
+      setPage("hero");
+    }, 500);
+  }
+
+
   function showDeveloper() {
     setTimeout(() => {
       setPage("developer");
@@ -66,7 +73,7 @@ function App() {
       case "developer":
         return <Developer />;
       case "portfolio":
-        return <Portfolio />;
+        return <Portfolio onHero={showHero} />;
       default:
         return null;
     }

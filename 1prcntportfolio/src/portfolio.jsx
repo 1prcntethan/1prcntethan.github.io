@@ -10,7 +10,7 @@ import {
 import { useRef, useEffect } from "react";
 import "./portfolio.css";
 
-export default function Portfolio() {
+export default function Portfolio({ onHero }) {
   const [portfolioVisible, setPortfolioVisible] = useState(true);
 
   return (
@@ -234,6 +234,18 @@ export default function Portfolio() {
               </svg>
             </div>
           </motion.div>
+          <button
+            className="portfolio-close"
+            onClick={() => {
+              setPortfolioVisible(false);
+              onHero();
+            }}
+          >
+            <img
+              src="/arrow_drop_down.svg"
+              className="portfolio-close-icon"
+            ></img>
+          </button>
           <motion.section className="intro-section">
             <div className="sixty-div">
               <motion.div
@@ -299,10 +311,12 @@ export default function Portfolio() {
               <div className="project-wrapper">
                 <div className="project-card">
                   <div className="card-bg"></div>
-                  <div className="card-title" id="wings-font">Wings.</div>
+                  <div className="card-title" id="wings-font">
+                    Wings.
+                  </div>
                   <div className="card-info">
-                    all-in-one calisthenics guide with personalized skill tracker and rank
-                    system.
+                    all-in-one calisthenics guide with personalized skill
+                    tracker and rank system.
                   </div>
                   <div className="card-tags">
                     <span>HTML/CSS</span>
