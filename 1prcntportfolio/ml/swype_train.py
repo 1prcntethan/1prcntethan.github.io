@@ -10,12 +10,14 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import classification_report, confusion_matrix
 import pickle
+import os
 
 # ── 1. LOAD DATA ──────────────────────────────────────────────────────────────
 # pandas reads your CSV into a "DataFrame" — basically a table in memory.
 # Each row is one sample (one frame where you held a gesture).
 # Each column is one feature (x0, y0, z0, x1, y1, z1, ... x20, y20, z20, label)
-df = pd.read_csv("gesture_data.csv")
+script_dir = os.path.dirname(os.path.abspath(__file__))
+df = pd.read_csv(os.path.join(script_dir, "swype_training_data1.csv"))
 
 print(f"Total samples: {len(df)}")
 print(f"Samples per gesture:\n{df['label'].value_counts()}")
@@ -150,8 +152,8 @@ print(f"Labels: {np.unique(y)}")
 # The scaler must be saved because at inference time (in the browser) you need
 # to apply the exact same scaling that was applied during training.
 # If you scale differently at inference, predictions will be garbage.
-with open("gesture_model.pkl", "wb") as f:
+with open("swype_model.pkl", "wb") as f:
     pickle.dump({"model": model, "scaler": scaler}, f)
 
-print("\nSaved gesture_model.pkl")
+print("\nSaved swype_model.pkl")
 print("Next step: convert to ONNX for browser inference")
