@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import {
-  HandLandmarker,      // the MediaPipe class that detects hand landmarks
-  FilesetResolver,     // loads the WASM files MediaPipe needs to run
-  DrawingUtils,        // helper to draw landmarks and connections onto a canvas
+  HandLandmarker, // the MediaPipe class that detects hand landmarks
+  FilesetResolver, // loads the WASM files MediaPipe needs to run
+  DrawingUtils, // helper to draw landmarks and connections onto a canvas
 } from "@mediapipe/tasks-vision";
 import * as ort from "onnxruntime-web"; // runs our trained ONNX model in the browser
 
@@ -95,14 +95,17 @@ export default function Swype() {
   // We use refs for anything that lives inside the animation loop, because
   // state updates inside rAF cause React re-renders which tank performance.
 
-  const videoRef = useRef(null);       // the hidden <video> element (webcam feed)
-  const canvasRef = useRef(null);      // the <canvas> we draw video + landmarks on
+  const videoRef = useRef(null); // the hidden <video> element (webcam feed)
+  const canvasRef = useRef(null); // the <canvas> we draw video + landmarks on
   const handLandmarkerRef = useRef(null); // MediaPipe HandLandmarker instance
   const onnxSessionRef = useRef(null); // loaded ONNX inference session
-  const animationRef = useRef(null);   // requestAnimationFrame ID (for cleanup)
-  const samplesRef = useRef([]);       // collected training samples (array of {vector, label})
-  const recordingRef = useRef(false);  // mirror of `recording` state, readable inside rAF
-  const lastSampleTime = useRef(0);    // timestamp of last recorded sample
+  const animationRef = useRef(null); // requestAnimationFrame ID (for cleanup)
+  const samplesRef = useRef([]); // collected training samples (array of {vector, label})
+  const recordingRef = useRef(false); // mirror of `recording` state, readable inside rAF
+  const lastSampleTime = useRef(0); // timestamp of last recorded sample
+  const gestureStateRef = useRef("idle"); // "idle" | "pointer" | "scroll" | "palm"
+  const smoothedPos = useRef({ x: 0.5, y: 0.5 }); // smoothed wrist position — average over last N frames to reduce jitter
+  const prevPos = useRef({ x: 0.5, y: 0.5 }); // previous wrist position — used to calculate delta (how much hand moved for scroll/pan speed)
 
   // Keep recordingRef in sync with recording state.
   // We can't read `recording` directly inside renderLoop because of stale closures —
@@ -128,7 +131,6 @@ export default function Swype() {
     }
 
     async function start() {
-
       // ── LOAD MEDIAPIPE ────────────────────────────────────────────────────
       // MediaPipe Tasks runs on WebAssembly (WASM) — compiled C++ code that
       // runs in the browser at near-native speed. FilesetResolver downloads
@@ -147,8 +149,8 @@ export default function Swype() {
             "https://storage.googleapis.com/mediapipe-models/hand_landmarker/hand_landmarker/float16/1/hand_landmarker.task",
           delegate: "GPU",
         },
-        runningMode: "VIDEO",  // optimized for continuous video frames vs single images
-        numHands: 1,           // only track one hand
+        runningMode: "VIDEO", // optimized for continuous video frames vs single images
+        numHands: 1, // only track one hand
       });
 
       handLandmarkerRef.current = handLandmarker;
@@ -170,9 +172,9 @@ export default function Swype() {
       onnxSessionRef.current = session;
       console.log(
         "ONNX model loaded — inputs:",
-        session.inputNames,   // what we need to feed in
+        session.inputNames, // what we need to feed in
         "outputs:",
-        session.outputNames,  // what we'll get back
+        session.outputNames, // what we'll get back
       );
 
       // ── WEBCAM ────────────────────────────────────────────────────────────
@@ -223,7 +225,7 @@ export default function Swype() {
         // Without save/restore, the flip would affect everything drawn after.
         ctx.save();
         ctx.translate(220, 0); // move origin to right edge
-        ctx.scale(-1, 1);      // flip horizontally (mirror)
+        ctx.scale(-1, 1); // flip horizontally (mirror)
         // now draw the video — it comes out mirrored, which feels natural
         // like looking in a mirror rather than at a camera
         ctx.drawImage(videoRef.current, 0, 0, 220, 160);
@@ -294,9 +296,11 @@ export default function Swype() {
             if (maxProb > 0.75) {
               setGestureLabel(label);
               setConfidence(Math.round(maxProb * 100));
+              handleGestureAction(label, raw);
             } else {
               setGestureLabel("uncertain");
               setConfidence(Math.round(maxProb * 100));
+              handleGestureAction("idle", raw); // treat uncertain as idle
             }
           }
 
@@ -343,6 +347,113 @@ export default function Swype() {
     };
   }, [active]); // only re-run this effect when active changes
 
+  // ── GESTURE ACTION HANDLER ───────────────────────────────────────────────────
+  // Called every frame with the current gesture label and raw landmarks.
+  // Implements the state machine: gesture label → state → action.
+  //
+  // State machine diagram:
+  //   idle    → (pointer detected) → pointer mode → move cursor
+  //   idle    → (scroll detected)  → scroll mode  → track Δy → fire scroll
+  //   idle    → (palm detected)    → palm mode    → track Δx/Δy → pan
+  //   any     → (idle detected)    → idle         → stop all actions
+  //
+  // Why a state machine instead of just acting directly on the label?
+  // Raw predictions flicker — the model might say "scroll" for 2 frames then
+  // "pointer" then "scroll" again. Acting directly on each frame would cause
+  // erratic behavior. The state machine adds inertia: you have to hold a gesture
+  // for HOLD_FRAMES frames before it switches mode, preventing flicker.
+
+  const HOLD_FRAMES = 6; // frames a gesture must be stable before state switches
+  const gestureBuffer = useRef([]); // rolling window of recent predictions
+
+  function handleGestureAction(label, rawLandmarks) {
+    // ── SMOOTHING ──────────────────────────────────────────────────────────
+    // Exponential moving average on wrist position.
+    // Instead of jumping to the new position each frame, we blend:
+    // newSmoothed = 0.8 * oldSmoothed + 0.2 * newRaw
+    // Higher first number = more smoothing but more lag.
+    // Lower first number = more responsive but jitterier.
+    const wrist = rawLandmarks[8];
+    const ALPHA = 0.2;
+    smoothedPos.current = {
+      x: smoothedPos.current.x * (1 - ALPHA) + wrist.x * ALPHA,
+      y: smoothedPos.current.y * (1 - ALPHA) + wrist.y * ALPHA,
+    };
+
+    // ── STATE MACHINE ──────────────────────────────────────────────────────
+    // Add current label to buffer, keep only last HOLD_FRAMES entries
+    gestureBuffer.current.push(label);
+    if (gestureBuffer.current.length > HOLD_FRAMES) {
+      gestureBuffer.current.shift(); // remove oldest
+    }
+
+    // only switch state if ALL recent frames agree on the same gesture
+    // this is the stability filter — prevents rapid state flipping
+    const allSame = gestureBuffer.current.every((l) => l === label);
+    if (allSame && gestureBuffer.current.length === HOLD_FRAMES) {
+      gestureStateRef.current = label;
+    }
+
+    const state = gestureStateRef.current;
+    const pos = smoothedPos.current;
+
+    // ── POINTER MODE ───────────────────────────────────────────────────────
+    // Map wrist position in camera space (0-1) to screen coordinates.
+    // Camera x is mirrored (1 - x) to match the flipped display.
+    // We add padding on edges (10% each side) so you don't need to move
+    // your hand to the very edge of frame to reach screen edges.
+    if (state === "pointer") {
+      const PADDING = 0.1;
+      const screenX =
+        ((1 - pos.x - PADDING) / (1 - PADDING * 2)) * window.innerWidth;
+      const screenY =
+        ((pos.y - PADDING) / (1 - PADDING * 2)) * window.innerHeight;
+
+      // move the cursor div
+      const cursor = document.getElementById("swype-cursor");
+      if (cursor) {
+        cursor.style.left = `${Math.max(0, Math.min(window.innerWidth, screenX))}px`;
+        cursor.style.top = `${Math.max(0, Math.min(window.innerHeight, screenY))}px`;
+      }
+    }
+
+    // ── SCROLL MODE ────────────────────────────────────────────────────────
+    // Track how much the wrist moved vertically since last frame (delta).
+    // Moving hand UP = negative delta = scroll up (page goes down, content goes up)
+    // Moving hand DOWN = positive delta = scroll down
+    // Multiply by sensitivity to control scroll speed.
+    if (state === "scroll") {
+      const deltaY = pos.y - prevPos.current.y;
+      const SCROLL_SENSITIVITY = 1200; // tune this — higher = faster scroll
+
+      // window.scrollBy scrolls the whole page
+      // if you want to scroll a specific element, use element.scrollBy instead
+      window.scrollBy({
+        top: deltaY * SCROLL_SENSITIVITY,
+        behavior: "auto", // "auto" not "smooth" — smooth adds lag on top of lag
+      });
+    }
+
+    // ── PALM MODE (pan) ────────────────────────────────────────────────────
+    // Similar to scroll but fires both X and Y.
+    // For now this scrolls the page in both axes — later you can hook this
+    // into the Three.js camera for actual viewport panning.
+    if (state === "palm") {
+      const deltaX = pos.x - prevPos.current.x;
+      const deltaY = pos.y - prevPos.current.y;
+      const PAN_SENSITIVITY = 1000;
+
+      window.scrollBy({
+        left: deltaX * PAN_SENSITIVITY,
+        top: deltaY * PAN_SENSITIVITY,
+        behavior: "auto",
+      });
+    }
+
+    // store position for next frame's delta calculation
+    prevPos.current = { x: pos.x, y: pos.y };
+  }
+
   // ── CSV EXPORT ─────────────────────────────────────────────────────────────
   // Converts collected samples to CSV format and triggers a file download.
   // The CSV has 64 columns: x0,y0,z0,...,x20,y20,z20,label
@@ -350,7 +461,11 @@ export default function Swype() {
   function downloadCSV() {
     if (samplesRef.current.length === 0) return;
     const header = [
-      ...Array.from({ length: 21 }, (_, i) => [`x${i}`, `y${i}`, `z${i}`]).flat(),
+      ...Array.from({ length: 21 }, (_, i) => [
+        `x${i}`,
+        `y${i}`,
+        `z${i}`,
+      ]).flat(),
       "label",
     ].join(",");
     const rows = samplesRef.current.map(({ vector, label }) =>
@@ -398,6 +513,25 @@ export default function Swype() {
         fontFamily: "monospace",
       }}
     >
+      {active && gestureStateRef.current === "pointer" && (
+        <div
+          id="swype-cursor"
+          style={{
+            position: "fixed",
+            width: "18px",
+            height: "18px",
+            borderRadius: "50%",
+            border: "2px solid rgb(72, 255, 224)",
+            background: "rgba(72, 255, 224, 0.15)",
+            pointerEvents: "none", // cursor never blocks clicks
+            zIndex: 9998,
+            transform: "translate(-50%, -50%)", // center on position
+            transition: "opacity 0.1s",
+            top: 0,
+            left: 0,
+          }}
+        />
+      )}
       {active && (
         <div
           style={{
@@ -445,15 +579,15 @@ export default function Swype() {
             <span style={{ color: "rgba(255,255,255,0.25)" }}>
               {confidence > 0 ? `${confidence}%` : ""}
             </span>
-            {/* toggle between preview and data collection modes */}
-            <span
+            {/* toggle between preview and data collection modes ---- remove and switch modes by comment code below */}
+            {/* <span
               style={{ cursor: "pointer", opacity: 0.5 }}
               onClick={() =>
                 setMode(mode === "preview" ? "collect" : "preview")
               }
             >
               {mode === "preview" ? "collect →" : "← preview"}
-            </span>
+            </span> */}
           </div>
 
           {/* data collection panel — only visible in collect mode */}
