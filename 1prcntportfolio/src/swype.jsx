@@ -73,7 +73,7 @@ function normalizeLandmarks(landmarks) {
   return normalized.flatMap((lm) => [lm.x, lm.y, lm.z]);
 }
 
-export default function Swype() {
+export default function Swype({ cursorControlRef }) {
   // whether the overlay is active (camera on, model running)
   const [active, setActive] = useState(false);
   // current predicted gesture label shown in the UI
@@ -410,10 +410,15 @@ export default function Swype() {
         ((pos.y - PADDING) / (1 - PADDING * 2)) * window.innerHeight;
 
       // move the cursor div
-      const cursor = document.getElementById("swype-cursor");
-      if (cursor) {
-        cursor.style.left = `${Math.max(0, Math.min(window.innerWidth, screenX))}px`;
-        cursor.style.top = `${Math.max(0, Math.min(window.innerHeight, screenY))}px`;
+      if (cursorControlRef?.current) {
+        cursorControlRef.current.x = Math.max(
+          0,
+          Math.min(window.innerWidth, screenX),
+        );
+        cursorControlRef.current.y = Math.max(
+          0,
+          Math.min(window.innerHeight, screenY),
+        );
       }
     }
 
@@ -513,25 +518,6 @@ export default function Swype() {
         fontFamily: "monospace",
       }}
     >
-      {active && gestureStateRef.current === "pointer" && (
-        <div
-          id="swype-cursor"
-          style={{
-            position: "fixed",
-            width: "18px",
-            height: "18px",
-            borderRadius: "50%",
-            border: "2px solid rgb(72, 255, 224)",
-            background: "rgba(72, 255, 224, 0.15)",
-            pointerEvents: "none", // cursor never blocks clicks
-            zIndex: 9998,
-            transform: "translate(-50%, -50%)", // center on position
-            transition: "opacity 0.1s",
-            top: 0,
-            left: 0,
-          }}
-        />
-      )}
       {active && (
         <div
           style={{
@@ -731,6 +717,16 @@ export default function Swype() {
           cursor: "pointer",
           backdropFilter: "blur(10px)",
           transition: "all 0.2s ease",
+        }}
+        onMouseEnter={(e) => {
+          e.target.style.background = active
+            ? "rgba(0, 255, 213, 0.1)"
+            : "rgba(255, 255, 255, 0.1)";
+        }}
+        onMouseLeave={(e) => {
+          e.target.style.background = active
+            ? "rgba(0, 255, 213, 0.07)"
+            : "rgba(255, 255, 255, 0.06)";
         }}
       >
         {active ? "Swype ON" : "Swype OFF"}

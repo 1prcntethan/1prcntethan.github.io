@@ -8,10 +8,12 @@ import Hero from "./hero.jsx";
 import Developer from "./developer.jsx";
 import Portfolio from "./portfolio.jsx";
 import Swype from "./swype.jsx";
+import Cursor from "./cursor.jsx";
 
 function App() {
   const [page, setPage] = useState("landing");
   const prevPage = useRef(page);
+  const cursorControlRef = useRef(null);
 
   useEffect(() => {
     prevPage.current = page;
@@ -81,7 +83,8 @@ function App() {
 
   return (
     <>
-      <Swype />
+      <Cursor controlRef={cursorControlRef}/>
+      <Swype cursorControlRef={cursorControlRef}/>
       <AnimatePresence>
         <motion.div
           key={page}

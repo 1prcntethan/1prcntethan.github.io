@@ -22,6 +22,11 @@ body {
   height: 100%;
 }
 
+
+* {
+  cursor: none !important;
+}
+
 .hero-title {
   display: flex;
   position: absolute;
