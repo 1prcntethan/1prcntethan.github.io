@@ -139,7 +139,7 @@ export default function Swype({ cursorControlRef, pinchProgressRef }) {
       const vision = await FilesetResolver.forVisionTasks(
         "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.14/wasm",
       );
-
+      console.log("MediaPipe vision files loaded");
       // HandLandmarker is the actual model — it takes a video frame and returns
       // 21 landmark points representing the hand skeleton.
       // The .task file is a pre-trained Google model, downloaded from their CDN.
@@ -156,6 +156,7 @@ export default function Swype({ cursorControlRef, pinchProgressRef }) {
           runningMode: "VIDEO",
           numHands: 1,
         });
+        console.log("MediaPipe HandLandmarker loaded on GPU");
       } catch {
         handLandmarker = await HandLandmarker.createFromOptions(vision, {
           baseOptions: {
@@ -166,6 +167,7 @@ export default function Swype({ cursorControlRef, pinchProgressRef }) {
           runningMode: "VIDEO",
           numHands: 1,
         });
+        console.log("MediaPipe HandLandmarker loaded on CPU");
       }
 
       handLandmarkerRef.current = handLandmarker;
@@ -186,19 +188,20 @@ export default function Swype({ cursorControlRef, pinchProgressRef }) {
       const session = await ort.InferenceSession.create("/swype_model.onnx");
       onnxSessionRef.current = session;
       console.log(
-        "ONNX model loaded — inputs:",
-        session.inputNames, // what we need to feed in
-        "outputs:",
-        session.outputNames, // what we'll get back
+        "ONNX model loaded - created Inference session using pre-trained onnx model file"
       );
+      console.log("ONNX model can be retrained by collecting data and using swype_train.py to get a pkl file.")
+      console.log("Then use convertupdated.py to convert to onnx file, and move to public folder.");
 
       // ── WEBCAM ────────────────────────────────────────────────────────────
       // getUserMedia() asks the browser for camera access.
       // The stream goes into the hidden <video> element — we don't display
       // the video directly, we draw it onto the canvas each frame.
+      console.log("Requesting webcam access...")
       const stream = await navigator.mediaDevices.getUserMedia({
         video: { width: 220, height: 160 },
       });
+      console.log("Webcam stream obtained");
       videoRef.current.srcObject = stream;
       await videoRef.current.play();
 
@@ -341,24 +344,32 @@ export default function Swype({ cursorControlRef, pinchProgressRef }) {
           // no hand detected — reset to idle
           setGestureLabel("idle");
           setConfidence(0);
+          pinchStartTime.current = null;
+          pinchProgressRef.current = null;
+          gestureStateRef.current = "idle";
+          gestureBuffer.current = [];
         }
 
         // schedule next frame — this is what makes the loop continuous
         animationRef.current = requestAnimationFrame(renderLoop);
       }
-
+      console.log("Starting render loop...");
       renderLoop(); // kick off the loop
+      console.log("Swype overlay is active.");
+      console.log( "pointer = move cursor", '\n', "pinch = click (hold for 1.5s)", '\n', "two fingers = scroll", '\n', "palm = zoom (move hand to pan)" );
     }
 
     start();
 
     // cleanup function — runs when active becomes false or component unmounts
     return () => {
+      console.log("Stopping Swype overlay and releasing resources...");
       cancelAnimationFrame(animationRef.current); // stop the loop
       const stream = videoRef.current?.srcObject;
       if (stream) stream.getTracks().forEach((t) => t.stop()); // release camera
       handLandmarkerRef.current = null;
       onnxSessionRef.current = null;
+      console.log("Resources released.");
     };
   }, [active]); // only re-run this effect when active changes
 
@@ -452,13 +463,13 @@ export default function Swype({ cursorControlRef, pinchProgressRef }) {
 
           pinchStartTime.current = null;
           pinchProgressRef.current = null;
+          return;
         }
 
         if (pinchProgressRef?.current !== undefined) {
-          pinchProgressRef.current = elapsed / CLICK_DELAY
+          pinchProgressRef.current = elapsed / CLICK_DELAY;
         }
       }
-      
     } else {
       pinchStartTime.current = null;
       pinchProgressRef.current = null;
@@ -528,6 +539,7 @@ export default function Swype({ cursorControlRef, pinchProgressRef }) {
     a.download = "swype_training_data1.csv";
     a.click();
     URL.revokeObjectURL(url); // free the memory
+    console.log("CSV downloaded. Use this file to retrain a model with swype_train.py");
   }
 
   function clearData() {

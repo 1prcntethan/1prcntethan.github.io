@@ -91,7 +91,6 @@ export default function Cursor({ controlRef, pinchProgressRef }) {
           ctx.lineJoin = "round";
           ctx.stroke();
         }
-        
 
         // ── GLOW LAYER (tapered) ─────────────────────────────────────────────
         // second pass, same segments, wider + softer for the bloom effect
@@ -173,25 +172,27 @@ export default function Cursor({ controlRef, pinchProgressRef }) {
       ctx.fill();
 
       ctx.restore();
+
+      const progress = pinchProgressRef?.current;
+      if (progress !== null && progress !== undefined) {
+        const MAX_RING = 40;
+        const MIN_RING = 5;
+
+        const clampedProgress = Math.min(Math.max(progress, 0), 1);
+        const ringRadius = MAX_RING - (MAX_RING - MIN_RING) * clampedProgress;
+        const ringOpacity = 0.3 + clampedProgress * 0.6;
+
+        ctx.beginPath();
+        ctx.arc(ball.x, ball.y, ringRadius, 0, Math.PI * 2);
+        ctx.strokeStyle = `rgba(72, 255, 224, ${ringOpacity})`;
+        ctx.lineWidth = 1.5;
+        ctx.stroke();
+      }
+
       animId = requestAnimationFrame(draw);
     }
 
     draw();
-
-    const progress = pinchProgressRef?.current;
-    if (progress !== null && progress !== undefined) {
-      const MAX_RING = 40;
-      const MIN_RING = BASE_RADIUS + 4;
-
-      const ringRadius = MAX_RING - (MAX_RING - MIN_RING) * progress
-      const ringOpacity = 0.3 + (progress * 0.6)
-
-      ctx.beginPath();
-      ctx.arc(ball.x, ball.y, ringRadius, 0, Math.PI * 2);
-      ctx.strokeStyle = `rgba(72, 255, 224, ${ringOpacity})`;
-      ctx.lineWidth = 1.5;
-      ctx.stroke();
-    }
 
     return () => {
       cancelAnimationFrame(animId);
@@ -210,8 +211,8 @@ export default function Cursor({ controlRef, pinchProgressRef }) {
         left: 0,
         width: "100%",
         height: "100%",
-        pointerEvents: "none", 
-        zIndex: 99999, 
+        pointerEvents: "none",
+        zIndex: 99999,
       }}
     />
   );
