@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import React from "react";
 
-export default function Cursor({ controlRef }) {
+export default function Cursor({ controlRef, pinchProgressRef }) {
   const canvasRef = useRef(null);
 
   useEffect(() => {
@@ -122,9 +122,7 @@ export default function Cursor({ controlRef }) {
       }
 
       const elementUnder = document.elementFromPoint(mouse.x, mouse.y);
-      const isHovering =
-        elementUnder && getComputedStyle(elementUnder).cursor === "pointer";
-
+      const isHovering = elementUnder;
       // ── CALCULATE STRETCH ───────────────────────────────────────────────
       // distance between ball (lagged) and mouse (actual)
       // when moving fast, this gap is large → stretch more
@@ -180,6 +178,21 @@ export default function Cursor({ controlRef }) {
 
     draw();
 
+    const progress = pinchProgressRef?.current;
+    if (progress !== null && progress !== undefined) {
+      const MAX_RING = 40;
+      const MIN_RING = BASE_RADIUS + 4;
+
+      const ringRadius = MAX_RING - (MAX_RING - MIN_RING) * progress
+      const ringOpacity = 0.3 + (progress * 0.6)
+
+      ctx.beginPath();
+      ctx.arc(ball.x, ball.y, ringRadius, 0, Math.PI * 2);
+      ctx.strokeStyle = `rgba(72, 255, 224, ${ringOpacity})`;
+      ctx.lineWidth = 1.5;
+      ctx.stroke();
+    }
+
     return () => {
       cancelAnimationFrame(animId);
       window.removeEventListener("mousemove", onMouseMove);
@@ -197,8 +210,8 @@ export default function Cursor({ controlRef }) {
         left: 0,
         width: "100%",
         height: "100%",
-        pointerEvents: "none", // CRITICAL — canvas never intercepts mouse events
-        zIndex: 99999, // above everything including Swype overlay
+        pointerEvents: "none", 
+        zIndex: 99999, 
       }}
     />
   );

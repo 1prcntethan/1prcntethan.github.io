@@ -14,6 +14,7 @@ function App() {
   const [page, setPage] = useState("landing");
   const prevPage = useRef(page);
   const cursorControlRef = useRef(null);
+  const pinchProgressRef = useRef(null); // null = no pinch, 0-1 = progress
 
   useEffect(() => {
     prevPage.current = page;
@@ -32,7 +33,6 @@ function App() {
       setPage("hero");
     }, 500);
   }
-
 
   function showDeveloper() {
     setTimeout(() => {
@@ -83,8 +83,8 @@ function App() {
 
   return (
     <>
-      <Cursor controlRef={cursorControlRef}/>
-      <Swype cursorControlRef={cursorControlRef}/>
+      <Cursor controlRef={cursorControlRef} pinchProgressRef={pinchProgressRef}/>
+      <Swype cursorControlRef={cursorControlRef} pinchProgressRef={pinchProgressRef}/>
       <AnimatePresence>
         <motion.div
           key={page}

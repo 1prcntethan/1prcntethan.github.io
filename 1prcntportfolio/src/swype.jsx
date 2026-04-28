@@ -73,7 +73,7 @@ function normalizeLandmarks(landmarks) {
   return normalized.flatMap((lm) => [lm.x, lm.y, lm.z]);
 }
 
-export default function Swype({ cursorControlRef }) {
+export default function Swype({ cursorControlRef, pinchProgressRef }) {
   // whether the overlay is active (camera on, model running)
   const [active, setActive] = useState(false);
   // current predicted gesture label shown in the UI
@@ -106,6 +106,7 @@ export default function Swype({ cursorControlRef }) {
   const gestureStateRef = useRef("idle"); // "idle" | "pointer" | "scroll" | "palm"
   const smoothedPos = useRef({ x: 0.5, y: 0.5 }); // smoothed wrist position — average over last N frames to reduce jitter
   const prevPos = useRef({ x: 0.5, y: 0.5 }); // previous wrist position — used to calculate delta (how much hand moved for scroll/pan speed)
+  const pinchStartTime = useRef(null);
 
   // Keep recordingRef in sync with recording state.
   // We can't read `recording` directly inside renderLoop because of stale closures —
@@ -136,22 +137,36 @@ export default function Swype({ cursorControlRef }) {
       // runs in the browser at near-native speed. FilesetResolver downloads
       // the WASM binary from the CDN and sets it up before we can use it.
       const vision = await FilesetResolver.forVisionTasks(
-        "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@latest/wasm",
+        "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.14/wasm",
       );
 
       // HandLandmarker is the actual model — it takes a video frame and returns
       // 21 landmark points representing the hand skeleton.
       // The .task file is a pre-trained Google model, downloaded from their CDN.
       // delegate: "GPU" runs it on the graphics card for better performance.
-      const handLandmarker = await HandLandmarker.createFromOptions(vision, {
-        baseOptions: {
-          modelAssetPath:
-            "https://storage.googleapis.com/mediapipe-models/hand_landmarker/hand_landmarker/float16/1/hand_landmarker.task",
-          delegate: "GPU",
-        },
-        runningMode: "VIDEO", // optimized for continuous video frames vs single images
-        numHands: 1, // only track one hand
-      });
+      // try GPU first, fall back to CPU if WebGL context unavailable
+      let handLandmarker;
+      try {
+        handLandmarker = await HandLandmarker.createFromOptions(vision, {
+          baseOptions: {
+            modelAssetPath:
+              "https://storage.googleapis.com/mediapipe-models/hand_landmarker/hand_landmarker/float16/1/hand_landmarker.task",
+            delegate: "GPU",
+          },
+          runningMode: "VIDEO",
+          numHands: 1,
+        });
+      } catch {
+        handLandmarker = await HandLandmarker.createFromOptions(vision, {
+          baseOptions: {
+            modelAssetPath:
+              "https://storage.googleapis.com/mediapipe-models/hand_landmarker/hand_landmarker/float16/1/hand_landmarker.task",
+            delegate: "CPU",
+          },
+          runningMode: "VIDEO",
+          numHands: 1,
+        });
+      }
 
       handLandmarkerRef.current = handLandmarker;
 
@@ -296,11 +311,11 @@ export default function Swype({ cursorControlRef }) {
             if (maxProb > 0.75) {
               setGestureLabel(label);
               setConfidence(Math.round(maxProb * 100));
-              handleGestureAction(label, raw);
+              handleGestureAction(label, raw, now);
             } else {
               setGestureLabel("uncertain");
               setConfidence(Math.round(maxProb * 100));
-              handleGestureAction("idle", raw); // treat uncertain as idle
+              handleGestureAction("idle", raw, now); // treat uncertain as idle
             }
           }
 
@@ -366,7 +381,7 @@ export default function Swype({ cursorControlRef }) {
   const HOLD_FRAMES = 6; // frames a gesture must be stable before state switches
   const gestureBuffer = useRef([]); // rolling window of recent predictions
 
-  function handleGestureAction(label, rawLandmarks) {
+  function handleGestureAction(label, rawLandmarks, now) {
     // ── SMOOTHING ──────────────────────────────────────────────────────────
     // Exponential moving average on wrist position.
     // Instead of jumping to the new position each frame, we blend:
@@ -420,6 +435,33 @@ export default function Swype({ cursorControlRef }) {
           Math.min(window.innerHeight, screenY),
         );
       }
+    }
+
+    if (state === "pinch") {
+      if (pinchStartTime.current === null) {
+        pinchStartTime.current = now;
+      } else {
+        const elapsed = now - pinchStartTime.current;
+        const CLICK_DELAY = 1500; // hold for 1.5 sec before click fires
+
+        if (elapsed >= CLICK_DELAY) {
+          const cx = cursorControlRef?.current?.x ?? mouse.x;
+          const cy = cursorControlRef?.current?.y ?? mouse.y;
+          const target = document.elementFromPoint(cx, cy);
+          if (target) target.click();
+
+          pinchStartTime.current = null;
+          pinchProgressRef.current = null;
+        }
+
+        if (pinchProgressRef?.current !== undefined) {
+          pinchProgressRef.current = elapsed / CLICK_DELAY
+        }
+      }
+      
+    } else {
+      pinchStartTime.current = null;
+      pinchProgressRef.current = null;
     }
 
     // ── SCROLL MODE ────────────────────────────────────────────────────────

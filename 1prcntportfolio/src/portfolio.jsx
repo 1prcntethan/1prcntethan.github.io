@@ -242,7 +242,7 @@ export default function Portfolio({ onHero }) {
             }}
           >
             <img
-              src="/arrow_drop_down.svg"
+              src="/updated_dropdown.svg"
               className="portfolio-close-icon"
             ></img>
           </button>
@@ -275,6 +275,13 @@ export default function Portfolio({ onHero }) {
                 </div>
               </motion.div>
             </div>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
           </motion.section>
           <motion.section className="portfolio-section">
             <motion.div className="sixty-div">

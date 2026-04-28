@@ -65,6 +65,7 @@
   background-color: transparent;
   border: none;
   cursor: pointer;
+  padding: 20px;
 }
 
 .scroll-progress {
@@ -246,9 +247,8 @@
   padding-left: 5%;
   padding-right: 5%;
   min-height: 100vh;
-  height: 100vh;
   justify-content: center;
-
+  
   animation: fade-out 1s linear both;
   animation-timeline: --portfolio-scroll;
   animation-range: 0% 10%;
