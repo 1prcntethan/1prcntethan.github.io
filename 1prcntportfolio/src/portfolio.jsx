@@ -340,7 +340,30 @@ export default function Portfolio({ onHero }) {
                     </a>
                   </div>
                 </div>
-                <div className="project-card">Project 2</div>
+                <div className="project-card">
+                  <div className="card-bg"></div>
+                  <div className="card-title" id="wings-font">
+                    swype
+                  </div>
+                  <div className="card-info">
+                    AI hand gesture recognition overlay with real-time control over websites.
+                  </div>
+                  <div className="card-tags">
+                    <span>HTML/CSS</span>
+                    <span>JavaScript</span>
+                    <span>React</span>
+                    <span>MediaPipe</span>
+                    <span>ONNX</span>
+                  </div>
+                  <div className="card-links">
+                    <a href="https://github.com/1prcntethan/wings">
+                      <img src="github.svg" className="project-link"></img>
+                    </a>
+                    <a href="https://wingssw.com/">
+                      <img src="linkdemo.svg" className="project-link"></img>
+                    </a>
+                  </div>
+                </div>
                 <div className="project-card">Project 3</div>
               </div>
             </motion.div>
