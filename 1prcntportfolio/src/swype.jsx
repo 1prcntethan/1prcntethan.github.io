@@ -188,16 +188,20 @@ export default function Swype({ cursorControlRef, pinchProgressRef }) {
       const session = await ort.InferenceSession.create("/swype_model.onnx");
       onnxSessionRef.current = session;
       console.log(
-        "ONNX model loaded - created Inference session using pre-trained onnx model file"
+        "ONNX model loaded - created Inference session using pre-trained onnx model file",
       );
-      console.log("ONNX model can be retrained by collecting data and using swype_train.py to get a pkl file.")
-      console.log("Then use convertupdated.py to convert to onnx file, and move to public folder.");
+      console.log(
+        "ONNX model can be retrained by collecting data and using swype_train.py to get a pkl file.",
+      );
+      console.log(
+        "Then use convertupdated.py to convert to onnx file, and move to public folder.",
+      );
 
       // ── WEBCAM ────────────────────────────────────────────────────────────
       // getUserMedia() asks the browser for camera access.
       // The stream goes into the hidden <video> element — we don't display
       // the video directly, we draw it onto the canvas each frame.
-      console.log("Requesting webcam access...")
+      console.log("Requesting webcam access...");
       const stream = await navigator.mediaDevices.getUserMedia({
         video: { width: 220, height: 160 },
       });
@@ -356,7 +360,15 @@ export default function Swype({ cursorControlRef, pinchProgressRef }) {
       console.log("Starting render loop...");
       renderLoop(); // kick off the loop
       console.log("Swype overlay is active.");
-      console.log( "pointer = move cursor", '\n', "pinch = click (hold for 1.5s)", '\n', "two fingers = scroll", '\n', "palm = zoom (move hand to pan)" );
+      console.log(
+        "pointer = move cursor",
+        "\n",
+        "pinch = click (hold for 1.5s)",
+        "\n",
+        "two fingers = scroll",
+        "\n",
+        "palm = zoom (move hand to pan)",
+      );
     }
 
     start();
@@ -482,13 +494,29 @@ export default function Swype({ cursorControlRef, pinchProgressRef }) {
     // Multiply by sensitivity to control scroll speed.
     if (state === "scroll") {
       const deltaY = pos.y - prevPos.current.y;
-      const SCROLL_SENSITIVITY = 1200; // tune this — higher = faster scroll
+      const SCROLL_SENSITIVITY = 1200;
 
-      // window.scrollBy scrolls the whole page
-      // if you want to scroll a specific element, use element.scrollBy instead
-      window.scrollBy({
+      // find the element currently under the cursor
+      const cx = cursorControlRef?.current?.x ?? window.innerWidth / 2;
+      const cy = cursorControlRef?.current?.y ?? window.innerHeight / 2;
+
+      // walk up the DOM from the element under cursor until we find
+      // something that can actually scroll — this works on any page/component
+      let el = document.elementFromPoint(cx, cy);
+      while (el && el !== document.body) {
+        const { overflowY } = getComputedStyle(el);
+        const canScroll =
+          (overflowY === "auto" || overflowY === "scroll") &&
+          el.scrollHeight > el.clientHeight;
+        if (canScroll) break;
+        el = el.parentElement;
+      }
+
+      // scroll whichever element we found, fall back to window
+      const target = el && el !== document.body ? el : window;
+      target.scrollBy({
         top: deltaY * SCROLL_SENSITIVITY,
-        behavior: "auto", // "auto" not "smooth" — smooth adds lag on top of lag
+        behavior: "auto",
       });
     }
 
@@ -539,7 +567,9 @@ export default function Swype({ cursorControlRef, pinchProgressRef }) {
     a.download = "swype_training_data1.csv";
     a.click();
     URL.revokeObjectURL(url); // free the memory
-    console.log("CSV downloaded. Use this file to retrain a model with swype_train.py");
+    console.log(
+      "CSV downloaded. Use this file to retrain a model with swype_train.py",
+    );
   }
 
   function clearData() {
