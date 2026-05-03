@@ -231,7 +231,19 @@ export default function Swype({ cursorControlRef, pinchProgressRef }) {
       //   4. schedules itself again via rAF
       // This is the core loop that makes everything real-time.
       async function renderLoop() {
+        
         const now = performance.now(); // high-resolution timestamp in milliseconds
+
+        // ── PERFORMANCE MONITOR ───────────────────────────────────────────────
+        // logs actual FPS every second so you can see impact of each feature
+        if (!renderLoop.lastLog) renderLoop.lastLog = now;
+        if (!renderLoop.frameCount) renderLoop.frameCount = 0;
+        renderLoop.frameCount++;
+        if (now - renderLoop.lastLog >= 1000) {
+          console.log(`FPS: ${renderLoop.frameCount}`);
+          renderLoop.frameCount = 0;
+          renderLoop.lastLog = now;
+        }
 
         // Feed the current video frame to MediaPipe.
         // detectForVideo() is synchronous — it returns results immediately.
