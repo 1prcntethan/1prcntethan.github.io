@@ -13,11 +13,11 @@ import * as ort from "onnxruntime-web"; // runs our trained ONNX model in the br
 // 0:idle, 1:palm, 2:pinch, 3:pointer, 4:scroll
 // The probability array from the model maps index → gesture using THIS order.
 // If this is wrong, gestures will be mislabeled (e.g. "pinch" shows as "palm").
-const GESTURE_CLASSES = ["idle", "palm", "pinch", "pointer", "scroll"];
+const GESTURE_CLASSES = ["idle", "pinch", "pointer", "scroll"];
 
 // The gesture list for the data collection UI (order doesn't matter here,
 // this is just what appears in the dropdown)
-const GESTURES = ["idle", "pointer", "scroll", "pinch", "palm"];
+const GESTURES = ["idle", "pointer", "scroll", "pinch"];
 
 // How often to capture a sample while holding the record button.
 // 100ms = 10 samples per second.
@@ -103,7 +103,7 @@ export default function Swype({ cursorControlRef, pinchProgressRef }) {
   const samplesRef = useRef([]); // collected training samples (array of {vector, label})
   const recordingRef = useRef(false); // mirror of `recording` state, readable inside rAF
   const lastSampleTime = useRef(0); // timestamp of last recorded sample
-  const gestureStateRef = useRef("idle"); // "idle" | "pointer" | "scroll" | "palm"
+  const gestureStateRef = useRef("idle"); // "idle" | "pointer" | "scroll" 
   const smoothedPos = useRef({ x: 0.5, y: 0.5 }); // smoothed wrist position — average over last N frames to reduce jitter
   const prevPos = useRef({ x: 0.5, y: 0.5 }); // previous wrist position — used to calculate delta (how much hand moved for scroll/pan speed)
   const pinchStartTime = useRef(null);
@@ -378,8 +378,6 @@ export default function Swype({ cursorControlRef, pinchProgressRef }) {
         "pinch = click (hold for 1.5s)",
         "\n",
         "two fingers = scroll",
-        "\n",
-        "palm = zoom (move hand to pan)",
       );
     }
 
@@ -506,7 +504,7 @@ export default function Swype({ cursorControlRef, pinchProgressRef }) {
     // Multiply by sensitivity to control scroll speed.
     if (state === "scroll") {
       const deltaY = pos.y - prevPos.current.y;
-      const SCROLL_SENSITIVITY = 1200;
+      const SCROLL_SENSITIVITY = 120;
 
       // find the element currently under the cursor
       const cx = cursorControlRef?.current?.x ?? window.innerWidth / 2;
@@ -527,29 +525,11 @@ export default function Swype({ cursorControlRef, pinchProgressRef }) {
       // scroll whichever element we found, fall back to window
       const target = el && el !== document.body ? el : window;
       target.scrollBy({
-        top: deltaY * SCROLL_SENSITIVITY,
+        top: deltaY * -SCROLL_SENSITIVITY,
         behavior: "auto",
       });
     }
 
-    // ── PALM MODE (pan) ────────────────────────────────────────────────────
-    // Similar to scroll but fires both X and Y.
-    // For now this scrolls the page in both axes — later you can hook this
-    // into the Three.js camera for actual viewport panning.
-    if (state === "palm") {
-      const deltaX = pos.x - prevPos.current.x;
-      const deltaY = pos.y - prevPos.current.y;
-      const PAN_SENSITIVITY = 1000;
-
-      window.scrollBy({
-        left: deltaX * PAN_SENSITIVITY,
-        top: deltaY * PAN_SENSITIVITY,
-        behavior: "auto",
-      });
-    }
-
-    // store position for next frame's delta calculation
-    prevPos.current = { x: pos.x, y: pos.y };
   }
 
   // ── CSV EXPORT ─────────────────────────────────────────────────────────────
@@ -662,14 +642,14 @@ export default function Swype({ cursorControlRef, pinchProgressRef }) {
               {confidence > 0 ? `${confidence}%` : ""}
             </span>
             {/* toggle between preview and data collection modes ---- remove and switch modes by comment code below */}
-            {/* <span
+            <span
               style={{ cursor: "pointer", opacity: 0.5 }}
               onClick={() =>
                 setMode(mode === "preview" ? "collect" : "preview")
               }
             >
               {mode === "preview" ? "collect →" : "← preview"}
-            </span> */}
+            </span>
           </div>
 
           {/* data collection panel — only visible in collect mode */}
