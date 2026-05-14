@@ -68,6 +68,7 @@ export default function Portfolio({ onHero }) {
                   x2="149"
                   y2="-1.5"
                   transform="matrix(1 0 0 -1 238 238)"
+                  stroke-linecap="round"
                   className="draw-line group1"
                 />
                 <circle
@@ -89,6 +90,7 @@ export default function Portfolio({ onHero }) {
                   x2="149"
                   y2="-1.5"
                   transform="matrix(0.707107 0.707107 0.707107 -0.707107 239.709 237.588)"
+                  stroke-linecap="round"
                   className="draw-line group2"
                 />
                 <circle
@@ -110,6 +112,7 @@ export default function Portfolio({ onHero }) {
                   y1="239"
                   x2="239.5"
                   y2="388"
+                  stroke-linecap="round"
                   className="draw-line group3"
                 />
                 <circle
@@ -131,6 +134,7 @@ export default function Portfolio({ onHero }) {
                   y1="239.356"
                   x2="134.704"
                   y2="344.714"
+                  stroke-linecap="round"
                   className="draw-line group4"
                 />
                 <circle
@@ -152,6 +156,7 @@ export default function Portfolio({ onHero }) {
                   y1="239.5"
                   x2="91"
                   y2="239.5"
+                  stroke-linecap="round"
                   className="draw-line group5"
                 />
                 <circle
@@ -173,6 +178,7 @@ export default function Portfolio({ onHero }) {
                   y1="240.063"
                   x2="134.704"
                   y2="134.704"
+                  stroke-linecap="round"
                   className="draw-line group6"
                 />
                 <circle
@@ -194,6 +200,7 @@ export default function Portfolio({ onHero }) {
                   x2="149"
                   y2="-1.5"
                   transform="matrix(0 -1 -1 0 238 240)"
+                  stroke-linecap="round"
                   className="draw-line group7"
                 />
                 <circle
@@ -215,6 +222,7 @@ export default function Portfolio({ onHero }) {
                   x2="149"
                   y2="-1.5"
                   transform="matrix(0.707107 -0.707107 -0.707107 -0.707107 238.295 239.002)"
+                  stroke-linecap="round"
                   className="draw-line group8"
                 />
                 <circle
@@ -495,9 +503,106 @@ export default function Portfolio({ onHero }) {
             </motion.div>
           </motion.section>
           <motion.section className="portfolio-section">
-            <motion.div className="section-title">experience</motion.div>
-            <motion.div className="section-content">
-              mtv, clark, bellevue
+            <motion.div className="section-title">
+              experience & education
+            </motion.div>
+            <motion.div className="education-content">
+              <div className="timeline-container">
+                <svg
+                  viewBox="0 0 25 753"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="timeline-svg"
+                >
+                  <circle
+                    cx="12.5"
+                    cy="12.5"
+                    r="10.5"
+                    stroke="#6ADFB8"
+                    stroke-width="4"
+                  />
+                  <circle
+                    cx="12.5"
+                    cy="177.5"
+                    r="10.5"
+                    stroke="#6ADFB8"
+                    stroke-width="4"
+                  />
+                  <circle
+                    cx="12.5"
+                    cy="342.5"
+                    r="10.5"
+                    stroke="#6ADFB8"
+                    stroke-width="4"
+                  />
+                  <circle
+                    cx="12.5"
+                    cy="507.5"
+                    r="10.5"
+                    stroke="#6ADFB8"
+                    stroke-width="4"
+                  />
+                  <circle
+                    cx="12.5"
+                    cy="672.5"
+                    r="10.5"
+                    stroke="#6ADFB8"
+                    stroke-width="4"
+                  />
+                  <rect x="12" y="25" width="1" height="140" fill="#3F3F3F" />
+                  <rect x="12" y="190" width="1" height="140" fill="#3F3F3F" />
+                  <rect x="12" y="355" width="1" height="140" fill="#3F3F3F" />
+                  <rect x="12" y="520" width="1" height="140" fill="#3F3F3F" />
+                  <rect x="12" y="685" width="1" height="68" fill="#3F3F3F" />
+                </svg>
+              </div>
+              <div className="timeline-content">
+                <div className="timeline-item">
+                  <div className="timeline-date">2026 - Present</div>
+                  <div className="timeline-title">B.S. in Computer Science</div>
+                  <div className="timeline-inst">University of Washington, Paul Allen School of Computer Science & Engineering</div>
+                  <div className="timeline-desc">did tuff stuff</div>
+                </div>
+                <div className="timeline-item">
+                  <div className="timeline-date">2024 - 2026</div>
+                  <div className="timeline-title">Solo Developer/Founder</div>
+                  <div className="timeline-inst">WINGS</div>
+                  <div className="timeline-desc">did tuff stuff</div>
+                </div>
+                <div className="timeline-item">
+                  <div className="timeline-date">2025 - 2026</div>
+                  <div className="timeline-title">Running Start Student</div>
+                  <div className="timeline-inst">Clark College</div>
+                  <div className="timeline-desc">
+                    Relevant Coursework: Intro to C, Linear Algebra
+                    <br />
+                    GPA: 4.00
+                  </div>
+                </div>
+                <div className="timeline-item">
+                  <div className="timeline-date">2025 - 2026</div>
+                  <div className="timeline-title">Running Start Student</div>
+                  <div className="timeline-inst">Bellevue College</div>
+                  <div className="timeline-desc">
+                    Relevant Coursework: CS211 Programming Fundamentals II,
+                    Intro to Python
+                    <br />
+                    GPA: 4.00
+                  </div>
+                </div>
+                <div className="timeline-item">
+                  <div className="timeline-date">2022 - 2026</div>
+                  <div className="timeline-title">High School Student</div>
+                  <div className="timeline-inst">Mountain View High School</div>
+                  <div className="timeline-desc">
+                    Relevant Coursework: AP Computer Science Principles, AP
+                    Computer Science A, AP Calculus AB/BC, Multi-variable
+                    Calculus
+                    <br />
+                    GPA: 4.00
+                  </div>
+                </div>
+              </div>
             </motion.div>
           </motion.section>
           <motion.section className="portfolio-section">contact</motion.section>
