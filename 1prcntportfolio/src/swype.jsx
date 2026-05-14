@@ -642,14 +642,14 @@ export default function Swype({ cursorControlRef, pinchProgressRef }) {
               {confidence > 0 ? `${confidence}%` : ""}
             </span>
             {/* toggle between preview and data collection modes ---- remove and switch modes by comment code below */}
-            <span
+            {/* <span
               style={{ cursor: "pointer", opacity: 0.5 }}
               onClick={() =>
                 setMode(mode === "preview" ? "collect" : "preview")
               }
             >
               {mode === "preview" ? "collect →" : "← preview"}
-            </span>
+            </span> */}
           </div>
 
           {/* data collection panel — only visible in collect mode */}

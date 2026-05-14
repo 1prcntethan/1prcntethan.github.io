@@ -61,6 +61,7 @@
 }
 
 .portfolio-close {
+  position: fixed;
   width: fit-content;
   background-color: transparent;
   border: none;
@@ -135,6 +136,7 @@
     opacity: 1;
   }
   8% {
+    display: none;
     opacity: 0;
     transform: scale(1.05);
   }
@@ -239,6 +241,84 @@
   }
 }
 
+.chart-svg {
+  bottom: 50%;
+  transform: translateY(-65%);
+  
+  animation: chart-fade linear;
+  animation-timeline: --portfolio-scroll;
+  animation-range: 0% 100%;
+}
+
+@keyframes chart-fade {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+  8% {
+    display: none;
+    opacity: 0;
+  }
+  12% {
+    display: block;
+    opacity: 1;
+  }
+  17% {
+    opacity: 1;
+  }
+  19% {
+    display: none;
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+
+@keyframes chart-zoom-fade {
+  0% {
+    display: none;
+    opacity: 0;
+    transform: scale(0);
+  }
+  8% {
+    display: none;
+    opacity: 0;
+    transform: scale(0);
+  }
+  12% {
+    display: block;
+    opacity: 1;
+    transform: scale(0.6);
+  }
+  17% {
+    opacity: 1;
+    transform: scale(0.6);
+
+  }
+  19% {
+    display: none;
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
+
+#chart-data {
+  width: 100%;
+  justify-self: center;
+  transform-origin: 87% 82%;
+  transform-box: fill-box; 
+  align-self: center;
+  animation: chart-zoom-fade linear;
+  animation-timeline: --portfolio-scroll;
+  animation-range: 0% 100%;
+}
+
 .intro-section {
   bottom: -100%;
   display: flex;
@@ -248,10 +328,10 @@
   padding-right: 5%;
   min-height: 100vh;
   justify-content: center;
-  
+
   animation: fade-out 1s linear both;
   animation-timeline: --portfolio-scroll;
-  animation-range: 0% 10%;
+  animation-range: 0% 8%;
 }
 
 @keyframes fade-out {
@@ -277,10 +357,26 @@
   min-height: 100vh;
   height: 100vh;
   justify-content: center;
+  border-top: 1px solid white;
 
   animation: content-focus linear both;
   animation-timeline: view();
   animation-range: cover 0% cover 100%;
+}
+
+.intro-title {
+  display: flex;
+  flex-direction: row;
+  background-color: transparent;
+  font-family: Josefin Sans;
+  font-weight: 100;
+  font-size: 42px;
+  color: #e0f1eb;
+  width: auto;
+  margin-bottom: 20px;
+  text-shadow:
+    0px 0px 16px rgb(255, 255, 255),
+    0px 0px 32px rgb(255, 255, 255);
 }
 
 .section-title {
@@ -289,7 +385,7 @@
   background-color: transparent;
   font-family: Josefin Sans;
   font-weight: 100;
-  font-size: 42px;
+  font-size: 36px;
   color: #e0f1eb;
   width: auto;
   text-shadow:
@@ -318,7 +414,6 @@
   font-size: 24px;
   color: #eefff9;
   width: fit-content;
-  margin-top: 20px;
   line-height: 1.5;
   flex-direction: column;
   width: 100%;
@@ -372,20 +467,32 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  color: #e0f1eb;
-  width: calc(100% - 40px);
+  color: #eefff9;
+  width: calc(100% - 80px);
   background-color: #060606;
-  border: 1px solid transparent;
+  border: 1px solid #777777;
+  font-size: 24px;
   border-radius: 20px;
-  padding: 20px;
+  padding: 40px;
   height: 100%;
-  filter: drop-shadow(0px 0px 12px #1c2b27);
+  /* filter: drop-shadow(0px 0px 12px #1c2b27); */
+}
+
+.skill-title {
+  font-weight: 400;
+  font-size: 22px;
+  color: #b1c2bc;
 }
 
 .skill-list {
   display: flex;
   flex-direction: column;
   margin: 0;
+  padding-left: 25px;
+}
+
+.skill-list > li::marker {
+  color: #64d4af;
 }
 
 .sixty-div {
@@ -444,10 +551,11 @@
   padding-right: 5%;
   min-height: 400vh;
   height: 400vh;
+  /* border-bottom: 1px solid white; */
 
   animation: project-fade linear both;
   animation-timeline: --portfolio-scroll;
-  animation-range: 15% 85%;
+  animation-range: 18% 85%;
 }
 
 @keyframes project-fade {
@@ -471,7 +579,7 @@
 
 .project-title {
   --start: 0;
-  --end: 297.5vh;
+  --end: 298vh;
 
   display: flex;
   flex-direction: row;
@@ -524,7 +632,7 @@
 
 .project-card:nth-child(1) {
   --start: 0vh;
-  --end: 297.5vh;
+  --end: 298vh;
 
   --scale-start: 1;
   --scale-end: 0.9;
