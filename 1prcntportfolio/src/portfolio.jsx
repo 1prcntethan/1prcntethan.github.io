@@ -560,14 +560,20 @@ export default function Portfolio({ onHero }) {
                 <div className="timeline-item">
                   <div className="timeline-date">2026 - Present</div>
                   <div className="timeline-title">B.S. in Computer Science</div>
-                  <div className="timeline-inst">University of Washington, Paul Allen School of Computer Science & Engineering</div>
-                  <div className="timeline-desc">did tuff stuff</div>
+                  <div className="timeline-inst">University of Washington</div>
+                  <div className="timeline-desc">
+                    Relevant Coursework: DSA stuff
+                  </div>
                 </div>
                 <div className="timeline-item">
                   <div className="timeline-date">2024 - 2026</div>
                   <div className="timeline-title">Solo Developer/Founder</div>
                   <div className="timeline-inst">WINGS</div>
-                  <div className="timeline-desc">did tuff stuff</div>
+                  <div className="timeline-desc">
+                    Peak 33k on Instagram, 1.2k MAU. Calisthenics PWA, written
+                    skill guides/tutorials, edited content, user auth and
+                    progress tracking.{" "}
+                  </div>
                 </div>
                 <div className="timeline-item">
                   <div className="timeline-date">2025 - 2026</div>
