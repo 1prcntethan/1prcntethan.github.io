@@ -404,12 +404,14 @@ export default function Portfolio({ onHero }) {
                 transition={{ duration: 2.5, ease: "easeInOut" }}
               >
                 <div>
-                  In the constantly evolving world of tech,{" "}
-                  <span className="accent-text">adaptability</span> is key.
-                </div>
-                <div>
-                  Thus, I strive for the ability to meld styles, functionality,
-                  and aesthetic to the environment, blending{" "}
+                  I'm a CS student at the University of Washington, and I{" "}
+                  <span className="accent-text">build </span>
+                  things that <span className="accent-text">
+                    look good
+                  </span> and <span className="accent-text">work well</span>. I
+                  pick up new tools, aesthetics, and constraints{" "}
+                  <span className="accent-text">quickly</span>, and I love
+                  working on products that blend{" "}
                   <span className="accent-text">intuitive design</span> and{" "}
                   <span className="accent-text">technical expertise</span>.
                 </div>
@@ -570,9 +572,9 @@ export default function Portfolio({ onHero }) {
                   <div className="timeline-title">Solo Developer/Founder</div>
                   <div className="timeline-inst">WINGS</div>
                   <div className="timeline-desc">
-                    Peak 33k on Instagram, 1.2k MAU. Calisthenics PWA, written
+                    Peak 33k on Instagram (@wings.sw), 1.2k MAU. Calisthenics PWA, written
                     skill guides/tutorials, edited content, user auth and
-                    progress tracking.{" "}
+                    progress tracking{" "}
                   </div>
                 </div>
                 <div className="timeline-item">
