@@ -885,3 +885,62 @@
   font-size: 14px;
   color: #eefff9;
 }
+
+.contact-div {
+  display: flex;
+  width: 56.8%;
+  flex-direction: column;
+  gap: 5px;
+  color: #e0f1eb;
+
+  animation: fill-out linear both;
+  animation-timeline: --portfolio-scroll;
+  animation-range: 0% 100%;
+}
+
+
+.contact-title {
+  font-family: Josefin Sans;
+  font-weight: 100;
+  font-size: 32px;
+  color: #e0f1eb;
+}
+
+.contact-name {
+  margin-top: 40px;
+  font-family: Josefin Sans;
+  font-weight: 100;
+  font-size: 60px;
+  color: #e0f1eb;
+  letter-spacing: 3px;
+}
+
+.contact-caption {
+  font-family: Raleway;
+  font-size: 18px;
+  color: #eefff946;
+  word-spacing: 3px;
+  letter-spacing: 3px;
+  margin-bottom: 40px;
+}
+
+.contact-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-family: Raleway;
+  letter-spacing: 3px;
+  font-weight: 100;
+  font-size: 18px;
+  color: #eefff9;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.contact-final {
+  margin-top: 40px;
+  font-weight: 100;
+  font-family: Josefin Sans;
+  font-size: 24px;
+  color: #e0f1eb67;
+}

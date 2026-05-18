@@ -572,9 +572,9 @@ export default function Portfolio({ onHero }) {
                   <div className="timeline-title">Solo Developer/Founder</div>
                   <div className="timeline-inst">WINGS</div>
                   <div className="timeline-desc">
-                    Peak 33k on Instagram (@wings.sw), 1.2k MAU. Calisthenics PWA, written
-                    skill guides/tutorials, edited content, user auth and
-                    progress tracking{" "}
+                    Peak 33k on Instagram (@wings.sw), 1.2k MAU. Calisthenics
+                    PWA, written skill guides/tutorials, edited content, user
+                    auth and progress tracking{" "}
                   </div>
                 </div>
                 <div className="timeline-item">
@@ -613,7 +613,26 @@ export default function Portfolio({ onHero }) {
               </div>
             </motion.div>
           </motion.section>
-          <motion.section className="portfolio-section">contact</motion.section>
+          <motion.section className="portfolio-section">
+            <div className="contact-div">
+              <motion.div className="contact-title">contact</motion.div>
+              <motion.div className="contact-name">ethan tay</motion.div>
+              <div className="contact-caption">cs student & developer</div>
+              <motion.div className="contact-detail">
+                email_<span className="accent-text">ethan.tay@uw.edu</span>
+              </motion.div>
+              <motion.div className="contact-detail">
+                github_ 1prcntethan
+              </motion.div>
+              <motion.div className="contact-detail">
+                linkedin_ Ethan Tay???
+              </motion.div>
+              <motion.div className="contact-detail">
+                instagram_ @ethantay26
+              </motion.div> {/* make email, github linked in etc light gray, make handles all inline tgt */}
+              <div className="contact-final">"let's build something truly great together.</div>
+            </div>
+          </motion.section>{" "}
         </motion.div>
         // <div class="portfolio-container">
         //   <section class="portfolio-section">Intro</section>
