@@ -268,7 +268,7 @@
 .chart-svg {
   bottom: 50%;
   transform: translateY(-65%);
-  
+
   animation: chart-fade linear;
   animation-timeline: --portfolio-scroll;
   animation-range: 0% 100%;
@@ -299,7 +299,6 @@
   }
 }
 
-
 @keyframes chart-zoom-fade {
   0% {
     display: none;
@@ -319,7 +318,6 @@
   17% {
     opacity: 1;
     transform: scale(0.6);
-
   }
   19% {
     display: none;
@@ -336,7 +334,7 @@
   width: 100%;
   justify-self: center;
   transform-origin: 87% 82%;
-  transform-box: fill-box; 
+  transform-box: fill-box;
   align-self: center;
   animation: chart-zoom-fade linear;
   animation-timeline: --portfolio-scroll;
@@ -659,7 +657,7 @@
   --end: 298vh;
 
   --scale-start: 1;
-  --scale-end: 0.90;
+  --scale-end: 0.9;
 
   animation-range: 28% 70%;
   z-index: 1;
@@ -849,7 +847,6 @@
   }
 }
 
-
 .timeline-item {
   display: flex;
   flex-direction: column;
@@ -876,7 +873,7 @@
 .timeline-inst {
   font-family: Raleway;
   font-size: 14px;
-  color: #6ADFB8
+  color: #6adfb8;
 }
 
 .timeline-desc {
@@ -898,12 +895,14 @@
   animation-range: 0% 100%;
 }
 
-
 .contact-title {
   font-family: Josefin Sans;
   font-weight: 100;
   font-size: 32px;
   color: #e0f1eb;
+  text-shadow:
+    0px 0px 16px rgb(255, 255, 255),
+    0px 0px 32px rgb(255, 255, 255);
 }
 
 .contact-name {
@@ -927,7 +926,7 @@
 .contact-detail {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 8px;
   font-family: Raleway;
   letter-spacing: 3px;
   font-weight: 100;
@@ -943,4 +942,8 @@
   font-family: Josefin Sans;
   font-size: 24px;
   color: #e0f1eb67;
+}
+
+.contact-label {
+  color: #eefff97a;
 }

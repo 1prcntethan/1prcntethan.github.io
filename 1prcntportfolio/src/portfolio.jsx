@@ -619,18 +619,26 @@ export default function Portfolio({ onHero }) {
               <motion.div className="contact-name">ethan tay</motion.div>
               <div className="contact-caption">cs student & developer</div>
               <motion.div className="contact-detail">
-                email_<span className="accent-text">ethan.tay@uw.edu</span>
+                <span className="contact-label">email_</span>
+                <span className="accent-text">ethantay1prcnt@gmail.com</span>
+                <span className="accent-text">ethan.tay@uw.edu</span>
               </motion.div>
               <motion.div className="contact-detail">
-                github_ 1prcntethan
+                <span className="contact-label">github_</span>{" "}
+                <spam>1prcntethan</spam>
               </motion.div>
               <motion.div className="contact-detail">
-                linkedin_ Ethan Tay???
+                <span className="contact-label">linkedin_</span>{" "}
+                <spam>Ethan Tay</spam>
               </motion.div>
               <motion.div className="contact-detail">
-                instagram_ @ethantay26
-              </motion.div> {/* make email, github linked in etc light gray, make handles all inline tgt */}
-              <div className="contact-final">"let's build something truly great together.</div>
+                <span className="contact-label">instagram_</span>{" "}
+                <spam>@ethantay26</spam>
+              </motion.div>{" "}
+              {/* make email, github linked in etc light gray, make handles all inline tgt */}
+              <div className="contact-final">
+                <i>let's build something great together.</i>
+              </div>
             </div>
           </motion.section>{" "}
         </motion.div>
