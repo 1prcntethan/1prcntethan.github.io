@@ -420,8 +420,31 @@ export default function Portfolio({ onHero }) {
               <motion.div className="section-title">
                 skills & expertise
               </motion.div>
-              <motion.div className="section-content">
-                <motion.div className="skills-column">
+              <motion.div className="skills-content">
+                <div className="skills-column">
+                  <div className="skill-title">
+                    frontend design_
+                  </div>
+                  <div className="skill-text">
+                    Design goes hand in hand with development. I build aesthenically pleasing, responsive interfaces, with an emphasis on user experience and intuitive design. 
+                  </div>
+                  <div className="skill-projects">
+                    <span>projects</span>
+                    <span className="skill-project-ex">WINGS · Portfolio</span>
+                  </div>
+                </div>
+                <div className="skills-divider"></div>                <div className="skills-column">
+                  <div className="skill-title">
+                    machine learning_
+                  </div>
+                </div>
+                <div className="skills-divider" />
+                <div className="skills-column">
+                  <div className="skill-title">
+                    deployment & tools_
+                  </div>
+                </div>
+                {/* <motion.div className="skills-column">
                   <div className="skill-title">core technologies</div>
                   <ul className="skill-list">
                     <li>React</li>
@@ -440,7 +463,7 @@ export default function Portfolio({ onHero }) {
                     <li>MediaPipe</li>
                     <li>Git/Github</li>
                   </ul>
-                </motion.div>
+                </motion.div> */}
               </motion.div>
             </motion.div>
           </motion.section>

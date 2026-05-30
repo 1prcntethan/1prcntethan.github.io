@@ -6,42 +6,21 @@ import {
 } from "@mediapipe/tasks-vision";
 import * as ort from "onnxruntime-web"; // runs our trained ONNX model in the browser
 
-// The gesture labels in the order sklearn assigned them during training.
-// sklearn always sorts class names ALPHABETICALLY internally, regardless of
-// what order you collected them. So even though we collected in order
-// [idle, pointer, scroll, pinch, palm], sklearn sorted them to:
-// 0:idle, 1:palm, 2:pinch, 3:pointer, 4:scroll
-// The probability array from the model maps index → gesture using THIS order.
-// If this is wrong, gestures will be mislabeled (e.g. "pinch" shows as "palm").
+// sklearn always sorts class names ALPHABETICALLY internally
 const GESTURE_CLASSES = ["idle", "pinch", "pointer", "scroll"];
 
-// The gesture list for the data collection UI (order doesn't matter here,
-// this is just what appears in the dropdown)
+// The gesture list for the data collection UI (order doesn't matter)
 const GESTURES = ["idle", "pointer", "scroll", "pinch"];
 
-// How often to capture a sample while holding the record button.
-// 100ms = 10 samples per second.
+// How often to capture a sample while holding the record button
 const SAMPLE_RATE_MS = 100;
 
 // ── NORMALIZATION ─────────────────────────────────────────────────────────────
-// This function must match EXACTLY what train.py did to the data before training.
+// This function must match what train.py did to the data before training
 // The model learned patterns from normalized data — if we feed it raw data at
-// inference time, the input distribution is different and predictions break.
-//
-// What normalization does and WHY:
-// MediaPipe gives us absolute coordinates: x=0.6 means 60% across the frame.
-// The problem: if you hold your hand on the left vs right side of the screen,
-// all 63 numbers shift by a fixed offset. The model would think these are
-// completely different hand shapes, even though the fingers look the same.
-//
-// Fix: subtract the wrist position from every landmark. Now every coordinate
-// is relative to the wrist. "Index finger tip" becomes "index finger tip is
-// 0.3 units above and 0.1 units right of the wrist" regardless of where in
-// the frame your hand is. This is called wrist-centering.
-//
-// We also divide by the distance from wrist to middle finger base (landmark 9).
-// This accounts for distance from camera — a hand closer to the camera has
-// larger raw coordinates. After dividing, all hands are the same "size".
+// inference time, the input distribution is different and predictions break
+// subtract wrist position from all landmarks -- wrist relative
+// scale all landmarks by distance for size normalization
 function normalizeLandmarks(landmarks) {
   const wrist = landmarks[0]; // landmark 0 is always the wrist
 
@@ -68,8 +47,6 @@ function normalizeLandmarks(landmarks) {
       : centered; // if scale is 0 somehow, skip division to avoid NaN
 
   // flatten 21 {x,y,z} objects into a single array of 63 numbers:
-  // [x0,y0,z0, x1,y1,z1, ..., x20,y20,z20]
-  // this is the format the model expects
   return normalized.flatMap((lm) => [lm.x, lm.y, lm.z]);
 }
 
@@ -83,7 +60,6 @@ export default function Swype({ cursorControlRef, pinchProgressRef }) {
   // which panel is showing: preview (just camera) or collect (data collection)
   const [mode, setMode] = useState("preview");
 
-  // data collection state
   const [selectedGesture, setSelectedGesture] = useState(GESTURES[0]);
   const [recording, setRecording] = useState(false);
   const [counts, setCounts] = useState(
@@ -91,9 +67,7 @@ export default function Swype({ cursorControlRef, pinchProgressRef }) {
   );
 
   // ── REFS ────────────────────────────────────────────────────────────────────
-  // Refs hold values that persist across renders without triggering re-renders.
-  // We use refs for anything that lives inside the animation loop, because
-  // state updates inside rAF cause React re-renders which tank performance.
+  // use refs for anything that lives inside the animation loop, because
 
   const videoRef = useRef(null); // the hidden <video> element (webcam feed)
   const canvasRef = useRef(null); // the <canvas> we draw video + landmarks on
@@ -108,10 +82,7 @@ export default function Swype({ cursorControlRef, pinchProgressRef }) {
   const prevPos = useRef({ x: 0.5, y: 0.5 }); // previous wrist position — used to calculate delta (how much hand moved for scroll/pan speed)
   const pinchStartTime = useRef(null);
 
-  // Keep recordingRef in sync with recording state.
-  // We can't read `recording` directly inside renderLoop because of stale closures —
-  // the function captures the value of `recording` when it's first created (false)
-  // and never sees updates. Reading recordingRef.current always gets the latest value.
+  // Keep recordingRef in sync with recording state. Reading recordingRef.current always gets the latest value
   useEffect(() => {
     recordingRef.current = recording;
   }, [recording]);
@@ -132,7 +103,6 @@ export default function Swype({ cursorControlRef, pinchProgressRef }) {
     }
 
     async function start() {
-      // ── LOAD MEDIAPIPE ────────────────────────────────────────────────────
       // MediaPipe Tasks runs on WebAssembly (WASM) — compiled C++ code that
       // runs in the browser at near-native speed. FilesetResolver downloads
       // the WASM binary from the CDN and sets it up before we can use it.
@@ -140,10 +110,7 @@ export default function Swype({ cursorControlRef, pinchProgressRef }) {
         "https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.14/wasm",
       );
       console.log("MediaPipe vision files loaded");
-      // HandLandmarker is the actual model — it takes a video frame and returns
-      // 21 landmark points representing the hand skeleton.
-      // The .task file is a pre-trained Google model, downloaded from their CDN.
-      // delegate: "GPU" runs it on the graphics card for better performance.
+      // HandLandmarker is the actual model — it takes a video frame and returns 21 landmark points representing the hand skeleton
       // try GPU first, fall back to CPU if WebGL context unavailable
       let handLandmarker;
       try {
@@ -177,7 +144,6 @@ export default function Swype({ cursorControlRef, pinchProgressRef }) {
       // By default it looks in the same folder as the page, but Vite doesn't
       // copy those files there automatically. Pointing to the CDN avoids
       // needing to configure anything locally.
-      // The version must match exactly what's in package.json.
       ort.env.wasm.wasmPaths =
         "https://cdn.jsdelivr.net/npm/onnxruntime-web@1.24.3/dist/";
 
@@ -229,7 +195,6 @@ export default function Swype({ cursorControlRef, pinchProgressRef }) {
       //   2. draws the mirrored video + skeleton onto the canvas
       //   3. normalizes the landmarks → runs ONNX model → get gesture + confidence
       //   4. schedules itself again via rAF
-      // This is the core loop that makes everything real-time.
       async function renderLoop() {
         
         const now = performance.now(); // high-resolution timestamp in milliseconds
@@ -256,7 +221,6 @@ export default function Swype({ cursorControlRef, pinchProgressRef }) {
 
         // ── DRAW MIRRORED VIDEO ──────────────────────────────────────────
         // ctx.save() / ctx.restore() isolates transform changes.
-        // Without save/restore, the flip would affect everything drawn after.
         ctx.save();
         ctx.translate(220, 0); // move origin to right edge
         ctx.scale(-1, 1); // flip horizontally (mirror)
@@ -267,8 +231,6 @@ export default function Swype({ cursorControlRef, pinchProgressRef }) {
 
         if (results.landmarks.length > 0) {
           // results.landmarks is an array of hands, each hand is 21 {x,y,z} points
-          // x and y are normalized 0-1 across the image width/height
-          // z is depth relative to wrist (negative = closer to camera)
           const raw = results.landmarks[0]; // first (and only) hand
 
           // ── DRAW LANDMARKS ─────────────────────────────────────────────
@@ -291,13 +253,11 @@ export default function Swype({ cursorControlRef, pinchProgressRef }) {
 
           // ── GESTURE INFERENCE ───────────────────────────────────────────
           if (onnxSessionRef.current) {
-            // Step 1: normalize landmarks (same as training preprocessing)
-            // This converts absolute coordinates → wrist-relative, scale-normalized
+            // normalize landmarks (same as training preprocessing)
             const vector = normalizeLandmarks(raw); // returns 63 numbers
 
-            // Step 2: wrap in a typed array with explicit shape.
+            // Wrap in a typed array with explicit shape.
             // onnxruntime-web requires Float32Array, not a plain JS array.
-            // Shape [1, 63] = 1 sample with 63 features.
             // The model processes batches, so even single samples need the batch dim.
             const tensor = new ort.Tensor(
               "float32",
@@ -305,7 +265,7 @@ export default function Swype({ cursorControlRef, pinchProgressRef }) {
               [1, 63],
             );
 
-            // Step 3: run the model.
+            // run the model.
             // feeds maps input name → tensor. The input name comes from
             // the ONNX export — we logged session.inputNames above to verify.
             const feeds = { [session.inputNames[0]]: tensor };
@@ -315,9 +275,8 @@ export default function Swype({ cursorControlRef, pinchProgressRef }) {
             // The model has two outputs (from convert.py with zipmap:False):
             //   outputNames[0]: int64 tensor — predicted class index
             //   outputNames[1]: float tensor — 5 probabilities, one per gesture
-            // We use the probabilities because they give us confidence too.
+            // We use the probabilities because they give us confidence.
             const probs = Array.from(outputData[session.outputNames[1]].data);
-            // probs = [0.97, 0.01, 0.01, 0.005, 0.005] for example
             // each index corresponds to a gesture in GESTURE_CLASSES (alphabetical)
 
             // find which gesture has the highest probability
@@ -327,7 +286,7 @@ export default function Swype({ cursorControlRef, pinchProgressRef }) {
 
             // only show confident predictions — below 75% show "uncertain"
             // this prevents flickering when the model is between two gestures
-            if (maxProb > 0.75) {
+            if (maxProb > 0.75) { // prob threshold
               setGestureLabel(label);
               setConfidence(Math.round(maxProb * 100));
               handleGestureAction(label, raw, now);
@@ -574,24 +533,19 @@ export default function Swype({ cursorControlRef, pinchProgressRef }) {
   // ── RENDER ─────────────────────────────────────────────────────────────────
   // The overlay is a fixed-position div in the bottom-right corner with
   // zIndex: 9999 so it floats above everything including the Three.js canvas.
-  // It contains:
-  //   - a hidden <video> element receiving the webcam stream
-  //   - a <canvas> displaying the mirrored video + landmark skeleton
-  //   - a status bar showing current gesture label + confidence
-  //   - optionally the data collection panel (select + record + counts + export)
-  //   - a toggle button to activate/deactivate the whole system
   return (
     <div
       style={{
         position: "fixed",
         bottom: "24px",
         right: "24px",
-        zIndex: 9999,
+        zIndex: 9999, 
         display: "flex",
         flexDirection: "column",
         alignItems: "flex-end",
         gap: "10px",
         fontFamily: "monospace",
+        display: "none", // visibility of the swpye button, switch to block to show/hide easily.
       }}
     >
       {active && (
