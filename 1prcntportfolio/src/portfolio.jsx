@@ -404,14 +404,11 @@ export default function Portfolio({ onHero }) {
                 transition={{ duration: 2.5, ease: "easeInOut" }}
               >
                 <div>
-                  I'm a CS student at the University of Washington, and I{" "}
-                  <span className="accent-text">build </span>
-                  things that <span className="accent-text">
-                    look good
-                  </span> and <span className="accent-text">work well</span>. I
-                  pick up new tools, aesthetics, and constraints{" "}
-                  <span className="accent-text">quickly</span>, and I love
-                  working on products that blend{" "}
+                  I'm a CS student at the University of Washington, and I build
+                  things that <span className="accent-text">look good</span> and{" "}
+                  <span className="accent-text">work well</span>. I pick up new
+                  tools, aesthetics, and constraints quickly, and I love working
+                  on products that blend{" "}
                   <span className="accent-text">intuitive design</span> and{" "}
                   <span className="accent-text">technical expertise</span>.
                 </div>
@@ -440,7 +437,7 @@ export default function Portfolio({ onHero }) {
                     <li>Tailwind</li>
                     <li>Firebase</li>
                     <li>Three.js</li>
-                    <li>Vite</li>
+                    <li>MediaPipe</li>
                     <li>Git/Github</li>
                   </ul>
                 </motion.div>
@@ -572,28 +569,20 @@ export default function Portfolio({ onHero }) {
                   <div className="timeline-title">Solo Developer/Founder</div>
                   <div className="timeline-inst">WINGS</div>
                   <div className="timeline-desc">
-                    Peak 33k on Instagram (@wings.sw), 1.2k MAU. Calisthenics
-                    PWA, written skill guides/tutorials, edited content, user
-                    auth and progress tracking{" "}
+                    Calisthenics PWA, written skill guides/tutorials, edited
+                    content, user auth and progress tracking{" "}
+                  </div>
+                  <div className="timeline-highlight">
+                    {" "}
+                    Peak 33k on Instagram (@wings.sw), 1.2k MAU
                   </div>
                 </div>
                 <div className="timeline-item">
                   <div className="timeline-date">2025 - 2026</div>
                   <div className="timeline-title">Running Start Student</div>
-                  <div className="timeline-inst">Clark College</div>
+                  <div className="timeline-inst">Clark College, Bellevue College</div>
                   <div className="timeline-desc">
-                    Relevant Coursework: Intro to C, Linear Algebra
-                    <br />
-                    GPA: 4.00
-                  </div>
-                </div>
-                <div className="timeline-item">
-                  <div className="timeline-date">2025 - 2026</div>
-                  <div className="timeline-title">Running Start Student</div>
-                  <div className="timeline-inst">Bellevue College</div>
-                  <div className="timeline-desc">
-                    Relevant Coursework: CS211 Programming Fundamentals II,
-                    Intro to Python
+                    Relevant Coursework: Intro to C, Linear Algebra, CS211 Programming Fundamentals II, Intro to Python
                     <br />
                     GPA: 4.00
                   </div>
@@ -608,6 +597,14 @@ export default function Portfolio({ onHero }) {
                     Calculus
                     <br />
                     GPA: 4.00
+                  </div>
+                </div>
+                <div className="timeline-item">
+                  <div className="timeline-date">20XX - 20XX</div>
+                  <div className="timeline-title">Placeholder</div>
+                  <div className="timeline-inst">placeholder</div>
+                  <div className="timeline-desc">
+                    Placeholder
                   </div>
                 </div>
               </div>

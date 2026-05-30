@@ -690,11 +690,13 @@
 }
 
 .project-card:hover .card-title {
-  top: calc(100% - 53px);
+  top: calc(100% - 63px);
   left: 30px;
   bottom: 30px;
+
   transform: translate(0, 0);
-  font-size: 24px;
+  font-size: 30px;
+  padding: 10px;
 }
 .project-card:hover .card-info {
   opacity: 1;
@@ -881,6 +883,13 @@
   margin-top: 8px;
   font-size: 14px;
   color: #eefff9;
+}
+
+.timeline-highlight {
+  font-family: Josefin Sans;
+  margin-top: 4px;
+  font-size: 14px;
+  color: #6adfb8;
 }
 
 .contact-div {
