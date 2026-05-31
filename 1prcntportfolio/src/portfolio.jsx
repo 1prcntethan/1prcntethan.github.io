@@ -422,27 +422,37 @@ export default function Portfolio({ onHero }) {
               </motion.div>
               <motion.div className="skills-content">
                 <div className="skills-column">
-                  <div className="skill-title">
-                    frontend design_
-                  </div>
+                  <div className="skill-title">frontend design_</div>
                   <div className="skill-text">
-                    Design goes hand in hand with development. I build aesthenically pleasing, responsive interfaces, with an emphasis on user experience and intuitive design. 
+                    My first experience with CS was building frontend HTML/CSS
+                    websites. This designer's eye hasn't left me, and I still
+                    focus on creating aesthetically pleasing, responsive
+                    interfaces, with an emphasis on user experience and
+                    intuitive design.
                   </div>
-                  <div className="skill-projects">
-                    <span>projects</span>
-                    <span className="skill-project-ex">WINGS · Portfolio</span>
+                  <div className="skill-projects-tech">
+                    <div className="skill-projects">
+                      <span>projects</span>
+                      <span className="skill-project-ex">
+                        WINGS · Portfolio
+                      </span>
+                    </div>
+                    <span className="project-tech-divider"></span>
+                    <div className="skill-tech">
+                      <span>technologies</span>
+                      <span className="skill-tech-ex">
+                        React · Tailwind · Three.js · HTML/CSS · JavaScript
+                      </span>
+                    </div>
                   </div>
                 </div>
-                <div className="skills-divider"></div>                <div className="skills-column">
-                  <div className="skill-title">
-                    machine learning_
-                  </div>
+                <div className="skills-divider"></div>{" "}
+                <div className="skills-column">
+                  <div className="skill-title">machine learning_</div>
                 </div>
                 <div className="skills-divider" />
                 <div className="skills-column">
-                  <div className="skill-title">
-                    deployment & tools_
-                  </div>
+                  <div className="skill-title">deployment & tools_</div>
                 </div>
                 {/* <motion.div className="skills-column">
                   <div className="skill-title">core technologies</div>
@@ -603,9 +613,12 @@ export default function Portfolio({ onHero }) {
                 <div className="timeline-item">
                   <div className="timeline-date">2025 - 2026</div>
                   <div className="timeline-title">Running Start Student</div>
-                  <div className="timeline-inst">Clark College, Bellevue College</div>
+                  <div className="timeline-inst">
+                    Clark College, Bellevue College
+                  </div>
                   <div className="timeline-desc">
-                    Relevant Coursework: Intro to C, Linear Algebra, CS211 Programming Fundamentals II, Intro to Python
+                    Relevant Coursework: Intro to C, Linear Algebra, CS211
+                    Programming Fundamentals II, Intro to Python
                     <br />
                     GPA: 4.00
                   </div>
@@ -626,9 +639,7 @@ export default function Portfolio({ onHero }) {
                   <div className="timeline-date">20XX - 20XX</div>
                   <div className="timeline-title">Placeholder</div>
                   <div className="timeline-inst">placeholder</div>
-                  <div className="timeline-desc">
-                    Placeholder
-                  </div>
+                  <div className="timeline-desc">Placeholder</div>
                 </div>
               </div>
             </motion.div>

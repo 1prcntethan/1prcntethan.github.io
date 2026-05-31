@@ -540,7 +540,6 @@ export default function Swype({ cursorControlRef, pinchProgressRef }) {
         bottom: "24px",
         right: "24px",
         zIndex: 9999, 
-        display: "flex",
         flexDirection: "column",
         alignItems: "flex-end",
         gap: "10px",
