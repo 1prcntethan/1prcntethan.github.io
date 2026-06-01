@@ -449,6 +449,28 @@ export default function Portfolio({ onHero }) {
                 <div className="skills-divider"></div>{" "}
                 <div className="skills-column">
                   <div className="skill-title">machine learning_</div>
+                  <div className="skill-text">
+                    Starting with a curiosity for gesture controls, I used
+                    MediaPipe's hand tracking and trained Pytorch models on
+                    custom gesture datasets. This interest showed me the
+                    potential of AI-powered products that supercharge solving
+                    real problems.
+                  </div>
+                  <div className="skill-projects-tech">
+                    <div className="skill-projects">
+                      <span>projects</span>
+                      <span className="skill-project-ex">
+                        Swype · FlowState
+                      </span>
+                    </div>
+                    <span className="project-tech-divider"></span>
+                    <div className="skill-tech">
+                      <span>technologies</span>
+                      <span className="skill-tech-ex">
+                        Pytorch · MediaPipe · NumPy 
+                      </span>
+                    </div>
+                  </div>
                 </div>
                 <div className="skills-divider" />
                 <div className="skills-column">
