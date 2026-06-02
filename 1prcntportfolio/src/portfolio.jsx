@@ -431,19 +431,15 @@ export default function Portfolio({ onHero }) {
                     intuitive design.
                   </div>
                   <div className="skill-projects-tech">
-                    <div className="skill-projects">
-                      <span>projects</span>
-                      <span className="skill-project-ex">
-                        WINGS · Portfolio
-                      </span>
-                    </div>
-                    <span className="project-tech-divider"></span>
-                    <div className="skill-tech">
-                      <span>technologies</span>
-                      <span className="skill-tech-ex">
-                        React · Tailwind · Three.js · HTML/CSS · JavaScript
-                      </span>
-                    </div>
+                    <span>projects</span>
+                    <span className="skill-project-ex">WINGS · Portfolio</span>
+                  </div>
+                  <div className="skill-tech">
+                    <span>React</span>
+                    <span>Tailwind</span>
+                    <span>Three.js</span>
+                    <span>HTML/CSS</span>
+                    <span>JavaScript</span>
                   </div>
                 </div>
                 <div className="skills-divider"></div>{" "}
@@ -451,30 +447,40 @@ export default function Portfolio({ onHero }) {
                   <div className="skill-title">machine learning_</div>
                   <div className="skill-text">
                     Starting with a curiosity for gesture controls, I used
-                    MediaPipe's hand tracking and trained Pytorch models on
-                    custom gesture datasets. This interest showed me the
-                    potential of AI-powered products that supercharge solving
-                    real problems.
+                    MediaPipe's hand tracking and trained PyTorch models on
+                    custom gesture datasets. Building Swype introduced me to the
+                    process of collecting data, training models, and turning
+                    machine learning into something people can actually interact
+                    with.
                   </div>
                   <div className="skill-projects-tech">
-                    <div className="skill-projects">
-                      <span>projects</span>
-                      <span className="skill-project-ex">
-                        Swype · FlowState
-                      </span>
-                    </div>
-                    <span className="project-tech-divider"></span>
-                    <div className="skill-tech">
-                      <span>technologies</span>
-                      <span className="skill-tech-ex">
-                        Pytorch · MediaPipe · NumPy 
-                      </span>
-                    </div>
+                    <span>projects</span>
+                    <span className="skill-project-ex">Swype · FlowState</span>
+                  </div>
+                  <div className="skill-tech">
+                    <span>PyTorch</span>
+                    <span>NumPy</span>
+                    <span>MediaPipe</span>
                   </div>
                 </div>
                 <div className="skills-divider" />
                 <div className="skills-column">
                   <div className="skill-title">deployment & tools_</div>
+                  <div className="skill-text">
+                    I enjoy learning and building projects from
+                    development to production. Recently, I've been exploring
+                    deployment workflows, cloud services, and the tooling that
+                    keeps applications maintainable as they grow.
+                  </div>
+                  <div className="skill-projects-tech">
+                    <span>projects</span>
+                    <span className="skill-project-ex">FlowState</span>
+                  </div>
+                  <div className="skill-tech">
+                    <span>AWS</span>
+                    <span>Docker?</span>
+                    <span>CI/CD?</span>
+                  </div>
                 </div>
                 {/* <motion.div className="skills-column">
                   <div className="skill-title">core technologies</div>
@@ -517,6 +523,8 @@ export default function Portfolio({ onHero }) {
                     <span>JavaScript</span>
                     <span>React</span>
                     <span>Firebase</span>
+                    <span>Figma</span>
+                    <span>Cloudflare Pages</span>
                   </div>
                   <div className="card-links">
                     <a href="https://github.com/1prcntethan/wings">
@@ -534,7 +542,7 @@ export default function Portfolio({ onHero }) {
                   </div>
                   <div className="card-info">
                     AI hand gesture recognition overlay with real-time control
-                    over websites.
+                    over cursor controls and screen interactions.
                   </div>
                   <div className="card-tags">
                     <span>HTML/CSS</span>

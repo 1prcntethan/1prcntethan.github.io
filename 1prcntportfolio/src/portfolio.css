@@ -517,8 +517,8 @@
   font-size: 16px;
   padding: 10px 20px;
   background-color: #060606;
-  border: 1px solid #777777;
-  border-radius: 12px;
+  border-top: 1px solid #777777;
+  border-bottom: 1px solid #777777;
   height: auto;
 }
 
@@ -545,13 +545,25 @@
 
 .skill-tech {
   display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-
-.skill-tech-ex {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 8px;
   font-size: 16px;
   color: #6adfb8;
+}
+
+.skill-tech > span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 28px;
+  padding: 5px 18px 2px 18px;
+
+  line-height: 1;
+
+  background-color: #1c2b27;
+  border-radius: 9999px;
 }
 
 .skills-divider {
