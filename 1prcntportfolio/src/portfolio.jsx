@@ -637,7 +637,7 @@ export default function Portfolio({ onHero }) {
                   </div>
                   <div className="timeline-highlight">
                     {" "}
-                    Peak 33k on Instagram (@wings.sw), 1.2k MAU
+                    Peak 33k on Instagram (@wings.sw), 20k MAU
                   </div>
                 </div>
                 <div className="timeline-item">
@@ -698,7 +698,7 @@ export default function Portfolio({ onHero }) {
               </motion.div>{" "}
               {/* make email, github linked in etc light gray, make handles all inline tgt */}
               <div className="contact-final">
-                <i>let's build something great together.</i>
+                <i>win with me.</i>
               </div>
             </div>
           </motion.section>{" "}
