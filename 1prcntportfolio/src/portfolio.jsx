@@ -629,15 +629,11 @@ export default function Portfolio({ onHero }) {
                 </div>
                 <div className="timeline-item">
                   <div className="timeline-date">2024 - 2026</div>
-                  <div className="timeline-title">Solo Developer/Founder</div>
+                  <div className="timeline-title">Solo Developer/Founder – <span className="timeline-highlight">Peak 33k on Instagram (@wings.sw), 20k MAU</span></div>
                   <div className="timeline-inst">WINGS</div>
                   <div className="timeline-desc">
                     Calisthenics PWA, written skill guides/tutorials, edited
                     content, user auth and progress tracking{" "}
-                  </div>
-                  <div className="timeline-highlight">
-                    {" "}
-                    Peak 33k on Instagram (@wings.sw), 20k MAU
                   </div>
                 </div>
                 <div className="timeline-item">
@@ -696,10 +692,9 @@ export default function Portfolio({ onHero }) {
                 <span className="contact-label">instagram_</span>{" "}
                 <spam>@ethantay26</spam>
               </motion.div>{" "}
-              {/* make email, github linked in etc light gray, make handles all inline tgt */}
-              <div className="contact-final">
+              {/* <div className="contact-final">
                 <i>win with me.</i>
-              </div>
+              </div> */}
             </div>
           </motion.section>{" "}
         </motion.div>
