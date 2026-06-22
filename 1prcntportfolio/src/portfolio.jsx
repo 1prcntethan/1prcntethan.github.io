@@ -9,6 +9,7 @@ import {
 } from "framer-motion";
 import { useRef, useEffect } from "react";
 import "./portfolio.css";
+import GithubContributions from "./components/github_contribution.jsx";
 
 export default function Portfolio({ onHero }) {
   const [portfolioVisible, setPortfolioVisible] = useState(true);
@@ -30,6 +31,7 @@ export default function Portfolio({ onHero }) {
           <motion.div className="fixed-visual">
             <div class="scroll-progress"></div>
             <div class="visual-container">
+              <GithubContributions username="1prcntethan" />
               <svg
                 width="479"
                 height="479"

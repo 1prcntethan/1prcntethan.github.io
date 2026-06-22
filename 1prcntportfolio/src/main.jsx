@@ -8,7 +8,7 @@ import Hero from "./hero.jsx";
 import Developer from "./developer.jsx";
 import Portfolio from "./portfolio.jsx";
 import Swype from "./swype.jsx";
-import Cursor from "./cursor.jsx";
+import Cursor from "./components/cursor.jsx";
 
 function App() {
   const [page, setPage] = useState("landing");
