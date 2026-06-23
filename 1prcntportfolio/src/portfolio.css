@@ -596,6 +596,46 @@
   color: #6adfb8;
 }
 
+.heatmap-container-wrapper {
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  align-items: center;
+  justify-content: center;
+  animation: show-map linear both;
+  animation-timeline: --portfolio-scroll;
+  animation-range: 78% 90%;
+}
+
+@keyframes show-map {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translate(-50%, calc(-50% + 40px));
+  }
+  10% {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translate(-50%, -50%);
+  }
+  90% {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translate(-50%, -50%);
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translate(-50%, calc(-50% - 40px));
+  }
+}
+
 .sixty-div {
   display: flex;
   width: 56.8%;

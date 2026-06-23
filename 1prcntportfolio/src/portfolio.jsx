@@ -9,7 +9,7 @@ import {
 } from "framer-motion";
 import { useRef, useEffect } from "react";
 import "./portfolio.css";
-import GithubContributions from "./components/github_contribution.jsx";
+import GitHubHeatmap from "./components/github_contribution.jsx";
 
 export default function Portfolio({ onHero }) {
   const [portfolioVisible, setPortfolioVisible] = useState(true);
@@ -31,7 +31,9 @@ export default function Portfolio({ onHero }) {
           <motion.div className="fixed-visual">
             <div class="scroll-progress"></div>
             <div class="visual-container">
-              <GithubContributions username="1prcntethan" />
+              <div class="heatmap-container-wrapper">
+                <GitHubHeatmap />
+              </div>
               <svg
                 width="479"
                 height="479"
@@ -469,10 +471,10 @@ export default function Portfolio({ onHero }) {
                 <div className="skills-column">
                   <div className="skill-title">deployment & tools_</div>
                   <div className="skill-text">
-                    I enjoy learning and building projects from
-                    development to production. Recently, I've been exploring
-                    deployment workflows, cloud services, and the tooling that
-                    keeps applications maintainable as they grow.
+                    I enjoy learning and building projects from development to
+                    production. Recently, I've been exploring deployment
+                    workflows, cloud services, and the tooling that keeps
+                    applications maintainable as they grow.
                   </div>
                   <div className="skill-projects-tech">
                     <span>projects</span>
@@ -631,7 +633,12 @@ export default function Portfolio({ onHero }) {
                 </div>
                 <div className="timeline-item">
                   <div className="timeline-date">2024 - 2026</div>
-                  <div className="timeline-title">Solo Developer/Founder – <span className="timeline-highlight">Peak 33k on Instagram (@wings.sw), 20k MAU</span></div>
+                  <div className="timeline-title">
+                    Solo Developer/Founder –{" "}
+                    <span className="timeline-highlight">
+                      Peak 33k on Instagram (@wings.sw), 20k MAU
+                    </span>
+                  </div>
                   <div className="timeline-inst">WINGS</div>
                   <div className="timeline-desc">
                     Calisthenics PWA, written skill guides/tutorials, edited

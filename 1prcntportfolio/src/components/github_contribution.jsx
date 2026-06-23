@@ -1,55 +1,81 @@
-// GithubContributions.jsx
 import React from "react";
 import { useEffect, useState } from "react";
+import "./github_contribution.css";
 
-export default function GithubContributions({ username }) {
-  const [contributions, setContributions] = useState([]);
+const MONTH_LABELS = [
+  { label: "Jan", weekIndex: 0 },
+  { label: "Apr", weekIndex: 13 },
+  { label: "Jul", weekIndex: 26 },
+  { label: "Oct", weekIndex: 39 },
+];
+
+export default function GitHubHeatmap({ username = "1prcntethan" }) {
+  const [weeks, setWeeks] = useState([]);
 
   useEffect(() => {
-    async function fetchData() {
-      try {
-        const res = await fetch(
-          `https://github-contributions-api.jogruber.de/v4/${username}`
-        );
-
-        const data = await res.json();
-
-        // Flatten contribution days
-        const days = data.contributions.flatMap(
-          (week) => week.contributionDays
-        );
-
-        setContributions(days.slice(-140)); // last ~20 weeks
-      } catch (err) {
-        console.log(err);
-      }
-    }
-
-    fetchData();
+    fetch(`https://github-contributions-api.jogruber.de/v4/${username}?y=last`)
+      .then((r) => r.json())
+      .then((d) => setWeeks(d.contributions));
   }, [username]);
 
+  const getLevel = (count) => {
+    if (count === 0) return "level-0";
+    if (count <= 3) return "level-1";
+    if (count <= 7) return "level-2";
+    if (count <= 12) return "level-3";
+    return "level-4";
+  };
+
+  const groupedWeeks = [];
+  for (let i = 0; i < weeks.length; i += 7) {
+    groupedWeeks.push(weeks.slice(i, i + 7));
+  }
+
   return (
-    <div className="github-container">
-      <div className="github-header">
-        <span>Github Activity</span>
+    <div className="heatmap-wrapper">
+      <p className="heatmap-label">github activity_</p>
+
+      <div className="heatmap-body">
+        <div className="heatmap-months">
+          {groupedWeeks.map((_, wi) => {
+            const month = MONTH_LABELS.find((m) => m.weekIndex === wi);
+            return (
+              <div key={wi} className="month-slot">
+                {month ? (
+                  <span className="month-text">{month.label}</span>
+                ) : null}
+              </div>
+            );
+          })}
+        </div>
+
+        <div className="heatmap-grid">
+          {groupedWeeks.map((week, wi) => (
+            <div key={wi} className="heatmap-week">
+              {week.map((day, di) => (
+                <div
+                  key={di}
+                  className={`heatmap-cell ${getLevel(day.count)}`}
+                  title={`${day.date}: ${day.count} contributions`}
+                  onMouseEnter={(e) => e.currentTarget.classList.add("hovered")}
+                  onMouseLeave={(e) =>
+                    e.currentTarget.classList.remove("hovered")
+                  }
+                />
+              ))}
+            </div>
+          ))}
+        </div>
       </div>
 
-      <div className="github-grid">
-        {contributions.map((day, i) => (
-          <div
-            key={i}
-            className="contribution-box"
-            style={{
-              opacity:
-                day.contributionCount === 0
-                  ? 0.15
-                  : Math.min(
-                      0.3 + day.contributionCount / 15,
-                      1
-                    ),
-            }}
-          />
-        ))}
+      <div className="heatmap-legend">
+        <span className="legend-label">less</span>
+        <div className="legend-cell level-0" />
+        <div className="legend-cell level-1" />
+        <div className="legend-cell level-2" />
+        <div className="legend-cell level-3" />
+        <div className="legend-cell level-4" />
+        <span className="legend-label">more</span>
       </div>
     </div>
   );
