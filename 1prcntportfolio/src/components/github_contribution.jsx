@@ -13,9 +13,13 @@ export default function GitHubHeatmap({ username = "1prcntethan" }) {
   const [weeks, setWeeks] = useState([]);
 
   useEffect(() => {
-    fetch(`https://github-contributions-api.jogruber.de/v4/${username}?y=last`)
+    fetch(`https://github-contributions-api.jogruber.de/v4/1prcntethan`)
       .then((r) => r.json())
-      .then((d) => setWeeks(d.contributions));
+      .then((d) => {
+        console.log(d.contributions);
+        setWeeks(d.contributions);
+      })
+      .catch((err) => console.error("Heatmap fetch failed:", err));
   }, [username]);
 
   const getLevel = (count) => {
