@@ -35,6 +35,16 @@ export default function GitHubHeatmap({ username = "1prcntethan" }) {
     groupedWeeks.push(weeks.slice(i, i + 7));
   }
 
+  const monthLabels = [0, 13, 26, 39]
+    .map((wi) => {
+      const week = groupedWeeks[wi];
+      const firstDay = week?.find((d) => d);
+      if (!firstDay) return null;
+      const label = new Date(firstDay.date).toLocaleString("default", { month: "short" });
+      return { label, weekIndex: wi };
+    })
+    .filter(Boolean);
+
   return (
     <div className="heatmap-wrapper">
       <p className="heatmap-label">github activity_</p>
@@ -42,7 +52,7 @@ export default function GitHubHeatmap({ username = "1prcntethan" }) {
       <div className="heatmap-body">
         <div className="heatmap-months">
           {groupedWeeks.map((_, wi) => {
-            const month = MONTH_LABELS.find((m) => m.weekIndex === wi);
+            const month = monthLabels.find((m) => m.weekIndex === wi);
             return (
               <div key={wi} className="month-slot">
                 {month ? (
