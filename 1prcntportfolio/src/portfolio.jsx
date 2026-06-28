@@ -636,7 +636,7 @@ export default function Portfolio({ onHero }) {
                   <div className="timeline-title">
                     Solo Developer/Founder –{" "}
                     <span className="timeline-highlight">
-                      Peak 33k on Instagram (@wings.sw), 20k MAU
+                      Peak 33k on Instagram (@wings.sw), 20k MAU, 1k+ DAU
                     </span>
                   </div>
                   <div className="timeline-inst">WINGS</div>
