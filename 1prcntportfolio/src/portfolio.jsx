@@ -514,13 +514,13 @@ export default function Portfolio({ onHero }) {
               <motion.div className="project-title">projects</motion.div>
               <div className="project-wrapper">
                 <div className="project-card">
-                  <div className="card-bg"></div>
+                  <div className="card-bg" id="bg-wings"></div>
                   <div className="card-title" id="wings-font">
                     Wings.
                   </div>
                   <div className="card-info">
-                    all-in-one calisthenics guide with personalized skill
-                    tracker and rank system.
+                    all-in-one PWA calisthenics guide with personalized skill
+                    tracker and rank system, using React and Firebase
                   </div>
                   <div className="card-tags">
                     <span>HTML/CSS</span>
@@ -531,6 +531,9 @@ export default function Portfolio({ onHero }) {
                     <span>Cloudflare Pages</span>
                   </div>
                   <div className="card-links">
+                    <div className="card-stats">
+                      30k followers (@wings.sw), 1.2k MAU
+                    </div>
                     <a href="https://github.com/1prcntethan/wings">
                       <img src="github.svg" className="project-link"></img>
                     </a>
@@ -540,26 +543,34 @@ export default function Portfolio({ onHero }) {
                   </div>
                 </div>
                 <div className="project-card">
-                  <div className="card-bg"></div>
-                  <div className="card-title" id="wings-font">
-                    swype
+                  <div className="card-bg" id="bg-swype"></div>
+                  <div className="card-title" id="swype-font">
+                    <div className="swype-div">
+                      <img
+                        class="swypelogo"
+                        src="swypelogo.svg"
+                        alt="swype logo"
+                      />
+                      swype
+                    </div>
                   </div>
                   <div className="card-info">
-                    AI hand gesture recognition overlay with real-time control
-                    over cursor controls and screen interactions.
+                    real-time hand-gesture control system that maps MediaPipe
+                    hand tracking to cursor and keyboard input through a custom
+                    36K-parameter LSTM
                   </div>
                   <div className="card-tags">
-                    <span>HTML/CSS</span>
-                    <span>JavaScript</span>
-                    <span>React</span>
+                    <span>Python</span>
+                    <span>PyTorch</span>
                     <span>MediaPipe</span>
-                    <span>ONNX</span>
+                    <span>PyQt6</span>
                   </div>
                   <div className="card-links">
-                    <a href="https://github.com/1prcntethan/wings">
+                    <div className="card-stats">1ms inference latency</div>
+                    <a href="#">
                       <img src="github.svg" className="project-link"></img>
                     </a>
-                    <a href="https://wingssw.com/">
+                    <a href="#">
                       <img src="linkdemo.svg" className="project-link"></img>
                     </a>
                   </div>
@@ -641,8 +652,10 @@ export default function Portfolio({ onHero }) {
                   </div>
                   <div className="timeline-inst">WINGS</div>
                   <div className="timeline-desc">
-                    Calisthenics PWA, written skill guides/tutorials, edited
-                    content, user auth and progress tracking{" "}
+                    React-based web PWA for athletes to learn calisthenics,
+                    handwritten skill guides/tutorials, edited viral shortform
+                    content , using Firebase for user auth and progress
+                    tracking{" "}
                   </div>
                 </div>
                 <div className="timeline-item">

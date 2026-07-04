@@ -743,6 +743,27 @@
   font-family: Major Mono Display;
 }
 
+.swypelogo {
+  width: 35px;
+  margin-right: 8px;
+  margin-top: 6px;
+}
+
+.swype-div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  border: 1px transparent;
+}
+
+#swype-font {
+  font-family: Itim;
+  color: #DE9643;
+  filter: drop-shadow(0px 0px 8px #DE9643) drop-shadow(0px 0px 12px #DE9643);
+}
+
 .project-card {
   width: calc(100% - 60px);
   max-width: 1400px;
@@ -817,6 +838,23 @@
   font-size: 30px;
   padding: 10px;
 }
+.project-card:hover .swype-div {
+  transform: translateY(-15px);
+  background-color: #060606;
+  border-radius: 9999px;
+  padding: 0px 15px;
+  border: 1px #DE9643 solid;
+}
+.project-card:hover .swypelogo {
+  margin-top: 0px;
+}
+.project-card:hover #swype-font {
+  color: white;
+  font-weight: 100;
+  margin-bottom: 4px;
+  filter: none;
+}
+
 .project-card:hover .card-info {
   opacity: 1;
   filter: blur(0px);
@@ -825,7 +863,10 @@
 .project-card:hover .card-tags {
   opacity: 1;
   filter: blur(0px);
-  transform: translateY(-1px);
+  transform: translateY(0px);
+}
+.project-card:hover .card-tags > span {
+  transform: translateY(2px);
 }
 
 .project-card:hover .card-links {
@@ -842,12 +883,22 @@
   transition: all 0.7s ease;
   opacity: 0.5;
   background-repeat: no-repeat;
-  background-image: url("wingsbg2.png");
+  
   filter: blur(8px);
+}
+
+#bg-wings {
+  background-image: url("wingsbg2.png");
+}
+
+#bg-swype {
+  background-image: url("swypebg.png");
 }
 
 .card-title {
   position: absolute;
+  display: flex;
+  flex-direction: row;
   top: 50%;
   left: 50%;
   bottom: 0;
@@ -857,6 +908,8 @@
   height: fit-content;
   filter: drop-shadow(0px 0px 8px #99a8a4) drop-shadow(0px 0px 12px #b9c4c0);
   transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  justify-self: center;
+  align-items: center;
 }
 
 .card-info {
@@ -895,6 +948,10 @@
   opacity: 0;
   filter: blur(12px);
   transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.card-stats {
+  color: #6adfb8;
 }
 
 .card-links {
