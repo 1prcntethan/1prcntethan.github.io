@@ -551,7 +551,7 @@ export default function Portfolio({ onHero }) {
                         src="swypelogo.svg"
                         alt="swype logo"
                       />
-                      swype
+                      <span>swype</span>
                     </div>
                   </div>
                   <div className="card-info">

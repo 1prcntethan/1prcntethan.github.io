@@ -845,8 +845,12 @@
   padding: 0px 15px;
   border: 1px #DE9643 solid;
 }
+
+.project-card:hover .swype-div > span {
+  margin-bottom: 5px;
+}
 .project-card:hover .swypelogo {
-  margin-top: 0px;
+  margin-bottom: 6px;
 }
 .project-card:hover #swype-font {
   color: white;
