@@ -514,7 +514,9 @@ export default function Portfolio({ onHero }) {
               <motion.div className="project-title">projects</motion.div>
               <div className="project-wrapper">
                 <div className="project-card">
-                  <div className="card-bg" id="bg-wings"></div>
+                  <div className="card-bg" id="bg-wings">
+                    <div id="wings-stats">boom</div>
+                  </div>
                   <div className="card-title" id="wings-font">
                     Wings.
                   </div>
