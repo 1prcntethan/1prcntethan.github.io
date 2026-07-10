@@ -515,7 +515,7 @@ export default function Portfolio({ onHero }) {
               <div className="project-wrapper">
                 <div className="project-card">
                   <div className="card-bg" id="bg-wings">
-                    <div id="wings-stats">boom</div>
+                    <img src="wingsstats.jpg" className="wings-stats"></img>
                   </div>
                   <div className="card-title" id="wings-font">
                     Wings.
@@ -656,7 +656,7 @@ export default function Portfolio({ onHero }) {
                   <div className="timeline-desc">
                     React-based web PWA for athletes to learn calisthenics,
                     handwritten skill guides/tutorials, edited viral shortform
-                    content , using Firebase for user auth and progress
+                    content and using Firebase for user auth and progress
                     tracking{" "}
                   </div>
                 </div>
@@ -702,7 +702,8 @@ export default function Portfolio({ onHero }) {
               <motion.div className="contact-detail">
                 <span className="contact-label">email_</span>
                 <span className="accent-text">ethantay1prcnt@gmail.com</span>
-                <span className="accent-text">ethan.tay@uw.edu</span>
+                <span className="accent-text">ethakari@uw.edu</span>
+                <span className="accent-text">ethakari@cs.washington.edu</span>
               </motion.div>
               <motion.div className="contact-detail">
                 <span className="contact-label">github_</span>{" "}
@@ -710,11 +711,11 @@ export default function Portfolio({ onHero }) {
               </motion.div>
               <motion.div className="contact-detail">
                 <span className="contact-label">linkedin_</span>{" "}
-                <spam>Ethan Tay</spam>
+                <spam>ethanjtay</spam>
               </motion.div>
               <motion.div className="contact-detail">
                 <span className="contact-label">instagram_</span>{" "}
-                <spam>@ethantay26</spam>
+                <spam>@ethantay.07</spam>
               </motion.div>{" "}
               {/* <div className="contact-final">
                 <i>win with me.</i>

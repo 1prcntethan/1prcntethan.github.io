@@ -829,6 +829,15 @@
   opacity: 0.8;
 }
 
+.project-card:hover .wings-stats {
+  opacity: 1;
+  width: 250px;
+  height: 500px;
+  border-radius: 25px;
+  filter: none;
+  border: 1px #777777 solid;
+}
+
 .project-card:hover .card-title {
   top: calc(100% - 63px);
   left: 30px;
@@ -891,19 +900,19 @@
   filter: blur(8px);
 }
 
-#wings-stats {
+.wings-stats {
   position: absolute;
   display: flex;
   flex-direction: row;
-  top: 50%;
-  left: 77%;
+  top: 49%;
+  left: 80%;
   bottom: 0;
   transform: translate(-50%, -50%);
   font-size: 32px;
-  width: fit-content;
-  height: fit-content;
-  filter: drop-shadow(0px 0px 8px #99a8a4) drop-shadow(0px 0px 12px #b9c4c0);
+  width: 250px;
+  height: 500px;
   transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  opacity: 0;
 }
 
 #bg-wings {
