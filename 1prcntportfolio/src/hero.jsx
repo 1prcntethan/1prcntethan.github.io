@@ -10,6 +10,7 @@ import React from "react";
 
 export default function Hero({ onDeveloper, onPortfolio }) {
   const canvasRef = useRef(null);
+  const labelRefs = useRef([]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -42,7 +43,6 @@ export default function Hero({ onDeveloper, onPortfolio }) {
     });
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
-    renderer.toneMappingExposure = 1.0;
     renderer.toneMappingExposure = 0.9;
 
     // initializing composer and bloom pass
@@ -91,7 +91,6 @@ export default function Hero({ onDeveloper, onPortfolio }) {
     const sphereMesh = new THREE.Mesh(sphereGeometry, sphereMaterial);
     scene.add(sphereMesh);
 
-
     // adding the lines (made of thin cylinders) and the invisible clickable nodes
     function endpointForIndex(i, count, maxRadius = 15) {
       const angle = (i / count) * Math.PI * 2;
@@ -110,8 +109,8 @@ export default function Hero({ onDeveloper, onPortfolio }) {
     }
 
     const cylMaterial = new THREE.MeshBasicMaterial({ color: "#edfaf5" });
-
     const COUNT = 6;
+    const LINE_SCALE = 0.93; // line stops short of the node, leaving room for the label
 
     const nodeValues = [
       "designer",
@@ -125,18 +124,15 @@ export default function Hero({ onDeveloper, onPortfolio }) {
 
     for (let i = 0; i < COUNT; i++) {
       const end = endpointForIndex(i, COUNT, 15);
-      const length = end.length();
+      const fullLength = end.length();
+      const dir = end.clone().normalize();
+      const lineLength = fullLength * LINE_SCALE;
 
-      const cylGeo = new THREE.CylinderGeometry(0.02, 0.02, length, 8);
+      const cylGeo = new THREE.CylinderGeometry(0.02, 0.02, lineLength, 8);
       const cyl = new THREE.Mesh(cylGeo, cylMaterial);
 
-      cyl.position.copy(end.clone().multiplyScalar(0.5));
-
-      cyl.quaternion.setFromUnitVectors(
-        new THREE.Vector3(0, 1, 0),
-        end.clone().normalize(),
-      );
-
+      cyl.position.copy(dir.clone().multiplyScalar(lineLength / 2));
+      cyl.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), dir);
       scene.add(cyl);
 
       // clickable node sphere
@@ -174,9 +170,7 @@ export default function Hero({ onDeveloper, onPortfolio }) {
         console.log("clicked node:", hits[0].object.userData.index);
       }
     }
-
     canvas.addEventListener("click", handleClick);
-
     // axes helper is on scene
     // const axesHelper = new THREE.AxesHelper(10);
     // scene.add(axesHelper);
@@ -196,12 +190,64 @@ export default function Hero({ onDeveloper, onPortfolio }) {
     }
     window.addEventListener("resize", handleResize);
 
+    const projected = new THREE.Vector3();
+    const occlusionRay = new THREE.Raycaster();
+
+    // tune these to taste once you see it running —
+    // they're the distance range over which labels grow/shrink
+    const NEAR_DIST = 20;
+    const FAR_DIST = 50;
+    const MIN_SCALE = 0.65;
+    const MAX_SCALE = 1.35;
+
+    function mapRange(value, inMin, inMax, outMin, outMax) {
+      const t = THREE.MathUtils.clamp((value - inMin) / (inMax - inMin), 0, 1);
+      return outMin + t * (outMax - outMin);
+    }
+
+    function updateLabels() {
+      const rect = canvas.getBoundingClientRect();
+
+      nodeTargets.forEach((node, i) => {
+        const el = labelRefs.current[i];
+        if (!el) return;
+
+        projected.copy(node.position).project(camera);
+
+        // behind the camera entirely — hide
+        if (projected.z > 1) {
+          el.style.opacity = "0";
+          return;
+        }
+
+        const x = (projected.x * 0.5 + 0.5) * rect.width;
+        const y = (-projected.y * 0.5 + 0.5) * rect.height;
+
+        // distance-based scale: closer = bigger, farther = smaller
+        const dist = camera.position.distanceTo(node.position);
+        const scale = mapRange(dist, NEAR_DIST, FAR_DIST, MAX_SCALE, MIN_SCALE);
+
+        // occlusion: is the sphere sitting between the camera and this node?
+        const toNode = node.position.clone().sub(camera.position);
+        const distToNode = toNode.length();
+        occlusionRay.set(camera.position, toNode.normalize());
+
+        const sphereHit = occlusionRay.intersectObject(sphereMesh)[0];
+        const isOccluded = sphereHit && sphereHit.distance < distToNode;
+
+        el.style.left = `${x}px`;
+        el.style.top = `${y}px`;
+        el.style.transform = `translate(-50%, -50%) scale(${scale})`;
+        el.style.opacity = isOccluded ? "0" : "1";
+      });
+    }
+
     // render loop that renders each consequtive frame
     let animationId;
     const renderloop = () => {
       controls.update();
       composer.render();
-      // renderer.render(scene, camera);
+      updateLabels();
       animationId = requestAnimationFrame(renderloop);
     };
     renderloop();
@@ -243,6 +289,15 @@ export default function Hero({ onDeveloper, onPortfolio }) {
     };
   }, []);
 
+  const nodeValues = [
+    "designer",
+    "developer",
+    "creator",
+    "athlete",
+    "artist",
+    "musician",
+  ];
+
   return (
     <div style={{ width: "100%", height: "100%", position: "relative" }}>
       <div className="hero-title">hi, i'm ethan.</div>
@@ -256,6 +311,28 @@ export default function Hero({ onDeveloper, onPortfolio }) {
           touchAction: "none",
         }}
       ></canvas>
+
+      {nodeValues.map((label, i) => (
+        <div
+          key={label}
+          ref={(el) => (labelRefs.current[i] = el)}
+          style={{
+            position: "absolute",
+            pointerEvents: "none",
+            opacity: 0,
+            fontFamily: "'Raleway', sans-serif",
+            fontSize: "0.75rem",
+            color: "#edfaf5",
+            letterSpacing: "0.03em",
+            textShadow: "0 0 6px rgba(0,0,0,0.6)",
+            zIndex: 1000,
+            transition: "opacity 0.15s ease", // smooths the occlusion fade
+          }}
+        >
+          {label}
+        </div>
+      ))}
+
       <button className="portfolio-go" onClick={onPortfolio}>
         view portfolio
         <img src="/scrolldown.svg" className="hero-scroll-down-indicator"></img>
