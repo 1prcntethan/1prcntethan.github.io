@@ -13,17 +13,13 @@
   overflow: hidden;
   opacity: 0;
   transition: opacity 0.5s ease;
-  pointer-events: none;
-  background: radial-gradient(
-    120% 140% at 20% 0%,
-    var(--desk-bg-2),
-    var(--desk-bg) 60%
-  );
+  pointer-events: none !important;
+  background: radial-gradient(120% 140% at 20% 0%, var(--desk-bg-2), var(--desk-bg) 60%);
 }
 
 .desktop-root.is-on {
   opacity: 1;
-  pointer-events: auto;
+  pointer-events: auto !important;
 }
 
 .desktop {

@@ -71,6 +71,7 @@ export default function Laptop() {
     cssRenderer.domElement.style.position = "absolute";
     cssRenderer.domElement.style.top = "0";
     cssRenderer.domElement.style.left = "0";
+    cssRenderer.domElement.style.pointerEvents = "none"; // belt-and-suspenders, see note below
     cssContainerRef.current.appendChild(cssRenderer.domElement);
 
     // ground
@@ -250,7 +251,9 @@ export default function Laptop() {
 
     // generous invisible click target — covers nearly the whole lid, not just the inset display
     const screenHitGeo = new THREE.PlaneGeometry(W - 0.06, screenH - 0.06);
-    const screenHitMat = new THREE.MeshBasicMaterial({ visible: false });
+    const screenHitMat = new THREE.MeshBasicMaterial({
+      visible: false,
+    });
     const screenHit = new THREE.Mesh(screenHitGeo, screenHitMat);
     screenHit.position.set(0, screenH / 2, screenT / 2 + 0.003);
     screenPivot.add(screenHit);
