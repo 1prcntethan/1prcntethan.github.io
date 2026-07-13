@@ -9,8 +9,9 @@ import {
 } from "three/addons/renderers/CSS3DRenderer.js";
 import Desktop from "./desktop.jsx";
 import "./laptop.css";
+import WorldNav from "./world-nav.jsx";
 
-export default function Laptop() {
+export default function Laptop({ onExit }) {
   const canvasRef = useRef(null);
   const cssContainerRef = useRef(null);
   const zoomOutRef = useRef(() => {});
@@ -105,10 +106,30 @@ export default function Laptop() {
       roughness: 0.5,
       metalness: 0.3,
     });
-    const keyMat = new THREE.MeshStandardMaterial({
-      color: "#5c5c5c",
-      roughness: 0.7,
-      metalness: 0.05,
+    const keyCapMat = new THREE.MeshStandardMaterial({
+      color: "#454545",
+      roughness: 0.55,
+      metalness: 0.08,
+    });
+    const keySideMat = new THREE.MeshStandardMaterial({
+      color: "#2c2c2c",
+      roughness: 0.6,
+      metalness: 0.1,
+    });
+    const keyWellMat = new THREE.MeshStandardMaterial({
+      color: "#1c1c1c",
+      roughness: 0.85,
+      metalness: 0.0,
+    });
+    const portBezelMat = new THREE.MeshStandardMaterial({
+      color: "#c8c8c8",
+      roughness: 0.3,
+      metalness: 0.75,
+    });
+    const portHoleMat = new THREE.MeshStandardMaterial({
+      color: "#050505",
+      roughness: 0.9,
+      metalness: 0,
     });
     const feetMat = new THREE.MeshStandardMaterial({
       color: "#1a1a1a",
@@ -158,59 +179,282 @@ export default function Laptop() {
     deck.position.set(0, baseH + 0.008, -0.05);
     laptop.add(deck);
 
-    // keyboard — instanced grid of keys, cheap and detailed
-    const KEY_COLS = 14;
-    const KEY_ROWS = 5;
-    const keyGap = 0.02;
-    const keySize = 0.13;
-    const keyGeo = new RoundedBoxGeometry(keySize, 0.02, keySize, 2, 0.006);
-    const keyCount = KEY_COLS * KEY_ROWS;
-    const keyboard = new THREE.InstancedMesh(keyGeo, keyMat, keyCount);
-    keyboard.castShadow = true;
-    const dummy = new THREE.Object3D();
-    const kbWidth = KEY_COLS * (keySize + keyGap);
-    const kbDepth = KEY_ROWS * (keySize + keyGap);
-    let idx = 0;
-    for (let r = 0; r < KEY_ROWS; r++) {
-      for (let c = 0; c < KEY_COLS; c++) {
-        const x = -kbWidth / 2 + c * (keySize + keyGap) + keySize / 2;
-        const z = -kbDepth / 2 + r * (keySize + keyGap) + keySize / 2 - 0.35;
-        dummy.position.set(x, baseH + 0.02, z);
-        dummy.updateMatrix();
-        keyboard.setMatrixAt(idx, dummy.matrix);
-        idx++;
-      }
-    }
-    keyboard.instanceMatrix.needsUpdate = true;
-    laptop.add(keyboard);
+    const KEY_PITCH = 0.145;
+    const KEY_GAP = 0.016;
+    const KEY_H = 0.05;
+    const KEY_ROW_PITCH = 0.155;
 
-    // trackpad
+    // [label, widthInUnits] per row — back (function row) to front (space row)
+    const KEYBOARD_ROWS = [
+      [
+        ["esc", 1],
+        ["f1", 1],
+        ["f2", 1],
+        ["f3", 1],
+        ["f4", 1],
+        ["f5", 1],
+        ["f6", 1],
+        ["f7", 1],
+        ["f8", 1],
+        ["f9", 1],
+        ["f10", 1],
+        ["f11", 1],
+        ["f12", 1],
+        ["del", 1],
+      ],
+      [
+        ["`", 1],
+        ["1", 1],
+        ["2", 1],
+        ["3", 1],
+        ["4", 1],
+        ["5", 1],
+        ["6", 1],
+        ["7", 1],
+        ["8", 1],
+        ["9", 1],
+        ["0", 1],
+        ["-", 1],
+        ["=", 1],
+        ["⌫", 1.9],
+      ],
+      [
+        ["tab", 1.4],
+        ["q", 1],
+        ["w", 1],
+        ["e", 1],
+        ["r", 1],
+        ["t", 1],
+        ["y", 1],
+        ["u", 1],
+        ["i", 1],
+        ["o", 1],
+        ["p", 1],
+        ["[", 1],
+        ["]", 1],
+        ["\\", 1.3],
+      ],
+      [
+        ["caps", 1.7],
+        ["a", 1],
+        ["s", 1],
+        ["d", 1],
+        ["f", 1],
+        ["g", 1],
+        ["h", 1],
+        ["j", 1],
+        ["k", 1],
+        ["l", 1],
+        [";", 1],
+        ["'", 1],
+        ["enter", 2.1],
+      ],
+      [
+        ["shift", 2.15],
+        ["z", 1],
+        ["x", 1],
+        ["c", 1],
+        ["v", 1],
+        ["b", 1],
+        ["n", 1],
+        ["m", 1],
+        [",", 1],
+        [".", 1],
+        ["/", 1],
+        ["shift", 2.55],
+      ],
+      [
+        ["ctrl", 1.2],
+        ["fn", 1.1],
+        ["win", 1.1],
+        ["alt", 1.1],
+        ["space", 6],
+        ["alt", 1.1],
+        ["ctrl", 1.5],
+        ["\u25c2", 0.8],
+        ["\u25b8", 0.8],
+      ],
+    ];
+
+    // one canvas texture + material per unique label, reused across duplicate keys (shift, ctrl, alt)
+    const labelTextureCache = new Map();
+    const labelMaterialCache = new Map();
+    function getLabelMaterial(label) {
+      if (labelMaterialCache.has(label)) return labelMaterialCache.get(label);
+      let tex = labelTextureCache.get(label);
+      if (!tex) {
+        const size = 128;
+        const cnv = document.createElement("canvas");
+        cnv.width = size;
+        cnv.height = size;
+        const ctx = cnv.getContext("2d");
+        ctx.clearRect(0, 0, size, size);
+        ctx.fillStyle = "#dcdcdc";
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+        const isWord = label.length > 2;
+        ctx.font = `${isWord ? 500 : 400} ${isWord ? size * 0.2 : size * 0.44}px 'Space Mono', monospace`;
+        ctx.fillText(label, size / 2, size / 2 + 3);
+        tex = new THREE.CanvasTexture(cnv);
+        tex.colorSpace = THREE.SRGBColorSpace;
+        labelTextureCache.set(label, tex);
+      }
+      const mat = new THREE.MeshBasicMaterial({
+        map: tex,
+        transparent: true,
+        alphaTest: 0.05,
+      });
+      labelMaterialCache.set(label, mat);
+      return mat;
+    }
+
+    const keyLabelGeo = new THREE.PlaneGeometry(0.078, 0.078);
+    const keyGeometries = [];
+
+    const kbRowUnits = KEYBOARD_ROWS.map((row) =>
+      row.reduce((s, [, u]) => s + u, 0),
+    );
+    const kbWidth = Math.max(...kbRowUnits) * KEY_PITCH;
+    const kbDepth = KEYBOARD_ROWS.length * KEY_ROW_PITCH;
+    const kbCenterZ = -0.42;
+
+    // recessed tray the whole board sits inside — this is what makes it read as "set into" the deck
+    const keyWell = new THREE.Mesh(
+      new THREE.BoxGeometry(kbWidth + 0.09, 0.012, kbDepth + 0.07),
+      keyWellMat,
+    );
+    keyWell.position.set(0, baseH + 0.006, kbCenterZ);
+    laptop.add(keyWell);
+
+    KEYBOARD_ROWS.forEach((row, r) => {
+      const rowUnits = kbRowUnits[r];
+      const rowWidth = rowUnits * KEY_PITCH - KEY_GAP;
+      let cursorX = -rowWidth / 2;
+      const z = kbCenterZ - kbDepth / 2 + r * KEY_ROW_PITCH + KEY_ROW_PITCH / 2;
+
+      row.forEach(([label, units]) => {
+        const w = units * KEY_PITCH - KEY_GAP;
+        const x = cursorX + w / 2;
+
+        // keycap
+        const capGeo = new RoundedBoxGeometry(
+          w,
+          KEY_H,
+          KEY_PITCH - KEY_GAP,
+          2,
+          0.008,
+        );
+        keyGeometries.push(capGeo);
+        const cap = new THREE.Mesh(capGeo, keyCapMat);
+        cap.position.set(x, baseH + 0.012 + KEY_H / 2, z);
+        cap.castShadow = true;
+        laptop.add(cap);
+
+        // lower switch housing, visible just beneath the cap — the actual depth cue
+        const housingGeo = new THREE.BoxGeometry(
+          w * 0.92,
+          0.012,
+          (KEY_PITCH - KEY_GAP) * 0.92,
+        );
+        keyGeometries.push(housingGeo);
+        const housing = new THREE.Mesh(housingGeo, keySideMat);
+        housing.position.set(x, baseH + 0.006, z);
+        laptop.add(housing);
+
+        if (label !== "space") {
+          const lbl = new THREE.Mesh(keyLabelGeo, getLabelMaterial(label));
+          lbl.rotation.x = -Math.PI / 2;
+          lbl.position.set(x, baseH + 0.012 + KEY_H + 0.002, z);
+          laptop.add(lbl);
+        }
+
+        cursorX += w + KEY_GAP;
+      });
+    });
+
+    const padCenterZ = D / 2 - 0.5;
+    const padTray = new THREE.Mesh(
+      new RoundedBoxGeometry(0.96, 0.01, 0.66, 2, 0.01),
+      keyWellMat,
+    );
+    padTray.position.set(0, baseH + 0.008, padCenterZ);
+    laptop.add(padTray);
+
     const trackpad = new THREE.Mesh(
-      new RoundedBoxGeometry(0.9, 0.012, 0.6, 2, 0.004),
+      new RoundedBoxGeometry(0.88, 0.014, 0.58, 3, 0.02),
       darkMat,
     );
-    trackpad.position.set(0, baseH + 0.015, D / 2 - 0.55);
+    trackpad.position.set(0, baseH + 0.016, padCenterZ);
+    trackpad.castShadow = true;
     laptop.add(trackpad);
 
+    // faint line near the bottom — reads as the physical click-hinge seam
+    const seam = new THREE.Mesh(
+      new THREE.BoxGeometry(0.7, 0.001, 0.004),
+      feetMat,
+    );
+    seam.position.set(0, baseH + 0.0235, padCenterZ + 0.16);
+    laptop.add(seam);
+
     // vents near the hinge
-    for (let i = -2; i <= 2; i++) {
-      const vent = new THREE.Mesh(
-        new THREE.BoxGeometry(0.18, 0.01, 0.03),
-        darkMat,
-      );
-      vent.position.set(i * 0.24, baseH + 0.001, -D / 2 + 0.12);
-      laptop.add(vent);
+    const finGeo = new THREE.BoxGeometry(0.16, 0.006, 0.022);
+    for (let i = -3; i <= 3; i++) {
+      const fin = new THREE.Mesh(finGeo, darkMat);
+      fin.position.set(i * 0.2, baseH + 0.003, -D / 2 + 0.1);
+      laptop.add(fin);
     }
 
-    // port cutouts, right edge
-    [0.55, 0.75].forEach((z) => {
-      const port = new THREE.Mesh(
-        new THREE.BoxGeometry(0.02, 0.05, 0.14),
-        darkMat,
-      );
-      port.position.set(W / 2 - 0.005, baseH / 2, z);
-      laptop.add(port);
+    const slatGeo = new THREE.BoxGeometry(0.02, 0.006, 0.09);
+    [-1, 1].forEach((side) => {
+      for (let i = 0; i < 6; i++) {
+        const slat = new THREE.Mesh(slatGeo, darkMat);
+        slat.position.set(side * (W / 2 - 0.012), baseH * 0.3, -0.5 + i * 0.11);
+        laptop.add(slat);
+      }
     });
+
+    const speakerDotGeo = new THREE.CircleGeometry(0.006, 8);
+    [-1, 1].forEach((side) => {
+      for (let row = 0; row < 3; row++) {
+        for (let col = 0; col < 6; col++) {
+          const dot = new THREE.Mesh(speakerDotGeo, darkMat);
+          dot.rotation.x = -Math.PI / 2;
+          dot.position.set(
+            side * (kbWidth / 2 + 0.05 + col * 0.014),
+            baseH + 0.017,
+            kbCenterZ - kbDepth / 2 + row * 0.02,
+          );
+          laptop.add(dot);
+        }
+      }
+    });
+
+    function addPort(x, z, side, w, h, { round = false } = {}) {
+      const bezelGeo = round
+        ? new THREE.CylinderGeometry(w, w, 0.016, 20)
+        : new THREE.BoxGeometry(0.016, h + 0.012, w + 0.012);
+      const bezel = new THREE.Mesh(bezelGeo, portBezelMat);
+      if (round) bezel.rotation.z = Math.PI / 2;
+      bezel.position.set(x, baseH / 2, z);
+      laptop.add(bezel);
+
+      const holeGeo = round
+        ? new THREE.CylinderGeometry(w * 0.62, w * 0.62, 0.02, 20)
+        : new THREE.BoxGeometry(0.014, h, w);
+      const hole = new THREE.Mesh(holeGeo, portHoleMat);
+      if (round) hole.rotation.z = Math.PI / 2;
+      hole.position.set(x - side * 0.003, baseH / 2, z);
+      laptop.add(hole);
+    }
+
+    // right edge — USB-C, USB-A, HDMI
+    addPort(W / 2 - 0.003, 0.35, 1, 0.05, 0.018);
+    addPort(W / 2 - 0.003, 0.58, 1, 0.05, 0.026);
+    addPort(W / 2 - 0.003, 0.85, 1, 0.09, 0.02);
+
+    // left edge — USB-C / power, headphone jack
+    addPort(-W / 2 + 0.003, 0.4, -1, 0.05, 0.018);
+    addPort(-W / 2 + 0.003, 0.7, -1, 0.014, 0, { round: true });
 
     const hingeZ = -D / 2 + 0.05;
     const hinge = new THREE.Mesh(
@@ -431,10 +675,19 @@ export default function Laptop() {
       bodyMat.dispose();
       deckMat.dispose();
       darkMat.dispose();
-      keyMat.dispose();
+      keyCapMat.dispose();
+      keySideMat.dispose();
+      keyWellMat.dispose();
+      portBezelMat.dispose();
+      portHoleMat.dispose();
       feetMat.dispose();
       screenMat.dispose();
-      keyGeo.dispose();
+      keyGeometries.forEach((g) => g.dispose());
+      keyLabelGeo.dispose();
+      labelMaterialCache.forEach((m) => m.dispose());
+      labelTextureCache.forEach((t) => t.dispose());
+      labelMaterialCache.clear();
+      labelTextureCache.clear();
     };
   }, []);
 
@@ -442,6 +695,7 @@ export default function Laptop() {
     <div className="laptop-scene">
       <canvas ref={canvasRef} className="laptop-canvas" />
       <div ref={cssContainerRef} className="laptop-css-layer" />
+      <WorldNav onExit={onExit} visible={!screenOn} />
       {screenEl &&
         createPortal(<Desktop onBack={() => zoomOutRef.current()} />, screenEl)}
     </div>

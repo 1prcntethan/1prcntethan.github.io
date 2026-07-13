@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Laptop from "./components/laptop.jsx";
 import "./developer.css";
 
-export default function Developer() {
+export default function Developer({ onExit }) {
   const [developerVisible] = useState(true);
 
   return (
@@ -22,7 +22,7 @@ export default function Developer() {
             backgroundColor: "#ffffff",
           }}
         >
-          <Laptop />
+          <Laptop onExit={onExit} />
         </motion.div>
       )}
     </AnimatePresence>

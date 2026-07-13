@@ -64,29 +64,37 @@ export const APPS = [
     tagline: "calisthenics skill-tree PWA",
     icon: <IconWings />,
     blurb:
-      "A React + Firebase progressive web app that maps calisthenics skills into an interactive dependency tree.",
+      "A React + Firebase progressive web app that maps calisthenics skills into an interactive progress tree.",
     description:
-      "WINGS turns calisthenics progression into a visual skill tree — instead of guessing what to train next, users see exactly which moves unlock which, and where they sit on the graph today. Built solo, from the Instagram audience up: content came first, the app followed once there was a real user base asking for a way to track progress.",
+      "WINGS turns calisthenics progression into a visual skill tree — instead of guessing what to train next, users see exactly which moves unlock which, and where they sit on the graph today. It includes a rank system, based off learned skill level and streak length, to encourage continuted usage. Finally, handwritten guides and genuinely useful resources complete WINGS as the best one stop shop for learning calisthenics from the ground up.",
     media: null, // TODO: add gif/video of the skill tree in action
     stats: [
       { value: "33k", label: "instagram" },
       { value: "1.2k", label: "monthly users" },
     ],
     stack: ["React", "Firebase", "Vite", "Cloudflare Pages"],
-    github: "", // TODO: exact repo URL
-    live: "",
+    github: "https://github.com/1prcntethan/wings", 
+    live: "https://wingssw.com",
     journey: [
       {
-        stage: "content first",
-        text: "Grew a calisthenics Instagram to tens of thousands of followers before writing a line of the app — the audience validated the demand.",
+        stage: "blueprinting",
+        text: "Mapping out website structure, skill coverage, guide topics, visual design, and branding goals.",
       },
       {
-        stage: "the graph",
-        text: "Modeled real skill progressions (prerequisite moves, branching paths) as an actual dependency graph, not a flat checklist.",
+        stage: "designing & prototyping",
+        text: "Building the initial prototype, writing skill guides and filling out skill tutorials.",
       },
       {
-        stage: "shipping",
-        text: "Deployed as a PWA on Cloudflare Pages so it installs like a native app with zero backend hosting cost.",
+        stage: "idea validation",
+        text: "Editing and promoting the site concept on Instagram, gathering feedback, and iterating on the design.",
+      },
+      {
+        stage: "product launch",
+        text: "Launching the site publicly, promoting it on social media, and gathering user feedback for future iterations.",
+      },
+      {
+        stage: "feature expansion",
+        text: "Adding new features like interactive visual skill tree, streak tracking, rank system, and user accounts to enhance user engagement and retention.",
       },
     ],
   },

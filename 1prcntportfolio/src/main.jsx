@@ -73,7 +73,7 @@ function App() {
       case "hero":
         return <Hero onDeveloper={showDeveloper} onPortfolio={showPortfolio} />;
       case "developer":
-        return <Developer />;
+        return <Developer onExit={showHero} />;
       case "portfolio":
         return <Portfolio onHero={showHero} />;
       default:
@@ -83,8 +83,14 @@ function App() {
 
   return (
     <>
-      <Cursor controlRef={cursorControlRef} pinchProgressRef={pinchProgressRef}/>
-      <Swype cursorControlRef={cursorControlRef} pinchProgressRef={pinchProgressRef}/>
+      <Cursor
+        controlRef={cursorControlRef}
+        pinchProgressRef={pinchProgressRef}
+      />
+      <Swype
+        cursorControlRef={cursorControlRef}
+        pinchProgressRef={pinchProgressRef}
+      />
       <AnimatePresence>
         <motion.div
           key={page}
