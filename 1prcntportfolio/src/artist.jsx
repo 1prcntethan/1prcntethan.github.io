@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 import { RoundedBoxGeometry } from "three/addons/geometries/RoundedBoxGeometry.js";
@@ -7,6 +7,7 @@ import "./artist.css";
 
 export default function Artist({ onExit }) {
   const canvasRef = useRef(null);
+  const [zoomedIn, setZoomedIn] = useState(false);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -21,10 +22,12 @@ export default function Artist({ onExit }) {
       0.1,
       100
     );
-    camera.position.set(0, 2.4, 6.6);
+    const DEFAULT_CAM_POS = new THREE.Vector3(0, 2.4, 6.6);
+    const DEFAULT_TARGET = new THREE.Vector3(0, 1.4, 0);
+    camera.position.copy(DEFAULT_CAM_POS);
     scene.add(camera);
 
-    // ---- lights: warm window light as key, cool fill as counterweight ----
+    // ---- lights ----
     const ambient = new THREE.AmbientLight("#fff3e2", 0.55);
     scene.add(ambient);
 
@@ -53,7 +56,7 @@ export default function Artist({ onExit }) {
     renderer.shadowMap.type = THREE.PCFSoftShadowMap;
     renderer.outputColorSpace = THREE.SRGBColorSpace;
 
-    // ---- texture helpers (canvas-drawn, same trick as keyboard key labels) ----
+    // ---- texture helpers ----
     function makeFloorTexture() {
       const size = 512;
       const cnv = document.createElement("canvas");
@@ -120,7 +123,6 @@ export default function Artist({ onExit }) {
       ctx.fillRect(0, 0, size, size);
       ctx.globalAlpha = 1;
 
-      // deterministic pseudo-random so re-renders don't reshuffle the art
       let seed = paletteIdx * 97 + 13;
       const rand = () => {
         seed = (seed * 1103515245 + 12345) & 0x7fffffff;
@@ -167,7 +169,7 @@ export default function Artist({ onExit }) {
       cnv.height = size;
       const ctx = cnv.getContext("2d");
 
-      ctx.fillStyle = "#e8dcc4"; // raw primed canvas tone
+      ctx.fillStyle = "#e8dcc4";
       ctx.fillRect(0, 0, size, size);
 
       ctx.strokeStyle = "rgba(90,70,50,0.35)";
@@ -212,12 +214,33 @@ export default function Artist({ onExit }) {
       color: "#8a8578", roughness: 0.4, metalness: 0.1, transparent: true, opacity: 0.85,
     });
     const brushMat = new THREE.MeshStandardMaterial({ color: "#6a4a30", roughness: 0.7 });
+    const bristleMat = new THREE.MeshStandardMaterial({ color: "#332318", roughness: 0.95 });
 
-    // tracking arrays for disposal + future interactivity
+    // ---- disposal tracking ----
     const paintingTextures = [];
     const paintingMaterials = [];
     const canvasGeometries = [];
-    const finishedCanvases = [];
+    const standGeometries = [];
+    const brushGeometries = [];
+
+    // ---- unified draggable-canvas registry ----
+    const canvasStates = [];
+    function registerCanvas(mesh, id, w, h, mountedOnEasel = false) {
+      canvasStates.push({
+        mesh,
+        id,
+        w,
+        h,
+        dragging: false,
+        physicalPos: mesh.position.clone(),
+        physicalQuat: mesh.quaternion.clone(),
+        targetPos: mesh.position.clone(),
+        targetQuat: mesh.quaternion.clone(),
+        velocity: new THREE.Vector3(),
+        mountedOnEasel,
+        grabOffset: new THREE.Vector3(),
+      });
+    }
 
     function paintingTexture(idx) {
       const t = makePaintingTexture(idx);
@@ -230,6 +253,7 @@ export default function Artist({ onExit }) {
       paintingMaterials.push(frontMat);
       const geo = new THREE.BoxGeometry(width, height, 0.035);
       canvasGeometries.push(geo);
+      // material order for BoxGeometry is [+X,-X,+Y,-Y,+Z,-Z] — front face is +Z
       const mesh = new THREE.Mesh(geo, [
         frameMat, frameMat, frameMat, frameMat, frontMat, canvasBackMat,
       ]);
@@ -255,10 +279,10 @@ export default function Artist({ onExit }) {
       wall.receiveShadow = true;
       scene.add(wall);
     }
-    buildWall(ROOM_W, ROOM_H, 0, -ROOM_D / 2, 0);           // back
-    buildWall(ROOM_W, ROOM_H, 0, ROOM_D / 2, Math.PI);       // front
-    buildWall(ROOM_D, ROOM_H, -ROOM_W / 2, 0, Math.PI / 2);  // left
-    buildWall(ROOM_D, ROOM_H, ROOM_W / 2, 0, -Math.PI / 2);  // right
+    buildWall(ROOM_W, ROOM_H, 0, -ROOM_D / 2, 0);
+    buildWall(ROOM_W, ROOM_H, 0, ROOM_D / 2, Math.PI);
+    buildWall(ROOM_D, ROOM_H, -ROOM_W / 2, 0, Math.PI / 2);
+    buildWall(ROOM_D, ROOM_H, ROOM_W / 2, 0, -Math.PI / 2);
 
     function addBaseboard(w, px, pz, ry) {
       const b = new THREE.Mesh(new THREE.BoxGeometry(w, 0.12, 0.03), trimMat);
@@ -271,7 +295,6 @@ export default function Artist({ onExit }) {
     addBaseboard(ROOM_D, -ROOM_W / 2 + 0.02, 0, Math.PI / 2);
     addBaseboard(ROOM_D, ROOM_W / 2 - 0.02, 0, Math.PI / 2);
 
-    // window — glow plane + frame + mullions, mounted flush on the back wall
     const windowPane = new THREE.Mesh(new THREE.PlaneGeometry(3.2, 3.6), windowGlowMat);
     windowPane.position.set(-4.2, 3.4, -ROOM_D / 2 + 0.03);
     scene.add(windowPane);
@@ -290,7 +313,21 @@ export default function Artist({ onExit }) {
     addMullion(0.05, 3.6, -5.0, 3.4);
     addMullion(0.05, 3.6, -3.4, 3.4);
 
-    // ---- main working easel + in-progress canvas ----
+    // ---- shared beam helper: connects two world points with a wood cylinder ----
+    function beamBetween(a, b, thickness) {
+      const dir = new THREE.Vector3().subVectors(b, a);
+      const len = dir.length();
+      const mid = new THREE.Vector3().addVectors(a, b).multiplyScalar(0.5);
+      const geo = new THREE.CylinderGeometry(thickness, thickness, len, 8);
+      standGeometries.push(geo);
+      const mesh = new THREE.Mesh(geo, woodMat);
+      mesh.position.copy(mid);
+      mesh.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), dir.clone().normalize());
+      mesh.castShadow = true;
+      return mesh;
+    }
+
+    // ---- main working easel ----
     function buildEasel(x, z, rotY = 0) {
       const group = new THREE.Group();
       group.position.set(x, 0, z);
@@ -314,6 +351,16 @@ export default function Artist({ onExit }) {
       legBack.rotation.x = 0.28;
       legBack.castShadow = true;
       group.add(legBack);
+
+      // the missing top yoke — read straight off each leg's real transform,
+      // so it stays correct even if the tilt constants above ever change
+      const legLTop = new THREE.Vector3(0, 1.3, 0).applyEuler(legL.rotation).add(legL.position);
+      const legRTop = new THREE.Vector3(0, 1.3, 0).applyEuler(legR.rotation).add(legR.position);
+      const legBackTop = new THREE.Vector3(0, 1.45, 0).applyEuler(legBack.rotation).add(legBack.position);
+
+      group.add(beamBetween(legLTop, legRTop, 0.045));
+      const frontMid = new THREE.Vector3().addVectors(legLTop, legRTop).multiplyScalar(0.5);
+      group.add(beamBetween(legBackTop, frontMid, 0.038));
 
       const crossbar = new THREE.Mesh(new THREE.BoxGeometry(1.15, 0.05, 0.05), woodMat);
       crossbar.position.set(0, 0.95, 0.42);
@@ -339,6 +386,18 @@ export default function Artist({ onExit }) {
     inProgressCanvas.rotation.x = -0.22;
     mainEasel.add(inProgressCanvas);
 
+    // capture the easel's real mount transform, then free the canvas to live in world space
+    const easelSlot = {
+      position: new THREE.Vector3(),
+      quaternion: new THREE.Quaternion(),
+    };
+    inProgressCanvas.updateWorldMatrix(true, false);
+    inProgressCanvas.getWorldPosition(easelSlot.position);
+    inProgressCanvas.getWorldQuaternion(easelSlot.quaternion);
+    scene.attach(inProgressCanvas); // reparents, preserves world transform — no visual jump
+
+    registerCanvas(inProgressCanvas, "sketch", 1.15, 1.5, true);
+
     // ---- finished canvases: leaned around the room ----
     const FINISHED_CANVASES = [
       { id: "c1", w: 1.5, h: 1.9, pos: [-5.2, 0.93, -7.55], rot: [0.08, 0.1, 0.05], paletteIdx: 0 },
@@ -353,11 +412,11 @@ export default function Artist({ onExit }) {
       const mesh = buildStretcherCanvas(c.w, c.h, paintingTexture(c.paletteIdx));
       mesh.position.set(...c.pos);
       mesh.rotation.set(...c.rot);
-      mesh.userData.id = c.id;
       scene.add(mesh);
-      finishedCanvases.push(mesh);
+      registerCanvas(mesh, c.id, c.w, c.h);
     });
 
+    // ---- small stand, seventh piece ----
     function buildSmallStand(x, z, rotY = 0) {
       const group = new THREE.Group();
       group.position.set(x, 0, z);
@@ -365,22 +424,30 @@ export default function Artist({ onExit }) {
 
       const legGeo = new THREE.CylinderGeometry(0.025, 0.03, 1.05, 8);
       const legL = new THREE.Mesh(legGeo, woodMat);
-      legL.position.set(-0.32, 0.52, 0.16);
+      legL.position.set(-0.32, 0.525, 0.16);
       legL.rotation.set(-0.08, 0, 0.12);
       legL.castShadow = true;
       group.add(legL);
 
       const legR = new THREE.Mesh(legGeo, woodMat);
-      legR.position.set(0.32, 0.52, 0.16);
+      legR.position.set(0.32, 0.525, 0.16);
       legR.rotation.set(-0.08, 0, -0.12);
       legR.castShadow = true;
       group.add(legR);
 
       const legBack = new THREE.Mesh(new THREE.CylinderGeometry(0.025, 0.03, 1.15, 8), woodMat);
-      legBack.position.set(0, 0.56, -0.2);
+      legBack.position.set(0, 0.575, -0.2);
       legBack.rotation.x = 0.22;
       legBack.castShadow = true;
       group.add(legBack);
+
+      const legLTop = new THREE.Vector3(0, 0.525, 0).applyEuler(legL.rotation).add(legL.position);
+      const legRTop = new THREE.Vector3(0, 0.525, 0).applyEuler(legR.rotation).add(legR.position);
+      const legBackTop = new THREE.Vector3(0, 0.575, 0).applyEuler(legBack.rotation).add(legBack.position);
+
+      group.add(beamBetween(legLTop, legRTop, 0.028));
+      const frontMid = new THREE.Vector3().addVectors(legLTop, legRTop).multiplyScalar(0.5);
+      group.add(beamBetween(legBackTop, frontMid, 0.024));
 
       const ledge = new THREE.Mesh(new THREE.BoxGeometry(0.55, 0.03, 0.06), woodMat);
       ledge.position.set(0, 0.42, 0.2);
@@ -391,14 +458,14 @@ export default function Artist({ onExit }) {
       return group;
     }
 
-    // seventh piece — its own small stand, not leaned against anything
     const smallStand = buildSmallStand(-1.6, 3.7, 0.28);
     const c7Mesh = buildStretcherCanvas(1.05, 1.35, paintingTexture(6));
     c7Mesh.position.set(0, 0.78, 0.24);
     c7Mesh.rotation.x = -0.18;
-    c7Mesh.userData.id = "c7";
     smallStand.add(c7Mesh);
-    finishedCanvases.push(c7Mesh);
+    c7Mesh.updateWorldMatrix(true, false);
+    scene.attach(c7Mesh);
+    registerCanvas(c7Mesh, "c7", 1.05, 1.35);
 
     // ---- side table with palette + brush jar ----
     const tableTop = new THREE.Mesh(new RoundedBoxGeometry(0.9, 0.05, 0.55, 2, 0.02), woodMat);
@@ -415,7 +482,10 @@ export default function Artist({ onExit }) {
       scene.add(leg);
     });
 
-    const paletteShape = new THREE.Mesh(new THREE.CircleGeometry(0.22, 24), new THREE.MeshStandardMaterial({ color: "#c9a876", roughness: 0.6 }));
+    const paletteShape = new THREE.Mesh(
+      new THREE.CircleGeometry(0.22, 24),
+      new THREE.MeshStandardMaterial({ color: "#c9a876", roughness: 0.6 })
+    );
     paletteShape.rotation.x = -Math.PI / 2;
     paletteShape.position.set(3.55, 0.655, -0.55);
     scene.add(paletteShape);
@@ -431,17 +501,52 @@ export default function Artist({ onExit }) {
       scene.add(daub);
     });
 
+    const jarCenter = new THREE.Vector3(3.85, 0.735, -0.75);
     const jar = new THREE.Mesh(new THREE.CylinderGeometry(0.09, 0.08, 0.18, 16), jarMat);
-    jar.position.set(3.85, 0.735, -0.75);
+    jar.position.copy(jarCenter);
     scene.add(jar);
 
-    for (let i = 0; i < 5; i++) {
-      const brush = new THREE.Mesh(new THREE.CylinderGeometry(0.008, 0.008, 0.42, 6), brushMat);
-      const a = (i / 5) * Math.PI * 2;
-      brush.position.set(3.85 + Math.cos(a) * 0.04, 0.9, -0.75 + Math.sin(a) * 0.04);
-      brush.rotation.set(Math.sin(a) * 0.3, 0, Math.cos(a) * 0.3);
-      scene.add(brush);
-    }
+    // brushes pivot from their base (inside the jar), not their center —
+    // so tilting swings only the bristle end and the handle base stays put,
+    // instead of both ends swinging outward through the jar wall
+    const BRUSH_DEFS = [
+      { len: 0.36, r: 0.007 },
+      { len: 0.42, r: 0.009 },
+      { len: 0.3, r: 0.006 },
+      { len: 0.4, r: 0.011 },
+      { len: 0.33, r: 0.007 },
+      { len: 0.44, r: 0.008 },
+    ];
+    const jarBottomY = jarCenter.y - 0.09 + 0.03;
+    const jarSafeRadius = 0.045; // stays well inside the jar's 0.08 bottom radius even at full lean
+
+    BRUSH_DEFS.forEach((def, i) => {
+      const a = (i / BRUSH_DEFS.length) * Math.PI * 2 + i * 0.4;
+      const baseR = jarSafeRadius * (0.4 + Math.random() * 0.5);
+
+      const pivot = new THREE.Group();
+      pivot.position.set(
+        jarCenter.x + Math.cos(a) * baseR,
+        jarBottomY,
+        jarCenter.z + Math.sin(a) * baseR
+      );
+      const lean = 0.06 + Math.random() * 0.08;
+      pivot.rotation.set(Math.sin(a) * lean, 0, Math.cos(a) * lean);
+      scene.add(pivot);
+
+      const handleGeo = new THREE.CylinderGeometry(def.r, def.r * 1.15, def.len, 6);
+      brushGeometries.push(handleGeo);
+      const handle = new THREE.Mesh(handleGeo, brushMat);
+      handle.position.y = def.len / 2;
+      handle.castShadow = true;
+      pivot.add(handle);
+
+      const bristleGeo = new THREE.ConeGeometry(def.r * 1.3, 0.05, 6);
+      brushGeometries.push(bristleGeo);
+      const bristle = new THREE.Mesh(bristleGeo, bristleMat);
+      bristle.position.y = def.len + 0.02;
+      pivot.add(bristle);
+    });
 
     // ---- stool ----
     const stoolSeat = new THREE.Mesh(new THREE.CylinderGeometry(0.28, 0.28, 0.06, 20), woodMat);
@@ -464,8 +569,263 @@ export default function Artist({ onExit }) {
     controls.enableZoom = false;
     controls.minPolarAngle = 0.6;
     controls.maxPolarAngle = 1.35;
-    controls.target.set(0, 1.4, 0);
+    controls.target.copy(DEFAULT_TARGET);
     controls.update();
+
+    // ---- spring-damper physics for every canvas ----
+    const SPRING_STIFFNESS = 140;
+    const SPRING_DAMPING = 16;
+    const CANVAS_REST_Y = 0.02;
+    const EASEL_SNAP_RADIUS = 1.1;
+    const DRAG_THRESHOLD_PX = 6;
+
+    function updateCanvasPhysics(dt) {
+      canvasStates.forEach((state) => {
+        if (!state.dragging) {
+          const accel = new THREE.Vector3()
+            .subVectors(state.targetPos, state.physicalPos)
+            .multiplyScalar(SPRING_STIFFNESS);
+          state.velocity.addScaledVector(accel, dt);
+          state.velocity.multiplyScalar(Math.max(0, 1 - SPRING_DAMPING * dt));
+          state.physicalPos.addScaledVector(state.velocity, dt);
+          state.physicalQuat.slerp(state.targetQuat, Math.min(1, dt * 8));
+        } else {
+          state.physicalPos.lerp(state.targetPos, Math.min(1, dt * 14));
+          state.physicalQuat.slerp(state.targetQuat, Math.min(1, dt * 10));
+        }
+        state.mesh.position.copy(state.physicalPos);
+        state.mesh.quaternion.copy(state.physicalQuat);
+      });
+    }
+
+    // ---- pointer interaction: drag physics + click-to-zoom ----
+    const dragRaycaster = new THREE.Raycaster();
+    const pointerNDC = new THREE.Vector2();
+    const dragPlane = new THREE.Plane();
+    const planeIntersect = new THREE.Vector3();
+
+    let activeDrag = null;
+    let pointerDownState = null;
+    let isZoomedIn = false;
+    let zoomAnimating = false;
+
+    function ndcFromEvent(event) {
+      const rect = canvas.getBoundingClientRect();
+      pointerNDC.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
+      pointerNDC.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
+    }
+
+    function hitCanvasAt(event) {
+      ndcFromEvent(event);
+      dragRaycaster.setFromCamera(pointerNDC, camera);
+      const meshes = canvasStates.map((s) => s.mesh);
+      const hits = dragRaycaster.intersectObjects(meshes);
+      if (!hits.length) return null;
+      const state = canvasStates.find((s) => s.mesh === hits[0].object);
+      return { state, point: hits[0].point };
+    }
+
+    function beginDrag(state, hitPoint) {
+      activeDrag = state;
+      state.dragging = true;
+      state.mountedOnEasel = false; // lifting it off the easel frees the slot immediately
+
+      const camDir = new THREE.Vector3();
+      camera.getWorldDirection(camDir);
+      dragPlane.setFromNormalAndCoplanarPoint(camDir, hitPoint);
+      state.grabOffset.subVectors(state.mesh.position, hitPoint);
+    }
+
+    function mountOnEasel(state) {
+      canvasStates.forEach((s) => {
+        if (s.mountedOnEasel && s !== state) {
+          s.mountedOnEasel = false;
+          s.targetPos.set(
+            easelSlot.position.x + (Math.random() - 0.5) * 0.6,
+            CANVAS_REST_Y,
+            easelSlot.position.z + 0.5 + Math.random() * 0.3
+          );
+          s.targetQuat.setFromEuler(new THREE.Euler(-Math.PI / 2, 0, (Math.random() - 0.5) * 0.6));
+        }
+      });
+      state.mountedOnEasel = true;
+      state.targetPos.copy(easelSlot.position);
+      state.targetQuat.copy(easelSlot.quaternion);
+    }
+
+    function settleOnFloor(state, dropPos) {
+      state.mountedOnEasel = false;
+      state.targetPos.set(dropPos.x, CANVAS_REST_Y, dropPos.z);
+      state.targetQuat.setFromEuler(new THREE.Euler(-Math.PI / 2, 0, (Math.random() - 0.5) * 0.5));
+    }
+
+    function ease(t) {
+      return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+    }
+    function tween(duration, onUpdate, onComplete) {
+      const start = performance.now();
+      function step(now) {
+        const t = Math.min((now - start) / duration, 1);
+        onUpdate(ease(t));
+        if (t < 1) requestAnimationFrame(step);
+        else onComplete && onComplete();
+      }
+      requestAnimationFrame(step);
+    }
+    function animateCameraTo(targetPos, targetLookAt, duration, onComplete) {
+      const startPos = camera.position.clone();
+      const startTarget = controls.target.clone();
+      tween(
+        duration,
+        (t) => {
+          camera.position.lerpVectors(startPos, targetPos, t);
+          controls.target.lerpVectors(startTarget, targetLookAt, t);
+          controls.update();
+        },
+        onComplete
+      );
+    }
+
+    function zoomIntoPainting(state) {
+      if (zoomAnimating || isZoomedIn) return;
+      zoomAnimating = true;
+      controls.enabled = false;
+      controls.autoRotate = false;
+
+      const worldPos = state.mesh.position.clone();
+      const worldQuat = state.mesh.quaternion.clone();
+      const normal = new THREE.Vector3(0, 0, 1).applyQuaternion(worldQuat).normalize();
+
+      const vFov = THREE.MathUtils.degToRad(camera.fov);
+      const fillFactor = 0.78;
+      const distance = state.h / (fillFactor * 2 * Math.tan(vFov / 2));
+      const targetCamPos = worldPos.clone().add(normal.multiplyScalar(distance));
+
+      animateCameraTo(targetCamPos, worldPos, 1200, () => {
+        zoomAnimating = false;
+        isZoomedIn = true;
+        setZoomedIn(true);
+      });
+    }
+
+    function zoomOutFromPainting() {
+      if (zoomAnimating || !isZoomedIn) return;
+      zoomAnimating = true;
+      isZoomedIn = false;
+      setZoomedIn(false);
+
+      animateCameraTo(DEFAULT_CAM_POS, DEFAULT_TARGET, 1200, () => {
+        zoomAnimating = false;
+        controls.enabled = true;
+        controls.autoRotate = true;
+      });
+    }
+
+    function handlePointerDown(event) {
+      if (zoomAnimating) return;
+
+      if (isZoomedIn) {
+        zoomOutFromPainting();
+        return;
+      }
+
+      const hit = hitCanvasAt(event);
+      if (!hit) return;
+
+      // claim the gesture so OrbitControls doesn't also try to rotate the camera
+      controls.enabled = false;
+      controls.autoRotate = false;
+
+      pointerDownState = {
+        state: hit.state,
+        screenX: event.clientX,
+        screenY: event.clientY,
+        downTime: performance.now(),
+        hitPoint: hit.point.clone(),
+      };
+    }
+
+    function handlePointerMove(event) {
+      if (isZoomedIn || zoomAnimating) return;
+
+      if (!activeDrag) {
+        if (!pointerDownState) {
+          const hit = hitCanvasAt(event);
+          canvas.style.cursor = hit ? "grab" : "default";
+          return;
+        }
+        const dx = event.clientX - pointerDownState.screenX;
+        const dy = event.clientY - pointerDownState.screenY;
+        if (Math.hypot(dx, dy) > DRAG_THRESHOLD_PX) {
+          beginDrag(pointerDownState.state, pointerDownState.hitPoint);
+        } else {
+          return;
+        }
+      }
+
+      ndcFromEvent(event);
+      dragRaycaster.setFromCamera(pointerNDC, camera);
+      if (dragRaycaster.ray.intersectPlane(dragPlane, planeIntersect)) {
+        activeDrag.targetPos.copy(planeIntersect).add(activeDrag.grabOffset);
+        activeDrag.targetPos.y = Math.max(activeDrag.targetPos.y, 0.4);
+
+        // tilt the carried canvas toward the camera — lookAt aims local -Z at the
+        // target, but our painted face is +Z, so flip 180° or it'd face away
+        const dummy = new THREE.Object3D();
+        dummy.position.copy(activeDrag.targetPos);
+        dummy.lookAt(camera.position);
+        dummy.rotateY(Math.PI);
+        activeDrag.targetQuat.copy(dummy.quaternion);
+      }
+      canvas.style.cursor = "grabbing";
+    }
+
+    function handlePointerUp(event) {
+      if (zoomAnimating || isZoomedIn) return;
+
+      let enteringZoom = false;
+
+      if (activeDrag) {
+        const state = activeDrag;
+        state.dragging = false;
+        activeDrag = null;
+
+        const dropXZ = new THREE.Vector2(state.targetPos.x, state.targetPos.z);
+        const easelXZ = new THREE.Vector2(easelSlot.position.x, easelSlot.position.z);
+
+        if (dropXZ.distanceTo(easelXZ) < EASEL_SNAP_RADIUS) {
+          mountOnEasel(state);
+        } else {
+          settleOnFloor(state, state.targetPos);
+        }
+        canvas.style.cursor = "default";
+      } else if (pointerDownState) {
+        const held = performance.now() - pointerDownState.downTime;
+        const dx = event.clientX - pointerDownState.screenX;
+        const dy = event.clientY - pointerDownState.screenY;
+        const wasClick = Math.hypot(dx, dy) <= DRAG_THRESHOLD_PX && held < 500;
+
+        if (wasClick && pointerDownState.state.mountedOnEasel) {
+          enteringZoom = true;
+          zoomIntoPainting(pointerDownState.state);
+        }
+      }
+
+      pointerDownState = null;
+      if (!enteringZoom) {
+        controls.enabled = true;
+        controls.autoRotate = true;
+      }
+    }
+
+    function handleKeydown(e) {
+      if (e.key === "Escape" && isZoomedIn) zoomOutFromPainting();
+    }
+
+    canvas.addEventListener("pointerdown", handlePointerDown);
+    window.addEventListener("pointermove", handlePointerMove);
+    window.addEventListener("pointerup", handlePointerUp);
+    window.addEventListener("keydown", handleKeydown);
 
     function handleResize() {
       const { width, height } = canvas.parentElement.getBoundingClientRect();
@@ -477,9 +837,12 @@ export default function Artist({ onExit }) {
     handleResize();
     window.addEventListener("resize", handleResize);
 
+    const clock = new THREE.Clock();
     let animationId;
     const renderLoop = () => {
+      const dt = Math.min(clock.getDelta(), 0.05);
       controls.update();
+      updateCanvasPhysics(dt);
       renderer.render(scene, camera);
       animationId = requestAnimationFrame(renderLoop);
     };
@@ -488,6 +851,10 @@ export default function Artist({ onExit }) {
     return () => {
       cancelAnimationFrame(animationId);
       window.removeEventListener("resize", handleResize);
+      window.removeEventListener("keydown", handleKeydown);
+      window.removeEventListener("pointermove", handlePointerMove);
+      window.removeEventListener("pointerup", handlePointerUp);
+      canvas.removeEventListener("pointerdown", handlePointerDown);
       controls.dispose();
       renderer.dispose();
 
@@ -502,17 +869,20 @@ export default function Artist({ onExit }) {
       canvasBackMat.dispose();
       jarMat.dispose();
       brushMat.dispose();
+      bristleMat.dispose();
 
       paintingTextures.forEach((t) => t.dispose());
       paintingMaterials.forEach((m) => m.dispose());
       canvasGeometries.forEach((g) => g.dispose());
+      standGeometries.forEach((g) => g.dispose());
+      brushGeometries.forEach((g) => g.dispose());
     };
   }, []);
 
   return (
     <div className="artist-scene">
       <canvas ref={canvasRef} className="artist-canvas" />
-      <WorldNav onExit={onExit} visible={true} />
+      <WorldNav onExit={onExit} visible={!zoomedIn} />
     </div>
   );
 }
