@@ -5,6 +5,7 @@ import { useRef, useEffect, useState } from "react";
 import Landing from "./landing.jsx";
 import Loading from "./loading.jsx";
 import Hero from "./hero.jsx";
+import Artist from "./artist.jsx";
 import Developer from "./developer.jsx";
 import Portfolio from "./portfolio.jsx";
 import Swype from "./swype.jsx";
@@ -40,6 +41,12 @@ function App() {
     }, 1000);
   }
 
+  function showArtist() {
+    setTimeout(() => {
+      setPage("artist");
+    }, 1000);
+  }
+
   function showPortfolio() {
     setPage("portfolio");
   }
@@ -71,9 +78,11 @@ function App() {
       case "loading":
         return <Loading />;
       case "hero":
-        return <Hero onDeveloper={showDeveloper} onPortfolio={showPortfolio} />;
+        return <Hero onArtist={showArtist} onDeveloper={showDeveloper} onPortfolio={showPortfolio} />;
       case "developer":
         return <Developer onExit={showHero} />;
+      case "artist":
+        return <Artist onExit={showHero} />;
       case "portfolio":
         return <Portfolio onHero={showHero} />;
       default:
