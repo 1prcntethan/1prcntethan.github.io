@@ -225,20 +225,25 @@ export default function Artist({ onExit }) {
 
     // ---- unified draggable-canvas registry ----
     const canvasStates = [];
-    function registerCanvas(mesh, id, w, h, mountedOnEasel = false) {
+    function registerCanvas(mesh, id, w, h, startMounted = false) {
       canvasStates.push({
         mesh,
         id,
         w,
         h,
-        dragging: false,
+        mode: startMounted ? "mounted" : "settled", // held | flying | settling | settled | mounted
         physicalPos: mesh.position.clone(),
         physicalQuat: mesh.quaternion.clone(),
         targetPos: mesh.position.clone(),
         targetQuat: mesh.quaternion.clone(),
         velocity: new THREE.Vector3(),
-        mountedOnEasel,
+        angularVelocity: new THREE.Vector3(),
         grabOffset: new THREE.Vector3(),
+        dragVelocity: new THREE.Vector3(),
+        lastDragPos: new THREE.Vector3(),
+        lastDragTime: 0,
+        rollBias: (Math.random() - 0.5) * 0.5, // per-painting personality, so held pieces don't all look identical
+        bounceCount: 0,
       });
     }
 
@@ -313,7 +318,9 @@ export default function Artist({ onExit }) {
     addMullion(0.05, 3.6, -5.0, 3.4);
     addMullion(0.05, 3.6, -3.4, 3.4);
 
-    // ---- shared beam helper: connects two world points with a wood cylinder ----
+    // ---- beam helper: connects two explicit 3D points with a wood cylinder ----
+    // building legs this way (real endpoints) instead of rotating flat cylinders
+    // sidesteps Euler-order surprises entirely — what you place is what you get
     function beamBetween(a, b, thickness) {
       const dir = new THREE.Vector3().subVectors(b, a);
       const len = dir.length();
@@ -333,57 +340,51 @@ export default function Artist({ onExit }) {
       group.position.set(x, 0, z);
       group.rotation.y = rotY;
 
-      const legGeo = new THREE.CylinderGeometry(0.035, 0.045, 2.6, 8);
-      const legL = new THREE.Mesh(legGeo, woodMat);
-      legL.position.set(-0.5, 1.3, 0.35);
-      legL.rotation.set(-0.12, 0, 0.18);
-      legL.castShadow = true;
-      group.add(legL);
+      const legLBottom = new THREE.Vector3(-0.48, 0, 0.4);
+      const legLTop = new THREE.Vector3(-0.14, 2.35, 0.08);
+      const legRBottom = new THREE.Vector3(0.48, 0, 0.4);
+      const legRTop = new THREE.Vector3(0.14, 2.35, 0.08);
+      const legBackBottom = new THREE.Vector3(0, 0, -0.62);
+      // back leg's top is DEFINED as the front beam's midpoint — they meet at
+      // one real point instead of two lines merely overlapping on screen
+      const legBackTop = new THREE.Vector3().lerpVectors(legLTop, legRTop, 0.5);
 
-      const legR = new THREE.Mesh(legGeo, woodMat);
-      legR.position.set(0.5, 1.3, 0.35);
-      legR.rotation.set(-0.12, 0, -0.18);
-      legR.castShadow = true;
-      group.add(legR);
+      group.add(beamBetween(legLBottom, legLTop, 0.045));
+      group.add(beamBetween(legRBottom, legRTop, 0.045));
+      group.add(beamBetween(legBackBottom, legBackTop, 0.04));
+      group.add(beamBetween(legLTop, legRTop, 0.05)); // the top beam — all 3 sticks join here
 
-      const legBack = new THREE.Mesh(new THREE.CylinderGeometry(0.035, 0.045, 2.9, 8), woodMat);
-      legBack.position.set(0, 1.4, -0.45);
-      legBack.rotation.x = 0.28;
-      legBack.castShadow = true;
-      group.add(legBack);
+      const crossPtL = new THREE.Vector3().lerpVectors(legLBottom, legLTop, 0.58);
+      const crossPtR = new THREE.Vector3().lerpVectors(legRBottom, legRTop, 0.58);
+      group.add(beamBetween(crossPtL, crossPtR, 0.032));
 
-      // the missing top yoke — read straight off each leg's real transform,
-      // so it stays correct even if the tilt constants above ever change
-      const legLTop = new THREE.Vector3(0, 1.3, 0).applyEuler(legL.rotation).add(legL.position);
-      const legRTop = new THREE.Vector3(0, 1.3, 0).applyEuler(legR.rotation).add(legR.position);
-      const legBackTop = new THREE.Vector3(0, 1.45, 0).applyEuler(legBack.rotation).add(legBack.position);
-
-      group.add(beamBetween(legLTop, legRTop, 0.045));
-      const frontMid = new THREE.Vector3().addVectors(legLTop, legRTop).multiplyScalar(0.5);
-      group.add(beamBetween(legBackTop, frontMid, 0.038));
-
-      const crossbar = new THREE.Mesh(new THREE.BoxGeometry(1.15, 0.05, 0.05), woodMat);
-      crossbar.position.set(0, 0.95, 0.42);
-      crossbar.castShadow = true;
-      group.add(crossbar);
-
-      const ledge = new THREE.Mesh(new THREE.BoxGeometry(1.05, 0.04, 0.1), woodMat);
-      ledge.position.set(0, 0.78, 0.5);
+      const ledgeCenter = new THREE.Vector3().lerpVectors(crossPtL, crossPtR, 0.5);
+      ledgeCenter.z += 0.28;
+      const ledge = new THREE.Mesh(new THREE.BoxGeometry(1.05, 0.04, 0.16), woodMat);
+      ledge.position.copy(ledgeCenter);
       ledge.castShadow = true;
       group.add(ledge);
 
       scene.add(group);
-      return group;
+      return { group, ledgeCenter };
     }
 
-    const mainEasel = buildEasel(2.4, -1.2, -0.35);
+    const { group: mainEasel, ledgeCenter: mainLedge } = buildEasel(2.4, -1.2, -0.35);
+
     const inProgressCanvas = buildStretcherCanvas(1.15, 1.5, (() => {
       const t = makeInProgressTexture();
       paintingTextures.push(t);
       return t;
     })());
-    inProgressCanvas.position.set(0, 1.55, 0.46);
-    inProgressCanvas.rotation.x = -0.22;
+    const CANVAS_TILT = 0.22;
+    // canvas position is DERIVED from the ledge, not guessed independently —
+    // this is what guarantees the two can't drift out of alignment
+    inProgressCanvas.position.set(
+      mainLedge.x,
+      mainLedge.y + (1.5 / 2) * Math.cos(CANVAS_TILT) + 0.02,
+      mainLedge.z - (1.5 / 2) * Math.sin(CANVAS_TILT) - 0.05
+    );
+    inProgressCanvas.rotation.x = -CANVAS_TILT;
     mainEasel.add(inProgressCanvas);
 
     // capture the easel's real mount transform, then free the canvas to live in world space
@@ -394,7 +395,7 @@ export default function Artist({ onExit }) {
     inProgressCanvas.updateWorldMatrix(true, false);
     inProgressCanvas.getWorldPosition(easelSlot.position);
     inProgressCanvas.getWorldQuaternion(easelSlot.quaternion);
-    scene.attach(inProgressCanvas); // reparents, preserves world transform — no visual jump
+    scene.attach(inProgressCanvas);
 
     registerCanvas(inProgressCanvas, "sketch", 1.15, 1.5, true);
 
@@ -416,52 +417,48 @@ export default function Artist({ onExit }) {
       registerCanvas(mesh, c.id, c.w, c.h);
     });
 
-    // ---- small stand, seventh piece ----
+    // ---- small stand, seventh piece — same point-based construction ----
     function buildSmallStand(x, z, rotY = 0) {
       const group = new THREE.Group();
       group.position.set(x, 0, z);
       group.rotation.y = rotY;
 
-      const legGeo = new THREE.CylinderGeometry(0.025, 0.03, 1.05, 8);
-      const legL = new THREE.Mesh(legGeo, woodMat);
-      legL.position.set(-0.32, 0.525, 0.16);
-      legL.rotation.set(-0.08, 0, 0.12);
-      legL.castShadow = true;
-      group.add(legL);
+      const legLBottom = new THREE.Vector3(-0.3, 0, 0.24);
+      const legLTop = new THREE.Vector3(-0.08, 1.05, 0.05);
+      const legRBottom = new THREE.Vector3(0.3, 0, 0.24);
+      const legRTop = new THREE.Vector3(0.08, 1.05, 0.05);
+      const legBackBottom = new THREE.Vector3(0, 0, -0.32);
+      const legBackTop = new THREE.Vector3().lerpVectors(legLTop, legRTop, 0.5);
 
-      const legR = new THREE.Mesh(legGeo, woodMat);
-      legR.position.set(0.32, 0.525, 0.16);
-      legR.rotation.set(-0.08, 0, -0.12);
-      legR.castShadow = true;
-      group.add(legR);
+      group.add(beamBetween(legLBottom, legLTop, 0.028));
+      group.add(beamBetween(legRBottom, legRTop, 0.028));
+      group.add(beamBetween(legBackBottom, legBackTop, 0.024));
+      group.add(beamBetween(legLTop, legRTop, 0.03));
 
-      const legBack = new THREE.Mesh(new THREE.CylinderGeometry(0.025, 0.03, 1.15, 8), woodMat);
-      legBack.position.set(0, 0.575, -0.2);
-      legBack.rotation.x = 0.22;
-      legBack.castShadow = true;
-      group.add(legBack);
+      const crossPtL = new THREE.Vector3().lerpVectors(legLBottom, legLTop, 0.58);
+      const crossPtR = new THREE.Vector3().lerpVectors(legRBottom, legRTop, 0.58);
+      group.add(beamBetween(crossPtL, crossPtR, 0.02));
 
-      const legLTop = new THREE.Vector3(0, 0.525, 0).applyEuler(legL.rotation).add(legL.position);
-      const legRTop = new THREE.Vector3(0, 0.525, 0).applyEuler(legR.rotation).add(legR.position);
-      const legBackTop = new THREE.Vector3(0, 0.575, 0).applyEuler(legBack.rotation).add(legBack.position);
-
-      group.add(beamBetween(legLTop, legRTop, 0.028));
-      const frontMid = new THREE.Vector3().addVectors(legLTop, legRTop).multiplyScalar(0.5);
-      group.add(beamBetween(legBackTop, frontMid, 0.024));
-
-      const ledge = new THREE.Mesh(new THREE.BoxGeometry(0.55, 0.03, 0.06), woodMat);
-      ledge.position.set(0, 0.42, 0.2);
+      const ledgeCenter = new THREE.Vector3().lerpVectors(crossPtL, crossPtR, 0.5);
+      ledgeCenter.z += 0.17;
+      const ledge = new THREE.Mesh(new THREE.BoxGeometry(0.58, 0.028, 0.1), woodMat);
+      ledge.position.copy(ledgeCenter);
       ledge.castShadow = true;
       group.add(ledge);
 
       scene.add(group);
-      return group;
+      return { group, ledgeCenter };
     }
 
-    const smallStand = buildSmallStand(-1.6, 3.7, 0.28);
+    const { group: smallStand, ledgeCenter: smallLedge } = buildSmallStand(-1.6, 3.7, 0.28);
     const c7Mesh = buildStretcherCanvas(1.05, 1.35, paintingTexture(6));
-    c7Mesh.position.set(0, 0.78, 0.24);
-    c7Mesh.rotation.x = -0.18;
+    const C7_TILT = 0.18;
+    c7Mesh.position.set(
+      smallLedge.x,
+      smallLedge.y + (1.35 / 2) * Math.cos(C7_TILT) + 0.015,
+      smallLedge.z - (1.35 / 2) * Math.sin(C7_TILT) - 0.04
+    );
+    c7Mesh.rotation.x = -C7_TILT;
     smallStand.add(c7Mesh);
     c7Mesh.updateWorldMatrix(true, false);
     scene.attach(c7Mesh);
@@ -506,9 +503,6 @@ export default function Artist({ onExit }) {
     jar.position.copy(jarCenter);
     scene.add(jar);
 
-    // brushes pivot from their base (inside the jar), not their center —
-    // so tilting swings only the bristle end and the handle base stays put,
-    // instead of both ends swinging outward through the jar wall
     const BRUSH_DEFS = [
       { len: 0.36, r: 0.007 },
       { len: 0.42, r: 0.009 },
@@ -518,7 +512,7 @@ export default function Artist({ onExit }) {
       { len: 0.44, r: 0.008 },
     ];
     const jarBottomY = jarCenter.y - 0.09 + 0.03;
-    const jarSafeRadius = 0.045; // stays well inside the jar's 0.08 bottom radius even at full lean
+    const jarSafeRadius = 0.045;
 
     BRUSH_DEFS.forEach((def, i) => {
       const a = (i / BRUSH_DEFS.length) * Math.PI * 2 + i * 0.4;
@@ -572,29 +566,97 @@ export default function Artist({ onExit }) {
     controls.target.copy(DEFAULT_TARGET);
     controls.update();
 
-    // ---- spring-damper physics for every canvas ----
-    const SPRING_STIFFNESS = 140;
+    // ---- physics constants ----
+    const SPRING_STIFFNESS = 140; // used only for the magnetic "mounted on easel" snap
     const SPRING_DAMPING = 16;
-    const CANVAS_REST_Y = 0.02;
+    const GRAVITY = 7.5;
+    const FLOOR_Y = 0.02;
+    const BOUNCE_RESTITUTION = 0.34;
+    const BOUNCE_FRICTION = 0.55;
+    const ANGULAR_DAMPING_ON_BOUNCE = 0.5;
+    const MIN_BOUNCE_VELOCITY = 0.45;
+    const MAX_BOUNCES = 6;
     const EASEL_SNAP_RADIUS = 1.1;
     const DRAG_THRESHOLD_PX = 6;
 
     function updateCanvasPhysics(dt) {
       canvasStates.forEach((state) => {
-        if (!state.dragging) {
-          const accel = new THREE.Vector3()
-            .subVectors(state.targetPos, state.physicalPos)
-            .multiplyScalar(SPRING_STIFFNESS);
-          state.velocity.addScaledVector(accel, dt);
-          state.velocity.multiplyScalar(Math.max(0, 1 - SPRING_DAMPING * dt));
-          state.physicalPos.addScaledVector(state.velocity, dt);
-          state.physicalQuat.slerp(state.targetQuat, Math.min(1, dt * 8));
-        } else {
-          state.physicalPos.lerp(state.targetPos, Math.min(1, dt * 14));
-          state.physicalQuat.slerp(state.targetQuat, Math.min(1, dt * 10));
+        switch (state.mode) {
+          case "held": {
+            state.mesh.position.lerp(state.targetPos, Math.min(1, dt * 18));
+            state.mesh.quaternion.slerp(state.targetQuat, Math.min(1, dt * 10));
+            state.physicalPos.copy(state.mesh.position);
+            state.physicalQuat.copy(state.mesh.quaternion);
+            break;
+          }
+          case "flying": {
+            state.velocity.y -= GRAVITY * dt;
+            state.mesh.position.addScaledVector(state.velocity, dt);
+
+            const half = ROOM_W / 2 - 0.7;
+            ["x", "z"].forEach((axis) => {
+              if (state.mesh.position[axis] > half) {
+                state.mesh.position[axis] = half;
+                state.velocity[axis] *= -0.4;
+              } else if (state.mesh.position[axis] < -half) {
+                state.mesh.position[axis] = -half;
+                state.velocity[axis] *= -0.4;
+              }
+            });
+
+            state.mesh.rotateX(state.angularVelocity.x * dt);
+            state.mesh.rotateY(state.angularVelocity.y * dt);
+            state.mesh.rotateZ(state.angularVelocity.z * dt);
+
+            if (state.mesh.position.y <= FLOOR_Y) {
+              state.mesh.position.y = FLOOR_Y;
+              state.velocity.y = -state.velocity.y * BOUNCE_RESTITUTION;
+              state.velocity.x *= BOUNCE_FRICTION;
+              state.velocity.z *= BOUNCE_FRICTION;
+              state.angularVelocity.multiplyScalar(ANGULAR_DAMPING_ON_BOUNCE);
+              state.bounceCount += 1;
+
+              if (
+                Math.abs(state.velocity.y) < MIN_BOUNCE_VELOCITY ||
+                state.bounceCount > MAX_BOUNCES
+              ) {
+                state.mode = "settling";
+                state.targetPos.set(state.mesh.position.x, FLOOR_Y, state.mesh.position.z);
+                const currentZSpin = new THREE.Euler()
+                  .setFromQuaternion(state.mesh.quaternion, "XYZ").z;
+                state.targetQuat.setFromEuler(new THREE.Euler(-Math.PI / 2, 0, currentZSpin));
+              }
+            }
+
+            state.physicalPos.copy(state.mesh.position);
+            state.physicalQuat.copy(state.mesh.quaternion);
+            break;
+          }
+          case "settling": {
+            state.mesh.position.lerp(state.targetPos, Math.min(1, dt * 6));
+            state.mesh.quaternion.slerp(state.targetQuat, Math.min(1, dt * 6));
+            state.physicalPos.copy(state.mesh.position);
+            state.physicalQuat.copy(state.mesh.quaternion);
+            if (state.mesh.position.distanceTo(state.targetPos) < 0.01) {
+              state.mode = "settled";
+            }
+            break;
+          }
+          case "settled":
+            break;
+          case "mounted": {
+            const accel = new THREE.Vector3()
+              .subVectors(state.targetPos, state.physicalPos)
+              .multiplyScalar(SPRING_STIFFNESS);
+            state.velocity.addScaledVector(accel, dt);
+            state.velocity.multiplyScalar(Math.max(0, 1 - SPRING_DAMPING * dt));
+            state.physicalPos.addScaledVector(state.velocity, dt);
+            state.physicalQuat.slerp(state.targetQuat, Math.min(1, dt * 8));
+            state.mesh.position.copy(state.physicalPos);
+            state.mesh.quaternion.copy(state.physicalQuat);
+            break;
+          }
         }
-        state.mesh.position.copy(state.physicalPos);
-        state.mesh.quaternion.copy(state.physicalQuat);
       });
     }
 
@@ -627,36 +689,35 @@ export default function Artist({ onExit }) {
 
     function beginDrag(state, hitPoint) {
       activeDrag = state;
-      state.dragging = true;
-      state.mountedOnEasel = false; // lifting it off the easel frees the slot immediately
+      state.mode = "held";
 
       const camDir = new THREE.Vector3();
       camera.getWorldDirection(camDir);
       dragPlane.setFromNormalAndCoplanarPoint(camDir, hitPoint);
       state.grabOffset.subVectors(state.mesh.position, hitPoint);
+      state.lastDragPos.copy(state.mesh.position);
+      state.lastDragTime = performance.now();
     }
 
     function mountOnEasel(state) {
       canvasStates.forEach((s) => {
-        if (s.mountedOnEasel && s !== state) {
-          s.mountedOnEasel = false;
-          s.targetPos.set(
-            easelSlot.position.x + (Math.random() - 0.5) * 0.6,
-            CANVAS_REST_Y,
-            easelSlot.position.z + 0.5 + Math.random() * 0.3
+        if (s.mode === "mounted" && s !== state) {
+          // bumped off the easel — toss it, don't teleport it
+          s.mode = "flying";
+          s.velocity.set((Math.random() - 0.5) * 1.2, 1.6, 0.8 + Math.random() * 0.6);
+          s.angularVelocity.set(
+            (Math.random() - 0.5) * 3,
+            (Math.random() - 0.5) * 2,
+            (Math.random() - 0.5) * 3
           );
-          s.targetQuat.setFromEuler(new THREE.Euler(-Math.PI / 2, 0, (Math.random() - 0.5) * 0.6));
+          s.bounceCount = 0;
         }
       });
-      state.mountedOnEasel = true;
+      state.mode = "mounted";
       state.targetPos.copy(easelSlot.position);
       state.targetQuat.copy(easelSlot.quaternion);
-    }
-
-    function settleOnFloor(state, dropPos) {
-      state.mountedOnEasel = false;
-      state.targetPos.set(dropPos.x, CANVAS_REST_Y, dropPos.z);
-      state.targetQuat.setFromEuler(new THREE.Euler(-Math.PI / 2, 0, (Math.random() - 0.5) * 0.5));
+      state.physicalPos.copy(state.mesh.position);
+      state.physicalQuat.copy(state.mesh.quaternion);
     }
 
     function ease(t) {
@@ -723,7 +784,6 @@ export default function Artist({ onExit }) {
 
     function handlePointerDown(event) {
       if (zoomAnimating) return;
-
       if (isZoomedIn) {
         zoomOutFromPainting();
         return;
@@ -731,8 +791,8 @@ export default function Artist({ onExit }) {
 
       const hit = hitCanvasAt(event);
       if (!hit) return;
+      if (hit.state.mode !== "settled" && hit.state.mode !== "mounted") return; // no mid-air grabs
 
-      // claim the gesture so OrbitControls doesn't also try to rotate the camera
       controls.enabled = false;
       controls.autoRotate = false;
 
@@ -769,13 +829,24 @@ export default function Artist({ onExit }) {
         activeDrag.targetPos.copy(planeIntersect).add(activeDrag.grabOffset);
         activeDrag.targetPos.y = Math.max(activeDrag.targetPos.y, 0.4);
 
-        // tilt the carried canvas toward the camera — lookAt aims local -Z at the
-        // target, but our painted face is +Z, so flip 180° or it'd face away
+        // face the camera, but keep a bit of this painting's own roll —
+        // otherwise every held canvas looks identical, which was the complaint
         const dummy = new THREE.Object3D();
         dummy.position.copy(activeDrag.targetPos);
         dummy.lookAt(camera.position);
-        dummy.rotateY(Math.PI);
+        dummy.rotateY(Math.PI); // painted face is local +Z; lookAt aims -Z, so flip
+        dummy.rotateZ(activeDrag.rollBias);
         activeDrag.targetQuat.copy(dummy.quaternion);
+
+        // sample velocity each frame so releasing mid-swing throws with real momentum
+        const now = performance.now();
+        const dt = Math.max((now - activeDrag.lastDragTime) / 1000, 0.001);
+        activeDrag.dragVelocity
+          .copy(activeDrag.targetPos)
+          .sub(activeDrag.lastDragPos)
+          .divideScalar(dt);
+        activeDrag.lastDragPos.copy(activeDrag.targetPos);
+        activeDrag.lastDragTime = now;
       }
       canvas.style.cursor = "grabbing";
     }
@@ -787,7 +858,6 @@ export default function Artist({ onExit }) {
 
       if (activeDrag) {
         const state = activeDrag;
-        state.dragging = false;
         activeDrag = null;
 
         const dropXZ = new THREE.Vector2(state.targetPos.x, state.targetPos.z);
@@ -796,7 +866,15 @@ export default function Artist({ onExit }) {
         if (dropXZ.distanceTo(easelXZ) < EASEL_SNAP_RADIUS) {
           mountOnEasel(state);
         } else {
-          settleOnFloor(state, state.targetPos);
+          state.mode = "flying";
+          state.velocity.copy(state.dragVelocity).clampLength(0, 6);
+          state.velocity.y = Math.max(state.velocity.y, 0.3); // small pop, not dead weight
+          state.angularVelocity.set(
+            (Math.random() - 0.5) * 4,
+            (Math.random() - 0.5) * 2,
+            state.dragVelocity.x * 0.8 + (Math.random() - 0.5) * 2
+          );
+          state.bounceCount = 0;
         }
         canvas.style.cursor = "default";
       } else if (pointerDownState) {
@@ -805,7 +883,7 @@ export default function Artist({ onExit }) {
         const dy = event.clientY - pointerDownState.screenY;
         const wasClick = Math.hypot(dx, dy) <= DRAG_THRESHOLD_PX && held < 500;
 
-        if (wasClick && pointerDownState.state.mountedOnEasel) {
+        if (wasClick && pointerDownState.state.mode === "mounted") {
           enteringZoom = true;
           zoomIntoPainting(pointerDownState.state);
         }
