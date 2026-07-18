@@ -223,8 +223,21 @@ export default function Artist({ onExit }) {
     const standGeometries = [];
     const brushGeometries = [];
 
+    const CANVAS_DEPTH = 0.035;
+
     // ---- unified draggable-canvas registry ----
     const canvasStates = [];
+
+    function computeLocalCorners(w, h) {
+      const hw = w / 2, hh = h / 2, hd = CANVAS_DEPTH / 2;
+      return [
+        new THREE.Vector3(-hw, -hh, -hd), new THREE.Vector3(hw, -hh, -hd),
+        new THREE.Vector3(-hw, hh, -hd), new THREE.Vector3(hw, hh, -hd),
+        new THREE.Vector3(-hw, -hh, hd), new THREE.Vector3(hw, -hh, hd),
+        new THREE.Vector3(-hw, hh, hd), new THREE.Vector3(hw, hh, hd),
+      ];
+    }
+
     function registerCanvas(mesh, id, w, h, startMounted = false) {
       canvasStates.push({
         mesh,
@@ -242,8 +255,14 @@ export default function Artist({ onExit }) {
         dragVelocity: new THREE.Vector3(),
         lastDragPos: new THREE.Vector3(),
         lastDragTime: 0,
-        rollBias: (Math.random() - 0.5) * 0.5, // per-painting personality, so held pieces don't all look identical
+        rollBias: (Math.random() - 0.5) * 0.5,
         bounceCount: 0,
+        mass: 1,
+        // uniform-plate approximation of rotational inertia — good enough to
+        // make edge hits spin more than centered hits, without a full tensor
+        inertia: Math.max((w * w + h * h) / 12, 0.02),
+        localCorners: computeLocalCorners(w, h),
+        worldCorners: Array.from({ length: 8 }, () => new THREE.Vector3()),
       });
     }
 
@@ -256,9 +275,8 @@ export default function Artist({ onExit }) {
     function buildStretcherCanvas(width, height, texture) {
       const frontMat = new THREE.MeshStandardMaterial({ map: texture, roughness: 0.82 });
       paintingMaterials.push(frontMat);
-      const geo = new THREE.BoxGeometry(width, height, 0.035);
+      const geo = new THREE.BoxGeometry(width, height, CANVAS_DEPTH);
       canvasGeometries.push(geo);
-      // material order for BoxGeometry is [+X,-X,+Y,-Y,+Z,-Z] — front face is +Z
       const mesh = new THREE.Mesh(geo, [
         frameMat, frameMat, frameMat, frameMat, frontMat, canvasBackMat,
       ]);
@@ -319,8 +337,6 @@ export default function Artist({ onExit }) {
     addMullion(0.05, 3.6, -3.4, 3.4);
 
     // ---- beam helper: connects two explicit 3D points with a wood cylinder ----
-    // building legs this way (real endpoints) instead of rotating flat cylinders
-    // sidesteps Euler-order surprises entirely — what you place is what you get
     function beamBetween(a, b, thickness) {
       const dir = new THREE.Vector3().subVectors(b, a);
       const len = dir.length();
@@ -345,14 +361,12 @@ export default function Artist({ onExit }) {
       const legRBottom = new THREE.Vector3(0.48, 0, 0.4);
       const legRTop = new THREE.Vector3(0.14, 2.35, 0.08);
       const legBackBottom = new THREE.Vector3(0, 0, -0.62);
-      // back leg's top is DEFINED as the front beam's midpoint — they meet at
-      // one real point instead of two lines merely overlapping on screen
       const legBackTop = new THREE.Vector3().lerpVectors(legLTop, legRTop, 0.5);
 
       group.add(beamBetween(legLBottom, legLTop, 0.045));
       group.add(beamBetween(legRBottom, legRTop, 0.045));
       group.add(beamBetween(legBackBottom, legBackTop, 0.04));
-      group.add(beamBetween(legLTop, legRTop, 0.05)); // the top beam — all 3 sticks join here
+      group.add(beamBetween(legLTop, legRTop, 0.05));
 
       const crossPtL = new THREE.Vector3().lerpVectors(legLBottom, legLTop, 0.58);
       const crossPtR = new THREE.Vector3().lerpVectors(legRBottom, legRTop, 0.58);
@@ -360,10 +374,20 @@ export default function Artist({ onExit }) {
 
       const ledgeCenter = new THREE.Vector3().lerpVectors(crossPtL, crossPtR, 0.5);
       ledgeCenter.z += 0.28;
-      const ledge = new THREE.Mesh(new THREE.BoxGeometry(1.05, 0.04, 0.16), woodMat);
+      const ledgeDepth = 0.16;
+      const ledge = new THREE.Mesh(new THREE.BoxGeometry(1.05, 0.04, ledgeDepth), woodMat);
       ledge.position.copy(ledgeCenter);
       ledge.castShadow = true;
       group.add(ledge);
+
+      // support brackets — the actual physical link between the crossbar and
+      // the tray. Previously the ledge sat at the right coordinates but
+      // nothing spanned the gap back to the legs.
+      const ledgeBackZ = ledgeCenter.z - ledgeDepth / 2;
+      const bracketL = new THREE.Vector3(crossPtL.x, ledgeCenter.y - 0.01, ledgeBackZ);
+      const bracketR = new THREE.Vector3(crossPtR.x, ledgeCenter.y - 0.01, ledgeBackZ);
+      group.add(beamBetween(crossPtL, bracketL, 0.022));
+      group.add(beamBetween(crossPtR, bracketR, 0.022));
 
       scene.add(group);
       return { group, ledgeCenter };
@@ -377,8 +401,6 @@ export default function Artist({ onExit }) {
       return t;
     })());
     const CANVAS_TILT = 0.22;
-    // canvas position is DERIVED from the ledge, not guessed independently —
-    // this is what guarantees the two can't drift out of alignment
     inProgressCanvas.position.set(
       mainLedge.x,
       mainLedge.y + (1.5 / 2) * Math.cos(CANVAS_TILT) + 0.02,
@@ -387,7 +409,6 @@ export default function Artist({ onExit }) {
     inProgressCanvas.rotation.x = -CANVAS_TILT;
     mainEasel.add(inProgressCanvas);
 
-    // capture the easel's real mount transform, then free the canvas to live in world space
     const easelSlot = {
       position: new THREE.Vector3(),
       quaternion: new THREE.Quaternion(),
@@ -417,7 +438,7 @@ export default function Artist({ onExit }) {
       registerCanvas(mesh, c.id, c.w, c.h);
     });
 
-    // ---- small stand, seventh piece — same point-based construction ----
+    // ---- small stand, seventh piece ----
     function buildSmallStand(x, z, rotY = 0) {
       const group = new THREE.Group();
       group.position.set(x, 0, z);
@@ -441,10 +462,17 @@ export default function Artist({ onExit }) {
 
       const ledgeCenter = new THREE.Vector3().lerpVectors(crossPtL, crossPtR, 0.5);
       ledgeCenter.z += 0.17;
-      const ledge = new THREE.Mesh(new THREE.BoxGeometry(0.58, 0.028, 0.1), woodMat);
+      const ledgeDepth = 0.1;
+      const ledge = new THREE.Mesh(new THREE.BoxGeometry(0.58, 0.028, ledgeDepth), woodMat);
       ledge.position.copy(ledgeCenter);
       ledge.castShadow = true;
       group.add(ledge);
+
+      const ledgeBackZ = ledgeCenter.z - ledgeDepth / 2;
+      const bracketL = new THREE.Vector3(crossPtL.x, ledgeCenter.y - 0.008, ledgeBackZ);
+      const bracketR = new THREE.Vector3(crossPtR.x, ledgeCenter.y - 0.008, ledgeBackZ);
+      group.add(beamBetween(crossPtL, bracketL, 0.016));
+      group.add(beamBetween(crossPtR, bracketR, 0.016));
 
       scene.add(group);
       return { group, ledgeCenter };
@@ -567,7 +595,7 @@ export default function Artist({ onExit }) {
     controls.update();
 
     // ---- physics constants ----
-    const SPRING_STIFFNESS = 140; // used only for the magnetic "mounted on easel" snap
+    const SPRING_STIFFNESS = 140; // magnetic "mounted on easel" snap only
     const SPRING_DAMPING = 16;
     const GRAVITY = 7.5;
     const FLOOR_Y = 0.02;
@@ -578,6 +606,74 @@ export default function Artist({ onExit }) {
     const MAX_BOUNCES = 6;
     const EASEL_SNAP_RADIUS = 1.1;
     const DRAG_THRESHOLD_PX = 6;
+
+    // world-frame angular velocity → quaternion derivative. Replaces naive
+    // sequential rotateX/Y/Z calls with real physics, so a collision impulse
+    // that changes angularVelocity actually produces correct spin.
+    function integrateQuaternion(q, omega, dt) {
+      const qx = q.x, qy = q.y, qz = q.z, qw = q.w;
+      const wx = omega.x, wy = omega.y, wz = omega.z;
+      const dqx = 0.5 * (qw * wx + qy * wz - qz * wy);
+      const dqy = 0.5 * (qw * wy + qz * wx - qx * wz);
+      const dqz = 0.5 * (qw * wz + qx * wy - qy * wx);
+      const dqw = 0.5 * (-qx * wx - qy * wy - qz * wz);
+      q.set(qx + dqx * dt, qy + dqy * dt, qz + dqz * dt, qw + dqw * dt);
+      q.normalize();
+    }
+
+    const FLOOR_NORMAL = new THREE.Vector3(0, 1, 0);
+    const _cornerR = new THREE.Vector3();
+    const _pointVel = new THREE.Vector3();
+    const _crossTemp = new THREE.Vector3();
+
+    // finds the lowest of the canvas's 8 real corners and, if it's penetrated
+    // the floor, resolves the contact there — position correction plus a
+    // proper impulse that updates both linear and angular velocity
+    function resolveFloorContact(state) {
+      for (let i = 0; i < 8; i++) {
+        state.worldCorners[i]
+          .copy(state.localCorners[i])
+          .applyQuaternion(state.mesh.quaternion)
+          .add(state.mesh.position);
+      }
+      let deepestIdx = 0;
+      let deepestY = state.worldCorners[0].y;
+      for (let i = 1; i < 8; i++) {
+        if (state.worldCorners[i].y < deepestY) {
+          deepestY = state.worldCorners[i].y;
+          deepestIdx = i;
+        }
+      }
+      if (deepestY >= FLOOR_Y) return { resolved: false, deepestY };
+
+      // r is invariant to the positional correction below — translating the
+      // whole rigid body moves the corner and the center by the same amount
+      _cornerR.copy(state.worldCorners[deepestIdx]).sub(state.mesh.position);
+
+      const penetration = FLOOR_Y - deepestY;
+      state.mesh.position.y += penetration;
+
+      _crossTemp.copy(state.angularVelocity).cross(_cornerR); // ω × r
+      _pointVel.copy(state.velocity).add(_crossTemp);
+      const vn = _pointVel.dot(FLOOR_NORMAL);
+
+      if (vn < 0) {
+        _crossTemp.copy(_cornerR).cross(FLOOR_NORMAL); // r × n
+        const denom = 1 / state.mass + _crossTemp.dot(_crossTemp) / state.inertia;
+        const j = (-(1 + BOUNCE_RESTITUTION) * vn) / denom;
+
+        state.velocity.addScaledVector(FLOOR_NORMAL, j / state.mass);
+        state.angularVelocity.addScaledVector(_crossTemp, j / state.inertia);
+
+        state.velocity.x *= BOUNCE_FRICTION;
+        state.velocity.z *= BOUNCE_FRICTION;
+        state.angularVelocity.multiplyScalar(ANGULAR_DAMPING_ON_BOUNCE);
+
+        if (Math.abs(vn) > MIN_BOUNCE_VELOCITY) state.bounceCount += 1;
+      }
+
+      return { resolved: true, deepestY: FLOOR_Y };
+    }
 
     function updateCanvasPhysics(dt) {
       canvasStates.forEach((state) => {
@@ -604,32 +700,37 @@ export default function Artist({ onExit }) {
               }
             });
 
-            state.mesh.rotateX(state.angularVelocity.x * dt);
-            state.mesh.rotateY(state.angularVelocity.y * dt);
-            state.mesh.rotateZ(state.angularVelocity.z * dt);
+            integrateQuaternion(state.mesh.quaternion, state.angularVelocity, dt);
+            state.angularVelocity.multiplyScalar(Math.max(0, 1 - 0.4 * dt)); // mild air resistance
 
-            if (state.mesh.position.y <= FLOOR_Y) {
-              state.mesh.position.y = FLOOR_Y;
-              state.velocity.y = -state.velocity.y * BOUNCE_RESTITUTION;
-              state.velocity.x *= BOUNCE_FRICTION;
-              state.velocity.z *= BOUNCE_FRICTION;
-              state.angularVelocity.multiplyScalar(ANGULAR_DAMPING_ON_BOUNCE);
-              state.bounceCount += 1;
-
-              if (
-                Math.abs(state.velocity.y) < MIN_BOUNCE_VELOCITY ||
-                state.bounceCount > MAX_BOUNCES
-              ) {
-                state.mode = "settling";
-                state.targetPos.set(state.mesh.position.x, FLOOR_Y, state.mesh.position.z);
-                const currentZSpin = new THREE.Euler()
-                  .setFromQuaternion(state.mesh.quaternion, "XYZ").z;
-                state.targetQuat.setFromEuler(new THREE.Euler(-Math.PI / 2, 0, currentZSpin));
-              }
+            let deepestY = Infinity;
+            for (let iter = 0; iter < 3; iter++) {
+              const result = resolveFloorContact(state);
+              deepestY = result.deepestY;
+              if (!result.resolved) break;
             }
 
             state.physicalPos.copy(state.mesh.position);
             state.physicalQuat.copy(state.mesh.quaternion);
+
+            const speed = state.velocity.length();
+            const spin = state.angularVelocity.length();
+            if (
+              (deepestY <= FLOOR_Y + 0.004 && speed < 0.5 && spin < 0.7) ||
+              state.bounceCount > MAX_BOUNCES
+            ) {
+              state.mode = "settling";
+              state.velocity.set(0, 0, 0);
+              state.angularVelocity.set(0, 0, 0);
+              state.targetPos.set(
+                state.mesh.position.x,
+                FLOOR_Y + CANVAS_DEPTH / 2,
+                state.mesh.position.z
+              );
+              const currentZSpin = new THREE.Euler()
+                .setFromQuaternion(state.mesh.quaternion, "XYZ").z;
+              state.targetQuat.setFromEuler(new THREE.Euler(-Math.PI / 2, 0, currentZSpin));
+            }
             break;
           }
           case "settling": {
@@ -702,7 +803,6 @@ export default function Artist({ onExit }) {
     function mountOnEasel(state) {
       canvasStates.forEach((s) => {
         if (s.mode === "mounted" && s !== state) {
-          // bumped off the easel — toss it, don't teleport it
           s.mode = "flying";
           s.velocity.set((Math.random() - 0.5) * 1.2, 1.6, 0.8 + Math.random() * 0.6);
           s.angularVelocity.set(
@@ -791,7 +891,7 @@ export default function Artist({ onExit }) {
 
       const hit = hitCanvasAt(event);
       if (!hit) return;
-      if (hit.state.mode !== "settled" && hit.state.mode !== "mounted") return; // no mid-air grabs
+      if (hit.state.mode !== "settled" && hit.state.mode !== "mounted") return;
 
       controls.enabled = false;
       controls.autoRotate = false;
@@ -829,16 +929,13 @@ export default function Artist({ onExit }) {
         activeDrag.targetPos.copy(planeIntersect).add(activeDrag.grabOffset);
         activeDrag.targetPos.y = Math.max(activeDrag.targetPos.y, 0.4);
 
-        // face the camera, but keep a bit of this painting's own roll —
-        // otherwise every held canvas looks identical, which was the complaint
         const dummy = new THREE.Object3D();
         dummy.position.copy(activeDrag.targetPos);
         dummy.lookAt(camera.position);
-        dummy.rotateY(Math.PI); // painted face is local +Z; lookAt aims -Z, so flip
+        dummy.rotateY(Math.PI);
         dummy.rotateZ(activeDrag.rollBias);
         activeDrag.targetQuat.copy(dummy.quaternion);
 
-        // sample velocity each frame so releasing mid-swing throws with real momentum
         const now = performance.now();
         const dt = Math.max((now - activeDrag.lastDragTime) / 1000, 0.001);
         activeDrag.dragVelocity
@@ -868,7 +965,7 @@ export default function Artist({ onExit }) {
         } else {
           state.mode = "flying";
           state.velocity.copy(state.dragVelocity).clampLength(0, 6);
-          state.velocity.y = Math.max(state.velocity.y, 0.3); // small pop, not dead weight
+          state.velocity.y = Math.max(state.velocity.y, 0.3);
           state.angularVelocity.set(
             (Math.random() - 0.5) * 4,
             (Math.random() - 0.5) * 2,
