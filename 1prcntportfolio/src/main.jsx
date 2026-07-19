@@ -7,6 +7,7 @@ import Loading from "./loading.jsx";
 import Hero from "./hero.jsx";
 import Artist from "./artist.jsx";
 import Developer from "./developer.jsx";
+import Learner from "./learner.jsx";
 import Portfolio from "./portfolio.jsx";
 import Swype from "./swype.jsx";
 import Cursor from "./components/cursor.jsx";
@@ -47,6 +48,12 @@ function App() {
     }, 1000);
   }
 
+  function showLearner() {
+    setTimeout(() => {
+      setPage("learner");
+    }, 1000);
+  }
+
   function showPortfolio() {
     setPage("portfolio");
   }
@@ -78,11 +85,13 @@ function App() {
       case "loading":
         return <Loading />;
       case "hero":
-        return <Hero onArtist={showArtist} onDeveloper={showDeveloper} onPortfolio={showPortfolio} />;
+        return <Hero onArtist={showArtist} onLearner={showLearner} onDeveloper={showDeveloper} onPortfolio={showPortfolio} />;
       case "developer":
         return <Developer onExit={showHero} />;
       case "artist":
         return <Artist onExit={showHero} />;
+      case "learner":
+        return <Learner onExit={showHero} />;
       case "portfolio":
         return <Portfolio onHero={showHero} />;
       default:

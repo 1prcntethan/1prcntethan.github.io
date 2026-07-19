@@ -1,0 +1,15 @@
+.learner-scene {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #f2f0ec;
+}
+
+.learner-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  touch-action: none;
+}

@@ -8,7 +8,7 @@ import { UnrealBloomPass } from "three/addons/postprocessing/UnrealBloomPass.js"
 import { FXAAShader } from "three/addons/shaders/FXAAShader.js";
 import React from "react";
 
-export default function Hero({ onDeveloper, onArtist, onPortfolio }) {
+export default function Hero({ onDeveloper, onArtist, onLearner, onPortfolio }) {
   const canvasRef = useRef(null);
   const labelRefs = useRef([]);
 
@@ -166,7 +166,7 @@ export default function Hero({ onDeveloper, onArtist, onPortfolio }) {
 
       if (hits.length > 0) {
         nodeZoomIn(1500);
-        onArtist();
+        onLearner();
         console.log("clicked node:", hits[0].object.userData.index);
       }
     }
