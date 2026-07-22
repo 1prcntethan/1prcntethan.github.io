@@ -577,7 +577,42 @@ export default function Portfolio({ onHero }) {
                     </a>
                   </div>
                 </div>
-                <div className="project-card">Project 3</div>
+                <div className="project-card">
+                  <div className="card-bg" id="bg-flow">
+                    
+                  </div>
+                  <div className="card-title" id="flow-font">
+                    <div className="flow-div">
+                      <img
+                        class="flowlogo"
+                        src="flowstatelogo.svg"
+                        alt="flowstate logo"
+                      />
+                      <span>FlowState</span>
+                    </div>
+                  </div>
+                  <div className="card-info">
+                    cross platform desktop app that uses text OCR and AI classification to automate focus tracking and encourage productivity in real-time.
+                  </div>
+                  <div className="card-tags">
+                    <span>React</span>
+                    <span>TypeScript</span>
+                    <span>Python</span>
+                    <span>Electron</span>
+                    <span>Tesseract OCR</span>
+                  </div>
+                  <div className="card-links">
+                    <div className="card-stats">
+                      current project, in development
+                    </div>
+                    <a href="https://github.com/1prcntethan/flowstate">
+                      <img src="github.svg" className="project-link"></img>
+                    </a>
+                    <a href="#">
+                      <img src="linkdemo.svg" className="project-link"></img>
+                    </a>
+                  </div>
+                </div>
               </div>
             </motion.div>
           </motion.section>
@@ -621,18 +656,18 @@ export default function Portfolio({ onHero }) {
                     stroke="#6ADFB8"
                     stroke-width="4"
                   />
-                  <circle
+                  {/* <circle
                     cx="12.5"
                     cy="672.5"
                     r="10.5"
                     stroke="#6ADFB8"
                     stroke-width="4"
-                  />
+                  /> */}
                   <rect x="12" y="25" width="1" height="140" fill="#3F3F3F" />
                   <rect x="12" y="190" width="1" height="140" fill="#3F3F3F" />
                   <rect x="12" y="355" width="1" height="140" fill="#3F3F3F" />
                   <rect x="12" y="520" width="1" height="140" fill="#3F3F3F" />
-                  <rect x="12" y="685" width="1" height="68" fill="#3F3F3F" />
+                  {/* <rect x="12" y="685" width="1" height="68" fill="#3F3F3F" /> */}
                 </svg>
               </div>
               <div className="timeline-content">
@@ -641,7 +676,7 @@ export default function Portfolio({ onHero }) {
                   <div className="timeline-title">B.S. in Computer Science</div>
                   <div className="timeline-inst">University of Washington</div>
                   <div className="timeline-desc">
-                    Relevant Coursework: DSA stuff
+                    Relevant Coursework: CSE331 Software Design and Implementation, MATH126 Calc III
                   </div>
                 </div>
                 <div className="timeline-item">
@@ -685,12 +720,12 @@ export default function Portfolio({ onHero }) {
                     GPA: 4.00
                   </div>
                 </div>
-                <div className="timeline-item">
+                {/* <div className="timeline-item">
                   <div className="timeline-date">20XX - 20XX</div>
                   <div className="timeline-title">Placeholder</div>
                   <div className="timeline-inst">placeholder</div>
                   <div className="timeline-desc">Placeholder</div>
-                </div>
+                </div> */}
               </div>
             </motion.div>
           </motion.section>

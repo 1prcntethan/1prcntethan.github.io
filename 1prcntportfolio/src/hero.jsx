@@ -113,12 +113,12 @@ export default function Hero({ onDeveloper, onArtist, onLearner, onPortfolio }) 
     const LINE_SCALE = 0.93; // line stops short of the node, leaving room for the label
 
     const nodeValues = [
-      "designer",
-      "developer",
-      "creator",
-      "athlete",
-      "artist",
-      "musician",
+      // "designer",
+      // "developer",
+      // "creator",
+      // "athlete",
+      // "artist",
+      // "musician",
     ];
     const nodeTargets = [];
 
@@ -165,8 +165,8 @@ export default function Hero({ onDeveloper, onArtist, onLearner, onPortfolio }) 
       const hits = raycaster.intersectObjects(nodeTargets);
 
       if (hits.length > 0) {
-        nodeZoomIn(1500);
-        onLearner();
+        // nodeZoomIn(1500);
+        // onLearner();
         console.log("clicked node:", hits[0].object.userData.index);
       }
     }
@@ -290,12 +290,18 @@ export default function Hero({ onDeveloper, onArtist, onLearner, onPortfolio }) 
   }, []);
 
   const nodeValues = [
-    "designer",
-    "developer",
-    "creator",
-    "athlete",
-    "artist",
-    "musician",
+    // "designer",
+    // "developer",
+    // "creator",
+    // "athlete",
+    // "artist",
+    // "musician",
+    "in progress",
+    "in progress",
+    "in progress",
+    "in progress",
+    "in progress",
+    "in progress",
   ];
 
   return (
@@ -322,7 +328,7 @@ export default function Hero({ onDeveloper, onArtist, onLearner, onPortfolio }) 
             opacity: 0,
             fontFamily: "'Raleway', sans-serif",
             fontSize: "0.75rem",
-            color: "#edfaf5",
+            color: "#c5e0d6",
             letterSpacing: "0.03em",
             textShadow: "0 0 6px rgba(0,0,0,0.6)",
             zIndex: 1000,

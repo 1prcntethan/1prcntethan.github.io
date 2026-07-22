@@ -749,6 +749,11 @@
   margin-top: 6px;
 }
 
+.flowlogo {
+  width: 45px;
+  margin-bottom: 2px;
+}
+
 .swype-div {
   display: flex;
   flex-direction: row;
@@ -756,12 +761,29 @@
   justify-content: center;
   transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
   border: 1px transparent;
+  
+}
+.flow-div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  gap: 10px;
 }
 
 #swype-font {
   font-family: Itim;
   color: #DE9643;
   filter: drop-shadow(0px 0px 8px #DE9643) drop-shadow(0px 0px 12px #DE9643);
+}
+
+#flow-font {
+  font-family: Fustat;
+  letter-spacing: 0.05em;
+  font-weight: bold;
+  color: #F3E5D8;
+  filter: none;
 }
 
 .project-card {
@@ -855,6 +877,10 @@
   border: 1px #DE9643 solid;
 }
 
+.project-card:hover .flow-div {
+  transform: translateY(-13px);
+}
+
 .project-card:hover .swype-div > span {
   margin-bottom: 5px;
 }
@@ -921,6 +947,10 @@
 
 #bg-swype {
   background-image: url("swypebg.png");
+}
+
+#bg-flow {
+  background-image: url("flowstatebg.png");
 }
 
 .card-title {
