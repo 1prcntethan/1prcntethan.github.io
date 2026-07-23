@@ -400,8 +400,8 @@ export default function Portfolio({ onHero }) {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 2.5, ease: "easeInOut" }}
               >
-                a designing, developing{" "}
-                <span className="rainbow-text">chameleon</span>.
+                <span className="rainbow-text">adaptable</span>
+                <span>by design.</span>
               </motion.div>
               <motion.div
                 className="section-content fade-right"
@@ -411,12 +411,12 @@ export default function Portfolio({ onHero }) {
               >
                 <div>
                   I'm a CS student at the University of Washington, and I build
-                  things that <span className="accent-text">look good</span> and{" "}
-                  <span className="accent-text">work well</span>. I pick up new
+                  things that <span className="accent-text">work well</span> and{" "}
+                  <span className="accent-text">look good</span>. I pick up new
                   tools, aesthetics, and constraints quickly, and I love working
                   on products that blend{" "}
-                  <span className="accent-text">intuitive design</span> and{" "}
-                  <span className="accent-text">technical expertise</span>.
+                  <span className="accent-text">technical expertise</span> and{" "}
+                  <span className="accent-text">intuitive design</span>.
                 </div>
               </motion.div>
             </div>
@@ -428,13 +428,14 @@ export default function Portfolio({ onHero }) {
               </motion.div>
               <motion.div className="skills-content">
                 <div className="skills-column">
-                  <div className="skill-title">frontend design_</div>
+                  <div className="skill-title">full-stack developement_</div>
                   <div className="skill-text">
-                    My first experience with CS was building frontend HTML/CSS
-                    websites. This designer's eye hasn't left me, and I still
-                    focus on creating aesthetically pleasing, responsive
-                    interfaces, with an emphasis on user experience and
-                    intuitive design.
+                    I build full-stack products from the ground up: user
+                    authentication, real-time databases, and cloud deployment,
+                    through to the interface. WINGS taught me what it actually
+                    takes to ship something people use, factoring scalability,
+                    techinical difficulty, and user feedback. The design
+                    instinct helps, but shipping is always the priority.
                   </div>
                   <div className="skill-projects-tech">
                     <span>projects</span>
@@ -483,9 +484,9 @@ export default function Portfolio({ onHero }) {
                     <span className="skill-project-ex">FlowState</span>
                   </div>
                   <div className="skill-tech">
-                    <span>AWS</span>
-                    <span>Docker?</span>
-                    <span>CI/CD?</span>
+                    <span>AWS (EC2)</span>
+                    <span>CI/CD (Github Actions)</span>
+                    <span>Cloudflare Pages</span>
                   </div>
                 </div>
                 {/* <motion.div className="skills-column">
@@ -580,9 +581,7 @@ export default function Portfolio({ onHero }) {
                   </div>
                 </div>
                 <div className="project-card">
-                  <div className="card-bg" id="bg-flow">
-                    
-                  </div>
+                  <div className="card-bg" id="bg-flow"></div>
                   <div className="card-title" id="flow-font">
                     <div className="flow-div">
                       <img
@@ -594,7 +593,9 @@ export default function Portfolio({ onHero }) {
                     </div>
                   </div>
                   <div className="card-info">
-                    cross platform desktop app that uses text OCR and AI classification to automate focus tracking and encourage productivity in real-time.
+                    cross platform desktop app that uses text OCR and AI
+                    classification to automate focus tracking and encourage
+                    productivity in real-time.
                   </div>
                   <div className="card-tags">
                     <span>React</span>
@@ -678,7 +679,8 @@ export default function Portfolio({ onHero }) {
                   <div className="timeline-title">B.S. in Computer Science</div>
                   <div className="timeline-inst">University of Washington</div>
                   <div className="timeline-desc">
-                    Relevant Coursework: CSE331 Software Design and Implementation, MATH126 Calc III
+                    Relevant Coursework: CSE331 Software Design and
+                    Implementation, MATH126 Calc III
                   </div>
                 </div>
                 <div className="timeline-item">

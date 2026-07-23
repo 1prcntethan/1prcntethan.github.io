@@ -456,8 +456,8 @@
 }
 
 .rainbow-text {
-  margin-left: 12px;
-  margin-right: 2px;
+  margin-right: 12px;
+  margin-left: 2px;
   animation: 6s infinite rainbow;
 }
 @keyframes rainbow {
