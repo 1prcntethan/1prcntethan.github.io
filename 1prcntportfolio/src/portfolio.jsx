@@ -10,6 +10,7 @@ import {
 import { useRef, useEffect } from "react";
 import "./portfolio.css";
 import GitHubHeatmap from "./components/github_contribution.jsx";
+import LeafDrop from "./components/leaf-drop.jsx";
 
 export default function Portfolio({ onHero }) {
   const [portfolioVisible, setPortfolioVisible] = useState(true);
@@ -376,6 +377,7 @@ export default function Portfolio({ onHero }) {
                   fill="#818181"
                 />
               </svg>
+              <LeafDrop />
             </div>
           </motion.div>
           <button
