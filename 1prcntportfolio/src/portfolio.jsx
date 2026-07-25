@@ -465,8 +465,8 @@ export default function Portfolio({ onHero }) {
                     <span className="skill-project-ex">Swype · FlowState</span>
                   </div>
                   <div className="skill-tech">
+                    <span>Python</span>
                     <span>PyTorch</span>
-                    <span>NumPy</span>
                     <span>MediaPipe</span>
                   </div>
                 </div>
@@ -738,6 +738,12 @@ export default function Portfolio({ onHero }) {
               <motion.div className="contact-title">contact</motion.div>
               <motion.div className="contact-name">ethan tay</motion.div>
               <div className="contact-caption">cs student & developer</div>
+
+              <div className="internship-badge">
+                OPEN TO SUMMER 2027 INTERNSHIPS
+              </div>
+              <div className="internship-location">Seattle • San Francisco</div>
+
               <motion.div className="contact-detail">
                 <span className="contact-label">email_</span>
                 <span className="accent-text">ethantay1prcnt@gmail.com</span>
@@ -745,17 +751,40 @@ export default function Portfolio({ onHero }) {
                 <span className="accent-text">ethakari@cs.washington.edu</span>
               </motion.div>
               <motion.div className="contact-detail">
-                <span className="contact-label">github_</span>{" "}
-                <spam>1prcntethan</spam>
+                <span className="contact-label">github_</span>
+                <a
+                  className="contact-link"
+                  href="https://github.com/1prcntethan"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  1prcntethan
+                </a>
               </motion.div>
+
               <motion.div className="contact-detail">
-                <span className="contact-label">linkedin_</span>{" "}
-                <spam>ethanjtay</spam>
+                <span className="contact-label">linkedin_</span>
+                <a
+                  className="contact-link"
+                  href="https://linkedin.com/in/ethanjtay"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  ethanjtay
+                </a>
               </motion.div>
+
               <motion.div className="contact-detail">
-                <span className="contact-label">instagram_</span>{" "}
-                <spam>@ethantay.07</spam>
-              </motion.div>{" "}
+                <span className="contact-label">instagram_</span>
+                <a
+                  className="contact-link"
+                  href="https://instagram.com/ethantay.07"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  @ethantay.07
+                </a>
+              </motion.div>
               {/* <div className="contact-final">
                 <i>win with me.</i>
               </div> */}

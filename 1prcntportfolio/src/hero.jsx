@@ -296,12 +296,12 @@ export default function Hero({ onDeveloper, onArtist, onLearner, onPortfolio }) 
     // "athlete",
     // "artist",
     // "musician",
-    "in progress",
-    "in progress",
-    "in progress",
-    "in progress",
-    "in progress",
-    "in progress",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
   ];
 
   return (
