@@ -740,9 +740,9 @@ export default function Portfolio({ onHero }) {
               <div className="contact-caption">cs student & developer</div>
 
               <div className="internship-badge">
-                OPEN TO SUMMER 2027 INTERNSHIPS
+                <span className="badge-dot"></span>
+                OPEN TO SUMMER 2027 INTERNSHIPS • SEATTLE / SF
               </div>
-              <div className="internship-location">Seattle • San Francisco</div>
 
               <motion.div className="contact-detail">
                 <span className="contact-label">email_</span>

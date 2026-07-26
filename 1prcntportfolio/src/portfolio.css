@@ -586,7 +586,6 @@
   font-size: 20px;
 }
 
-
 .skill-list {
   display: flex;
   flex-direction: column;
@@ -763,7 +762,6 @@
   justify-content: center;
   transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
   border: 1px transparent;
-  
 }
 .flow-div {
   display: flex;
@@ -776,15 +774,15 @@
 
 #swype-font {
   font-family: Itim;
-  color: #DE9643;
-  filter: drop-shadow(0px 0px 8px #DE9643) drop-shadow(0px 0px 12px #DE9643);
+  color: #de9643;
+  filter: drop-shadow(0px 0px 8px #de9643) drop-shadow(0px 0px 12px #de9643);
 }
 
 #flow-font {
   font-family: Fustat;
   letter-spacing: 0.05em;
   font-weight: bold;
-  color: #F3E5D8;
+  color: #f3e5d8;
   filter: none;
 }
 
@@ -876,7 +874,7 @@
   background-color: #060606;
   border-radius: 9999px;
   padding: 0px 15px;
-  border: 1px #DE9643 solid;
+  border: 1px #de9643 solid;
 }
 
 .project-card:hover .flow-div {
@@ -924,7 +922,7 @@
   transition: all 0.7s ease;
   opacity: 0.5;
   background-repeat: no-repeat;
-  
+
   filter: blur(8px);
 }
 
@@ -1196,7 +1194,7 @@
   text-decoration: underline;
   text-underline-offset: 4px;
   text-decoration-color: rgba(224, 241, 235, 0.7);
-  text-shadow: 0 0 10px rgba(255,255,255,0.45);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.45);
   transform: translateX(3px);
 }
 
@@ -1213,15 +1211,19 @@
 }
 
 .internship-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
   width: fit-content;
-  margin-bottom: 8px;
+  margin-bottom: 40px;
+
   padding: 8px 18px;
 
-  border: 1px solid rgba(224,241,235,0.18);
   border-radius: 999px;
+  border: 1px solid rgba(224, 241, 235, 0.18);
 
-  background: rgba(224,241,235,0.05);
-  backdrop-filter: blur(8px);
+  background: rgba(224, 241, 235, 0.05);
 
   font-family: Raleway;
   font-size: 13px;
@@ -1229,12 +1231,10 @@
   color: #e0f1eb;
 }
 
-.internship-location {
-  margin-bottom: 34px;
-
-  font-family: Raleway;
-  font-size: 15px;
-  letter-spacing: 2px;
-
-  color: rgba(238,255,249,0.45);
+.badge-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #78f0a4;
+  box-shadow: 0 0 12px #78f0a4;
 }
