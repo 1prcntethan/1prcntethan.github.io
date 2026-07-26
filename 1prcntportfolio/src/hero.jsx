@@ -7,6 +7,7 @@ import { ShaderPass } from "three/addons/postprocessing/ShaderPass.js";
 import { UnrealBloomPass } from "three/addons/postprocessing/UnrealBloomPass.js";
 import { FXAAShader } from "three/addons/shaders/FXAAShader.js";
 import React from "react";
+import VisitorCounter from "./components/visitor-counter";
 
 export default function Hero({ onDeveloper, onArtist, onLearner, onPortfolio }) {
   const canvasRef = useRef(null);
@@ -307,6 +308,7 @@ export default function Hero({ onDeveloper, onArtist, onLearner, onPortfolio }) 
   return (
     <div style={{ width: "100%", height: "100%", position: "relative" }}>
       <div className="hero-title">hi, i'm ethan.</div>
+      <VisitorCounter />
       <canvas
         ref={canvasRef}
         className="threejs"
