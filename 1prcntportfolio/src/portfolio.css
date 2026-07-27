@@ -45,6 +45,10 @@
   animation: slide-out linear both;
   animation-timeline: --portfolio-scroll;
   animation-range: 0% 100%;
+
+  @media (max-width: 1300px) {
+    display: none;
+  }
 }
 @keyframes slide-out {
   18% {
@@ -497,6 +501,10 @@
   width: 100%;
   height: 60vh;
   gap: 40px;
+
+  @media (max-width: 1300px) {
+    width: 100%;
+  }
 }
 
 .skills-column {
@@ -647,6 +655,12 @@
   animation: fill-out linear both;
   animation-timeline: --portfolio-scroll;
   animation-range: 0% 100%;
+
+  @media (max-width: 1300px){
+    animation: none;
+    width: 100%;
+  }
+
 }
 
 @keyframes fill-out {
