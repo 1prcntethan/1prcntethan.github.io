@@ -956,15 +956,15 @@
 }
 
 #bg-wings {
-  background-image: url("wingsbg2.png");
+  background-image: url("/wingsbg2.png");
 }
 
 #bg-swype {
-  background-image: url("swypebg.png");
+  background-image: url("/swypebg.png");
 }
 
 #bg-flow {
-  background-image: url("flowstatebg.png");
+  background-image: url("/flowstatebg.png");
 }
 
 .card-title {
