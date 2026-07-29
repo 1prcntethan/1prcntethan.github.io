@@ -403,6 +403,14 @@
   text-shadow:
     0px 0px 16px rgb(255, 255, 255),
     0px 0px 32px rgb(255, 255, 255);
+
+  @media (max-width: 1300px) {
+    font-size: 36px;
+  }
+  @media (max-width: 800px) {
+    margin-bottom: 5px;
+    font-size: 24px;
+  }
 }
 
 .section-title {
@@ -417,6 +425,16 @@
   text-shadow:
     0px 0px 16px rgb(255, 255, 255),
     0px 0px 32px rgb(255, 255, 255);
+
+    @media (max-width: 1300px) {
+      font-size: 30px;
+    }
+    @media (max-width: 900px) {
+      font-size: 26px;
+    }
+    @media (max-width: 400px) {
+      font-size: 22px;
+    }
 }
 
 .fade-left {
@@ -444,6 +462,14 @@
   flex-direction: column;
   width: 100%;
   gap: 25px;
+
+  @media (max-width: 1300px) {
+    font-size: 22px;
+  }
+
+  @media (max-width: 800px) {
+    font-size: 16px;
+  }
 }
 .fade-right {
   animation: fade-right linear;
@@ -504,6 +530,8 @@
 
   @media (max-width: 1300px) {
     width: 100%;
+    flex-direction: column;
+    gap: 10px;
   }
 }
 
@@ -516,6 +544,13 @@
   font-size: 24px;
   height: 100%;
   /* filter: drop-shadow(0px 0px 12px #1c2b27); */
+
+  @media (max-width: 1500px) {
+    gap: 10px;
+  }
+  @media (max-width: 1300px) {
+    width: 100%;
+  }
 }
 
 .skill-projects-tech {
@@ -528,6 +563,12 @@
   border-top: 1px solid #777777;
   border-bottom: 1px solid #777777;
   height: auto;
+
+  @media (max-width: 1300px) {
+    flex-direction: row;
+    align-items: center;
+
+  }
 }
 
 .skill-projects {
@@ -540,6 +581,9 @@
   font-size: 18px;
   color: #6adfb8;
   font-family: Raleway;
+  @media (max-width: 1500px) {
+    font-size: 14px;
+  }
 }
 
 .project-tech-divider {
@@ -574,6 +618,11 @@
 
   background-color: #1c2b27;
   border-radius: 9999px;
+
+  @media (max-width: 1500px) {
+    font-size: 12px;
+    padding: 3px 12px 0px 12px;
+  }
 }
 
 .skills-divider {
@@ -588,10 +637,19 @@
   font-weight: 400;
   font-size: 24px;
   color: #b1c2bc;
+
+  @media (max-width: 1500px) {
+    font-size: 20px
+  }
 }
 
 .skill-text {
   font-size: 20px;
+  
+  @media (max-width: 1600px) {
+    font-size: 16px
+  }
+
 }
 
 .skill-list {
@@ -655,11 +713,16 @@
   animation: fill-out linear both;
   animation-timeline: --portfolio-scroll;
   animation-range: 0% 100%;
+  
+  @media (max-width: 1500px) {
+    gap: 20px;
+  }
 
   @media (max-width: 1300px){
     animation: none;
     width: 100%;
   }
+  
 
 }
 
@@ -1057,6 +1120,11 @@
   width: 60%;
   gap: 25px;
   margin-top: 40px;
+  
+  @media (max-width: 1300px) {
+    width: 100%;
+    gap: 10px;
+  }
 }
 
 .timeline-svg {
@@ -1119,6 +1187,11 @@
   font-family: Josefin Sans;
   font-size: 24px;
   color: #eefff9;
+
+  @media (max-width: 1300px) {
+    font-size: 20px;
+  }
+  
 }
 
 .timeline-inst {
@@ -1138,6 +1211,9 @@
   font-family: Raleway;
   font-size: 20px;
   color: #6adfb8;
+  @media (max-width: 1300px) {
+    font-size: 16px;
+  }
 }
 
 .contact-div {
@@ -1150,6 +1226,11 @@
   animation: fill-out linear both;
   animation-timeline: --portfolio-scroll;
   animation-range: 0% 100%;
+
+  @media (max-width: 1300px) {
+    width: 100%;
+    flex-direction: column;
+  }
 }
 
 .contact-title {
@@ -1160,6 +1241,10 @@
   text-shadow:
     0px 0px 16px rgb(255, 255, 255),
     0px 0px 32px rgb(255, 255, 255);
+  
+    @media (max-width: 1300px) {
+    font-size: 32px;
+  }
 }
 
 .contact-name {
@@ -1169,6 +1254,10 @@
   font-size: 60px;
   color: #e0f1eb;
   letter-spacing: 3px;
+
+  @media (max-width: 1300px) {
+    font-size: 48px;
+  }
 }
 
 .contact-caption {
@@ -1178,6 +1267,10 @@
   word-spacing: 3px;
   letter-spacing: 3px;
   margin-bottom: 40px;
+
+  @media (max-width: 1300px) {
+    font-size: 14px;
+  }
 }
 
 .contact-detail {
@@ -1191,6 +1284,10 @@
   color: #eefff9;
   margin-top: 10px;
   margin-bottom: 10px;
+
+  @media (max-width: 1300px) {
+    font-size: 14px;
+  }
 }
 
 .contact-link {
@@ -1243,6 +1340,10 @@
   font-size: 13px;
   letter-spacing: 2px;
   color: #e0f1eb;
+
+  @media (max-width: 1300px) {
+    font-size: 10px;
+  }
 }
 
 .badge-dot {

@@ -438,7 +438,7 @@ export default function Portfolio({ onHero }) {
                     instinct helps, but shipping is always the priority.
                   </div>
                   <div className="skill-projects-tech">
-                    <span>projects</span>
+                    <span>projects: </span>
                     <span className="skill-project-ex">WINGS · Portfolio</span>
                   </div>
                   <div className="skill-tech">
@@ -461,7 +461,7 @@ export default function Portfolio({ onHero }) {
                     with.
                   </div>
                   <div className="skill-projects-tech">
-                    <span>projects</span>
+                    <span>projects: </span>
                     <span className="skill-project-ex">Swype · FlowState</span>
                   </div>
                   <div className="skill-tech">
@@ -480,7 +480,7 @@ export default function Portfolio({ onHero }) {
                     applications maintainable as they grow.
                   </div>
                   <div className="skill-projects-tech">
-                    <span>projects</span>
+                    <span>projects: </span>
                     <span className="skill-project-ex">FlowState</span>
                   </div>
                   <div className="skill-tech">
