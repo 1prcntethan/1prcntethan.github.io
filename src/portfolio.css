@@ -390,6 +390,12 @@
   animation-range: cover 0% cover 100%;
 }
 
+.portfolio-section:nth-child(1) {
+  @media (max-width: 800px) {
+  justify-content: normal;
+  }
+}
+
 .intro-title {
   display: flex;
   flex-direction: row;
@@ -641,6 +647,9 @@
   @media (max-width: 1500px) {
     font-size: 20px
   }
+  @media (max-width: 1300px) {
+    font-size: 18px
+  }
 }
 
 .skill-text {
@@ -662,6 +671,7 @@
 .skill-list > li::marker {
   color: #6adfb8;
 }
+
 
 .heatmap-container-wrapper {
   display: flex;
@@ -1188,7 +1198,7 @@
   font-size: 24px;
   color: #eefff9;
 
-  @media (max-width: 1300px) {
+  @media (max-width: 1500px) {
     font-size: 20px;
   }
   
@@ -1211,7 +1221,7 @@
   font-family: Raleway;
   font-size: 20px;
   color: #6adfb8;
-  @media (max-width: 1300px) {
+  @media (max-width: 1500px) {
     font-size: 16px;
   }
 }

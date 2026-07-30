@@ -421,6 +421,7 @@ export default function Portfolio({ onHero }) {
               </motion.div>
             </div>
           </motion.section>
+          
           <motion.section className="portfolio-section">
             <motion.div className="sixty-div">
               <motion.div className="section-title">
