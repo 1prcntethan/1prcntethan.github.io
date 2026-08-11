@@ -482,7 +482,7 @@ export default function Portfolio({ onHero }) {
                   </div>
                   <div className="skill-projects-tech">
                     <span>projects: </span>
-                    <span className="skill-project-ex">FlowState</span>
+                    <span className="skill-project-ex">WINGS · FlowState</span>
                   </div>
                   <div className="skill-tech">
                     <span>AWS (EC2)</span>
