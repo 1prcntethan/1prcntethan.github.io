@@ -486,7 +486,7 @@ export default function Portfolio({ onHero }) {
                   </div>
                   <div className="skill-tech">
                     <span>AWS (EC2)</span>
-                    <span>CI/CD (Github Actions)</span>
+                    {/* <span>CI/CD (Github Actions)</span> */}
                     <span>Cloudflare Pages</span>
                   </div>
                 </div>
