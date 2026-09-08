@@ -12,7 +12,7 @@ import "./portfolio.css";
 import GitHubHeatmap from "./components/github_contribution.jsx";
 import LeafDrop from "./components/leaf-drop.jsx";
 
-export default function Portfolio({ onHero }) {
+export default function Portfolio({ onHero, onProject }) {
   const [portfolioVisible, setPortfolioVisible] = useState(true);
 
   return (
@@ -421,7 +421,6 @@ export default function Portfolio({ onHero }) {
               </motion.div>
             </div>
           </motion.section>
-          
           <motion.section className="portfolio-section">
             <motion.div className="sixty-div">
               <motion.div className="section-title">
@@ -490,26 +489,6 @@ export default function Portfolio({ onHero }) {
                     <span>Cloudflare Pages</span>
                   </div>
                 </div>
-                {/* <motion.div className="skills-column">
-                  <div className="skill-title">core technologies</div>
-                  <ul className="skill-list">
-                    <li>React</li>
-                    <li>JavaScript</li>
-                    <li>HTML/CSS</li>
-                    <li>Java</li>
-                    <li>Python</li>
-                  </ul>
-                </motion.div>
-                <motion.div className="skills-column">
-                  <div className="skill-title">tools</div>
-                  <ul className="skill-list">
-                    <li>Tailwind</li>
-                    <li>Firebase</li>
-                    <li>Three.js</li>
-                    <li>MediaPipe</li>
-                    <li>Git/Github</li>
-                  </ul>
-                </motion.div> */}
               </motion.div>
             </motion.div>
           </motion.section>
@@ -546,6 +525,12 @@ export default function Portfolio({ onHero }) {
                     <a href="https://wingssw.com/">
                       <img src="linkdemo.svg" className="project-link"></img>
                     </a>
+                    <button
+                      className="project-story-link"
+                      onClick={() => onProject("wings")}
+                    >
+                      the build →
+                    </button>
                   </div>
                 </div>
                 <div className="project-card">

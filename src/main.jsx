@@ -11,9 +11,18 @@ import Learner from "./learner.jsx";
 import Portfolio from "./portfolio.jsx";
 import Swype from "./swype.jsx";
 import Cursor from "./components/cursor.jsx";
+import WingsStory from "./stories/wings-story.jsx";
+
+const projectStories = {
+  wings: WingsStory,
+  // swype: SwypeStory,
+  // flowstate: FlowstateStory,
+};
 
 function App() {
   const [page, setPage] = useState("landing");
+  const [activeProject, setActiveProject] = useState(null);
+  const [returnTo, setReturnTo] = useState(null);
   const prevPage = useRef(page);
   const cursorControlRef = useRef(null);
   const pinchProgressRef = useRef(null); // null = no pinch, 0-1 = progress
@@ -21,6 +30,18 @@ function App() {
   useEffect(() => {
     prevPage.current = page;
   }, [page]);
+
+  function showProject(projectId, fromPage) {
+    setReturnTo(fromPage);
+    setActiveProject(projectId);
+    setPage("project");
+  }
+
+  function exitProject() {
+    setPage(returnTo);
+    setActiveProject(null);
+    setReturnTo(null);
+  }
 
   function loadHero() {
     setPage("loading");
@@ -85,7 +106,14 @@ function App() {
       case "loading":
         return <Loading />;
       case "hero":
-        return <Hero onArtist={showArtist} onLearner={showLearner} onDeveloper={showDeveloper} onPortfolio={showPortfolio} />;
+        return (
+          <Hero
+            onArtist={showArtist}
+            onLearner={showLearner}
+            onDeveloper={showDeveloper}
+            onPortfolio={showPortfolio}
+          />
+        );
       case "developer":
         return <Developer onExit={showHero} />;
       case "artist":
@@ -93,7 +121,16 @@ function App() {
       case "learner":
         return <Learner onExit={showHero} />;
       case "portfolio":
-        return <Portfolio onHero={showHero} />;
+        return (
+          <Portfolio
+            onHero={showHero}
+            onProject={(id) => showProject(id, "portfolio")}
+          />
+        );
+      case "project": {
+        const StoryComponent = projectStories[activeProject];
+        return <StoryComponent onExit={exitProject} />;
+      }
       default:
         return null;
     }
