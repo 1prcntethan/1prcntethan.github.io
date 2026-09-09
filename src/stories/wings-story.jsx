@@ -24,6 +24,15 @@ export default function WingsStory({ onExit }) {
           </button>
 
           {/* WINGS-flavored build story content */}
+          <div className="wings-navbar">
+            <div className="wings-logo">logo</div>
+            <div className="wings-github">github</div>
+            <div className="wings-live">live</div>
+          </div>
+
+          <div className="wings-landing">welcome to WINGS</div>
+
+          <div className="wings-content"></div>
         </motion.div>
       )}
     </AnimatePresence>
