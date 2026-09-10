@@ -439,14 +439,18 @@ export default function Portfolio({ onHero, onProject }) {
                   </div>
                   <div className="skill-projects-tech">
                     <span>projects: </span>
-                    <span className="skill-project-ex">WINGS · Portfolio</span>
+                    <span className="skill-project-ex">
+                      WINGS · Portfolio · Flowstate
+                    </span>
                   </div>
                   <div className="skill-tech">
                     <span>React</span>
-                    <span>Tailwind</span>
+                    <span>TypeScript</span>
                     <span>Three.js</span>
                     <span>HTML/CSS</span>
                     <span>JavaScript</span>
+                    <span>Python</span>
+                    <span>Firebase</span>
                   </div>
                 </div>
                 <div className="skills-divider"></div>{" "}
@@ -645,18 +649,18 @@ export default function Portfolio({ onHero, onProject }) {
                     stroke="#6ADFB8"
                     stroke-width="4"
                   />
-                  {/* <circle
+                  <circle
                     cx="12.5"
                     cy="672.5"
                     r="10.5"
                     stroke="#6ADFB8"
                     stroke-width="4"
-                  /> */}
+                  />
                   <rect x="12" y="25" width="1" height="140" fill="#3F3F3F" />
                   <rect x="12" y="190" width="1" height="140" fill="#3F3F3F" />
                   <rect x="12" y="355" width="1" height="140" fill="#3F3F3F" />
                   <rect x="12" y="520" width="1" height="140" fill="#3F3F3F" />
-                  {/* <rect x="12" y="685" width="1" height="68" fill="#3F3F3F" /> */}
+                  <rect x="12" y="685" width="1" height="68" fill="#3F3F3F" />
                 </svg>
               </div>
               <div className="timeline-content">
@@ -686,6 +690,19 @@ export default function Portfolio({ onHero, onProject }) {
                   </div>
                 </div>
                 <div className="timeline-item">
+                  <div className="timeline-date">2024 - 2026</div>
+                  <div className="timeline-title">
+                    Robotics Programming Lead
+                  </div>
+                  <div className="timeline-inst">Thunderbots 5604</div>
+                  <div className="timeline-desc">
+                    Lead Programmer on an FTC robotics team. Used Java and the
+                    FTC SDK to code the robot's control system, including
+                    drivetrain/motor logic, adapting code to each season's
+                    challenges and constraints
+                  </div>
+                </div>
+                <div className="timeline-item">
                   <div className="timeline-date">2025 - 2026</div>
                   <div className="timeline-title">Running Start Student</div>
                   <div className="timeline-inst">
@@ -710,12 +727,6 @@ export default function Portfolio({ onHero, onProject }) {
                     GPA: 4.00
                   </div>
                 </div>
-                {/* <div className="timeline-item">
-                  <div className="timeline-date">20XX - 20XX</div>
-                  <div className="timeline-title">Placeholder</div>
-                  <div className="timeline-inst">placeholder</div>
-                  <div className="timeline-desc">Placeholder</div>
-                </div> */}
               </div>
             </motion.div>
           </motion.section>

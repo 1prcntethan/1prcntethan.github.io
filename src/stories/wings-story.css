@@ -1,11 +1,28 @@
 .wings-story-container {
-    width: 100%;
-    min-height: 100vh;
-    background-color: #1B1B1B;
-    color: white;
-    font-family: "Major Mono Display", monospace;
-    overflow-x: hidden;
+  position: fixed;
+  inset: 0;
+  height: 100vh;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch; /* smooth momentum scroll on iOS */
+
+  background-color: #1f1f1f;
+  color: white;
+  font-family: "Major Mono Display", monospace;
+  overflow-x: hidden; 
 }
+.wings-story-container::-webkit-scrollbar {
+    width: 10px;
+}
+
+.wings-story-container::-webkit-scrollbar-track-piece {
+    background: #333333;
+}
+
+.wings-story-container::-webkit-scrollbar-thumb {
+    background: #6D6D6D;
+    border-radius: 5px;
+}
+
 
 .wings-navbar {
   display: flex;
@@ -36,10 +53,10 @@
 }
 
 .wings-nav-right a:nth-child(1):hover {
-  border-bottom: 2px solid #B66DA3;
+  border-bottom: 2px solid #b66da3;
 }
 .wings-nav-right a:nth-child(2):hover {
-  border-bottom: 2px solid #BBCA88;
+  border-bottom: 2px solid #bbca88;
 }
 
 .wings-story-close {
@@ -55,62 +72,62 @@
 }
 
 .wings-story-close:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .wings-landing {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    background-color: transparent;
-    height: 60vh;
-    justify-content: center;
-    font-size: 24px;
-    gap: 90px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: transparent;
+  height: 60vh;
+  justify-content: center;
+  font-size: 24px;
+  gap: 90px;
 }
 
 .wings-title {
-    display: flex;
-    font-size: 64px;
-    font-weight: bold;
-    letter-spacing: 0.7em;
-    filter: drop-shadow(0 0 10px #999999);
+  display: flex;
+  font-size: 64px;
+  font-weight: bold;
+  letter-spacing: 0.7em;
+  filter: drop-shadow(0 0 10px #999999);
 }
 
 .wings-beta-disc {
-    display: flex;
-    background-color: #470050b2;
-    padding: 4px 6px;
-    overflow: hidden;
-    height: 16px;
+  display: flex;
+  background-color: #470050b2;
+  padding: 4px 6px;
+  overflow: hidden;
+  height: 16px;
 }
 
 .scroll {
-    display: flex;
-    flex-direction: row;
-    white-space: nowrap;
-    align-items: center;
-    animation: scroller 15s infinite linear;
+  display: flex;
+  flex-direction: row;
+  white-space: nowrap;
+  align-items: center;
+  animation: scroller 15s infinite linear;
 }
 .beta-disclaimer-text {
-    white-space: nowrap;
+  white-space: nowrap;
 }
 
 @keyframes scroller {
-    from {
-        transform: translateX(0%);
-    }
-    to {
-        transform: translateX(-33.5%);
-    }
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-33.5%);
+  }
 }
 
 .wings-divider-line {
-    width: 90%;
-    margin-left: 5%;
-    display: flex;
-    background-color: gray;
-    height: 1px;
+  width: 90%;
+  margin-left: 5%;
+  display: flex;
+  background-color: gray;
+  height: 1px;
 }
 
 .wings-content-twocol {

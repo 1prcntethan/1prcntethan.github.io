@@ -639,8 +639,9 @@
 }
 
 .skill-title {
-  font-weight: 400;
-  font-size: 24px;
+  /* font-weight: 400; */
+  font-family: Raleway;
+  font-size: 22px;
   color: #b1c2bc;
 
   @media (max-width: 1500px) {
