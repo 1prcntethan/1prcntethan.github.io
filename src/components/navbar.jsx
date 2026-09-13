@@ -31,9 +31,15 @@ export default function NavBar() {
   }, []);
 
   const handleClick = (id) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-  };
+    const el = document.getElementById(id);
+    if (!el) return;
 
+    el.scrollIntoView({ behavior: "smooth" });
+
+    setTimeout(() => {
+      el.scrollIntoView({ behavior: "smooth" });
+    }, 800);
+  };
   return (
     <nav className="nav-pill">
       {SECTIONS.map(({ id, label }) => (

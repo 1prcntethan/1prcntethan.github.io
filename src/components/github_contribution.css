@@ -6,7 +6,7 @@
 }
 
 .heatmap-label {
-  font-family: "Space Mono", monospace;
+  font-family: "Raleway", sans-serif;
   font-size: 11px;
   color: rgba(180, 180, 180, 0.7);
   margin: 0;
@@ -33,7 +33,7 @@
 }
 
 .month-text {
-  font-family: "Space Mono", monospace;
+  font-family: "Raleway", sans-serif;
   font-size: 9px;
   color: rgba(180, 180, 180, 0.5);
   line-height: 1;
@@ -44,6 +44,7 @@
   display: flex;
   flex-direction: column;
   gap: 3px;
+  margin-right: 20px;
 }
 
 .heatmap-week {
@@ -74,7 +75,7 @@
   display: flex;
   align-items: center;
   gap: 6px;
-  margin-left: 20px;
+  margin-left: 9px;
 }
 
 .legend-cell {
@@ -84,7 +85,7 @@
 }
 
 .legend-label {
-  font-family: "Space Mono", monospace;
+  font-family: "Raleway", sans-serif;
   font-size: 10px;
   color: rgba(180, 180, 180, 0.5);
   margin-left: 4px;

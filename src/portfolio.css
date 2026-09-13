@@ -518,6 +518,17 @@
 
 .accent-text {
   color: #78ffd2 !important;
+  transition: all 0.15s ease-in-out;
+}
+
+.wings-accent-text {
+  color: #65d3ae;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  transition: all 0.15s ease-in-out;
+}
+.wings-accent-text:hover {
+  color: #78ffd2
 }
 
 .skills-content {
@@ -1370,4 +1381,15 @@
   border-radius: 50%;
   background: #78f0a4;
   box-shadow: 0 0 12px #78f0a4;
+}
+
+#wings-link {
+  font-family: "Major Mono Display";
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  transition: all 0.15s ease-in-out;
+}
+
+#wings-link:hover {
+  color: #78ffd2 
 }

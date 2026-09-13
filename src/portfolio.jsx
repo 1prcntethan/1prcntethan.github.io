@@ -38,6 +38,7 @@ export default function Portfolio({ onHero, onProject }) {
               <div class="heatmap-container-wrapper">
                 <GitHubHeatmap />
               </div>
+              <img className="chart-svg" src="/techskills1.svg"></img>
               <svg
                 width="479"
                 height="479"
@@ -248,7 +249,7 @@ export default function Portfolio({ onHero, onProject }) {
                   className="draw-circle group8"
                 />
               </svg>
-              <svg
+              {/* <svg
                 viewBox="0 0 535 399"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -379,7 +380,7 @@ export default function Portfolio({ onHero, onProject }) {
                   d="M466.2 262.96V249H471.28C472.573 249 473.56 249.353 474.24 250.06C474.92 250.767 475.26 251.753 475.26 253.02C475.26 254.287 474.92 255.273 474.24 255.98C473.56 256.687 472.573 257.04 471.28 257.04H467.88V262.96H466.2ZM467.88 255.58H471.24C471.947 255.58 472.493 255.407 472.88 255.06C473.28 254.7 473.48 254.193 473.48 253.54V252.5C473.48 251.847 473.28 251.347 472.88 251C472.493 250.64 471.947 250.46 471.24 250.46H467.88V255.58ZM485.732 252.64H487.332L482.212 265.22C482.092 265.513 481.959 265.767 481.812 265.98C481.666 266.207 481.492 266.387 481.292 266.52C481.092 266.667 480.852 266.773 480.572 266.84C480.292 266.92 479.959 266.96 479.572 266.96H478.052V265.6H480.452L481.612 262.76L477.452 252.64H479.092L480.832 256.96L482.372 260.88H482.452L483.992 256.96L485.732 252.64ZM494.884 262.96C494.098 262.96 493.518 262.74 493.144 262.3C492.784 261.86 492.604 261.293 492.604 260.6V254H489.164V252.64H491.724C492.071 252.64 492.311 252.573 492.444 252.44C492.591 252.293 492.664 252.047 492.664 251.7V249H494.204V252.64H498.904V254H494.204V261.6H498.904V262.96H494.884ZM502.337 248.16H503.937V254.32H504.017C504.123 254.067 504.257 253.827 504.417 253.6C504.577 253.36 504.77 253.153 504.997 252.98C505.237 252.807 505.517 252.667 505.837 252.56C506.157 252.453 506.53 252.4 506.957 252.4C508.037 252.4 508.903 252.747 509.557 253.44C510.21 254.12 510.537 255.087 510.537 256.34V262.96H508.937V256.62C508.937 255.673 508.73 254.973 508.317 254.52C507.903 254.053 507.297 253.82 506.497 253.82C506.177 253.82 505.863 253.86 505.557 253.94C505.25 254.02 504.977 254.14 504.737 254.3C504.497 254.46 504.303 254.667 504.157 254.92C504.01 255.173 503.937 255.467 503.937 255.8V262.96H502.337V248.16ZM518.369 263.2C517.649 263.2 516.995 263.073 516.409 262.82C515.835 262.567 515.342 262.207 514.929 261.74C514.529 261.26 514.222 260.693 514.009 260.04C513.795 259.373 513.689 258.627 513.689 257.8C513.689 256.987 513.795 256.247 514.009 255.58C514.222 254.913 514.529 254.347 514.929 253.88C515.342 253.4 515.835 253.033 516.409 252.78C516.995 252.527 517.649 252.4 518.369 252.4C519.089 252.4 519.735 252.527 520.309 252.78C520.895 253.033 521.389 253.4 521.789 253.88C522.202 254.347 522.515 254.913 522.729 255.58C522.942 256.247 523.049 256.987 523.049 257.8C523.049 258.627 522.942 259.373 522.729 260.04C522.515 260.693 522.202 261.26 521.789 261.74C521.389 262.207 520.895 262.567 520.309 262.82C519.735 263.073 519.089 263.2 518.369 263.2ZM518.369 261.82C519.262 261.82 519.982 261.553 520.529 261.02C521.075 260.487 521.349 259.66 521.349 258.54V257.06C521.349 255.94 521.075 255.113 520.529 254.58C519.982 254.047 519.262 253.78 518.369 253.78C517.475 253.78 516.755 254.047 516.209 254.58C515.662 255.113 515.389 255.94 515.389 257.06V258.54C515.389 259.66 515.662 260.487 516.209 261.02C516.755 261.553 517.475 261.82 518.369 261.82ZM526.321 262.96V252.64H527.921V254.32H528.001C528.108 254.067 528.241 253.827 528.401 253.6C528.561 253.36 528.754 253.153 528.981 252.98C529.221 252.807 529.501 252.667 529.821 252.56C530.141 252.453 530.514 252.4 530.941 252.4C532.021 252.4 532.888 252.747 533.541 253.44C534.194 254.12 534.521 255.087 534.521 256.34V262.96H532.921V256.62C532.921 255.673 532.714 254.973 532.301 254.52C531.888 254.053 531.281 253.82 530.481 253.82C530.161 253.82 529.848 253.86 529.541 253.94C529.234 254.02 528.961 254.14 528.721 254.3C528.481 254.46 528.288 254.667 528.141 254.92C527.994 255.173 527.921 255.467 527.921 255.8V262.96H526.321Z"
                   fill="#818181"
                 />
-              </svg>
+              </svg> */}
               <LeafDrop />
             </div>
           </motion.div>
@@ -396,6 +397,12 @@ export default function Portfolio({ onHero, onProject }) {
             ></img>
           </button>
           <motion.section className="intro-section" id="home">
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
             <div className="sixty-div">
               <motion.div
                 className="intro-title fade-left"
@@ -416,11 +423,27 @@ export default function Portfolio({ onHero, onProject }) {
                   I'm Ethan, a CS student at the{" "}
                   <span className="accent-text">University of Washington</span>{" "}
                   in Seattle. I taught myself basic full-stack development by
-                  growing <span className="accent-text">WINGS</span>, my
-                  calisthenics app, to a peak of{" "}
-                  <span className="accent-text">33k followers</span> and{" "}
-                  <span className="accent-text">1.4k+ daily users</span>. I love
-                  working on user-facing products that blend{" "}
+                  growing{" "}
+                  <a
+                    href="https://wingssw.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="wings-accent-text"
+                    id="wings-link"
+                  >
+                    Wings
+                  </a>
+                  , my calisthenics app, to a peak of{" "}
+                  <a
+                    href="https://www.instagram.com/wings.sw/?hl=en"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="wings-accent-text"
+                  >
+                    33k followers
+                  </a>{" "}
+                  and <span className="accent-text">1.4k+ daily users</span>. I
+                  love working on user-facing products that blend{" "}
                   <span className="accent-text">technical expertise</span> and{" "}
                   <span className="accent-text">intuitive design</span>.
                 </div>
@@ -441,10 +464,10 @@ export default function Portfolio({ onHero, onProject }) {
               <motion.div className="skills-content">
                 <div className="skills-column">
                   <div className="skill-column-top">
-                    <div className="skill-title">full-stack developement</div>
-                    <div>·</div>
+                    <div className="skill-title">full-stack development</div>
+                    <div>//</div>
                     <div className="skill-project-ex">
-                      WINGS, Portfolio, Flowstate
+                      WINGS · Portfolio · Flowstate
                     </div>
                   </div>
                   <div className="skill-text">
@@ -468,8 +491,8 @@ export default function Portfolio({ onHero, onProject }) {
                 <div className="skills-column">
                   <div className="skill-column-top">
                     <div className="skill-title">machine learning</div>
-                    <div>·</div>
-                    <span className="skill-project-ex">Swype, FlowState</span>
+                    <div>//</div>
+                    <span className="skill-project-ex">Swype · FlowState</span>
                   </div>
 
                   <div className="skill-text">
@@ -488,8 +511,8 @@ export default function Portfolio({ onHero, onProject }) {
                 <div className="skills-column">
                   <div className="skill-column-top">
                     <div className="skill-title">deployment & tools</div>
-                    <div>·</div>
-                    <span className="skill-project-ex">WINGS, FlowState</span>
+                    <div>//</div>
+                    <span className="skill-project-ex">WINGS · FlowState</span>
                   </div>
 
                   <div className="skill-text">

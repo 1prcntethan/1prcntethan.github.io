@@ -35,12 +35,16 @@ export default function GitHubHeatmap({ username = "1prcntethan" }) {
     groupedWeeks.push(weeks.slice(i, i + 7));
   }
 
+  const totalContributions = weeks.reduce((total, day) => total + day.count, 0);
+
   const monthLabels = [0, 13, 26, 39]
     .map((wi) => {
       const week = groupedWeeks[wi];
       const firstDay = week?.find((d) => d);
       if (!firstDay) return null;
-      const label = new Date(firstDay.date).toLocaleString("default", { month: "short" });
+      const label = new Date(firstDay.date).toLocaleString("default", {
+        month: "short",
+      });
       return { label, weekIndex: wi };
     })
     .filter(Boolean);
@@ -48,6 +52,9 @@ export default function GitHubHeatmap({ username = "1prcntethan" }) {
   return (
     <div className="heatmap-wrapper">
       <p className="heatmap-label">github activity</p>
+      <p className="heatmap-label">
+        {totalContributions} contributions in the past year
+      </p>
 
       <div className="heatmap-body">
         <div className="heatmap-months">
