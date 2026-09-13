@@ -391,7 +391,7 @@
 
 .portfolio-section:nth-child(1) {
   @media (max-width: 800px) {
-  justify-content: normal;
+    justify-content: normal;
   }
 }
 
@@ -431,15 +431,15 @@
     0px 0px 16px rgb(255, 255, 255),
     0px 0px 32px rgb(255, 255, 255);
 
-    @media (max-width: 1300px) {
-      font-size: 30px;
-    }
-    @media (max-width: 900px) {
-      font-size: 26px;
-    }
-    @media (max-width: 400px) {
-      font-size: 22px;
-    }
+  @media (max-width: 1300px) {
+    font-size: 30px;
+  }
+  @media (max-width: 900px) {
+    font-size: 26px;
+  }
+  @media (max-width: 400px) {
+    font-size: 22px;
+  }
 }
 
 .fade-left {
@@ -517,7 +517,7 @@
 }
 
 .accent-text {
-  color: #78ffd2;
+  color: #78ffd2 !important;
 }
 
 .skills-content {
@@ -528,7 +528,7 @@
   color: #eefff9;
   width: fit-content;
   line-height: 1.5;
-  flex-direction: row;
+  flex-direction: column;
   width: 100%;
   height: 60vh;
   gap: 40px;
@@ -543,9 +543,9 @@
 .skills-column {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 4px;
   color: #eefff9;
-  width: 33%;
+  width: 100%;
   font-size: 24px;
   height: 100%;
   /* filter: drop-shadow(0px 0px 12px #1c2b27); */
@@ -556,6 +556,12 @@
   @media (max-width: 1300px) {
     width: 100%;
   }
+}
+
+.skill-column-top {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
 }
 
 .skill-projects-tech {
@@ -572,7 +578,6 @@
   @media (max-width: 1300px) {
     flex-direction: row;
     align-items: center;
-
   }
 }
 
@@ -583,7 +588,7 @@
 }
 
 .skill-project-ex {
-  font-size: 18px;
+  font-size: 22px;
   color: #6adfb8;
   font-family: Raleway;
   @media (max-width: 1500px) {
@@ -630,14 +635,6 @@
   }
 }
 
-.skills-divider {
-  display: flex;
-  height: 100%;
-  width: 1px;
-  background-color: #5e6666;
-  filter: drop-shadow(0px 0px 4px #5bcfb0);
-}
-
 .skill-title {
   /* font-weight: 400; */
   font-family: Raleway;
@@ -645,20 +642,19 @@
   color: #b1c2bc;
 
   @media (max-width: 1500px) {
-    font-size: 20px
+    font-size: 20px;
   }
   @media (max-width: 1300px) {
-    font-size: 18px
+    font-size: 18px;
   }
 }
 
 .skill-text {
   font-size: 20px;
-  
-  @media (max-width: 1600px) {
-    font-size: 16px
-  }
 
+  @media (max-width: 1600px) {
+    font-size: 16px;
+  }
 }
 
 .skill-list {
@@ -671,7 +667,6 @@
 .skill-list > li::marker {
   color: #6adfb8;
 }
-
 
 .heatmap-container-wrapper {
   display: flex;
@@ -723,17 +718,15 @@
   animation: fill-out linear both;
   animation-timeline: --portfolio-scroll;
   animation-range: 0% 100%;
-  
+
   @media (max-width: 1500px) {
     gap: 20px;
   }
 
-  @media (max-width: 1300px){
+  @media (max-width: 1300px) {
     animation: none;
     width: 100%;
   }
-  
-
 }
 
 @keyframes fill-out {
@@ -1146,7 +1139,7 @@
   width: 60%;
   gap: 25px;
   margin-top: 40px;
-  
+
   @media (max-width: 1300px) {
     width: 100%;
     gap: 10px;
@@ -1217,7 +1210,6 @@
   @media (max-width: 1500px) {
     font-size: 20px;
   }
-  
 }
 
 .timeline-inst {
@@ -1267,8 +1259,8 @@
   text-shadow:
     0px 0px 16px rgb(255, 255, 255),
     0px 0px 32px rgb(255, 255, 255);
-  
-    @media (max-width: 1300px) {
+
+  @media (max-width: 1300px) {
     font-size: 32px;
   }
 }

@@ -19,7 +19,7 @@ export default function NavBar() {
           if (entry.isIntersecting) setActiveId(entry.target.id);
         });
       },
-      { rootMargin: "-45% 0px -50% 0px", threshold: 0 }
+      { rootMargin: "-45% 0px -50% 0px", threshold: 0 },
     );
 
     SECTIONS.forEach(({ id }) => {

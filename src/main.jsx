@@ -101,7 +101,7 @@ function App() {
   function renderPage() {
     switch (page) {
       case "landing":
-        return <Landing onStart={loadHero} />;
+        return <Landing onStart={showPortfolio} />;
       case "loading":
         return <Loading />;
       case "hero":

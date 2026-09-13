@@ -12,6 +12,7 @@ import "./portfolio.css";
 import GitHubHeatmap from "./components/github_contribution.jsx";
 import LeafDrop from "./components/leaf-drop.jsx";
 import NavBar from "./components/navbar.jsx";
+import IconRow from "./components/iconrow.jsx";
 
 export default function Portfolio({ onHero, onProject }) {
   const [portfolioVisible, setPortfolioVisible] = useState(true);
@@ -424,16 +425,28 @@ export default function Portfolio({ onHero, onProject }) {
                   <span className="accent-text">intuitive design</span>.
                 </div>
               </motion.div>
+              <motion.div
+                className="intro-title fade-left"
+                initial={{ opacity: 0, x: -40 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 2.5, ease: "easeInOut" }}
+              >
+                <IconRow />
+              </motion.div>
             </div>
           </motion.section>
           <motion.section className="portfolio-section" id="skills">
             <motion.div className="sixty-div">
-              <motion.div className="section-title">
-                skills & expertise
-              </motion.div>
+              <motion.div className="section-title">skills & stack</motion.div>
               <motion.div className="skills-content">
                 <div className="skills-column">
-                  <div className="skill-title">full-stack developement_</div>
+                  <div className="skill-column-top">
+                    <div className="skill-title">full-stack developement</div>
+                    <div>·</div>
+                    <div className="skill-project-ex">
+                      WINGS, Portfolio, Flowstate
+                    </div>
+                  </div>
                   <div className="skill-text">
                     I build full-stack products from 0 to 1: thoughtful design,
                     user authentication, persistent data, and cloud deployment.
@@ -441,13 +454,7 @@ export default function Portfolio({ onHero, onProject }) {
                     people use, factoring scalability, techinical difficulty,
                     and user feedback.
                   </div>
-                  <div className="skill-projects-tech">
-                    <span>projects: </span>
-                    <span className="skill-project-ex">
-                      WINGS · Portfolio · Flowstate
-                    </span>
-                  </div>
-                  <div className="skill-tech">
+                  {/* <div className="skill-tech">
                     <span>React</span>
                     <span>TypeScript</span>
                     <span>Three.js</span>
@@ -456,11 +463,15 @@ export default function Portfolio({ onHero, onProject }) {
                     <span>Python</span>
                     <span>Firebase</span>
                     <span>AWS Cognito/DynamoDB</span>
-                  </div>
+                  </div> */}
                 </div>
-                <div className="skills-divider"></div>{" "}
                 <div className="skills-column">
-                  <div className="skill-title">machine learning_</div>
+                  <div className="skill-column-top">
+                    <div className="skill-title">machine learning</div>
+                    <div>·</div>
+                    <span className="skill-project-ex">Swype, FlowState</span>
+                  </div>
+
                   <div className="skill-text">
                     Starting with a curiosity for gesture controls, I used
                     MediaPipe's hand tracking and trained a PyTorch model on the
@@ -468,34 +479,30 @@ export default function Portfolio({ onHero, onProject }) {
                     of collecting data, training models, and utilizing the
                     model's output.
                   </div>
-                  <div className="skill-projects-tech">
-                    <span>projects: </span>
-                    <span className="skill-project-ex">Swype · FlowState</span>
-                  </div>
-                  <div className="skill-tech">
+                  {/* <div className="skill-tech">
                     <span>Python</span>
                     <span>PyTorch</span>
                     <span>MediaPipe</span>
-                  </div>
+                  </div> */}
                 </div>
-                <div className="skills-divider" />
                 <div className="skills-column">
-                  <div className="skill-title">deployment & tools_</div>
+                  <div className="skill-column-top">
+                    <div className="skill-title">deployment & tools</div>
+                    <div>·</div>
+                    <span className="skill-project-ex">WINGS, FlowState</span>
+                  </div>
+
                   <div className="skill-text">
                     I enjoy learning and building projects from development to
                     production. Recently, I've been exploring deployment
                     workflows, cloud services, and the tooling that keeps
                     applications maintainable as they grow.
                   </div>
-                  <div className="skill-projects-tech">
-                    <span>projects: </span>
-                    <span className="skill-project-ex">WINGS · FlowState</span>
-                  </div>
-                  <div className="skill-tech">
-                    {/* <span>AWS (Cognito)</span> */}
-                    {/* <span>CI/CD (Github Actions)</span> */}
+                  {/* <div className="skill-tech">
+                    <span>AWS (Cognito)</span>
+                    <span>CI/CD (Github Actions)</span>
                     <span>Cloudflare Pages</span>
-                  </div>
+                  </div> */}
                 </div>
               </motion.div>
             </motion.div>
@@ -527,10 +534,18 @@ export default function Portfolio({ onHero, onProject }) {
                     <div className="card-stats">
                       30k followers (@wings.sw), 1.2k MAU
                     </div>
-                    <a href="https://github.com/1prcntethan/wings">
+                    <a
+                      href="https://github.com/1prcntethan/wings"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <img src="github.svg" className="project-link"></img>
                     </a>
-                    <a href="https://wingssw.com/">
+                    <a
+                      href="https://wingssw.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <img src="linkdemo.svg" className="project-link"></img>
                     </a>
                     <button
@@ -602,10 +617,18 @@ export default function Portfolio({ onHero, onProject }) {
                     <div className="card-stats">
                       current project, in development
                     </div>
-                    <a href="https://github.com/1prcntethan/flowstate">
+                    <a
+                      href="https://github.com/1prcntethan/flowstate"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <img src="github.svg" className="project-link"></img>
                     </a>
-                    <a href="#">
+                    <a
+                      href="https://getflowstate.org"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <img src="linkdemo.svg" className="project-link"></img>
                     </a>
                   </div>
@@ -747,9 +770,24 @@ export default function Portfolio({ onHero, onProject }) {
 
               <motion.div className="contact-detail">
                 <span className="contact-label">email_</span>
-                <span className="accent-text">ethantay1prcnt@gmail.com</span>
-                <span className="accent-text">ethakari@uw.edu</span>
-                <span className="accent-text">ethakari@cs.washington.edu</span>
+                <a
+                  className="accent-text contact-link"
+                  href="mailto:ethantay1prcnt@gmail.com"
+                >
+                  ethantay1prcnt@gmail.com
+                </a>
+                <a
+                  className="accent-text contact-link"
+                  href="mailto:ethakari@uw.edu"
+                >
+                  ethakari@uw.edu
+                </a>
+                <a
+                  className="accent-text contact-link"
+                  href="mailto:ethakari@cs.washington.edu"
+                >
+                  ethakari@cs.washington.edu
+                </a>
               </motion.div>
               <motion.div className="contact-detail">
                 <span className="contact-label">github_</span>
