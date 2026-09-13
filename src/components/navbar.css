@@ -1,0 +1,41 @@
+.nav-pill {
+  position: fixed;
+  top: 16px;
+  left: 81.2%;
+  transform: translateX(-50%);
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px;
+  border-radius: 999px;
+  background: #0b0b0b;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow:
+    0 8px 24px rgba(12, 12, 12, 0.5),
+    0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.nav-link {
+  background: transparent;
+  border: none;
+  color: #a0a0a0;
+  font-family: inherit;
+  font-size: 14px;
+  padding: 8px 22px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition:
+    all 0.25s ease,
+    color 0.25s ease;
+}
+
+.nav-link:hover {
+  background: #181818;
+  color: #e0e0e0;
+}
+
+.nav-link-active {
+  color: #5dc4a1;
+}

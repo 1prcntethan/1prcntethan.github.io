@@ -47,7 +47,7 @@ export default function GitHubHeatmap({ username = "1prcntethan" }) {
 
   return (
     <div className="heatmap-wrapper">
-      <p className="heatmap-label">github activity_</p>
+      <p className="heatmap-label">github activity</p>
 
       <div className="heatmap-body">
         <div className="heatmap-months">

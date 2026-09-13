@@ -11,6 +11,7 @@ import { useRef, useEffect } from "react";
 import "./portfolio.css";
 import GitHubHeatmap from "./components/github_contribution.jsx";
 import LeafDrop from "./components/leaf-drop.jsx";
+import NavBar from "./components/navbar.jsx";
 
 export default function Portfolio({ onHero, onProject }) {
   const [portfolioVisible, setPortfolioVisible] = useState(true);
@@ -29,6 +30,7 @@ export default function Portfolio({ onHero, onProject }) {
             color: "white",
           }}
         >
+          <NavBar />
           <motion.div className="fixed-visual">
             <div class="scroll-progress"></div>
             <div class="visual-container">
@@ -392,7 +394,7 @@ export default function Portfolio({ onHero, onProject }) {
               className="portfolio-close-icon"
             ></img>
           </button>
-          <motion.section className="intro-section">
+          <motion.section className="intro-section" id="home">
             <div className="sixty-div">
               <motion.div
                 className="intro-title fade-left"
@@ -410,18 +412,21 @@ export default function Portfolio({ onHero, onProject }) {
                 transition={{ duration: 2.5, ease: "easeInOut" }}
               >
                 <div>
-                  I'm a CS student at the University of Washington, and I build
-                  things that <span className="accent-text">work well</span> and{" "}
-                  <span className="accent-text">look good</span>. I pick up new
-                  tools, aesthetics, and constraints quickly, and I love working
-                  on products that blend{" "}
+                  I'm Ethan, a CS student at the{" "}
+                  <span className="accent-text">University of Washington</span>{" "}
+                  in Seattle. I taught myself basic full-stack development by
+                  growing <span className="accent-text">WINGS</span>, my
+                  calisthenics app, to a peak of{" "}
+                  <span className="accent-text">33k followers</span> and{" "}
+                  <span className="accent-text">1.4k+ daily users</span>. I love
+                  working on user-facing products that blend{" "}
                   <span className="accent-text">technical expertise</span> and{" "}
                   <span className="accent-text">intuitive design</span>.
                 </div>
               </motion.div>
             </div>
           </motion.section>
-          <motion.section className="portfolio-section">
+          <motion.section className="portfolio-section" id="skills">
             <motion.div className="sixty-div">
               <motion.div className="section-title">
                 skills & expertise
@@ -430,12 +435,11 @@ export default function Portfolio({ onHero, onProject }) {
                 <div className="skills-column">
                   <div className="skill-title">full-stack developement_</div>
                   <div className="skill-text">
-                    I build full-stack products from the ground up: user
-                    authentication, real-time databases, and cloud deployment,
-                    through to the interface. WINGS taught me what it actually
-                    takes to ship something people use, factoring scalability,
-                    techinical difficulty, and user feedback. The design
-                    instinct helps, but shipping is always the priority.
+                    I build full-stack products from 0 to 1: thoughtful design,
+                    user authentication, persistent data, and cloud deployment.
+                    WINGS taught me what it actually takes to ship something
+                    people use, factoring scalability, techinical difficulty,
+                    and user feedback.
                   </div>
                   <div className="skill-projects-tech">
                     <span>projects: </span>
@@ -451,6 +455,7 @@ export default function Portfolio({ onHero, onProject }) {
                     <span>JavaScript</span>
                     <span>Python</span>
                     <span>Firebase</span>
+                    <span>AWS Cognito/DynamoDB</span>
                   </div>
                 </div>
                 <div className="skills-divider"></div>{" "}
@@ -458,11 +463,10 @@ export default function Portfolio({ onHero, onProject }) {
                   <div className="skill-title">machine learning_</div>
                   <div className="skill-text">
                     Starting with a curiosity for gesture controls, I used
-                    MediaPipe's hand tracking and trained PyTorch models on
-                    custom gesture datasets. Building Swype introduced me to the
-                    process of collecting data, training models, and turning
-                    machine learning into something people can actually interact
-                    with.
+                    MediaPipe's hand tracking and trained a PyTorch model on the
+                    custom dataset. Building Swype introduced me to the process
+                    of collecting data, training models, and utilizing the
+                    model's output.
                   </div>
                   <div className="skill-projects-tech">
                     <span>projects: </span>
@@ -488,7 +492,7 @@ export default function Portfolio({ onHero, onProject }) {
                     <span className="skill-project-ex">WINGS · FlowState</span>
                   </div>
                   <div className="skill-tech">
-                    <span>AWS (Cognito)</span>
+                    {/* <span>AWS (Cognito)</span> */}
                     {/* <span>CI/CD (Github Actions)</span> */}
                     <span>Cloudflare Pages</span>
                   </div>
@@ -496,7 +500,7 @@ export default function Portfolio({ onHero, onProject }) {
               </motion.div>
             </motion.div>
           </motion.section>
-          <motion.section className="project-section">
+          <motion.section className="project-section" id="projects">
             <motion.div className="sixty-div">
               <motion.div className="project-title">projects</motion.div>
               <div className="project-wrapper">
@@ -609,7 +613,7 @@ export default function Portfolio({ onHero, onProject }) {
               </div>
             </motion.div>
           </motion.section>
-          <motion.section className="portfolio-section">
+          <motion.section className="portfolio-section" id="experience">
             <motion.div className="section-title">
               experience & education
             </motion.div>
@@ -730,7 +734,7 @@ export default function Portfolio({ onHero, onProject }) {
               </div>
             </motion.div>
           </motion.section>
-          <motion.section className="portfolio-section">
+          <motion.section className="portfolio-section" id="contact">
             <div className="contact-div">
               <motion.div className="contact-title">contact</motion.div>
               <motion.div className="contact-name">ethan tay</motion.div>

@@ -8,6 +8,7 @@ import Hero from "./hero.jsx";
 import Artist from "./artist.jsx";
 import Developer from "./developer.jsx";
 import Learner from "./learner.jsx";
+import NavBar from "./components/navbar.jsx";
 import Portfolio from "./portfolio.jsx";
 import Swype from "./swype.jsx";
 import Cursor from "./components/cursor.jsx";
@@ -44,11 +45,9 @@ function App() {
   }
 
   function loadHero() {
-    setPage("loading");
-
     setTimeout(() => {
       setPage("hero");
-    }, 2000);
+    }, 1000);
   }
 
   function showHero() {
@@ -122,10 +121,12 @@ function App() {
         return <Learner onExit={showHero} />;
       case "portfolio":
         return (
-          <Portfolio
-            onHero={showHero}
-            onProject={(id) => showProject(id, "portfolio")}
-          />
+          <>
+            <Portfolio
+              onHero={showHero}
+              onProject={(id) => showProject(id, "portfolio")}
+            />
+          </>
         );
       case "project": {
         const StoryComponent = projectStories[activeProject];
