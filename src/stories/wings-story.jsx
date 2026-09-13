@@ -338,17 +338,30 @@ export default function WingsStory({ onExit }) {
           </div>
           <div className="wings-content-center">
             <p>
-              Honestly, I don't really know if there really is a formula for
-              going viral on social media. But one day, one of the reels,
-              probably 2 weeks old, suddenly blew up. In a single day, it hit
-              1.5M, and over the course of the next 2 weeks, it leveled out at
-              around 2.5M views.
+              One day, one of the reels, probably 2 weeks old, suddenly blew up.
+              In a single day, it hit 1.5M, and over the course of the next 2
+              weeks, it leveled out at around 2.5M views.
             </p>
             <p>
               At the same time, the Instagram account gained around 15k
               followers. And over the next 2 weeks, it rose to around 22k
               followers. The pressure was on.
             </p>
+          </div>
+          <div className="wings-content-twocol wings-image-right">
+            <div className="wings-text">
+              <p>
+                Over the next 2 months after the viral reel, I kept working,
+                polishing the site, constructing skill pages, adding features,
+                and writing guides. I remember working on it for hours everyday
+                leading up to launch day. Finally, it was time for release. To
+                recap, the site had skill pages, guides, and a homepage, and it
+                basically was a static site.
+              </p>
+            </div>
+            <div className="wings-image">
+              <img src="/wingsguidesdoc.png" alt="WINGS doc guides" />
+            </div>
           </div>
         </motion.div>
       )}
