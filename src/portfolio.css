@@ -267,7 +267,7 @@
     stroke-dashoffset: 0;
   }
 }
-
+/* 
 .chart-svg {
   bottom: 50%;
   transform: translateY(-65%);
@@ -277,30 +277,7 @@
   animation-range: 0% 100%;
 }
 
-@keyframes chart-fade {
-  0% {
-    display: none;
-    opacity: 0;
-  }
-  8% {
-    display: none;
-    opacity: 0;
-  }
-  12% {
-    display: block;
-    opacity: 1;
-  }
-  17% {
-    opacity: 1;
-  }
-  19% {
-    display: none;
-    opacity: 0;
-  }
-  100% {
-    opacity: 0;
-  }
-}
+
 
 @keyframes chart-zoom-fade {
   0% {
@@ -331,7 +308,7 @@
     opacity: 0;
     transform: scale(0);
   }
-}
+} */
 
 #chart-data {
   width: 100%;
@@ -528,7 +505,7 @@
   transition: all 0.15s ease-in-out;
 }
 .wings-accent-text:hover {
-  color: #78ffd2
+  color: #78ffd2;
 }
 
 .skills-content {
@@ -559,6 +536,7 @@
   width: 100%;
   font-size: 24px;
   height: 100%;
+  transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
   /* filter: drop-shadow(0px 0px 12px #1c2b27); */
 
   @media (max-width: 1500px) {
@@ -567,6 +545,22 @@
   @media (max-width: 1300px) {
     width: 100%;
   }
+}
+
+.skills-column:hover {
+  transform: translateX(10px);
+}
+
+.skills-column:hover .skill-title{
+  /* filter: drop-shadow(0px 0px 4px #c1ddd5); */
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  transform: scale(1.05);
+  color: white;
+}
+
+.skills-column:hover .skill-column-top{
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  transform: translateX(10px);
 }
 
 .skill-column-top {
@@ -652,6 +646,8 @@
   font-size: 22px;
   color: #b1c2bc;
 
+  transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1)
+
   @media (max-width: 1500px) {
     font-size: 20px;
   }
@@ -677,6 +673,80 @@
 
 .skill-list > li::marker {
   color: #6adfb8;
+}
+
+.skill-chip-grid {
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  animation: stack-fade linear;
+  animation-timeline: --portfolio-scroll;
+  animation-range: 0% 101%;
+}
+
+@keyframes stack-fade {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+  8% {
+    display: none;
+    opacity: 0;
+    filter: blur(12px);
+  }
+  12% {
+    display: flex;
+    opacity: 1;
+    filter: blur(0px);
+  }
+  17% {
+    display: flex;
+    opacity: 1;
+    filter: blur(0px);
+  }
+  19% {
+    display: none;
+    opacity: 0;
+    filter: blur(12px);
+  }
+  100% {
+    display: none;
+    opacity: 0;
+  }
+}
+
+.chip-row {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.skill-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  border-radius: 999px;
+  background: #252525;
+  color: #b3c7bf;
+  font-size: 18px;
+  font-family: "Raleway";
+  white-space: nowrap;
+  width: fit-content;
+  transition: all 0.25s ease-in-out;
+}
+
+.skill-chip-grid.highlight-fs .category-fs,
+.skill-chip-grid.highlight-ml .category-ml,
+.skill-chip-grid.highlight-dev .category-dev {
+  color: #e9f7f2;
+  background: #318f87;
+  transform: scale(1.05);
 }
 
 .heatmap-container-wrapper {
@@ -1391,5 +1461,5 @@
 }
 
 #wings-link:hover {
-  color: #78ffd2 
+  color: #78ffd2;
 }

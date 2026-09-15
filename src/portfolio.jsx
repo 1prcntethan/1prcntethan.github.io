@@ -16,7 +16,7 @@ import IconRow from "./components/iconrow.jsx";
 
 export default function Portfolio({ onHero, onProject }) {
   const [portfolioVisible, setPortfolioVisible] = useState(true);
-
+  const [hoveredCategory, setHoveredCategory] = useState(null);
   return (
     <AnimatePresence>
       {portfolioVisible && (
@@ -35,10 +35,7 @@ export default function Portfolio({ onHero, onProject }) {
           <motion.div className="fixed-visual">
             <div class="scroll-progress"></div>
             <div class="visual-container">
-              <div class="heatmap-container-wrapper">
-                <GitHubHeatmap />
-              </div>
-              <img className="chart-svg" src="/techskills1.svg"></img>
+              {/* <img className="chart-svg" src="/techskills1.svg"></img> */}
               <svg
                 width="479"
                 height="479"
@@ -249,6 +246,30 @@ export default function Portfolio({ onHero, onProject }) {
                   className="draw-circle group8"
                 />
               </svg>
+              <div
+                className={`skill-chip-grid ${hoveredCategory ? `highlight-${hoveredCategory}` : ""}`}
+              >
+                <div className="chip-row">
+                  <div className="skill-chip category-fs">Firebase Auth</div>
+                  <div className="skill-chip category-ml">MediaPipe</div>
+                  <div className="skill-chip category-fs">Typescript</div>
+                  <div className="skill-chip category-fs">AWS Cognito</div>
+                </div>
+                <div className="chip-row">
+                  <div className="skill-chip category-fs">HTML/CSS</div>
+                  <div className="skill-chip category-fs">Firestore</div>
+                  <div className="skill-chip category-fs">React</div>
+                  <div className="skill-chip category-ml">PyTorch</div>
+                </div>
+                <div className="chip-row">
+                  <div className="skill-chip category-ml">Python</div>
+                  <div className="skill-chip category-dev">
+                    Cloudflare Pages
+                  </div>
+                  <div className="skill-chip category-fs">Javascript</div>
+                  <div className="skill-chip category-fs">AWS DynamoDB</div>
+                </div>
+              </div>
               {/* <svg
                 viewBox="0 0 535 399"
                 fill="none"
@@ -381,6 +402,9 @@ export default function Portfolio({ onHero, onProject }) {
                   fill="#818181"
                 />
               </svg> */}
+              <div class="heatmap-container-wrapper">
+                <GitHubHeatmap />
+              </div>
               <LeafDrop />
             </div>
           </motion.div>
@@ -462,7 +486,12 @@ export default function Portfolio({ onHero, onProject }) {
             <motion.div className="sixty-div">
               <motion.div className="section-title">skills & stack</motion.div>
               <motion.div className="skills-content">
-                <div className="skills-column">
+                <div
+                  className="skills-column"
+                  id="fs"
+                  onMouseEnter={() => setHoveredCategory("fs")}
+                  onMouseLeave={() => setHoveredCategory(null)}
+                >
                   <div className="skill-column-top">
                     <div className="skill-title">full-stack development</div>
                     <div>//</div>
@@ -471,24 +500,18 @@ export default function Portfolio({ onHero, onProject }) {
                     </div>
                   </div>
                   <div className="skill-text">
-                    I build full-stack products from 0 to 1: thoughtful design,
-                    user authentication, persistent data, and cloud deployment.
-                    WINGS taught me what it actually takes to ship something
-                    people use, factoring scalability, techinical difficulty,
-                    and user feedback.
+                    I build full-stack products from 0 to 1: designing UI,
+                    wiring up auth, architecting the data layer, and deploying
+                    it to the cloud. WINGS taught me how to ship something
+                    people use, and I learned how to design for scale, handle
+                    technical difficulty, and iterate on user feedback.
                   </div>
-                  {/* <div className="skill-tech">
-                    <span>React</span>
-                    <span>TypeScript</span>
-                    <span>Three.js</span>
-                    <span>HTML/CSS</span>
-                    <span>JavaScript</span>
-                    <span>Python</span>
-                    <span>Firebase</span>
-                    <span>AWS Cognito/DynamoDB</span>
-                  </div> */}
                 </div>
-                <div className="skills-column">
+                <div
+                  className="skills-column"
+                  onMouseEnter={() => setHoveredCategory("ml")}
+                  onMouseLeave={() => setHoveredCategory(null)}
+                >
                   <div className="skill-column-top">
                     <div className="skill-title">machine learning</div>
                     <div>//</div>
@@ -496,11 +519,12 @@ export default function Portfolio({ onHero, onProject }) {
                   </div>
 
                   <div className="skill-text">
-                    Starting with a curiosity for gesture controls, I used
-                    MediaPipe's hand tracking and trained a PyTorch model on the
-                    custom dataset. Building Swype introduced me to the process
-                    of collecting data, training models, and utilizing the
-                    model's output.
+                    In this current tech landscape, AI is increasingly
+                    important. So I learned, by building a real-time AI hand
+                    gesture controller (Swype), and training a PyTorch model on
+                    a custom dataset. Building Swype introduced me to the
+                    process of collecting data, training models, and utilizing
+                    the model's output.
                   </div>
                   {/* <div className="skill-tech">
                     <span>Python</span>
@@ -508,7 +532,11 @@ export default function Portfolio({ onHero, onProject }) {
                     <span>MediaPipe</span>
                   </div> */}
                 </div>
-                <div className="skills-column">
+                <div
+                  className="skills-column"
+                  onMouseEnter={() => setHoveredCategory("dev")}
+                  onMouseLeave={() => setHoveredCategory(null)}
+                >
                   <div className="skill-column-top">
                     <div className="skill-title">deployment & tools</div>
                     <div>//</div>
@@ -516,10 +544,11 @@ export default function Portfolio({ onHero, onProject }) {
                   </div>
 
                   <div className="skill-text">
-                    I enjoy learning and building projects from development to
-                    production. Recently, I've been exploring deployment
-                    workflows, cloud services, and the tooling that keeps
-                    applications maintainable as they grow.
+                    While I enjoy building products, I also care about how
+                    they're deployed and kept running; WINGS taught me the
+                    basics of hosting a live product with Cloudflare Pages. I'm
+                    currently extending that into CI/CD as FlowState grows into
+                    a production-bound desktop app.
                   </div>
                   {/* <div className="skill-tech">
                     <span>AWS (Cognito)</span>
@@ -715,16 +744,18 @@ export default function Portfolio({ onHero, onProject }) {
               </div>
               <div className="timeline-content">
                 <div className="timeline-item">
-                  <div className="timeline-date">2026 - Present</div>
+                  <div className="timeline-date"> Sep 2026 - Present</div>
                   <div className="timeline-title">B.S. in Computer Science</div>
                   <div className="timeline-inst">University of Washington</div>
                   <div className="timeline-desc">
+                    Expected Graduation: June 2028
+                    <br />
                     Relevant Coursework: CSE331 Software Design and
                     Implementation, MATH126 Calc III
                   </div>
                 </div>
                 <div className="timeline-item">
-                  <div className="timeline-date">2024 - 2026</div>
+                  <div className="timeline-date">June 2024 - Present</div>
                   <div className="timeline-title">
                     Solo Developer/Founder –{" "}
                     <span className="timeline-highlight">
@@ -740,7 +771,7 @@ export default function Portfolio({ onHero, onProject }) {
                   </div>
                 </div>
                 <div className="timeline-item">
-                  <div className="timeline-date">2024 - 2026</div>
+                  <div className="timeline-date">Sept. 2024 - Dec. 2026</div>
                   <div className="timeline-title">
                     Robotics Programming Lead
                   </div>
@@ -753,7 +784,7 @@ export default function Portfolio({ onHero, onProject }) {
                   </div>
                 </div>
                 <div className="timeline-item">
-                  <div className="timeline-date">2025 - 2026</div>
+                  <div className="timeline-date"> Jun. 2025 - Mar. 2026</div>
                   <div className="timeline-title">Running Start Student</div>
                   <div className="timeline-inst">
                     Clark College, Bellevue College
@@ -766,7 +797,7 @@ export default function Portfolio({ onHero, onProject }) {
                   </div>
                 </div>
                 <div className="timeline-item">
-                  <div className="timeline-date">2022 - 2026</div>
+                  <div className="timeline-date">Sep. 2022 - Jun. 2026</div>
                   <div className="timeline-title">High School Student</div>
                   <div className="timeline-inst">Mountain View High School</div>
                   <div className="timeline-desc">
@@ -788,7 +819,7 @@ export default function Portfolio({ onHero, onProject }) {
 
               <div className="internship-badge">
                 <span className="badge-dot"></span>
-                OPEN TO SUMMER 2027 INTERNSHIPS • SEATTLE / SF
+                LOOKING FOR SUMMER 2027 SWE INTERNSHIPS
               </div>
 
               <motion.div className="contact-detail">
