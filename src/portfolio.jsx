@@ -565,47 +565,115 @@ export default function Portfolio({ onHero, onProject }) {
               <div className="project-wrapper">
                 <div className="project-card">
                   <div className="card-bg" id="bg-wings">
-                    <img src="wingsstats.jpg" className="wings-stats"></img>
+                    {/* <img src="wingsstats.jpg" className="wings-stats"></img> */}
                   </div>
-                  <div className="card-title" id="wings-font">
-                    Wings.
-                  </div>
-                  <div className="card-info">
-                    all-in-one PWA calisthenics guide with personalized skill
-                    tracker and rank system, using React and Firebase
-                  </div>
-                  <div className="card-tags">
-                    <span>HTML/CSS</span>
-                    <span>JavaScript</span>
-                    <span>React</span>
-                    <span>Firebase</span>
-                    <span>Figma</span>
-                    <span>Cloudflare Pages</span>
-                  </div>
-                  <div className="card-links">
-                    <div className="card-stats">
-                      30k followers (@wings.sw), 1.2k MAU
+
+                  <div className="card-content">
+                    <div className="card-header">
+                      <div className="card-title" id="wings-font">
+                        Wings.
+                      </div>
+                      <div className="card-header-links">
+                        <a
+                          href="https://github.com/1prcntethan/wings"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <img
+                            src="/github.svg"
+                            className="header-icon"
+                            alt="GitHub repo"
+                          />
+                        </a>
+
+                        <a
+                          href="https://wingssw.com/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <img
+                            src="/linkdemo.svg"
+                            className="header-icon"
+                            alt="Live demo"
+                          />
+                        </a>
+                      </div>
                     </div>
-                    <a
-                      href="https://github.com/1prcntethan/wings"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <img src="github.svg" className="project-link"></img>
-                    </a>
-                    <a
-                      href="https://wingssw.com/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <img src="linkdemo.svg" className="project-link"></img>
-                    </a>
-                    <button
-                      className="project-story-link"
-                      onClick={() => onProject("wings")}
-                    >
-                      the build →
-                    </button>
+
+                    <div className="card-info">
+                      all-in-one calisthenics guide with skill tracker and rank
+                      system.
+                    </div>
+
+                    <div className="card-meta">
+                      <div className="meta-item">
+                        <span className="meta-label">Role</span>
+                        <span className="meta-value">Solo Founder</span>
+                      </div>
+                      <div className="meta-item">
+                        <span className="meta-label">Status</span>
+                        <span className="meta-value">Live</span>
+                      </div>
+                      <div className="meta-item">
+                        <span className="meta-label">Timeline</span>
+                        <span className="meta-value">2024 - ongoing</span>
+                      </div>
+                    </div>
+
+                    <div className="card-section">
+                      <div className="section-label">what it does</div>
+                      <ul>
+                        <li>
+                          calisthenics guides, tutorials, tips, and tricks, from
+                          beginner through intermediate
+                        </li>
+                        <li>
+                          visual interactive skill-tree UI for progression
+                        </li>
+                        <li>
+                          personalized skill tracking, streak system, and
+                          ranking system
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div className="card-section">
+                      <div className="section-label">what i did</div>
+                      <ul>
+                        <li>
+                          designed, developed, and built the full app solo:
+                          frontend, backend, and deploy
+                        </li>
+                        <li>
+                          built the firebase backend, including rate-limiting
+                          for API calls
+                        </li>
+                        <li>
+                          promoted app on Instagram, gathering user feedback and
+                          iterating
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div className="card-stats">
+                      33k Instagram followers, 1.2k MAU
+                    </div>
+
+                    <div className="card-footer">
+                      <div className="card-tags">
+                        <span>React</span>
+                        <span>Firebase</span>
+                        <span>Vite</span>
+                        <span>HTML/CSS</span>
+                        <span>Cloudflare Pages</span>
+                      </div>
+                      <button
+                        className="project-story-link"
+                        onClick={() => onProject("wings")}
+                      >
+                        the build →
+                      </button>
+                    </div>
                   </div>
                 </div>
                 <div className="project-card">
