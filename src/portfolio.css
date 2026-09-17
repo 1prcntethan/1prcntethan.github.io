@@ -932,6 +932,9 @@
   transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
   gap: 10px;
 }
+.flow-div > img {
+  border-radius: 9999px;
+}
 
 #swype-font {
   font-family: Itim;
@@ -1063,15 +1066,11 @@
 }
 
 .project-card:hover .swype-div {
-  transform: translateY(-26px);
-  background-color: #060606;
-  border-radius: 9999px;
-  padding: 0px 15px;
-  border: 1px #de9643 solid;
+  transform: translate(0, -16px);
 }
 
 .project-card:hover .flow-div {
-  transform: translateY(-13px);
+  transform: translateY(-6px);
 }
 
 .project-card:hover .swype-div > span {
@@ -1309,7 +1308,7 @@
   font-size: 18px;
   font-weight: 100;
   color: rgba(255, 255, 255, 0.918);
-  line-height: 2;
+  line-height: 1.8;
 }
 
 .card-section li {

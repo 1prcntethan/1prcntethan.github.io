@@ -615,7 +615,7 @@ export default function Portfolio({ onHero, onProject }) {
                       </div>
                       <div className="meta-item">
                         <span className="meta-label">Timeline</span>
-                        <span className="meta-value">2024 - ongoing</span>
+                        <span className="meta-value">June 2024 - ongoing</span>
                       </div>
                     </div>
 
@@ -677,79 +677,232 @@ export default function Portfolio({ onHero, onProject }) {
                 </div>
                 <div className="project-card">
                   <div className="card-bg" id="bg-swype"></div>
-                  <div className="card-title" id="swype-font">
-                    <div className="swype-div">
-                      <img
-                        class="swypelogo"
-                        src="swypelogo.svg"
-                        alt="swype logo"
-                      />
-                      <span>swype</span>
+                  <div className="card-content">
+                    <div className="card-header">
+                      <div className="card-title" id="swype-font">
+                        <div className="swype-div">
+                          <img
+                            class="swypelogo"
+                            src="swypelogo.svg"
+                            alt="swype logo"
+                          />
+                          <span>swype</span>
+                        </div>
+                      </div>
+                      <div className="card-header-links">
+                        <a
+                          href="https://github.com/1prcntethan/swype"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <img
+                            src="/github.svg"
+                            className="header-icon"
+                            alt="GitHub repo"
+                          />
+                        </a>
+                        {/* <a href="#" target="_blank" rel="noopener noreferrer">
+                          <img
+                            src="/linkdemo.svg"
+                            className="header-icon"
+                            alt="Live demo"
+                          />
+                        </a> */}
+                      </div>
                     </div>
-                  </div>
-                  <div className="card-info">
-                    real-time hand-gesture control system that maps MediaPipe
-                    hand tracking to cursor and keyboard input through a custom
-                    36K-parameter LSTM
-                  </div>
-                  <div className="card-tags">
-                    <span>Python</span>
-                    <span>PyTorch</span>
-                    <span>MediaPipe</span>
-                    <span>PyQt6</span>
-                  </div>
-                  <div className="card-links">
-                    <div className="card-stats">1ms inference latency</div>
-                    <a href="#">
-                      <img src="github.svg" className="project-link"></img>
-                    </a>
-                    <a href="#">
-                      <img src="linkdemo.svg" className="project-link"></img>
-                    </a>
+
+                    <div className="card-info">
+                      real-time hand-gesture control system that maps MediaPipe
+                      hand tracking to cursor and keyboard input through a
+                      custom 36K-parameter LSTM.
+                    </div>
+
+                    <div className="card-meta">
+                      <div className="meta-item">
+                        <span className="meta-label">Role</span>
+                        <span className="meta-value">Solo Developer</span>
+                      </div>
+                      <div className="meta-item">
+                        <span className="meta-label">Status</span>
+                        <span className="meta-value">Complete</span>
+                      </div>
+                      <div className="meta-item">
+                        <span className="meta-label">Timeline</span>
+                        <span className="meta-value">
+                          Jan. 2026 - July 2026
+                        </span>
+                      </div>
+                    </div>
+
+                    <div className="card-section">
+                      <div className="section-label">what it does</div>
+                      <ul>
+                        <li>
+                          maps live hand-tracking data to real-time cursor and
+                          keyboard control via webcam
+                        </li>
+                        <li>
+                          classifies gestures using a sliding-window temporal
+                          voting system for stability
+                        </li>
+                        <li>PyQt6 HUD overlay for live visual feedback</li>
+                      </ul>
+                    </div>
+
+                    <div className="card-section">
+                      <div className="section-label">what i did</div>
+                      <ul>
+                        <li>
+                          built a 75-dimensional feature pipeline from raw
+                          MediaPipe hand landmarks
+                        </li>
+                        <li>
+                          trained a custom LSTM model (36K parameters, 92%
+                          validation accuracy) from scratch
+                        </li>
+                        <li>
+                          implemented real-time threaded inference and cursor
+                          control with smoothing
+                        </li>
+                      </ul>
+                    </div>
+
+                    {/* <div className="card-stats">
+                      92% validation accuracy, &lt;1ms LSTM inference latency
+                    </div> */}
+
+                    <div className="card-footer">
+                      <div className="card-tags">
+                        <span>Python</span>
+                        <span>PyTorch</span>
+                        <span>MediaPipe</span>
+                        <span>PyQt6</span>
+                      </div>
+                      {/* <button
+                        className="project-story-link"
+                        onClick={() => onProject("swype")}
+                      >
+                        the build →
+                      </button> */}
+                    </div>
                   </div>
                 </div>
                 <div className="project-card">
                   <div className="card-bg" id="bg-flow"></div>
-                  <div className="card-title" id="flow-font">
-                    <div className="flow-div">
-                      <img
-                        class="flowlogo"
-                        src="flowstatelogo.svg"
-                        alt="flowstate logo"
-                      />
-                      <span>FlowState</span>
+                  <div className="card-content">
+                    <div className="card-header">
+                      <div className="card-title" id="flow-font">
+                        <div className="flow-div">
+                          <img
+                            class="flowlogo"
+                            src="flowstatelogo.svg"
+                            alt="flowstate logo"
+                          />
+                          <span>FlowState</span>
+                        </div>
+                      </div>
+                      <div className="card-header-links">
+                        <a
+                          href="https://github.com/1prcntethan/flowstate"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <img
+                            src="/github.svg"
+                            className="header-icon"
+                            alt="GitHub repo"
+                          />
+                        </a>
+
+                        <a
+                          href="https://getflowstate.org"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <img
+                            src="/linkdemo.svg"
+                            className="header-icon"
+                            alt="Live demo"
+                          />
+                        </a>
+                      </div>
                     </div>
-                  </div>
-                  <div className="card-info">
-                    cross platform desktop app that uses text OCR and AI
-                    classification to automate focus tracking and encourage
-                    productivity in real-time.
-                  </div>
-                  <div className="card-tags">
-                    <span>React</span>
-                    <span>TypeScript</span>
-                    <span>Python</span>
-                    <span>Electron</span>
-                    <span>Tesseract OCR</span>
-                  </div>
-                  <div className="card-links">
-                    <div className="card-stats">
+
+                    <div className="card-info">
+                      cross platform desktop app that uses text OCR and AI
+                      classification to automate focus tracking and encourage
+                      productivity in real-time
+                    </div>
+
+                    <div className="card-meta">
+                      <div className="meta-item">
+                        <span className="meta-label">Role</span>
+                        <span className="meta-value">Lead Founder</span>
+                      </div>
+                      <div className="meta-item">
+                        <span className="meta-label">Status</span>
+                        <span className="meta-value">In Development</span>
+                      </div>
+                      <div className="meta-item">
+                        <span className="meta-label">Timeline</span>
+                        <span className="meta-value">May 2026 - Present</span>
+                      </div>
+                    </div>
+
+                    <div className="card-section">
+                      <div className="section-label">what it does</div>
+                      <ul>
+                        <li>
+                          tracks focus via periodic screenshots, OCR, and
+                          on/off-task classification against subjects
+                          and tasks
+                        </li>
+                        <li>
+                          gamifies studying with a focus score, coins, and
+                          streaks
+                        </li>
+                        <li>
+                          runs cross-platform as a privacy-first desktop app
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div className="card-section">
+                      <div className="section-label">what i did</div>
+                      <ul>
+                        <li>
+                          built the Python/Flask OCR and classification sidecar
+                          spawned from Electron
+                        </li>
+                        <li>
+                          implemented AWS Cognito authentication and DynamoDB
+                          backend
+                        </li>
+                        <li>
+                          built the Electron + React + TypeScript frontend UI
+                        </li>
+                      </ul>
+                    </div>
+
+                    {/* <div className="card-stats">
                       current project, in development
+                    </div> */}
+
+                    <div className="card-footer">
+                      <div className="card-tags">
+                        <span>React</span>
+                        <span>TypeScript</span>
+                        <span>Python</span>
+                        <span>Electron</span>
+                        <span>Tesseract OCR</span>
+                      </div>
+                      {/* <button
+                        className="project-story-link"
+                        onClick={() => onProject("flowstate")}
+                      >
+                        the build →
+                      </button> */}
                     </div>
-                    <a
-                      href="https://github.com/1prcntethan/flowstate"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <img src="github.svg" className="project-link"></img>
-                    </a>
-                    <a
-                      href="https://getflowstate.org"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <img src="linkdemo.svg" className="project-link"></img>
-                    </a>
                   </div>
                 </div>
               </div>
