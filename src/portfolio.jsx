@@ -567,7 +567,6 @@ export default function Portfolio({ onHero, onProject }) {
                   <div className="card-bg" id="bg-wings">
                     {/* <img src="wingsstats.jpg" className="wings-stats"></img> */}
                   </div>
-
                   <div className="card-content">
                     <div className="card-header">
                       <div className="card-title" id="wings-font">
@@ -612,7 +611,7 @@ export default function Portfolio({ onHero, onProject }) {
                       </div>
                       <div className="meta-item">
                         <span className="meta-label">Status</span>
-                        <span className="meta-value">Live</span>
+                        <span className="meta-value">Paused, Live</span>
                       </div>
                       <div className="meta-item">
                         <span className="meta-label">Timeline</span>
