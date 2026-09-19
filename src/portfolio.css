@@ -1017,9 +1017,18 @@
 }
 
 .project-card:hover #bg-wings {
-  background-image: url("/flowstatebg.png");
+  background-image: url("/wings-showcase.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
+.project-card:hover #bg-flow {
+  background-image: url("/flowstate-showcase.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 
 .project-card:hover .wings-stats {
   opacity: 1;
@@ -1151,6 +1160,8 @@
 
 #bg-wings {
   background-image: url("/wingsbg2.png");
+  background-size: cover;
+  background-position: center;
 }
 
 #bg-swype {
@@ -1159,6 +1170,8 @@
 
 #bg-flow {
   background-image: url("/flowstatebg.png");
+  background-size: cover;
+  background-position: center;
 }
 
 .card-title {
@@ -1209,7 +1222,6 @@
   gap: 10px;
   overflow: hidden;
 }
-
 
 .card-meta {
   display: grid;
@@ -1286,7 +1298,7 @@
   font-family: Raleway;
   font-size: 18px;
   margin-top: 12px;
-  opacity: 0
+  opacity: 0;
 }
 
 .card-section {

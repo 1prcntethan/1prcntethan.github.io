@@ -559,13 +559,14 @@ export default function Portfolio({ onHero, onProject }) {
               </motion.div>
             </motion.div>
           </motion.section>
+                              {/* <img src="wingsstats.jpg" className="wings-stats"></img> */}
+
           <motion.section className="project-section" id="projects">
             <motion.div className="sixty-div">
               <motion.div className="project-title">projects</motion.div>
               <div className="project-wrapper">
                 <div className="project-card">
                   <div className="card-bg" id="bg-wings">
-                    {/* <img src="wingsstats.jpg" className="wings-stats"></img> */}
                   </div>
                   <div className="card-content">
                     <div className="card-header">
@@ -879,7 +880,7 @@ export default function Portfolio({ onHero, onProject }) {
                           backend
                         </li>
                         <li>
-                          built the Electron + React + TypeScript frontend UI
+                          designed the Electron + React + TypeScript frontend UI
                         </li>
                       </ul>
                     </div>

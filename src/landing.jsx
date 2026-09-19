@@ -118,6 +118,7 @@ export default function Landing({ onStart }) {
           >
             <img src="/go.svg"></img>
           </motion.div>
+          <div className="mobile-disclaimer">this portfolio is best viewed on desktop.</div>
         </motion.div>
       )}
     </AnimatePresence>
