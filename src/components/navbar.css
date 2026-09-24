@@ -12,6 +12,13 @@
   background: #0e0e0e;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
+
+  @media (max-width: 1300px) {
+    left: 50%;
+    top: 36px;
+
+    transform: translate(-50%, -50%);
+  }
 }
 
 .nav-link {

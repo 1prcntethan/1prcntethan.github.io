@@ -683,6 +683,9 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  @media (max-width: 1700px) {
+    gap: 8px;
+  }
 
   animation: stack-fade linear;
   animation-timeline: --portfolio-scroll;
@@ -724,6 +727,10 @@
   display: flex;
   justify-content: center;
   gap: 12px;
+
+  @media (max-width: 1700px) {
+    gap: 8px;
+  }
 }
 
 .skill-chip {
@@ -739,6 +746,15 @@
   white-space: nowrap;
   width: fit-content;
   transition: all 0.25s ease-in-out;
+
+  @media (max-width: 1700px) {
+    font-size: 16px;
+    padding: 8px 16px;
+  }
+  @media (max-width: 1700px) {
+    font-size: 14px;
+  }
+
 }
 
 .skill-chip-grid.highlight-fs .category-fs,
